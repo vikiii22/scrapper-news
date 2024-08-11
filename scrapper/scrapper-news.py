@@ -9,7 +9,7 @@ class SportsNewsScraper:
     def fetch_news(self):
         response = requests.get(self.url)
         if response.status_code == 200:
-            response.encoding = 'utf-8'  # Asegúrate de que la respuesta se decodifique en UTF-8
+            response.encoding = 'utf-8'
             return response.text
         else:
             return None
@@ -23,7 +23,7 @@ class SportsNewsScraper:
             url = headline.find_previous('a')['href']
             if img:
                 data.append({
-                    'title': headline.text.strip(),  # Eliminar espacios en blanco
+                    'title': headline.text.strip(),
                     'image': img['src'],
                     'url': url
                 })
@@ -31,7 +31,7 @@ class SportsNewsScraper:
 
     def save_news(self, headlines, file_path):
         with open(file_path, 'w', encoding='utf-8') as file:
-            json.dump(headlines, file, ensure_ascii=False, indent=4)  # Asegúrate de que JSON se guarde en UTF-8
+            json.dump(headlines, file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
     periodicos = ['https://www.marca.com/', 'https://www.sport.es/es/', 'https://www.as.com/']
