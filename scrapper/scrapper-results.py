@@ -27,15 +27,15 @@ class ResultsSportsNewScrapper:
                     continue
                 if match.find('div', class_='team-name ta-l team_right') is None:
                     continue
-                if match.find('img', class_='pv3 va-m team-shield') is None:
+                if match.find_all('img', class_='pv3 va-m team-shield') is None:
                     continue
                 if match.find('p', class_='match_hour time') is None and match.find('span', class_='r1') is None:
                     continue
 
                 team_a_name = match.find('div', class_='team-name ta-r team_left').text.strip()
-                team_a_image = match.find('img', class_='pv3 va-m team-shield')['src']
+                team_a_image = match.find_all('img', class_='pv3 va-m team-shield')[0]['src']
                 team_b_name = match.find('div', class_='team-name ta-l team_right').text.strip()
-                team_b_image = match.find('img', class_='pv3 va-m team-shield')['src']
+                team_b_image = match.find_all('img', class_='pv3 va-m team-shield')[1]['src']
                 
                 # Extraer la hora del partido y el resultado
                 match_time = match.find('p', class_='match_hour time')
