@@ -23,20 +23,29 @@ class ResultsSportsNewScrapper:
             league_name = result.find_previous('span', class_='va-m').text.strip()
             league_image = result.find_previous('img', class_='comp-img')['src']
             matches = result.find_all('a', class_='match-link')
+            team_b_name = None
             for match in matches:
-                if match.find('div', class_='team-name ta-r team_left') is None:
-                    continue
-                if match.find('div', class_='team-name ta-l team_right') is None:
-                    continue
+                #Bloque nombre equipo A
+                if match.find('div', class_='team-name ta-r team_left'):
+                    team_a_name = match.find('div', class_='team-name ta-r team_left').text.strip()
+                elif match.find('div', class_='team-name ta-r team_left winner'):
+                    team_a_name = match.find('div', class_='team-name ta-r team_left winner').text.strip()
+                #Bloque nombre equipo B
+                if match.find('div', class_='team-name ta-l team_right'):
+                    team_b_name = match.find('div', class_='team-name ta-l team_right').text.strip()
+                elif match.find('div', class_='team-name ta-l team_right winner'):
+                    team_b_name = match.find('div', class_='team-name ta-l team_right winner').text.strip()
+                #Bloque busqueda de imagen de los equipos y hora del partido
                 if match.find_all('img', class_='pv3 va-m team-shield') is None:
                     continue
                 if match.find('p', class_='match_hour time') is None and match.find('span', class_='r1') is None:
                     continue
 
-                team_a_name = match.find('div', class_='team-name ta-r team_left').text.strip()
                 team_a_image = match.find_all('img', class_='pv3 va-m team-shield')[0]['src']
-                team_b_name = match.find('div', class_='team-name ta-l team_right').text.strip()
                 team_b_image = match.find_all('img', class_='pv3 va-m team-shield')[1]['src']
+
+                if (team_b_name == None):
+                    print("team_b_name", match.find('div', class_='team-name ta-l team_right winner'))
                 
                 # Extraer la hora del partido y el resultado
                 match_time = match.find('p', class_='match_hour time')
@@ -74,8 +83,8 @@ if __name__ == "__main__":
     base_url = 'https://es.besoccer.com/livescore/'
     dateMatch = ""
     urls = [
-        f'{base_url}{date}',
         f'{base_url}{dateLastDay.strftime("%Y-%m-%d")}',
+        f'{base_url}{date}',
         f'{base_url}{dateNextDay.strftime("%Y-%m-%d")}'
     ]
     periodicos = urls
