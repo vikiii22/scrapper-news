@@ -1,6 +1,7 @@
 import requests
 from bs4 import BeautifulSoup
 import json
+import datetime
 
 class ResultsSportsNewScrapper:
     def __init__(self, url):
@@ -14,7 +15,7 @@ class ResultsSportsNewScrapper:
         else:
             return None
 
-    def parse_results(self, html_content):
+    def parse_results(self, html_content, date):
         soup = BeautifulSoup(html_content, 'html.parser')
         results = soup.find_all('div', class_='panel-body p0 match-list-new panel view-more')
         data = []
@@ -57,7 +58,8 @@ class ResultsSportsNewScrapper:
                     'team_b_image': team_b_image,
                     'match_time': match_time,
                     'score_a': score_a,
-                    'score_b': score_b
+                    'score_b': score_b,
+                    'date': date
                 })
         return data
 
@@ -66,12 +68,25 @@ class ResultsSportsNewScrapper:
             json.dump(results, file, ensure_ascii=False, indent=4)
 
 if __name__ == "__main__":
-    periodicos = ['https://es.besoccer.com/']
+    date = datetime.datetime.now().strftime("%Y-%m-%d")
+    dateLastDay = datetime.datetime.now() - datetime.timedelta(days=1)
+    dateNextDay = datetime.datetime.now() + datetime.timedelta(days=1)
+    base_url = 'https://es.besoccer.com/livescore/'
+    dateMatch = ""
+    urls = [
+        f'{base_url}{date}',
+        f'{base_url}{dateLastDay.strftime("%Y-%m-%d")}',
+        f'{base_url}{dateNextDay.strftime("%Y-%m-%d")}'
+    ]
+    periodicos = urls
+    file_path = f"../data/sports_results_besoccer.json"
+    all_results = []
     for periodico in periodicos:
+        dateMatch = periodico.split("/")[-1]
         url = periodico
         scraper = ResultsSportsNewScrapper(url)
         html_content = scraper.fetch_results()
         if html_content:
-            results = scraper.parse_results(html_content)
-            file_path = f"../data/sports_results_{periodico.split('.')[1]}.json"
-            scraper.save_results(results, file_path)
+            results = scraper.parse_results(html_content, dateMatch)
+            all_results.extend(results)
+            scraper.save_results(all_results, file_path)
