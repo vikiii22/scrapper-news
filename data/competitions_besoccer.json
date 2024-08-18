@@ -1,0 +1,1133 @@
+[
+    {
+        "title": "Fase Previa Champions League",
+        "image": "https://cdn.resfu.com/media/img/flags/round/ue.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/fases_previas_champions"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/fases_previas_champions"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/fases_previas_champions"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/fases_previas_champions"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/fases_previas_champions"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/fases_previas_champions"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/fases_previas_champions"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/fases_previas_champions/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/fases_previas_champions"
+            }
+        ]
+    },
+    {
+        "title": "Fase Previa Europa League",
+        "image": "https://cdn.resfu.com/media/img/flags/round/ue.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/previa_europa_league"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/previa_europa_league"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/previa_europa_league"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/previa_europa_league"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/previa_europa_league"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/previa_europa_league"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/previa_europa_league"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/previa_europa_league/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/previa_europa_league"
+            }
+        ]
+    },
+    {
+        "title": "Fase Previa Conference League",
+        "image": "https://cdn.resfu.com/media/img/flags/round/ue.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/previa-conference-league"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/previa-conference-league"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/previa-conference-league"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/previa-conference-league"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/previa-conference-league"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/previa-conference-league"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/previa-conference-league"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/previa-conference-league/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/previa-conference-league"
+            }
+        ]
+    },
+    {
+        "title": "Liga de las Naciones de la UEFA",
+        "image": "https://cdn.resfu.com/media/img/flags/round/ue.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/liga_de_las_naciones_de_la_uefa"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/liga_de_las_naciones_de_la_uefa"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/liga_de_las_naciones_de_la_uefa/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/liga_de_las_naciones_de_la_uefa"
+            }
+        ]
+    },
+    {
+        "title": "Copa Libertadores",
+        "image": "https://cdn.resfu.com/media/img/flags/round/n2.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/copa_libertadores"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/copa_libertadores"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/copa_libertadores"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/copa_libertadores"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/copa_libertadores"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/copa_libertadores"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/copa_libertadores"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/copa_libertadores/2024"
+            },
+            {
+                "title": "Cuadro",
+                "url": "https://es.besoccer.com/competicion/cuadro/copa_libertadores/2024/grupo0"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/copa_libertadores"
+            }
+        ]
+    },
+    {
+        "title": "Conmebol Sudamericana",
+        "image": "https://cdn.resfu.com/media/img/flags/round/n2.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/copa_sudamericana"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/copa_sudamericana"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/copa_sudamericana"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/copa_sudamericana"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/copa_sudamericana"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/copa_sudamericana"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/copa_sudamericana"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/copa_sudamericana"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/copa_sudamericana/2024"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/copa_sudamericana"
+            }
+        ]
+    },
+    {
+        "title": "Primera División",
+        "image": "https://cdn.resfu.com/media/img/flags/round/es.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/primera"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/primera"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/primera"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/primera"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/primera"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/primera"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/primera"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/primera"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/primera"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/primera"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/primera/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/primera"
+            }
+        ]
+    },
+    {
+        "title": "Segunda División",
+        "image": "https://cdn.resfu.com/media/img/flags/round/es.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/segunda"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/segunda"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/segunda"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/segunda"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/segunda"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/segunda"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/segunda"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/segunda"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/segunda"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/segunda"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/segunda/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/segunda"
+            }
+        ]
+    },
+    {
+        "title": "Premier League",
+        "image": "https://cdn.resfu.com/media/img/flags/round/gb.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/premier"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/premier"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/premier"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/premier"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/premier"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/premier"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/premier"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/premier"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/premier"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/premier"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/premier/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/premier"
+            }
+        ]
+    },
+    {
+        "title": "Championship",
+        "image": "https://cdn.resfu.com/media/img/flags/round/gb.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/championship"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/championship"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/championship"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/championship"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/championship"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/championship"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/championship"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/championship"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/championship"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/championship"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/championship/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/championship"
+            }
+        ]
+    },
+    {
+        "title": "Ligue 1",
+        "image": "https://cdn.resfu.com/media/img/flags/round/fr.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/ligue_1"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/ligue_1"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/ligue_1"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/ligue_1"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/ligue_1"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/ligue_1"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/ligue_1"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/ligue_1"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/ligue_1"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/ligue_1"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/ligue_1/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/ligue_1"
+            }
+        ]
+    },
+    {
+        "title": "Serie A",
+        "image": "https://cdn.resfu.com/media/img/flags/round/it.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/serie_a"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/serie_a"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/serie_a"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/serie_a"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/serie_a"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/serie_a"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/serie_a"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/serie_a"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/serie_a"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/serie_a"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/serie_a/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/serie_a"
+            }
+        ]
+    },
+    {
+        "title": "Liga Portuguesa",
+        "image": "https://cdn.resfu.com/media/img/flags/round/pt.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/portugal"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/portugal"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/portugal"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/portugal"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/portugal"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/portugal"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/portugal"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/portugal"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/portugal"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/portugal"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/portugal/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/portugal"
+            }
+        ]
+    },
+    {
+        "title": "Bundesliga",
+        "image": "https://cdn.resfu.com/media/img/flags/round/de.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/bundesliga"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/bundesliga"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/bundesliga"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/bundesliga"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/bundesliga"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/bundesliga"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/bundesliga"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/bundesliga"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/bundesliga"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/bundesliga/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/bundesliga"
+            }
+        ]
+    },
+    {
+        "title": "Eredivisie",
+        "image": "https://cdn.resfu.com/media/img/flags/round/nl.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/holanda"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/holanda"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/holanda"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/holanda"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/holanda"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/holanda"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/holanda"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/holanda"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/holanda"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/holanda"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/holanda/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/holanda"
+            }
+        ]
+    },
+    {
+        "title": "Liga Brasileña",
+        "image": "https://cdn.resfu.com/media/img/flags/round/br.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/brasil"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/brasil"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/brasil"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/brasil"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/brasil"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/brasil"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/brasil"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/brasil"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/brasil"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/brasil"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/brasil/2024"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/brasil"
+            }
+        ]
+    },
+    {
+        "title": "Clausura Colombia",
+        "image": "https://cdn.resfu.com/media/img/flags/round/co.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/finalizacion_colombia"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/finalizacion_colombia"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/finalizacion_colombia"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/finalizacion_colombia"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/finalizacion_colombia"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/finalizacion_colombia"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/finalizacion_colombia"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/finalizacion_colombia"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/finalizacion_colombia"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/finalizacion_colombia"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/finalizacion_colombia/2024"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/finalizacion_colombia"
+            }
+        ]
+    },
+    {
+        "title": "Liga Profesional Argentina",
+        "image": "https://cdn.resfu.com/media/img/flags/round/ar.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/primera_division_argentina"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/primera_division_argentina"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/primera_division_argentina"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/primera_division_argentina"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/primera_division_argentina"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/primera_division_argentina"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/primera_division_argentina"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/primera_division_argentina"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/primera_division_argentina"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/primera_division_argentina"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/primera_division_argentina/2024"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/primera_division_argentina"
+            }
+        ]
+    },
+    {
+        "title": "MLS - Liga USA",
+        "image": "https://cdn.resfu.com/media/img/flags/round/us.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/usa"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/usa"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/usa"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/usa"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/usa"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/usa"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/usa"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/usa"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/usa"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/usa"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/usa/2024"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/usa"
+            }
+        ]
+    },
+    {
+        "title": "Leagues Cup",
+        "image": "https://cdn.resfu.com/media/img/flags/round/n1.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/leagues_cup"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/leagues_cup"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/leagues_cup"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/leagues_cup"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/leagues_cup"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/leagues_cup"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/leagues_cup"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/leagues_cup"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/leagues_cup"
+            }
+        ]
+    },
+    {
+        "title": "Liga MX - Apertura",
+        "image": "https://cdn.resfu.com/media/img/flags/round/mx.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/apertura_mexico"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/apertura_mexico"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/apertura_mexico"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/apertura_mexico"
+            },
+            {
+                "title": "Rankings",
+                "url": "https://es.besoccer.com/competicion/rankings/apertura_mexico"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/apertura_mexico"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/apertura_mexico"
+            },
+            {
+                "title": "Árbitros",
+                "url": "https://es.besoccer.com/competicion/arbitros/apertura_mexico"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/apertura_mexico"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/apertura_mexico"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/apertura_mexico/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/apertura_mexico"
+            }
+        ]
+    },
+    {
+        "title": "Primera Federación",
+        "image": "https://cdn.resfu.com/media/img/flags/round/es.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/primera_division_rfef"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/primera_division_rfef"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/primera_division_rfef"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/primera_division_rfef"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/primera_division_rfef"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/primera_division_rfef"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/primera_division_rfef"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/primera_division_rfef"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/primera_division_rfef"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/primera_division_rfef/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/primera_division_rfef"
+            }
+        ]
+    },
+    {
+        "title": "Segunda Federación",
+        "image": "https://cdn.resfu.com/media/img/flags/round/es.png?size=60x&lossy=1",
+        "url": "https://es.besoccer.com/competicion/segunda_division_rfef"
+    },
+    {
+        "competitions": [
+            {
+                "title": "Partidos",
+                "url": "https://es.besoccer.com/competicion/resultados/segunda_division_rfef"
+            },
+            {
+                "title": "Clasificación",
+                "url": "https://es.besoccer.com/competicion/clasificacion/segunda_division_rfef"
+            },
+            {
+                "title": "Info",
+                "url": "https://es.besoccer.com/competicion/info/segunda_division_rfef"
+            },
+            {
+                "title": "Noticias",
+                "url": "https://es.besoccer.com/noticias/competicion/segunda_division_rfef"
+            },
+            {
+                "title": "Entrenadores",
+                "url": "https://es.besoccer.com/competicion/entrenadores/segunda_division_rfef"
+            },
+            {
+                "title": "Equipos",
+                "url": "https://es.besoccer.com/competicion/equipos/segunda_division_rfef"
+            },
+            {
+                "title": "Trayectoria",
+                "url": "https://es.besoccer.com/competicion/historico/segunda_division_rfef"
+            },
+            {
+                "title": "Fichajes",
+                "url": "https://es.besoccer.com/competicion/fichajes/segunda_division_rfef"
+            },
+            {
+                "title": "Media",
+                "url": "https://es.besoccer.com/competicion/media/segunda_division_rfef/2025"
+            },
+            {
+                "title": "Estadios",
+                "url": "https://es.besoccer.com/competicion/estadios/segunda_division_rfef"
+            }
+        ]
+    }
+]
