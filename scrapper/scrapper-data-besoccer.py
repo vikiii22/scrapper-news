@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import json
 import datetime
+import unidecode  # Necesitarás instalar este paquete
 
 class ResultsSportsNewScrapper:
     def __init__(self, url, allowed_leagues):
@@ -79,10 +80,19 @@ class ResultsSportsNewScrapper:
                 # Extraer ID del partido para el análisis
                 match_id = match['href'].split('/')[-1]  # Obtiene el ID del enlace
 
-                # Construir la URL de análisis sin guiones ni la palabra 'real'
-                team_a_name_clean = team_a_name.replace(" ", "").replace("Real", "")
-                team_b_name_clean = team_b_name.replace(" ", "").replace("Real", "")
-                analysis_url = f"https://es.besoccer.com/partido/{team_a_name_clean.lower()}/{team_b_name_clean.lower()}/{match_id}/analisis"
+                # Función para limpiar nombres
+                def clean_team_name(name):
+                    # Abrir el archivo de nombres de equipos
+                    with open('team_ids.json', 'r', encoding='utf-8') as file:
+                        team_names = json.load(file)
+                    # Buscar el nombre del equipo en el archivo
+                    return team_names.get(name, unidecode.unidecode(name))
+                    
+
+
+                team_a_name_clean = clean_team_name(team_a_name).lower()
+                team_b_name_clean = clean_team_name(team_b_name).lower()
+                analysis_url = f"https://es.besoccer.com/partido/{team_a_name_clean}/{team_b_name_clean}/{match_id}/analisis"
 
                 data.append({
                     'league_name': league_name,
@@ -107,9 +117,7 @@ if __name__ == "__main__":
     # Definir las ligas permitidas
     allowed_leagues = [
         'Primera División',
-        'Segunda División',
-        'Champions League',
-        'Europa League'
+        'Segunda División'
     ]
 
     base_url = 'https://es.besoccer.com/livescore/'
