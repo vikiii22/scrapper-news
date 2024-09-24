@@ -2,32 +2,6 @@
     {
         "league_name": "Primera División",
         "league_image": "https://cdn.resfu.com/media/img/flags/st3/small/es.png?size=30x&lossy=1",
-        "team_a_name": "Real Betis",
-        "team_a_image": "https://cdn.resfu.com/img_data/equipos/486.png?size=60x&lossy=1",
-        "team_b_name": "Mallorca",
-        "team_b_image": "https://cdn.resfu.com/img_data/equipos/1623.png?size=60x&lossy=1",
-        "match_time": "21:00",
-        "score_a": null,
-        "score_b": null,
-        "date": "2024-09-23",
-        "analysis_url": "https://es.besoccer.com/partido/betis/mallorca/20256345/analisis"
-    },
-    {
-        "league_name": "Segunda División",
-        "league_image": "https://cdn.resfu.com/media/img/flags/st3/small/es.png?size=30x&lossy=1",
-        "team_a_name": "Huesca",
-        "team_a_image": "https://cdn.resfu.com/img_data/equipos/1339.png?size=60x&lossy=1",
-        "team_b_name": "Córdoba CF",
-        "team_b_image": "https://cdn.resfu.com/img_data/equipos/831.png?size=60x&lossy=1",
-        "match_time": "20:30",
-        "score_a": null,
-        "score_b": null,
-        "date": "2024-09-23",
-        "analysis_url": "https://es.besoccer.com/partido/huesca/cordoba-cf/202515982/analisis"
-    },
-    {
-        "league_name": "Primera División",
-        "league_image": "https://cdn.resfu.com/media/img/flags/st3/small/es.png?size=30x&lossy=1",
         "team_a_name": "Sevilla",
         "team_a_image": "https://cdn.resfu.com/img_data/equipos/1102.png?size=60x&lossy=1",
         "team_b_name": "Real Valladolid",
@@ -128,5 +102,31 @@
         "score_b": null,
         "date": "2024-09-26",
         "analysis_url": "https://es.besoccer.com/partido/celta/atletico-madrid/20256390/analisis"
+    },
+    {
+        "league_name": "Primera División",
+        "league_image": "https://cdn.resfu.com/media/img/flags/st3/small/es.png?size=30x&lossy=1",
+        "team_a_name": "Real Valladolid",
+        "team_a_image": "https://cdn.resfu.com/img_data/equipos/2654.png?size=60x&lossy=1",
+        "team_b_name": "Mallorca",
+        "team_b_image": "https://cdn.resfu.com/img_data/equipos/1623.png?size=60x&lossy=1",
+        "match_time": "21:00",
+        "score_a": null,
+        "score_b": null,
+        "date": "2024-09-27",
+        "analysis_url": "https://es.besoccer.com/partido/valladolid/mallorca/20256383/analisis"
+    },
+    {
+        "league_name": "Segunda División",
+        "league_image": "https://cdn.resfu.com/media/img/flags/st3/small/es.png?size=30x&lossy=1",
+        "team_a_name": "Albacete",
+        "team_a_image": "https://cdn.resfu.com/img_data/equipos/140.png?size=60x&lossy=1",
+        "team_b_name": "RC Deportivo",
+        "team_b_image": "https://cdn.resfu.com/img_data/equipos/901.png?size=60x&lossy=1",
+        "match_time": "20:30",
+        "score_a": null,
+        "score_b": null,
+        "date": "2024-09-27",
+        "analysis_url": "https://es.besoccer.com/partido/albacete/deportivo/202515723/analisis"
     }
 ]
