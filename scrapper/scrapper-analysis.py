@@ -2,6 +2,8 @@ import requests
 from bs4 import BeautifulSoup
 import json
 
+
+## Ejecutar este script después de haber ejecutado el script scrapper-data-besoccer.py para pasarle los datos a ChatGPT.
 class AnalysisScraper:
     def __init__(self, urls):
         self.urls = urls

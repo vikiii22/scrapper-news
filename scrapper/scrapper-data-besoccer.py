@@ -4,6 +4,8 @@ import json
 import datetime
 import unidecode  # Necesitarás instalar este paquete
 
+
+## Este es el primer script a ejecutar para obtener los datos de los partidos de fútbol.
 class ResultsSportsNewScrapper:
     def __init__(self, url, allowed_leagues):
         self.url = url
