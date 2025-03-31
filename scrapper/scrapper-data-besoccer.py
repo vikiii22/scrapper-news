@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import json
 import datetime
 import unidecode  # Necesitarás instalar este paquete
+import pycurl
+from io import BytesIO
 
 
 ## Este es el primer script a ejecutar para obtener los datos de los partidos de fútbol.
@@ -12,20 +14,36 @@ class ResultsSportsNewScrapper:
         self.allowed_leagues = allowed_leagues
 
     def fetch_results(self):
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' 
+        headers = [
+            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) ' 
                           'AppleWebKit/537.36 (KHTML, like Gecko) ' 
-                          'Chrome/58.0.3029.110 Safari/537.3'
-        }
+                          'Chrome/58.0.3029.110 Safari/537.3',
+            'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
+            'Accept-Language: en-US,en;q=0.5',
+            'Connection: keep-alive',
+            'Upgrade-Insecure-Requests: 1',
+            'Referer: https://es.besoccer.com/',
+            'DNT: 1',  # Do Not Track Request Header
+            'Cache-Control: no-cache',
+            'Pragma: no-cache'
+        ]
+
+        buffer = BytesIO()
+        c = pycurl.Curl()
+        c.setopt(c.URL, self.url)
+        c.setopt(c.HTTPHEADER, headers)
+        c.setopt(c.WRITEDATA, buffer)
         try:
-            response = requests.get(self.url, headers=headers)
-            response.raise_for_status()  # Lanza una excepción si el código no es 200
-            response.encoding = 'utf-8'
-            return response.text
-        except requests.exceptions.HTTPError as http_err:
-            print(f"HTTP error occurred: {http_err}")  # Manejar errores HTTP
-        except Exception as err:
-            print(f"Other error occurred: {err}")  # Otros errores
+            c.perform()
+            status_code = c.getinfo(pycurl.RESPONSE_CODE)
+            c.close()
+            if status_code == 200:
+                response_text = buffer.getvalue().decode('utf-8')
+                return response_text
+            else:
+                print(f"HTTP error occurred: {status_code}")
+        except pycurl.error as err:
+            print(f"Other error occurred: {err}")
         return None
 
     def parse_results(self, html_content, date):
@@ -44,12 +62,14 @@ class ResultsSportsNewScrapper:
             for match in matches:
                 # Bloque nombre equipo A
                 team_a_tag = match.find('div', class_='team-name ta-r team_left') or \
-                             match.find('div', class_='team-name ta-r team_left winner')
+                             match.find('div', class_='team-name ta-r team_left winner') or \
+                             match.find('div', class_='team-name ta-r')
                 team_a_name = team_a_tag.text.strip() if team_a_tag else None
 
                 # Bloque nombre equipo B
                 team_b_tag = match.find('div', class_='team-name ta-l team_right') or \
-                             match.find('div', class_='team-name ta-l team_right winner')
+                             match.find('div', class_='team-name ta-l team_right winner') or \
+                             match.find('div', class_='team-name ta-l')
                 team_b_name = team_b_tag.text.strip() if team_b_tag else None
 
                 # Verificar que ambos nombres de equipos existan
@@ -94,7 +114,17 @@ class ResultsSportsNewScrapper:
 
                 team_a_name_clean = clean_team_name(team_a_name).lower()
                 team_b_name_clean = clean_team_name(team_b_name).lower()
-                analysis_url = f"https://es.besoccer.com/partido/{team_a_name_clean}/{team_b_name_clean}/{match_id}/analisis"
+
+                team_a_info = f"https://es.besoccer.com/equipo/plantilla/{team_a_name_clean}"
+                team_b_info = f"https://es.besoccer.com/equipo/plantilla/{team_b_name_clean}"
+
+                team_a_name_clean = self.mapping_name_team(team_a_name_clean)
+                team_b_name_clean = self.mapping_name_team(team_b_name_clean)
+                
+                if(league_name == 'Liga de las Naciones de la UEFA'):
+                    analysis_url = f"https://es.besoccer.com/partido/seleccion-{team_a_name_clean}/seleccion-{team_b_name_clean}/{match_id}/analisis"
+                else:
+                    analysis_url = f"https://es.besoccer.com/partido/{team_a_name_clean}/{team_b_name_clean}/{match_id}/analisis"
 
                 data.append({
                     'league_name': league_name,
@@ -107,9 +137,19 @@ class ResultsSportsNewScrapper:
                     'score_a': score_a,
                     'score_b': score_b,
                     'date': date,
+                    'team_a_info': team_a_info,
+                    'team_b_info': team_b_info,
                     'analysis_url': analysis_url  # Agregar la URL de análisis
                 })
         return data
+    
+    def mapping_name_team(self, name):
+        mapping = {
+            'paises bajos': 'holanda',
+            'espana': 'espanola'
+        }
+
+        return mapping.get(name, name)
 
     def save_results(self, results, file_path):
         with open(file_path, 'w', encoding='utf-8') as file:
@@ -119,14 +159,15 @@ if __name__ == "__main__":
     # Definir las ligas permitidas
     allowed_leagues = [
         'Primera División',
-        'Segunda División'
+        'Segunda División',
+        'Liga de las Naciones de la UEFA'
     ]
 
     base_url = 'https://es.besoccer.com/livescore/'
     
     # Generar las fechas: hoy y los próximos 3 días
     today = datetime.datetime.now()
-    future_days = [today + datetime.timedelta(days=i) for i in range(4)]  # 0 a 3 días futuros
+    future_days = [today + datetime.timedelta(days=i) for i in range(7)]  # 0 a 3 días futuros
     urls = [f'{base_url}{day.strftime("%Y-%m-%d")}' for day in future_days]
 
     file_path = "../data/big-data.json"

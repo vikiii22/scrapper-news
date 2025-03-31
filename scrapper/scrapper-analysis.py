@@ -1,4 +1,5 @@
-import requests
+import pycurl
+from io import BytesIO
 from bs4 import BeautifulSoup
 import json
 
@@ -9,19 +10,28 @@ class AnalysisScraper:
         self.urls = urls
 
     def fetch_analysis(self, url):
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
+        headers = [
+            'User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) '
                           'AppleWebKit/537.36 (KHTML, like Gecko) '
                           'Chrome/58.0.3029.110 Safari/537.3'
-        }
+        ]
+
+        buffer = BytesIO()
+        c = pycurl.Curl()
+        c.setopt(c.URL, url)
+        c.setopt(c.HTTPHEADER, headers)
+        c.setopt(c.WRITEDATA, buffer)
         try:
-            response = requests.get(url, headers=headers)
-            response.raise_for_status()  # Lanza una excepción si el código no es 200
-            response.encoding = 'utf-8'
-            return response.text
-        except requests.exceptions.HTTPError as http_err:
-            print(f"HTTP error occurred: {http_err}")
-        except Exception as err:
+            c.perform()
+            status_code = c.getinfo(pycurl.RESPONSE_CODE)
+            c.close()
+            if status_code == 200:
+                response_text = buffer.getvalue().decode('utf-8')
+                return response_text
+            else:
+                print(url)
+                print(f"HTTP error occurred: {status_code}")
+        except pycurl.error as err:
             print(f"Other error occurred: {err}")
         return None
 
