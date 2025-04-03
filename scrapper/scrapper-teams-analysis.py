@@ -1,6 +1,7 @@
 import pycurl
 from io import BytesIO
 from bs4 import BeautifulSoup
+from rapidfuzz import fuzz
 import json
 
 class TeamsAnalysis:
@@ -86,7 +87,7 @@ class TeamsAnalysis:
         
         return players_data
     
-    def parse_additional_data(self, soup):
+    def parse_additional_data(self, soup, team_name):
         additional_data = {}
 
         # Rendimiento en liga
@@ -98,8 +99,13 @@ class TeamsAnalysis:
                 league_performance = []
                 for row in rows:
                     try:
-                        data = [cell.text.strip() for cell in row.find_all('td')]
-                        league_performance.append(data)
+                        team_name = team_name.replace("Plantilla del ", "").split(" | ")[0].strip()
+                        team_link = row.find('a', {'data-cy': 'team'})
+                        similarity = fuzz.ratio(team_name.lower(), team_link.text.strip().lower()) if team_link else 0
+                        if similarity > 75:
+                            cells = row.find_all('td')
+                            data = [cell.text.strip() for cell in cells]
+                            league_performance.append(data)
                     except Exception as e:
                         print(f"Error parsing league performance: {e}")
                 additional_data['league_performance'] = league_performance
@@ -143,7 +149,7 @@ class TeamsAnalysis:
 
         return additional_data
 
-    def parse_players(self, url):
+    def parse_players(self, url, team_name):
         featured_url = url.replace('/plantilla', '')
         html_content = self.fetch_analysis(featured_url)
         if html_content:
@@ -170,7 +176,7 @@ class TeamsAnalysis:
                     print(f"Error parsing featured player data: {e}")
 
             # Datos adicionales
-            additional_data = self.parse_additional_data(soup)
+            additional_data = self.parse_additional_data(soup, team_name)
 
             return {
                 'players': players_data,
@@ -190,7 +196,7 @@ class TeamsAnalysis:
                 # Parsear los datos de los jugadores
                 players_data = self.parse_analysis(html_content)
 
-                most_valuated_players = self.parse_players(url)
+                most_valuated_players = self.parse_players(url, team_name)
                 
                 # Guardar los datos bajo el nombre del equipo
                 all_data[team_name] = {

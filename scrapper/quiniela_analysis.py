@@ -14,8 +14,15 @@ def calculate_team_elo(team_name):
         if team_name.lower() in team.lower():
             players = data.get("players_data", [])
             additional_data = data.get("top_players", {}).get("additional_data", {})
-            league_position = int(additional_data.get("league_position", 0))
-            league_points = int(additional_data.get("league_points", 0))
+            league_perfomance = additional_data.get("league_performance", [])
+            # league_position = int(additional_data.get("league_position", 0))
+            league_position = 0
+            league_points = 0
+            if league_perfomance:
+                for performance in league_perfomance:
+                    league_position = int(performance[0])
+                    league_points = int(performance[3])
+                    break
             common_eleven = additional_data.get("common_eleven", [])
             injured_players = additional_data.get("injuries", [])
 

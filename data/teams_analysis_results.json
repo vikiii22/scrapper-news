@@ -244,17 +244,6 @@
                 "cards": "0"
             },
             {
-                "number": "19",
-                "name": "Jorge De Frutos",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "23",
-                "matches": "27",
-                "goals": "4",
-                "assists": "3",
-                "cards": "3"
-            },
-            {
                 "number": "18",
                 "name": "Álvaro García",
                 "position": "Delantero",
@@ -264,6 +253,17 @@
                 "goals": "3",
                 "assists": "5",
                 "cards": "4"
+            },
+            {
+                "number": "19",
+                "name": "Jorge De Frutos",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "23",
+                "matches": "27",
+                "goals": "4",
+                "assists": "3",
+                "cards": "3"
             },
             {
                 "number": "14",
@@ -366,32 +366,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Betis",
-                        "47",
-                        "29",
-                        "13",
-                        "8",
-                        "8",
-                        "40",
-                        "36",
-                        "+4"
-                    ],
-                    [
                         "7",
                         "",
                         "Rayo Vallecano",
@@ -403,32 +377,6 @@
                         "33",
                         "31",
                         "+2"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Celta",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "42",
-                        "42",
-                        "0"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Mallorca",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "28",
-                        "35",
-                        "-7"
                     ]
                 ],
                 "injuries": [
@@ -964,32 +912,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "15",
-                        "",
-                        "Málaga",
-                        "42",
-                        "33",
-                        "9",
-                        "15",
-                        "9",
-                        "34",
-                        "36",
-                        "-2"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Real Sporting",
-                        "41",
-                        "33",
-                        "9",
-                        "14",
-                        "10",
-                        "40",
-                        "39",
-                        "+1"
-                    ],
-                    [
                         "17",
                         "",
                         "CD Castellón",
@@ -1001,32 +923,6 @@
                         "46",
                         "48",
                         "-2"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Real Zaragoza",
-                        "37",
-                        "33",
-                        "9",
-                        "10",
-                        "14",
-                        "43",
-                        "47",
-                        "-4"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "Eldense",
-                        "36",
-                        "33",
-                        "9",
-                        "9",
-                        "15",
-                        "34",
-                        "47",
-                        "-13"
                     ]
                 ],
                 "injuries": [
@@ -1049,7 +945,7 @@
                     "33",
                     "22",
                     "14",
-                    "20",
+                    "21",
                     "7",
                     "10",
                     "8",
@@ -1349,17 +1245,6 @@
                 "cards": "1"
             },
             {
-                "number": "14",
-                "name": "Oriol Romeu",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "14",
-                "matches": "18",
-                "goals": "0",
-                "assists": "0",
-                "cards": "5"
-            },
-            {
                 "number": "6",
                 "name": "D. Van De Beek",
                 "position": "Centrocampista",
@@ -1368,6 +1253,17 @@
                 "matches": "22",
                 "goals": "2",
                 "assists": "2",
+                "cards": "5"
+            },
+            {
+                "number": "14",
+                "name": "Oriol Romeu",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "14",
+                "matches": "18",
+                "goals": "0",
+                "assists": "0",
                 "cards": "5"
             },
             {
@@ -1614,32 +1510,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "11",
-                        "",
-                        "Sevilla",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "33",
-                        "39",
-                        "-6"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Getafe",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "26",
-                        "25",
-                        "+1"
-                    ],
-                    [
                         "13",
                         "",
                         "Girona",
@@ -1651,32 +1521,6 @@
                         "37",
                         "45",
                         "-8"
-                    ],
-                    [
-                        "14",
-                        "",
-                        "Osasuna",
-                        "34",
-                        "29",
-                        "7",
-                        "13",
-                        "9",
-                        "33",
-                        "42",
-                        "-9"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Valencia",
-                        "31",
-                        "29",
-                        "7",
-                        "10",
-                        "12",
-                        "32",
-                        "46",
-                        "-14"
                     ]
                 ],
                 "injuries": [
@@ -2261,19 +2105,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "1",
-                        "",
-                        "Barcelona",
-                        "66",
-                        "29",
-                        "21",
-                        "3",
-                        "5",
-                        "82",
-                        "28",
-                        "+54"
-                    ],
-                    [
                         "2",
                         "",
                         "Real Madrid",
@@ -2285,45 +2116,6 @@
                         "62",
                         "29",
                         "+33"
-                    ],
-                    [
-                        "3",
-                        "",
-                        "Atlético",
-                        "57",
-                        "29",
-                        "16",
-                        "9",
-                        "4",
-                        "47",
-                        "23",
-                        "+24"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Athletic",
-                        "53",
-                        "29",
-                        "14",
-                        "11",
-                        "4",
-                        "46",
-                        "24",
-                        "+22"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
                     ]
                 ],
                 "injuries": [
@@ -2378,7 +2170,7 @@
                     [
                         "Champions League",
                         "13",
-                        "17",
+                        "18",
                         "Campeón"
                     ],
                     [
@@ -2408,7 +2200,7 @@
                     [
                         "Champions League",
                         "12",
-                        "13",
+                        "12",
                         "Semifinal"
                     ],
                     [
@@ -2480,7 +2272,7 @@
                     [
                         "Champions League",
                         "12",
-                        "9",
+                        "10",
                         "Semifinal"
                     ],
                     [
@@ -2653,17 +2445,6 @@
                 "cards": "1"
             },
             {
-                "number": "2",
-                "name": "Mateu Morey",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "4",
-                "matches": "8",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "39",
                 "name": "Sebas Wade",
                 "position": "Defensa",
@@ -2673,6 +2454,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "2",
+                "name": "Mateu Morey",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "4",
+                "matches": "8",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "10",
@@ -2708,17 +2500,6 @@
                 "cards": "6"
             },
             {
-                "number": "27",
-                "name": "Robert Navarro",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "15",
-                "matches": "23",
-                "goals": "1",
-                "assists": "0",
-                "cards": "3"
-            },
-            {
                 "number": "5",
                 "name": "Omar Mascarell",
                 "position": "Centrocampista",
@@ -2728,6 +2509,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "5"
+            },
+            {
+                "number": "27",
+                "name": "Robert Navarro",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "23",
+                "goals": "1",
+                "assists": "0",
+                "cards": "3"
             },
             {
                 "number": "8",
@@ -2807,17 +2599,6 @@
                 "cards": "4"
             },
             {
-                "number": "16",
-                "name": "Valery",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "1",
-                "matches": "15",
-                "goals": "2",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "20",
                 "name": "Chiquinho",
                 "position": "Delantero",
@@ -2838,6 +2619,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "16",
+                "name": "Valery",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "1",
+                "matches": "15",
+                "goals": "2",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "N/A",
@@ -2885,32 +2677,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "7",
-                        "",
-                        "Rayo Vallecano",
-                        "40",
-                        "29",
-                        "10",
-                        "10",
-                        "9",
-                        "33",
-                        "31",
-                        "+2"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Celta",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "42",
-                        "42",
-                        "0"
-                    ],
-                    [
                         "9",
                         "",
                         "Mallorca",
@@ -2922,32 +2688,6 @@
                         "28",
                         "35",
                         "-7"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Real Sociedad",
-                        "38",
-                        "29",
-                        "11",
-                        "5",
-                        "13",
-                        "27",
-                        "31",
-                        "-4"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "Sevilla",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "33",
-                        "39",
-                        "-6"
                     ]
                 ],
                 "injuries": [
@@ -3536,58 +3276,6 @@
                         "82",
                         "28",
                         "+54"
-                    ],
-                    [
-                        "2",
-                        "",
-                        "Real Madrid",
-                        "63",
-                        "29",
-                        "19",
-                        "6",
-                        "4",
-                        "62",
-                        "29",
-                        "+33"
-                    ],
-                    [
-                        "3",
-                        "",
-                        "Atlético",
-                        "57",
-                        "29",
-                        "16",
-                        "9",
-                        "4",
-                        "47",
-                        "23",
-                        "+24"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Athletic",
-                        "53",
-                        "29",
-                        "14",
-                        "11",
-                        "4",
-                        "46",
-                        "24",
-                        "+22"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
                     ]
                 ],
                 "injuries": [
@@ -3744,7 +3432,7 @@
                     [
                         "Champions League",
                         "8",
-                        "15",
+                        "14",
                         "Octavos"
                     ],
                     [
@@ -3873,17 +3561,6 @@
                 "cards": "1"
             },
             {
-                "number": "14",
-                "name": "H. Arrillaga",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "15",
-                "matches": "23",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "4",
                 "name": "Álvaro Carrillo",
                 "position": "Defensa",
@@ -3893,6 +3570,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "7"
+            },
+            {
+                "number": "14",
+                "name": "H. Arrillaga",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "23",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "15",
@@ -4182,32 +3870,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "11",
-                        "",
-                        "RC Deportivo",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "44",
-                        "39",
-                        "+5"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Cádiz",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
                         "13",
                         "",
                         "Eibar",
@@ -4219,32 +3881,6 @@
                         "31",
                         "32",
                         "-1"
-                    ],
-                    [
-                        "14",
-                        "",
-                        "Córdoba CF",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "46",
-                        "48",
-                        "-2"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Málaga",
-                        "42",
-                        "33",
-                        "9",
-                        "15",
-                        "9",
-                        "34",
-                        "36",
-                        "-2"
                     ]
                 ],
                 "injuries": [
@@ -4777,58 +4413,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "18",
-                        "",
-                        "Real Zaragoza",
-                        "37",
-                        "33",
-                        "9",
-                        "10",
-                        "14",
-                        "43",
-                        "47",
-                        "-4"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "Eldense",
-                        "36",
-                        "33",
-                        "9",
-                        "9",
-                        "15",
-                        "34",
-                        "47",
-                        "-13"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Tenerife",
-                        "28",
-                        "33",
-                        "7",
-                        "7",
-                        "19",
-                        "30",
-                        "48",
-                        "-18"
-                    ],
-                    [
-                        "21",
-                        "",
-                        "Racing Ferrol",
-                        "23",
-                        "33",
-                        "4",
-                        "11",
-                        "18",
-                        "18",
-                        "52",
-                        "-34"
-                    ],
-                    [
                         "22",
                         "",
                         "FC Cartagena",
@@ -5051,17 +4635,6 @@
                 "cards": "6"
             },
             {
-                "number": "4",
-                "name": "Miguel Rubio",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "23",
-                "matches": "24",
-                "goals": "1",
-                "assists": "1",
-                "cards": "6"
-            },
-            {
                 "number": "15",
                 "name": "Carlos Neva",
                 "position": "Defensa",
@@ -5071,6 +4644,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "3"
+            },
+            {
+                "number": "4",
+                "name": "Miguel Rubio",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "23",
+                "matches": "24",
+                "goals": "1",
+                "assists": "1",
+                "cards": "6"
             },
             {
                 "number": "5",
@@ -5194,17 +4778,6 @@
                 "cards": "8"
             },
             {
-                "number": "8",
-                "name": "Gonzalo Villar",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "19",
-                "matches": "28",
-                "goals": "1",
-                "assists": "0",
-                "cards": "8"
-            },
-            {
                 "number": "19",
                 "name": "Reinier",
                 "position": "Centrocampista",
@@ -5214,6 +4787,17 @@
                 "goals": "1",
                 "assists": "4",
                 "cards": "3"
+            },
+            {
+                "number": "8",
+                "name": "Gonzalo Villar",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "19",
+                "matches": "28",
+                "goals": "1",
+                "assists": "0",
+                "cards": "8"
             },
             {
                 "number": "23",
@@ -5393,32 +4977,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "6",
-                        "",
-                        "Real Oviedo",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "44",
-                        "38",
-                        "+6"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Almería",
-                        "53",
-                        "33",
-                        "14",
-                        "11",
-                        "8",
-                        "56",
-                        "44",
-                        "+12"
-                    ],
-                    [
                         "8",
                         "",
                         "Granada",
@@ -5430,32 +4988,6 @@
                         "50",
                         "42",
                         "+8"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Albacete",
-                        "46",
-                        "33",
-                        "12",
-                        "10",
-                        "11",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Burgos",
-                        "46",
-                        "33",
-                        "13",
-                        "7",
-                        "13",
-                        "29",
-                        "34",
-                        "-5"
                     ]
                 ],
                 "injuries": [
@@ -5490,7 +5022,7 @@
                     "20",
                     "21",
                     "11",
-                    "9",
+                    "19",
                     "7"
                 ],
                 "last_seasons": [
@@ -5968,32 +5500,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "14",
-                        "",
-                        "Córdoba CF",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "46",
-                        "48",
-                        "-2"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Málaga",
-                        "42",
-                        "33",
-                        "9",
-                        "15",
-                        "9",
-                        "34",
-                        "36",
-                        "-2"
-                    ],
-                    [
                         "16",
                         "",
                         "Real Sporting",
@@ -6005,19 +5511,6 @@
                         "40",
                         "39",
                         "+1"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "CD Castellón",
-                        "41",
-                        "33",
-                        "11",
-                        "8",
-                        "14",
-                        "46",
-                        "48",
-                        "-2"
                     ],
                     [
                         "18",
@@ -6576,45 +6069,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "Deportivo Alavés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "32",
-                        "44",
-                        "-12"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Leganés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "28",
-                        "46",
-                        "-18"
-                    ],
-                    [
                         "19",
                         "",
                         "UD Las Palmas",
@@ -6626,19 +6080,6 @@
                         "33",
                         "48",
                         "-15"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Real Valladolid",
-                        "16",
-                        "29",
-                        "4",
-                        "4",
-                        "21",
-                        "19",
-                        "65",
-                        "-46"
                     ]
                 ],
                 "injuries": [
@@ -7207,32 +6648,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "9",
-                        "",
-                        "Mallorca",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "28",
-                        "35",
-                        "-7"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Real Sociedad",
-                        "38",
-                        "29",
-                        "11",
-                        "5",
-                        "13",
-                        "27",
-                        "31",
-                        "-4"
-                    ],
-                    [
                         "11",
                         "",
                         "Sevilla",
@@ -7244,32 +6659,6 @@
                         "33",
                         "39",
                         "-6"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Getafe",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "26",
-                        "25",
-                        "+1"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Girona",
-                        "34",
-                        "29",
-                        "9",
-                        "7",
-                        "13",
-                        "37",
-                        "45",
-                        "-8"
                     ]
                 ],
                 "injuries": [
@@ -7434,7 +6823,7 @@
                     [
                         "Europa League",
                         "12",
-                        "14",
+                        "15",
                         "Campeón"
                     ],
                     [
@@ -7538,6 +6927,17 @@
                 "cards": "0"
             },
             {
+                "number": "16",
+                "name": "Joseph Aidoo",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "3",
+                "matches": "3",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
                 "number": "3",
                 "name": "David Torres",
                 "position": "Defensa",
@@ -7549,12 +6949,12 @@
                 "cards": "5"
             },
             {
-                "number": "16",
-                "name": "Joseph Aidoo",
+                "number": "17",
+                "name": "Henrique",
                 "position": "Defensa",
                 "nationality": "N/A",
-                "total_matches": "3",
-                "matches": "3",
+                "total_matches": "0",
+                "matches": "0",
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
@@ -7569,17 +6969,6 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "2"
-            },
-            {
-                "number": "17",
-                "name": "Henrique",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "0",
-                "matches": "0",
-                "goals": "0",
-                "assists": "0",
-                "cards": "0"
             },
             {
                 "number": "30",
@@ -7725,17 +7114,6 @@
                 "cards": "5"
             },
             {
-                "number": "14",
-                "name": "Latasa",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "7",
-                "matches": "20",
-                "goals": "3",
-                "assists": "0",
-                "cards": "6"
-            },
-            {
                 "number": "9",
                 "name": "Marcos André",
                 "position": "Delantero",
@@ -7745,6 +7123,17 @@
                 "goals": "1",
                 "assists": "2",
                 "cards": "5"
+            },
+            {
+                "number": "14",
+                "name": "Latasa",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "7",
+                "matches": "20",
+                "goals": "3",
+                "assists": "0",
+                "cards": "6"
             },
             {
                 "number": "18",
@@ -7846,58 +7235,6 @@
             ],
             "additional_data": {
                 "league_performance": [
-                    [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "Deportivo Alavés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "32",
-                        "44",
-                        "-12"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Leganés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "28",
-                        "46",
-                        "-18"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "UD Las Palmas",
-                        "26",
-                        "29",
-                        "6",
-                        "8",
-                        "15",
-                        "33",
-                        "48",
-                        "-15"
-                    ],
                     [
                         "20",
                         "",
@@ -8299,17 +7636,6 @@
                 "cards": "0"
             },
             {
-                "number": "21",
-                "name": "Yéremy Pino",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "17",
-                "matches": "25",
-                "goals": "1",
-                "assists": "4",
-                "cards": "8"
-            },
-            {
                 "number": "7",
                 "name": "Gerard Moreno",
                 "position": "Delantero",
@@ -8319,6 +7645,17 @@
                 "goals": "3",
                 "assists": "1",
                 "cards": "0"
+            },
+            {
+                "number": "21",
+                "name": "Yéremy Pino",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "17",
+                "matches": "25",
+                "goals": "1",
+                "assists": "4",
+                "cards": "8"
             },
             {
                 "number": "16",
@@ -8432,32 +7769,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "3",
-                        "",
-                        "Atlético",
-                        "57",
-                        "29",
-                        "16",
-                        "9",
-                        "4",
-                        "47",
-                        "23",
-                        "+24"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Athletic",
-                        "53",
-                        "29",
-                        "14",
-                        "11",
-                        "4",
-                        "46",
-                        "24",
-                        "+22"
-                    ],
-                    [
                         "5",
                         "",
                         "Villarreal",
@@ -8469,32 +7780,6 @@
                         "51",
                         "39",
                         "+12"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Betis",
-                        "47",
-                        "29",
-                        "13",
-                        "8",
-                        "8",
-                        "40",
-                        "36",
-                        "+4"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Rayo Vallecano",
-                        "40",
-                        "29",
-                        "10",
-                        "10",
-                        "9",
-                        "33",
-                        "31",
-                        "+2"
                     ]
                 ],
                 "injuries": [
@@ -8573,7 +7858,7 @@
                     [
                         "Conference League",
                         "8",
-                        "12",
+                        "13",
                         "Octavos"
                     ],
                     [
@@ -8621,7 +7906,7 @@
                     [
                         "Europa League",
                         "14",
-                        "12",
+                        "13",
                         "Campeón"
                     ],
                     [
@@ -8699,17 +7984,6 @@
                 "cards": "0"
             },
             {
-                "number": "19",
-                "name": "Iván Calero",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "25",
-                "matches": "30",
-                "goals": "0",
-                "assists": "2",
-                "cards": "8"
-            },
-            {
                 "number": "4",
                 "name": "Tasende",
                 "position": "Defensa",
@@ -8719,6 +7993,17 @@
                 "goals": "2",
                 "assists": "5",
                 "cards": "7"
+            },
+            {
+                "number": "19",
+                "name": "Iván Calero",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "25",
+                "matches": "30",
+                "goals": "0",
+                "assists": "2",
+                "cards": "8"
             },
             {
                 "number": "24",
@@ -8853,17 +8138,6 @@
                 "cards": "4"
             },
             {
-                "number": "14",
-                "name": "Francho Serrano",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "20",
-                "matches": "29",
-                "goals": "4",
-                "assists": "0",
-                "cards": "3"
-            },
-            {
                 "number": "6",
                 "name": "Keidi Bare",
                 "position": "Centrocampista",
@@ -8873,6 +8147,17 @@
                 "goals": "0",
                 "assists": "2",
                 "cards": "6"
+            },
+            {
+                "number": "14",
+                "name": "Francho Serrano",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "20",
+                "matches": "29",
+                "goals": "4",
+                "assists": "0",
+                "cards": "3"
             },
             {
                 "number": "21",
@@ -9087,19 +8372,6 @@
                         "+1"
                     ],
                     [
-                        "17",
-                        "",
-                        "CD Castellón",
-                        "41",
-                        "33",
-                        "11",
-                        "8",
-                        "14",
-                        "46",
-                        "48",
-                        "-2"
-                    ],
-                    [
                         "18",
                         "",
                         "Real Zaragoza",
@@ -9111,32 +8383,6 @@
                         "43",
                         "47",
                         "-4"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "Eldense",
-                        "36",
-                        "33",
-                        "9",
-                        "9",
-                        "15",
-                        "34",
-                        "47",
-                        "-13"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Tenerife",
-                        "28",
-                        "33",
-                        "7",
-                        "7",
-                        "19",
-                        "30",
-                        "48",
-                        "-18"
                     ]
                 ],
                 "injuries": [
@@ -9149,7 +8395,7 @@
                         "right_content": ""
                     },
                     {
-                        "left_content": "Keidi Bare\nLesión en el gemelo\nA mediados de Abril de 2025",
+                        "left_content": "Keidi Bare\nLesión en el gemelo\nDuda",
                         "right_content": ""
                     }
                 ],
@@ -9613,19 +8859,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "1",
-                        "",
-                        "Elche",
-                        "60",
-                        "33",
-                        "17",
-                        "9",
-                        "7",
-                        "45",
-                        "26",
-                        "+19"
-                    ],
-                    [
                         "2",
                         "",
                         "Levante",
@@ -9637,45 +8870,6 @@
                         "50",
                         "32",
                         "+18"
-                    ],
-                    [
-                        "3",
-                        "",
-                        "Racing",
-                        "59",
-                        "33",
-                        "17",
-                        "8",
-                        "8",
-                        "52",
-                        "37",
-                        "+15"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Mirandés",
-                        "58",
-                        "33",
-                        "17",
-                        "7",
-                        "9",
-                        "45",
-                        "29",
-                        "+16"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
-                        "+15"
                     ]
                 ],
                 "injuries": [
@@ -9693,7 +8887,7 @@
                     "20",
                     "6",
                     "23",
-                    "7",
+                    "11",
                     "24",
                     "9"
                 ],
@@ -10022,23 +9216,23 @@
                 "cards": "4"
             },
             {
-                "number": "15",
-                "name": "Gabriel Barès",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "2",
-                "matches": "3",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "28",
                 "name": "Mario Cantero",
                 "position": "Centrocampista",
                 "nationality": "N/A",
                 "total_matches": "3",
                 "matches": "12",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
+            },
+            {
+                "number": "15",
+                "name": "Gabriel Barès",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "2",
+                "matches": "3",
                 "goals": "0",
                 "assists": "0",
                 "cards": "1"
@@ -10243,32 +9437,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "8",
-                        "",
-                        "Granada",
-                        "49",
-                        "33",
-                        "13",
-                        "10",
-                        "10",
-                        "50",
-                        "42",
-                        "+8"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Albacete",
-                        "46",
-                        "33",
-                        "12",
-                        "10",
-                        "11",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
                         "10",
                         "",
                         "Burgos",
@@ -10280,32 +9448,6 @@
                         "29",
                         "34",
                         "-5"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "RC Deportivo",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "44",
-                        "39",
-                        "+5"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Cádiz",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "43",
-                        "41",
-                        "+2"
                     ]
                 ],
                 "injuries": [
@@ -10611,17 +9753,6 @@
                 "cards": "1"
             },
             {
-                "number": "29",
-                "name": "Izan Merino",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "7",
-                "matches": "18",
-                "goals": "0",
-                "assists": "1",
-                "cards": "2"
-            },
-            {
                 "number": "35",
                 "name": "Aarón Ochoa",
                 "position": "Centrocampista",
@@ -10630,6 +9761,17 @@
                 "matches": "25",
                 "goals": "0",
                 "assists": "0",
+                "cards": "2"
+            },
+            {
+                "number": "29",
+                "name": "Izan Merino",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "7",
+                "matches": "18",
+                "goals": "0",
+                "assists": "1",
                 "cards": "2"
             },
             {
@@ -10754,17 +9896,6 @@
                 "cards": "1"
             },
             {
-                "number": "27",
-                "name": "Chupete",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "3",
-                "matches": "10",
-                "goals": "1",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "21",
                 "name": "Yanis Rahmani",
                 "position": "Delantero",
@@ -10774,6 +9905,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "27",
+                "name": "Chupete",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "3",
+                "matches": "10",
+                "goals": "1",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "33",
@@ -10843,32 +9985,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "13",
-                        "",
-                        "Eibar",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "31",
-                        "32",
-                        "-1"
-                    ],
-                    [
-                        "14",
-                        "",
-                        "Córdoba CF",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "46",
-                        "48",
-                        "-2"
-                    ],
-                    [
                         "15",
                         "",
                         "Málaga",
@@ -10879,32 +9995,6 @@
                         "9",
                         "34",
                         "36",
-                        "-2"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Real Sporting",
-                        "41",
-                        "33",
-                        "9",
-                        "14",
-                        "10",
-                        "40",
-                        "39",
-                        "+1"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "CD Castellón",
-                        "41",
-                        "33",
-                        "11",
-                        "8",
-                        "14",
-                        "46",
-                        "48",
                         "-2"
                     ]
                 ],
@@ -11459,32 +10549,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "9",
-                        "",
-                        "Albacete",
-                        "46",
-                        "33",
-                        "12",
-                        "10",
-                        "11",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Burgos",
-                        "46",
-                        "33",
-                        "13",
-                        "7",
-                        "13",
-                        "29",
-                        "34",
-                        "-5"
-                    ],
-                    [
                         "11",
                         "",
                         "RC Deportivo",
@@ -11496,32 +10560,6 @@
                         "44",
                         "39",
                         "+5"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Cádiz",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Eibar",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "31",
-                        "32",
-                        "-1"
                     ]
                 ],
                 "injuries": [
@@ -12019,32 +11057,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "Deportivo Alavés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "32",
-                        "44",
-                        "-12"
-                    ],
-                    [
                         "18",
                         "",
                         "Leganés",
@@ -12056,32 +11068,6 @@
                         "28",
                         "46",
                         "-18"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "UD Las Palmas",
-                        "26",
-                        "29",
-                        "6",
-                        "8",
-                        "15",
-                        "33",
-                        "48",
-                        "-15"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Real Valladolid",
-                        "16",
-                        "29",
-                        "4",
-                        "4",
-                        "21",
-                        "19",
-                        "65",
-                        "-46"
                     ]
                 ],
                 "injuries": [
@@ -12260,17 +11246,6 @@
                 "cards": "3"
             },
             {
-                "number": "15",
-                "name": "Álvaro Núñez",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "26",
-                "matches": "29",
-                "goals": "0",
-                "assists": "4",
-                "cards": "4"
-            },
-            {
                 "number": "12",
                 "name": "J. Salinas",
                 "position": "Defensa",
@@ -12280,6 +11255,17 @@
                 "goals": "2",
                 "assists": "3",
                 "cards": "6"
+            },
+            {
+                "number": "15",
+                "name": "Álvaro Núñez",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "26",
+                "matches": "29",
+                "goals": "0",
+                "assists": "4",
+                "cards": "4"
             },
             {
                 "number": "6",
@@ -12657,58 +11643,6 @@
                         "45",
                         "26",
                         "+19"
-                    ],
-                    [
-                        "2",
-                        "",
-                        "Levante",
-                        "59",
-                        "33",
-                        "16",
-                        "11",
-                        "6",
-                        "50",
-                        "32",
-                        "+18"
-                    ],
-                    [
-                        "3",
-                        "",
-                        "Racing",
-                        "59",
-                        "33",
-                        "17",
-                        "8",
-                        "8",
-                        "52",
-                        "37",
-                        "+15"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Mirandés",
-                        "58",
-                        "33",
-                        "17",
-                        "7",
-                        "9",
-                        "45",
-                        "29",
-                        "+16"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
-                        "+15"
                     ]
                 ],
                 "injuries": [
@@ -12723,7 +11657,7 @@
                     "22",
                     "12",
                     "15",
-                    "8",
+                    "30",
                     "14",
                     "10",
                     "24",
@@ -13033,17 +11967,6 @@
                 "cards": "1"
             },
             {
-                "number": "10",
-                "name": "Pol Lozano",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "19",
-                "matches": "21",
-                "goals": "0",
-                "assists": "0",
-                "cards": "10"
-            },
-            {
                 "number": "15",
                 "name": "José Gragera",
                 "position": "Centrocampista",
@@ -13053,6 +11976,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "10",
+                "name": "Pol Lozano",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "19",
+                "matches": "21",
+                "goals": "0",
+                "assists": "0",
+                "cards": "10"
             },
             {
                 "number": "19",
@@ -13254,32 +12188,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "14",
-                        "",
-                        "Osasuna",
-                        "34",
-                        "29",
-                        "7",
-                        "13",
-                        "9",
-                        "33",
-                        "42",
-                        "-9"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Valencia",
-                        "31",
-                        "29",
-                        "7",
-                        "10",
-                        "12",
-                        "32",
-                        "46",
-                        "-14"
-                    ],
-                    [
                         "16",
                         "",
                         "Espanyol",
@@ -13291,32 +12199,6 @@
                         "27",
                         "40",
                         "-13"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "Deportivo Alavés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "32",
-                        "44",
-                        "-12"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Leganés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "28",
-                        "46",
-                        "-18"
                     ]
                 ],
                 "injuries": [
@@ -13437,7 +12319,7 @@
                     [
                         "Europa League",
                         "8",
-                        "11",
+                        "10",
                         "Dieciseisavos"
                     ],
                     [
@@ -13756,17 +12638,6 @@
                 "cards": "1"
             },
             {
-                "number": "11",
-                "name": "J. Lazo",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "10",
-                "matches": "16",
-                "goals": "1",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "34",
                 "name": "Marcos Moreno",
                 "position": "Delantero",
@@ -13776,6 +12647,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "11",
+                "name": "J. Lazo",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "10",
+                "matches": "16",
+                "goals": "1",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "35",
@@ -13878,32 +12760,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "7",
-                        "",
-                        "Almería",
-                        "53",
-                        "33",
-                        "14",
-                        "11",
-                        "8",
-                        "56",
-                        "44",
-                        "+12"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Granada",
-                        "49",
-                        "33",
-                        "13",
-                        "10",
-                        "10",
-                        "50",
-                        "42",
-                        "+8"
-                    ],
-                    [
                         "9",
                         "",
                         "Albacete",
@@ -13915,32 +12771,6 @@
                         "43",
                         "41",
                         "+2"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Burgos",
-                        "46",
-                        "33",
-                        "13",
-                        "7",
-                        "13",
-                        "29",
-                        "34",
-                        "-5"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "RC Deportivo",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "44",
-                        "39",
-                        "+5"
                     ]
                 ],
                 "injuries": [
@@ -14459,32 +13289,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "15",
-                        "",
-                        "Valencia",
-                        "31",
-                        "29",
-                        "7",
-                        "10",
-                        "12",
-                        "32",
-                        "46",
-                        "-14"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
-                    ],
-                    [
                         "17",
                         "",
                         "Deportivo Alavés",
@@ -14496,32 +13300,6 @@
                         "32",
                         "44",
                         "-12"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Leganés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "28",
-                        "46",
-                        "-18"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "UD Las Palmas",
-                        "26",
-                        "29",
-                        "6",
-                        "8",
-                        "15",
-                        "33",
-                        "48",
-                        "-15"
                     ]
                 ],
                 "injuries": [
@@ -14725,17 +13503,6 @@
                 "cards": "5"
             },
             {
-                "number": "15",
-                "name": "César Tárrega",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "26",
-                "matches": "26",
-                "goals": "2",
-                "assists": "0",
-                "cards": "3"
-            },
-            {
                 "number": "20",
                 "name": "D. Foulquier",
                 "position": "Defensa",
@@ -14745,6 +13512,17 @@
                 "goals": "0",
                 "assists": "1",
                 "cards": "5"
+            },
+            {
+                "number": "15",
+                "name": "César Tárrega",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "26",
+                "matches": "26",
+                "goals": "2",
+                "assists": "0",
+                "cards": "3"
             },
             {
                 "number": "12",
@@ -14846,17 +13624,6 @@
                 "cards": "2"
             },
             {
-                "number": "5",
-                "name": "E. Barrenechea",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "19",
-                "matches": "22",
-                "goals": "1",
-                "assists": "2",
-                "cards": "6"
-            },
-            {
                 "number": "18",
                 "name": "Pepelu",
                 "position": "Centrocampista",
@@ -14866,6 +13633,17 @@
                 "goals": "1",
                 "assists": "2",
                 "cards": "8"
+            },
+            {
+                "number": "5",
+                "name": "E. Barrenechea",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "19",
+                "matches": "22",
+                "goals": "1",
+                "assists": "2",
+                "cards": "6"
             },
             {
                 "number": "10",
@@ -15078,32 +13856,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "13",
-                        "",
-                        "Girona",
-                        "34",
-                        "29",
-                        "9",
-                        "7",
-                        "13",
-                        "37",
-                        "45",
-                        "-8"
-                    ],
-                    [
-                        "14",
-                        "",
-                        "Osasuna",
-                        "34",
-                        "29",
-                        "7",
-                        "13",
-                        "9",
-                        "33",
-                        "42",
-                        "-9"
-                    ],
-                    [
                         "15",
                         "",
                         "Valencia",
@@ -15115,32 +13867,6 @@
                         "32",
                         "46",
                         "-14"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
-                    ],
-                    [
-                        "17",
-                        "",
-                        "Deportivo Alavés",
-                        "27",
-                        "29",
-                        "6",
-                        "9",
-                        "14",
-                        "32",
-                        "44",
-                        "-12"
                     ]
                 ],
                 "injuries": [
@@ -15655,32 +14381,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "6",
-                        "",
-                        "Real Betis",
-                        "47",
-                        "29",
-                        "13",
-                        "8",
-                        "8",
-                        "40",
-                        "36",
-                        "+4"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Rayo Vallecano",
-                        "40",
-                        "29",
-                        "10",
-                        "10",
-                        "9",
-                        "33",
-                        "31",
-                        "+2"
-                    ],
-                    [
                         "8",
                         "",
                         "Celta",
@@ -15692,32 +14392,6 @@
                         "42",
                         "42",
                         "0"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Mallorca",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "28",
-                        "35",
-                        "-7"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Real Sociedad",
-                        "38",
-                        "29",
-                        "11",
-                        "5",
-                        "13",
-                        "27",
-                        "31",
-                        "-4"
                     ]
                 ],
                 "injuries": [
@@ -16281,19 +14955,6 @@
                         "+22"
                     ],
                     [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
-                    ],
-                    [
                         "6",
                         "",
                         "Real Betis",
@@ -16305,32 +14966,6 @@
                         "40",
                         "36",
                         "+4"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Rayo Vallecano",
-                        "40",
-                        "29",
-                        "10",
-                        "10",
-                        "9",
-                        "33",
-                        "31",
-                        "+2"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Celta",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "42",
-                        "42",
-                        "0"
                     ]
                 ],
                 "injuries": [
@@ -16445,7 +15080,7 @@
                     [
                         "Europa League",
                         "10",
-                        "10",
+                        "9",
                         "Octavos"
                     ],
                     [
@@ -16495,7 +15130,349 @@
         }
     },
     "Plantilla del Real Oviedo | Listado de Jugadores | BeSoccer": {
-        "players_data": [],
+        "players_data": [
+            {
+                "number": "13",
+                "name": "Aarón Escandell",
+                "position": "Portero",
+                "nationality": "N/A",
+                "total_matches": "32",
+                "matches": "32",
+                "goals": "36",
+                "assists": "0",
+                "cards": "3"
+            },
+            {
+                "number": "26",
+                "name": "M. Narvaez",
+                "position": "Portero",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "1",
+                "name": "Quentin Braat",
+                "position": "Portero",
+                "nationality": "N/A",
+                "total_matches": "1",
+                "matches": "1",
+                "goals": "2",
+                "assists": "0",
+                "cards": "1"
+            },
+            {
+                "number": "12",
+                "name": "Dani Calvo",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "32",
+                "matches": "32",
+                "goals": "1",
+                "assists": "2",
+                "cards": "8"
+            },
+            {
+                "number": "4",
+                "name": "David Costas",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "23",
+                "matches": "25",
+                "goals": "1",
+                "assists": "1",
+                "cards": "5"
+            },
+            {
+                "number": "15",
+                "name": "Oier Luengo",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "20",
+                "matches": "22",
+                "goals": "2",
+                "assists": "1",
+                "cards": "8"
+            },
+            {
+                "number": "3",
+                "name": "R. Alhassane",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "18",
+                "goals": "0",
+                "assists": "1",
+                "cards": "2"
+            },
+            {
+                "number": "21",
+                "name": "Carlos Pomares",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "17",
+                "matches": "20",
+                "goals": "0",
+                "assists": "1",
+                "cards": "3"
+            },
+            {
+                "number": "5",
+                "name": "Nacho Vidal",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "10",
+                "matches": "10",
+                "goals": "1",
+                "assists": "0",
+                "cards": "2"
+            },
+            {
+                "number": "24",
+                "name": "Lucas Ahijado",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "14",
+                "goals": "1",
+                "assists": "1",
+                "cards": "3"
+            },
+            {
+                "number": "2",
+                "name": "Álvaro Lemos",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "9",
+                "goals": "0",
+                "assists": "0",
+                "cards": "2"
+            },
+            {
+                "number": "30",
+                "name": "Marco Esteban",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "31",
+                "name": "Chukwuma",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "32",
+                "name": "Adri Lopes",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "11",
+                "name": "S. Colombatto",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "28",
+                "matches": "30",
+                "goals": "3",
+                "assists": "3",
+                "cards": "8"
+            },
+            {
+                "number": "6",
+                "name": "Kwasi Sibo",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "16",
+                "matches": "26",
+                "goals": "1",
+                "assists": "1",
+                "cards": "6"
+            },
+            {
+                "number": "8",
+                "name": "Santi Cazorla",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "18",
+                "matches": "23",
+                "goals": "2",
+                "assists": "4",
+                "cards": "1"
+            },
+            {
+                "number": "20",
+                "name": "Jaime Seoane",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "13",
+                "matches": "20",
+                "goals": "2",
+                "assists": "1",
+                "cards": "3"
+            },
+            {
+                "number": "17",
+                "name": "César De La Hoz",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "7",
+                "matches": "9",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
+            },
+            {
+                "number": "27",
+                "name": "Álex Cardero",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "2",
+                "matches": "13",
+                "goals": "1",
+                "assists": "1",
+                "cards": "4"
+            },
+            {
+                "number": "34",
+                "name": "Diego Tejón",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "9",
+                "name": "Alemão",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "31",
+                "matches": "32",
+                "goals": "13",
+                "assists": "3",
+                "cards": "2"
+            },
+            {
+                "number": "16",
+                "name": "Ilyas Chaira",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "28",
+                "matches": "30",
+                "goals": "7",
+                "assists": "3",
+                "cards": "8"
+            },
+            {
+                "number": "7",
+                "name": "Sebas Moyano",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "11",
+                "matches": "30",
+                "goals": "0",
+                "assists": "4",
+                "cards": "2"
+            },
+            {
+                "number": "19",
+                "name": "Federico Viñas",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "9",
+                "goals": "0",
+                "assists": "0",
+                "cards": "2"
+            },
+            {
+                "number": "23",
+                "name": "H. Hassan",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "18",
+                "matches": "30",
+                "goals": "3",
+                "assists": "2",
+                "cards": "4"
+            },
+            {
+                "number": "10",
+                "name": "F. Portillo",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "7",
+                "matches": "16",
+                "goals": "1",
+                "assists": "1",
+                "cards": "2"
+            },
+            {
+                "number": "14",
+                "name": "D. Paraschiv",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "1",
+                "matches": "24",
+                "goals": "3",
+                "assists": "0",
+                "cards": "1"
+            },
+            {
+                "number": "18",
+                "name": "Paulino",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "3",
+                "matches": "20",
+                "goals": "0",
+                "assists": "1",
+                "cards": "3"
+            },
+            {
+                "number": "28",
+                "name": "Santi Miguelez",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            },
+            {
+                "number": "N/A",
+                "name": "N/A",
+                "position": "N/A",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
+            }
+        ],
         "top_players": {
             "players": [
                 {
@@ -16530,32 +15507,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "4",
-                        "",
-                        "Mirandés",
-                        "58",
-                        "33",
-                        "17",
-                        "7",
-                        "9",
-                        "45",
-                        "29",
-                        "+16"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
-                        "+15"
-                    ],
-                    [
                         "6",
                         "",
                         "Real Oviedo",
@@ -16567,32 +15518,6 @@
                         "44",
                         "38",
                         "+6"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Almería",
-                        "53",
-                        "33",
-                        "14",
-                        "11",
-                        "8",
-                        "56",
-                        "44",
-                        "+12"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Granada",
-                        "49",
-                        "33",
-                        "13",
-                        "10",
-                        "10",
-                        "50",
-                        "42",
-                        "+8"
                     ]
                 ],
                 "injuries": [
@@ -16719,17 +15644,6 @@
     "Plantilla del Eldense | Listado de Jugadores | BeSoccer": {
         "players_data": [
             {
-                "number": "13",
-                "name": "Ian Mackay",
-                "position": "Portero",
-                "nationality": "N/A",
-                "total_matches": "19",
-                "matches": "19",
-                "goals": "30",
-                "assists": "0",
-                "cards": "4"
-            },
-            {
                 "number": "1",
                 "name": "Dani Martín",
                 "position": "Portero",
@@ -16739,6 +15653,17 @@
                 "goals": "17",
                 "assists": "0",
                 "cards": "2"
+            },
+            {
+                "number": "13",
+                "name": "Ian Mackay",
+                "position": "Portero",
+                "nationality": "N/A",
+                "total_matches": "19",
+                "matches": "19",
+                "goals": "30",
+                "assists": "0",
+                "cards": "4"
             },
             {
                 "number": "36",
@@ -17105,32 +16030,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "17",
-                        "",
-                        "CD Castellón",
-                        "41",
-                        "33",
-                        "11",
-                        "8",
-                        "14",
-                        "46",
-                        "48",
-                        "-2"
-                    ],
-                    [
-                        "18",
-                        "",
-                        "Real Zaragoza",
-                        "37",
-                        "33",
-                        "9",
-                        "10",
-                        "14",
-                        "43",
-                        "47",
-                        "-4"
-                    ],
-                    [
                         "19",
                         "",
                         "Eldense",
@@ -17142,32 +16041,6 @@
                         "34",
                         "47",
                         "-13"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Tenerife",
-                        "28",
-                        "33",
-                        "7",
-                        "7",
-                        "19",
-                        "30",
-                        "48",
-                        "-18"
-                    ],
-                    [
-                        "21",
-                        "",
-                        "Racing Ferrol",
-                        "23",
-                        "33",
-                        "4",
-                        "11",
-                        "18",
-                        "18",
-                        "52",
-                        "-34"
                     ]
                 ],
                 "injuries": [
@@ -17353,17 +16226,6 @@
                 "cards": "5"
             },
             {
-                "number": "21",
-                "name": "Chumi",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "24",
-                "matches": "24",
-                "goals": "0",
-                "assists": "0",
-                "cards": "7"
-            },
-            {
                 "number": "24",
                 "name": "Bruno Langa",
                 "position": "Defensa",
@@ -17373,6 +16235,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "3"
+            },
+            {
+                "number": "21",
+                "name": "Chumi",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "24",
+                "matches": "24",
+                "goals": "0",
+                "assists": "0",
+                "cards": "7"
             },
             {
                 "number": "20",
@@ -17397,17 +16270,6 @@
                 "cards": "2"
             },
             {
-                "number": "16",
-                "name": "A. Radovanović",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "11",
-                "matches": "13",
-                "goals": "0",
-                "assists": "0",
-                "cards": "2"
-            },
-            {
                 "number": "4",
                 "name": "Kaiky",
                 "position": "Defensa",
@@ -17417,6 +16279,17 @@
                 "goals": "0",
                 "assists": "1",
                 "cards": "3"
+            },
+            {
+                "number": "16",
+                "name": "A. Radovanović",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "11",
+                "matches": "13",
+                "goals": "0",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "26",
@@ -17606,17 +16479,6 @@
                 "cards": "2"
             },
             {
-                "number": "19",
-                "name": "Marezi",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "0",
-                "matches": "13",
-                "goals": "0",
-                "assists": "0",
-                "cards": "2"
-            },
-            {
                 "number": "28",
                 "name": "Rachad Fettal",
                 "position": "Delantero",
@@ -17628,15 +16490,15 @@
                 "cards": "2"
             },
             {
-                "number": "36",
-                "name": "Marko Perović",
+                "number": "19",
+                "name": "Marezi",
                 "position": "Delantero",
                 "nationality": "N/A",
                 "total_matches": "0",
-                "matches": "5",
+                "matches": "13",
                 "goals": "0",
                 "assists": "0",
-                "cards": "1"
+                "cards": "2"
             },
             {
                 "number": "35",
@@ -17648,6 +16510,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "36",
+                "name": "Marko Perović",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "5",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "30",
@@ -17706,32 +16579,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
-                        "+15"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Oviedo",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "44",
-                        "38",
-                        "+6"
-                    ],
-                    [
                         "7",
                         "",
                         "Almería",
@@ -17743,32 +16590,6 @@
                         "56",
                         "44",
                         "+12"
-                    ],
-                    [
-                        "8",
-                        "",
-                        "Granada",
-                        "49",
-                        "33",
-                        "13",
-                        "10",
-                        "10",
-                        "50",
-                        "42",
-                        "+8"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Albacete",
-                        "46",
-                        "33",
-                        "12",
-                        "10",
-                        "11",
-                        "43",
-                        "41",
-                        "+2"
                     ]
                 ],
                 "injuries": [
@@ -18357,32 +17178,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "18",
-                        "",
-                        "Real Zaragoza",
-                        "37",
-                        "33",
-                        "9",
-                        "10",
-                        "14",
-                        "43",
-                        "47",
-                        "-4"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "Eldense",
-                        "36",
-                        "33",
-                        "9",
-                        "9",
-                        "15",
-                        "34",
-                        "47",
-                        "-13"
-                    ],
-                    [
                         "20",
                         "",
                         "Tenerife",
@@ -18394,32 +17189,6 @@
                         "30",
                         "48",
                         "-18"
-                    ],
-                    [
-                        "21",
-                        "",
-                        "Racing Ferrol",
-                        "23",
-                        "33",
-                        "4",
-                        "11",
-                        "18",
-                        "18",
-                        "52",
-                        "-34"
-                    ],
-                    [
-                        "22",
-                        "",
-                        "FC Cartagena",
-                        "17",
-                        "33",
-                        "4",
-                        "5",
-                        "24",
-                        "22",
-                        "60",
-                        "-38"
                     ]
                 ],
                 "injuries": [
@@ -18612,17 +17381,6 @@
                 "cards": "5"
             },
             {
-                "number": "19",
-                "name": "Jon Aramburu",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "23",
-                "matches": "26",
-                "goals": "0",
-                "assists": "1",
-                "cards": "7"
-            },
-            {
                 "number": "18",
                 "name": "Hamari Traoré",
                 "position": "Defensa",
@@ -18632,6 +17390,17 @@
                 "goals": "0",
                 "assists": "1",
                 "cards": "1"
+            },
+            {
+                "number": "19",
+                "name": "Jon Aramburu",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "23",
+                "matches": "26",
+                "goals": "0",
+                "assists": "1",
+                "cards": "7"
             },
             {
                 "number": "3",
@@ -18843,17 +17612,6 @@
                 "cards": "5"
             },
             {
-                "number": "9",
-                "name": "O. Óskarsson",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "9",
-                "matches": "20",
-                "goals": "3",
-                "assists": "0",
-                "cards": "0"
-            },
-            {
                 "number": "11",
                 "name": "S. Becker",
                 "position": "Delantero",
@@ -18863,6 +17621,17 @@
                 "goals": "2",
                 "assists": "1",
                 "cards": "2"
+            },
+            {
+                "number": "9",
+                "name": "O. Óskarsson",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "9",
+                "matches": "20",
+                "goals": "3",
+                "assists": "0",
+                "cards": "0"
             },
             {
                 "number": "17",
@@ -18952,73 +17721,7 @@
                 }
             ],
             "additional_data": {
-                "league_performance": [
-                    [
-                        "8",
-                        "",
-                        "Celta",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "42",
-                        "42",
-                        "0"
-                    ],
-                    [
-                        "9",
-                        "",
-                        "Mallorca",
-                        "40",
-                        "29",
-                        "11",
-                        "7",
-                        "11",
-                        "28",
-                        "35",
-                        "-7"
-                    ],
-                    [
-                        "10",
-                        "",
-                        "Real Sociedad",
-                        "38",
-                        "29",
-                        "11",
-                        "5",
-                        "13",
-                        "27",
-                        "31",
-                        "-4"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "Sevilla",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "33",
-                        "39",
-                        "-6"
-                    ],
-                    [
-                        "12",
-                        "",
-                        "Getafe",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "26",
-                        "25",
-                        "+1"
-                    ]
-                ],
+                "league_performance": [],
                 "injuries": [
                     {
                         "left_content": "Á. Odriozola\nProblemas físicos\nDuda",
@@ -19293,17 +17996,6 @@
                 "cards": "1"
             },
             {
-                "number": "23",
-                "name": "Reinildo",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "10",
-                "matches": "19",
-                "goals": "0",
-                "assists": "0",
-                "cards": "4"
-            },
-            {
                 "number": "3",
                 "name": "C. Azpilicueta",
                 "position": "Defensa",
@@ -19313,6 +18005,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "23",
+                "name": "Reinildo",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "10",
+                "matches": "19",
+                "goals": "0",
+                "assists": "0",
+                "cards": "4"
             },
             {
                 "number": "27",
@@ -19569,19 +18272,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "1",
-                        "",
-                        "Barcelona",
-                        "66",
-                        "29",
-                        "21",
-                        "3",
-                        "5",
-                        "82",
-                        "28",
-                        "+54"
-                    ],
-                    [
                         "2",
                         "",
                         "Real Madrid",
@@ -19606,32 +18296,6 @@
                         "47",
                         "23",
                         "+24"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Athletic",
-                        "53",
-                        "29",
-                        "14",
-                        "11",
-                        "4",
-                        "46",
-                        "24",
-                        "+22"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
                     ]
                 ],
                 "injuries": [
@@ -19674,7 +18338,7 @@
                     [
                         "Champions League",
                         "10",
-                        "14",
+                        "13",
                         "Cuartos"
                     ],
                     [
@@ -19782,7 +18446,7 @@
                     [
                         "Champions League",
                         "9",
-                        "9",
+                        "10",
                         "Cuartos"
                     ],
                     [
@@ -20212,32 +18876,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "10",
-                        "",
-                        "Real Sociedad",
-                        "38",
-                        "29",
-                        "11",
-                        "5",
-                        "13",
-                        "27",
-                        "31",
-                        "-4"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "Sevilla",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "33",
-                        "39",
-                        "-6"
-                    ],
-                    [
                         "12",
                         "",
                         "Getafe",
@@ -20249,32 +18887,6 @@
                         "26",
                         "25",
                         "+1"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Girona",
-                        "34",
-                        "29",
-                        "9",
-                        "7",
-                        "13",
-                        "37",
-                        "45",
-                        "-8"
-                    ],
-                    [
-                        "14",
-                        "",
-                        "Osasuna",
-                        "34",
-                        "29",
-                        "7",
-                        "13",
-                        "9",
-                        "33",
-                        "42",
-                        "-9"
                     ]
                 ],
                 "common_eleven": [
@@ -20379,7 +18991,7 @@
                     [
                         "Europa League",
                         "9",
-                        "11",
+                        "12",
                         "Octavos"
                     ],
                     [
@@ -20748,19 +19360,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "2",
-                        "",
-                        "Real Madrid",
-                        "63",
-                        "29",
-                        "19",
-                        "6",
-                        "4",
-                        "62",
-                        "29",
-                        "+33"
-                    ],
-                    [
                         "3",
                         "",
                         "Atlético",
@@ -20785,32 +19384,6 @@
                         "46",
                         "24",
                         "+22"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Villarreal",
-                        "47",
-                        "28",
-                        "13",
-                        "8",
-                        "7",
-                        "51",
-                        "39",
-                        "+12"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Betis",
-                        "47",
-                        "29",
-                        "13",
-                        "8",
-                        "8",
-                        "40",
-                        "36",
-                        "+4"
                     ]
                 ],
                 "injuries": [
@@ -21333,32 +19906,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "2",
-                        "",
-                        "Levante",
-                        "59",
-                        "33",
-                        "16",
-                        "11",
-                        "6",
-                        "50",
-                        "32",
-                        "+18"
-                    ],
-                    [
-                        "3",
-                        "",
-                        "Racing",
-                        "59",
-                        "33",
-                        "17",
-                        "8",
-                        "8",
-                        "52",
-                        "37",
-                        "+15"
-                    ],
-                    [
                         "4",
                         "",
                         "Mirandés",
@@ -21370,32 +19917,6 @@
                         "45",
                         "29",
                         "+16"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
-                        "+15"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Oviedo",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "44",
-                        "38",
-                        "+6"
                     ]
                 ],
                 "common_eleven": [
@@ -21587,17 +20108,6 @@
                 "cards": "4"
             },
             {
-                "number": "15",
-                "name": "Marco Sangalli",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "13",
-                "matches": "25",
-                "goals": "3",
-                "assists": "2",
-                "cards": "6"
-            },
-            {
                 "number": "40",
                 "name": "Mario García",
                 "position": "Defensa",
@@ -21607,6 +20117,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "7"
+            },
+            {
+                "number": "15",
+                "name": "Marco Sangalli",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "13",
+                "matches": "25",
+                "goals": "3",
+                "assists": "2",
+                "cards": "6"
             },
             {
                 "number": "2",
@@ -21918,32 +20439,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "1",
-                        "",
-                        "Elche",
-                        "60",
-                        "33",
-                        "17",
-                        "9",
-                        "7",
-                        "45",
-                        "26",
-                        "+19"
-                    ],
-                    [
-                        "2",
-                        "",
-                        "Levante",
-                        "59",
-                        "33",
-                        "16",
-                        "11",
-                        "6",
-                        "50",
-                        "32",
-                        "+18"
-                    ],
-                    [
                         "3",
                         "",
                         "Racing",
@@ -21954,32 +20449,6 @@
                         "8",
                         "52",
                         "37",
-                        "+15"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Mirandés",
-                        "58",
-                        "33",
-                        "17",
-                        "7",
-                        "9",
-                        "45",
-                        "29",
-                        "+16"
-                    ],
-                    [
-                        "5",
-                        "",
-                        "Huesca",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "46",
-                        "31",
                         "+15"
                     ]
                 ],
@@ -22521,32 +20990,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "3",
-                        "",
-                        "Racing",
-                        "59",
-                        "33",
-                        "17",
-                        "8",
-                        "8",
-                        "52",
-                        "37",
-                        "+15"
-                    ],
-                    [
-                        "4",
-                        "",
-                        "Mirandés",
-                        "58",
-                        "33",
-                        "17",
-                        "7",
-                        "9",
-                        "45",
-                        "29",
-                        "+16"
-                    ],
-                    [
                         "5",
                         "",
                         "Huesca",
@@ -22558,32 +21001,6 @@
                         "46",
                         "31",
                         "+15"
-                    ],
-                    [
-                        "6",
-                        "",
-                        "Real Oviedo",
-                        "54",
-                        "33",
-                        "15",
-                        "9",
-                        "9",
-                        "44",
-                        "38",
-                        "+6"
-                    ],
-                    [
-                        "7",
-                        "",
-                        "Almería",
-                        "53",
-                        "33",
-                        "14",
-                        "11",
-                        "8",
-                        "56",
-                        "44",
-                        "+12"
                     ]
                 ],
                 "injuries": [
@@ -22602,8 +21019,8 @@
                     "14",
                     "5",
                     "23",
-                    "27",
                     "22",
+                    "27",
                     "20",
                     "7",
                     "19",
@@ -23083,32 +21500,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "12",
-                        "",
-                        "Cádiz",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "43",
-                        "41",
-                        "+2"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Eibar",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "31",
-                        "32",
-                        "-1"
-                    ],
-                    [
                         "14",
                         "",
                         "Córdoba CF",
@@ -23120,32 +21511,6 @@
                         "46",
                         "48",
                         "-2"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Málaga",
-                        "42",
-                        "33",
-                        "9",
-                        "15",
-                        "9",
-                        "34",
-                        "36",
-                        "-2"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Real Sporting",
-                        "41",
-                        "33",
-                        "9",
-                        "14",
-                        "10",
-                        "40",
-                        "39",
-                        "+1"
                     ]
                 ],
                 "injuries": [
@@ -23363,17 +21728,6 @@
                 "cards": "5"
             },
             {
-                "number": "3",
-                "name": "Fali",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "16",
-                "matches": "19",
-                "goals": "0",
-                "assists": "0",
-                "cards": "11"
-            },
-            {
                 "number": "18",
                 "name": "José Matos",
                 "position": "Defensa",
@@ -23385,15 +21739,15 @@
                 "cards": "3"
             },
             {
-                "number": "14",
-                "name": "B. Kovacevic",
+                "number": "3",
+                "name": "Fali",
                 "position": "Defensa",
                 "nationality": "N/A",
-                "total_matches": "15",
-                "matches": "18",
+                "total_matches": "16",
+                "matches": "19",
                 "goals": "0",
                 "assists": "0",
-                "cards": "2"
+                "cards": "11"
             },
             {
                 "number": "37",
@@ -23405,6 +21759,17 @@
                 "goals": "3",
                 "assists": "2",
                 "cards": "1"
+            },
+            {
+                "number": "14",
+                "name": "B. Kovacevic",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "18",
+                "goals": "0",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "2",
@@ -23517,17 +21882,6 @@
                 "cards": "2"
             },
             {
-                "number": "27",
-                "name": "M. Diakité",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "12",
-                "matches": "15",
-                "goals": "0",
-                "assists": "0",
-                "cards": "4"
-            },
-            {
                 "number": "6",
                 "name": "F. San Emeterio",
                 "position": "Centrocampista",
@@ -23537,6 +21891,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "6"
+            },
+            {
+                "number": "27",
+                "name": "M. Diakité",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "12",
+                "matches": "15",
+                "goals": "0",
+                "assists": "0",
+                "cards": "4"
             },
             {
                 "number": "25",
@@ -23605,17 +21970,6 @@
                 "cards": "7"
             },
             {
-                "number": "9",
-                "name": "Roger Martí",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "8",
-                "matches": "13",
-                "goals": "1",
-                "assists": "0",
-                "cards": "3"
-            },
-            {
                 "number": "10",
                 "name": "B. Ocampo",
                 "position": "Delantero",
@@ -23625,6 +21979,17 @@
                 "goals": "1",
                 "assists": "3",
                 "cards": "7"
+            },
+            {
+                "number": "9",
+                "name": "Roger Martí",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "8",
+                "matches": "13",
+                "goals": "1",
+                "assists": "0",
+                "cards": "3"
             },
             {
                 "number": "23",
@@ -23716,32 +22081,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "10",
-                        "",
-                        "Burgos",
-                        "46",
-                        "33",
-                        "13",
-                        "7",
-                        "13",
-                        "29",
-                        "34",
-                        "-5"
-                    ],
-                    [
-                        "11",
-                        "",
-                        "RC Deportivo",
-                        "45",
-                        "33",
-                        "11",
-                        "12",
-                        "10",
-                        "44",
-                        "39",
-                        "+5"
-                    ],
-                    [
                         "12",
                         "",
                         "Cádiz",
@@ -23753,19 +22092,6 @@
                         "43",
                         "41",
                         "+2"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Eibar",
-                        "45",
-                        "33",
-                        "12",
-                        "9",
-                        "12",
-                        "31",
-                        "32",
-                        "-1"
                     ],
                     [
                         "14",
@@ -24263,32 +22589,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "12",
-                        "",
-                        "Getafe",
-                        "36",
-                        "29",
-                        "9",
-                        "9",
-                        "11",
-                        "26",
-                        "25",
-                        "+1"
-                    ],
-                    [
-                        "13",
-                        "",
-                        "Girona",
-                        "34",
-                        "29",
-                        "9",
-                        "7",
-                        "13",
-                        "37",
-                        "45",
-                        "-8"
-                    ],
-                    [
                         "14",
                         "",
                         "Osasuna",
@@ -24300,32 +22600,6 @@
                         "33",
                         "42",
                         "-9"
-                    ],
-                    [
-                        "15",
-                        "",
-                        "Valencia",
-                        "31",
-                        "29",
-                        "7",
-                        "10",
-                        "12",
-                        "32",
-                        "46",
-                        "-14"
-                    ],
-                    [
-                        "16",
-                        "",
-                        "Espanyol",
-                        "29",
-                        "28",
-                        "7",
-                        "8",
-                        "13",
-                        "27",
-                        "40",
-                        "-13"
                     ]
                 ],
                 "injuries": [
@@ -24532,17 +22806,6 @@
                 "cards": "10"
             },
             {
-                "number": "15",
-                "name": "David Castro",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "15",
-                "matches": "19",
-                "goals": "0",
-                "assists": "0",
-                "cards": "8"
-            },
-            {
                 "number": "22",
                 "name": "Aitor Buñuel",
                 "position": "Defensa",
@@ -24552,6 +22815,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "3"
+            },
+            {
+                "number": "15",
+                "name": "David Castro",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "19",
+                "goals": "0",
+                "assists": "0",
+                "cards": "8"
             },
             {
                 "number": "3",
@@ -24797,45 +23071,6 @@
             "additional_data": {
                 "league_performance": [
                     [
-                        "18",
-                        "",
-                        "Real Zaragoza",
-                        "37",
-                        "33",
-                        "9",
-                        "10",
-                        "14",
-                        "43",
-                        "47",
-                        "-4"
-                    ],
-                    [
-                        "19",
-                        "",
-                        "Eldense",
-                        "36",
-                        "33",
-                        "9",
-                        "9",
-                        "15",
-                        "34",
-                        "47",
-                        "-13"
-                    ],
-                    [
-                        "20",
-                        "",
-                        "Tenerife",
-                        "28",
-                        "33",
-                        "7",
-                        "7",
-                        "19",
-                        "30",
-                        "48",
-                        "-18"
-                    ],
-                    [
                         "21",
                         "",
                         "Racing Ferrol",
@@ -24847,19 +23082,6 @@
                         "18",
                         "52",
                         "-34"
-                    ],
-                    [
-                        "22",
-                        "",
-                        "FC Cartagena",
-                        "17",
-                        "33",
-                        "4",
-                        "5",
-                        "24",
-                        "22",
-                        "60",
-                        "-38"
                     ]
                 ],
                 "injuries": [
