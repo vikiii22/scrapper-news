@@ -86,6 +86,63 @@ class TeamsAnalysis:
         
         return players_data
     
+    def parse_additional_data(self, soup):
+        additional_data = {}
+
+        # Rendimiento en liga
+        league_performance_section = soup.find('div', class_='panel competition-result')
+        if league_performance_section:
+            performance_table = league_performance_section.find('table', class_='table')
+            if performance_table:
+                rows = performance_table.find_all('tr', class_='row-body')
+                league_performance = []
+                for row in rows:
+                    try:
+                        data = [cell.text.strip() for cell in row.find_all('td')]
+                        league_performance.append(data)
+                    except Exception as e:
+                        print(f"Error parsing league performance: {e}")
+                additional_data['league_performance'] = league_performance
+
+        # Lesiones y sanciones
+        injuries_section = soup.find('div', class_='panel pl-injuries')
+        if injuries_section:
+            injuries_list = injuries_section.find_all('li')
+            injuries = []
+            for injury in injuries_list:
+                try:
+                    left_content = injury.find('div', class_='left-content').text.strip() if injury.find('div', class_='left-content') else 'N/A'
+                    right_content = injury.find('div', class_='right-content').text.strip() if injury.find('div', class_='right-content') else 'N/A'
+                    injuries.append({'left_content': left_content, 'right_content': right_content})
+                except Exception as e:
+                    print(f"Error parsing injuries: {e}")
+            additional_data['injuries'] = injuries
+
+        # 11 más repetido
+        common_eleven_section = soup.find('div', class_='panel common-eleven')
+        if common_eleven_section:
+            lineup = common_eleven_section.find('ul', class_='lineup')
+            if lineup:
+                players = [player.text.strip() for player in lineup.find_all('li')]
+                additional_data['common_eleven'] = players
+
+        # Últimas temporadas
+        last_seasons_section = soup.find('div', class_='panel-body table-list team-result')
+        if last_seasons_section:
+            seasons_table = last_seasons_section.find('table', class_='table')
+            if seasons_table:
+                rows = seasons_table.find_all('tr')
+                last_seasons = []
+                for row in rows:
+                    try:
+                        season_data = [cell.text.strip() for cell in row.find_all('td')]
+                        last_seasons.append(season_data)
+                    except Exception as e:
+                        print(f"Error parsing last seasons: {e}")
+                additional_data['last_seasons'] = last_seasons
+
+        return additional_data
+
     def parse_players(self, url):
         featured_url = url.replace('/plantilla', '')
         html_content = self.fetch_analysis(featured_url)
@@ -111,9 +168,15 @@ class TeamsAnalysis:
                     })
                 except Exception as e:
                     print(f"Error parsing featured player data: {e}")
-            return players_data
-        return []
 
+            # Datos adicionales
+            additional_data = self.parse_additional_data(soup)
+
+            return {
+                'players': players_data,
+                'additional_data': additional_data
+            }
+        return {'players': [], 'additional_data': {}}
 
     def parse(self):
         all_data = {}
