@@ -1,6 +1,7 @@
 import pycurl
 from io import BytesIO
 from bs4 import BeautifulSoup
+from rapidfuzz import fuzz
 import json
 
 class TeamsAnalysis:
@@ -86,7 +87,69 @@ class TeamsAnalysis:
         
         return players_data
     
-    def parse_players(self, url):
+    def parse_additional_data(self, soup, team_name):
+        additional_data = {}
+
+        # Rendimiento en liga
+        league_performance_section = soup.find('div', class_='panel competition-result')
+        if league_performance_section:
+            performance_table = league_performance_section.find('table', class_='table')
+            if performance_table:
+                rows = performance_table.find_all('tr', class_='row-body')
+                league_performance = []
+                for row in rows:
+                    try:
+                        team_name = team_name.replace("Plantilla del ", "").split(" | ")[0].strip()
+                        team_link = row.find('a', {'data-cy': 'team'})
+                        similarity = fuzz.ratio(team_name.lower(), team_link.text.strip().lower()) if team_link else 0
+                        if similarity > 75:
+                            cells = row.find_all('td')
+                            data = [cell.text.strip() for cell in cells]
+                            league_performance.append(data)
+                    except Exception as e:
+                        print(f"Error parsing league performance: {e}")
+                additional_data['league_performance'] = league_performance
+
+        # Lesiones y sanciones
+        injuries_section = soup.find('div', class_='panel pl-injuries')
+        if injuries_section:
+            injuries_list = injuries_section.find_all('li')
+            injuries = []
+            for injury in injuries_list:
+                try:
+                    left_content = injury.find('div', class_='left-content').text.strip() if injury.find('div', class_='left-content') else 'N/A'
+                    right_content = injury.find('div', class_='right-content').text.strip() if injury.find('div', class_='right-content') else 'N/A'
+                    injuries.append({'left_content': left_content, 'right_content': right_content})
+                except Exception as e:
+                    print(f"Error parsing injuries: {e}")
+            additional_data['injuries'] = injuries
+
+        # 11 más repetido
+        common_eleven_section = soup.find('div', class_='panel common-eleven')
+        if common_eleven_section:
+            lineup = common_eleven_section.find('ul', class_='lineup')
+            if lineup:
+                players = [player.text.strip() for player in lineup.find_all('li')]
+                additional_data['common_eleven'] = players
+
+        # Últimas temporadas
+        last_seasons_section = soup.find('div', class_='panel-body table-list team-result')
+        if last_seasons_section:
+            seasons_table = last_seasons_section.find('table', class_='table')
+            if seasons_table:
+                rows = seasons_table.find_all('tr')
+                last_seasons = []
+                for row in rows:
+                    try:
+                        season_data = [cell.text.strip() for cell in row.find_all('td')]
+                        last_seasons.append(season_data)
+                    except Exception as e:
+                        print(f"Error parsing last seasons: {e}")
+                additional_data['last_seasons'] = last_seasons
+
+        return additional_data
+
+    def parse_players(self, url, team_name):
         featured_url = url.replace('/plantilla', '')
         html_content = self.fetch_analysis(featured_url)
         if html_content:
@@ -111,36 +174,15 @@ class TeamsAnalysis:
                     })
                 except Exception as e:
                     print(f"Error parsing featured player data: {e}")
-            return players_data
-        return []
 
-    def parse_out_players(self, url):
-        out_players_url = url.replace('/plantilla', '/lesionados-sancionados')
+            # Datos adicionales
+            additional_data = self.parse_additional_data(soup, team_name)
 
-        html_content = self.fetch_analysis(out_players_url)
-        if not html_content:
-            print(f"Failed to fetch out players from {out_players_url}")
-            return []
-
-        soup = BeautifulSoup(html_content, 'html.parser')
-        out_players = []
-
-        player_items = soup.find_all('a', class_='item-box', attrs={'data-cy': 'injury'})
-        for player in player_items:
-            try:
-                name = player.find('div', class_='main-text').text.strip()
-                reason = player.find('div', class_='sub-text1').text.strip()
-                return_date = player.find('div', class_='sub-text2').text.strip() if player.find('div', class_='sub-text2') else 'N/A'
-
-                out_players.append({
-                    'name': name,
-                    'reason': reason,
-                    'return_date': return_date
-                })
-            except Exception as e:
-                print(f"Error parsing out player data: {e}")
-
-        return out_players
+            return {
+                'players': players_data,
+                'additional_data': additional_data
+            }
+        return {'players': [], 'additional_data': {}}
 
     def parse(self):
         all_data = {}
@@ -151,18 +193,15 @@ class TeamsAnalysis:
                 soup = BeautifulSoup(html_content, 'html.parser')
                 team_name = soup.find('title').text.strip() if soup.find('title') else url.split('/')[-1]
                 
-                # # Parsear los datos de los jugadores
+                # Parsear los datos de los jugadores
                 players_data = self.parse_analysis(html_content)
 
-                most_valuated_players = self.parse_players(url)
-
-                out_players = self.parse_out_players(url)
+                most_valuated_players = self.parse_players(url, team_name)
                 
                 # Guardar los datos bajo el nombre del equipo
                 all_data[team_name] = {
                     'players_data': players_data,
-                    'top_players': most_valuated_players,
-                    'out_players': out_players
+                    'top_players': most_valuated_players
                 }
         return all_data
     
