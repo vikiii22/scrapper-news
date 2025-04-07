@@ -361,6 +361,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/310033.jpg?size=120x&lossy=1",
                 "elo": "78"
             }
+        ],
+        "out_players": [
+            {
+                "name": "W. Swedberg",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Ó. Mingueza",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Hugo Álvarez",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Hugo Álvarez",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Franco Cervi",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Iker Losada",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Alfon González",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Iago Aspas",
+                "reason": "Lesión muscular en el sóleo",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Iago Aspas",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Hugo Sotelo",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Mihailo Ristić",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iker Losada",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Carreira",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Damián",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Fer López",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Carreira",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Damián",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Manquillo",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Sergio Carreira",
+                "reason": "Motivos personales",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Fran Beltrán",
+                "reason": "Lesión en el gemelo",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Cádiz CF | Listado de Jugadores | BeSoccer": {
@@ -520,8 +622,8 @@
                 "cards": "0"
             },
             {
-                "number": "35",
-                "name": "Juan Díaz",
+                "number": "29",
+                "name": "S. Almagro",
                 "position": "Defensa",
                 "nationality": "N/A",
                 "total_matches": "0",
@@ -531,8 +633,8 @@
                 "cards": "0"
             },
             {
-                "number": "29",
-                "name": "S. Almagro",
+                "number": "35",
+                "name": "Juan Díaz",
                 "position": "Defensa",
                 "nationality": "N/A",
                 "total_matches": "0",
@@ -791,6 +893,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/196927.jpg?size=120x&lossy=1",
                 "elo": "74"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Luis Hernández",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "J. De La Rosa",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "B. Ocampo",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Rubén Alcaraz",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Roger Martí",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Roger Martí",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Rubén Alcaraz",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "B. Ocampo",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Óscar Melendo",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Rubén Alcaraz",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iza",
+                "reason": "Lesión de cadera",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "G. Escalante",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Zaldua",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Fernández",
+                "reason": "Lesión muscular",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "F. San Emeterio",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Fali",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Octubre de 2024"
+            },
+            {
+                "name": "C. Fernández",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Roger Martí",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Óscar Melendo",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Ontiveros",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Rayo Vallecano | Listado de Jugadores | BeSoccer": {
@@ -994,17 +1198,6 @@
                 "cards": "6"
             },
             {
-                "number": "8",
-                "name": "Óscar Trejo",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "6",
-                "matches": "15",
-                "goals": "1",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "4",
                 "name": "Pedro Díaz",
                 "position": "Centrocampista",
@@ -1012,6 +1205,17 @@
                 "total_matches": "7",
                 "matches": "17",
                 "goals": "3",
+                "assists": "0",
+                "cards": "1"
+            },
+            {
+                "number": "8",
+                "name": "Óscar Trejo",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "15",
+                "goals": "1",
                 "assists": "0",
                 "cards": "1"
             },
@@ -1038,17 +1242,6 @@
                 "cards": "0"
             },
             {
-                "number": "18",
-                "name": "Álvaro García",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "20",
-                "matches": "27",
-                "goals": "3",
-                "assists": "5",
-                "cards": "4"
-            },
-            {
                 "number": "19",
                 "name": "Jorge De Frutos",
                 "position": "Delantero",
@@ -1060,14 +1253,14 @@
                 "cards": "3"
             },
             {
-                "number": "21",
-                "name": "Adrián Embarba",
+                "number": "18",
+                "name": "Álvaro García",
                 "position": "Delantero",
                 "nationality": "N/A",
-                "total_matches": "15",
+                "total_matches": "20",
                 "matches": "27",
-                "goals": "1",
-                "assists": "1",
+                "goals": "3",
+                "assists": "5",
                 "cards": "4"
             },
             {
@@ -1080,6 +1273,17 @@
                 "goals": "3",
                 "assists": "2",
                 "cards": "2"
+            },
+            {
+                "number": "21",
+                "name": "Adrián Embarba",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "15",
+                "matches": "27",
+                "goals": "1",
+                "assists": "1",
+                "cards": "4"
             },
             {
                 "number": "9",
@@ -1154,6 +1358,108 @@
                 "position": "MED",
                 "image": "https://cdn.resfu.com/img_data/players/medium/206486.jpg?size=120x&lossy=1",
                 "elo": "80"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Abdul Mumin",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Sergio Camello",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Joni Montiel",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pelayo",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Randy Nteka",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Dani Cárdenas",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Isi Palazón",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Unai López",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Randy Nteka",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Sergio Camello",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "A. Batalla",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pedro Díaz",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Unai López",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pathé Ciss",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pelayo",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Raúl De Tomás",
+                "reason": "Enfermedad",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Abdul Mumin",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pep Chavarría",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Dani Cárdenas",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Pacha Espino",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Desconocido"
             }
         ]
     },
@@ -1552,6 +1858,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/977288.jpg?size=120x&lossy=1",
                 "elo": "69"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Douglas Aurelio",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "Fin de temporada"
+            },
+            {
+                "name": "K. Obinna",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Salva Ruiz",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jetro Willems",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "D. Chirino",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "J. Calavera",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Sánchez",
+                "reason": "Fuerte golpe",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jesús De Miguel",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jetro Willems",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Cala",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Óscar Gil",
+                "reason": "Lesión en la mandíbula",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "A. Lottin",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Lottin",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "K. Obinna",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Lottin",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Moyita",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Traoré",
+                "reason": "Fuerte golpe",
+                "return_date": "Día a día"
+            },
+            {
+                "name": "J. Escobar",
+                "reason": "Desconocido",
+                "return_date": "Duda"
+            },
+            {
+                "name": "T. Van Den Belt",
+                "reason": "Lesión de cadera",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Salva Ruiz",
+                "reason": "Lesión muscular",
+                "return_date": "Desconocido"
+            }
         ]
     },
     "Plantilla del Girona | Listado de Jugadores | BeSoccer": {
@@ -1733,17 +2141,6 @@
                 "cards": "1"
             },
             {
-                "number": "14",
-                "name": "Oriol Romeu",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "14",
-                "matches": "18",
-                "goals": "0",
-                "assists": "0",
-                "cards": "5"
-            },
-            {
                 "number": "6",
                 "name": "D. Van De Beek",
                 "position": "Centrocampista",
@@ -1752,6 +2149,17 @@
                 "matches": "22",
                 "goals": "2",
                 "assists": "2",
+                "cards": "5"
+            },
+            {
+                "number": "14",
+                "name": "Oriol Romeu",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "14",
+                "matches": "18",
+                "goals": "0",
+                "assists": "0",
                 "cards": "5"
             },
             {
@@ -1993,6 +2401,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/986629.jpg?size=120x&lossy=1",
                 "elo": "80"
             }
+        ],
+        "out_players": [
+            {
+                "name": "B. Miovski",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Ricard Artero",
+                "reason": "Problemas en el muslo",
+                "return_date": "Fin de temporada"
+            },
+            {
+                "name": "Iván Martín",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Abril de 2025"
+            },
+            {
+                "name": "Bryan Gil",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Abel Ruiz",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jhon Solís",
+                "reason": "Problemas en el pie",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Oriol Romeu",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Abel Ruiz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "V. Tsygankov",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Miguel Gutiérrez",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Arnau Martínez",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Danjuma",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "B. Miovski",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Oriol Romeu",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Portu",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Daley Blind",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "P. Gazzaniga",
+                "reason": "Lesión en la espalda",
+                "return_date": "Duda"
+            },
+            {
+                "name": "L. Krejčí",
+                "reason": "Lesión de cadera",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Miguel Gutiérrez",
+                "reason": "Lesión en la espinilla",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Miguel Gutiérrez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Real Madrid | Listado de Jugadores | BeSoccer": {
@@ -2163,8 +2673,8 @@
                 "cards": "0"
             },
             {
-                "number": "45",
-                "name": "V. Valdepeñas",
+                "number": "43",
+                "name": "Diego Aguado",
                 "position": "Defensa",
                 "nationality": "N/A",
                 "total_matches": "0",
@@ -2174,8 +2684,8 @@
                 "cards": "0"
             },
             {
-                "number": "43",
-                "name": "Diego Aguado",
+                "number": "45",
+                "name": "V. Valdepeñas",
                 "position": "Defensa",
                 "nationality": "N/A",
                 "total_matches": "0",
@@ -2423,6 +2933,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/365923.jpg?size=120x&lossy=1",
                 "elo": "88"
             }
+        ],
+        "out_players": [
+            {
+                "name": "T. Courtois",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ferland Mendy",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Dani Ceballos",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Éder Militão",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "A finales de Diciembre de 2025"
+            },
+            {
+                "name": "Dani Carvajal",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "A principios de Septiembre de 2025"
+            },
+            {
+                "name": "T. Courtois",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Fran García",
+                "reason": "Lesión en la pierna",
+                "return_date": ""
+            },
+            {
+                "name": "T. Courtois",
+                "reason": "Problemas físicos",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "A. Rüdiger",
+                "reason": "Gripe",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "F. Valverde",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jesús Vallejo",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "F. Valverde",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "K. Mbappé",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Lucas Vázquez",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "J. Bellingham",
+                "reason": "Conmoción Cerebral",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Lucas Vázquez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "K. Mbappé",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "David Alaba",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Rüdiger",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jesús Vallejo",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Mallorca | Listado de Jugadores | BeSoccer": {
@@ -2604,17 +3216,6 @@
                 "cards": "6"
             },
             {
-                "number": "5",
-                "name": "Omar Mascarell",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "16",
-                "matches": "24",
-                "goals": "0",
-                "assists": "0",
-                "cards": "5"
-            },
-            {
                 "number": "27",
                 "name": "Robert Navarro",
                 "position": "Centrocampista",
@@ -2624,6 +3225,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "3"
+            },
+            {
+                "number": "5",
+                "name": "Omar Mascarell",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "16",
+                "matches": "24",
+                "goals": "0",
+                "assists": "0",
+                "cards": "5"
             },
             {
                 "number": "8",
@@ -2776,6 +3388,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/139714.jpg?size=120x&lossy=1",
                 "elo": "79"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Cyle Larin",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Vedat Muriqi",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Robert Navarro",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Samú Costa",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "A. Raíllo",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Dominik Greif",
+                "reason": "Lesión en la espalda",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Vedat Muriqi",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Rodríguez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Robert Navarro",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Samú Costa",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Samú Costa",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Toni Lato",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pablo Maffeo",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Antonio Sánchez",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Valery",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Martin Valjent",
+                "reason": "Lesión en la cabeza",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Vedat Muriqi",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Manu Morlanes",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Raíllo",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Samú Costa",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del FC Barcelona | Listado de Jugadores | BeSoccer": {
@@ -2869,23 +3583,23 @@
                 "cards": "2"
             },
             {
-                "number": "5",
-                "name": "Íñigo Martínez",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "23",
-                "matches": "23",
-                "goals": "0",
-                "assists": "3",
-                "cards": "3"
-            },
-            {
                 "number": "2",
                 "name": "Pau Cubarsí",
                 "position": "Defensa",
                 "nationality": "N/A",
                 "total_matches": "24",
                 "matches": "28",
+                "goals": "0",
+                "assists": "3",
+                "cards": "3"
+            },
+            {
+                "number": "5",
+                "name": "Íñigo Martínez",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "23",
+                "matches": "23",
                 "goals": "0",
                 "assists": "3",
                 "cards": "3"
@@ -3100,17 +3814,6 @@
                 "cards": "0"
             },
             {
-                "number": "11",
-                "name": "Raphinha",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "26",
-                "matches": "27",
-                "goals": "13",
-                "assists": "8",
-                "cards": "3"
-            },
-            {
                 "number": "9",
                 "name": "R. Lewandowski",
                 "position": "Delantero",
@@ -3120,6 +3823,17 @@
                 "goals": "25",
                 "assists": "2",
                 "cards": "1"
+            },
+            {
+                "number": "11",
+                "name": "Raphinha",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "26",
+                "matches": "27",
+                "goals": "13",
+                "assists": "8",
+                "cards": "3"
             },
             {
                 "number": "19",
@@ -3216,6 +3930,108 @@
                 "position": "POR",
                 "image": "https://cdn.resfu.com/img_data/players/medium/67849.jpg?size=120x&lossy=1",
                 "elo": "86"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Dani Olmo",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Abril de 2025"
+            },
+            {
+                "name": "Marc Casadó",
+                "reason": "Lesión de ligamentos",
+                "return_date": "A principios de Junio de 2025"
+            },
+            {
+                "name": "A. Christensen",
+                "reason": "Problemas en el pie",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "M. Ter Stegen",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "Fin de temporada"
+            },
+            {
+                "name": "Marc Bernal",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "A mediados de Mayo de 2025"
+            },
+            {
+                "name": "F. De Jong",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pau Cubarsí",
+                "reason": "Esguince de tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ferran Torres",
+                "reason": "Lesión muscular",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Íñigo Martínez",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Entrenándose"
+            },
+            {
+                "name": "Gavi",
+                "reason": "Enfermedad",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Lamine Yamal",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ronald Araujo",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Gavi",
+                "reason": "Lesión en la cabeza",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "A. Christensen",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pedri",
+                "reason": "Problemas gastrointestinales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Olmo",
+                "reason": "Problemas en el pie",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Íñigo Martínez",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Ferran Torres",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Héctor Fort",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Lamine Yamal",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A principios de Enero de 2025"
             }
         ]
     },
@@ -3376,17 +4192,6 @@
                 "cards": "7"
             },
             {
-                "number": "6",
-                "name": "Sergio Álvarez",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "20",
-                "matches": "29",
-                "goals": "0",
-                "assists": "0",
-                "cards": "4"
-            },
-            {
                 "number": "8",
                 "name": "Peru Nolaskoain",
                 "position": "Centrocampista",
@@ -3396,6 +4201,17 @@
                 "goals": "2",
                 "assists": "0",
                 "cards": "5"
+            },
+            {
+                "number": "6",
+                "name": "Sergio Álvarez",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "20",
+                "matches": "29",
+                "goals": "0",
+                "assists": "0",
+                "cards": "4"
             },
             {
                 "number": "12",
@@ -3602,6 +4418,108 @@
                 "position": "POR",
                 "image": "https://cdn.resfu.com/img_data/players/medium/365130.jpg?size=120x&lossy=1",
                 "elo": "69"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Ángel Troncho",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Jorge Pascual",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "José Corpas",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Arnau Comas",
+                "reason": "Enfermedad",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "M. Merquelanz",
+                "reason": "Problemas musculares",
+                "return_date": ""
+            },
+            {
+                "name": "Cristian",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Arbilla",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Matheus Pereira",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Merquelanz",
+                "reason": "Problemas musculares",
+                "return_date": ""
+            },
+            {
+                "name": "Matheus Pereira",
+                "reason": "Problemas físicos",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "A. Arambarri",
+                "reason": "Lesión en la espalda",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "Jon Guruzeta",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A principios de Noviembre de 2024"
+            },
+            {
+                "name": "Arnau Comas",
+                "reason": "Fuerte golpe",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Magunagoitia",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Octubre de 2024"
+            },
+            {
+                "name": "Jon Bautista",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Peru Nolaskoain",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Antonio Puertas",
+                "reason": "Contusión",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Merquelanz",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Mayo de 2024"
+            },
+            {
+                "name": "Javi Martínez",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2024"
+            },
+            {
+                "name": "Álvaro Carrillo",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Febrero de 2024"
             }
         ]
     },
@@ -3989,6 +4907,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/37123.jpg?size=120x&lossy=1",
                 "elo": "65"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Jorge Moreno",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Gastón",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Muñoz",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Aguirregabiria",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Pedro Alcalá",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "N. Šipčić",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "N. Šipčić",
+                "reason": "Lesión muscular",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "Pepín",
+                "reason": "Desconocido",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andrija Vukcevic",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Aguirregabiria",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Daniel Luna",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andrija Vukcevic",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Guerrero",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Muñoz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pepín",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andy",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Junio de 2024"
+            },
+            {
+                "name": "N. Šipčić",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Muñoz",
+                "reason": "Problemas físicos",
+                "return_date": "A principios de Marzo de 2024"
+            },
+            {
+                "name": "Luis Muñoz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pepín",
+                "reason": "En compromiso internacional",
+                "return_date": ""
+            }
         ]
     },
     "Plantilla del Granada C.F | Listado de Jugadores | BeSoccer": {
@@ -4071,17 +5091,6 @@
                 "cards": "6"
             },
             {
-                "number": "15",
-                "name": "Carlos Neva",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "11",
-                "matches": "12",
-                "goals": "1",
-                "assists": "0",
-                "cards": "3"
-            },
-            {
                 "number": "4",
                 "name": "Miguel Rubio",
                 "position": "Defensa",
@@ -4091,6 +5100,17 @@
                 "goals": "1",
                 "assists": "1",
                 "cards": "6"
+            },
+            {
+                "number": "15",
+                "name": "Carlos Neva",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "11",
+                "matches": "12",
+                "goals": "1",
+                "assists": "0",
+                "cards": "3"
             },
             {
                 "number": "5",
@@ -4407,6 +5427,108 @@
                 "position": "MED",
                 "image": "https://cdn.resfu.com/img_data/players/medium/196831.jpg?size=120x&lossy=1",
                 "elo": "71"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Luca Zidane",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "K. Jóźwiak",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Miguel Brau",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Manu Lama",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Sergio Ruiz",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Loic Williams",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Manu Lama",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Luca Zidane",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Loic Williams",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Carlos Neva",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Juanma",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Reinier",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pablo Insua",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Lucas Boyé",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Sergio Rodelas",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Gonzalo Villar",
+                "reason": "Esguince de tobillo",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Sergio Ruiz",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "Loic Williams",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "Carlos Neva",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luca Zidane",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Noviembre de 2024"
             }
         ]
     },
@@ -4772,6 +5894,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/206906.jpg?size=120x&lossy=1",
                 "elo": "74"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Dani Queipo",
+                "reason": "Pubalgia",
+                "return_date": ""
+            },
+            {
+                "name": "Rober Pier",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Rubén Yáñez",
+                "reason": "Tarjeta roja (2ª Amarilla)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Olaetxea",
+                "reason": "Fractura de pie",
+                "return_date": "A finales de Mayo de 2025"
+            },
+            {
+                "name": "J. Caicedo",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Juan Otero",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Nico Serrano",
+                "reason": "Problemas gastrointestinales",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Gaspar Campos",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": ""
+            },
+            {
+                "name": "Eric Curbelo",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Juan Otero",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Diego Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Jesús Bernal",
+                "reason": "Lesión de cadera",
+                "return_date": ""
+            },
+            {
+                "name": "Olaetxea",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Gaspar Campos",
+                "reason": "Lesión en el gemelo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Eric Curbelo",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "Cote",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Diego Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nico Serrano",
+                "reason": "Lesión en el hombro",
+                "return_date": "A mediados de Septiembre de 2024"
+            },
+            {
+                "name": "J. Caicedo",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nacho Méndez",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla y jugadores de UD Las Palmas": {
@@ -4832,6 +6056,17 @@
                 "cards": "0"
             },
             {
+                "number": "15",
+                "name": "Scott Mckenna",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "21",
+                "matches": "22",
+                "goals": "0",
+                "assists": "0",
+                "cards": "6"
+            },
+            {
                 "number": "4",
                 "name": "Álex Suárez",
                 "position": "Defensa",
@@ -4852,17 +6087,6 @@
                 "goals": "0",
                 "assists": "1",
                 "cards": "4"
-            },
-            {
-                "number": "15",
-                "name": "Scott Mckenna",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "21",
-                "matches": "22",
-                "goals": "0",
-                "assists": "0",
-                "cards": "6"
             },
             {
                 "number": "18",
@@ -5063,17 +6287,6 @@
                 "cards": "6"
             },
             {
-                "number": "14",
-                "name": "Manu Fuster",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "6",
-                "matches": "20",
-                "goals": "2",
-                "assists": "0",
-                "cards": "2"
-            },
-            {
                 "number": "16",
                 "name": "Oliver Mcburnie",
                 "position": "Delantero",
@@ -5083,6 +6296,17 @@
                 "goals": "0",
                 "assists": "5",
                 "cards": "0"
+            },
+            {
+                "number": "14",
+                "name": "Manu Fuster",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "20",
+                "goals": "2",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "17",
@@ -5191,6 +6415,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/125859.jpg?size=120x&lossy=1",
                 "elo": "76"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Jasper Cillessen",
+                "reason": "Problemas estomacales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Benito Ramírez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andy Pelmard",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kirian",
+                "reason": "Cáncer",
+                "return_date": ""
+            },
+            {
+                "name": "A. Moleiro",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Mika Mármol",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Viti Rozada",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Marvin Park",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "S. Bajčetić",
+                "reason": "Lesión en el gemelo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sandro",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Fábio Silva",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Marc Cardona",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Marc Cardona",
+                "reason": "Motivos personales",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Adnan Januzaj",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sandro",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Campaña",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Marvin Park",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Benito Ramírez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Oliver Mcburnie",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andy Pelmard",
+                "reason": "Motivos personales",
+                "return_date": "Desconocido"
+            }
         ]
     },
     "Plantilla del Sevilla FC | Listado de Jugadores | BeSoccer": {
@@ -5262,17 +6588,6 @@
                 "cards": "6"
             },
             {
-                "number": "4",
-                "name": "Kike Salas",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "17",
-                "matches": "23",
-                "goals": "1",
-                "assists": "2",
-                "cards": "3"
-            },
-            {
                 "number": "3",
                 "name": "Adrià Pedrosa",
                 "position": "Defensa",
@@ -5282,6 +6597,17 @@
                 "goals": "1",
                 "assists": "1",
                 "cards": "6"
+            },
+            {
+                "number": "4",
+                "name": "Kike Salas",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "17",
+                "matches": "23",
+                "goals": "1",
+                "assists": "2",
+                "cards": "3"
             },
             {
                 "number": "2",
@@ -5317,17 +6643,6 @@
                 "cards": "2"
             },
             {
-                "number": "29",
-                "name": "D. Benavides",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "0",
-                "matches": "1",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "35",
                 "name": "Ramón Martínez",
                 "position": "Defensa",
@@ -5337,6 +6652,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "29",
+                "name": "D. Benavides",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "1",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "38",
@@ -5621,6 +6947,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/281581.jpg?size=120x&lossy=1",
                 "elo": "80"
             }
+        ],
+        "out_players": [
+            {
+                "name": "T. Nianzou",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "N. Gudelj",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Rubén Vargas",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Adrià Pedrosa",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "N. Gudelj",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Peque",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Djibril Sow",
+                "reason": "Contusión",
+                "return_date": "Duda"
+            },
+            {
+                "name": "N. Gudelj",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Adrià Pedrosa",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sambi Lokonga",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Akor Adams",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Carmona",
+                "reason": "Operado de la nariz",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Rubén Vargas",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kike Salas",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Isaac Romero",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Djibril Sow",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Rubén Vargas",
+                "reason": "Lesión de cadera",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Adrià Pedrosa",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Sambi Lokonga",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "A. Collado",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": "A mediados de Febrero de 2025"
+            }
         ]
     },
     "Plantilla del Real Valladolid | Listado de Jugadores | BeSoccer": {
@@ -5714,17 +7142,6 @@
                 "cards": "0"
             },
             {
-                "number": "16",
-                "name": "Joseph Aidoo",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "3",
-                "matches": "3",
-                "goals": "0",
-                "assists": "0",
-                "cards": "0"
-            },
-            {
                 "number": "3",
                 "name": "David Torres",
                 "position": "Defensa",
@@ -5736,12 +7153,12 @@
                 "cards": "5"
             },
             {
-                "number": "",
-                "name": "Henrique",
+                "number": "16",
+                "name": "Joseph Aidoo",
                 "position": "Defensa",
                 "nationality": "N/A",
-                "total_matches": "0",
-                "matches": "0",
+                "total_matches": "3",
+                "matches": "3",
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
@@ -5756,6 +7173,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "2"
+            },
+            {
+                "number": "",
+                "name": "Henrique",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "0",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
             },
             {
                 "number": "30",
@@ -5901,17 +7329,6 @@
                 "cards": "5"
             },
             {
-                "number": "9",
-                "name": "Marcos André",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "14",
-                "matches": "20",
-                "goals": "1",
-                "assists": "2",
-                "cards": "5"
-            },
-            {
                 "number": "14",
                 "name": "Latasa",
                 "position": "Delantero",
@@ -5921,6 +7338,17 @@
                 "goals": "3",
                 "assists": "0",
                 "cards": "6"
+            },
+            {
+                "number": "9",
+                "name": "Marcos André",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "14",
+                "matches": "20",
+                "goals": "1",
+                "assists": "2",
+                "cards": "5"
             },
             {
                 "number": "18",
@@ -6017,6 +7445,108 @@
                 "position": "DEL",
                 "image": "https://cdn.resfu.com/img_data/players/medium/776257.jpg?size=120x&lossy=1",
                 "elo": "70"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Karl Hein",
+                "reason": "Lesión en el hombro",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Marcos André",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Joseph Aidoo",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "David Torres",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Eray Cömert",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Raúl Moro",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "F. Grillitsch",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Mamadou Sylla",
+                "reason": "Mandíbula rota",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "André Ferreira",
+                "reason": "Contusión",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Eray Cömert",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Javi Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Cenk Özkacar",
+                "reason": "Problemas en el pie",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Raúl Moro",
+                "reason": "Lesión en la clavícula",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Eray Cömert",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Stanko Jurić",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Moro",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Karl Hein",
+                "reason": "Contusión",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Iván Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Latasa",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Pérez",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Enero de 2025"
             }
         ]
     },
@@ -6276,17 +7806,6 @@
                 "cards": "0"
             },
             {
-                "number": "7",
-                "name": "Gerard Moreno",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "6",
-                "matches": "13",
-                "goals": "3",
-                "assists": "1",
-                "cards": "0"
-            },
-            {
                 "number": "21",
                 "name": "Yéremy Pino",
                 "position": "Delantero",
@@ -6296,6 +7815,17 @@
                 "goals": "1",
                 "assists": "4",
                 "cards": "8"
+            },
+            {
+                "number": "7",
+                "name": "Gerard Moreno",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "6",
+                "matches": "13",
+                "goals": "3",
+                "assists": "1",
+                "cards": "0"
             },
             {
                 "number": "16",
@@ -6403,6 +7933,108 @@
                 "position": "DEL",
                 "image": "https://cdn.resfu.com/img_data/players/medium/107189.jpg?size=120x&lossy=1",
                 "elo": "78"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Nicolas Pépé",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pape Gueye",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Ilias Akhomach",
+                "reason": "Rotura ligamento cruzado",
+                "return_date": "Fin de temporada"
+            },
+            {
+                "name": "Kiko Femenía",
+                "reason": "Lesión en la espalda",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Kiko Femenía",
+                "reason": "Lesión en la espalda",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Gerard Moreno",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kiko Femenía",
+                "reason": "Lesión en la espalda",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Juan Foyth",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Santi Comesaña",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Parejo",
+                "reason": "Lesión en un dedo",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Logan Costa",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Logan Costa",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "T. Buchanan",
+                "reason": "Problemas físicos",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "Diego Conde",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "Eric Bailly",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kiko Femenía",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pape Gueye",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "Ayoze",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "Álex Baena",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "Nicolas Pépé",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
             }
         ]
     },
@@ -6823,6 +8455,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/282630.jpg?size=120x&lossy=1",
                 "elo": "70"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Keidi Bare",
+                "reason": "Lesión en el gemelo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Toni Moya",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Iván Calero",
+                "reason": "Tarjeta roja (2ª Amarilla)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Keidi Bare",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Marcos Luna",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Mario Soberón",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Francho Serrano",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Sebastián Kóša",
+                "reason": "Lesión de tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "S. Baždar",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Tasende",
+                "reason": "Lesión en el gemelo",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Toni Moya",
+                "reason": "Lesión en el gemelo",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "Mario Soberón",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Keidi Bare",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Noviembre de 2024"
+            },
+            {
+                "name": "Jair Amador",
+                "reason": "Lesión en el ojo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Adu Ares",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Dani Gómez",
+                "reason": "Operado de la nariz",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Ager Aketxe",
+                "reason": "Lesión en la pierna",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Jair Amador",
+                "reason": "Lesión en el ojo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Guti",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Adu Ares",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Desconocido"
+            }
         ]
     },
     "Plantilla del Levante | Listado de Jugadores | BeSoccer": {
@@ -7165,6 +8899,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/873398.jpg?size=120x&lossy=1",
                 "elo": "73"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Pablo Martínez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Roger Brugué",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "G. Kochorashvili",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Algobia",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "A. Algobia",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Diego Pampín",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jorge Cabello",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Noviembre de 2024"
+            },
+            {
+                "name": "V. Iborra",
+                "reason": "Lesión en el talón",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Roger Brugué",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "A. Algobia",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Noviembre de 2024"
+            },
+            {
+                "name": "V. Iborra",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ignasi Miquel",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ignasi Miquel",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Forés",
+                "reason": "Fractura de tibia",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Algobia",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Alfonso Pastor",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": ""
+            },
+            {
+                "name": "G. Kochorashvili",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iván Romero",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2024"
+            },
+            {
+                "name": "Ignasi Miquel",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Lozano",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Burgos | Listado de Jugadores | BeSoccer": {
@@ -7379,17 +9215,6 @@
                 "cards": "4"
             },
             {
-                "number": "28",
-                "name": "Mario Cantero",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "3",
-                "matches": "12",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "15",
                 "name": "Gabriel Barès",
                 "position": "Centrocampista",
@@ -7409,6 +9234,17 @@
                 "matches": "20",
                 "goals": "1",
                 "assists": "1",
+                "cards": "1"
+            },
+            {
+                "number": "28",
+                "name": "Mario Cantero",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "3",
+                "matches": "12",
+                "goals": "0",
+                "assists": "0",
                 "cards": "1"
             },
             {
@@ -7605,6 +9441,108 @@
                 "position": "DEF",
                 "image": "https://cdn.resfu.com/img_data/players/medium/227816.jpg?size=120x&lossy=1",
                 "elo": "73"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Elady",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kévin Appin",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Sancris",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Raúl Navarro",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Navarro",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iñigo Córdoba",
+                "reason": "Fuerte golpe",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "Álex Sancris",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Noviembre de 2024"
+            },
+            {
+                "name": "Curro Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Octubre de 2024"
+            },
+            {
+                "name": "Iñigo Córdoba",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Kévin Appin",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Miguel Atienza",
+                "reason": "Lesión en el codo",
+                "return_date": "A principios de Septiembre de 2024"
+            },
+            {
+                "name": "Kévin Appin",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nikola Miličić",
+                "reason": "Lesión de menisco",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Raúl Navarro",
+                "reason": "Problemas físicos",
+                "return_date": "A mediados de Junio de 2024"
+            },
+            {
+                "name": "Fer Niño",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Ojeda",
+                "reason": "Rotura de gemelo",
+                "return_date": "A principios de Febrero de 2024"
+            },
+            {
+                "name": "Ghislain Konan",
+                "reason": "En compromiso internacional",
+                "return_date": ""
+            },
+            {
+                "name": "Fer Niño",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Sancris",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Navarro",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Diciembre de 2023"
             }
         ]
     },
@@ -7919,17 +9857,6 @@
                 "cards": "1"
             },
             {
-                "number": "27",
-                "name": "Chupete",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "3",
-                "matches": "10",
-                "goals": "1",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "21",
                 "name": "Yanis Rahmani",
                 "position": "Delantero",
@@ -7939,6 +9866,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "27",
+                "name": "Chupete",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "3",
+                "matches": "10",
+                "goals": "1",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "33",
@@ -8003,6 +9941,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/128123.jpg?size=120x&lossy=1",
                 "elo": "69"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Ramón",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Dani Lorenzo",
+                "reason": "Lesión de cadera",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Haitam",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Luismi Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nélson Monte",
+                "reason": "Lesión de ligamentos",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Juanpe",
+                "reason": "Lesión en la costilla",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "D. Larrubia",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Einar Galilea",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luismi Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "D. Larrubia",
+                "reason": "Lesión en la pierna",
+                "return_date": "A mediados de Octubre de 2024"
+            },
+            {
+                "name": "R. Baturina",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Víctor García",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Kevin Medina",
+                "reason": "Problemas de pubis",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Julen Lobete",
+                "reason": "Lesión en un dedo del pie",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Luismi Sánchez",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ramón",
+                "reason": "Problemas en el muslo",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Juanpe",
+                "reason": "Problemas de pubis",
+                "return_date": ""
+            },
+            {
+                "name": "Luismi Sánchez",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Junio de 2024"
+            },
+            {
+                "name": "Dioni",
+                "reason": "Traumatismo craneoencefálico",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Manu Molina",
+                "reason": "Lesión del músculo aductor",
+                "return_date": "A finales de Marzo de 2024"
+            }
         ]
     },
     "Plantilla del RC Deportivo | Listado de Jugadores | BeSoccer": {
@@ -8041,17 +10081,6 @@
                 "cards": "0"
             },
             {
-                "number": "23",
-                "name": "Ximo Navarro",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "29",
-                "matches": "30",
-                "goals": "4",
-                "assists": "2",
-                "cards": "5"
-            },
-            {
                 "number": "15",
                 "name": "Pablo Vázquez",
                 "position": "Defensa",
@@ -8061,6 +10090,17 @@
                 "goals": "2",
                 "assists": "0",
                 "cards": "2"
+            },
+            {
+                "number": "23",
+                "name": "Ximo Navarro",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "29",
+                "matches": "30",
+                "goals": "4",
+                "assists": "2",
+                "cards": "5"
             },
             {
                 "number": "33",
@@ -8422,6 +10462,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/951513.jpg?size=120x&lossy=1",
                 "elo": "72"
             }
+        ],
+        "out_players": [
+            {
+                "name": "S. Escudero",
+                "reason": "Fractura de la mano",
+                "return_date": "Duda"
+            },
+            {
+                "name": "José Ángel",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Barcia",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Bouldini",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "M. Bouldini",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "S. Escudero",
+                "reason": "Lesión en el codo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Juan Gauto",
+                "reason": "Fuerte golpe",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "N. Tošić",
+                "reason": "Lesión muscular",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "Yeremay",
+                "reason": "Operación",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Germán Parreño",
+                "reason": "Fractura de muñeca",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Juan Gauto",
+                "reason": "Desconocido",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "C. Herrera",
+                "reason": "Problemas de pubis",
+                "return_date": "A principios de Abril de 2024"
+            },
+            {
+                "name": "Denis Genreau",
+                "reason": "Problemas de pubis",
+                "return_date": "A principios de Abril de 2024"
+            },
+            {
+                "name": "P. Martínez",
+                "reason": "Lesión en la cabeza",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Nuke Mfulu",
+                "reason": "En compromiso internacional",
+                "return_date": ""
+            },
+            {
+                "name": "Helton Leite",
+                "reason": "Lesión en el hombro",
+                "return_date": "A finales de Enero de 2024"
+            },
+            {
+                "name": "S. Escudero",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Denis Genreau",
+                "reason": "Lesión en la espalda",
+                "return_date": "A principios de Diciembre de 2023"
+            },
+            {
+                "name": "Nuke Mfulu",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Noviembre de 2023"
+            },
+            {
+                "name": "Iván Barbero",
+                "reason": "Lesión de menisco",
+                "return_date": ""
+            }
         ]
     },
     "Plantilla del Espanyol | Listado de Jugadores | BeSoccer": {
@@ -8515,17 +10657,6 @@
                 "cards": "9"
             },
             {
-                "number": "12",
-                "name": "Álvaro Tejero",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "13",
-                "matches": "23",
-                "goals": "1",
-                "assists": "4",
-                "cards": "2"
-            },
-            {
                 "number": "22",
                 "name": "Carlos Romero",
                 "position": "Defensa",
@@ -8535,6 +10666,17 @@
                 "goals": "2",
                 "assists": "1",
                 "cards": "5"
+            },
+            {
+                "number": "12",
+                "name": "Álvaro Tejero",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "13",
+                "matches": "23",
+                "goals": "1",
+                "assists": "4",
+                "cards": "2"
             },
             {
                 "number": "14",
@@ -8669,17 +10811,6 @@
                 "cards": "3"
             },
             {
-                "number": "8",
-                "name": "Edu Expósito",
-                "position": "Centrocampista",
-                "nationality": "N/A",
-                "total_matches": "2",
-                "matches": "9",
-                "goals": "0",
-                "assists": "0",
-                "cards": "2"
-            },
-            {
                 "number": "40",
                 "name": "J. Smith",
                 "position": "Centrocampista",
@@ -8689,6 +10820,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "0"
+            },
+            {
+                "number": "8",
+                "name": "Edu Expósito",
+                "position": "Centrocampista",
+                "nationality": "N/A",
+                "total_matches": "2",
+                "matches": "9",
+                "goals": "0",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "35",
@@ -8841,6 +10983,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/471088.jpg?size=120x&lossy=1",
                 "elo": "76"
             }
+        ],
+        "out_players": [
+            {
+                "name": "J. Catalá",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": ""
+            },
+            {
+                "name": "José Gragera",
+                "reason": "Problemas en el muslo",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Álvaro Tejero",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Roberto",
+                "reason": "Problemas gastrointestinales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pere Milla",
+                "reason": "Conmoción Cerebral",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pol Lozano",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Pol Lozano",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Brian Oliván",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "F. Pacheco",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Brian Oliván",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Carlos Romero",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pol Lozano",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Urko González",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "M. Kumbulla",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pol Lozano",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "F. Calero",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Puado",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "L. Cabrera",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Urko González",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "F. Calero",
+                "reason": "Esguince de tobillo",
+                "return_date": "A finales de Octubre de 2024"
+            }
         ]
     },
     "Plantilla del Albacete | Listado de Jugadores | BeSoccer": {
@@ -8890,17 +11134,6 @@
                 "cards": "1"
             },
             {
-                "number": "24",
-                "name": "Jaume Costa",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "7",
-                "matches": "8",
-                "goals": "0",
-                "assists": "0",
-                "cards": "1"
-            },
-            {
                 "number": "29",
                 "name": "Javi Rueda",
                 "position": "Defensa",
@@ -8910,6 +11143,17 @@
                 "goals": "3",
                 "assists": "1",
                 "cards": "5"
+            },
+            {
+                "number": "24",
+                "name": "Jaume Costa",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "7",
+                "matches": "8",
+                "goals": "0",
+                "assists": "0",
+                "cards": "1"
             },
             {
                 "number": "2",
@@ -9165,17 +11409,6 @@
                 "cards": "0"
             },
             {
-                "number": "31",
-                "name": "Alex Willy",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "0",
-                "matches": "1",
-                "goals": "0",
-                "assists": "0",
-                "cards": "0"
-            },
-            {
                 "number": "35",
                 "name": "C. Kofane",
                 "position": "Delantero",
@@ -9185,6 +11418,17 @@
                 "goals": "3",
                 "assists": "1",
                 "cards": "1"
+            },
+            {
+                "number": "31",
+                "name": "Alex Willy",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "0",
+                "matches": "1",
+                "goals": "0",
+                "assists": "0",
+                "cards": "0"
             },
             {
                 "number": "28",
@@ -9259,6 +11503,108 @@
                 "position": "DEL",
                 "image": "https://cdn.resfu.com/img_data/players/medium/196668.jpg?size=120x&lossy=1",
                 "elo": "70"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Agus Medina",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Higinio",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Cristian Rivero",
+                "reason": "Mandíbula rota",
+                "return_date": "A finales de Abril de 2025"
+            },
+            {
+                "name": "Javi Rueda",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Higinio",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Fidel",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Lazo",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álvaro Rodríguez",
+                "reason": "Lesión de tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ale Meléndez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Higinio",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Fidel",
+                "reason": "Lesión en la pierna",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "Higinio",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Lalo Aguilar",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Lazo",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jaume Costa",
+                "reason": "Lesión en la pierna",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Antonio Pacheco",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Villar",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jaume Costa",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Octubre de 2024"
+            },
+            {
+                "name": "Javi Villar",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álvaro Rodríguez",
+                "reason": "Lesión muscular",
+                "return_date": ""
             }
         ]
     },
@@ -9645,6 +11991,108 @@
                 "position": "DEF",
                 "image": "https://cdn.resfu.com/img_data/players/medium/471030.jpg?size=120x&lossy=1",
                 "elo": "77"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "N. Tenaglia",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Antonio Sivera",
+                "reason": "Lesión en la cabeza",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Kike García",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Protesoni",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Hugo Novoa",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Jesús Owono",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "T. Conechny",
+                "reason": "Fractura de cráneo",
+                "return_date": "A finales de Abril de 2025"
+            },
+            {
+                "name": "Carlos Martín",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Joan Jordán",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "S. Mouriño",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Antonio Sivera",
+                "reason": "Fractura de dedo",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "C. Protesoni",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "Moussa Diarra",
+                "reason": "Migraña",
+                "return_date": ""
+            },
+            {
+                "name": "C. Aleñá",
+                "reason": "Lesión muscular",
+                "return_date": "Entrenándose"
+            },
+            {
+                "name": "Hugo Novoa",
+                "reason": "Hernia",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "C. Protesoni",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "Antonio Blanco",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Sedlar",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Hugo Novoa",
+                "reason": "Problemas estomacales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "N. Tenaglia",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Octubre de 2024"
             }
         ]
     },
@@ -10076,6 +12524,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/146766.jpg?size=120x&lossy=1",
                 "elo": "78"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Iván Jaime",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "D. Foulquier",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Luis Rioja",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "José Gayà",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Umar Sadiq",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Rioja",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "José Gayà",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Hugo Duro",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Diakhaby",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Diakhaby",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "D. Foulquier",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Hugo Duro",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "D. Foulquier",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Guerra",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Hugo Duro",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Yarek",
+                "reason": "Lesión en la espalda",
+                "return_date": "Duda"
+            },
+            {
+                "name": "E. Barrenechea",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Umar Sadiq",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "José Gayà",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Fran Pérez",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Febrero de 2025"
+            }
         ]
     },
     "Plantilla del Real Betis | Listado de Jugadores | BeSoccer": {
@@ -10506,6 +13056,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/129539.jpg?size=120x&lossy=1",
                 "elo": "82"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Marc Roca",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Isco",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Isco",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Johnny Cardoso",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Bakambu",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Antony",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ricardo Rodríguez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ez Abde",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "C. Bakambu",
+                "reason": "Lesión en un dedo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "G. Lo Celso",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ángel Ortiz",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "G. Lo Celso",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Isco",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ángel Ortiz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Diego Llorente",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Rodríguez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Marc Bartra",
+                "reason": "Lesión en la espalda",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pablo Fornals",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Y. Sabaly",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Ricardo Rodríguez",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Febrero de 2025"
+            }
         ]
     },
     "Plantilla del Real Oviedo | Listado de Jugadores | BeSoccer": {
@@ -10881,21 +13533,112 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/183188.jpg?size=120x&lossy=1",
                 "elo": "72"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Álvaro Lemos",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "H. Hassan",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Federico Viñas",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Santi Cazorla",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Santi Cazorla",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Nacho Vidal",
+                "reason": "Problemas físicos",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Jaime Seoane",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Alemão",
+                "reason": "Fuerte golpe",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Álvaro Lemos",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jaime Seoane",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "David Costas",
+                "reason": "Lesión en el gemelo",
+                "return_date": "A mediados de Diciembre de 2024"
+            },
+            {
+                "name": "Carlos Pomares",
+                "reason": "Lesión en la pierna",
+                "return_date": "Duda"
+            },
+            {
+                "name": "César De La Hoz",
+                "reason": "Lesión en la espalda",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "S. Colombatto",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "S. Colombatto",
+                "reason": "Lesión en la pierna",
+                "return_date": "A mediados de Septiembre de 2024"
+            },
+            {
+                "name": "Jaime Seoane",
+                "reason": "Lesión en la pierna",
+                "return_date": "A mediados de Septiembre de 2024"
+            },
+            {
+                "name": "David Costas",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Julio de 2024"
+            },
+            {
+                "name": "Santi Cazorla",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Junio de 2024"
+            },
+            {
+                "name": "Federico Viñas",
+                "reason": "Lesión en el tendón de Aquiles",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Santi Cazorla",
+                "reason": "Lesión muscular en el sóleo",
+                "return_date": "A mediados de Junio de 2024"
+            }
         ]
     },
     "Plantilla del Eldense | Listado de Jugadores | BeSoccer": {
         "players_data": [
-            {
-                "number": "1",
-                "name": "Dani Martín",
-                "position": "Portero",
-                "nationality": "N/A",
-                "total_matches": "14",
-                "matches": "14",
-                "goals": "17",
-                "assists": "0",
-                "cards": "2"
-            },
             {
                 "number": "13",
                 "name": "Ian Mackay",
@@ -10906,6 +13649,17 @@
                 "goals": "30",
                 "assists": "0",
                 "cards": "4"
+            },
+            {
+                "number": "1",
+                "name": "Dani Martín",
+                "position": "Portero",
+                "nationality": "N/A",
+                "total_matches": "14",
+                "matches": "14",
+                "goals": "17",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "36",
@@ -11183,17 +13937,6 @@
                 "cards": "2"
             },
             {
-                "number": "25",
-                "name": "Diego Collado",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "8",
-                "matches": "10",
-                "goals": "1",
-                "assists": "0",
-                "cards": "2"
-            },
-            {
                 "number": "22",
                 "name": "S. Gassama",
                 "position": "Delantero",
@@ -11203,6 +13946,17 @@
                 "goals": "1",
                 "assists": "1",
                 "cards": "1"
+            },
+            {
+                "number": "25",
+                "name": "Diego Collado",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "8",
+                "matches": "10",
+                "goals": "1",
+                "assists": "0",
+                "cards": "2"
             },
             {
                 "number": "18",
@@ -11266,6 +14020,108 @@
                 "position": "DEF",
                 "image": "https://cdn.resfu.com/img_data/players/medium/178760.jpg?size=120x&lossy=1",
                 "elo": "72"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Javi Llabrés",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Diego Méndez",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Víctor García",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Víctor Camarasa",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dani Martín",
+                "reason": "Lesión en la costilla",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Dario Dumić",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iván Chapela",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Víctor Camarasa",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dario Dumić",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Simo",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iván Martos",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Iñigo Piña",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Víctor Camarasa",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Dario Dumić",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Javi Llabrés",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Llabrés",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Agosto de 2024"
+            },
+            {
+                "name": "Iván Chapela",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Diego Méndez",
+                "reason": "Problemas físicos",
+                "return_date": "Entrenándose"
+            },
+            {
+                "name": "David Timor",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Diawara",
+                "reason": "En compromiso internacional",
+                "return_date": ""
             }
         ]
     },
@@ -11674,6 +14530,108 @@
                 "position": "POR",
                 "image": "https://cdn.resfu.com/img_data/players/medium/319465.jpg?size=120x&lossy=1",
                 "elo": "73"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Chumi",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Iddrisu Baba",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Gui Guedes",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Lázaro",
+                "reason": "Desconocido",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Iddrisu Baba",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "L. Robertone",
+                "reason": "Lesión en el hombro",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Marc Pubill",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Marc Pubill",
+                "reason": "Sobrecarga",
+                "return_date": ""
+            },
+            {
+                "name": "Lázaro",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Agosto de 2024"
+            },
+            {
+                "name": "Edgar",
+                "reason": "Lesión muscular",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Iddrisu Baba",
+                "reason": "Problemas físicos",
+                "return_date": "A mediados de Agosto de 2024"
+            },
+            {
+                "name": "Nico Melamed",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Mayo de 2024"
+            },
+            {
+                "name": "Bruno Langa",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Marezi",
+                "reason": "Lesión en la mandíbula",
+                "return_date": "A principios de Mayo de 2024"
+            },
+            {
+                "name": "Sergio Arribas",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Abril de 2024"
+            },
+            {
+                "name": "A. Radovanović",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Mayo de 2024"
+            },
+            {
+                "name": "A. Radovanović",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2024"
+            },
+            {
+                "name": "Bruno Langa",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Abril de 2024"
+            },
+            {
+                "name": "Marezi",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2024"
+            },
+            {
+                "name": "L. Robertone",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
             }
         ]
     },
@@ -12127,6 +15085,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/478812.jpg?size=120x&lossy=1",
                 "elo": "69"
             }
+        ],
+        "out_players": [
+            {
+                "name": "José Amo",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Alassan",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Sergio González",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Aitor Sanz",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Aitor Sanz",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Ángel",
+                "reason": "Rotura de fibras",
+                "return_date": ""
+            },
+            {
+                "name": "A. Guerrero",
+                "reason": "Virus",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Sergio González",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Hombro dislocado",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio González",
+                "reason": "Problemas en el muslo",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "José Amo",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Waldo",
+                "reason": "Lesión muscular en el sóleo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Aitor Sanz",
+                "reason": "Problemas de pubis",
+                "return_date": "A mediados de Abril de 2024"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Hombro dislocado",
+                "return_date": "A finales de Abril de 2024"
+            },
+            {
+                "name": "A. Guerrero",
+                "reason": "Lesión muscular",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "Fabio González",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A principios de Febrero de 2024"
+            },
+            {
+                "name": "F. Medrano",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Diciembre de 2023"
+            }
         ]
     },
     "Plantilla y jugadores de la Real Sociedad": {
@@ -12176,17 +15236,6 @@
                 "cards": "0"
             },
             {
-                "number": "5",
-                "name": "Igor Zubeldia",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "24",
-                "matches": "24",
-                "goals": "0",
-                "assists": "0",
-                "cards": "7"
-            },
-            {
                 "number": "21",
                 "name": "Nayef Aguerd",
                 "position": "Defensa",
@@ -12196,6 +15245,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "5"
+            },
+            {
+                "number": "5",
+                "name": "Igor Zubeldia",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "24",
+                "matches": "24",
+                "goals": "0",
+                "assists": "0",
+                "cards": "7"
             },
             {
                 "number": "19",
@@ -12535,6 +15595,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/280863.jpg?size=120x&lossy=1",
                 "elo": "85"
             }
+        ],
+        "out_players": [
+            {
+                "name": "A. Zakharyan",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "S. Becker",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Jon Pacheco",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "O. Óskarsson",
+                "reason": "Problemas gastrointestinales",
+                "return_date": ""
+            },
+            {
+                "name": "M. Oyarzabal",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nayef Aguerd",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Jon Aramburu",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luka Sučić",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Nayef Aguerd",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Oyarzabal",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luka Sučić",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Zubimendi",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Zakharyan",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Á. Odriozola",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nayef Aguerd",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Luka Sučić",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Marzo de 2025"
+            },
+            {
+                "name": "Take Kubo",
+                "reason": "Conmoción Cerebral",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Barrenetxea",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Aihen Muñoz",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Igor Zubeldia",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Atlético de Madrid | Listado de Jugadores | BeSoccer": {
@@ -12650,17 +15812,6 @@
                 "cards": "1"
             },
             {
-                "number": "3",
-                "name": "C. Azpilicueta",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "8",
-                "matches": "9",
-                "goals": "1",
-                "assists": "0",
-                "cards": "0"
-            },
-            {
                 "number": "23",
                 "name": "Reinildo",
                 "position": "Defensa",
@@ -12670,6 +15821,17 @@
                 "goals": "0",
                 "assists": "0",
                 "cards": "4"
+            },
+            {
+                "number": "3",
+                "name": "C. Azpilicueta",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "8",
+                "matches": "9",
+                "goals": "1",
+                "assists": "0",
+                "cards": "0"
             },
             {
                 "number": "27",
@@ -12920,6 +16082,103 @@
                 "position": "MED",
                 "image": "https://cdn.resfu.com/img_data/players/medium/158753.jpg?size=120x&lossy=1",
                 "elo": "88"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Koke",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "J. Giménez",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Ángel Correa",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Ángel Correa",
+                "reason": "Tarjeta roja (directa)",
+                "return_date": "N/A"
+            },
+            {
+                "name": "R. Le Normand",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "R. Le Normand",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Reinildo",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "R. De Paul",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Lenglet",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Azpilicueta",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Koke",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Azpilicueta",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "R. Riquelme",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Thomas Lemar",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Pablo Barrios",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Giménez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Galán",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "R. Riquelme",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Musso",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
             }
         ]
     },
@@ -13212,17 +16471,6 @@
                 "cards": "2"
             },
             {
-                "number": "7",
-                "name": "Álex Sola",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "13",
-                "matches": "19",
-                "goals": "0",
-                "assists": "1",
-                "cards": "4"
-            },
-            {
                 "number": "10",
                 "name": "B. Yıldırım",
                 "position": "Delantero",
@@ -13232,6 +16480,17 @@
                 "goals": "1",
                 "assists": "0",
                 "cards": "7"
+            },
+            {
+                "number": "7",
+                "name": "Álex Sola",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "13",
+                "matches": "19",
+                "goals": "0",
+                "assists": "1",
+                "cards": "4"
             },
             {
                 "number": "29",
@@ -13328,6 +16587,108 @@
                 "position": "DEF",
                 "image": "https://cdn.resfu.com/img_data/players/medium/162193.jpg?size=120x&lossy=1",
                 "elo": "78"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Ramón Terrats",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "O. Alderete",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Milla",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "David Soria",
+                "reason": "Operado de la nariz",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Luis Milla",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "B. Mayoral",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Arambarri",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "A. Nyom",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Febrero de 2025"
+            },
+            {
+                "name": "Álvaro Rodríguez",
+                "reason": "Lesión en la pierna",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "O. Alderete",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Enero de 2025"
+            },
+            {
+                "name": "Ramón Terrats",
+                "reason": "Problemas en el pie",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Peter",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "D. Djené",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A principios de Diciembre de 2024"
+            },
+            {
+                "name": "B. Yıldırım",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "B. Mayoral",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "O. Alderete",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Juanmi",
+                "reason": "Problemas en el muslo",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "B. Mayoral",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Álvaro Rodríguez",
+                "reason": "Problemas en el muslo",
+                "return_date": "A principios de Octubre de 2024"
+            },
+            {
+                "name": "Luis Milla",
+                "reason": "Contusión",
+                "return_date": "Duda"
             }
         ]
     },
@@ -13682,6 +17043,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/192428.jpg?size=120x&lossy=1",
                 "elo": "84"
             }
+        ],
+        "out_players": [
+            {
+                "name": "I. Ruiz De Galarreta",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Dani Vivian",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Aitor Paredes",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Oihan Sancet",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Yuri",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nico Williams",
+                "reason": "Virus",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Oihan Sancet",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "I. Ruiz De Galarreta",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Beñat Prados",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nico Williams",
+                "reason": "Lesión en los isquiotibiales",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Álvaro Djaló",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Yuri",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Unai Núñez",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "I. Ruiz De Galarreta",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Álvaro Djaló",
+                "reason": "Esguince de tobillo",
+                "return_date": ""
+            },
+            {
+                "name": "Nico Williams",
+                "reason": "Contusión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Nico Williams",
+                "reason": "Lesión en el tobillo",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Yeray",
+                "reason": "Problemas en el pie",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "I. Ruiz De Galarreta",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Enero de 2025"
+            },
+            {
+                "name": "Oihan Sancet",
+                "reason": "Esguince de tobillo",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Mirandés | Listado de Jugadores | BeSoccer": {
@@ -13720,17 +17183,6 @@
                 "cards": "1"
             },
             {
-                "number": "2",
-                "name": "Hugo Rincón",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "29",
-                "matches": "31",
-                "goals": "1",
-                "assists": "4",
-                "cards": "7"
-            },
-            {
                 "number": "15",
                 "name": "Pablo Tomeo",
                 "position": "Defensa",
@@ -13740,6 +17192,17 @@
                 "goals": "2",
                 "assists": "0",
                 "cards": "4"
+            },
+            {
+                "number": "2",
+                "name": "Hugo Rincón",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "29",
+                "matches": "31",
+                "goals": "1",
+                "assists": "4",
+                "cards": "7"
             },
             {
                 "number": "3",
@@ -14068,6 +17531,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/358864.jpg?size=120x&lossy=1",
                 "elo": "70"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Hugo Rincón",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Panichelli",
+                "reason": "Lesión en la cabeza",
+                "return_date": "A finales de Enero de 2025"
+            },
+            {
+                "name": "Sergio Postigo",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Juan Gutierrez",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Calvo",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "Iker Benito",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Sergio Postigo",
+                "reason": "Esguince de tobillo",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Raúl Fernández",
+                "reason": "Lesión en la muñeca",
+                "return_date": "A finales de Junio de 2024"
+            },
+            {
+                "name": "J. Panichelli",
+                "reason": "Lesión en el gemelo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Ander Martín",
+                "reason": "Fractura de la mano",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Sergio Postigo",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Enero de 2024"
+            },
+            {
+                "name": "Julio Alonso",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Fernández",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Fernández",
+                "reason": "Fractura de dedo",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "M. Lachuer",
+                "reason": "Edema en la rodilla",
+                "return_date": "Algunas semanas"
+            },
+            {
+                "name": "Sergio Postigo",
+                "reason": "Lesión en el tobillo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Roca",
+                "reason": "Rotura ligamento cruzado",
+                "return_date": "A mediados de Marzo de 2024"
+            },
+            {
+                "name": "J. Roca",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Raúl Fernández",
+                "reason": "Lesión en la costilla",
+                "return_date": "A principios de Junio de 2023"
+            },
+            {
+                "name": "Julio Alonso",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            }
         ]
     },
     "Plantilla del Racing | Listado de Jugadores | BeSoccer": {
@@ -14150,17 +17715,6 @@
                 "cards": "4"
             },
             {
-                "number": "40",
-                "name": "Mario García",
-                "position": "Defensa",
-                "nationality": "N/A",
-                "total_matches": "19",
-                "matches": "23",
-                "goals": "1",
-                "assists": "0",
-                "cards": "7"
-            },
-            {
                 "number": "15",
                 "name": "Marco Sangalli",
                 "position": "Defensa",
@@ -14170,6 +17724,17 @@
                 "goals": "3",
                 "assists": "2",
                 "cards": "6"
+            },
+            {
+                "number": "40",
+                "name": "Mario García",
+                "position": "Defensa",
+                "nationality": "N/A",
+                "total_matches": "19",
+                "matches": "23",
+                "goals": "1",
+                "assists": "0",
+                "cards": "7"
             },
             {
                 "number": "2",
@@ -14475,6 +18040,108 @@
                 "position": "MED",
                 "image": "https://cdn.resfu.com/img_data/players/medium/528355.jpg?size=120x&lossy=1",
                 "elo": "73"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Í. Sainz-Maza",
+                "reason": "Rotura del ligamento cruzado",
+                "return_date": "Fin de temporada"
+            },
+            {
+                "name": "Maguette Gueye",
+                "reason": "Acumulación de tarjetas",
+                "return_date": "N/A"
+            },
+            {
+                "name": "Ekain",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "C. Michelin",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Mantilla",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Mantilla",
+                "reason": "Rotura de fibras",
+                "return_date": ""
+            },
+            {
+                "name": "Pol Moreno",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Arana",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "V. Meseguer",
+                "reason": "Problemas gastrointestinales",
+                "return_date": "Duda"
+            },
+            {
+                "name": "C. Michelin",
+                "reason": "Fuerte golpe",
+                "return_date": "Algunos días"
+            },
+            {
+                "name": "Unai Vencedor",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jeremy",
+                "reason": "Lesión ligamento lateral",
+                "return_date": "Desconocido"
+            },
+            {
+                "name": "Andrés Martín",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Lago Junior",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Í. Sainz-Maza",
+                "reason": "Lesión muscular del bíceps femoral",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Arana",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Febrero de 2024"
+            },
+            {
+                "name": "Mantilla",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "V. Meseguer",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Andrés Martín",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Arana",
+                "reason": "Lesión en la cabeza",
+                "return_date": "Algunas semanas"
             }
         ]
     },
@@ -14884,6 +18551,108 @@
                 "image": "https://cdn.resfu.com/img_data/players/medium/388865.jpg?size=120x&lossy=1",
                 "elo": "74"
             }
+        ],
+        "out_players": [
+            {
+                "name": "Javi Hernández",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Mier",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Óscar Sielva",
+                "reason": "Problemas en el muslo",
+                "return_date": "A mediados de Abril de 2025"
+            },
+            {
+                "name": "Patrick Soko",
+                "reason": "Lesión muscular",
+                "return_date": "A principios de Abril de 2025"
+            },
+            {
+                "name": "Rubén Pulido",
+                "reason": "Problemas en el muslo",
+                "return_date": "Duda"
+            },
+            {
+                "name": "M. Loureiro",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A finales de Marzo de 2025"
+            },
+            {
+                "name": "Javi Mier",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Marzo de 2025"
+            },
+            {
+                "name": "Iker Unzueta",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2025"
+            },
+            {
+                "name": "Moi Delgado",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Patrick Soko",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "Javi Pérez",
+                "reason": "Lesión en el hombro",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Hugo Vallejo",
+                "reason": "Lesión de menisco",
+                "return_date": "A mediados de Febrero de 2025"
+            },
+            {
+                "name": "M. Loureiro",
+                "reason": "Contusión",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "Óscar Sielva",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Noviembre de 2024"
+            },
+            {
+                "name": "Gerard Valentín",
+                "reason": "Contusión",
+                "return_date": "Alrededor de 1-2 semanas"
+            },
+            {
+                "name": "Patrick Soko",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Joaquín Muñoz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Javi Pérez",
+                "reason": "Lesión en el hombro",
+                "return_date": "A mediados de Noviembre de 2024"
+            },
+            {
+                "name": "Patrick Soko",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "M. Loureiro",
+                "reason": "Problemas en la rodilla",
+                "return_date": "A principios de Octubre de 2024"
+            }
         ]
     },
     "Plantilla del Córdoba CF | Listado de Jugadores | BeSoccer": {
@@ -15142,17 +18911,6 @@
                 "cards": "4"
             },
             {
-                "number": "20",
-                "name": "Antonio Casas",
-                "position": "Delantero",
-                "nationality": "N/A",
-                "total_matches": "29",
-                "matches": "31",
-                "goals": "9",
-                "assists": "0",
-                "cards": "8"
-            },
-            {
                 "number": "23",
                 "name": "C. Carracedo",
                 "position": "Delantero",
@@ -15161,6 +18919,17 @@
                 "matches": "32",
                 "goals": "3",
                 "assists": "9",
+                "cards": "8"
+            },
+            {
+                "number": "20",
+                "name": "Antonio Casas",
+                "position": "Delantero",
+                "nationality": "N/A",
+                "total_matches": "29",
+                "matches": "31",
+                "goals": "9",
+                "assists": "0",
                 "cards": "8"
             },
             {
@@ -15258,6 +19027,108 @@
                 "position": "DEL",
                 "image": "https://cdn.resfu.com/img_data/players/medium/170275.jpg?size=120x&lossy=1",
                 "elo": "70"
+            }
+        ],
+        "out_players": [
+            {
+                "name": "Adilson",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex López",
+                "reason": "Rotura ligamento cruzado",
+                "return_date": ""
+            },
+            {
+                "name": "Mati Barboza",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Carlos Marin",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Del Moral",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Carlos Isaac",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Diciembre de 2024"
+            },
+            {
+                "name": "Mati Barboza",
+                "reason": "Fuerte golpe",
+                "return_date": "Alrededor de una semana"
+            },
+            {
+                "name": "Jacobo",
+                "reason": "Lesión muscular",
+                "return_date": "A mediados de Octubre de 2024"
+            },
+            {
+                "name": "Carlos Isaac",
+                "reason": "Lesión de cadera",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Isma Ruiz",
+                "reason": "Problemas en la rodilla",
+                "return_date": "Duda"
+            },
+            {
+                "name": "J. Magunazelaia",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Septiembre de 2024"
+            },
+            {
+                "name": "Isma Ruiz",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Marvel",
+                "reason": "Desconocido",
+                "return_date": ""
+            },
+            {
+                "name": "Rubén Alves",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "A. Del Moral",
+                "reason": "Rotura de tendón",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Jacobo",
+                "reason": "Lesión muscular",
+                "return_date": "A finales de Febrero de 2024"
+            },
+            {
+                "name": "Carlos Isaac",
+                "reason": "Fuerte golpe",
+                "return_date": "A mediados de Febrero de 2024"
+            },
+            {
+                "name": "Carlos Isaac",
+                "reason": "Problemas físicos",
+                "return_date": "Duda"
+            },
+            {
+                "name": "Álex Sala",
+                "reason": "Contusión en isquiotibiales",
+                "return_date": ""
+            },
+            {
+                "name": "A. Del Moral",
+                "reason": "Lesión muscular",
+                "return_date": "Duda"
             }
         ]
     }
