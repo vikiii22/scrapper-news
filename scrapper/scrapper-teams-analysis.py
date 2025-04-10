@@ -100,6 +100,8 @@ class TeamsAnalysis:
                 for row in rows:
                     try:
                         team_name = team_name.replace("Plantilla del ", "").split(" | ")[0].strip()
+                        if "Real Sociedad" in team_name:
+                            team_name = "Real Sociedad"
                         team_link = row.find('a', {'data-cy': 'team'})
                         similarity = fuzz.ratio(team_name.lower(), team_link.text.strip().lower()) if team_link else 0
                         if similarity > 75:

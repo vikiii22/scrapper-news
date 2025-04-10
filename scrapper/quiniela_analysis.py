@@ -1,4 +1,5 @@
 import json
+import numpy as np
 
 # filepath: c:\Users\joseantonio.sanchez\Documents\scrapper-news-1\scripts\quiniela_analysis.py
 # Cargar los datos de los JSON
@@ -74,23 +75,31 @@ def get_players_data(team_name):
             } for player in players]
     return []  # Si no hay datos del equipo, devolver lista vacía
 
-# Generar el análisis en formato quiniela
+# Generar el análisis en formato quiniela usando un árbol de decisiones
 quiniela_results = []
+
 for match in matches_data:
     team_a = match["team_a_name"]
     team_b = match["team_b_name"]
 
     # Calcular el promedio de "elo" para ambos equipos
     team_a_elo = calculate_team_elo(team_a)
+    team_a_elo += 5
     team_b_elo = calculate_team_elo(team_b)
 
-    # Determinar el resultado en formato quiniela
-    if abs(team_a_elo - team_b_elo) < 1:
-        result = "X"
-    elif team_a_elo > team_b_elo:
-        result = "1"
-    else:
-        result = "2"
+    # Crear un árbol de decisiones con NumPy
+    elo_diff = team_a_elo - team_b_elo
+
+    # Condiciones del árbol de decisiones
+    result = np.select(
+        condlist=[
+            np.abs(elo_diff) < 1,  # Si la diferencia de ELO es menor a 1
+            elo_diff > 0,          # Si el ELO del equipo A es mayor
+            elo_diff < 0           # Si el ELO del equipo B es mayor
+        ],
+        choicelist=["X", "1", "2"],  # Resultados correspondientes
+        default="X"                  # Valor por defecto (empate)
+    )
 
     # Agregar el resultado al análisis
     quiniela_results.append({
