@@ -1,5 +1,6 @@
 import json
 import numpy as np
+from datetime import datetime
 
 # filepath: c:\Users\joseantonio.sanchez\Documents\scrapper-news-1\scripts\quiniela_analysis.py
 # Cargar los datos de los JSON
@@ -9,6 +10,27 @@ with open('../data/teams_analysis_results.json', 'r', encoding='utf-8') as teams
 with open('../data/big-data.json', 'r', encoding='utf-8') as matches_file:
     matches_data = json.load(matches_file)
 
+def get_date(date_str):
+    dictionary_months = {
+        "ENE": "01",
+        "FEB": "02",
+        "MAR": "03",
+        "ABR": "04",
+        "MAY": "05",
+        "JUN": "06",
+        "JUL": "07",
+        "AGO": "08",
+        "SEP": "09",
+        "OCT": "10",
+        "NOV": "11",
+        "DIC": "12"
+    }
+    month = date_str.split(" ")[1]
+    month_number = dictionary_months.get(month, "01")  # Default to January if not found
+    day = date_str.split(" ")[0]
+    year = date_str.split(" ")[2]
+    return f"{day}-{month_number}-{year}"
+
 # Función para calcular el promedio de "elo" de los jugadores destacados de un equipo
 def calculate_team_elo(team_name):
     for team, data in teams_data.items():
@@ -16,7 +38,26 @@ def calculate_team_elo(team_name):
             players = data.get("players_data", [])
             additional_data = data.get("top_players", {}).get("additional_data", {})
             league_perfomance = additional_data.get("league_performance", [])
-            # league_position = int(additional_data.get("league_position", 0))
+            european_competition = data.get("top_players", {}).get("european_competition", {})
+            
+            get_date_match = get_date(european_competition.get("match_date", "N/A"))
+
+            # Obtener la fecha del último partido
+            last_match_date_str = get_date_match
+            if last_match_date_str != "N/A":
+                try:
+                    # Ajustar el formato para que coincida con el formato devuelto por get_date
+                    last_match_date = datetime.strptime(last_match_date_str, "%d-%m-%Y")
+                    days_since_last_match = (datetime.now() - last_match_date).days
+                except ValueError:
+                    print(f"Error al procesar la fecha: {last_match_date_str}")
+                    days_since_last_match = 7  # Asumir 7 días si no hay datos válidos
+            else:
+                days_since_last_match = 7  # Asumir 7 días si no hay datos
+
+            # Penalización por descanso insuficiente
+            rest_penalty = max(0, 5 - days_since_last_match) * 2  # Penalizar si menos de 5 días de descanso
+
             league_position = 0
             league_points = 0
             if league_perfomance:
@@ -60,6 +101,9 @@ def calculate_team_elo(team_name):
             team_elo += league_points * 0.1  # Incrementar por puntos en liga
             team_elo -= league_position * 0.5  # Penalizar por posición en liga (más alto = peor posición)
 
+            # Aplicar penalización por descanso insuficiente
+            team_elo -= rest_penalty
+
             return team_elo
     return 0  # Si no hay datos del equipo, devolver 0
 
@@ -84,6 +128,7 @@ for match in matches_data:
 
     # Calcular el promedio de "elo" para ambos equipos
     team_a_elo = calculate_team_elo(team_a)
+    # Se añade un bono de 5 puntos al equipo local
     team_a_elo += 5
     team_b_elo = calculate_team_elo(team_b)
 
