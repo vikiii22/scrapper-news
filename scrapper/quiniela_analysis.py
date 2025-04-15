@@ -70,9 +70,13 @@ def get_elo_from_casas_apuestas(casas_apuestas_url):
         # Calcular probabilidad implícita media para cada resultado
         probs = {"1": [], "X": [], "2": []}
         for casa, vals in cuotas.items():
-            probs["1"].append(1 / vals["1"])
-            probs["X"].append(1 / vals["X"])
-            probs["2"].append(1 / vals["2"])
+            inv_1 = 1 / vals["1"]
+            inv_x = 1 / vals["X"]
+            inv_2 = 1 / vals["2"]
+            overround = inv_1 + inv_x + inv_2
+            probs["1"].append(inv_1 / overround)
+            probs["X"].append(inv_x / overround)
+            probs["2"].append(inv_2 / overround)
 
         avg_probs = {k: round(100 * sum(v) / len(v), 2) for k, v in probs.items() if v}
 
@@ -200,6 +204,7 @@ for match in matches_data:
     pred_apuestas = None
     if apuestas and "probabilidades" in apuestas:
         probs = apuestas["probabilidades"]
+        print(f"Probabilidades: {probs} para {team_a} vs {team_b}")
         pred_apuestas = max(probs, key=probs.get)  # "1", "X" o "2"
 
     # Combinación: si ambos coinciden, usar ese resultado; si no, priorizar ELO pero marcar la diferencia
