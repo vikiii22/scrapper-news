@@ -226,16 +226,24 @@ class TeamsAnalysis:
         for url in self.urls:
             html_content = self.fetch_analysis(url)
             if html_content:
-                # Extraer el nombre del equipo desde la URL o el contenido HTML
                 soup = BeautifulSoup(html_content, 'html.parser')
                 team_name = soup.find('title').text.strip() if soup.find('title') else url.split('/')[-1]
-                
-                # Parsear los datos de los jugadores
-                players_data = self.parse_analysis(html_content)
 
+                # Buscar la URL de apuestas correspondiente a este equipo
+                url_apuestas = None
+                with open("../data/big-data.json", 'r', encoding='utf-8') as file:
+                    matches = json.load(file)
+                    for match in matches:
+                        if match['team_a_info'] == url or match['team_b_info'] == url:
+                            url_apuestas = match['url_apuestas']
+                            break
+
+                players_data = self.parse_analysis(html_content)
                 most_valuated_players = self.parse_players(url, team_name)
-                
-                # Guardar los datos bajo el nombre del equipo
+                # Añadir la url_apuestas al diccionario de top_players
+                if isinstance(most_valuated_players, dict):
+                    most_valuated_players['casas_apuestas'] = url_apuestas
+
                 all_data[team_name] = {
                     'players_data': players_data,
                     'top_players': most_valuated_players

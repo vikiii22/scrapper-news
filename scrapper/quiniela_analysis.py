@@ -1,6 +1,8 @@
 import json
 import numpy as np
 from datetime import datetime
+import requests
+from bs4 import BeautifulSoup
 
 with open('../data/teams_analysis_results.json', 'r', encoding='utf-8') as teams_file:
     teams_data = json.load(teams_file)
@@ -29,6 +31,60 @@ def get_date(date_str):
     year = date_str.split(" ")[2]
     return f"{day}-{month_number}-{year}"
 
+def get_elo_from_casas_apuestas(casas_apuestas_url):
+    if not casas_apuestas_url:
+        return None
+
+    try:
+        response = requests.get(casas_apuestas_url, timeout=10)
+        response.raise_for_status()
+        soup = BeautifulSoup(response.text, 'html.parser')
+
+        # Buscar el div con el JSON de cuotas
+        mod_bet = soup.find('div', id='mod_bet')
+        if not mod_bet:
+            print("No se encontró el div de cuotas")
+            return None
+
+        data_odds = mod_bet.find('div', id='data-odds-tab')
+        if not data_odds or not data_odds.has_attr('data_odds'):
+            print("No se encontró el atributo data_odds")
+            return None
+
+        odds_json = json.loads(data_odds['data_odds'])
+        cuotas = {}
+
+        # Extraer cuotas 1X2 del partido completo (ft)
+        for house_odds in odds_json['scopes']['ft'][0]['housesOdds']:
+            casa = house_odds['houseName']
+            bets = house_odds['bets']
+            cuota_1 = bets[0]['value']
+            cuota_x = bets[1]['value']
+            cuota_2 = bets[2]['value']
+            cuotas[casa] = {
+                "1": float(cuota_1.replace(',', '.')),
+                "X": float(cuota_x.replace(',', '.')),
+                "2": float(cuota_2.replace(',', '.'))
+            }
+
+        # Calcular probabilidad implícita media para cada resultado
+        probs = {"1": [], "X": [], "2": []}
+        for casa, vals in cuotas.items():
+            probs["1"].append(1 / vals["1"])
+            probs["X"].append(1 / vals["X"])
+            probs["2"].append(1 / vals["2"])
+
+        avg_probs = {k: round(100 * sum(v) / len(v), 2) for k, v in probs.items() if v}
+
+        return {
+            "cuotas": cuotas,
+            "probabilidades": avg_probs
+        }
+
+    except Exception as e:
+        print(f"Error obteniendo cuotas: {e}")
+        return None
+
 # Función para calcular el promedio de "elo" de los jugadores destacados de un equipo
 def calculate_team_elo(team_name):
     for team, data in teams_data.items():
@@ -37,6 +93,9 @@ def calculate_team_elo(team_name):
             additional_data = data.get("top_players", {}).get("additional_data", {})
             league_perfomance = additional_data.get("league_performance", [])
             european_competition = data.get("top_players", {}).get("european_competition", {})
+            # casas_apuestas = data.get("top_players", {}).get("casas_apuestas", {})
+
+            # elo_from_casas_apuestas = get_elo_from_casas_apuestas(casas_apuestas)
             
             get_date_match = get_date(european_competition.get("match_date", "N/A"))
 
@@ -126,31 +185,42 @@ for match in matches_data:
 
     # Calcular el promedio de "elo" para ambos equipos
     team_a_elo = calculate_team_elo(team_a)
-    # Se añade un bono de 5 puntos al equipo local
-    team_a_elo += 5
+    team_a_elo += 5  # Bono local
     team_b_elo = calculate_team_elo(team_b)
 
-    # Crear un árbol de decisiones con NumPy
+    # Obtener la url de apuestas del partido
+    url_apuestas = match.get("url_apuestas")
+    apuestas = get_elo_from_casas_apuestas(url_apuestas) if url_apuestas else None
+
+    # Árbol de decisiones por ELO
     elo_diff = team_a_elo - team_b_elo
+    pred_elo = "X" if np.abs(elo_diff) < 1 else ("1" if elo_diff > 0 else "2")
 
-    # Condiciones del árbol de decisiones
-    result = np.select(
-        condlist=[
-            np.abs(elo_diff) < 1,  # Si la diferencia de ELO es menor a 1
-            elo_diff > 0,          # Si el ELO del equipo A es mayor
-            elo_diff < 0           # Si el ELO del equipo B es mayor
-        ],
-        choicelist=["X", "1", "2"],  # Resultados correspondientes
-        default="X"                  # Valor por defecto (empate)
-    )
+    # Árbol de decisiones por casas de apuestas (probabilidad más alta)
+    pred_apuestas = None
+    if apuestas and "probabilidades" in apuestas:
+        probs = apuestas["probabilidades"]
+        pred_apuestas = max(probs, key=probs.get)  # "1", "X" o "2"
 
-    # Agregar el resultado al análisis
+    # Combinación: si ambos coinciden, usar ese resultado; si no, priorizar ELO pero marcar la diferencia
+    if pred_apuestas and pred_elo == pred_apuestas:
+        final_pred = pred_elo
+        fuente = "ELO+APUESTAS"
+    elif pred_apuestas:
+        final_pred = pred_elo + "/" + pred_apuestas
+        fuente = "ELO/APUESTAS"
+    else:
+        final_pred = pred_elo
+        fuente = "ELO"
+
     quiniela_results.append({
         "match": f"{team_a} vs {team_b}",
         "elo_team_a": team_a_elo,
         "elo_team_b": team_b_elo,
-        "result": result,
-        "analysis_url": match["analysis_url"]
+        "result": final_pred,
+        "fuente": fuente,
+        "analysis_url": match["analysis_url"],
+        "apuesta_url": url_apuestas
     })
 
 # Mostrar los resultados
@@ -158,6 +228,7 @@ for result in quiniela_results:
     print(f"Partido: {result['match']}")
     print(f"Elo Equipo A: {result['elo_team_a']}")
     print(f"Elo Equipo B: {result['elo_team_b']}")
-    print(f"Resultado Quiniela: {result['result']}")
-    print(f"Análisis: {result['analysis_url']}")
+    print(f"Resultado Quiniela: {result['result']} (Fuente: {result['fuente']})")
+    print(f"Análisis: {result['analysis_url']}"),
+    print(f"URL Apuestas: {result['apuesta_url']}")
     print("-" * 40)
