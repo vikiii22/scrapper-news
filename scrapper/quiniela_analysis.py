@@ -2,8 +2,6 @@ import json
 import numpy as np
 from datetime import datetime
 
-# filepath: c:\Users\joseantonio.sanchez\Documents\scrapper-news-1\scripts\quiniela_analysis.py
-# Cargar los datos de los JSON
 with open('../data/teams_analysis_results.json', 'r', encoding='utf-8') as teams_file:
     teams_data = json.load(teams_file)
 
