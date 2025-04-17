@@ -125,6 +125,11 @@ class ResultsSportsNewScrapper:
                     analysis_url = f"https://es.besoccer.com/partido/seleccion-{team_a_name_clean}/seleccion-{team_b_name_clean}/{match_id}/analisis"
                 else:
                     analysis_url = f"https://es.besoccer.com/partido/{team_a_name_clean}/{team_b_name_clean}/{match_id}/analisis"
+                
+                if(league_name == 'Liga de las Naciones de la UEFA'):
+                    url_apuestas = f"https://es.besoccer.com/partido/seleccion-{team_a_name_clean}/seleccion-{team_b_name_clean}/{match_id}/apuestas-futbol"
+                else:
+                    url_apuestas = f"https://es.besoccer.com/partido/{team_a_name_clean}/{team_b_name_clean}/{match_id}/apuestas-futbol"
 
                 data.append({
                     'league_name': league_name,
@@ -139,7 +144,8 @@ class ResultsSportsNewScrapper:
                     'date': date,
                     'team_a_info': team_a_info,
                     'team_b_info': team_b_info,
-                    'analysis_url': analysis_url  # Agregar la URL de análisis
+                    'analysis_url': analysis_url,  # Agregar la URL de análisis
+                    'url_apuestas': url_apuestas  # Agregar la URL de apuestas
                 })
         return data
     

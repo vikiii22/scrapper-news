@@ -87,6 +87,38 @@ class TeamsAnalysis:
         
         return players_data
     
+    def parse_european_competition(self, soup, team_name):
+        european_competition = {}
+
+        # Buscar la sección de competiciones europeas
+        last_match = soup.find('div', class_='panel-body pn match-list-new')
+        if last_match:
+            match_link = last_match.find('a', class_='match-link')
+            if match_link:
+                match_url = match_link.get('href', 'N/A')
+                match_date = match_link.find('div', class_='date ta-c').text.strip() if match_link.find('div', class_='date ta-c') else 'N/A'
+                match_status = match_link.find('span', class_='tag end').text.strip() if match_link.find('span', class_='tag end') else 'N/A'
+                match_score = match_link.find('div', class_='marker').text.strip() if match_link.find('div', class_='marker') else 'N/A'
+
+                # Equipos
+                team_left = match_link.select_one('div.team-name.ta-r div.name').text.strip() if match_link.select_one('div.team-name.ta-r div.name') else 'N/A'
+                team_right = match_link.select_one('div.team-name.ta-l div.name').text.strip() if match_link.select_one('div.team-name.ta-l div.name') else 'N/A'
+
+                # Verificar si el equipo ganador tiene la clase "winner"
+                winner = "left" if match_link.find('div', class_='team-name ta-r team_left winner') else "right" if match_link.find('div', class_='team-name ta-l team_right winner') else "none"
+
+                european_competition = {
+                    'match_url': match_url,
+                    'match_date': match_date,
+                    'match_status': match_status,
+                    'match_score': match_score,
+                    'team_left': team_left,
+                    'team_right': team_right,
+                    'winner': winner
+                }
+
+        return european_competition
+
     def parse_additional_data(self, soup, team_name):
         additional_data = {}
 
@@ -179,10 +211,13 @@ class TeamsAnalysis:
 
             # Datos adicionales
             additional_data = self.parse_additional_data(soup, team_name)
+            #TODO: comprobar si el equipo viene de jugar en competición europea
+            european_competition = self.parse_european_competition(soup, team_name)
 
             return {
                 'players': players_data,
-                'additional_data': additional_data
+                'additional_data': additional_data,
+                'european_competition': european_competition
             }
         return {'players': [], 'additional_data': {}}
 
@@ -191,16 +226,24 @@ class TeamsAnalysis:
         for url in self.urls:
             html_content = self.fetch_analysis(url)
             if html_content:
-                # Extraer el nombre del equipo desde la URL o el contenido HTML
                 soup = BeautifulSoup(html_content, 'html.parser')
                 team_name = soup.find('title').text.strip() if soup.find('title') else url.split('/')[-1]
-                
-                # Parsear los datos de los jugadores
-                players_data = self.parse_analysis(html_content)
 
+                # Buscar la URL de apuestas correspondiente a este equipo
+                url_apuestas = None
+                with open("../data/big-data.json", 'r', encoding='utf-8') as file:
+                    matches = json.load(file)
+                    for match in matches:
+                        if match['team_a_info'] == url or match['team_b_info'] == url:
+                            url_apuestas = match['url_apuestas']
+                            break
+
+                players_data = self.parse_analysis(html_content)
                 most_valuated_players = self.parse_players(url, team_name)
-                
-                # Guardar los datos bajo el nombre del equipo
+                # Añadir la url_apuestas al diccionario de top_players
+                if isinstance(most_valuated_players, dict):
+                    most_valuated_players['casas_apuestas'] = url_apuestas
+
                 all_data[team_name] = {
                     'players_data': players_data,
                     'top_players': most_valuated_players
