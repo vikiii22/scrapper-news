@@ -237,3 +237,14 @@ for result in quiniela_results:
     print(f"Análisis: {result['analysis_url']}"),
     print(f"URL Apuestas: {result['apuesta_url']}")
     print("-" * 40)
+
+# Guardar los resultados en un archivo de texto
+with open("quiniela_results.txt", "w", encoding="utf-8") as f:
+    for result in quiniela_results:
+        f.write(f"Partido: {result['match']}\n")
+        f.write(f"Elo Equipo A: {result['elo_team_a']}\n")
+        f.write(f"Elo Equipo B: {result['elo_team_b']}\n")
+        f.write(f"Resultado Quiniela: {result['result']} (Fuente: {result['fuente']})\n")
+        f.write(f"Análisis: {result['analysis_url']}\n")
+        f.write(f"URL Apuestas: {result['apuesta_url']}\n")
+        f.write("-" * 40 + "\n")
