@@ -1,6 +1,6 @@
 # Sports News Scraper
 
-Este proyecto es un scraper de noticias deportivas escrito en Python.
+Este proyecto es un scraper de resultados deportivos escrito en Python.
 
 ## Estructura del Proyecto
 
