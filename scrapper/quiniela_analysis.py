@@ -247,4 +247,13 @@ with open("quiniela_results.txt", "w", encoding="utf-8") as f:
         f.write(f"Resultado Quiniela: {result['result']} (Fuente: {result['fuente']})\n")
         f.write(f"Análisis: {result['analysis_url']}\n")
         f.write(f"URL Apuestas: {result['apuesta_url']}\n")
+        # Guardar probabilidades si existen
+        url_apuestas = result['apuesta_url']
+        probs_str = ""
+        if url_apuestas:
+            apuestas = get_elo_from_casas_apuestas(url_apuestas)
+            if apuestas and "probabilidades" in apuestas:
+                probs = apuestas["probabilidades"]
+                probs_str = f"Probabilidades 1X2: {probs}\n"
+        f.write(probs_str)
         f.write("-" * 40 + "\n")

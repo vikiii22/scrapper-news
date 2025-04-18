@@ -2,6 +2,7 @@ import subprocess
 import requests
 import os
 import sys
+import time
 from dotenv import load_dotenv
 
 load_dotenv()  
@@ -28,12 +29,20 @@ def send_telegram_file(token, chat_id, file_path, caption=None):
         requests.post(url, data=data, files=files)
 
 if __name__ == "__main__":
-    run_script("scrapper-data-besoccer.py")
-    run_script("scrapper-teams-analysis.py")
-    run_script("quiniela_analysis.py")
     TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-    # Recibe el chat_id como argumento
     TELEGRAM_CHAT_ID = sys.argv[1] if len(sys.argv) > 1 else None
+    file_path = "quiniela_results.txt"
+    send_file = False
 
-    if TELEGRAM_CHAT_ID:
-        send_telegram_file(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, "quiniela_results.txt", caption="Análisis de quiniela adjunto.")
+    if os.path.exists(file_path):
+        file_age = time.time() - os.path.getmtime(file_path)
+        if file_age < 24 * 3600:
+            send_file = True
+
+    if not send_file:
+        run_script("scrapper-data-besoccer.py")
+        run_script("scrapper-teams-analysis.py")
+        run_script("quiniela_analysis.py")
+
+    if TELEGRAM_CHAT_ID and os.path.exists(file_path):
+        send_telegram_file(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, file_path, caption="Análisis de quiniela adjunto.")
