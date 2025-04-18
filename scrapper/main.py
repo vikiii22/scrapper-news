@@ -1,9 +1,10 @@
 import subprocess
 import requests
 import os
+import sys
 from dotenv import load_dotenv
 
-load_dotenv()  # Carga las variables del .env
+load_dotenv()  
 
 def run_script(script_path):
     print(f"Ejecutando {script_path} ...")
@@ -31,6 +32,8 @@ if __name__ == "__main__":
     run_script("scrapper-teams-analysis.py")
     run_script("quiniela_analysis.py")
     TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
-    TELEGRAM_CHAT_ID = os.getenv("TELEGRAM_CHAT_ID")
+    # Recibe el chat_id como argumento
+    TELEGRAM_CHAT_ID = sys.argv[1] if len(sys.argv) > 1 else None
 
-    send_telegram_file(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, "quiniela_results.txt", caption="Análisis de quiniela adjunto.")
+    if TELEGRAM_CHAT_ID:
+        send_telegram_file(TELEGRAM_TOKEN, TELEGRAM_CHAT_ID, "quiniela_results.txt", caption="Análisis de quiniela adjunto.")
