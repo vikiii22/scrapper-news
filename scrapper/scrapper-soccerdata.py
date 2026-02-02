@@ -18,7 +18,7 @@ def obtener_datos_liga(liga_nombre, liga_code, temporada='2526'):
     """
     Obtiene los resultados, próximos partidos y clasificación de una liga
     """
-    print(f"🏆 Obteniendo datos de {liga_nombre} {temporada[:2]}/{temporada[2:]} con Sofascore...")
+    print(f"Obteniendo datos de {liga_nombre} {temporada[:2]}/{temporada[2:]} con Sofascore...")
     
     try:
         # Inicializar Sofascore para la liga
@@ -31,9 +31,9 @@ def obtener_datos_liga(liga_nombre, liga_code, temporada='2526'):
         played = schedule[schedule['home_score'].notna()].copy()
         upcoming = schedule[schedule['home_score'].isna()].copy()
         
-        print(f"✅ {len(schedule)} partidos en total")
-        print(f"   📊 {len(played)} partidos jugados")
-        print(f"   📆 {len(upcoming)} partidos por jugar")
+        print(f"OK - {len(schedule)} partidos en total")
+        print(f"   Partidos jugados: {len(played)}")
+        print(f"   Partidos por jugar: {len(upcoming)}")
         
         # Preparar datos para guardar
         resultados = {
@@ -73,11 +73,11 @@ def obtener_datos_liga(liga_nombre, liga_code, temporada='2526'):
         
         # Obtener tabla de clasificación
         try:
-            print(f"   ├─ Obteniendo clasificación...")
+            print(f"   Obteniendo clasificacion...")
             table = sofascore.read_league_table()
             
             if not table.empty:
-                print(f"   ├─ ✅ {len(table)} equipos en la clasificación")
+                print(f"   OK - {len(table)} equipos en la clasificacion")
                 
                 # Resetear el índice para obtener los nombres de equipos correctamente
                 table_reset = table.reset_index()
@@ -125,10 +125,10 @@ def obtener_datos_liga(liga_nombre, liga_code, temporada='2526'):
                     
                     resultados['clasificacion'].append(equipo_data)
             else:
-                print(f"   ├─ ⚠️  No hay tabla de clasificación disponible")
+                print(f"   Advertencia: No hay tabla de clasificacion disponible")
                 
         except Exception as e:
-            print(f"   ├─ ⚠️  Error al obtener clasificación: {str(e)}")
+            print(f"   Advertencia: Error al obtener clasificacion: {str(e)}")
         
         # Estadísticas generales
         if len(played) > 0:
@@ -152,12 +152,12 @@ def obtener_datos_liga(liga_nombre, liga_code, temporada='2526'):
         with open(output_path, 'w', encoding='utf-8') as f:
             json.dump(resultados, f, ensure_ascii=False, indent=2)
         
-        print(f"   └─ ✅ Guardado en: {filename}")
+        print(f"   OK - Guardado en: {filename}")
         
         return resultados
         
     except Exception as e:
-        print(f"   └─ ❌ Error: {str(e)}")
+        print(f"   ERROR: {str(e)}")
         return None
 
 
@@ -180,7 +180,7 @@ def obtener_datos_completos_espana():
     Obtiene datos completos de Primera y Segunda División española
     """
     print("=" * 60)
-    print("OBTENIENDO DATOS COMPLETOS DEL FÚTBOL ESPAÑOL")
+    print("OBTENIENDO DATOS COMPLETOS DEL FUTBOL ESPANOL")
     print("=" * 60)
     
     datos_completos = {
@@ -190,14 +190,14 @@ def obtener_datos_completos_espana():
     }
     
     # La Liga (Primera División)
-    print("\n📊 PRIMERA DIVISIÓN (LA LIGA)")
+    print("\nPRIMERA DIVISION (LA LIGA)")
     print("-" * 60)
     laliga = obtener_resultados_laliga_actual()
     if laliga:
         datos_completos['ligas']['primera_division'] = laliga
     
     # Segunda División
-    print("\n\n📊 SEGUNDA DIVISIÓN")
+    print("\n\nSEGUNDA DIVISION")
     print("-" * 60)
     segunda = obtener_resultados_segunda_division()
     if segunda:
@@ -209,23 +209,23 @@ def obtener_datos_completos_espana():
         json.dump(datos_completos, f, ensure_ascii=False, indent=2)
     
     print(f"\n{'='*60}")
-    print(f"✅ DATOS COMPLETOS GUARDADOS EN: futbol_espanol_completo.json")
+    print(f"DATOS COMPLETOS GUARDADOS EN: futbol_espanol_completo.json")
     print('='*60)
     
     # Mostrar resumen
     if laliga and segunda:
         print(f"""
-📈 RESUMEN ESPAÑA:
+RESUMEN ESPANA:
 
-PRIMERA DIVISIÓN:
-  • Partidos jugados: {laliga['partidos_jugados']}/{laliga['total_partidos']}
-  • Promedio goles: {laliga['estadisticas_generales']['promedio_goles_partido']} por partido
-  • Equipos en clasificación: {len(laliga['clasificacion'])}
+PRIMERA DIVISION:
+  - Partidos jugados: {laliga['partidos_jugados']}/{laliga['total_partidos']}
+  - Promedio goles: {laliga['estadisticas_generales']['promedio_goles_partido']} por partido
+  - Equipos en clasificacion: {len(laliga['clasificacion'])}
 
-SEGUNDA DIVISIÓN:
-  • Partidos jugados: {segunda['partidos_jugados']}/{segunda['total_partidos']}
-  • Promedio goles: {segunda['estadisticas_generales']['promedio_goles_partido']} por partido
-  • Equipos en clasificación: {len(segunda['clasificacion'])}
+SEGUNDA DIVISION:
+  - Partidos jugados: {segunda['partidos_jugados']}/{segunda['total_partidos']}
+  - Promedio goles: {segunda['estadisticas_generales']['promedio_goles_partido']} por partido
+  - Equipos en clasificacion: {len(segunda['clasificacion'])}
 """)
     
     return datos_completos
@@ -246,7 +246,7 @@ def obtener_resultados_multiples_ligas():
     todos_resultados = {}
     
     for liga_nombre, liga_code in ligas.items():
-        print(f"\n🔍 Procesando {liga_nombre}...")
+        print(f"\nProcesando {liga_nombre}...")
         try:
             sofascore = sd.Sofascore(leagues=liga_code, seasons='2526')
             schedule = sofascore.read_schedule()
@@ -266,62 +266,62 @@ def obtener_resultados_multiples_ligas():
                     'resultado': f"{int(row['home_score'])}-{int(row['away_score'])}"
                 })
             
-            print(f"   ✅ {len(played)} partidos jugados")
+            print(f"   OK - {len(played)} partidos jugados")
             
         except Exception as e:
-            print(f"   ❌ Error: {str(e)}")
+            print(f"   ERROR: {str(e)}")
     
     # Guardar todos los resultados
     output_path = os.path.join(DATA_DIR, 'ligas_europeas_resultados.json')
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(todos_resultados, f, ensure_ascii=False, indent=2)
     
-    print(f"\n✅ Resultados de todas las ligas guardados en: ligas_europeas_resultados.json")
+    print(f"\nOK - Resultados de todas las ligas guardados en: ligas_europeas_resultados.json")
     return todos_resultados
 
 
 if __name__ == "__main__":
     print("=" * 60)
-    print("SOCCERDATA - INTEGRACIÓN CON TU PROYECTO")
+    print("SOCCERDATA - INTEGRACION CON TU PROYECTO")
     print("=" * 60)
     
     # Opción 1: Datos completos de España (Primera y Segunda División)
-    print("\n📊 OPCIÓN 1: Datos Completos de España (Primera + Segunda)")
+    print("\nOPCION 1: Datos Completos de Espana (Primera + Segunda)")
     print("-" * 60)
     obtener_datos_completos_espana()
     
     # Opción 2: Múltiples ligas europeas
-    print("\n\n📊 OPCIÓN 2: Múltiples Ligas Europeas")
+    print("\n\nOPCION 2: Multiples Ligas Europeas")
     print("-" * 60)
     obtener_resultados_multiples_ligas()
     
     print("\n" + "=" * 60)
-    print("✅ PROCESO COMPLETADO")
+    print("PROCESO COMPLETADO")
     print("=" * 60)
     
     print("""
-💡 ARCHIVOS GENERADOS:
+ARCHIVOS GENERADOS:
 
-1. futbol_espanol_completo.json - Primera y Segunda División con clasificaciones
+1. futbol_espanol_completo.json - Primera y Segunda Division con clasificaciones
 2. esp_la_liga_resultados.json - Detalles completos de La Liga
-3. esp_segunda_división_resultados.json - Detalles completos de Segunda División
+3. esp_segunda_division_resultados.json - Detalles completos de Segunda Division
 4. ligas_europeas_resultados.json - Resumen de ligas europeas
 
-📊 ANÁLISIS DE PROBABILIDADES:
+ANALISIS DE PROBABILIDADES:
 
-Con la clasificación puedes analizar:
-- Posición en la tabla → Fortaleza del equipo
-- Promedio de goles a favor → Capacidad ofensiva
-- Promedio de goles en contra → Solidez defensiva
-- Porcentaje de victorias → Consistencia
-- Puntos por partido → Rendimiento general
-- Diferencia de goles → Balance del equipo
+Con la clasificacion puedes analizar:
+- Posicion en la tabla -> Fortaleza del equipo
+- Promedio de goles a favor -> Capacidad ofensiva
+- Promedio de goles en contra -> Solidez defensiva
+- Porcentaje de victorias -> Consistencia
+- Puntos por partido -> Rendimiento general
+- Diferencia de goles -> Balance del equipo
 
-🎯 PRÓXIMOS PASOS:
+PROXIMOS PASOS:
 
 1. Usa estos datos para predecir resultados
 2. Compara equipos locales vs visitantes
-3. Analiza tendencias recientes (últimos 5 partidos)
-4. Considera la posición en la tabla
-5. Evalúa promedios de goles para estimar marcadores
+3. Analiza tendencias recientes (ultimos 5 partidos)
+4. Considera la posicion en la tabla
+5. Evalua promedios de goles para estimar marcadores
 """)
