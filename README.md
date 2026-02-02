@@ -24,6 +24,6 @@ python scraper/scraper.py
 ```
 
 ## Pasos para la IA
-1. El primer script a ejecutar será scrapper-data-besoccer.py para crear el archivo big-data.json
-2. El segundo será scrapper-analysis.py y posteriormente ese json que nos devuelva se lo mandamos a analizar al chat gpt.
-3. En caso de querer actualizar las competiciones deberemos ejecutar teams-scrapper.py
+1. Lanzar scrapper soccerdata
+2. Lanzar scrapper segunda division
+3. Lanzar scrapper futbol español
