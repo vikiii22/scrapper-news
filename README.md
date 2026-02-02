@@ -27,3 +27,4 @@ python scraper/scraper.py
 1. Lanzar scrapper soccerdata
 2. Lanzar scrapper segunda division
 3. Lanzar scrapper futbol español
+4. Lanzar quiniela analisys
