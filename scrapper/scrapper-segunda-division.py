@@ -114,7 +114,7 @@ def procesar_partidos(data):
     partidos_pendientes = []
     partidos_vistos = set()  # Para evitar duplicados
     
-    # El formato es tournamentTeamEvents -> tournament_id -> season_id -> [eventos]
+    # Formato 1: tournamentTeamEvents (para /team-events/total)
     if 'tournamentTeamEvents' in data:
         for tournament_id, seasons in data['tournamentTeamEvents'].items():
             for season_id, eventos in seasons.items():
@@ -151,6 +151,41 @@ def procesar_partidos(data):
                         partidos_jugados.append(partido)
                     else:
                         partidos_pendientes.append(partido)
+    
+    # Formato 2: events directos (para /events/next/0)
+    elif 'events' in data:
+        for evento in data['events']:
+            evento_id = evento.get('id', 0)
+            if evento_id in partidos_vistos:
+                continue
+            partidos_vistos.add(evento_id)
+            
+            home_team = evento.get('homeTeam', {})
+            away_team = evento.get('awayTeam', {})
+            status = evento.get('status', {})
+            home_score = evento.get('homeScore', {})
+            away_score = evento.get('awayScore', {})
+            
+            partido = {
+                'id': evento_id,
+                'jornada': evento.get('roundInfo', {}).get('round', 0),
+                'fecha': datetime.fromtimestamp(evento.get('startTimestamp', 0)).strftime('%Y-%m-%d %H:%M:%S'),
+                'timestamp': evento.get('startTimestamp', 0),
+                'equipo_local': home_team.get('name', 'Unknown'),
+                'equipo_local_id': home_team.get('id', 0),
+                'equipo_visitante': away_team.get('name', 'Unknown'),
+                'equipo_visitante_id': away_team.get('id', 0),
+                'estado': status.get('type', 'unknown')
+            }
+            
+            # Si el partido ya se jugó
+            if status.get('type') == 'finished':
+                partido['goles_local'] = home_score.get('current', 0)
+                partido['goles_visitante'] = away_score.get('current', 0)
+                partido['resultado'] = f"{partido['goles_local']}-{partido['goles_visitante']}"
+                partidos_jugados.append(partido)
+            else:
+                partidos_pendientes.append(partido)
     
     # Ordenar por timestamp
     partidos_jugados.sort(key=lambda x: x['timestamp'])

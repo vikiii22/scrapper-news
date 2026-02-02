@@ -1,5 +1,5 @@
 {
-  "fecha_actualizacion": "2026-02-02 12:17:15",
+  "fecha_actualizacion": "2026-02-02 12:33:32",
   "temporada": "2025/26",
   "liga": "Segunda Division",
   "tournament_id": 54,
@@ -522,7 +522,118 @@
       "resultado": "1-0"
     }
   ],
-  "proximos_partidos": [],
+  "proximos_partidos": [
+    {
+      "id": 14083755,
+      "jornada": 24,
+      "fecha": "2026-02-02 20:30:00",
+      "timestamp": 1770060600,
+      "equipo_local": "Mirandés",
+      "equipo_local_id": 35092,
+      "equipo_visitante": "Málaga",
+      "equipo_visitante_id": 2830,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083772,
+      "jornada": 25,
+      "fecha": "2026-02-06 20:30:00",
+      "timestamp": 1770406200,
+      "equipo_local": "Leganés",
+      "equipo_local_id": 2845,
+      "equipo_visitante": "Granada",
+      "equipo_visitante_id": 33779,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083761,
+      "jornada": 25,
+      "fecha": "2026-02-07 14:00:00",
+      "timestamp": 1770469200,
+      "equipo_local": "FC Andorra",
+      "equipo_local_id": 324871,
+      "equipo_visitante": "Real Sociedad B U21",
+      "equipo_visitante_id": 24360,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083766,
+      "jornada": 25,
+      "fecha": "2026-02-07 16:15:00",
+      "timestamp": 1770477300,
+      "equipo_local": "Las Palmas",
+      "equipo_local_id": 6577,
+      "equipo_visitante": "Burgos Club de Fútbol",
+      "equipo_visitante_id": 2854,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083770,
+      "jornada": 25,
+      "fecha": "2026-02-07 18:30:00",
+      "timestamp": 1770485400,
+      "equipo_local": "Real Zaragoza",
+      "equipo_local_id": 2815,
+      "equipo_visitante": "Eibar",
+      "equipo_visitante_id": 2839,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083778,
+      "jornada": 25,
+      "fecha": "2026-02-07 21:00:00",
+      "timestamp": 1770494400,
+      "equipo_local": "Cádiz",
+      "equipo_local_id": 4488,
+      "equipo_visitante": "Almería",
+      "equipo_visitante_id": 2858,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083768,
+      "jornada": 25,
+      "fecha": "2026-02-08 14:00:00",
+      "timestamp": 1770555600,
+      "equipo_local": "Real Valladolid",
+      "equipo_local_id": 2831,
+      "equipo_visitante": "CD Castellón",
+      "equipo_visitante_id": 5067,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083764,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "timestamp": 1770563700,
+      "equipo_local": "Deportivo La Coruña",
+      "equipo_local_id": 2832,
+      "equipo_visitante": "Albacete Balompié",
+      "equipo_visitante_id": 2848,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083759,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "timestamp": 1770563700,
+      "equipo_local": "AD Ceuta",
+      "equipo_local_id": 2869,
+      "equipo_visitante": "Córdoba",
+      "equipo_visitante_id": 2850,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083774,
+      "jornada": 25,
+      "fecha": "2026-02-08 18:30:00",
+      "timestamp": 1770571800,
+      "equipo_local": "Sporting Gijón",
+      "equipo_local_id": 2852,
+      "equipo_visitante": "Huesca",
+      "equipo_visitante_id": 24265,
+      "estado": "notstarted"
+    }
+  ],
   "todos_partidos_jugados": [
     {
       "id": 14083388,
@@ -1309,7 +1420,338 @@
       "resultado": "1-0"
     }
   ],
-  "todos_partidos_pendientes": [],
+  "todos_partidos_pendientes": [
+    {
+      "id": 14083755,
+      "jornada": 24,
+      "fecha": "2026-02-02 20:30:00",
+      "timestamp": 1770060600,
+      "equipo_local": "Mirandés",
+      "equipo_local_id": 35092,
+      "equipo_visitante": "Málaga",
+      "equipo_visitante_id": 2830,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083772,
+      "jornada": 25,
+      "fecha": "2026-02-06 20:30:00",
+      "timestamp": 1770406200,
+      "equipo_local": "Leganés",
+      "equipo_local_id": 2845,
+      "equipo_visitante": "Granada",
+      "equipo_visitante_id": 33779,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083761,
+      "jornada": 25,
+      "fecha": "2026-02-07 14:00:00",
+      "timestamp": 1770469200,
+      "equipo_local": "FC Andorra",
+      "equipo_local_id": 324871,
+      "equipo_visitante": "Real Sociedad B U21",
+      "equipo_visitante_id": 24360,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083766,
+      "jornada": 25,
+      "fecha": "2026-02-07 16:15:00",
+      "timestamp": 1770477300,
+      "equipo_local": "Las Palmas",
+      "equipo_local_id": 6577,
+      "equipo_visitante": "Burgos Club de Fútbol",
+      "equipo_visitante_id": 2854,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083770,
+      "jornada": 25,
+      "fecha": "2026-02-07 18:30:00",
+      "timestamp": 1770485400,
+      "equipo_local": "Real Zaragoza",
+      "equipo_local_id": 2815,
+      "equipo_visitante": "Eibar",
+      "equipo_visitante_id": 2839,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083778,
+      "jornada": 25,
+      "fecha": "2026-02-07 21:00:00",
+      "timestamp": 1770494400,
+      "equipo_local": "Cádiz",
+      "equipo_local_id": 4488,
+      "equipo_visitante": "Almería",
+      "equipo_visitante_id": 2858,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083768,
+      "jornada": 25,
+      "fecha": "2026-02-08 14:00:00",
+      "timestamp": 1770555600,
+      "equipo_local": "Real Valladolid",
+      "equipo_local_id": 2831,
+      "equipo_visitante": "CD Castellón",
+      "equipo_visitante_id": 5067,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083764,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "timestamp": 1770563700,
+      "equipo_local": "Deportivo La Coruña",
+      "equipo_local_id": 2832,
+      "equipo_visitante": "Albacete Balompié",
+      "equipo_visitante_id": 2848,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083759,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "timestamp": 1770563700,
+      "equipo_local": "AD Ceuta",
+      "equipo_local_id": 2869,
+      "equipo_visitante": "Córdoba",
+      "equipo_visitante_id": 2850,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083774,
+      "jornada": 25,
+      "fecha": "2026-02-08 18:30:00",
+      "timestamp": 1770571800,
+      "equipo_local": "Sporting Gijón",
+      "equipo_local_id": 2852,
+      "equipo_visitante": "Huesca",
+      "equipo_visitante_id": 24265,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083776,
+      "jornada": 25,
+      "fecha": "2026-02-08 21:00:00",
+      "timestamp": 1770580800,
+      "equipo_local": "Málaga",
+      "equipo_local_id": 2830,
+      "equipo_visitante": "Cultural Leonesa",
+      "equipo_visitante_id": 2868,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083780,
+      "jornada": 25,
+      "fecha": "2026-02-09 20:30:00",
+      "timestamp": 1770665400,
+      "equipo_local": "Real Racing Club",
+      "equipo_local_id": 2835,
+      "equipo_visitante": "Mirandés",
+      "equipo_visitante_id": 35092,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083796,
+      "jornada": 26,
+      "fecha": "2026-02-13 20:30:00",
+      "timestamp": 1771011000,
+      "equipo_local": "Almería",
+      "equipo_local_id": 2858,
+      "equipo_visitante": "FC Andorra",
+      "equipo_visitante_id": 324871,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083788,
+      "jornada": 26,
+      "fecha": "2026-02-14 14:00:00",
+      "timestamp": 1771074000,
+      "equipo_local": "Córdoba",
+      "equipo_local_id": 2850,
+      "equipo_visitante": "Leganés",
+      "equipo_visitante_id": 2845,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083784,
+      "jornada": 26,
+      "fecha": "2026-02-14 16:15:00",
+      "timestamp": 1771082100,
+      "equipo_local": "Burgos Club de Fútbol",
+      "equipo_local_id": 2854,
+      "equipo_visitante": "Cádiz",
+      "equipo_visitante_id": 4488,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083795,
+      "jornada": 26,
+      "fecha": "2026-02-14 18:30:00",
+      "timestamp": 1771090200,
+      "equipo_local": "Cultural Leonesa",
+      "equipo_local_id": 2868,
+      "equipo_visitante": "Real Zaragoza",
+      "equipo_visitante_id": 2815,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083794,
+      "jornada": 26,
+      "fecha": "2026-02-14 21:00:00",
+      "timestamp": 1771099200,
+      "equipo_local": "Granada",
+      "equipo_local_id": 33779,
+      "equipo_visitante": "Real Valladolid",
+      "equipo_visitante_id": 2831,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083798,
+      "jornada": 26,
+      "fecha": "2026-02-15 14:00:00",
+      "timestamp": 1771160400,
+      "equipo_local": "Mirandés",
+      "equipo_local_id": 35092,
+      "equipo_visitante": "Las Palmas",
+      "equipo_visitante_id": 6577,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083790,
+      "jornada": 26,
+      "fecha": "2026-02-15 16:15:00",
+      "timestamp": 1771168500,
+      "equipo_local": "Eibar",
+      "equipo_local_id": 2839,
+      "equipo_visitante": "Real Racing Club",
+      "equipo_visitante_id": 2835,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083797,
+      "jornada": 26,
+      "fecha": "2026-02-15 16:15:00",
+      "timestamp": 1771168500,
+      "equipo_local": "Huesca",
+      "equipo_local_id": 24265,
+      "equipo_visitante": "AD Ceuta",
+      "equipo_visitante_id": 2869,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083782,
+      "jornada": 26,
+      "fecha": "2026-02-15 18:30:00",
+      "timestamp": 1771176600,
+      "equipo_local": "Albacete Balompié",
+      "equipo_local_id": 2848,
+      "equipo_visitante": "Sporting Gijón",
+      "equipo_visitante_id": 2852,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083786,
+      "jornada": 26,
+      "fecha": "2026-02-15 21:00:00",
+      "timestamp": 1771185600,
+      "equipo_local": "CD Castellón",
+      "equipo_local_id": 5067,
+      "equipo_visitante": "Deportivo La Coruña",
+      "equipo_visitante_id": 2832,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083799,
+      "jornada": 26,
+      "fecha": "2026-02-16 20:30:00",
+      "timestamp": 1771270200,
+      "equipo_local": "Real Sociedad B U21",
+      "equipo_local_id": 24360,
+      "equipo_visitante": "Málaga",
+      "equipo_visitante_id": 2830,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083811,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Las Palmas",
+      "equipo_local_id": 6577,
+      "equipo_visitante": "CD Castellón",
+      "equipo_visitante_id": 5067,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083806,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Sporting Gijón",
+      "equipo_local_id": 2852,
+      "equipo_visitante": "Real Valladolid",
+      "equipo_visitante_id": 2831,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083804,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Leganés",
+      "equipo_local_id": 2845,
+      "equipo_visitante": "Cultural Leonesa",
+      "equipo_visitante_id": 2868,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083807,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Almería",
+      "equipo_local_id": 2858,
+      "equipo_visitante": "Córdoba",
+      "equipo_visitante_id": 2850,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083801,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "AD Ceuta",
+      "equipo_local_id": 2869,
+      "equipo_visitante": "Granada",
+      "equipo_visitante_id": 33779,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083802,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Deportivo La Coruña",
+      "equipo_local_id": 2832,
+      "equipo_visitante": "Eibar",
+      "equipo_visitante_id": 2839,
+      "estado": "notstarted"
+    },
+    {
+      "id": 14083800,
+      "jornada": 27,
+      "fecha": "2026-02-22 20:00:00",
+      "timestamp": 1771786800,
+      "equipo_local": "Cádiz",
+      "equipo_local_id": 4488,
+      "equipo_visitante": "Real Sociedad B U21",
+      "equipo_visitante_id": 24360,
+      "estado": "notstarted"
+    }
+  ],
   "estadisticas_generales": {
     "total_partidos_jugados": 56,
     "total_goles": 144,
