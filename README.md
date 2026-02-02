@@ -1,6 +1,6 @@
 # Sports News Scraper
 
-Este proyecto es un scraper de noticias deportivas escrito en Python.
+Este proyecto es un scraper de resultados deportivos escrito en Python.
 
 ## Estructura del Proyecto
 
@@ -27,3 +27,4 @@ python scraper/scraper.py
 1. Lanzar scrapper soccerdata
 2. Lanzar scrapper segunda division
 3. Lanzar scrapper futbol español
+4. Lanzar quiniela analisys
