@@ -1,266 +1,513 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Script para analizar la quiniela basándose en las predicciones del análisis de fútbol español
+"""
+
 import json
-import numpy as np
-from datetime import datetime
-import requests
+import re
+from pathlib import Path
 from bs4 import BeautifulSoup
+from datetime import datetime
+import unicodedata
 
-with open('../data/teams_analysis_results.json', 'r', encoding='utf-8') as teams_file:
-    teams_data = json.load(teams_file)
-
-with open('../data/big-data.json', 'r', encoding='utf-8') as matches_file:
-    matches_data = json.load(matches_file)
-
-def get_date(date_str):
-    dictionary_months = {
-        "ENE": "01",
-        "FEB": "02",
-        "MAR": "03",
-        "ABR": "04",
-        "MAY": "05",
-        "JUN": "06",
-        "JUL": "07",
-        "AGO": "08",
-        "SEP": "09",
-        "OCT": "10",
-        "NOV": "11",
-        "DIC": "12"
+def normalizar_nombre_equipo(nombre):
+    """Normaliza el nombre del equipo para hacer matching"""
+    # Eliminar acentos y convertir a mayúsculas
+    nombre = unicodedata.normalize('NFD', nombre.upper())
+    nombre = ''.join(char for char in nombre if unicodedata.category(char) != 'Mn')
+    
+    # Eliminar puntos y normalizar espacios
+    nombre = nombre.replace('.', ' ').strip()
+    nombre = ' '.join(nombre.split())  # Normalizar espacios múltiples
+    
+    # Diccionario de mapeos comunes (después de normalización)
+    mapeos = {
+        'BCN': 'BARCELONA',
+        'BARCA': 'BARCELONA',
+        'BARCELONA': 'BARCELONA',
+        'R MADRID': 'MADRID',
+        'REAL M': 'MADRID',
+        'REAL MADRID': 'MADRID',
+        'MADRID': 'MADRID',
+        'RMADRID': 'MADRID',
+        'ATL MADRID': 'ATLETICO',
+        'AT MADRID': 'ATLETICO',
+        'ATLETICO MADRID': 'ATLETICO',
+        'ATLETICO': 'ATLETICO',
+        'ATMADR': 'ATLETICO',
+        'ATH CLUB': 'ATHLETIC',
+        'ATHLETIC CLUB': 'ATHLETIC',
+        'ATHLETIC': 'ATHLETIC',
+        'R SOCIEDAD': 'SOCIEDAD',
+        'RSOCIEDAD': 'SOCIEDAD',
+        'REAL SOCIEDAD': 'SOCIEDAD',
+        'R BETIS': 'BETIS',
+        'REAL BETIS': 'BETIS',
+        'BETIS': 'BETIS',
+        'VILLARREAL': 'VILLARREAL',
+        'VILLA': 'VILLARREAL',
+        'SEVILLA': 'SEVILLA',
+        'VALENCIA': 'VALENCIA',
+        'CELTA': 'CELTA',
+        'CELTA VIGO': 'CELTA',
+        'ESPANYOL': 'ESPANYOL',
+        'GETAFE': 'GETAFE',
+        'GRANADA': 'GRANADA',
+        'OSASUNA': 'OSASUNA',
+        'VALLADOLID': 'VALLADOLID',
+        'R VALLADOLID': 'VALLADOLID',
+        'REAL VALLADOLID': 'VALLADOLID',
+        'ALAVES': 'ALAVES',
+        'ALAV': 'ALAVES',
+        'DEPORTIVO ALAVES': 'ALAVES',
+        'MALLORCA': 'MALLORCA',
+        'MALL': 'MALLORCA',
+        'CADIZ': 'CADIZ',
+        'ELCHE': 'ELCHE',
+        'ALMERIA': 'ALMERIA',
+        'GIRONA': 'GIRONA',
+        'GIR': 'GIRONA',
+        'GIRONA FC': 'GIRONA',
+        'RAYO': 'RAYO',
+        'R VALLECANO': 'RAYO',
+        'RAYO VALLECANO': 'RAYO',
+        'LAS PALMAS': 'PALMAS',
+        'PALMAS': 'PALMAS',
+        'LEVANTE': 'LEVANTE',
+        'LEVANTE UD': 'LEVANTE',
+        'OVIEDO': 'OVIEDO',
+        'R OVIEDO': 'OVIEDO',
+        'REAL OVIEDO': 'OVIEDO',
+        'OVIE': 'OVIEDO',
+        'SPORTING': 'SPORTING',
+        'SPORTING GIJON': 'SPORTING',
+        'GIJON': 'SPORTING',
+        'LEGANES': 'LEGANES',
+        'LEGAN': 'LEGANES',
+        'EIBAR': 'EIBAR',
+        'TENERIFE': 'TENERIFE',
+        'ZARAGOZA': 'ZARAGOZA',
+        'R ZARAGOZA': 'ZARAGOZA',
+        'REAL ZARAGOZA': 'ZARAGOZA',
+        'MIRANDES': 'MIRANDES',
+        'MIRA': 'MIRANDES',
+        'RACING': 'RACING',
+        'R RACING': 'RACING',
+        'REAL RACING CLUB': 'RACING',
+        'CASTELLON': 'CASTELLON',
+        'CAST': 'CASTELLON',
+        'CD CASTELLON': 'CASTELLON',
+        'DEPORTIVO': 'DEPORTIVO',
+        'DEPOR': 'DEPORTIVO',
+        'DEPORTIVO LA CORUNA': 'DEPORTIVO',
+        'CORDOBA': 'CORDOBA',
+        'CORD': 'CORDOBA',
+        'HUESCA': 'HUESCA',
+        'BURGOS': 'BURGOS',
+        'BURG': 'BURGOS',
+        'BURGOS CLUB DE FUTBOL': 'BURGOS',
+        'ANDORRA': 'ANDORRA',
+        'AND': 'ANDORRA',
+        'FC ANDORRA': 'ANDORRA',
+        'ALBACETE': 'ALBACETE',
+        'ALBA': 'ALBACETE',
+        'ALBACETE BALOMPIE': 'ALBACETE',
+        'CEUTA': 'CEUTA',
+        'AD CEUTA': 'CEUTA',
+        'MALAGA': 'MALAGA',
+        'MALA': 'MALAGA',
+        'LEONESA': 'LEONESA',
+        'C LEONESA': 'LEONESA',
+        'CULTURAL LEONESA': 'LEONESA'
     }
-    month = date_str.split(" ")[1]
-    month_number = dictionary_months.get(month, "01")  # Default to January if not found
-    day = date_str.split(" ")[0]
-    year = date_str.split(" ")[2]
-    return f"{day}-{month_number}-{year}"
+    
+    # Buscar en mapeos (coincidencia exacta primero)
+    if nombre in mapeos:
+        return mapeos[nombre]
+    
+    # Buscar coincidencia parcial
+    for clave, valor in mapeos.items():
+        if clave in nombre or nombre in clave:
+            return valor
+    
+    return nombre
 
-def get_elo_from_casas_apuestas(casas_apuestas_url):
-    if not casas_apuestas_url:
-        return None
 
-    try:
-        # cambio necesario para que funcione en el servidor
-        # headers = {
-        #    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/122.0.0.0 Safari/537.36",
-        #    "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-        #    "Accept-Language": "es-ES,es;q=0.9,en;q=0.8",
-        # }
-        # response = requests.get(casas_apuestas_url, headers=headers, timeout=10)
-        response = requests.get(casas_apuestas_url, timeout=10)
-        response.raise_for_status()
-        soup = BeautifulSoup(response.text, 'html.parser')
-
-        # Buscar el div con el JSON de cuotas
-        mod_bet = soup.find('div', id='mod_bet')
-        if not mod_bet:
-            print("No se encontró el div de cuotas")
-            return None
-
-        data_odds = mod_bet.find('div', id='data-odds-tab')
-        if not data_odds or not data_odds.has_attr('data_odds'):
-            print("No se encontró el atributo data_odds")
-            return None
-
-        odds_json = json.loads(data_odds['data_odds'])
-        cuotas = {}
-
-        # Extraer cuotas 1X2 del partido completo (ft)
-        for house_odds in odds_json['scopes']['ft'][0]['housesOdds']:
-            casa = house_odds['houseName']
-            bets = house_odds['bets']
-            cuota_1 = bets[0]['value']
-            cuota_x = bets[1]['value']
-            cuota_2 = bets[2]['value']
-            cuotas[casa] = {
-                "1": float(cuota_1.replace(',', '.')),
-                "X": float(cuota_x.replace(',', '.')),
-                "2": float(cuota_2.replace(',', '.'))
-            }
-
-        # Calcular probabilidad implícita media para cada resultado
-        probs = {"1": [], "X": [], "2": []}
-        for casa, vals in cuotas.items():
-            inv_1 = 1 / vals["1"]
-            inv_x = 1 / vals["X"]
-            inv_2 = 1 / vals["2"]
-            overround = inv_1 + inv_x + inv_2
-            probs["1"].append(inv_1 / overround)
-            probs["X"].append(inv_x / overround)
-            probs["2"].append(inv_2 / overround)
-
-        avg_probs = {k: round(100 * sum(v) / len(v), 2) for k, v in probs.items() if v}
-
-        return {
-            "cuotas": cuotas,
-            "probabilidades": avg_probs
-        }
-
-    except Exception as e:
-        print(f"Error obteniendo cuotas: {e}")
-        return None
-
-# Función para calcular el promedio de "elo" de los jugadores destacados de un equipo
-def calculate_team_elo(team_name):
-    for team, data in teams_data.items():
-        if team_name.lower() in team.lower():
-            players = data.get("players_data", [])
-            additional_data = data.get("top_players", {}).get("additional_data", {})
-            league_perfomance = additional_data.get("league_performance", [])
-            european_competition = data.get("top_players", {}).get("european_competition", {})
-            # casas_apuestas = data.get("top_players", {}).get("casas_apuestas", {})
-
-            # elo_from_casas_apuestas = get_elo_from_casas_apuestas(casas_apuestas)
+def extraer_partidos_quiniela(html_path):
+    """Extrae los partidos del HTML de la quiniela"""
+    with open(html_path, 'r', encoding='utf-8') as f:
+        html = f.read()
+    
+    soup = BeautifulSoup(html, 'html.parser')
+    partidos = []
+    
+    # Buscar todos los partidos
+    partidos_divs = soup.find_all('div', class_='c-caja_base__partido')
+    
+    for partido_div in partidos_divs:
+        try:
+            # Número del partido
+            numero_elem = partido_div.find('span', class_='c-equipos__number')
+            if not numero_elem:
+                continue
+            numero = numero_elem.text.strip()
             
-            get_date_match = get_date(european_competition.get("match_date", "N/A"))
-
-            # Obtener la fecha del último partido
-            last_match_date_str = get_date_match
-            if last_match_date_str != "N/A":
-                try:
-                    # Ajustar el formato para que coincida con el formato devuelto por get_date
-                    last_match_date = datetime.strptime(last_match_date_str, "%d-%m-%Y")
-                    days_since_last_match = (datetime.now() - last_match_date).days
-                except ValueError:
-                    print(f"Error al procesar la fecha: {last_match_date_str}")
-                    days_since_last_match = 7  # Asumir 7 días si no hay datos válidos
+            # Equipos
+            equipos_elem = partido_div.find('span', class_='c-equipos__teams')
+            if not equipos_elem:
+                continue
+            
+            # Extraer del atributo aria-label
+            aria_label = equipos_elem.get('aria-label', '')
+            if ' contra ' in aria_label:
+                partes = aria_label.split(' contra ')
+                equipo_local = partes[0].strip()
+                equipo_visitante = partes[1].strip()
             else:
-                days_since_last_match = 7  # Asumir 7 días si no hay datos
-
-            # Penalización por descanso insuficiente
-            rest_penalty = max(0, 5 - days_since_last_match) * 2  # Penalizar si menos de 5 días de descanso
-
-            league_position = 0
-            league_points = 0
-            if league_perfomance:
-                for performance in league_perfomance:
-                    league_position = int(performance[0])
-                    league_points = int(performance[3])
-                    break
-            common_eleven = additional_data.get("common_eleven", [])
-            injured_players = additional_data.get("injuries", [])
-
-            total_elo = 0
-            player_count = 0
-
-            for player in players:
-                # Calcular el "elo" para cada jugador
-                matches = int(player.get("matches", 0))
-                goals = int(player.get("goals", 0))
-                assists = int(player.get("assists", 0))
-                cards = int(player.get("cards", 0))
-                name = player.get("name", "")
-
-                # Si es portero, considerar "goals" como "paradas"
-                if player.get("position", "").lower() == "portero":
-                    elo = matches * 2 + goals * 3 - cards
+                # Extraer del data-short
+                data_short = equipos_elem.get('data-short', '')
+                if ' - ' in data_short:
+                    partes = data_short.split(' - ')
+                    equipo_local = partes[0].strip()
+                    equipo_visitante = partes[1].strip()
                 else:
-                    elo = matches * 2 + goals * 4 + assists * 2 - cards
+                    continue
+            
+            # Hora del partido
+            horario_elem = partido_div.find('div', class_='c-marcador-horario__time')
+            horario = horario_elem.text.strip() if horario_elem else 'Hora no disponible'
+            
+            partidos.append({
+                'numero': numero,
+                'equipo_local': equipo_local,
+                'equipo_visitante': equipo_visitante,
+                'equipo_local_normalizado': normalizar_nombre_equipo(equipo_local),
+                'equipo_visitante_normalizado': normalizar_nombre_equipo(equipo_visitante),
+                'horario': horario
+            })
+        except Exception as e:
+            print(f"Error procesando partido: {e}")
+            continue
+    
+    return partidos
 
-                # Incrementar el ELO si el jugador aparece en el once más repetido
-                if name in common_eleven:
-                    elo += 10
 
-                # Penalizar si el jugador está lesionado
-                if any(injury.get("left_content", "").lower() == name.lower() for injury in injured_players):
-                    elo -= 5
+def encontrar_prediccion(partido_quiniela, predicciones):
+    """Encuentra la predicción correspondiente a un partido de la quiniela"""
+    local_norm = partido_quiniela['equipo_local_normalizado']
+    visitante_norm = partido_quiniela['equipo_visitante_normalizado']
+    
+    for pred in predicciones:
+        pred_local = normalizar_nombre_equipo(pred['equipo_local'])
+        pred_visitante = normalizar_nombre_equipo(pred['equipo_visitante'])
+        
+        # Match exacto
+        if pred_local == local_norm and pred_visitante == visitante_norm:
+            return pred
+        
+        # Match parcial (contiene)
+        if local_norm in pred_local or pred_local in local_norm:
+            if visitante_norm in pred_visitante or pred_visitante in visitante_norm:
+                return pred
+    
+    return None
 
-                total_elo += elo
-                player_count += 1
 
-            # Ajustar el ELO del equipo según la posición en liga y puntos
-            team_elo = total_elo / player_count if player_count > 0 else 0
-            team_elo += league_points * 0.1  # Incrementar por puntos en liga
-            team_elo -= league_position * 0.5  # Penalizar por posición en liga (más alto = peor posición)
+def calcular_apuesta_goles(prediccion):
+    """Calcula la apuesta de goles totales (0, 1, 2 o M) basándose en las estadísticas"""
+    # Obtener promedios de goles
+    goles_local = prediccion['datos_equipos']['local']['goles_favor']
+    goles_visitante = prediccion['datos_equipos']['visitante']['goles_favor']
+    
+    # Estimar goles totales esperados
+    goles_esperados = goles_local + goles_visitante
+    
+    # Calcular probabilidades basadas en distribución de Poisson simplificada
+    # y los promedios de goles
+    if goles_esperados < 1.0:
+        probs = {'0': 40.0, '1': 35.0, '2': 15.0, 'M': 10.0}
+    elif goles_esperados < 1.5:
+        probs = {'0': 25.0, '1': 35.0, '2': 25.0, 'M': 15.0}
+    elif goles_esperados < 2.0:
+        probs = {'0': 15.0, '1': 30.0, '2': 30.0, 'M': 25.0}
+    elif goles_esperados < 2.5:
+        probs = {'0': 10.0, '1': 25.0, '2': 30.0, 'M': 35.0}
+    elif goles_esperados < 3.0:
+        probs = {'0': 5.0, '1': 20.0, '2': 30.0, 'M': 45.0}
+    else:  # >= 3.0
+        probs = {'0': 3.0, '1': 12.0, '2': 25.0, 'M': 60.0}
+    
+    # Determinar la apuesta recomendada (mayor probabilidad)
+    apuesta_recomendada = max(probs, key=probs.get)
+    confianza = probs[apuesta_recomendada]
+    
+    return {
+        'apuesta': apuesta_recomendada,
+        'confianza': confianza,
+        'probabilidades': probs,
+        'goles_esperados': round(goles_esperados, 2)
+    }
 
-            # Aplicar penalización por descanso insuficiente
-            team_elo -= rest_penalty
 
-            return team_elo
-    return 0  # Si no hay datos del equipo, devolver 0
+def generar_apuestas_quiniela(partidos_quiniela, predicciones_primera, predicciones_segunda):
+    """Genera las apuestas recomendadas para la quiniela"""
+    todas_predicciones = predicciones_primera + predicciones_segunda
+    apuestas = []
+    
+    for partido in partidos_quiniela:
+        prediccion = encontrar_prediccion(partido, todas_predicciones)
+        
+        # Partido 15: Apuesta especial de goles (0, 1, 2, M)
+        if partido['numero'] == '15' and prediccion:
+            resultado_goles = calcular_apuesta_goles(prediccion)
+            
+            apuesta = {
+                'numero': partido['numero'],
+                'equipo_local': partido['equipo_local'],
+                'equipo_visitante': partido['equipo_visitante'],
+                'horario': partido['horario'],
+                'apuesta_recomendada': resultado_goles['apuesta'],
+                'confianza': round(resultado_goles['confianza'], 2),
+                'probabilidades': resultado_goles['probabilidades'],
+                'liga': prediccion.get('liga', 'Desconocida'),
+                'fecha_partido': prediccion.get('fecha', 'N/A'),
+                'tipo_apuesta': 'GOLES',
+                'goles_esperados': resultado_goles['goles_esperados']
+            }
+            
+            # Determinar nivel de confianza
+            if apuesta['confianza'] >= 45:
+                apuesta['nivel_confianza'] = 'ALTA'
+            elif apuesta['confianza'] >= 35:
+                apuesta['nivel_confianza'] = 'MEDIA'
+            else:
+                apuesta['nivel_confianza'] = 'BAJA'
+            
+            apuestas.append(apuesta)
+        
+        elif prediccion:
+            apuesta = {
+                'numero': partido['numero'],
+                'equipo_local': partido['equipo_local'],
+                'equipo_visitante': partido['equipo_visitante'],
+                'horario': partido['horario'],
+                'apuesta_recomendada': prediccion['prediccion'],
+                'confianza': round(prediccion['confianza'], 2),
+                'probabilidades': {
+                    '1': round(prediccion['probabilidades']['victoria_local'], 2),
+                    'X': round(prediccion['probabilidades']['empate'], 2),
+                    '2': round(prediccion['probabilidades']['victoria_visitante'], 2)
+                },
+                'liga': prediccion.get('liga', 'Desconocida'),
+                'fecha_partido': prediccion.get('fecha', 'N/A'),
+                'tipo_apuesta': '1X2'
+            }
+            
+            # Determinar nivel de confianza
+            if apuesta['confianza'] >= 70:
+                apuesta['nivel_confianza'] = 'ALTA'
+            elif apuesta['confianza'] >= 55:
+                apuesta['nivel_confianza'] = 'MEDIA'
+            else:
+                apuesta['nivel_confianza'] = 'BAJA'
+            
+            apuestas.append(apuesta)
+        else:
+            # No se encontró predicción
+            if partido['numero'] == '15':
+                # Partido 15 sin predicción
+                apuestas.append({
+                    'numero': partido['numero'],
+                    'equipo_local': partido['equipo_local'],
+                    'equipo_visitante': partido['equipo_visitante'],
+                    'horario': partido['horario'],
+                    'apuesta_recomendada': 'M',  # Por defecto más de 2 goles
+                    'confianza': 0,
+                    'probabilidades': {
+                        '0': 25.0,
+                        '1': 25.0,
+                        '2': 25.0,
+                        'M': 25.0
+                    },
+                    'liga': 'No encontrada',
+                    'fecha_partido': 'N/A',
+                    'nivel_confianza': 'SIN DATOS',
+                    'tipo_apuesta': 'GOLES',
+                    'nota': 'No se encontró predicción para este partido'
+                })
+            else:
+                apuestas.append({
+                    'numero': partido['numero'],
+                    'equipo_local': partido['equipo_local'],
+                    'equipo_visitante': partido['equipo_visitante'],
+                    'horario': partido['horario'],
+                    'apuesta_recomendada': 'X',  # Por defecto empate si no hay predicción
+                    'confianza': 0,
+                    'probabilidades': {
+                        '1': 33.33,
+                        'X': 33.33,
+                        '2': 33.33
+                    },
+                    'liga': 'No encontrada',
+                    'fecha_partido': 'N/A',
+                    'nivel_confianza': 'SIN DATOS',
+                    'tipo_apuesta': '1X2',
+                    'nota': 'No se encontró predicción para este partido'
+                })
+    
+    return apuestas
 
-# Función para obtener los datos de los jugadores de un equipo
-def get_players_data(team_name):
-    for team, data in teams_data.items():
-        if team_name.lower() in team.lower():
-            players = data.get("players_data", [])
-            return [{
-                "name": player.get("name"),
-                "position": player.get("position"),
-                "elo": calculate_team_elo(player.get("name"))
-            } for player in players]
-    return []  # Si no hay datos del equipo, devolver lista vacía
 
-# Generar el análisis en formato quiniela usando un árbol de decisiones
-quiniela_results = []
+def imprimir_boleto_quiniela(apuestas):
+    """Imprime el boleto de quiniela con formato bonito"""
+    print("\n" + "="*80)
+    print("BOLETO QUINIELA - PREDICCIONES BASADAS EN ANÁLISIS")
+    print(f"Fecha de análisis: {datetime.now().strftime('%d/%m/%Y %H:%M:%S')}")
+    print("="*80)
+    
+    for apuesta in apuestas:
+        tipo_apuesta = apuesta.get('tipo_apuesta', '1X2')
+        
+        if tipo_apuesta == 'GOLES':
+            # Partido 15: apuesta de goles
+            simbolo_apuesta = apuesta['apuesta_recomendada']
+            
+            # Color según confianza
+            confianza_str = f"{apuesta['confianza']}%"
+            if apuesta['nivel_confianza'] == 'ALTA':
+                confianza_display = f"✓ {confianza_str}"
+            elif apuesta['nivel_confianza'] == 'MEDIA':
+                confianza_display = f"~ {confianza_str}"
+            elif apuesta['nivel_confianza'] == 'BAJA':
+                confianza_display = f"? {confianza_str}"
+            else:
+                confianza_display = f"✗ {confianza_str}"
+            
+            print(f"\n{apuesta['numero']:>2}. {apuesta['equipo_local']} vs {apuesta['equipo_visitante']}")
+            print(f"    Horario: {apuesta['horario']} | Liga: {apuesta['liga']}")
+            print(f"    APUESTA: [{simbolo_apuesta}] {confianza_display} ({apuesta['nivel_confianza']}) [PARTIDO DE GOLES]")
+            if 'goles_esperados' in apuesta:
+                print(f"    Goles esperados: {apuesta['goles_esperados']}")
+            print(f"    Probabilidades -> 0: {apuesta['probabilidades']['0']}% | 1: {apuesta['probabilidades']['1']}% | 2: {apuesta['probabilidades']['2']}% | M: {apuesta['probabilidades']['M']}%")
+        else:
+            # Partido normal 1X2
+            simbolo_apuesta = {
+                'V': '1',
+                'E': 'X',
+                'D': '2'
+            }.get(apuesta['apuesta_recomendada'], apuesta['apuesta_recomendada'])
+            
+            # Color según confianza
+            confianza_str = f"{apuesta['confianza']}%"
+            if apuesta['nivel_confianza'] == 'ALTA':
+                confianza_display = f"✓ {confianza_str}"
+            elif apuesta['nivel_confianza'] == 'MEDIA':
+                confianza_display = f"~ {confianza_str}"
+            elif apuesta['nivel_confianza'] == 'BAJA':
+                confianza_display = f"? {confianza_str}"
+            else:
+                confianza_display = f"✗ {confianza_str}"
+            
+            print(f"\n{apuesta['numero']:>2}. {apuesta['equipo_local']} vs {apuesta['equipo_visitante']}")
+            print(f"    Horario: {apuesta['horario']} | Liga: {apuesta['liga']}")
+            print(f"    APUESTA: [{simbolo_apuesta}] {confianza_display} ({apuesta['nivel_confianza']})")
+            print(f"    Probabilidades -> 1: {apuesta['probabilidades']['1']}% | X: {apuesta['probabilidades']['X']}% | 2: {apuesta['probabilidades']['2']}%")
+        
+        if 'nota' in apuesta:
+            print(f"    NOTA: {apuesta['nota']}")
+    
+    print("\n" + "="*80)
+    print("RESUMEN DE APUESTAS")
+    print("="*80)
+    
+    # Contar apuestas por tipo
+    apuestas_1 = sum(1 for a in apuestas if a['apuesta_recomendada'] in ['V', '1'])
+    apuestas_x = sum(1 for a in apuestas if a['apuesta_recomendada'] in ['E', 'X'])
+    apuestas_2 = sum(1 for a in apuestas if a['apuesta_recomendada'] in ['D', '2'])
+    
+    print(f"Total de partidos: {len(apuestas)}")
+    print(f"Apuestas al 1 (Local): {apuestas_1}")
+    print(f"Apuestas al X (Empate): {apuestas_x}")
+    print(f"Apuestas al 2 (Visitante): {apuestas_2}")
+    
+    # Contar por nivel de confianza
+    alta = sum(1 for a in apuestas if a['nivel_confianza'] == 'ALTA')
+    media = sum(1 for a in apuestas if a['nivel_confianza'] == 'MEDIA')
+    baja = sum(1 for a in apuestas if a['nivel_confianza'] == 'BAJA')
+    sin_datos = sum(1 for a in apuestas if a['nivel_confianza'] == 'SIN DATOS')
+    
+    print(f"\nNivel de confianza:")
+    print(f"  Alta (≥70%): {alta} partidos")
+    print(f"  Media (55-69%): {media} partidos")
+    print(f"  Baja (<55%): {baja} partidos")
+    print(f"  Sin datos: {sin_datos} partidos")
+    
+    print("="*80)
 
-for match in matches_data:
-    team_a = match["team_a_name"]
-    team_b = match["team_b_name"]
 
-    # Calcular el promedio de "elo" para ambos equipos
-    team_a_elo = calculate_team_elo(team_a)
-    team_a_elo += 5  # Bono local
-    team_b_elo = calculate_team_elo(team_b)
+def main():
+    """Función principal"""
+    # Rutas
+    base_dir = Path(__file__).parent.parent
+    data_dir = base_dir / 'data'
+    
+    analisis_path = data_dir / 'analisis_futbol_espanol.json'
+    html_path = data_dir / 'Jornada_quiniela.html'
+    output_path = data_dir / 'apuestas_quiniela.json'
+    
+    # Verificar que existen los archivos
+    if not analisis_path.exists():
+        print(f"Error: No se encuentra el archivo {analisis_path}")
+        print("Ejecuta primero: python scrapper-futbol-espanol.py")
+        return
+    
+    if not html_path.exists():
+        print(f"Error: No se encuentra el archivo {html_path}")
+        return
+    
+    print("Cargando análisis de fútbol español...")
+    with open(analisis_path, 'r', encoding='utf-8') as f:
+        analisis = json.load(f)
+    
+    predicciones_primera = analisis['predicciones']['primera_division']
+    predicciones_segunda = analisis['predicciones']['segunda_division']
+    
+    print(f"✓ Cargadas {len(predicciones_primera)} predicciones de Primera División")
+    print(f"✓ Cargadas {len(predicciones_segunda)} predicciones de Segunda División")
+    
+    print("\nExtrayendo partidos del HTML de la quiniela...")
+    partidos_quiniela = extraer_partidos_quiniela(html_path)
+    print(f"✓ Extraídos {len(partidos_quiniela)} partidos de la quiniela")
+    
+    print("\nGenerando apuestas recomendadas...")
+    apuestas = generar_apuestas_quiniela(partidos_quiniela, predicciones_primera, predicciones_segunda)
+    
+    # Guardar apuestas en JSON
+    resultado = {
+        'fecha_analisis': datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
+        'total_partidos': len(apuestas),
+        'apuestas': apuestas,
+        'estadisticas': {
+            'apuestas_1': sum(1 for a in apuestas if a['apuesta_recomendada'] in ['V', '1']),
+            'apuestas_x': sum(1 for a in apuestas if a['apuesta_recomendada'] in ['E', 'X']),
+            'apuestas_2': sum(1 for a in apuestas if a['apuesta_recomendada'] in ['D', '2']),
+            'confianza_alta': sum(1 for a in apuestas if a['nivel_confianza'] == 'ALTA'),
+            'confianza_media': sum(1 for a in apuestas if a['nivel_confianza'] == 'MEDIA'),
+            'confianza_baja': sum(1 for a in apuestas if a['nivel_confianza'] == 'BAJA'),
+            'sin_datos': sum(1 for a in apuestas if a['nivel_confianza'] == 'SIN DATOS')
+        }
+    }
+    
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(resultado, f, ensure_ascii=False, indent=2)
+    
+    print(f"\n✓ Apuestas guardadas en: {output_path}")
+    
+    # Imprimir boleto
+    imprimir_boleto_quiniela(apuestas)
 
-    # Obtener la url de apuestas del partido
-    url_apuestas = match.get("url_apuestas")
-    apuestas = get_elo_from_casas_apuestas(url_apuestas) if url_apuestas else None
 
-    # Árbol de decisiones por ELO
-    elo_diff = team_a_elo - team_b_elo
-    pred_elo = "X" if np.abs(elo_diff) < 1 else ("1" if elo_diff > 0 else "2")
-
-    # Árbol de decisiones por casas de apuestas (probabilidad más alta)
-    pred_apuestas = None
-    if apuestas and "probabilidades" in apuestas:
-        probs = apuestas["probabilidades"]
-        print(f"Probabilidades: {probs} para {team_a} vs {team_b}")
-        pred_apuestas = max(probs, key=probs.get)  # "1", "X" o "2"
-
-    # Combinación: si ambos coinciden, usar ese resultado; si no, priorizar ELO pero marcar la diferencia
-    if pred_apuestas and pred_elo == pred_apuestas:
-        final_pred = pred_elo
-        fuente = "ELO+APUESTAS"
-    elif pred_apuestas:
-        final_pred = pred_elo + "/" + pred_apuestas
-        fuente = "ELO/APUESTAS"
-    else:
-        final_pred = pred_elo
-        fuente = "ELO"
-
-    quiniela_results.append({
-        "match": f"{team_a} vs {team_b}",
-        "elo_team_a": team_a_elo,
-        "elo_team_b": team_b_elo,
-        "result": final_pred,
-        "fuente": fuente,
-        "analysis_url": match["analysis_url"],
-        "apuesta_url": url_apuestas
-    })
-
-# Mostrar los resultados
-for result in quiniela_results:
-    print(f"Partido: {result['match']}")
-    print(f"Elo Equipo A: {result['elo_team_a']}")
-    print(f"Elo Equipo B: {result['elo_team_b']}")
-    print(f"Resultado Quiniela: {result['result']} (Fuente: {result['fuente']})")
-    print(f"Análisis: {result['analysis_url']}"),
-    print(f"URL Apuestas: {result['apuesta_url']}")
-    print("-" * 40)
-
-# Guardar los resultados en un archivo de texto
-with open("quiniela_results.txt", "w", encoding="utf-8") as f:
-    for result in quiniela_results:
-        f.write(f"Partido: {result['match']}\n")
-        f.write(f"Elo Equipo A: {result['elo_team_a']}\n")
-        f.write(f"Elo Equipo B: {result['elo_team_b']}\n")
-        f.write(f"Resultado Quiniela: {result['result']} (Fuente: {result['fuente']})\n")
-        f.write(f"Análisis: {result['analysis_url']}\n")
-        f.write(f"URL Apuestas: {result['apuesta_url']}\n")
-        # Guardar probabilidades si existen
-        url_apuestas = result['apuesta_url']
-        probs_str = ""
-        if url_apuestas:
-            apuestas = get_elo_from_casas_apuestas(url_apuestas)
-            if apuestas and "probabilidades" in apuestas:
-                probs = apuestas["probabilidades"]
-                probs_str = f"Probabilidades 1X2: {probs}\n"
-        f.write(probs_str)
-        f.write("-" * 40 + "\n")
+if __name__ == '__main__':
+    main()
