@@ -274,7 +274,15 @@ def generar_apuestas_quiniela(partidos_quiniela, predicciones_primera, prediccio
                 'liga': prediccion.get('liga', 'Desconocida'),
                 'fecha_partido': prediccion.get('fecha', 'N/A'),
                 'tipo_apuesta': 'GOLES',
-                'goles_esperados': resultado_goles['goles_esperados']
+                'goles_esperados': resultado_goles['goles_esperados'],
+                # Información adicional sobre quién gana
+                'prediccion_ganador': prediccion['prediccion'],
+                'confianza_ganador': round(prediccion['confianza'], 2),
+                'probabilidades_1x2': {
+                    '1': round(prediccion['probabilidades']['victoria_local'], 2),
+                    'X': round(prediccion['probabilidades']['empate'], 2),
+                    '2': round(prediccion['probabilidades']['victoria_visitante'], 2)
+                }
             }
             
             # Determinar nivel de confianza
@@ -391,6 +399,11 @@ def imprimir_boleto_quiniela(apuestas):
             if 'goles_esperados' in apuesta:
                 print(f"    Goles esperados: {apuesta['goles_esperados']}")
             print(f"    Probabilidades -> 0: {apuesta['probabilidades']['0']}% | 1: {apuesta['probabilidades']['1']}% | 2: {apuesta['probabilidades']['2']}% | M: {apuesta['probabilidades']['M']}%")
+            # Mostrar también quién gana
+            if 'prediccion_ganador' in apuesta:
+                simbolo_ganador = {'V': '1', 'E': 'X', 'D': '2'}.get(apuesta['prediccion_ganador'], apuesta['prediccion_ganador'])
+                print(f"    GANADOR PROBABLE: [{simbolo_ganador}] {apuesta['confianza_ganador']}%")
+                print(f"    Probabilidades 1X2 -> 1: {apuesta['probabilidades_1x2']['1']}% | X: {apuesta['probabilidades_1x2']['X']}% | 2: {apuesta['probabilidades_1x2']['2']}%")
         else:
             # Partido normal 1X2
             simbolo_apuesta = {
