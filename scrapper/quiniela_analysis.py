@@ -385,13 +385,13 @@ def imprimir_boleto_quiniela(apuestas):
             # Color según confianza
             confianza_str = f"{apuesta['confianza']}%"
             if apuesta['nivel_confianza'] == 'ALTA':
-                confianza_display = f"✓ {confianza_str}"
+                confianza_display = f"[OK] {confianza_str}"
             elif apuesta['nivel_confianza'] == 'MEDIA':
                 confianza_display = f"~ {confianza_str}"
             elif apuesta['nivel_confianza'] == 'BAJA':
                 confianza_display = f"? {confianza_str}"
             else:
-                confianza_display = f"✗ {confianza_str}"
+                confianza_display = f"[NO] {confianza_str}"
             
             print(f"\n{apuesta['numero']:>2}. {apuesta['equipo_local']} vs {apuesta['equipo_visitante']}")
             print(f"    Horario: {apuesta['horario']} | Liga: {apuesta['liga']}")
@@ -415,13 +415,13 @@ def imprimir_boleto_quiniela(apuestas):
             # Color según confianza
             confianza_str = f"{apuesta['confianza']}%"
             if apuesta['nivel_confianza'] == 'ALTA':
-                confianza_display = f"✓ {confianza_str}"
+                confianza_display = f"[OK] {confianza_str}"
             elif apuesta['nivel_confianza'] == 'MEDIA':
                 confianza_display = f"~ {confianza_str}"
             elif apuesta['nivel_confianza'] == 'BAJA':
                 confianza_display = f"? {confianza_str}"
             else:
-                confianza_display = f"✗ {confianza_str}"
+                confianza_display = f"[NO] {confianza_str}"
             
             print(f"\n{apuesta['numero']:>2}. {apuesta['equipo_local']} vs {apuesta['equipo_visitante']}")
             print(f"    Horario: {apuesta['horario']} | Liga: {apuesta['liga']}")
@@ -452,7 +452,7 @@ def imprimir_boleto_quiniela(apuestas):
     sin_datos = sum(1 for a in apuestas if a['nivel_confianza'] == 'SIN DATOS')
     
     print(f"\nNivel de confianza:")
-    print(f"  Alta (≥70%): {alta} partidos")
+    print(f"  Alta (>=70%): {alta} partidos")
     print(f"  Media (55-69%): {media} partidos")
     print(f"  Baja (<55%): {baja} partidos")
     print(f"  Sin datos: {sin_datos} partidos")
@@ -487,12 +487,12 @@ def main():
     predicciones_primera = analisis['predicciones']['primera_division']
     predicciones_segunda = analisis['predicciones']['segunda_division']
     
-    print(f"✓ Cargadas {len(predicciones_primera)} predicciones de Primera División")
-    print(f"✓ Cargadas {len(predicciones_segunda)} predicciones de Segunda División")
+    print(f"[OK] Cargadas {len(predicciones_primera)} predicciones de Primera División")
+    print(f"[OK] Cargadas {len(predicciones_segunda)} predicciones de Segunda División")
     
     print("\nExtrayendo partidos del HTML de la quiniela...")
     partidos_quiniela = extraer_partidos_quiniela(html_path)
-    print(f"✓ Extraídos {len(partidos_quiniela)} partidos de la quiniela")
+    print(f"[OK] Extraídos {len(partidos_quiniela)} partidos de la quiniela")
     
     print("\nGenerando apuestas recomendadas...")
     apuestas = generar_apuestas_quiniela(partidos_quiniela, predicciones_primera, predicciones_segunda)
@@ -516,7 +516,7 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(resultado, f, ensure_ascii=False, indent=2)
     
-    print(f"\n✓ Apuestas guardadas en: {output_path}")
+    print(f"\n[OK] Apuestas guardadas en: {output_path}")
     
     # Imprimir boleto
     imprimir_boleto_quiniela(apuestas)

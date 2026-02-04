@@ -31,18 +31,18 @@ def ejecutar_script(script_name, descripcion):
         )
         
         if result.returncode == 0:
-            print(f"✓ {descripcion} completado exitosamente")
+            print(f"[OK] {descripcion} completado exitosamente")
             return True
         else:
-            print(f"✗ Error en {descripcion}")
+            print(f"[FALLO] Error en {descripcion}")
             print(result.stderr)
             return False
             
     except subprocess.TimeoutExpired:
-        print(f"✗ Timeout en {descripcion}")
+        print(f"[FALLO] Timeout en {descripcion}")
         return False
     except Exception as e:
-        print(f"✗ Error ejecutando {descripcion}: {str(e)}")
+        print(f"[FALLO] Error ejecutando {descripcion}: {str(e)}")
         return False
 
 
@@ -471,7 +471,7 @@ def main():
     )
     
     if not resultado_primera or not resultado_segunda:
-        print("\n✗ Error: No se pudieron obtener todos los datos")
+        print("\n[FALLO] Error: No se pudieron obtener todos los datos")
         return
     
     print("\n" + "="*70)
@@ -483,7 +483,7 @@ def main():
     datos_segunda = cargar_datos_liga('segunda_division_completo.json')
     
     if not datos_primera or not datos_segunda:
-        print("\n✗ Error: No se pudieron cargar los datos")
+        print("\n[FALLO] Error: No se pudieron cargar los datos")
         return
     
     # 4. Analizar cada liga
@@ -508,8 +508,8 @@ def main():
     predicciones_primera = predecir_proximos_partidos(datos_primera, 'Primera División')
     predicciones_segunda = predecir_proximos_partidos(datos_segunda, 'Segunda División')
     
-    print(f"\n✓ Generadas {len(predicciones_primera)} predicciones para Primera División")
-    print(f"✓ Generadas {len(predicciones_segunda)} predicciones para Segunda División")
+    print(f"\n[OK] Generadas {len(predicciones_primera)} predicciones para Primera División")
+    print(f"[OK] Generadas {len(predicciones_segunda)} predicciones para Segunda División")
     
     # 7. Generar análisis completo
     analisis_completo = {
@@ -542,7 +542,7 @@ def main():
     with open(output_path, 'w', encoding='utf-8') as f:
         json.dump(analisis_completo, f, ensure_ascii=False, indent=2)
     
-    print(f"\n✓ Análisis guardado en: {output_path}")
+    print(f"\n[OK] Análisis guardado en: {output_path}")
     
     # 9. Guardar predicciones por separado para seguimiento
     predicciones_path = DATA_DIR / 'predicciones_proxima_jornada.json'
@@ -566,7 +566,7 @@ def main():
     with open(predicciones_path, 'w', encoding='utf-8') as f:
         json.dump(predicciones_seguimiento, f, ensure_ascii=False, indent=2)
     
-    print(f"✓ Predicciones guardadas en: {predicciones_path}")
+    print(f"[OK] Predicciones guardadas en: {predicciones_path}")
     
     # 10. Mostrar reporte en consola
     generar_reporte_consola(analisis_primera, analisis_segunda, comparacion)

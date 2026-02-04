@@ -23,8 +23,13 @@ Ejecuta el script principal:
 python scraper/scraper.py
 ```
 
-## Pasos para la IA
-1. Lanzar scrapper soccerdata
-2. Lanzar scrapper segunda division
-3. Lanzar scrapper futbol español
-4. Lanzar quiniela analisys
+## Scrapers Disponibles
+
+El proyecto incluye múltiples scrapers para diferentes fuentes de datos deportivos:
+
+1. **SoccerData Scraper** - Extrae datos de resultados de fútbol desde SoccerData
+2. **Segunda División Scraper** - Obtiene información de la Segunda División española
+3. **Fútbol Español Scraper** - Recopila datos de la Liga Española y otras competiciones nacionales
+4. **Quiniela Analysis** - Analiza y procesa datos de quinielas deportivas
+
+Para ejecutar un scraper específico, consulta la documentación en la carpeta `scraper/`.
