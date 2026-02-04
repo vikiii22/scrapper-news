@@ -4,3 +4,6 @@ data/
 *.txt
 *.json
 ./data
+*.bat
+*.sh
+/.venv
