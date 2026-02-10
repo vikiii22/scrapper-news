@@ -1,0 +1,27 @@
+# Core dependencies
+requests>=2.31.0
+beautifulsoup4>=4.12.0
+lxml>=4.9.0
+
+# Web scraping
+playwright>=1.40.0
+pycurl>=7.45.0
+
+# Data handling
+pandas>=2.0.0
+
+# Soccer data library
+soccerdata>=1.4.0
+
+# Telegram bot
+python-telegram-bot>=20.0
+
+# Environment variables
+python-dotenv>=1.0.0
+
+# Optional but recommended
+certifi>=2023.0.0
+charset-normalizer>=3.0.0
+idna>=3.0
+urllib3>=2.0.0
+soupsieve>=2.5
