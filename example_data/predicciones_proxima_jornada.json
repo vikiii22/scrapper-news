@@ -1,0 +1,809 @@
+{
+  "fecha_prediccion": "2026-02-04 10:37:18",
+  "temporada": "2025/26",
+  "predicciones": [
+    {
+      "equipo_local": "Celta Vigo",
+      "equipo_visitante": "Osasuna",
+      "probabilidades": {
+        "victoria_local": 65.58,
+        "empate": 21.88,
+        "victoria_visitante": 12.54
+      },
+      "prediccion": "V",
+      "confianza": 65.58,
+      "factores": {
+        "posicion": 1.0,
+        "puntos": 2.33,
+        "forma": 0.0,
+        "goles": 1.6,
+        "localidad": 5,
+        "victorias": 0.45,
+        "total": 10.39
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 7,
+          "puntos": 33,
+          "forma": 2.5,
+          "goles_favor": 1.32,
+          "goles_contra": 1.05
+        },
+        "visitante": {
+          "posicion": 9,
+          "puntos": 26,
+          "forma": 2.5,
+          "goles_favor": 1.18,
+          "goles_contra": 1.23
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-06 20:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Barcelona",
+      "equipo_visitante": "Mallorca",
+      "probabilidades": {
+        "victoria_local": 80.0,
+        "empate": 13.97,
+        "victoria_visitante": 6.03
+      },
+      "prediccion": "V",
+      "confianza": 80.0,
+      "factores": {
+        "posicion": 6.5,
+        "puntos": 10,
+        "forma": 0.0,
+        "goles": 9.8,
+        "localidad": 5,
+        "victorias": 5.46,
+        "total": 36.76
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 1,
+          "puntos": 55,
+          "forma": 2.5,
+          "goles_favor": 2.73,
+          "goles_contra": 1.05
+        },
+        "visitante": {
+          "posicion": 14,
+          "puntos": 24,
+          "forma": 2.5,
+          "goles_favor": 1.27,
+          "goles_contra": 1.55
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-07 15:15:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Rayo Vallecano",
+      "equipo_visitante": "Real Oviedo",
+      "probabilidades": {
+        "victoria_local": 66.81,
+        "empate": 21.64,
+        "victoria_visitante": 11.55
+      },
+      "prediccion": "V",
+      "confianza": 66.81,
+      "factores": {
+        "posicion": 1.0,
+        "puntos": 2.0,
+        "forma": 0.0,
+        "goles": 2.3,
+        "localidad": 5,
+        "victorias": 0.91,
+        "total": 11.21
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 18,
+          "puntos": 22,
+          "forma": 2.5,
+          "goles_favor": 0.82,
+          "goles_contra": 1.36
+        },
+        "visitante": {
+          "posicion": 20,
+          "puntos": 16,
+          "forma": 2.5,
+          "goles_favor": 0.55,
+          "goles_contra": 1.55
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-07 13:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Real Sociedad",
+      "equipo_visitante": "Elche",
+      "probabilidades": {
+        "victoria_local": 65.29,
+        "empate": 21.94,
+        "victoria_visitante": 12.77
+      },
+      "prediccion": "V",
+      "confianza": 65.29,
+      "factores": {
+        "posicion": 2.5,
+        "puntos": 1.33,
+        "forma": 0.0,
+        "goles": 0.45,
+        "localidad": 5,
+        "victorias": 0.91,
+        "total": 10.19
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 8,
+          "puntos": 28,
+          "forma": 2.5,
+          "goles_favor": 1.36,
+          "goles_contra": 1.36
+        },
+        "visitante": {
+          "posicion": 13,
+          "puntos": 24,
+          "forma": 2.5,
+          "goles_favor": 1.36,
+          "goles_contra": 1.45
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-07 20:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Sevilla",
+      "equipo_visitante": "Girona FC",
+      "probabilidades": {
+        "victoria_local": 57.91,
+        "empate": 23.42,
+        "victoria_visitante": 18.67
+      },
+      "prediccion": "V",
+      "confianza": 57.91,
+      "factores": {
+        "posicion": -1.5,
+        "puntos": -0.33,
+        "forma": 0.0,
+        "goles": 1.65,
+        "localidad": 5,
+        "victorias": 0.46,
+        "total": 5.27
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 15,
+          "puntos": 24,
+          "forma": 2.5,
+          "goles_favor": 1.32,
+          "goles_contra": 1.68
+        },
+        "visitante": {
+          "posicion": 12,
+          "puntos": 25,
+          "forma": 2.5,
+          "goles_favor": 0.95,
+          "goles_contra": 1.64
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-07 17:30:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Athletic Club",
+      "equipo_visitante": "Levante UD",
+      "probabilidades": {
+        "victoria_local": 69.07,
+        "empate": 21.19,
+        "victoria_visitante": 9.75
+      },
+      "prediccion": "V",
+      "confianza": 69.07,
+      "factores": {
+        "posicion": 4.0,
+        "puntos": 2.33,
+        "forma": 0.0,
+        "goles": 0.1,
+        "localidad": 5,
+        "victorias": 1.28,
+        "total": 12.71
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 11,
+          "puntos": 25,
+          "forma": 2.5,
+          "goles_favor": 0.95,
+          "goles_contra": 1.41
+        },
+        "visitante": {
+          "posicion": 19,
+          "puntos": 18,
+          "forma": 2.5,
+          "goles_favor": 1.14,
+          "goles_contra": 1.62
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-08 15:15:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Atlético Madrid",
+      "equipo_visitante": "Real Betis",
+      "probabilidades": {
+        "victoria_local": 71.15,
+        "empate": 20.77,
+        "victoria_visitante": 8.08
+      },
+      "prediccion": "V",
+      "confianza": 71.15,
+      "factores": {
+        "posicion": 1.0,
+        "puntos": 3.33,
+        "forma": 0.0,
+        "goles": 2.95,
+        "localidad": 5,
+        "victorias": 1.82,
+        "total": 14.1
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 3,
+          "puntos": 45,
+          "forma": 2.5,
+          "goles_favor": 1.73,
+          "goles_contra": 0.77
+        },
+        "visitante": {
+          "posicion": 5,
+          "puntos": 35,
+          "forma": 2.5,
+          "goles_favor": 1.64,
+          "goles_contra": 1.27
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-08 17:30:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Deportivo Alavés",
+      "equipo_visitante": "Getafe",
+      "probabilidades": {
+        "victoria_local": 65.78,
+        "empate": 21.84,
+        "victoria_visitante": 12.37
+      },
+      "prediccion": "V",
+      "confianza": 65.78,
+      "factores": {
+        "posicion": 3.5,
+        "puntos": 0.67,
+        "forma": 0.0,
+        "goles": 0.9,
+        "localidad": 5,
+        "victorias": 0.46,
+        "total": 10.52
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 10,
+          "puntos": 25,
+          "forma": 2.5,
+          "goles_favor": 0.91,
+          "goles_contra": 1.23
+        },
+        "visitante": {
+          "posicion": 17,
+          "puntos": 23,
+          "forma": 2.5,
+          "goles_favor": 0.73,
+          "goles_contra": 1.23
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-08 13:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Valencia",
+      "equipo_visitante": "Real Madrid",
+      "probabilidades": {
+        "victoria_local": 10.0,
+        "empate": 16.97,
+        "victoria_visitante": 73.03
+      },
+      "prediccion": "D",
+      "confianza": 73.03,
+      "factores": {
+        "posicion": -7.0,
+        "puntos": -10,
+        "forma": 0.0,
+        "goles": -9.3,
+        "localidad": 5,
+        "victorias": -5.45,
+        "total": -26.75
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 16,
+          "puntos": 23,
+          "forma": 2.5,
+          "goles_favor": 1.05,
+          "goles_contra": 1.59
+        },
+        "visitante": {
+          "posicion": 2,
+          "puntos": 54,
+          "forma": 2.5,
+          "goles_favor": 2.14,
+          "goles_contra": 0.82
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-08 20:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Villarreal",
+      "equipo_visitante": "Espanyol",
+      "probabilidades": {
+        "victoria_local": 71.54,
+        "empate": 20.69,
+        "victoria_visitante": 7.77
+      },
+      "prediccion": "V",
+      "confianza": 71.54,
+      "factores": {
+        "posicion": 1.0,
+        "puntos": 2.67,
+        "forma": 0.0,
+        "goles": 4.05,
+        "localidad": 5,
+        "victorias": 1.64,
+        "total": 14.36
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 4,
+          "puntos": 42,
+          "forma": 2.5,
+          "goles_favor": 1.86,
+          "goles_contra": 1.1
+        },
+        "visitante": {
+          "posicion": 6,
+          "puntos": 34,
+          "forma": 2.5,
+          "goles_favor": 1.18,
+          "goles_contra": 1.23
+        }
+      },
+      "partido_id": null,
+      "jornada": 23,
+      "fecha": "2026-02-09 20:00:00+00:00",
+      "liga": "Primera División"
+    },
+    {
+      "equipo_local": "Leganés",
+      "equipo_visitante": "Granada",
+      "probabilidades": {
+        "victoria_local": 56.78,
+        "empate": 23.64,
+        "victoria_visitante": 19.57
+      },
+      "prediccion": "V",
+      "confianza": 56.78,
+      "factores": {
+        "posicion": 0.45,
+        "puntos": 0.0,
+        "forma": -2.0,
+        "goles": 0.65,
+        "localidad": 5,
+        "victorias": 0.42,
+        "total": 4.52
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 14,
+          "puntos": 29,
+          "forma": 0.0,
+          "goles_favor": 1.08,
+          "goles_contra": 1.04
+        },
+        "visitante": {
+          "posicion": 15,
+          "puntos": 29,
+          "forma": 1.0,
+          "goles_favor": 1.08,
+          "goles_contra": 1.17
+        }
+      },
+      "partido_id": 14083772,
+      "jornada": 25,
+      "fecha": "2026-02-06 20:30:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "FC Andorra",
+      "equipo_visitante": "Real Sociedad B U21",
+      "probabilidades": {
+        "victoria_local": 60.2,
+        "empate": 22.96,
+        "victoria_visitante": 16.84
+      },
+      "prediccion": "V",
+      "confianza": 60.2,
+      "factores": {
+        "posicion": 1.36,
+        "puntos": 1.33,
+        "forma": -0.67,
+        "goles": -0.65,
+        "localidad": 5,
+        "victorias": 0.42,
+        "total": 6.8
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 16,
+          "puntos": 29,
+          "forma": 0.0,
+          "goles_favor": 1.08,
+          "goles_contra": 1.38
+        },
+        "visitante": {
+          "posicion": 19,
+          "puntos": 25,
+          "forma": 0.3333333333333333,
+          "goles_favor": 1.25,
+          "goles_contra": 1.42
+        }
+      },
+      "partido_id": 14083761,
+      "jornada": 25,
+      "fecha": "2026-02-07 14:00:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Las Palmas",
+      "equipo_visitante": "Burgos Club de Fútbol",
+      "probabilidades": {
+        "victoria_local": 59.0,
+        "empate": 23.2,
+        "victoria_visitante": 17.8
+      },
+      "prediccion": "V",
+      "confianza": 59.0,
+      "factores": {
+        "posicion": 1.36,
+        "puntos": 0.33,
+        "forma": -1.33,
+        "goles": 1.05,
+        "localidad": 5,
+        "victorias": -0.42,
+        "total": 6.0
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 5,
+          "puntos": 39,
+          "forma": 0.3333333333333333,
+          "goles_favor": 1.21,
+          "goles_contra": 0.83
+        },
+        "visitante": {
+          "posicion": 8,
+          "puntos": 38,
+          "forma": 1.0,
+          "goles_favor": 1.17,
+          "goles_contra": 1.0
+        }
+      },
+      "partido_id": 14083766,
+      "jornada": 25,
+      "fecha": "2026-02-07 16:15:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Real Zaragoza",
+      "equipo_visitante": "Eibar",
+      "probabilidades": {
+        "victoria_local": 36.02,
+        "empate": 22.2,
+        "victoria_visitante": 41.78
+      },
+      "prediccion": "D",
+      "confianza": 41.78,
+      "factores": {
+        "posicion": -3.64,
+        "puntos": -3.0,
+        "forma": -3.33,
+        "goles": -3.1,
+        "localidad": 5,
+        "victorias": -1.25,
+        "total": -9.32
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 21,
+          "puntos": 22,
+          "forma": 0.3333333333333333,
+          "goles_favor": 0.88,
+          "goles_contra": 1.54
+        },
+        "visitante": {
+          "posicion": 13,
+          "puntos": 31,
+          "forma": 2.0,
+          "goles_favor": 1.04,
+          "goles_contra": 1.08
+        }
+      },
+      "partido_id": 14083770,
+      "jornada": 25,
+      "fecha": "2026-02-07 18:30:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Cádiz",
+      "equipo_visitante": "Almería",
+      "probabilidades": {
+        "victoria_local": 42.53,
+        "empate": 23.51,
+        "victoria_visitante": 33.97
+      },
+      "prediccion": "V",
+      "confianza": 42.53,
+      "factores": {
+        "posicion": -3.18,
+        "puntos": -1.67,
+        "forma": -2.0,
+        "goles": -2.3,
+        "localidad": 5,
+        "victorias": -0.83,
+        "total": -4.98
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 11,
+          "puntos": 34,
+          "forma": 0.0,
+          "goles_favor": 1.08,
+          "goles_contra": 1.12
+        },
+        "visitante": {
+          "posicion": 4,
+          "puntos": 39,
+          "forma": 1.0,
+          "goles_favor": 1.88,
+          "goles_contra": 1.46
+        }
+      },
+      "partido_id": 14083778,
+      "jornada": 25,
+      "fecha": "2026-02-07 21:00:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Real Valladolid",
+      "equipo_visitante": "CD Castellón",
+      "probabilidades": {
+        "victoria_local": 28.5,
+        "empate": 20.7,
+        "victoria_visitante": 50.8
+      },
+      "prediccion": "D",
+      "confianza": 50.8,
+      "factores": {
+        "posicion": -6.82,
+        "puntos": -4.67,
+        "forma": -2.67,
+        "goles": -3.1,
+        "localidad": 5,
+        "victorias": -2.08,
+        "total": -14.33
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 17,
+          "puntos": 28,
+          "forma": 0.0,
+          "goles_favor": 1.04,
+          "goles_contra": 1.12
+        },
+        "visitante": {
+          "posicion": 2,
+          "puntos": 42,
+          "forma": 1.3333333333333333,
+          "goles_favor": 1.58,
+          "goles_contra": 1.04
+        }
+      },
+      "partido_id": 14083768,
+      "jornada": 25,
+      "fecha": "2026-02-08 14:00:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Deportivo La Coruña",
+      "equipo_visitante": "Albacete Balompié",
+      "probabilidades": {
+        "victoria_local": 73.41,
+        "empate": 20.32,
+        "victoria_visitante": 6.27
+      },
+      "prediccion": "V",
+      "confianza": 73.41,
+      "factores": {
+        "posicion": 4.09,
+        "puntos": 2.33,
+        "forma": 0.0,
+        "goles": 3.35,
+        "localidad": 5,
+        "victorias": 0.83,
+        "total": 15.61
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 3,
+          "puntos": 40,
+          "forma": 1.0,
+          "goles_favor": 1.58,
+          "goles_contra": 1.08
+        },
+        "visitante": {
+          "posicion": 12,
+          "puntos": 33,
+          "forma": 1.0,
+          "goles_favor": 1.25,
+          "goles_contra": 1.42
+        }
+      },
+      "partido_id": 14083764,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "AD Ceuta",
+      "equipo_visitante": "Córdoba",
+      "probabilidades": {
+        "victoria_local": 51.1,
+        "empate": 24.78,
+        "victoria_visitante": 24.12
+      },
+      "prediccion": "V",
+      "confianza": 51.1,
+      "factores": {
+        "posicion": -1.36,
+        "puntos": -1.0,
+        "forma": 0.0,
+        "goles": -1.9,
+        "localidad": 5,
+        "victorias": 0.0,
+        "total": 0.74
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 10,
+          "puntos": 35,
+          "forma": 1.0,
+          "goles_favor": 1.25,
+          "goles_contra": 1.42
+        },
+        "visitante": {
+          "posicion": 7,
+          "puntos": 38,
+          "forma": 1.0,
+          "goles_favor": 1.33,
+          "goles_contra": 1.12
+        }
+      },
+      "partido_id": 14083759,
+      "jornada": 25,
+      "fecha": "2026-02-08 16:15:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Sporting Gijón",
+      "equipo_visitante": "Huesca",
+      "probabilidades": {
+        "victoria_local": 71.09,
+        "empate": 20.78,
+        "victoria_visitante": 8.13
+      },
+      "prediccion": "V",
+      "confianza": 71.09,
+      "factores": {
+        "posicion": 4.09,
+        "puntos": 3.0,
+        "forma": -2.0,
+        "goles": 2.3,
+        "localidad": 5,
+        "victorias": 1.67,
+        "total": 14.06
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 9,
+          "puntos": 36,
+          "forma": 0.0,
+          "goles_favor": 1.38,
+          "goles_contra": 1.33
+        },
+        "visitante": {
+          "posicion": 18,
+          "puntos": 27,
+          "forma": 1.0,
+          "goles_favor": 0.92,
+          "goles_contra": 1.33
+        }
+      },
+      "partido_id": 14083774,
+      "jornada": 25,
+      "fecha": "2026-02-08 18:30:00",
+      "liga": "Segunda División"
+    },
+    {
+      "equipo_local": "Málaga",
+      "equipo_visitante": "Cultural Leonesa",
+      "probabilidades": {
+        "victoria_local": 80.0,
+        "empate": 18.49,
+        "victoria_visitante": 1.51
+      },
+      "prediccion": "V",
+      "confianza": 80.0,
+      "factores": {
+        "posicion": 6.36,
+        "puntos": 4.33,
+        "forma": 0.0,
+        "goles": 4.35,
+        "localidad": 5,
+        "victorias": 1.67,
+        "total": 21.71
+      },
+      "datos_equipos": {
+        "local": {
+          "posicion": 6,
+          "puntos": 38,
+          "forma": 0.0,
+          "goles_favor": 1.5,
+          "goles_contra": 1.17
+        },
+        "visitante": {
+          "posicion": 20,
+          "puntos": 25,
+          "forma": 0.0,
+          "goles_favor": 1.04,
+          "goles_contra": 1.58
+        }
+      },
+      "partido_id": 14083776,
+      "jornada": 25,
+      "fecha": "2026-02-08 21:00:00",
+      "liga": "Segunda División"
+    }
+  ],
+  "total": 20,
+  "por_verificar": 20,
+  "verificadas": 0
+}

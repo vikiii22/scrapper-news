@@ -1,7 +1,6 @@
 # Ignore data files
 data/
 .env
-*.json
 ./data
 *.bat
 *.sh

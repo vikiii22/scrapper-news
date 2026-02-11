@@ -20,8 +20,8 @@ class LeagueConfig:
     country: str
 
 LEAGUES = {
-    "la_liga": LeagueConfig(id=54, season_id=77558, name="La Liga", country="Spain"),
-    "segunda": LeagueConfig(id=55, season_id=77559, name="Segunda División", country="Spain"),
+    "la_liga": LeagueConfig(id=8, season_id=77559, name="La Liga", country="Spain"),
+    "segunda": LeagueConfig(id=54, season_id=77558, name="Segunda División", country="Spain"),
 }
 
 # Factores de predicción
