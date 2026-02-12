@@ -456,7 +456,30 @@ class PredictionEngine:
 
 ---
 
-## 📝 Convenciones de Código
+## � Fase 8: Mejoras Avanzadas (Futuro)
+
+### 🎭 Web Scraping con Playwright
+Reemplazar scrapers basados en requests/selenium por **Playwright** para mayor robustez y capacidad de evadir detecciones.
+- [ ] Implementar `src/scrapers/playwright_engine.py`
+- [ ] Migrar scraping de BeSoccer y Sofascore dinámico
+- [ ] Soporte para ejecución en headless/headed mode
+
+### 👥 Análisis de Jugadores (Lineups & Stats)
+Incorporar datos a nivel de jugador para refinar las predicciones:
+- [ ] Extraer alineaciones probables y confirmadas.
+- [ ] Estadísticas individuales (goles, asistencias, rating medio).
+- [ ] Factor de "Jugadores Clave": Impacto de bajas/lesiones importantes.
+- [ ] `src/analysis/factors/players.py`
+
+### 🌤️ Datos Meteorológicos
+Integrar previsiones del tiempo para el día y hora del partido:
+- [ ] API de clima (ej. OpenWeatherMap).
+- [ ] Análisis de impacto: ¿Cómo afecta la lluvia/viento a cada equipo? (ej. equipos técnicos sufren más con lluvia).
+- [ ] `src/analysis/factors/weather.py`
+
+---
+
+## �📝 Convenciones de Código
 
 ### Nombrado
 | Tipo | Convención | Ejemplo |
