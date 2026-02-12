@@ -205,18 +205,30 @@ def main():
                 home_lineup=home_squad,
                 away_lineup=away_squad
             )
-            predictions.append(prediction)
+            
+            # Guardamos el índice de la quiniela para ordenar después si es necesario
+            pred_entry = {'prediction': prediction, 'quiniela_index': found_match_idx if quiniela_matches else 999}
+            predictions.append(pred_entry)
         except (KeyError, TypeError) as e:
             print(f"Error procesando partido {m.get('id')}: {e}")
             continue
+
+    # Ordenar por el orden de la quiniela (índice 0, 1, 2...)
+    if quiniela_matches and predictions:
+        print("Ordenando resultados según el orden de la Quiniela...")
+        predictions.sort(key=lambda x: x['quiniela_index'])
 
     # Guardar resultados
     output_path = PROCESSED_DATA_DIR / "upcoming_match_predictions.json"
     
     # Convertir a formato serializable
     output_data = []
-    for p in predictions:
-        output_data.append({
+    for item in predictions:
+        p = item['prediction']
+        # Añadir número de quiniela si está disponible
+        q_num = item['quiniela_index'] + 1 if quiniela_matches and item['quiniela_index'] != 999 else None
+        
+        data_obj = {
             "match_info": {
                 "home_team": p.match.home_team.name,
                 "away_team": p.match.away_team.name,
@@ -229,7 +241,12 @@ def main():
                 "draw": p.prob_draw,
                 "away": p.prob_away,
             }
-        })
+        }
+        
+        if q_num:
+            data_obj["quiniela_match_number"] = q_num
+            
+        output_data.append(data_obj)
 
     save_json_data(output_data, output_path)
 

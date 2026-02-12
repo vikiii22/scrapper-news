@@ -5,7 +5,7 @@ from src.models.match import Match
 from src.models.prediction import Prediction
 from src.models.player import Player
 from src.scrapers.weather_api import WeatherCondition
-from src.analysis.factors import home_away, form, h2h, rest, importance, weather, players
+from src.analysis.factors import home_away, form, h2h, rest, importance, weather, players, standings
 from src.config.settings import FACTOR_WEIGHTS
 
 @dataclass
@@ -123,6 +123,12 @@ class PredictionEngine:
             self.standings
         )
 
+        standings_factor = standings.calculate_standings_factor(
+            match.home_team.name,
+            match.away_team.name,
+            self.standings
+        )
+
         weather_res = weather.calculate_weather_impact(match, weather_data)
         weather_factor = weather_res.get("weather_factor", 0.0)
 
@@ -160,6 +166,7 @@ class PredictionEngine:
             h2h_factor * FACTOR_WEIGHTS.get('h2h', 1.0) +
             rest_factor * FACTOR_WEIGHTS.get('rest_days', 1.0) +
             importance_factor * FACTOR_WEIGHTS.get('importance', 1.0) +
+            standings_factor * FACTOR_WEIGHTS.get('standings', 1.0) +
             weather_factor * FACTOR_WEIGHTS.get('weather', 1.0) +
             players_factor * FACTOR_WEIGHTS.get('players', 1.0)
         )
@@ -171,6 +178,7 @@ class PredictionEngine:
             "h2h": h2h_factor,
             "rest_days": rest_factor,
             "importance": importance_factor,
+            "standings": standings_factor,
             "weather": weather_factor,
             "players": players_factor,
             "total": total_factor

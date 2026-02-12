@@ -28,6 +28,7 @@ LEAGUES = {
 FACTOR_WEIGHTS = {
     "home_advantage": 1.0,
     "away_performance": -1.0,
+    "standings": 2.5, # Factor de calidad/posición
     "form": 0.8,
     "h2h": 0.6,
     "weather": 0.3,
