@@ -57,6 +57,9 @@ TEAM_NAME_MAPPINGS = {
     "R.RACING C.": "Racing Santander",
     "RACING SANTANDER": "Racing Santander",
     "RACING": "Racing Santander",
+    "RACING S.": "Racing Santander",
+    "REAL RACING CLUB": "Racing Santander",
+    "Real Racing Club": "Racing Santander",
     
     "CELTA": "Celta Vigo",
     "RC CELTA": "Celta Vigo",
@@ -71,25 +74,36 @@ TEAM_NAME_MAPPINGS = {
     
     "ALAVES": "Alaves",
     "DEPORTIVO ALAVES": "Alaves",
+    "DEPORTIVO ALAVÃCS": "Alaves", # Mapeo para encoding roto
     
     "CADIZ": "Cadiz",
+    "CÃ¡DIZ": "Cadiz",
+    "Cádiz": "Cadiz", # Encoding roto
     
     "ALMERIA": "Almeria",
     "UD ALMERIA": "Almeria",
+    "ALMERÃ\xadA": "Almeria", # Encoding roto
     
     "MALAGA": "Malaga",
+    "MÃ¡LAGA": "Malaga", # Encoding roto
     
     "LEGANES": "Leganes",
+    "LEGANÃ©S": "Leganes", # Encoding roto
     
     "MIRANDES": "Mirandes",
+    "MIRANDÃ©S": "Mirandes", # Encoding roto
 
     "CASTELLON": "Castellon",
+    "CD CASTELLÃ³N": "Castellon", # Encoding roto
+    "CD CASTELLON": "Castellon",
     
     "CORDOBA": "Cordoba",
+    "CÃ³RDOBA": "Cordoba", # Encoding roto
     
     "DEPORTIVO": "Deportivo La Coruna",
     "RC DEPORTIVO": "Deportivo La Coruna",
     "DEPORTIVO LA CORUNA": "Deportivo La Coruna",
+    "DEPORTIVO LA CORUÃ±A": "Deportivo La Coruna", # Encoding roto
     
     "ELDENSE": "Eldense",
     "FERROL": "Racing Ferrol",
@@ -107,6 +121,7 @@ TEAM_NAME_MAPPINGS = {
     "VILLARREAL": "Villarreal",
     
     "GIRONA": "Girona",
+    "GIRONA FC": "Girona",
     
     "MALLORCA": "Mallorca",
     "RCD MALLORCA": "Mallorca",
@@ -115,14 +130,33 @@ TEAM_NAME_MAPPINGS = {
     "CA OSASUNA": "Osasuna",
     
     "ALBACETE": "Albacete",
+    "ALBACETE BALOMPIÃ©": "Albacete", # Encoding roto
+    "ALBACETE BALOMPIE": "Albacete",
+    "ALBACETE BALOMPIÃ": "Albacete", # Variante posible upper()
+    
     "BP": "Burgos",
     "BURGOS": "Burgos",
+    "BURGOS CLUB DE FÃºTBOL": "Burgos", # Encoding roto original
+    "BURGOS CLUB DE FÃºTBOL".upper(): "Burgos", # Variante upper()
+    "BURGOS CLUB DE FÃATBOL": "Burgos", # Variante segura
+    "BURGOS CF": "Burgos",
+    "Burgos Club de Fútbol": "Burgos",
+    
     "CARTAGENA": "Cartagena",
     "EIBAR": "Eibar",
     "GRANADA": "Granada",
     "HUESCA": "Huesca",
+    
     "LEVANTE": "Levante",
+    "LEVANTE UD": "Levante",
+    
     "TENERIFE": "Tenerife",
+    "AT.MADRID": "Atletico Madrid",
+    "ATLÃ©TICO MADRID": "Atletico Madrid", # Encoding roto
+    
+    "SPORTING": "Sporting Gijon",
+    "SPORTING GIJON": "Sporting Gijon",
+    "SPORTING GIJÃ³N": "Sporting Gijon", # Encoding roto
 }
 
 def normalize_team_name(name: str) -> str:
@@ -135,6 +169,14 @@ def normalize_team_name(name: str) -> str:
     
     # 1. Limpieza inicial
     name = str(name).strip()
+    
+    # INTENTO DIRECO: Buscar tal cual (para casos con encoding roto que tenemos mapeados)
+    if name in TEAM_NAME_MAPPINGS:
+        return TEAM_NAME_MAPPINGS[name]
+        
+    # INTENTO UPPER DIRECTO: Buscar en mayusculas sin quitar acentos aun
+    if name.upper() in TEAM_NAME_MAPPINGS:
+        return TEAM_NAME_MAPPINGS[name.upper()]
     
     # 2. Convertir a mayúsculas y quitar acentos normalizando
     upper_no_accents = remove_accents(name).upper()
