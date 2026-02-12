@@ -10,16 +10,63 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 
 from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from utils.data_loader import load_json_data, save_json_data
+from utils.normalizers import remove_accents
 from analysis.predictor import PredictionEngine
 from models.match import Match, Team
+from models.player import Player
 from scrapers.weather_api import WeatherClient
+from scrapers.sofascore import SofascoreScraper
 from datetime import datetime
+
+def parse_players(lineups_data: dict, side: str, key: str = 'missingPlayers') -> list[Player]:
+    """Extrae lista de jugadores (missing o lineup) del JSON de alineaciones."""
+    players_list = []
+    if not lineups_data or side not in lineups_data:
+        return []
+    
+    # Sofascore structure: lineups -> home -> missingPlayers/players -> [{player: {...}}, ...]
+    team_data = lineups_data.get(side, {})
+    raw_list = team_data.get(key, [])
+    
+    for item in raw_list:
+        p_data = item.get('player', {})
+        if not p_data:
+            continue
+            
+        try:
+            # Intentar sacar rating si existe (a veces está en 'avgRating' o 'statistics')
+            # En lineups confirmados a veces no hay rating (es pre-partido).
+            # Si no hay rating, intentamos inferirlo o ponemos uno base.
+            # Para 'strength' analysis, necesitamos alguna métrica de calidad.
+            # Sofascore a veces da 'avgRating' en la temporada para el jugador.
+            
+            # Mockup rating logic for demo if not present
+            rating = p_data.get('avgRating', 7.0) 
+            
+            # Si es missing, asumimos un rating alto por defecto para que duela la baja
+            if key == 'missingPlayers':
+                 rating = 7.5
+            
+            player = Player(
+                id=p_data.get('id', 0),
+                name=p_data.get('name', 'Unknown'),
+                position=p_data.get('position', 'M'),
+                team_id=0,
+                rating=float(rating) if rating else 6.5,
+                is_injured=(key == 'missingPlayers')
+            )
+            players_list.append(player)
+        except Exception:
+            continue
+            
+    return players_list
 
 def main():
     """Función principal para la generación de predicciones."""
     print("Iniciando generación de predicciones...")
 
     weather_client = WeatherClient()
+    scraper = SofascoreScraper()
 
     # Cargar datos necesarios
     la_liga_standings = load_json_data(RAW_DATA_DIR / "la_liga_standings.json")
@@ -56,8 +103,64 @@ def main():
     segunda_next = load_json_data(RAW_DATA_DIR / "segunda_next_matches.json") or []
     upcoming_matches_raw = la_liga_next + segunda_next
 
+    # Cargar partidos de la Quiniela para filtrar
+    quiniela_matches = load_json_data(RAW_DATA_DIR / "quiniela_matches.json") or []
+    
+    # Crear set de pares para filtrado rápido (Normalizamos a minúsculas y sin acentos para comparar mejor)
+    quiniela_pairs = [] # List of tuples to allow iterating
+    if quiniela_matches:
+        print(f"Filtrando por partidos de Quiniela ({len(quiniela_matches)} partidos)...")
+        for q in quiniela_matches:
+            # Usar los nombres normalizados si existen, o los raw
+            h = q.get('equipo_local_normalizado', q.get('equipo_local', '')).strip()
+            a = q.get('equipo_visitante_normalizado', q.get('equipo_visitante', '')).strip()
+            
+            # Normalización extra: minusculas y sin acentos
+            h_norm = remove_accents(h).lower()
+            a_norm = remove_accents(a).lower()
+            
+            quiniela_pairs.append({'h_raw': h, 'a_raw': a, 'h_norm': h_norm, 'a_norm': a_norm, 'found': False})
+    else:
+        print("ADVERTENCIA: No se encontró fichero de Quiniela. Se analizarán TODOS los partidos próximos.")
+
     predictions = []
+    
     for m in upcoming_matches_raw:
+        # Filtrado por Quiniela
+        if quiniela_matches:
+            # Normalización del partido actual
+            current_home = remove_accents(m['home_team_name'].strip()).lower()
+            current_away = remove_accents(m['away_team_name'].strip()).lower()
+            
+            # Búsqueda directa
+            found_match_idx = -1
+            for idx, q_item in enumerate(quiniela_pairs):
+                qh = q_item['h_norm']
+                qa = q_item['a_norm']
+                
+                # Comparamos si un string está contenido en otro para mayor flexibilidad
+                # Ej: "alaves" in "deportivo alaves" (True)
+                # Ej: "racing s." -> "racing s" vs "racing de santander" (Fail? Need checks)
+                
+                # Check Local
+                home_match = (qh in current_home) or (current_home in qh)
+                # Check Visitante
+                away_match = (qa in current_away) or (current_away in qa)
+                
+                # Special cases matching hacks if needed
+                if not home_match and "racing" in qh and "racing" in current_home: home_match = True # Danger but pragmatic
+                if not away_match and "racing" in qa and "racing" in current_away: away_match = True
+
+                if home_match and away_match:
+                    found_match_idx = idx
+                    break
+            
+            if found_match_idx == -1:
+                continue
+                
+            # Marcar como encontrado para reporte final
+            quiniela_pairs[found_match_idx]['found'] = True
+
         try:
             match_obj = Match(
                 id=m['id'],
@@ -73,15 +176,34 @@ def main():
             city = match_obj.home_team.name 
             weather_data = weather_client.get_forecast(city, match_obj.date)
 
-            # Datos jugadores (Pendiente de implementación scraper lineups)
-            # home_missing = ...
-            # away_missing = ...
+            # Datos jugadores (Scraping de bajas y alineaciones/plantilla)
+            print(f"  Obteniendo info jugadores para {match_obj.home_team.name} vs {match_obj.away_team.name}...")
+            lineups_data = scraper.get_match_lineups(match_obj.id)
+            
+            home_missing = parse_players(lineups_data, 'home', 'missingPlayers')
+            away_missing = parse_players(lineups_data, 'away', 'missingPlayers')
+            
+            # Intentamos sacar la alineación titular ("players")
+            home_squad = parse_players(lineups_data, 'home', 'players')
+            away_squad = parse_players(lineups_data, 'away', 'players')
+            
+            if home_missing:
+                print(f"    Bajas Local: {len(home_missing)}")
+            if away_missing:
+                print(f"    Bajas Visitante: {len(away_missing)}")
+                
+            if home_squad:
+                print(f"    Plantilla Local Disponible: {len(home_squad)}")
+            if away_squad:
+                print(f"    Plantilla Visitante Disponible: {len(away_squad)}")
 
             prediction = predictor.predict(
                 match=match_obj,
                 weather_data=weather_data,
-                home_players=None, # Implementar scraper de bajas
-                away_players=None  # Implementar scraper de bajas
+                home_players=home_missing, 
+                away_players=away_missing,
+                home_lineup=home_squad,
+                away_lineup=away_squad
             )
             predictions.append(prediction)
         except (KeyError, TypeError) as e:
@@ -112,6 +234,19 @@ def main():
     save_json_data(output_data, output_path)
 
     print(f"Generación de predicciones completada. Resultados guardados en {output_path}")
+    
+    if quiniela_matches:
+        print("\n--- Resumen de Cobertura Quiniela ---")
+        missing_count = 0
+        for q in quiniela_pairs:
+            if not q['found']:
+                print(f"FALTANTE: {q['h_raw']} vs {q['a_raw']}")
+                missing_count += 1
+        
+        if missing_count == 0:
+            print("¡Todos los partidos de la Quiniela fueron encontrados y analizados!")
+        else:
+            print(f"Total faltantes: {missing_count}. Verifique nombres o si los partidos ya se jugaron/no están en el calendario próximo.")
 
 if __name__ == "__main__":
     main()

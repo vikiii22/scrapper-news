@@ -19,8 +19,10 @@ class PredictionEngine:
         self, 
         match: Match, 
         weather_data: Optional[WeatherCondition] = None,
-        home_players: Optional[List[Player]] = None,
-        away_players: Optional[List[Player]] = None,
+        home_players: Optional[List[Player]] = None, # Missing players
+        away_players: Optional[List[Player]] = None, # Missing players
+        home_lineup: Optional[List[Player]] = None, # Full/Available squad
+        away_lineup: Optional[List[Player]] = None, # Full/Available squad
         home_key_players: Optional[List[Player]] = None,
         away_key_players: Optional[List[Player]] = None
     ) -> Prediction:
@@ -30,6 +32,8 @@ class PredictionEngine:
             weather_data, 
             home_players, 
             away_players,
+            home_lineup,
+            away_lineup,
             home_key_players,
             away_key_players
         )
@@ -76,8 +80,10 @@ class PredictionEngine:
         self, 
         match: Match,
         weather_data: Optional[WeatherCondition] = None,
-        home_players: Optional[List[Player]] = None,
-        away_players: Optional[List[Player]] = None,
+        home_missing: Optional[List[Player]] = None,
+        away_missing: Optional[List[Player]] = None,
+        home_lineup: Optional[List[Player]] = None,
+        away_lineup: Optional[List[Player]] = None,
         home_key_players: Optional[List[Player]] = None,
         away_key_players: Optional[List[Player]] = None
     ) -> Dict[str, float]:
@@ -121,17 +127,25 @@ class PredictionEngine:
         weather_factor = weather_res.get("weather_factor", 0.0)
 
         players_factor = 0.0
-        if home_players and away_players:
-            # Asumimos que home_players son los bajas/missing por ahora o 
-            # necesitamos ajustar la logica de llamada.
-            # En players.py: calculate_squad_impact(home_missing, away_missing, home_key, away_key)
+        
+        # 1. Calculo de impacto de Bajas (Missing Players)
+        if home_missing or away_missing:
+            # En players.py: calculate_squad_impact
+            # Usamos listas vacías si son None para evitar errores
             players_res = players.calculate_squad_impact(
-                home_players or [], 
-                away_players or [],
+                home_missing or [], 
+                away_missing or [],
                 home_key_players or [],
                 away_key_players or []
             )
-            players_factor = players_res.get("players_factor", 0.0)
+            players_factor += players_res.get("players_factor", 0.0)
+
+        # 2. Calculo de fuerza relativa de plantilla (Squad Strength)
+        if home_lineup and away_lineup:
+            strength_res = players.calculate_squad_strength(home_lineup, away_lineup)
+            # Sumamos al factor de jugadores existente
+            # Si strength > 0 (Local mejor), aumenta players_factor
+            players_factor += strength_res.get("strength_factor", 0.0)
 
         # Ponderar y sumar los factores
         # IMPORTANTE: away_factor suele ser positivo si rinden bien fuera,
