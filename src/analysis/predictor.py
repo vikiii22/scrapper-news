@@ -1,7 +1,8 @@
 """Motor de predicciones de partidos."""
 from typing import Dict, List
 from dataclasses import dataclass
-from src.models.match import Match, Prediction
+from src.models.match import Match
+from src.models.prediction import Prediction
 from src.analysis.factors import home_away, form, h2h, rest, importance
 from src.config.settings import FACTOR_WEIGHTS
 

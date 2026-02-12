@@ -1,45 +1,54 @@
 import json
+import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
-import requests # Changed from requests_html
+from playwright.sync_api import sync_playwright
 
 from src.scrapers.base import BaseScraper
 
 class SofascoreScraper(BaseScraper):
     """
-    Scraper for fetching football data from the Sofascore API using requests.
+    Scraper for fetching football data from the Sofascore API using Playwright.
     """
     BASE_URL = "https://api.sofascore.com/api/v1"
 
     def __init__(self):
         super().__init__("Sofascore")
-        self.session = requests.Session() # Changed from HTMLSession()
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36',
-            'Accept': 'application/json, text/plain, */*',
-            'Accept-Language': 'en-US,en;q=0.9',
-            'Referer': 'https://www.sofascore.com/', # Keep referer from previous attempt
-            'Cache-Control': 'no-cache',
-            'Pragma': 'no-cache',
-            'Accept-Encoding': 'gzip, deflate, br',
-            'Connection': 'keep-alive',
-            # Removed: 'DNT': '1',
-            # Removed: 'Upgrade-Insecure-Requests': '1',
-        }
-
+        # Session and headers are no longer needed here as Playwright manages them.
 
     def _fetch_api_data(self, endpoint: str) -> Dict[str, Any]:
         """
-        Fetches data from a specific Sofascore API endpoint.
+        Fetches data from a specific Sofascore API endpoint using Playwright.
         """
         url = f"{self.BASE_URL}/{endpoint}"
-        self.logger.info(f"Fetching data from: {url}")
+        self.logger.info(f"Fetching data from: {url} using Playwright")
+        
         try:
-            response = self.session.get(url, headers=self.headers)
-            response.raise_for_status()
-            return response.json()
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                context = browser.new_context(
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+                )
+                page = context.new_page()
+
+                # Go to the main site first to establish session/cookies
+                self.logger.info("Navigating to sofascore.com to initialize session.")
+                page.goto("https://www.sofascore.com", wait_until="networkidle")
+                time.sleep(2)  # Wait a bit for everything to load
+
+                # Now, fetch the API data
+                response = page.goto(url)
+                if response and response.status == 200:
+                    data = response.json()
+                    self.logger.info(f"Successfully fetched data for endpoint: {endpoint}")
+                    return data
+                else:
+                    status = response.status if response else "N/A"
+                    self.logger.error(f"Failed to fetch {url}. Status: {status}")
+                    return {}
+                
         except Exception as e:
-            self.logger.error(f"Error fetching {url}: {e}")
+            self.logger.error(f"Error fetching {url} with Playwright: {e}")
             return {}
 
     def get_standings(self, tournament_id: int, season_id: int) -> List[Dict[str, Any]]:
