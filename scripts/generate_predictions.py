@@ -12,11 +12,14 @@ from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from utils.data_loader import load_json_data, save_json_data
 from analysis.predictor import PredictionEngine
 from models.match import Match, Team
+from scrapers.weather_api import WeatherClient
 from datetime import datetime
 
 def main():
     """Función principal para la generación de predicciones."""
     print("Iniciando generación de predicciones...")
+
+    weather_client = WeatherClient()
 
     # Cargar datos necesarios
     la_liga_standings = load_json_data(RAW_DATA_DIR / "la_liga_standings.json")
@@ -61,11 +64,28 @@ def main():
                 home_team=Team(id=m['home_team_id'], name=m['home_team_name']),
                 away_team=Team(id=m['away_team_id'], name=m['away_team_name']),
                 date=datetime.fromisoformat(m['date']),
-                league=m.get('league', 'Unknown')
+                league=m.get('league', 'Unknown'),
+                venue=None, # Venue scraping pendiente
             )
-            prediction = predictor.predict(match_obj)
+
+            # Obtener datos clima (Simulado/Mockeado si no hay API Key)
+            # Para demo, asumimos que juegan en la 'ciudad' del equipo local
+            city = match_obj.home_team.name 
+            weather_data = weather_client.get_forecast(city, match_obj.date)
+
+            # Datos jugadores (Pendiente de implementación scraper lineups)
+            # home_missing = ...
+            # away_missing = ...
+
+            prediction = predictor.predict(
+                match=match_obj,
+                weather_data=weather_data,
+                home_players=None, # Implementar scraper de bajas
+                away_players=None  # Implementar scraper de bajas
+            )
             predictions.append(prediction)
-        except (KeyError, TypeError):
+        except (KeyError, TypeError) as e:
+            print(f"Error procesando partido {m.get('id')}: {e}")
             continue
 
     # Guardar resultados
