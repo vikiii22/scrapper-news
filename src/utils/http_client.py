@@ -2,7 +2,7 @@
 import requests
 import logging
 from requests.adapters import HTTPAdapter
-from requests.packages.urllib3.util.retry import Retry
+from urllib3.util.retry import Retry
 
 def get_http_client() -> requests.Session:
     """Configura y devuelve una sesión de requests con reintentos."""

@@ -61,8 +61,7 @@ class QuinielaAnalyzer:
                 )
                 bets.append(bet)
             else:
-                # Si no se encuentra el partido, se puede añadir una apuesta por defecto o marcarlo
-                # Aquí simplemente lo omitimos, pero podría ser manejado de otra forma.
-                pass
+                print(f"WARNING: No data found for match: {q_match['equipo_local']} vs {q_match['equipo_visitante']}")
+                print(f"   (Normalized Quiniela: {q_home_norm} vs {q_away_norm})")
 
         return QuinielaTicket(bets=bets, cost=0.0) # El coste se puede calcular después

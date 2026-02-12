@@ -1,7 +1,8 @@
 """Motor de predicciones de partidos."""
 from typing import Dict, List
 from dataclasses import dataclass
-from src.models.match import Match, Prediction
+from src.models.match import Match
+from src.models.prediction import Prediction
 from src.analysis.factors import home_away, form, h2h, rest, importance
 from src.config.settings import FACTOR_WEIGHTS
 
@@ -20,11 +21,24 @@ class PredictionEngine:
         probs = {"1": 33.33, "X": 33.33, "2": 33.33}
         
         # Ajustar por factores
-        total_adjustment = sum(factors.values())
-        probs["1"] += total_adjustment
-        probs["2"] -= total_adjustment
+        # Usamos SOLO 'total' que ya contiene la suma ponderada
+        total_adjustment = factors.get('total', 0)
         
-        # Normalizar
+        # Aplicamos el ajuste:
+        # Si total_adjustment es positivo => favorece al Local ("1")
+        # Si total_adjustment es negativo => favorece al Visitante ("2")
+        
+        # Factor de sensibilidad para convertir puntos de factor a % de probabilidad
+        sensitivity = 2.5 
+        
+        probs["1"] += total_adjustment * sensitivity
+        probs["2"] -= total_adjustment * sensitivity
+        
+        # El empate también se ve afectado ligeramente si hay mucha disparidad
+        # Si hay un claro favorito, la probabilidad de empate baja un poco
+        probs["X"] -= abs(total_adjustment * (sensitivity * 0.3)) 
+        
+        # Normalizar para asegurar que suman 100% y no hay negativos
         probs = self._normalize_probabilities(probs)
         
         # Determinar apuesta recomendada
@@ -78,9 +92,14 @@ class PredictionEngine:
         )
 
         # Ponderar y sumar los factores
+        # IMPORTANTE: away_factor suele ser positivo si rinden bien fuera,
+        # pero aquí queremos sumar al local ("1").
+        # Si local es fuerte => home_factor > 0 => suma a "1"
+        # Si visitante es fuerte => away_factor > 0 => RESTA a "1" (suma a "2")
+        
         total_factor = (
-            home_factor * FACTOR_WEIGHTS.get('home_advantage', 1.0) +
-            away_factor * FACTOR_WEIGHTS.get('away_performance', -1.0) + # Resta si el visitante es fuerte fuera
+            home_factor * FACTOR_WEIGHTS.get('home_advantage', 1.0) -
+            away_factor * abs(FACTOR_WEIGHTS.get('away_performance', 1.0)) + 
             form_factor * FACTOR_WEIGHTS.get('form', 1.0) +
             h2h_factor * FACTOR_WEIGHTS.get('h2h', 1.0) +
             rest_factor * FACTOR_WEIGHTS.get('rest_days', 1.0) +

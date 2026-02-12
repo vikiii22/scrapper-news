@@ -26,18 +26,33 @@ def calculate_home_away_factor(
            (not is_home and m.away_team.name == team_name)
     ]
     
-    if len(relevant_matches) < min_matches:
-        return {"factor": 0.0, "insufficient_data": True}
+    # Eliminamos el retorno temprano si hay pocos datos y dejamos que el smoothing actúe
+    # if len(relevant_matches) < min_matches:
+    #    return {"factor": 0.0, "insufficient_data": True}
     
     wins = sum(1 for m in relevant_matches if _is_win(m, team_name, is_home))
     draws = sum(1 for m in relevant_matches if m.result == "X")
     losses = len(relevant_matches) - wins - draws
     
-    win_rate = wins / len(relevant_matches)
+    # Usar Laplace smoothing para evitar extremos con pocos datos
+    # Añadimos 1 victoria, 1 empate y 1 derrota "virtuales"
+    virtual_matches = 3
+    smoothed_wins = wins + 1
     
-    # Factor: diferencia respecto al 33% base
-    base_rate = 0.33
-    factor = (win_rate - base_rate) * 15  # Escalar a ±5 puntos máx
+    smoothed_total = len(relevant_matches) + virtual_matches
+    
+    # Tasa de victorias suavizada
+    win_rate = smoothed_wins / smoothed_total
+    
+    # Tasa base de referencia (ej. 40% local, 25% visitante)
+    base_rate = 0.40 if is_home else 0.25
+    
+    # Factor: diferencia respecto a la base
+    # Reducimos multiplicador (de 15 a 8) para suavizar
+    factor = (win_rate - base_rate) * 8
+    
+    # Limitar el factor entre -5 y 5
+    factor = max(min(factor, 5.0), -5.0)
     
     return {
         "factor": round(factor, 2),

@@ -1,35 +1,54 @@
 import json
+import time
 from datetime import datetime
 from typing import Any, Dict, List, Optional
+from playwright.sync_api import sync_playwright
 
 from src.scrapers.base import BaseScraper
-from src.utils.http_client import http_client
 
 class SofascoreScraper(BaseScraper):
     """
-    Scraper for fetching football data from the Sofascore API.
+    Scraper for fetching football data from the Sofascore API using Playwright.
     """
     BASE_URL = "https://api.sofascore.com/api/v1"
 
     def __init__(self):
         super().__init__("Sofascore")
-        self.client = http_client
-        self.headers = {
-            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36'
-        }
+        # Session and headers are no longer needed here as Playwright manages them.
 
     def _fetch_api_data(self, endpoint: str) -> Dict[str, Any]:
         """
-        Fetches data from a specific Sofascore API endpoint.
+        Fetches data from a specific Sofascore API endpoint using Playwright.
         """
         url = f"{self.BASE_URL}/{endpoint}"
-        self.logger.info(f"Fetching data from: {url}")
+        self.logger.info(f"Fetching data from: {url} using Playwright")
+        
         try:
-            response = self.client.get(url, headers=self.headers)
-            response.raise_for_status()
-            return response.json()
+            with sync_playwright() as p:
+                browser = p.chromium.launch(headless=True)
+                context = browser.new_context(
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+                )
+                page = context.new_page()
+
+                # Go to the main site first to establish session/cookies
+                self.logger.info("Navigating to sofascore.com to initialize session.")
+                page.goto("https://www.sofascore.com", wait_until="networkidle")
+                time.sleep(2)  # Wait a bit for everything to load
+
+                # Now, fetch the API data
+                response = page.goto(url)
+                if response and response.status == 200:
+                    data = response.json()
+                    self.logger.info(f"Successfully fetched data for endpoint: {endpoint}")
+                    return data
+                else:
+                    status = response.status if response else "N/A"
+                    self.logger.error(f"Failed to fetch {url}. Status: {status}")
+                    return {}
+                
         except Exception as e:
-            self.logger.error(f"Error fetching {url}: {e}")
+            self.logger.error(f"Error fetching {url} with Playwright: {e}")
             return {}
 
     def get_standings(self, tournament_id: int, season_id: int) -> List[Dict[str, Any]]:
@@ -42,13 +61,22 @@ class SofascoreScraper(BaseScraper):
 
     def get_all_matches(self, tournament_id: int, season_id: int) -> List[Dict[str, Any]]:
         """
-        Fetches and processes all played matches for a season.
+        Fetches and processes all played matches for a season using team-events/total.
         """
-        # Sofascore API for all events in a season seems to be structured this way
-        endpoint = f"unique-tournament/{tournament_id}/season/{season_id}/events/last/0"
+        endpoint = f"unique-tournament/{tournament_id}/season/{season_id}/team-events/total"
         raw_data = self._fetch_api_data(endpoint)
-        parsed = self._parse_matches(raw_data)
-        return parsed.get('played', [])
+        
+        # Extract events from the nested structure specific to team-events endpoint
+        events = []
+        if 'tournamentTeamEvents' in raw_data:
+            for t_data in raw_data['tournamentTeamEvents'].values():
+                for s_data in t_data.values():
+                    events.extend(s_data)
+        
+        # We construct a fake data dict to reuse _parse_matches logic
+        # Note: _parse_matches splits into played/pending. Here we want played.
+        processed = self._parse_matches({'events': events})
+        return processed.get('played', [])
 
     def get_next_matches(self, tournament_id: int, season_id: int) -> List[Dict[str, Any]]:
         """
@@ -67,6 +95,9 @@ class SofascoreScraper(BaseScraper):
 
         standings_list = []
         # The standings are usually in a list, we take the first one
+        if not data['standings']:
+             return []
+             
         rows = data['standings'][0].get('rows', [])
 
         for row in rows:
@@ -95,19 +126,26 @@ class SofascoreScraper(BaseScraper):
 
     def _parse_matches(self, data: Dict[str, Any]) -> Dict[str, List[Dict[str, Any]]]:
         """Processes raw match data."""
-        if not data or 'events' not in data:
-            return {'played': [], 'pending': []}
+        events = data.get('events', [])
+        if not events:
+             return {'played': [], 'pending': []}
 
         played_matches = []
         pending_matches = []
+        seen_ids = set()
         
-        for event in data['events']:
+        for event in events:
+            event_id = event.get('id')
+            if event_id in seen_ids:
+                continue
+            seen_ids.add(event_id)
+
             home_team = event.get('homeTeam', {})
             away_team = event.get('awayTeam', {})
             status = event.get('status', {})
             
             match_info = {
-                'id': event.get('id'),
+                'id': event_id,
                 'round': event.get('roundInfo', {}).get('round', 0),
                 'date': datetime.fromtimestamp(event.get('startTimestamp', 0)).strftime('%Y-%m-%d %H:%M:%S'),
                 'home_team_name': home_team.get('name', 'Unknown'),
@@ -127,6 +165,10 @@ class SofascoreScraper(BaseScraper):
             else:
                 pending_matches.append(match_info)
         
+        # Sort by date
+        played_matches.sort(key=lambda x: x['date'])
+        pending_matches.sort(key=lambda x: x['date'])
+
         return {'played': played_matches, 'pending': pending_matches}
 
     def fetch(self, **kwargs) -> Dict[str, Any]:
@@ -157,12 +199,14 @@ class SofascoreScraper(BaseScraper):
         The main parsing is done within the specific get methods.
         This method just returns the already processed data.
         """
-        return [raw_data]
+        return raw_data if isinstance(raw_data, list) else [raw_data] 
 
     def run(self, **kwargs) -> List[Dict]:
         """Executes the scraper complete."""
         self.logger.info(f"Running {self.name} scraper...")
         data = self.fetch(**kwargs)
-        parsed_data = self.parse(data)
+        # In this structure, fetch returns a dict with processed data
+        # parse is technically redundant but we keep base structure
+        # ensuring return is consistent
         self.logger.info(f"Finished running {self.name} scraper.")
-        return parsed_data
+        return [data]
