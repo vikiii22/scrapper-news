@@ -61,8 +61,10 @@ scrapper-news-1/
 │   ├── 📁 scrapers/                 # Módulos de extracción de datos
 │   │   ├── __init__.py
 │   │   ├── base.py                  # Clase base abstracta
+│   │   ├── playwright_engine.py     # (NUEVO) Motor scraping moderno
 │   │   ├── sofascore.py             # API de Sofascore
 │   │   ├── besoccer.py              # Scraping de BeSoccer
+│   │   ├── weather_api.py           # (NUEVO) API Clima
 │   │   └── quiniela_html.py         # Parser del HTML de quiniela
 │   │
 │   ├── 📁 analysis/                 # Módulos de análisis
@@ -73,7 +75,9 @@ scrapper-news-1/
 │   │   │   ├── form.py              # Factor racha
 │   │   │   ├── h2h.py               # Factor head-to-head
 │   │   │   ├── rest.py              # Factor días de descanso
-│   │   │   └── importance.py        # Factor importancia partido
+│   │   │   ├── importance.py        # Factor importancia partido
+│   │   │   ├── players.py           # (NUEVO) Factor alineaciones y bajas
+│   │   │   └── weather.py           # (NUEVO) Factor meteorológico
 │   │   ├── predictor.py             # Motor de predicciones
 │   │   └── quiniela.py              # Generador de apuestas
 │   │
@@ -81,6 +85,7 @@ scrapper-news-1/
 │   │   ├── __init__.py
 │   │   ├── match.py                 # Modelo Partido
 │   │   ├── team.py                  # Modelo Equipo
+│   │   ├── player.py                # (NUEVO) Modelo Jugador
 │   │   ├── prediction.py            # Modelo Predicción
 │   │   └── quiniela.py              # Modelo Boleto Quiniela
 │   │
@@ -331,7 +336,63 @@ def _is_win(match: Match, team_name: str, is_home: bool) -> bool:
     return match.result == "2"
 ```
 
-### 🎯 `src/analysis/predictor.py`
+### �️ `src/analysis/factors/weather.py`
+Factor meteorológico.
+
+```python
+"""Factor meteorológico."""
+from typing import Dict
+from src.models.match import Match
+
+def calculate_weather_impact(match: Match, weather_data: Dict) -> Dict[str, float]:
+    """
+    Calcula impacto del clima en el partido.
+    
+    Args:
+        match: Datos del partido
+        weather_data: Datos del clima (temp, lluvia, viento)
+        
+    Returns:
+        Dict con factor de ajuste
+    """
+    factor = 0.0
+    
+    # Ejemplo: Lluvia intensa favorece empates o pocos goles
+    if weather_data.get('rain_mm', 0) > 5.0:
+        factor -= 0.5  # Reduce probabilidad de victoria local clara
+        
+    return {
+        "weather_factor": factor,
+        "condition": weather_data.get('condition')
+    }
+```
+
+### 👥 `src/analysis/factors/players.py`
+Factor de alineaciones y jugadores clave.
+
+```python
+"""Factor de jugadores."""
+from typing import List, Dict
+from src.models.player import Player
+
+def calculate_squad_impact(
+    lineup: List[Player],
+    missing_players: List[Player]
+) -> float:
+    """Calcula impacto de las bajas basado en rating medio."""
+    base_rating = sum(p.rating for p in lineup) / len(lineup)
+    missing_value = sum(p.rating for p in missing_players)
+    
+    # Si faltan jugadores top (>7.5), penalizar
+    penalty = 0.0
+    for player in missing_players:
+        if player.rating > 7.5:
+            penalty += 1.0
+            
+    return -penalty
+```
+
+### �🎯 `src/analysis/predictor.py`
 Motor de predicciones.
 
 ```python
@@ -395,7 +456,8 @@ class PredictionEngine:
                 match.away_team.name,
                 self.historical_matches
             ),
-            # ... más factores
+            "players": players.calculate_squad_impact(...), # NUEVO
+            "weather": weather.calculate_weather_impact(...), # NUEVO
         }
     
     def _normalize_probabilities(self, probs: Dict[str, float]) -> Dict[str, float]:
@@ -456,7 +518,30 @@ class PredictionEngine:
 
 ---
 
-## 📝 Convenciones de Código
+## � Fase 8: Mejoras Avanzadas (Futuro)
+
+### Playwright Engine y Scraping Robusto
+- [ ] Implementar `src/scrapers/playwright_engine.py`
+- [ ] Actualizar `besoccer.py` para usar Playwright (evita bloqueos)
+- [ ] Instalar dependencias (`playwright install chromium`)
+
+### Análisis de Jugadores (Players API)
+- [ ] Crear modelo `src/models/player.py`
+- [ ] Actualizar scrapers para obtener alineaciones
+- [ ] Implementar `src/analysis/factors/players.py`
+- [ ] Integrar bajas y lesiones en el predictor
+
+### Integración Meteorológica
+- [ ] Obtener API Key (OpenWeatherMap o similar)
+- [ ] Implementar `src/scrapers/weather_api.py`
+- [ ] Implementar `src/analysis/factors/weather.py`
+- [ ] Correlacionar clima con ubicación del estadio
+- [ ] Análisis de impacto: ¿Cómo afecta la lluvia/viento a cada equipo? (ej. equipos técnicos sufren más con lluvia).
+- [ ] `src/analysis/factors/weather.py`
+
+---
+
+## �📝 Convenciones de Código
 
 ### Nombrado
 | Tipo | Convención | Ejemplo |

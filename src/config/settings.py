@@ -26,10 +26,16 @@ LEAGUES = {
 
 # Factores de predicción
 FACTOR_WEIGHTS = {
-    "home_advantage": 5.0,
-    "away_performance": -5.0,
-    "form": 3.0,
-    "h2h": 2.0,
-    "rest_days": 1.5,
-    "importance": 2.0,
+    "home_advantage": 1.0,
+    "away_performance": -1.0,
+    "standings": 2.5, # Factor de calidad/posición
+    "form": 0.8,
+    "h2h": 0.6,
+    "weather": 0.3,
+    "players": 0.4,
 }
+
+# Límites
+MIN_MATCHES_ANALYSIS = 5
+MAX_MATCHES_HISTORY = 10
+

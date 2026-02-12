@@ -1,9 +1,11 @@
 """Motor de predicciones de partidos."""
-from typing import Dict, List
+from typing import Dict, List, Optional
 from dataclasses import dataclass
 from src.models.match import Match
 from src.models.prediction import Prediction
-from src.analysis.factors import home_away, form, h2h, rest, importance
+from src.models.player import Player
+from src.scrapers.weather_api import WeatherCondition
+from src.analysis.factors import home_away, form, h2h, rest, importance, weather, players, standings
 from src.config.settings import FACTOR_WEIGHTS
 
 @dataclass
@@ -13,9 +15,28 @@ class PredictionEngine:
     historical_matches: List[Match]
     standings: Dict[str, Dict]
     
-    def predict(self, match: Match) -> Prediction:
+    def predict(
+        self, 
+        match: Match, 
+        weather_data: Optional[WeatherCondition] = None,
+        home_players: Optional[List[Player]] = None, # Missing players
+        away_players: Optional[List[Player]] = None, # Missing players
+        home_lineup: Optional[List[Player]] = None, # Full/Available squad
+        away_lineup: Optional[List[Player]] = None, # Full/Available squad
+        home_key_players: Optional[List[Player]] = None,
+        away_key_players: Optional[List[Player]] = None
+    ) -> Prediction:
         """Genera predicción para un partido."""
-        factors = self._calculate_all_factors(match)
+        factors = self._calculate_all_factors(
+            match, 
+            weather_data, 
+            home_players, 
+            away_players,
+            home_lineup,
+            away_lineup,
+            home_key_players,
+            away_key_players
+        )
         
         # Probabilidades base (equiprobables)
         probs = {"1": 33.33, "X": 33.33, "2": 33.33}
@@ -29,7 +50,8 @@ class PredictionEngine:
         # Si total_adjustment es negativo => favorece al Visitante ("2")
         
         # Factor de sensibilidad para convertir puntos de factor a % de probabilidad
-        sensitivity = 2.5 
+        # Reducido de 2.5 a 1.2 para evitar predicciones extremas (ej. 80% vs 1%)
+        sensitivity = 1.2
         
         probs["1"] += total_adjustment * sensitivity
         probs["2"] -= total_adjustment * sensitivity
@@ -54,7 +76,17 @@ class PredictionEngine:
             factors=factors
         )
     
-    def _calculate_all_factors(self, match: Match) -> Dict[str, float]:
+    def _calculate_all_factors(
+        self, 
+        match: Match,
+        weather_data: Optional[WeatherCondition] = None,
+        home_missing: Optional[List[Player]] = None,
+        away_missing: Optional[List[Player]] = None,
+        home_lineup: Optional[List[Player]] = None,
+        away_lineup: Optional[List[Player]] = None,
+        home_key_players: Optional[List[Player]] = None,
+        away_key_players: Optional[List[Player]] = None
+    ) -> Dict[str, float]:
         """Calcula todos los factores para un partido."""
         home_factor = home_away.calculate_home_away_factor(
             match.home_team.name, 
@@ -91,6 +123,36 @@ class PredictionEngine:
             self.standings
         )
 
+        standings_factor = standings.calculate_standings_factor(
+            match.home_team.name,
+            match.away_team.name,
+            self.standings
+        )
+
+        weather_res = weather.calculate_weather_impact(match, weather_data)
+        weather_factor = weather_res.get("weather_factor", 0.0)
+
+        players_factor = 0.0
+        
+        # 1. Calculo de impacto de Bajas (Missing Players)
+        if home_missing or away_missing:
+            # En players.py: calculate_squad_impact
+            # Usamos listas vacías si son None para evitar errores
+            players_res = players.calculate_squad_impact(
+                home_missing or [], 
+                away_missing or [],
+                home_key_players or [],
+                away_key_players or []
+            )
+            players_factor += players_res.get("players_factor", 0.0)
+
+        # 2. Calculo de fuerza relativa de plantilla (Squad Strength)
+        if home_lineup and away_lineup:
+            strength_res = players.calculate_squad_strength(home_lineup, away_lineup)
+            # Sumamos al factor de jugadores existente
+            # Si strength > 0 (Local mejor), aumenta players_factor
+            players_factor += strength_res.get("strength_factor", 0.0)
+
         # Ponderar y sumar los factores
         # IMPORTANTE: away_factor suele ser positivo si rinden bien fuera,
         # pero aquí queremos sumar al local ("1").
@@ -103,7 +165,10 @@ class PredictionEngine:
             form_factor * FACTOR_WEIGHTS.get('form', 1.0) +
             h2h_factor * FACTOR_WEIGHTS.get('h2h', 1.0) +
             rest_factor * FACTOR_WEIGHTS.get('rest_days', 1.0) +
-            importance_factor * FACTOR_WEIGHTS.get('importance', 1.0)
+            importance_factor * FACTOR_WEIGHTS.get('importance', 1.0) +
+            standings_factor * FACTOR_WEIGHTS.get('standings', 1.0) +
+            weather_factor * FACTOR_WEIGHTS.get('weather', 1.0) +
+            players_factor * FACTOR_WEIGHTS.get('players', 1.0)
         )
 
         return {
@@ -113,6 +178,9 @@ class PredictionEngine:
             "h2h": h2h_factor,
             "rest_days": rest_factor,
             "importance": importance_factor,
+            "standings": standings_factor,
+            "weather": weather_factor,
+            "players": players_factor,
             "total": total_factor
         }
     

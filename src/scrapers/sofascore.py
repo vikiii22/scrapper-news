@@ -87,6 +87,14 @@ class SofascoreScraper(BaseScraper):
         parsed = self._parse_matches(raw_data)
         return parsed.get('pending', [])
 
+    def get_match_lineups(self, match_id: int) -> Dict[str, Any]:
+        """
+        Fetches lineups and missing players for a specific match.
+        """
+        endpoint = f"event/{match_id}/lineups"
+        return self._fetch_api_data(endpoint)
+
+
     def _parse_standings(self, data: Dict[str, Any]) -> List[Dict[str, Any]]:
         """Processes the raw standings data."""
         if not data or 'standings' not in data:
