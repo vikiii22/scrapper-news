@@ -5,12 +5,8 @@ import sys
 from pathlib import Path
 import json
 
-# Configurar sys.path para incluir la raíz del proyecto y src
-project_root = Path(__file__).resolve().parents[1]
-if str(project_root) not in sys.path:
-    sys.path.append(str(project_root))
-if str(project_root / 'src') not in sys.path:
-    sys.path.append(str(project_root / 'src'))
+# Añadir el directorio src al path
+sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 
 from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from utils.data_loader import load_json_data, save_json_data
