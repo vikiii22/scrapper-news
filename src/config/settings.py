@@ -39,3 +39,11 @@ FACTOR_WEIGHTS = {
 MIN_MATCHES_ANALYSIS = 5
 MAX_MATCHES_HISTORY = 10
 
+# Configuración del modelo Poisson
+DRAW_PROB_LA_LIGA = 0.25
+DRAW_PROB_HYPERMOTION = 0.27
+HOME_ADVANTAGE_GOALS = 0.37
+INJURY_PENALTY_THRESHOLD = 7.5
+INJURY_PENALTY_AMOUNT = 0.15  # 15% de penalización en ataque
+NEUTRAL_GROUND_TERMS = ["neutral", "estadio neutral", "neutral ground"]
+
