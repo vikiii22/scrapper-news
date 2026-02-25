@@ -11,152 +11,164 @@ def remove_accents(input_str: str) -> str:
     # Filtrar marcas de combinación (acentos, diéresis, etc.) y unir
     return "".join([c for c in nfkd_form if not unicodedata.combining(c)])
 
-# Mapeo de nombres normalizados (MAYÚSCULAS SIN ACENTOS) a nombre estándar
+# Mapeo de nombres normalizados (MAYÚSCULAS SIN ACENTOS) a nombre estándar de SofaScore
 # La clave debe estar en MAYÚSCULAS y SIN ACENTOS para coincidir con la lógica
-# El valor es el nombre preferido (Title Case)
+# Los VALORES deben coincidir EXACTAMENTE con los nombres que devuelve SofaScore
 TEAM_NAME_MAPPINGS = {
-    "R.MADRID": "Real Madrid",
-    "R. MADRID": "Real Madrid",
-    "REAL MADRID": "Real Madrid",
-    
-    "R.SOCIEDAD": "Real Sociedad",
-    "R. SOCIEDAD": "Real Sociedad",
-    "REAL SOCIEDAD": "Real Sociedad",
-    
-    "ATH.CLUB": "Athletic Club",
-    "ATH. CLUB": "Athletic Club",
-    "ATHLETIC CLUB": "Athletic Club",
-    "ATHLETIC": "Athletic Club",
-    "ATH. BILBAO": "Athletic Club",
-    
-    "ATL.MADRID": "Atletico Madrid",
-    "ATL. MADRID": "Atletico Madrid",
-    "ATLETICO MADRID": "Atletico Madrid",
-    "ATLETICO DE MADRID": "Atletico Madrid",
-    "ATLETICO": "Atletico Madrid",
-    
-    "R.OVIEDO": "Real Oviedo",
-    "REAL OVIEDO": "Real Oviedo",
-    
-    "R.BETIS": "Betis",
-    "REAL BETIS": "Betis",
-    "BETIS": "Betis",
-    
-    "R.VALLADOLID": "Valladolid",
-    "REAL VALLADOLID": "Valladolid",
-    "VALLADOLID": "Valladolid",
-    
-    "R.ZARAGOZA": "Zaragoza",
-    "REAL ZARAGOZA": "Zaragoza",
-    "ZARAGOZA": "Zaragoza",
-    
-    "SP.GIJON": "Sporting Gijon",
-    "SPORTING GIJON": "Sporting Gijon",
-    "SPORTING": "Sporting Gijon",
-    
-    "R.RACING C.": "Racing Santander",
-    "RACING SANTANDER": "Racing Santander",
-    "RACING": "Racing Santander",
-    "RACING S.": "Racing Santander",
-    "REAL RACING CLUB": "Racing Santander",
-    "Real Racing Club": "Racing Santander",
-    
-    "CELTA": "Celta Vigo",
-    "RC CELTA": "Celta Vigo",
-    "CELTA DE VIGO": "Celta Vigo",
-    
-    "ESPANYOL": "Espanyol",
-    "RCD ESPANYOL": "Espanyol",
-    "ESPANOL": "Espanyol",
-    
-    "RAYO": "Rayo Vallecano",
-    "RAYO VALLECANO": "Rayo Vallecano",
-    
-    "ALAVES": "Alaves",
-    "DEPORTIVO ALAVES": "Alaves",
-    "DEPORTIVO ALAVÃCS": "Alaves", # Mapeo para encoding roto
-    
-    "CADIZ": "Cadiz",
-    "CÃ¡DIZ": "Cadiz",
-    "Cádiz": "Cadiz", # Encoding roto
-    
-    "ALMERIA": "Almeria",
-    "UD ALMERIA": "Almeria",
-    "ALMERÃ\xadA": "Almeria", # Encoding roto
-    
-    "MALAGA": "Malaga",
-    "MÃ¡LAGA": "Malaga", # Encoding roto
-    
-    "LEGANES": "Leganes",
-    "LEGANÃ©S": "Leganes", # Encoding roto
-    
-    "MIRANDES": "Mirandes",
-    "MIRANDÃ©S": "Mirandes", # Encoding roto
+    # ─── LA LIGA ──────────────────────────────────────────────────────────────
+    "R.MADRID":           "Real Madrid",
+    "R. MADRID":          "Real Madrid",
+    "REAL MADRID":        "Real Madrid",
 
-    "CASTELLON": "Castellon",
-    "CD CASTELLÃ³N": "Castellon", # Encoding roto
-    "CD CASTELLON": "Castellon",
-    
-    "CORDOBA": "Cordoba",
-    "CÃ³RDOBA": "Cordoba", # Encoding roto
-    
-    "DEPORTIVO": "Deportivo La Coruna",
-    "RC DEPORTIVO": "Deportivo La Coruna",
-    "DEPORTIVO LA CORUNA": "Deportivo La Coruna",
-    "DEPORTIVO LA CORUÃ±A": "Deportivo La Coruna", # Encoding roto
-    
-    "ELDENSE": "Eldense",
-    "FERROL": "Racing Ferrol",
-    "RACING FERROL": "Racing Ferrol",
-    
-    "BARCELONA": "Barcelona",
-    "FC BARCELONA": "Barcelona",
-    
-    "SEVILLA": "Sevilla",
-    "FC SEVILLA": "Sevilla",
-    
-    "VALENCIA": "Valencia",
-    "FC VALENCIA": "Valencia",
-    
-    "VILLARREAL": "Villarreal",
-    
-    "GIRONA": "Girona",
-    "GIRONA FC": "Girona",
-    
-    "MALLORCA": "Mallorca",
-    "RCD MALLORCA": "Mallorca",
-    
-    "OSASUNA": "Osasuna",
-    "CA OSASUNA": "Osasuna",
-    
-    "ALBACETE": "Albacete",
-    "ALBACETE BALOMPIÃ©": "Albacete", # Encoding roto
-    "ALBACETE BALOMPIE": "Albacete",
-    "ALBACETE BALOMPIÃ": "Albacete", # Variante posible upper()
-    
-    "BP": "Burgos",
-    "BURGOS": "Burgos",
-    "BURGOS CLUB DE FÃºTBOL": "Burgos", # Encoding roto original
-    "BURGOS CLUB DE FÃºTBOL".upper(): "Burgos", # Variante upper()
-    "BURGOS CLUB DE FÃATBOL": "Burgos", # Variante segura
-    "BURGOS CF": "Burgos",
-    "Burgos Club de Fútbol": "Burgos",
-    
-    "CARTAGENA": "Cartagena",
-    "EIBAR": "Eibar",
-    "GRANADA": "Granada",
-    "HUESCA": "Huesca",
-    
-    "LEVANTE": "Levante",
-    "LEVANTE UD": "Levante",
-    
-    "TENERIFE": "Tenerife",
-    "AT.MADRID": "Atletico Madrid",
-    "ATLÃ©TICO MADRID": "Atletico Madrid", # Encoding roto
-    
-    "SPORTING": "Sporting Gijon",
-    "SPORTING GIJON": "Sporting Gijon",
-    "SPORTING GIJÃ³N": "Sporting Gijon", # Encoding roto
+    "R.SOCIEDAD":         "Real Sociedad",
+    "R. SOCIEDAD":        "Real Sociedad",
+    "REAL SOCIEDAD":      "Real Sociedad",
+
+    "ATH.CLUB":           "Athletic Club",
+    "ATH. CLUB":          "Athletic Club",
+    "ATHLETIC CLUB":      "Athletic Club",
+    "ATHLETIC":           "Athletic Club",
+    "ATH. BILBAO":        "Athletic Club",
+    "ATHLETIC BILBAO":    "Athletic Club",
+
+    "ATL.MADRID":         "Atlético Madrid",
+    "ATL. MADRID":        "Atlético Madrid",
+    "AT.MADRID":          "Atlético Madrid",
+    "ATLETICO MADRID":    "Atlético Madrid",
+    "ATLETICO DE MADRID": "Atlético Madrid",
+    "ATLETICO":           "Atlético Madrid",
+
+    "BARCELONA":          "Barcelona",
+    "FC BARCELONA":       "Barcelona",
+    "BARCA":              "Barcelona",
+
+    "SEVILLA":            "Sevilla",
+    "FC SEVILLA":         "Sevilla",
+
+    "VALENCIA":           "Valencia",
+    "FC VALENCIA":        "Valencia",
+
+    "VILLARREAL":         "Villarreal",
+    "VILLARREAL CF":      "Villarreal",
+
+    "GIRONA":             "Girona FC",
+    "GIRONA FC":          "Girona FC",
+
+    "MALLORCA":           "Mallorca",
+    "RCD MALLORCA":       "Mallorca",
+
+    "OSASUNA":            "Osasuna",
+    "CA OSASUNA":         "Osasuna",
+
+    "R.BETIS":            "Real Betis",
+    "REAL BETIS":         "Real Betis",
+    "BETIS":              "Real Betis",
+
+    "RAYO":               "Rayo Vallecano",
+    "RAYO VALLECANO":     "Rayo Vallecano",
+
+    "GETAFE":             "Getafe",
+    "GETAFE CF":          "Getafe",
+
+    "CELTA":              "Celta Vigo",
+    "RC CELTA":           "Celta Vigo",
+    "CELTA DE VIGO":      "Celta Vigo",
+    "CELTA VIGO":         "Celta Vigo",
+
+    "ESPANYOL":           "Espanyol",
+    "RCD ESPANYOL":       "Espanyol",
+    "ESPANOL":            "Espanyol",
+
+    "ALAVES":             "Deportivo Alavés",
+    "DEPORTIVO ALAVES":   "Deportivo Alavés",
+
+    # ─── SEGUNDA DIVISIÓN ─────────────────────────────────────────────────────
+    "R.OVIEDO":           "Real Oviedo",
+    "REAL OVIEDO":        "Real Oviedo",
+
+    "R.ZARAGOZA":         "Real Zaragoza",
+    "REAL ZARAGOZA":      "Real Zaragoza",
+    "ZARAGOZA":           "Real Zaragoza",
+
+    "SP.GIJON":           "Sporting Gijón",
+    "SPORTING GIJON":     "Sporting Gijón",
+    "SPORTING":           "Sporting Gijón",
+    "SPORTING GIJON":     "Sporting Gijón",
+
+    # Cultural Leonesa — La Quiniela la abrevia 'C. LEONESA'
+    "C. LEONESA":         "Cultural Leonesa",
+    "CULTURAL LEONESA":   "Cultural Leonesa",
+    "C.LEONESA":          "Cultural Leonesa",
+    "LEONESA":            "Cultural Leonesa",
+
+    "R.RACING C.":        "Real Racing Club",
+    "RACING SANTANDER":   "Real Racing Club",
+    "RACING":             "Real Racing Club",
+    "RACING S.":          "Real Racing Club",
+    "REAL RACING CLUB":   "Real Racing Club",
+
+    # Burgos — nombre completo en SofaScore
+    "BP":                 "Burgos Club de Fútbol",
+    "BURGOS":             "Burgos Club de Fútbol",
+    "BURGOS CF":          "Burgos Club de Fútbol",
+    "BURGOS CLUB":        "Burgos Club de Fútbol",
+
+    # Castellón — nombre con acento en SofaScore
+    "CASTELLON":          "CD Castellón",
+    "CD CASTELLON":       "CD Castellón",
+    "CD CASTELLAN":       "CD Castellón",
+
+    "ALMERIA":            "Almería",
+    "UD ALMERIA":         "Almería",
+
+    "MALAGA":             "Málaga",
+    "CF MALAGA":          "Málaga",
+
+    "LEGANES":            "Leganés",
+    "LEGANÉS":            "Leganés",
+    "CD LEGANES":         "Leganés",
+
+    "MIRANDES":           "Mirandés",
+
+    "CORDOBA":            "Córdoba",
+    "CORDOBA CF":         "Córdoba",
+
+    "DEPORTIVO":          "Deportivo La Coruña",
+    "RC DEPORTIVO":       "Deportivo La Coruña",
+    "DEPORTIVO LA CORUNA": "Deportivo La Coruña",
+    "DEPORTIVO LA CORUÑA": "Deportivo La Coruña",
+
+    "CADIZ":              "Cádiz",
+    "CADIZ CF":           "Cádiz",
+
+    "ALBACETE":           "Albacete Balompié",
+    "ALBACETE BALOMPIE":  "Albacete Balompié",
+
+    "GRANADA":            "Granada",
+    "GRANADA CF":         "Granada",
+
+    "HUESCA":             "Huesca",
+    "SD HUESCA":          "Huesca",
+
+    "R.VALLADOLID":       "Real Valladolid",
+    "REAL VALLADOLID":    "Real Valladolid",
+    "VALLADOLID":         "Real Valladolid",
+
+    "ELDENSE":            "Eldense",
+    "FERROL":             "Racing Ferrol",
+    "RACING FERROL":      "Racing Ferrol",
+    "CARTAGENA":          "Cartagena",
+    "EIBAR":              "Eibar",
+    "LEVANTE":            "Levante",
+    "LEVANTE UD":         "Levante",
+    "TENERIFE":           "Tenerife",
+    "CD TENERIFE":        "Tenerife",
+    "ANDORRA":            "FC Andorra",
+    "FC ANDORRA":         "FC Andorra",
+    "CEUTA":              "AD Ceuta",
+    "AD CEUTA":           "AD Ceuta",
+    "LAS PALMAS":         "Las Palmas",
+    "UD LAS PALMAS":      "Las Palmas",
 }
 
 def normalize_team_name(name: str) -> str:
