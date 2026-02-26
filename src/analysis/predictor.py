@@ -8,12 +8,13 @@ from src.models.player import Player
 from src.scrapers.weather_api import WeatherCondition
 from src.analysis.factors import home_away, form, h2h, rest, importance, weather, players, standings
 from src.config.settings import (
-    FACTOR_WEIGHTS, 
-    DRAW_PROB_LA_LIGA, 
-    DRAW_PROB_HYPERMOTION, 
-    HOME_ADVANTAGE_GOALS, 
-    INJURY_PENALTY_AMOUNT, 
-    NEUTRAL_GROUND_TERMS
+    FACTOR_WEIGHTS,
+    DRAW_PROB_LA_LIGA,
+    DRAW_PROB_HYPERMOTION,
+    HOME_ADVANTAGE_GOALS,
+    INJURY_PENALTY_AMOUNT,
+    NEUTRAL_GROUND_TERMS,
+    XG_WEIGHT,
 )
 
 @dataclass
@@ -25,42 +26,58 @@ class PredictionEngine:
     
         
     def _calculate_lambda(
-        self, 
-        team_name: str, 
-        is_home: bool, 
+        self,
+        team_name: str,
+        is_home: bool,
         neutral_ground: bool,
-        missing_players: Optional[List[Player]] = None
+        missing_players: Optional[List[Player]] = None,
+        xg_data: Optional[Dict[str, float]] = None,
     ) -> float:
-        """Calcula lambda para la distribución de Poisson."""
+        """Calcula lambda para la distribución de Poisson.
+        
+        Integra xG (Expected Goals) si está disponible, ponderando:
+            lambda = (1 - XG_WEIGHT) * avg_goals + XG_WEIGHT * avg_xg
+        Esto suaviza las fluctuaciones de goles reales usando el rendimiento
+        esperado basado en oportunidades creadas.
+        """
         matches = [
-            m for m in self.historical_matches 
+            m for m in self.historical_matches
             if (m.home_team.name == team_name or m.away_team.name == team_name)
             and m.status.value == "finished"
         ]
         matches.sort(key=lambda x: x.date, reverse=True)
         recent = matches[:5]
-        
+
         if not recent:
             return 1.2  # Valor por defecto razonable
-            
+
         goals = []
         for m in recent:
             if m.home_team.name == team_name:
                 goals.append(m.home_score if m.home_score is not None else 0)
             else:
                 goals.append(m.away_score if m.away_score is not None else 0)
-                
+
         avg_goals = sum(goals) / len(goals)
-        
-        # Ajuste por localía
+
+        # --- Integración de xG (Componente 1) ---
+        # Si tenemos datos de xG mediados de los últimos partidos, mezclarlos
+        # con la media de goles reales para un lambda más robusto.
+        if xg_data:
+            xg_key = "home_xg" if is_home else "away_xg"
+            avg_xg = xg_data.get(xg_key, 0.0)
+            if avg_xg > 0:
+                avg_goals = (1 - XG_WEIGHT) * avg_goals + XG_WEIGHT * avg_xg
+
+        # Ajuste por localía (anulado en campo neutral)
         if is_home and not neutral_ground:
             avg_goals += HOME_ADVANTAGE_GOALS
-            
+
         # Penalización por lesiones (Rating > 7.5 -> -15%)
         penalty = players.calculate_injury_penalty_multiplier(missing_players or [])
         avg_goals *= penalty
-        
-        return max(0.1, avg_goals) # Evitar lambda 0
+
+        return max(0.1, avg_goals)  # Evitar lambda 0
         
     def _poisson_probability(self, k: int, lamb: float) -> float:
         """Calcula probabilidad de k goles con media lambda."""
@@ -134,15 +151,17 @@ class PredictionEngine:
         )
 
     def predict(
-        self, 
-        match: Match, 
+        self,
+        match: Match,
         weather_data: Optional[WeatherCondition] = None,
-        home_players: Optional[List[Player]] = None, # Missing players
-        away_players: Optional[List[Player]] = None, # Missing players
-        home_lineup: Optional[List[Player]] = None, # Full/Available squad
-        away_lineup: Optional[List[Player]] = None, # Full/Available squad
+        home_players: Optional[List[Player]] = None,   # Missing players
+        away_players: Optional[List[Player]] = None,   # Missing players
+        home_lineup: Optional[List[Player]] = None,    # Full/Available squad
+        away_lineup: Optional[List[Player]] = None,    # Full/Available squad
         home_key_players: Optional[List[Player]] = None,
-        away_key_players: Optional[List[Player]] = None
+        away_key_players: Optional[List[Player]] = None,
+        match_statistics: Optional[Dict] = None,       # xG y SOG de SofaScore
+        market_odds: Optional[Dict] = None,            # {"1": 1.45, "X": 4.20, "2": 6.50}
     ) -> Prediction:
         """Genera predicción para un partido."""
         
@@ -168,19 +187,21 @@ class PredictionEngine:
             if "butarque" in venue_lower and match.home_team.name.lower() != "leganes": # Ejemplo
                  pass # Por ahora confiamos en NEUTRAL_GROUND_TERMS
                  
-        # 3. Calcular Lambdas (Goles esperados)
+        # 3. Calcular Lambdas (Goles esperados) — con xG si disponible
         lambda_home = self._calculate_lambda(
-            match.home_team.name, 
-            is_home=True, 
+            match.home_team.name,
+            is_home=True,
             neutral_ground=neutral_ground,
-            missing_players=home_players
+            missing_players=home_players,
+            xg_data=match_statistics,
         )
-        
+
         lambda_away = self._calculate_lambda(
-            match.away_team.name, 
-            is_home=False, 
-            neutral_ground=neutral_ground, 
-            missing_players=away_players
+            match.away_team.name,
+            is_home=False,
+            neutral_ground=neutral_ground,
+            missing_players=away_players,
+            xg_data=match_statistics,
         )
         
         # 4. Calcular Probabilidades Poisson
@@ -197,30 +218,41 @@ class PredictionEngine:
         
         probs = {"1": prob_home, "X": prob_draw, "2": prob_away}
         
-        # 5. Ajuste final con factores (Opcional, pero recomendado para incluir clima/racha H2H que Poisson no ve directamente)
-        # El Poisson se basa mucho en goles recientes.
-        # Los factores ven H2H historico, clima, cansancio etc.
-        # Vamos a usar los factores para 'impulsar' ligeramente la probabilidad
-        
+        # 5. Ajuste con factores clásicos (H2H, forma, clima, cansancio...)
+        # Los factores ven información que Poisson no captura directamente.
         total_adjustment = factors.get('total', 0)
-        sensitivity = 0.5 # Menor peso porque Poisson ya es robusto
-        
+        sensitivity = 0.5  # Menor peso porque Poisson ya es robusto
+
         probs["1"] += total_adjustment * sensitivity
         probs["2"] -= total_adjustment * sensitivity
-        
+
+        # 6. Integración de cuotas de mercado (prior bayesiano)
+        # El mercado agrega información de cientos de analistas.
+        # Mezclamos: prob_final = (1-w)*prob_modelo + w*prob_mercado
+        odds_weight = FACTOR_WEIGHTS.get('odds', 0.0)
+        if market_odds and odds_weight > 0:
+            market_probs = self._convert_odds_to_probs(market_odds)
+            if market_probs:
+                for sign in ["1", "X", "2"]:
+                    model_p = probs.get(sign, 33.3)
+                    mkt_p = market_probs.get(sign, 33.3)
+                    probs[sign] = (1 - odds_weight) * model_p + odds_weight * mkt_p
+
         # Renormalizar
         total = sum(probs.values())
         if total > 0:
             probs = {k: (v / total) * 100 for k, v in probs.items()}
-            
+
         # Determinar apuesta recomendada
         recommended = max(probs.items(), key=lambda x: x[1])
-        
+
         # Añadir justificación técnica en los factores
         factors["poisson_lambda_home"] = lambda_home
         factors["poisson_lambda_away"] = lambda_away
         factors["predicted_score"] = exact_score
         factors["neutral_ground"] = neutral_ground
+        factors["xg_used"] = match_statistics is not None
+        factors["odds_used"] = market_odds is not None
         
         return Prediction(
             match=match,
@@ -340,6 +372,35 @@ class PredictionEngine:
             "total": total_factor
         }
     
+    def _convert_odds_to_probs(self, odds: Dict[str, float]) -> Dict[str, float]:
+        """Convierte cuotas decimales a probabilidades normalizadas (elimina overround).
+        
+        Ejemplo: {"1": 1.45, "X": 4.20, "2": 6.50}
+        Probabilidades implícitas: 1/1.45=0.689, 1/4.20=0.238, 1/6.50=0.154
+        Overround = 0.689 + 0.238 + 0.154 = 1.081 (8.1% margen casa)
+        Normalizadas: 0.689/1.081=63.7%, 0.238/1.081=22.0%, 0.154/1.081=14.2%
+        """
+        try:
+            raw = {}
+            for sign in ["1", "X", "2"]:
+                odd_val = float(odds.get(sign, 0))
+                if odd_val > 1.0:
+                    raw[sign] = 1.0 / odd_val
+                else:
+                    return {}  # Cuota inválida, no usar mercado
+            
+            total = sum(raw.values())
+            if total <= 0:
+                return {}
+            
+            return {
+                "1": (raw["1"] / total) * 100,
+                "X": (raw["X"] / total) * 100,
+                "2": (raw["2"] / total) * 100,
+            }
+        except (TypeError, ValueError, ZeroDivisionError):
+            return {}
+
     def _normalize_probabilities(self, probs: Dict[str, float]) -> Dict[str, float]:
         """Normaliza probabilidades para que sumen 100."""
         # Asegurar valores positivos
