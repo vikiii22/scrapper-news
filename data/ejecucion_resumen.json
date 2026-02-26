@@ -1,0 +1,35 @@
+{
+  "fecha_ejecucion": "2026-02-11 16:37:20",
+  "procesos": [
+    {
+      "nombre": "SoccerData Scraper - Primera Division (La Liga)",
+      "script": "scrapper-soccerdata.py",
+      "estado": "ERROR",
+      "razon": "El script retorno codigo de error"
+    },
+    {
+      "nombre": "Segunda Division Scraper",
+      "script": "scrapper-segunda-division.py",
+      "estado": "COMPLETADO",
+      "timestamp": "2026-02-11 16:37:23"
+    },
+    {
+      "nombre": "Analisis de Futbol Espanol (Predicciones)",
+      "script": "scrapper-futbol-espanol.py",
+      "estado": "COMPLETADO",
+      "timestamp": "2026-02-11 16:37:27"
+    },
+    {
+      "nombre": "Quiniela Analysis (Apuestas Recomendadas)",
+      "script": "quiniela_analysis.py",
+      "estado": "COMPLETADO",
+      "timestamp": "2026-02-11 16:37:27"
+    }
+  ],
+  "resumen": {
+    "procesos_completados": 3,
+    "procesos_totales": 4,
+    "exito_general": false,
+    "archivos_generados": 5
+  }
+}

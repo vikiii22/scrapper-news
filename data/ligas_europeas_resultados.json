@@ -1,0 +1,182 @@
+{
+  "La Liga": {
+    "total_partidos": 380,
+    "partidos_jugados": 219,
+    "ultimos_5_resultados": [
+      {
+        "fecha": "2026-02-01 20:00:00+00:00",
+        "local": "Athletic Club",
+        "visitante": "Real Sociedad",
+        "resultado": "1-1"
+      },
+      {
+        "fecha": "2026-02-01 17:30:00+00:00",
+        "local": "Getafe",
+        "visitante": "Celta Vigo",
+        "resultado": "0-0"
+      },
+      {
+        "fecha": "2026-02-01 15:15:00+00:00",
+        "local": "Real Betis",
+        "visitante": "Valencia",
+        "resultado": "2-1"
+      },
+      {
+        "fecha": "2026-02-01 13:00:00+00:00",
+        "local": "Real Madrid",
+        "visitante": "Rayo Vallecano",
+        "resultado": "2-1"
+      },
+      {
+        "fecha": "2026-02-02 20:00:00+00:00",
+        "local": "Mallorca",
+        "visitante": "Sevilla",
+        "resultado": "4-1"
+      }
+    ]
+  },
+  "Premier League": {
+    "total_partidos": 380,
+    "partidos_jugados": 240,
+    "ultimos_5_resultados": [
+      {
+        "fecha": "2026-02-01 14:00:00+00:00",
+        "local": "Aston Villa",
+        "visitante": "Brentford",
+        "resultado": "0-1"
+      },
+      {
+        "fecha": "2026-02-01 14:00:00+00:00",
+        "local": "Manchester United",
+        "visitante": "Fulham",
+        "resultado": "3-2"
+      },
+      {
+        "fecha": "2026-02-01 14:00:00+00:00",
+        "local": "Nottingham Forest",
+        "visitante": "Crystal Palace",
+        "resultado": "1-1"
+      },
+      {
+        "fecha": "2026-02-01 16:30:00+00:00",
+        "local": "Tottenham Hotspur",
+        "visitante": "Manchester City",
+        "resultado": "2-2"
+      },
+      {
+        "fecha": "2026-02-02 20:00:00+00:00",
+        "local": "Sunderland",
+        "visitante": "Burnley",
+        "resultado": "3-0"
+      }
+    ]
+  },
+  "Serie A": {
+    "total_partidos": 380,
+    "partidos_jugados": 230,
+    "ultimos_5_resultados": [
+      {
+        "fecha": "2026-02-01 17:00:00+00:00",
+        "local": "Cremonese",
+        "visitante": "Inter",
+        "resultado": "0-2"
+      },
+      {
+        "fecha": "2026-02-01 19:45:00+00:00",
+        "local": "Parma",
+        "visitante": "Juventus",
+        "resultado": "1-4"
+      },
+      {
+        "fecha": "2026-02-01 11:30:00+00:00",
+        "local": "Torino",
+        "visitante": "Lecce",
+        "resultado": "1-0"
+      },
+      {
+        "fecha": "2026-02-02 19:45:00+00:00",
+        "local": "Udinese",
+        "visitante": "Roma",
+        "resultado": "1-0"
+      },
+      {
+        "fecha": "2026-02-03 19:45:00+00:00",
+        "local": "Bologna",
+        "visitante": "Milan",
+        "resultado": "0-3"
+      }
+    ]
+  },
+  "Bundesliga": {
+    "total_partidos": 306,
+    "partidos_jugados": 179,
+    "ultimos_5_resultados": [
+      {
+        "fecha": "2026-01-31 14:30:00+00:00",
+        "local": "RB Leipzig",
+        "visitante": "1. FSV Mainz 05",
+        "resultado": "1-2"
+      },
+      {
+        "fecha": "2026-01-31 14:30:00+00:00",
+        "local": "SV Werder Bremen",
+        "visitante": "Borussia M'gladbach",
+        "resultado": "1-1"
+      },
+      {
+        "fecha": "2026-01-31 14:30:00+00:00",
+        "local": "TSG Hoffenheim",
+        "visitante": "1. FC Union Berlin",
+        "resultado": "3-1"
+      },
+      {
+        "fecha": "2026-02-01 16:30:00+00:00",
+        "local": "Borussia Dortmund",
+        "visitante": "1. FC Heidenheim",
+        "resultado": "3-2"
+      },
+      {
+        "fecha": "2026-02-01 14:30:00+00:00",
+        "local": "VfB Stuttgart",
+        "visitante": "SC Freiburg",
+        "resultado": "1-0"
+      }
+    ]
+  },
+  "Ligue 1": {
+    "total_partidos": 306,
+    "partidos_jugados": 180,
+    "ultimos_5_resultados": [
+      {
+        "fecha": "2026-02-01 16:15:00+00:00",
+        "local": "Angers",
+        "visitante": "Metz",
+        "resultado": "1-0"
+      },
+      {
+        "fecha": "2026-02-01 16:15:00+00:00",
+        "local": "Nice",
+        "visitante": "Stade Brestois",
+        "resultado": "2-2"
+      },
+      {
+        "fecha": "2026-02-01 14:00:00+00:00",
+        "local": "Olympique Lyonnais",
+        "visitante": "Lille",
+        "resultado": "1-0"
+      },
+      {
+        "fecha": "2026-02-01 19:45:00+00:00",
+        "local": "RC Strasbourg",
+        "visitante": "Paris Saint-Germain",
+        "resultado": "1-2"
+      },
+      {
+        "fecha": "2026-02-01 16:15:00+00:00",
+        "local": "Toulouse",
+        "visitante": "Auxerre",
+        "resultado": "0-0"
+      }
+    ]
+  }
+}

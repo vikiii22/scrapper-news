@@ -1,0 +1,1942 @@
+[
+    {
+        "id": 14081793,
+        "round": 26,
+        "date": "2026-02-27 21:00:00",
+        "home_team_name": "Levante UD",
+        "home_team_id": 2849,
+        "away_team_name": "Deportivo Alavés",
+        "away_team_id": 2885,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Mathew Ryan",
+                    "id": 134029,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Jeremy Toljan",
+                    "id": 149606,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Adrián de la Fuente",
+                    "id": 997244,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Matias Moreno",
+                    "id": 1496360,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Manuel Sánchez",
+                    "id": 984789,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Ander Olasagasti",
+                    "id": 1010383,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ugo Raghouber",
+                    "id": 1170694,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Kareem Tunde",
+                    "id": 1649919,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Carlos Álvarez",
+                    "id": 1010656,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Paco Cortés",
+                    "id": 1869106,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Iván Romero",
+                    "id": 1014042,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Antonio Sivera",
+                    "id": 369004,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Nahuel Tenaglia",
+                    "id": 896073,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Facundo Garcés",
+                    "id": 879875,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Pacheco",
+                    "id": 934383,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Youssef Enriquez Lekhedim",
+                    "id": 1403364,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Calebe Gonçalves",
+                    "id": 1046796,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Denis Suárez",
+                    "id": 138383,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Antonio Blanco",
+                    "id": 855832,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Carles Aleñá",
+                    "id": 794937,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Toni Martínez",
+                    "id": 831253,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Lucas Boyé",
+                    "id": 814385,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081790,
+        "round": 26,
+        "date": "2026-02-28 14:00:00",
+        "home_team_name": "Rayo Vallecano",
+        "home_team_id": 2818,
+        "away_team_name": "Athletic Club",
+        "away_team_id": 2825,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Augusto Batalla",
+                    "id": 358910,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Andrei Rațiu",
+                    "id": 965031,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Florian Lejeune",
+                    "id": 88528,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Nobel Mendy",
+                    "id": 1458073,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Josep Chavarría",
+                    "id": 1010421,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Óscar Valentín",
+                    "id": 900008,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Gerard Gumbau",
+                    "id": 326471,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ilias Akhomach",
+                    "id": 1089108,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Isi Palazón",
+                    "id": 899982,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Fran Pérez",
+                    "id": 966637,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Jorge de Frutos",
+                    "id": 900003,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Unai Simón",
+                    "id": 797291,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Jesús Areso",
+                    "id": 910267,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Daniel Vivian",
+                    "id": 910978,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Aymeric Laporte",
+                    "id": 149734,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Yuri Berchiche",
+                    "id": 84531,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Iñigo Ruiz de Galarreta",
+                    "id": 96365,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Mikel Jauregizar",
+                    "id": 1495844,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Unai Gómez",
+                    "id": 1391375,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Oihan Sancet",
+                    "id": 966801,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Iñaki Williams",
+                    "id": 783374,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Gorka Guruzeta",
+                    "id": 605672,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081789,
+        "round": 26,
+        "date": "2026-02-28 16:15:00",
+        "home_team_name": "Barcelona",
+        "home_team_id": 2817,
+        "away_team_name": "Villarreal",
+        "away_team_id": 2819,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Joan García",
+                    "id": 930267,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Jules Koundé",
+                    "id": 827212,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Pau Cubarsí",
+                    "id": 1402913,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Eric García",
+                    "id": 876214,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "João Cancelo",
+                    "id": 138892,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Pedri",
+                    "id": 992587,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Frenkie de Jong",
+                    "id": 795222,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Lamine Yamal",
+                    "id": 1402912,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Dani Olmo",
+                    "id": 789071,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Raphinha",
+                    "id": 831005,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Robert Lewandowski",
+                    "id": 41789,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Luiz Júnior",
+                    "id": 1066603,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Santiago Mouriño",
+                    "id": 1468046,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Pau Navarro",
+                    "id": 1525863,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Renato Veiga",
+                    "id": 1087359,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Sergi Cardona",
+                    "id": 986245,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Tajon Buchanan",
+                    "id": 973290,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Santi Comesaña",
+                    "id": 843678,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Pape Gueye",
+                    "id": 879694,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Alberto Moleiro",
+                    "id": 1012444,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Nicolas Pépé",
+                    "id": 593526,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Georges Mikautadze",
+                    "id": 1009372,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081818,
+        "round": 26,
+        "date": "2026-02-28 18:30:00",
+        "home_team_name": "Mallorca",
+        "home_team_id": 2826,
+        "away_team_name": "Real Sociedad",
+        "away_team_id": 2824,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Leo Román",
+                    "id": 1131909,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Pablo Maffeo",
+                    "id": 788216,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Antonio Raíllo",
+                    "id": 807116,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Martin Valjent",
+                    "id": 300522,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Johan Mojica",
+                    "id": 344847,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Omar Mascarell",
+                    "id": 255999,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Mateo Joseph",
+                    "id": 1170693,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Samú Costa",
+                    "id": 988351,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Sergi Darder",
+                    "id": 110783,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Jan Virgili",
+                    "id": 1939173,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Vedat Muriqi",
+                    "id": 310874,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Álex Remiro",
+                    "id": 791773,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Aramburu",
+                    "id": 1116388,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Martin",
+                    "id": 1466116,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Duje Ćaleta-Car",
+                    "id": 257091,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Sergio Gómez",
+                    "id": 855835,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Gorrotxategi",
+                    "id": 1216309,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Yangel Herrera",
+                    "id": 839585,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Gonçalo Guedes",
+                    "id": 280979,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Carlos Soler",
+                    "id": 832427,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Mikel Oyarzabal",
+                    "id": 823622,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Orri Steinn Óskarsson",
+                    "id": 1026015,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081795,
+        "round": 26,
+        "date": "2026-02-28 21:00:00",
+        "home_team_name": "Real Oviedo",
+        "home_team_id": 2851,
+        "away_team_name": "Atlético Madrid",
+        "away_team_id": 2836,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Aarón Escandell",
+                    "id": 368922,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Nacho Vidal",
+                    "id": 844752,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Eric Bailly",
+                    "id": 606346,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "David Carmo",
+                    "id": 892235,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Javi López",
+                    "id": 945404,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Kwasi Sibo",
+                    "id": 905639,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Santiago Colombatto",
+                    "id": 822379,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Haissem Hassan",
+                    "id": 942836,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Santi Cazorla",
+                    "id": 17651,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ilyas Chaira",
+                    "id": 1008037,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Federico Viñas",
+                    "id": 976104,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Jan Oblak",
+                    "id": 69768,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Marcos Llorente",
+                    "id": 353138,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Marc Pubill",
+                    "id": 1094106,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Dávid Hancko",
+                    "id": 807771,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Matteo Ruggeri",
+                    "id": 965011,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Giuliano Simeone",
+                    "id": 1099352,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Johnny Cardoso",
+                    "id": 990169,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Alejandro Baena",
+                    "id": 910031,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ademola Lookman",
+                    "id": 824200,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Antoine Griezmann",
+                    "id": 85859,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Alexander Sørloth",
+                    "id": 309078,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081819,
+        "round": 26,
+        "date": "2026-03-01 14:00:00",
+        "home_team_name": "Elche",
+        "home_team_id": 2846,
+        "away_team_name": "Espanyol",
+        "away_team_id": 2814,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Matías Dituro",
+                    "id": 556884,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Víctor Chust",
+                    "id": 855831,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "David Affengruber",
+                    "id": 988672,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Pedro Bigas",
+                    "id": 141832,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Marc Aguado",
+                    "id": 1014595,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Tete Morente",
+                    "id": 605374,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Lucas Cepeda",
+                    "id": 1126447,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Aleix Febas",
+                    "id": 286167,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Germán Valera",
+                    "id": 962710,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Álvaro Rodriguez",
+                    "id": 1154587,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "André Silva",
+                    "id": 190159,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Marko Dmitrović",
+                    "id": 94527,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Omar El Hilali",
+                    "id": 1064026,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Leandro Cabrera",
+                    "id": 81992,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Fernando Calero",
+                    "id": 857205,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Carlos Romero",
+                    "id": 1396048,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Tyrhys Dolan",
+                    "id": 1063015,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Urko González",
+                    "id": 1064009,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Edu Expósito",
+                    "id": 877262,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Pol Lozano",
+                    "id": 826010,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Jofre Carreras",
+                    "id": 1019236,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Roberto Fernández",
+                    "id": 1392592,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14083591,
+        "round": 26,
+        "date": "2026-03-01 16:15:00",
+        "home_team_name": "Valencia",
+        "home_team_id": 2828,
+        "away_team_name": "Osasuna",
+        "away_team_id": 2820,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Stole Dimitrievski",
+                    "id": 97951,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Unai Núñez",
+                    "id": 892521,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Eray Cömert",
+                    "id": 814023,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "José Copete",
+                    "id": 913695,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "José Luis Gayà",
+                    "id": 227922,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Guido Rodríguez",
+                    "id": 609752,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Filip Ugrinić",
+                    "id": 857482,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Largie Ramazani",
+                    "id": 909966,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Lucas Beltrán",
+                    "id": 962029,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Luis Rioja",
+                    "id": 900433,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Umar Sadiq",
+                    "id": 754710,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Sergio Herrera",
+                    "id": 294377,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Valentin Rosier",
+                    "id": 842419,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Alejandro Catena",
+                    "id": 900792,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Jorge Herrando",
+                    "id": 944225,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Javi Galán",
+                    "id": 825133,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Jon Moncayola",
+                    "id": 976141,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Lucas Torró",
+                    "id": 187313,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Raúl Moro",
+                    "id": 980383,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Rubén García",
+                    "id": 260031,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Victor Muñoz",
+                    "id": 1145642,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Ante Budimir",
+                    "id": 37318,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081791,
+        "round": 26,
+        "date": "2026-03-01 18:30:00",
+        "home_team_name": "Real Betis",
+        "home_team_id": 2816,
+        "away_team_name": "Sevilla",
+        "away_team_id": 2833,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Álvaro Valles",
+                    "id": 964983,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Aitor Ruibal",
+                    "id": 893062,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Diego Llorente",
+                    "id": 305278,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Natan",
+                    "id": 1015287,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Ricardo Rodríguez",
+                    "id": 67769,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Pablo Fornals",
+                    "id": 816763,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Marc Roca",
+                    "id": 847128,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Álvaro Fidalgo",
+                    "id": 838629,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Antony",
+                    "id": 958380,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Cucho Hernández",
+                    "id": 887055,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Abdessamad Ezzalzouli",
+                    "id": 1011375,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Odysseas Vlachodimos",
+                    "id": 138149,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "César Azpilicueta",
+                    "id": 21555,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Nemanja Gudelj",
+                    "id": 68332,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Kike Salas",
+                    "id": 1097719,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Juanlu Sánchez",
+                    "id": 1010655,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Lucien Agoumé",
+                    "id": 960006,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Batista Mendy",
+                    "id": 859021,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Gabriel Suazo",
+                    "id": 818986,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Djibril Sow",
+                    "id": 799054,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Neal Maupay",
+                    "id": 268903,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Akor Adams",
+                    "id": 946381,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081797,
+        "round": 26,
+        "date": "2026-03-01 21:00:00",
+        "home_team_name": "Girona FC",
+        "home_team_id": 24264,
+        "away_team_name": "Celta Vigo",
+        "away_team_id": 2821,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Paulo Gazzaniga",
+                    "id": 164343,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Hugo Rincón",
+                    "id": 1632454,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Vitor Reis",
+                    "id": 1485300,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Daley Blind",
+                    "id": 44864,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Arnau Martínez",
+                    "id": 1084081,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Iván Martín",
+                    "id": 973699,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Axel Witsel",
+                    "id": 35612,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Viktor Tsygankov",
+                    "id": 319735,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Thomas Lemar",
+                    "id": 191182,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Bryan Gil",
+                    "id": 910026,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Vladyslav Vanat",
+                    "id": 976374,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "Ionuț Radu",
+                    "id": 815202,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Manu Fernández",
+                    "id": 1630975,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Joseph Aidoo",
+                    "id": 796320,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Marcos Alonso",
+                    "id": 69408,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Javier Rueda",
+                    "id": 1008259,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Matías Vecino",
+                    "id": 158615,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ilaix Moriba",
+                    "id": 962890,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Hugo Álvarez",
+                    "id": 1154935,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Jones El-Abdellaoui",
+                    "id": 1173575,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Ferran Jutglà",
+                    "id": 949962,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Fer López",
+                    "id": 1526628,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 14081798,
+        "round": 26,
+        "date": "2026-03-02 21:00:00",
+        "home_team_name": "Real Madrid",
+        "home_team_id": 2829,
+        "away_team_name": "Getafe",
+        "away_team_id": 2859,
+        "status": "Not started",
+        "lineups": {
+            "home_confirmed": false,
+            "away_confirmed": false,
+            "home_players": [
+                {
+                    "name": "Thibaut Courtois",
+                    "id": 70988,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Daniel Carvajal",
+                    "id": 138572,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Antonio Rüdiger",
+                    "id": 142622,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Dean Huijsen",
+                    "id": 1176744,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Álvaro Carreras",
+                    "id": 1085081,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Federico Valverde",
+                    "id": 831808,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Arda Güler",
+                    "id": 1091116,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Aurélien Tchouaméni",
+                    "id": 859025,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Eduardo Camavinga",
+                    "id": 973887,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Kylian Mbappé",
+                    "id": 826643,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Vinícius Júnior",
+                    "id": 868812,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ],
+            "away_players": [
+                {
+                    "name": "David Soria",
+                    "id": 604258,
+                    "rating": 0.0,
+                    "position": "G",
+                    "substitute": false
+                },
+                {
+                    "name": "Domingos Duarte",
+                    "id": 576276,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Zaid Romero",
+                    "id": 1108450,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Abdelkabir Abqar",
+                    "id": 1101232,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Kiko Femenía",
+                    "id": 53739,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Luis Milla",
+                    "id": 811629,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Mauro Arambarri",
+                    "id": 385888,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Juan Iglesias",
+                    "id": 949707,
+                    "rating": 0.0,
+                    "position": "D",
+                    "substitute": false
+                },
+                {
+                    "name": "Mario Martín",
+                    "id": 1154549,
+                    "rating": 0.0,
+                    "position": "M",
+                    "substitute": false
+                },
+                {
+                    "name": "Luis Vázquez",
+                    "id": 974713,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                },
+                {
+                    "name": "Martín Satriano",
+                    "id": 973536,
+                    "rating": 0.0,
+                    "position": "F",
+                    "substitute": false
+                }
+            ]
+        }
+    },
+    {
+        "id": 15534915,
+        "round": 23,
+        "date": "2026-03-04 19:00:00",
+        "home_team_name": "Rayo Vallecano",
+        "home_team_id": 2818,
+        "away_team_name": "Real Oviedo",
+        "away_team_id": 2851,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081805,
+        "round": 27,
+        "date": "2026-03-06 21:00:00",
+        "home_team_name": "Osasuna",
+        "home_team_id": 2820,
+        "away_team_name": "Mallorca",
+        "away_team_id": 2826,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081801,
+        "round": 27,
+        "date": "2026-03-07 14:00:00",
+        "home_team_name": "Getafe",
+        "home_team_id": 2859,
+        "away_team_name": "Real Betis",
+        "away_team_id": 2816,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081802,
+        "round": 27,
+        "date": "2026-03-07 16:15:00",
+        "home_team_name": "Levante UD",
+        "home_team_id": 2849,
+        "away_team_name": "Girona FC",
+        "away_team_id": 24264,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083602,
+        "round": 27,
+        "date": "2026-03-07 18:30:00",
+        "home_team_name": "Atlético Madrid",
+        "home_team_id": 2836,
+        "away_team_name": "Real Sociedad",
+        "away_team_id": 2824,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083607,
+        "round": 27,
+        "date": "2026-03-07 21:00:00",
+        "home_team_name": "Celta Vigo",
+        "home_team_id": 2821,
+        "away_team_name": "Real Madrid",
+        "away_team_id": 2829,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081803,
+        "round": 27,
+        "date": "2026-03-08 14:00:00",
+        "home_team_name": "Villarreal",
+        "home_team_id": 2819,
+        "away_team_name": "Elche",
+        "away_team_id": 2846,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083597,
+        "round": 27,
+        "date": "2026-03-08 16:15:00",
+        "home_team_name": "Athletic Club",
+        "home_team_id": 2825,
+        "away_team_name": "Barcelona",
+        "away_team_id": 2817,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081804,
+        "round": 27,
+        "date": "2026-03-08 18:30:00",
+        "home_team_name": "Sevilla",
+        "home_team_id": 2833,
+        "away_team_name": "Rayo Vallecano",
+        "away_team_id": 2818,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081799,
+        "round": 27,
+        "date": "2026-03-08 21:00:00",
+        "home_team_name": "Valencia",
+        "home_team_id": 2828,
+        "away_team_name": "Deportivo Alavés",
+        "away_team_id": 2885,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081800,
+        "round": 27,
+        "date": "2026-03-09 21:00:00",
+        "home_team_name": "Espanyol",
+        "home_team_id": 2814,
+        "away_team_name": "Real Oviedo",
+        "away_team_id": 2851,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14081806,
+        "round": 28,
+        "date": "2026-03-13 21:00:00",
+        "home_team_name": "Deportivo Alavés",
+        "home_team_id": 2885,
+        "away_team_name": "Villarreal",
+        "away_team_id": 2819,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083632,
+        "round": 28,
+        "date": "2026-03-14 14:00:00",
+        "home_team_name": "Girona FC",
+        "home_team_id": 24264,
+        "away_team_name": "Athletic Club",
+        "away_team_id": 2825,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083612,
+        "round": 28,
+        "date": "2026-03-14 16:15:00",
+        "home_team_name": "Atlético Madrid",
+        "home_team_id": 2836,
+        "away_team_name": "Getafe",
+        "away_team_id": 2859,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083627,
+        "round": 28,
+        "date": "2026-03-14 18:30:00",
+        "home_team_name": "Real Oviedo",
+        "home_team_id": 2851,
+        "away_team_name": "Valencia",
+        "away_team_id": 2828,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083637,
+        "round": 28,
+        "date": "2026-03-14 21:00:00",
+        "home_team_name": "Real Madrid",
+        "home_team_id": 2829,
+        "away_team_name": "Elche",
+        "away_team_id": 2846,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083642,
+        "round": 28,
+        "date": "2026-03-15 14:00:00",
+        "home_team_name": "Mallorca",
+        "home_team_id": 2826,
+        "away_team_name": "Espanyol",
+        "away_team_id": 2814,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083617,
+        "round": 28,
+        "date": "2026-03-15 16:15:00",
+        "home_team_name": "Barcelona",
+        "home_team_id": 2817,
+        "away_team_name": "Sevilla",
+        "away_team_id": 2833,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083622,
+        "round": 28,
+        "date": "2026-03-15 18:30:00",
+        "home_team_name": "Real Betis",
+        "home_team_id": 2816,
+        "away_team_name": "Celta Vigo",
+        "away_team_id": 2821,
+        "status": "Not started",
+        "lineups": {}
+    },
+    {
+        "id": 14083652,
+        "round": 28,
+        "date": "2026-03-15 21:00:00",
+        "home_team_name": "Real Sociedad",
+        "home_team_id": 2824,
+        "away_team_name": "Osasuna",
+        "away_team_id": 2820,
+        "status": "Not started",
+        "lineups": {}
+    }
+]

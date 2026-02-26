@@ -1,0 +1,122 @@
+[
+    {
+        "numero": "1",
+        "equipo_local": "RAYO",
+        "equipo_visitante": "ATH.CLUB",
+        "equipo_local_normalizado": "Rayo Vallecano",
+        "equipo_visitante_normalizado": "Athletic Club",
+        "horario": "SAB\n14:00"
+    },
+    {
+        "numero": "2",
+        "equipo_local": "BARCELONA",
+        "equipo_visitante": "VILLARREAL",
+        "equipo_local_normalizado": "Barcelona",
+        "equipo_visitante_normalizado": "Villarreal",
+        "horario": "SAB\n16:15"
+    },
+    {
+        "numero": "3",
+        "equipo_local": "MALLORCA",
+        "equipo_visitante": "R.SOCIEDAD",
+        "equipo_local_normalizado": "Mallorca",
+        "equipo_visitante_normalizado": "Real Sociedad",
+        "horario": "SAB\n18:30"
+    },
+    {
+        "numero": "4",
+        "equipo_local": "R.OVIEDO",
+        "equipo_visitante": "AT.MADRID",
+        "equipo_local_normalizado": "Real Oviedo",
+        "equipo_visitante_normalizado": "Atlético Madrid",
+        "horario": "SAB\n21:00"
+    },
+    {
+        "numero": "5",
+        "equipo_local": "ELCHE",
+        "equipo_visitante": "ESPANYOL",
+        "equipo_local_normalizado": "Elche",
+        "equipo_visitante_normalizado": "Espanyol",
+        "horario": "DOM\n14:00"
+    },
+    {
+        "numero": "6",
+        "equipo_local": "VALENCIA",
+        "equipo_visitante": "OSASUNA",
+        "equipo_local_normalizado": "Valencia",
+        "equipo_visitante_normalizado": "Osasuna",
+        "horario": "DOM\n16:15"
+    },
+    {
+        "numero": "7",
+        "equipo_local": "GIRONA",
+        "equipo_visitante": "CELTA",
+        "equipo_local_normalizado": "Girona FC",
+        "equipo_visitante_normalizado": "Celta Vigo",
+        "horario": "DOM\n21:00"
+    },
+    {
+        "numero": "8",
+        "equipo_local": "R.MADRID",
+        "equipo_visitante": "GETAFE",
+        "equipo_local_normalizado": "Real Madrid",
+        "equipo_visitante_normalizado": "Getafe",
+        "horario": "LUN\n21:00"
+    },
+    {
+        "numero": "9",
+        "equipo_local": "R.ZARAGOZA",
+        "equipo_visitante": "BURGOS",
+        "equipo_local_normalizado": "Real Zaragoza",
+        "equipo_visitante_normalizado": "Burgos Club de Fútbol",
+        "horario": "SAB\n16:15"
+    },
+    {
+        "numero": "10",
+        "equipo_local": "GRANADA",
+        "equipo_visitante": "MÁLAGA",
+        "equipo_local_normalizado": "Granada",
+        "equipo_visitante_normalizado": "Málaga",
+        "horario": "SAB\n18:30"
+    },
+    {
+        "numero": "11",
+        "equipo_local": "CASTELLÓN",
+        "equipo_visitante": "RACING S.",
+        "equipo_local_normalizado": "CD Castellón",
+        "equipo_visitante_normalizado": "Real Racing Club",
+        "horario": "SAB\n21:00"
+    },
+    {
+        "numero": "12",
+        "equipo_local": "SPORTING",
+        "equipo_visitante": "LEGANÉS",
+        "equipo_local_normalizado": "Sporting Gijón",
+        "equipo_visitante_normalizado": "Leganés",
+        "horario": "DOM\n16:15"
+    },
+    {
+        "numero": "13",
+        "equipo_local": "C. LEONESA",
+        "equipo_visitante": "LAS PALMAS",
+        "equipo_local_normalizado": "Cultural Leonesa",
+        "equipo_visitante_normalizado": "Las Palmas",
+        "horario": "DOM\n18:30"
+    },
+    {
+        "numero": "14",
+        "equipo_local": "EIBAR",
+        "equipo_visitante": "CÁDIZ",
+        "equipo_local_normalizado": "Eibar",
+        "equipo_visitante_normalizado": "Cádiz",
+        "horario": "DOM\n21:00"
+    },
+    {
+        "numero": "15",
+        "equipo_local": "BETIS",
+        "equipo_visitante": "SEVILLA",
+        "equipo_local_normalizado": "Real Betis",
+        "equipo_visitante_normalizado": "Sevilla",
+        "horario": "DOM\n18:30"
+    }
+]

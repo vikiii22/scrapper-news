@@ -1,7 +1,7 @@
 # Ignore data files
-data/
+# data/
 .env
-./data
+# ./data
 *.bat
 *.sh
 /.venv
