@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiniela - Predicciones IA</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🎯 Quiniela - Predicciones</h1>
+            <div class="jornada">Jornada 45</div>
+            <div class="timestamp">Actualizado: 26 de February de 2026 - 13:52</div>
+        </div>
+
+        <!-- Legend -->
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-label">Probabilidades</div>
+                <div class="legend-values">
+                    <span>%1</span>
+                    <span>%X</span>
+                    <span>%2</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Matches -->
+        <div class="matches" id="matches-container">
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">1</div>
+                <div class="match-teams">
+                    Rayo Vallecano - Athletic Club
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">14:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">34.0%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">39.7%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            39.7%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">2</div>
+                <div class="match-teams">
+                    Barcelona - Villarreal
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">16:15</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">38.4%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">35.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            38.4%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">3</div>
+                <div class="match-teams">
+                    Mallorca - Real Sociedad
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">18:30</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">35.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">38.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            38.3%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">4</div>
+                <div class="match-teams">
+                    Real Oviedo - Atlético Madrid
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">21:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">33.6%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">40.1%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence high">
+                            40.1%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">5</div>
+                <div class="match-teams">
+                    Elche - Espanyol
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">14:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">34.7%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">39.0%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            39.0%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">6</div>
+                <div class="match-teams">
+                    Valencia - Osasuna
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">16:15</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">33.7%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">40.0%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            40.0%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">7</div>
+                <div class="match-teams">
+                    Girona FC - Celta Vigo
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">21:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">36.0%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">37.6%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            37.6%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">8</div>
+                <div class="match-teams">
+                    Real Madrid - Getafe
+                </div>
+                <div class="match-time">
+                    <div class="match-day">DOM</div>
+                    <div class="match-hour">21:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">40.2%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">33.4%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence high">
+                            40.2%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">9</div>
+                <div class="match-teams">
+                    Real Zaragoza - Burgos Club de Fútbol
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">16:15</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">34.5%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">39.2%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            39.2%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">10</div>
+                <div class="match-teams">
+                    Granada - Málaga
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">18:30</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">35.6%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">38.0%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            38.0%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">11</div>
+                <div class="match-teams">
+                    CD Castellón - Real Racing Club
+                </div>
+                <div class="match-time">
+                    <div class="match-day">VIE</div>
+                    <div class="match-hour">21:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">37.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">36.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            37.3%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">12</div>
+                <div class="match-teams">
+                    Sporting Gijón - Leganés
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">16:15</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">38.9%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">34.7%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            38.9%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">13</div>
+                <div class="match-teams">
+                    Cultural Leonesa - Las Palmas
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">18:30</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn ">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn selected">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">33.8%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">39.9%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            39.9%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">14</div>
+                <div class="match-teams">
+                    Eibar - Cádiz
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">21:00</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">39.2%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">34.4%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            39.2%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="match">
+            <div class="match-header">
+                <div class="match-number">15</div>
+                <div class="match-teams">
+                    Real Betis - Sevilla
+                </div>
+                <div class="match-time">
+                    <div class="match-day">SÁB</div>
+                    <div class="match-hour">18:30</div>
+                </div>
+            </div>
+            
+            <div class="predictions">
+                <button class="prediction-btn selected">
+                    1
+                </button>
+                <button class="prediction-btn ">
+                    X
+                </button>
+                <button class="prediction-btn ">
+                    2
+                </button>
+            </div>
+            
+            <div class="probabilities">
+                <div class="prob-item">
+                    <div class="prob-label">Local (1)</div>
+                    <div class="prob-value">38.1%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Empate (X)</div>
+                    <div class="prob-value">26.3%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Visitante (2)</div>
+                    <div class="prob-value">35.6%</div>
+                </div>
+                <div class="prob-item">
+                    <div class="prob-label">Confianza</div>
+                    <div class="prob-value">
+                        <span class="confidence medium">
+                            38.1%
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>Predicciones generadas por IA basadas en análisis de datos históricos</p>
+            <p>🤖 Scrapper News © 2026 | Total de partidos: 15</p>
+        </div>
+    </div>
+</body>
+</html>
