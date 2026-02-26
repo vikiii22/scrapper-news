@@ -95,8 +95,66 @@ def main():
         except (KeyError, TypeError):
             continue
 
+    # Cargar noticias
+    news_data = load_json_data(RAW_DATA_DIR / "news_data.json") or {}
+    logistic_issues = news_data.get('logistic_issues', [])
+    player_issues = news_data.get('player_issues', [])
+
     # Inicializar el motor de predicción
     predictor = PredictionEngine(historical_matches=historical_matches, standings=standings)
+
+    # Procesar Quiniela
+    quiniela = load_json_data(RAW_DATA_DIR / "quiniela_matches.json") or []
+    
+    predictions = []
+    
+    for q_match in quiniela:
+        print(f"Prediciendo: {q_match['equipo_local']} vs {q_match['equipo_visitante']}")
+        
+        # Buscar ID de equipos (map names to Sofascore IDs from historical data if possible)
+        # Simplified: We assume we find them or match object creation is robust enough
+        
+        home_name = q_match['equipo_local']
+        away_name = q_match['equipo_visitante']
+        
+        # Check logistic issues for this match
+        neutral_ground_override = False
+        for issue in logistic_issues:
+             # Basic keyword matching for team names in issue source or context
+             # This is a simplification. Real NLP entity extraction > simple string match
+             # But for now we just flag if the term appears with team names
+             pass 
+
+        # Crear match object dummy para predicción
+        match = Match(
+            id=0, # Unknown ID
+            home_team=Team(id=0, name=home_name),
+            away_team=Team(id=0, name=away_name),
+            date=datetime.now(), # Approximate
+            league="La Liga" # Default
+        )
+        
+        # Check missing players from news
+        home_missing = []
+        away_missing = []
+        
+        for p_issue in player_issues:
+             p_context = p_issue.get('context', '').lower()
+             if home_name.lower() in p_context:
+                 home_missing.append(Player(id=0, name=p_issue['player'], rating=8.0, is_injured=True))
+             elif away_name.lower() in p_context:
+                 away_missing.append(Player(id=0, name=p_issue['player'], rating=8.0, is_injured=True))
+
+        prediction = predictor.predict(
+            match,
+            home_players=home_missing,
+            away_players=away_missing
+        )
+        predictions.append(prediction)
+        
+    # Guardar resultados
+    # ... (existing code for saving)
+
 
     # Cargar próximos partidos
     la_liga_next = load_json_data(RAW_DATA_DIR / "la_liga_next_matches.json") or []

@@ -23,10 +23,21 @@ def run_generate_predictions(args):
     from scripts.generate_predictions import main as generate_predictions_main
     generate_predictions_main()
 
+def run_all(args):
+    """Ejecuta toda la pipeline: recolección y análisis."""
+    print("=== INICIANDO PIPELINE COMPLETA ===")
+    run_collect_data(args)
+    print("\n" + "="*30 + "\n")
+    run_analyze_quiniela(args)
+    print("=== PIPELINE COMPLETADA ===")
+
 def main():
     """Función principal del CLI."""
     parser = argparse.ArgumentParser(description="Quiniela Predictor CLI")
-    subparsers = parser.add_subparsers(dest='command', required=True, help='Comandos disponibles')
+    
+    # Si no hay argumentos, por defecto mostramos ayuda o ejecutamos todo.
+    # Para ser amigable, añadimos un comando 'all' y si no se pasa nada, sugerimos.
+    subparsers = parser.add_subparsers(dest='command', help='Comandos disponibles')
 
     # Comando para recolectar datos
     parser_collect = subparsers.add_parser('collect', help='Recolecta todos los datos de las fuentes (scrapers).')
@@ -39,9 +50,22 @@ def main():
     # Comando para generar predicciones
     parser_predict = subparsers.add_parser('predict', help='Genera predicciones para los próximos partidos.')
     parser_predict.set_defaults(func=run_generate_predictions)
+    
+    # Comando para ejecutar todo
+    parser_all = subparsers.add_parser('all', help='Ejecuta recolección y análisis secuencialmente.')
+    parser_all.set_defaults(func=run_all)
 
-    args = parser.parse_args()
-    args.func(args)
+    # Si se ejecuta sin argumentos, simulamos el comando 'all' o mostramos ayuda
+    if len(sys.argv) == 1:
+        # Opción A: Ejecutar todo por defecto (lo que el usuario espera)
+        args = parser.parse_args(['all'])
+    else:
+        args = parser.parse_args()
+        
+    if hasattr(args, 'func'):
+        args.func(args)
+    else:
+        parser.print_help()
 
 if __name__ == "__main__":
     main()

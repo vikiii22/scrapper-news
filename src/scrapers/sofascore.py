@@ -25,28 +25,122 @@ class SofascoreScraper(BaseScraper):
         
         try:
             with sync_playwright() as p:
-                browser = p.chromium.launch(headless=True)
+                browser = None
+                
+                # Argumentos para evitar detección de bot
+                launch_args = [
+                    "--disable-blink-features=AutomationControlled",
+                    "--no-sandbox",
+                    "--disable-setuid-sandbox",
+                    "--disable-infobars",
+                    "--window-position=0,0",
+                    "--ignore-certificate-errors",
+                    "--mute-audio"
+                ]
+
+                try:
+                    # Intento 1: Chromium bundled
+                    browser = p.chromium.launch(headless=True, args=launch_args)
+                except Exception as e1:
+                    # Intento 2: Usar Chrome instalado en el sistema
+                    self.logger.warning(f"Error launching bundled Chromium: {e1}. Trying system Chrome...")
+                    try:
+                        browser = p.chromium.launch(headless=True, channel="chrome", args=launch_args)
+                    except Exception as e2:
+                         # Intento 3: Usar Edge instalado en el sistema
+                        self.logger.warning(f"Error launching system Chrome: {e2}. Trying Edge...")
+                        browser = p.chromium.launch(headless=True, channel="msedge", args=launch_args)
+                
                 context = browser.new_context(
-                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+                    user_agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36",
+                    viewport={"width": 1920, "height": 1080},
+                    locale="es-ES"
                 )
+                
+                # Inyectar script para ocultar webdriver
+                context.add_init_script("""
+                    Object.defineProperty(navigator, 'webdriver', {
+                        get: () => undefined
+                    });
+                """)
+
                 page = context.new_page()
 
-                # Go to the main site first to establish session/cookies
+                # Go to the main site first to establish session/cookies with sufficient wait
                 self.logger.info("Navigating to sofascore.com to initialize session.")
-                page.goto("https://www.sofascore.com", wait_until="networkidle")
-                time.sleep(2)  # Wait a bit for everything to load
+                try:
+                    page.goto("https://www.sofascore.com", wait_until="domcontentloaded", timeout=60000)
+                    # Small random wait to look like a human reading
+                    # Using page.wait_for_timeout instead of time.sleep
+                    page.wait_for_timeout(5000) 
+                except Exception as e:
+                     self.logger.warning(f"Error loading main page: {e}")
 
-                # Now, fetch the API data
-                response = page.goto(url)
-                if response and response.status == 200:
-                    data = response.json()
-                    self.logger.info(f"Successfully fetched data for endpoint: {endpoint}")
-                    return data
-                else:
-                    status = response.status if response else "N/A"
-                    self.logger.error(f"Failed to fetch {url}. Status: {status}")
-                    return {}
+                # Now, fetch the API data using page.evaluate (fetch inside the browser context)
+                self.logger.info(f"Fetching {url} inside browser context...")
                 
+                # Removed explicit User-Agent in fetch headers as navigator.userAgent provides it naturally
+                # Added 'Sec-Fetch-Site': 'same-site' and others to mimic browser better
+                js_fetch = f"""
+                    async () => {{
+                        try {{
+                            const response = await fetch('{url}', {{
+                                method: 'GET',
+                                headers: {{
+                                    'Accept': 'application/json, text/plain, */*',
+                                    'Referer': 'https://www.sofascore.com/',
+                                    'Origin': 'https://www.sofascore.com',
+                                    'Sec-Fetch-Dest': 'empty',
+                                    'Sec-Fetch-Mode': 'cors',
+                                    'Sec-Fetch-Site': 'same-site',
+                                }}
+                            }});
+                            if (response.status === 200) {{
+                                return await response.json();
+                            }}
+                            return {{ 'status': response.status }};
+                        }} catch (e) {{
+                            return {{ 'status': 'error', 'message': e.toString() }};
+                        }}
+                    }}
+                """
+                
+                data = page.evaluate(js_fetch)
+                
+                # The JS code returns the JSON object if status is 200.
+                # If status is NOT 200, it returns { 'status': http_code }.
+                # So we simply check if the returned data has our error structure.
+                
+                if isinstance(data, dict) and 'status' in data:
+                    # Check if it matches our error signature (small dict with status code or error message)
+                    if len(data) <= 2 and isinstance(data['status'], (int, str)) and 'error' in str(data.get('status', '')).lower() or isinstance(data['status'], int):
+                        # Verify it's not a valid response that happens to have "status" key
+                         # Our error object is { 'status': 403 } or { 'status': 'error', 'message': ... }
+                         # Real data usually has many keys. 
+                         # Let's assume if it is exactly {status: code} it is our error.
+                         
+                         # However, to be safe, let's rely on the fact that if it was 200, it is the API response.
+                         # If it was 403, it's our error object.
+                         # But we can't tell 200 from 403 just by "status" key existence if the API also returns "status".
+                         
+                         # Wait, my JS logic is:
+                         # if (response.status === 200) return json();
+                         # else return { 'status': response.status };
+                         
+                         # So if I receive { "status": 403 }, it is an error.
+                         # If I receive { "status": "active", ... }, it is a success (because JS only returned it if 200).
+                         
+                         val = data['status']
+                         if isinstance(val, int) and val != 200:
+                             self.logger.error(f"Failed to fetch {url}. Status: {val}")
+                             return {}
+                         if isinstance(val, str) and val == 'error': # catastrophic fetch error
+                             self.logger.error(f"Failed to fetch {url}. Setup error: {data.get('message')}")
+                             return {}
+                
+                self.logger.info(f"Successfully fetched data for endpoint: {endpoint}")
+                return data
+
         except Exception as e:
             self.logger.error(f"Error fetching {url} with Playwright: {e}")
             return {}
@@ -92,7 +186,100 @@ class SofascoreScraper(BaseScraper):
         Fetches lineups and missing players for a specific match.
         """
         endpoint = f"event/{match_id}/lineups"
-        return self._fetch_api_data(endpoint)
+        raw_data = self._fetch_api_data(endpoint)
+        return self._parse_lineups(raw_data)
+
+    def get_match_statistics(self, match_id: int) -> Dict[str, Any]:
+        """
+        Fetches match statistics (xG, SOG, etc).
+        """
+        endpoint = f"event/{match_id}/statistics"
+        raw_data = self._fetch_api_data(endpoint)
+        return self._parse_statistics(raw_data)
+
+    def _parse_statistics(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Parses statistics to extract xG, SOG."""
+        if not data or 'statistics' not in data:
+            return {}
+            
+        stats_list = data.get('statistics', [])
+        total_stats = None
+        
+        # Searching for 'ALL' or 'Total' period
+        for stat_group in stats_list:
+             if stat_group.get('period') == 'ALL':
+                 total_stats = stat_group
+                 break
+        
+        if not total_stats:
+            return {}
+            
+        parsed = {
+            'home_xg': 0.0,
+            'away_xg': 0.0,
+            'home_sog': 0,
+            'away_sog': 0,
+            'home_possession': 0,
+            'away_possession': 0
+        }
+        
+        for group in total_stats.get('groups', []):
+            for item in group.get('statisticsItems', []):
+                name = item.get('name')
+                home_val = item.get('home')
+                away_val = item.get('away')
+                
+                try:
+                    if name == 'Expected goals':
+                        parsed['home_xg'] = float(home_val) if home_val else 0.0
+                        parsed['away_xg'] = float(away_val) if away_val else 0.0
+                    elif name == 'Shots on goal':
+                        parsed['home_sog'] = int(home_val) if home_val else 0
+                        parsed['away_sog'] = int(away_val) if away_val else 0
+                    elif name == 'Ball possession':
+                        parsed['home_possession'] = int(str(home_val).replace('%','')) if home_val else 50
+                        parsed['away_possession'] = int(str(away_val).replace('%','')) if away_val else 50
+                except (ValueError, AttributeError):
+                    continue
+
+        return parsed
+
+    def _parse_lineups(self, data: Dict[str, Any]) -> Dict[str, Any]:
+        """Parses lineups to extract ratings and confirmed players."""
+        if not data:
+            return {}
+            
+        home = data.get('home', {})
+        away = data.get('away', {})
+        
+        parsed = {
+            'home_confirmed': home.get('confirmedLineups', False),
+            'away_confirmed': away.get('confirmedLineups', False),
+            'home_players': [],
+            'away_players': []
+        }
+        
+        def extract_players(team_data, target_list):
+            for p in team_data.get('players', []):
+                rating = 0.0
+                stats = p.get('statistics', {})
+                if stats:
+                    rating = float(stats.get('rating', 0.0))
+                    
+                target_list.append({
+                    'name': p.get('player', {}).get('name'),
+                    'id': p.get('player', {}).get('id'),
+                    'rating': rating,
+                    'position': p.get('position', 'sub'),
+                    'substitute': p.get('substitute', False)
+                })
+        
+        extract_players(home, parsed['home_players'])
+        extract_players(away, parsed['away_players'])
+            
+        return parsed
+
+
 
 
     def _parse_standings(self, data: Dict[str, Any]) -> List[Dict[str, Any]]:

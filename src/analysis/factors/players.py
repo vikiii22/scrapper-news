@@ -88,5 +88,21 @@ def _calculate_missing_penalty(missing: List[Player], key_players: List[Player])
             
         penalty += impact
         
+
     # Cap de penalización máxima razonable
     return min(penalty, 5.0)
+
+def calculate_injury_penalty_multiplier(missing_players: List[Player]) -> float:
+    """
+    Calcula el multiplicador de penalización por lesiones en ataque.
+    Si un jugador con Rating > 7.5 falta, se penaliza el ataque en un 15%.
+    """
+    if not missing_players:
+        return 1.0
+        
+    for player in missing_players:
+        if player.rating > 7.5:
+            return 0.85  # Penalización del 15%
+            
+    return 1.0
+
