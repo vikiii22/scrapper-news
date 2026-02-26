@@ -82,6 +82,10 @@ TEAM_NAME_MAPPINGS = {
     "ALAVES":             "Deportivo Alavés",
     "DEPORTIVO ALAVES":   "Deportivo Alavés",
 
+    "ELCHE":              "Elche",
+    "CF ELCHE":           "Elche",
+    "ELCHE CF":           "Elche",
+
     # ─── SEGUNDA DIVISIÓN ─────────────────────────────────────────────────────
     "R.OVIEDO":           "Real Oviedo",
     "REAL OVIEDO":        "Real Oviedo",
@@ -174,7 +178,7 @@ TEAM_NAME_MAPPINGS = {
 def normalize_team_name(name: str) -> str:
     """
     Normaliza el nombre de un equipo para facilitar comparaciones.
-    Devuelve el nombre estandarizado (Title Case, sin acentos).
+    Devuelve el nombre estandarizado tal como aparece en SofaScore.
     """
     if not name:
         return ""
@@ -204,8 +208,8 @@ def normalize_team_name(name: str) -> str:
             without_prefix = upper_no_accents[len(prefix):].strip()
             if without_prefix in TEAM_NAME_MAPPINGS:
                 return TEAM_NAME_MAPPINGS[without_prefix]
-            # Si no está en mapa, devolver limpio
-            return without_prefix.title()
+            # Si no está en mapa, devolver el nombre original sin el prefijo
+            return name[len(prefix):].strip()
             
-    # 5. Si no hay mapeo específico, devolver versión limpia Title Case
-    return remove_accents(name).title()
+    # 5. Si no hay mapeo específico, devolver el nombre original sin procesamiento
+    return name
