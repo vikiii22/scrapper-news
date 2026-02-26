@@ -14,7 +14,7 @@ class NewsScraper(BaseScraper):
     # Simple list of sources.
     SOURCES = [
         "https://www.marca.com/futbol/primera-division.html",
-        "https://www.as.com/futbol/primera"
+        # "https://www.as.com/futbol/primera"
     ]
     
     LOGISTIC_TERMS = [

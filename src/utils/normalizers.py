@@ -46,9 +46,13 @@ TEAM_NAME_MAPPINGS = {
     "REAL VALLADOLID": "Valladolid",
     "VALLADOLID": "Valladolid",
     
-    "R.ZARAGOZA": "Zaragoza",
-    "REAL ZARAGOZA": "Zaragoza",
-    "ZARAGOZA": "Zaragoza",
+    "R.ZARAGOZA": "Real Zaragoza",
+    "REAL ZARAGOZA": "Real Zaragoza",
+    "ZARAGOZA": "Real Zaragoza",
+
+    "ANDORRA": "Andorra FC",
+    "ANDORRA FC": "Andorra FC",
+    "FC ANDORRA": "Andorra FC",
     
     "SP.GIJON": "Sporting Gijon",
     "SPORTING GIJON": "Sporting Gijon",
