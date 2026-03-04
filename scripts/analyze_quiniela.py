@@ -12,8 +12,7 @@ if str(project_root) not in sys.path:
 if str(project_root / 'src') not in sys.path:
     sys.path.append(str(project_root / 'src'))
 
-from utils.data_loader import load_json_data, save_json_data
-from utils.mongo_loader import load_mongo_data
+from utils.mongo_loader import load_mongo_data, save_mongo_data
 from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from analysis.predictor import PredictionEngine
 from analysis.quiniela import QuinielaAnalyzer
@@ -25,17 +24,17 @@ def main():
     print("Iniciando análisis de la quiniela...")
 
     # Cargar datos necesarios
-    quiniela_matches = load_json_data(RAW_DATA_DIR / "quiniela_matches.json")
+    quiniela_matches = load_mongo_data("quiniela_matches")
     if not quiniela_matches:
         print("Error: No se encontraron partidos de la quiniela. Ejecute 'python main.py collect' primero.")
         return
 
-    la_liga_standings = load_json_data(RAW_DATA_DIR / "la_liga_standings.json")
-    segunda_standings = load_json_data(RAW_DATA_DIR / "segunda_standings.json")
+    la_liga_standings = load_mongo_data("la_liga_standings")
+    segunda_standings = load_mongo_data("segunda_standings")
     standings = la_liga_standings + segunda_standings if la_liga_standings and segunda_standings else []
 
-    la_liga_matches = load_json_data(RAW_DATA_DIR / "la_liga_all_matches.json") or []
-    segunda_matches = load_json_data(RAW_DATA_DIR / "segunda_all_matches.json") or []
+    la_liga_matches = load_mongo_data("la_liga_all_matches")
+    segunda_matches = load_mongo_data("segunda_all_matches")
     historical_matches_raw = la_liga_matches + segunda_matches
 
     # Convertir datos raw a objetos Match
@@ -64,8 +63,8 @@ def main():
     analyzer = QuinielaAnalyzer(predictor=predictor, global_matches=global_matches)
 
     # Cargar próximos partidos
-    la_liga_next = load_json_data(RAW_DATA_DIR / "la_liga_next_matches.json") or []
-    segunda_next = load_json_data(RAW_DATA_DIR / "segunda_next_matches.json") or []
+    la_liga_next = load_mongo_data("la_liga_next_matches")
+    segunda_next = load_mongo_data("segunda_next_matches")
     upcoming_matches = la_liga_next + segunda_next
 
     # Generar apuestas
@@ -93,9 +92,9 @@ def main():
             }
         })
 
-    save_json_data(output_data, output_path)
+    save_mongo_data("quiniela_predictions", output_data)
 
-    print(f"Análisis de la quiniela completado. Resultados guardados en {output_path}")
+    print(f"Análisis de la quiniela completado. Resultados guardados en MongoDB (colección quiniela_predictions)")
 
 if __name__ == "__main__":
     main()

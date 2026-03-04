@@ -12,7 +12,8 @@ from config.settings import LEAGUES, RAW_DATA_DIR
 from scrapers.sofascore import SofascoreScraper
 from scrapers.news_scraper import NewsScraper
 from scrapers.quiniela_html import QuinielaHtmlParser
-from utils.data_loader import save_json_data
+from utils.mongo_loader import save_mongo_data
+from utils.data_loader import save_json_data  # Keeping import if accidentally needed elsewhere
 from utils.mongo_loader import save_mongo_data
 import time
 
@@ -26,8 +27,9 @@ def main():
     try:
         news_scraper = NewsScraper()
         news_data = news_scraper.run() # No specific players yet, just logistic check
-        save_json_data(news_data, RAW_DATA_DIR / "news_data.json")
-        print(f"  Noticias guardadas en {RAW_DATA_DIR / 'news_data.json'}")
+        if news_data:
+            print("  Noticias almacenadas.")
+            save_mongo_data("news_data", news_data)
     except Exception as e:
         print(f"  Error recolectando noticias: {e}")
 
@@ -38,8 +40,9 @@ def main():
         
         # Obtener clasificación
         standings = sofascore_scraper.get_standings(league_config.id, league_config.season_id)
-        save_json_data(standings, RAW_DATA_DIR / f"{league_name}_standings.json")
-        print(f"  Clasificación guardada.")
+        if standings:
+            print(f"  Clasificación de {league_name} obtenida.")
+            save_mongo_data(f"{league_name}_standings", standings)
 
         # Obtener todos los partidos (Histórico)
         all_matches = sofascore_scraper.get_all_matches(league_config.id, league_config.season_id)
@@ -67,8 +70,9 @@ def main():
                 print(f"      Error en partido {match_id}: {e}")
                 
         # Guardar todo (con los enriquecidos actualizados en la lista original por referencia)
-        save_json_data(all_matches, RAW_DATA_DIR / f"{league_name}_all_matches.json")
-        print(f"  Partidos jugados (con detalles recientes) guardados.")
+        if all_matches:
+            print(f"  {len(all_matches)} partidos históricos obtenidos.")
+            save_mongo_data(f"{league_name}_all_matches", all_matches)
 
         # Obtener próximos partidos
         next_matches = sofascore_scraper.get_next_matches(league_config.id, league_config.season_id)
@@ -83,9 +87,9 @@ def main():
                 time.sleep(0.5)
              except Exception as e:
                  pass
-                 
-        save_json_data(next_matches, RAW_DATA_DIR / f"{league_name}_next_matches.json")
-        print(f"  Próximos partidos guardados.")
+        if next_matches:
+            print(f"  {len(next_matches)} próximos partidos obtenidos.")
+            save_mongo_data(f"{league_name}_next_matches", next_matches)
 
 
     # --- Quiniela HTML ---
@@ -95,8 +99,9 @@ def main():
         print("Recolectando datos de la Quiniela...")
         quiniela_parser = QuinielaHtmlParser(quiniela_html_path)
         quiniela_matches = quiniela_parser.run()
-        save_json_data(quiniela_matches, RAW_DATA_DIR / "quiniela_matches.json")
-        print(f"  Partidos de la quiniela guardados en {RAW_DATA_DIR / 'quiniela_matches.json'}")
+        if quiniela_matches:
+            print(f"  Partidos de la quiniela guardados en MongoDB.")
+            save_mongo_data("quiniela_matches", quiniela_matches)
     else:
         print(f"ADVERTENCIA: No se encontró el archivo {quiniela_html_path}. No se procesará la quiniela.")
 
@@ -107,17 +112,14 @@ def main():
     team_ids_to_fetch = set()
     
     # Load standings to find team ids easily
+    from utils.mongo_loader import load_mongo_data
+    
     for league_name in LEAGUES.keys():
-        standings_path = RAW_DATA_DIR / f"{league_name}_standings.json"
-        if standings_path.exists():
-            try:
-                with open(standings_path, 'r', encoding='utf-8') as f:
-                    st = json.load(f)
-                    for row in st:
-                        if row.get('team_id'):
-                            team_ids_to_fetch.add(row['team_id'])
-            except:
-                pass
+        st = load_mongo_data(f"{league_name}_standings")
+        if st:
+            for row in st:
+                if row.get('team_id'):
+                    team_ids_to_fetch.add(row['team_id'])
 
     global_matches = []
     about_teams = []

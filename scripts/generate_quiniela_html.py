@@ -88,17 +88,19 @@ def generate_match_html(match: dict, index: int) -> str:
         </div>"""
 
 
-def generate_static_html(data_path: Path, output_path: Path):
+from src.utils.mongo_loader import load_mongo_data
+
+def generate_static_html(output_path: Path):
     """
     Genera un HTML estático con las predicciones de la quiniela.
     
     Args:
-        data_path: Ruta al JSON con las predicciones
         output_path: Ruta donde guardar el HTML
     """
     # Cargar datos
-    with open(data_path, 'r', encoding='utf-8') as f:
-        quiniela_data = json.load(f)
+    quiniela_data = load_mongo_data("quiniela_predictions")
+    if not quiniela_data:
+        raise ValueError("No se encontraron predicciones en MongoDB.")
     
     # Generar HTML de los partidos
     matches_html = '\n'.join([
@@ -163,15 +165,14 @@ def generate_static_html(data_path: Path, output_path: Path):
 def main():
     """Función principal."""
     app_dir = project_root / "app"
-    data_path = PROCESSED_DATA_DIR / "quiniela_predictions.json"
     output_path = app_dir / "quiniela.html"
     
-    if not data_path.exists():
-        print(f"❌ Error: No se encontró el archivo {data_path}")
-        print("   Ejecuta primero: python scripts/analyze_quiniela.py")
+    try:
+        generate_static_html(output_path)
+    except Exception as e:
+        print(f"❌ Error: {e}")
+        print("   Ejecuta primero: python main.py analyze")
         return
-    
-    generate_static_html(data_path, output_path)
     print(f"\n📂 Abre el archivo en tu navegador:")
     print(f"   {output_path.absolute()}")
 
