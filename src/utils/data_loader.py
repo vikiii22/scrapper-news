@@ -1,17 +1,19 @@
-"""Utilidades para cargar y normalizar datos."""
-import json
+"""Utilidades para cargar y guardar datos usando MongoDB en vez de JSON."""
 from pathlib import Path
 from typing import Any, Dict, List
+from .mongo_loader import load_mongo_data, save_mongo_data
+
+def _json_name_from_path(file_path: Path) -> str:
+    """Obtiene el nombre base del archivo JSON para usar como colección."""
+    return file_path.stem
 
 def load_json_data(file_path: Path) -> Any:
-    """Carga datos desde un archivo JSON."""
-    if not file_path.exists():
-        return None
-    with open(file_path, 'r', encoding='utf-8') as f:
-        return json.load(f)
+    """Carga datos desde MongoDB usando el nombre del archivo como colección."""
+    collection = _json_name_from_path(file_path)
+    data = load_mongo_data(collection)
+    return data if data else None
 
 def save_json_data(data: Any, file_path: Path):
-    """Guarda datos en un archivo JSON."""
-    file_path.parent.mkdir(parents=True, exist_ok=True)
-    with open(file_path, 'w', encoding='utf-8') as f:
-        json.dump(data, f, ensure_ascii=False, indent=4)
+    """Guarda datos en MongoDB usando el nombre del archivo como colección."""
+    collection = _json_name_from_path(file_path)
+    save_mongo_data(collection, data)

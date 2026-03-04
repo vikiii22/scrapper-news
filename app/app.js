@@ -3,11 +3,26 @@
 // Datos de ejemplo para pruebas (será reemplazado por la carga del JSON)
 let quinielaData = [];
 
-// Función para cargar los datos del JSON
+// Función para cargar los datos del JSON (ahora desde la API MongoDB)
 async function loadQuinielaData() {
     try {
-        const response = await fetch('../data/processed/quiniela_predictions.json');
+        // En desarrollo usamos el servidor local de FastAPI.
+        // En producción (GitHub Pages), cambiar por la URL de tu backend desplegado
+        const API_URL = 'http://localhost:8000/api/predictions';
+        const response = await fetch(API_URL);
+        
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        
         quinielaData = await response.json();
+        
+        if (quinielaData.error) {
+            console.error('API Error:', quinielaData.error);
+            showError();
+            return;
+        }
+
         renderMatches();
     } catch (error) {
         console.error('Error cargando datos:', error);
