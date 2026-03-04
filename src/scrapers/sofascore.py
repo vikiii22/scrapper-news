@@ -196,16 +196,61 @@ class SofascoreScraper(BaseScraper):
         """
         team_endpoint = f"team/{team_id}"
         players_endpoint = f"team/{team_id}/players"
+        perf_endpoint = f"team/{team_id}/performance"
 
         team_data = self._fetch_api_data(team_endpoint)
         players_data = self._fetch_api_data(players_endpoint)
+        perf_data = self._fetch_api_data(perf_endpoint)
         
+        team_name = team_data.get("team", {}).get("name", "Unknown")
+        
+        # Process performance data to extract last match and form
+        last_match_str = ""
+        form_graph = []
+        
+        events = perf_data.get("events", [])
+        if events:
+            # The events are usually chronological, last one is the most recent
+            last_event = events[-1]
+            h_team = last_event.get('homeTeam', {}).get('name', 'Unknown')
+            a_team = last_event.get('awayTeam', {}).get('name', 'Unknown')
+            h_score = last_event.get('homeScore', {}).get('current', '?')
+            a_score = last_event.get('awayScore', {}).get('current', '?')
+            winner = last_event.get('winnerCode')
+            
+            is_home_last = team_name == h_team
+            opp_team = a_team if is_home_last else h_team
+            
+            if winner == 3:
+                result_str = "un empate"
+            elif (winner == 1 and is_home_last) or (winner == 2 and not is_home_last):
+                result_str = "una victoria"
+            else:
+                result_str = "una derrota"
+                
+            last_match_str = f"El último partido fue contra {opp_team}. El partido terminó en {result_str} ({h_score} - {a_score})."
+            
+            # Form graph based on the 10 last matches or whatever is in perf events
+            for e in events[-10:]:
+                w = e.get('winnerCode')
+                if w == 3:
+                     form_graph.append('D')
+                else:
+                     e_home = e.get('homeTeam', {}).get('name', '')
+                     is_home = team_name == e_home
+                     if (w == 1 and is_home) or (w == 2 and not is_home):
+                         form_graph.append('W')
+                     else:
+                         form_graph.append('L')
+                         
         # We try to aggregate useful strings and lists
         info = {
             "team_id": team_id,
-            "name": team_data.get("team", {}).get("name", "Unknown"),
+            "name": team_name,
             "manager": team_data.get("team", {}).get("manager", {}).get("name"),
             "venue": team_data.get("team", {}).get("venue", {}).get("name"),
+            "last_match_summary": last_match_str,
+            "form_graph": form_graph,
             "players": []
         }
         

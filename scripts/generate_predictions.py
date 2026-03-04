@@ -9,8 +9,7 @@ import json
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 
 from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
-from utils.data_loader import load_json_data, save_json_data
-from utils.mongo_loader import load_mongo_data
+from utils.mongo_loader import load_mongo_data, save_mongo_data
 from utils.normalizers import remove_accents
 from analysis.predictor import PredictionEngine
 from models.match import Match, Team
@@ -70,12 +69,12 @@ def main():
     scraper = SofascoreScraper()
 
     # Cargar datos necesarios
-    la_liga_standings = load_json_data(RAW_DATA_DIR / "la_liga_standings.json")
-    segunda_standings = load_json_data(RAW_DATA_DIR / "segunda_standings.json")
+    la_liga_standings = load_mongo_data("la_liga_standings")
+    segunda_standings = load_mongo_data("segunda_standings")
     standings = la_liga_standings + segunda_standings if la_liga_standings and segunda_standings else []
 
-    la_liga_matches = load_json_data(RAW_DATA_DIR / "la_liga_all_matches.json") or []
-    segunda_matches = load_json_data(RAW_DATA_DIR / "segunda_all_matches.json") or []
+    la_liga_matches = load_mongo_data("la_liga_all_matches")
+    segunda_matches = load_mongo_data("segunda_all_matches")
     historical_matches_raw = la_liga_matches + segunda_matches
 
     # Convertir datos raw a objetos Match
@@ -97,7 +96,8 @@ def main():
             continue
 
     # Cargar noticias
-    news_data = load_json_data(RAW_DATA_DIR / "news_data.json") or {}
+    news_data_list = load_mongo_data("news_data")
+    news_data = news_data_list[0] if news_data_list else {}
     logistic_issues = news_data.get('logistic_issues', [])
     player_issues = news_data.get('player_issues', [])
 
@@ -108,7 +108,7 @@ def main():
     global_matches = load_mongo_data("global_recent_matches")
 
     # Procesar Quiniela
-    quiniela = load_json_data(RAW_DATA_DIR / "quiniela_matches.json") or []
+    quiniela = load_mongo_data("quiniela_matches")
     
     predictions = []
     
@@ -162,12 +162,12 @@ def main():
 
 
     # Cargar próximos partidos
-    la_liga_next = load_json_data(RAW_DATA_DIR / "la_liga_next_matches.json") or []
-    segunda_next = load_json_data(RAW_DATA_DIR / "segunda_next_matches.json") or []
+    la_liga_next = load_mongo_data("la_liga_next_matches")
+    segunda_next = load_mongo_data("segunda_next_matches")
     upcoming_matches_raw = la_liga_next + segunda_next
 
     # Cargar partidos de la Quiniela para filtrar
-    quiniela_matches = load_json_data(RAW_DATA_DIR / "quiniela_matches.json") or []
+    quiniela_matches = load_mongo_data("quiniela_matches")
     
     # Crear set de pares para filtrado rápido (Normalizamos a minúsculas y sin acentos para comparar mejor)
     quiniela_pairs = [] # List of tuples to allow iterating
@@ -312,9 +312,9 @@ def main():
             
         output_data.append(data_obj)
 
-    save_json_data(output_data, output_path)
+    save_mongo_data("upcoming_match_predictions", output_data)
 
-    print(f"Generación de predicciones completada. Resultados guardados en {output_path}")
+    print(f"Generación de predicciones completada. Resultados guardados en MongoDB (upcoming_match_predictions)")
     
     if quiniela_matches:
         print("\n--- Resumen de Cobertura Quiniela ---")

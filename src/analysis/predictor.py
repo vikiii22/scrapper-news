@@ -168,17 +168,15 @@ class PredictionEngine:
         
         # 1. Calcular Factores tradicionales (como justificación y ajuste fino)
         factors = self._calculate_all_factors(
-            match, 
-            weather_data, 
-            home_players, 
-            away_players,
-            home_lineup,
-            away_lineup,
-            home_lineup,
-            away_lineup,
-            home_key_players,
-            away_key_players,
-            global_matches
+            match=match, 
+            weather_data=weather_data, 
+            home_missing=home_players, 
+            away_missing=away_players,
+            home_lineup=home_lineup,
+            away_lineup=away_lineup,
+            home_key_players=home_key_players,
+            away_key_players=away_key_players,
+            global_matches=global_matches
         )
         
         # 2. Configuración del partido
