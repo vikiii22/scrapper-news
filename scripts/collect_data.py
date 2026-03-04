@@ -13,6 +13,7 @@ from scrapers.sofascore import SofascoreScraper
 from scrapers.news_scraper import NewsScraper
 from scrapers.quiniela_html import QuinielaHtmlParser
 from utils.data_loader import save_json_data
+from utils.mongo_loader import save_mongo_data
 import time
 
 def main():
@@ -89,6 +90,7 @@ def main():
 
     # --- Quiniela HTML ---
     quiniela_html_path = Path(__file__).resolve().parent.parent / 'data' / 'Jornada_quiniela.html'
+    quiniela_matches = []
     if quiniela_html_path.exists():
         print("Recolectando datos de la Quiniela...")
         quiniela_parser = QuinielaHtmlParser(quiniela_html_path)
@@ -98,7 +100,59 @@ def main():
     else:
         print(f"ADVERTENCIA: No se encontró el archivo {quiniela_html_path}. No se procesará la quiniela.")
 
-    print("Recolección de datos finalizada.")
+    # --- DATOS GLOBALES PARA FATIGA E INFO (equipos de La Liga y Quiniela) ---
+    print("\nObteniendo datos globales (todas las competiciones) para los equipos...")
+    
+    # Recopilamos todos los team_id que hemos visto hoy para no repetir
+    team_ids_to_fetch = set()
+    
+    # Load standings to find team ids easily
+    for league_name in LEAGUES.keys():
+        standings_path = RAW_DATA_DIR / f"{league_name}_standings.json"
+        if standings_path.exists():
+            try:
+                with open(standings_path, 'r', encoding='utf-8') as f:
+                    st = json.load(f)
+                    for row in st:
+                        if row.get('team_id'):
+                            team_ids_to_fetch.add(row['team_id'])
+            except:
+                pass
+
+    global_matches = []
+    about_teams = []
+
+    for idx, team_id in enumerate(team_ids_to_fetch):
+        print(f"  [{idx+1}/{len(team_ids_to_fetch)}] Procesando equipo ID {team_id}...")
+        try:
+            # Info del equipo (About)
+            print("    Obteniendo Información del equipo...")
+            team_info = sofascore_scraper.get_team_info(team_id)
+            if team_info:
+                about_teams.append(team_info)
+                
+            # Partidos globales (all competitions)
+            print("    Obteniendo Partidos Globales...")
+            recent_matches = sofascore_scraper.get_team_recent_matches(team_id)
+            
+            # Asociamos a quíen pertenecen estos partidos para no mezclarnos
+            for match in recent_matches:
+                match['context_team_id'] = team_id
+                global_matches.append(match)
+            
+            time.sleep(1) # Rate limit
+        except Exception as e:
+            print(f"    Error procesando equipo {team_id}: {e}")
+
+    if global_matches:
+        print(f"  Guardando {len(global_matches)} partidos globales en MongoDB...")
+        save_mongo_data("global_recent_matches", global_matches)
+        
+    if about_teams:
+        print(f"  Guardando información de {len(about_teams)} equipos en MongoDB...")
+        save_mongo_data("about_teams", about_teams)
+
+    print("\nRecolección de datos finalizada.")
 
 if __name__ == "__main__":
     main()

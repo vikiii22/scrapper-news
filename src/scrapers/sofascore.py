@@ -181,6 +181,49 @@ class SofascoreScraper(BaseScraper):
         parsed = self._parse_matches(raw_data)
         return parsed.get('pending', [])
 
+    def get_team_recent_matches(self, team_id: int) -> List[Dict[str, Any]]:
+        """
+        Fetches the recent matches for a team across ALL competitions (global).
+        """
+        endpoint = f"team/{team_id}/events/last/0"
+        raw_data = self._fetch_api_data(endpoint)
+        parsed = self._parse_matches(raw_data)
+        return parsed.get('played', [])
+
+    def get_team_info(self, team_id: int) -> Dict[str, Any]:
+        """
+        Fetches the about information and players for a team.
+        """
+        team_endpoint = f"team/{team_id}"
+        players_endpoint = f"team/{team_id}/players"
+
+        team_data = self._fetch_api_data(team_endpoint)
+        players_data = self._fetch_api_data(players_endpoint)
+        
+        # We try to aggregate useful strings and lists
+        info = {
+            "team_id": team_id,
+            "name": team_data.get("team", {}).get("name", "Unknown"),
+            "manager": team_data.get("team", {}).get("manager", {}).get("name"),
+            "venue": team_data.get("team", {}).get("venue", {}).get("name"),
+            "players": []
+        }
+        
+        for player in players_data.get("players", []):
+            try:
+                p_info = player.get("player", {})
+                info["players"].append({
+                    "id": p_info.get("id"),
+                    "name": p_info.get("name"),
+                    "position": p_info.get("position"),
+                    "shirt_number": p_info.get("shirtNumber"),
+                    "market_value": p_info.get("proposedMarketValue")
+                })
+            except Exception:
+                continue
+                
+        return info
+
     def get_match_lineups(self, match_id: int) -> Dict[str, Any]:
         """
         Fetches lineups and missing players for a specific match.

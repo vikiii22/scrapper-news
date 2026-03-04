@@ -1,25 +1,38 @@
 """Factor de días de descanso."""
 from datetime import datetime
-from typing import List, Optional
+from typing import List, Optional, Dict, Any
 from src.models.match import Match
 
 def calculate_rest_days_factor(
     match: Match,
-    historical_matches: List[Match]
+    historical_matches: List[Match],
+    global_matches: Optional[List[Dict[str, Any]]] = None
 ) -> float:
     """
     Calcula un factor basado en la diferencia de días de descanso.
     Un valor positivo favorece al equipo local.
+    
+    Si se provee `global_matches` (partidos de todas las competiciones), 
+    se usan para encontrar el partido real más reciente de cada equipo.
+    De lo contrario, usa `historical_matches` (sólo liga).
     """
     
-    last_match_home = _get_last_match_before(match.home_team.name, match.date, historical_matches)
-    last_match_away = _get_last_match_before(match.away_team.name, match.date, historical_matches)
+    # Check if we have global matches to use
+    if global_matches:
+        last_match_home_date = _get_last_global_match_date(match.home_team.name, match.date, global_matches)
+        last_match_away_date = _get_last_global_match_date(match.away_team.name, match.date, global_matches)
+    else:
+        # Fallback to league matches
+        lmh = _get_last_match_before(match.home_team.name, match.date, historical_matches)
+        lma = _get_last_match_before(match.away_team.name, match.date, historical_matches)
+        last_match_home_date = lmh.date if lmh else None
+        last_match_away_date = lma.date if lma else None
 
-    if not last_match_home or not last_match_away:
+    if not last_match_home_date or not last_match_away_date:
         return 0.0
 
-    rest_days_home = (match.date - last_match_home.date).days
-    rest_days_away = (match.date - last_match_away.date).days
+    rest_days_home = (match.date - last_match_home_date).days
+    rest_days_away = (match.date - last_match_away_date).days
 
     diff_days = rest_days_home - rest_days_away
     
@@ -55,4 +68,31 @@ def _get_last_match_before(team_name: str, date: datetime, matches: List[Match])
         return None
         
     team_matches.sort(key=lambda m: m.date, reverse=True)
+def _get_last_global_match_date(team_name: str, date: datetime, global_matches: List[Dict[str, Any]]) -> Optional[datetime]:
+    """
+    Encuentra la fecha del último partido real en cualquier competición en base a la lista global.
+    Asume que global_matches son diccionarios devueltos por el scraper.
+    """
+    team_name_lower = team_name.lower()
+    team_matches = []
+    
+    for m in global_matches:
+        home_name = str(m.get('home_team_name', '')).lower()
+        away_name = str(m.get('away_team_name', '')).lower()
+        
+        # Básicamente comprobamos si el equipo jugó este partido
+        # a veces los nombres varían un poco (ej: "Real Madrid" vs "Real Madrid CF")
+        # Por simplicidad aquí hacemos 'in' o ==
+        if team_name_lower in home_name or team_name_lower in away_name or home_name in team_name_lower or away_name in team_name_lower:
+            try:
+                m_date = datetime.fromisoformat(m['date'])
+                if m_date < date:
+                    team_matches.append(m_date)
+            except (ValueError, TypeError, KeyError):
+                pass
+                
+    if not team_matches:
+        return None
+        
+    team_matches.sort(reverse=True)
     return team_matches[0]

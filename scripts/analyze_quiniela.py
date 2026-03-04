@@ -12,8 +12,9 @@ if str(project_root) not in sys.path:
 if str(project_root / 'src') not in sys.path:
     sys.path.append(str(project_root / 'src'))
 
-from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from utils.data_loader import load_json_data, save_json_data
+from utils.mongo_loader import load_mongo_data
+from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from analysis.predictor import PredictionEngine
 from analysis.quiniela import QuinielaAnalyzer
 from models.match import Match, Team
@@ -55,9 +56,12 @@ def main():
         except (KeyError, TypeError):
             continue # Ignorar partidos con datos incompletos
 
+    # Cargar partidos globales de MongoDB
+    global_matches = load_mongo_data("global_recent_matches")
+
     # Inicializar el motor de predicción y el analizador de quiniela
     predictor = PredictionEngine(historical_matches=historical_matches, standings=standings)
-    analyzer = QuinielaAnalyzer(predictor=predictor)
+    analyzer = QuinielaAnalyzer(predictor=predictor, global_matches=global_matches)
 
     # Cargar próximos partidos
     la_liga_next = load_json_data(RAW_DATA_DIR / "la_liga_next_matches.json") or []

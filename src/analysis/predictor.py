@@ -1,5 +1,5 @@
 """Motor de predicciones de partidos."""
-from typing import Dict, List, Optional, Tuple
+from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass
 import math
 from src.models.match import Match
@@ -162,6 +162,7 @@ class PredictionEngine:
         away_key_players: Optional[List[Player]] = None,
         match_statistics: Optional[Dict] = None,       # xG y SOG de SofaScore
         market_odds: Optional[Dict] = None,            # {"1": 1.45, "X": 4.20, "2": 6.50}
+        global_matches: Optional[List[Dict[str, Any]]] = None, # Partidos globales de MongoDB
     ) -> Prediction:
         """Genera predicción para un partido."""
         
@@ -173,8 +174,11 @@ class PredictionEngine:
             away_players,
             home_lineup,
             away_lineup,
+            home_lineup,
+            away_lineup,
             home_key_players,
-            away_key_players
+            away_key_players,
+            global_matches
         )
         
         # 2. Configuración del partido
@@ -273,7 +277,8 @@ class PredictionEngine:
         home_lineup: Optional[List[Player]] = None,
         away_lineup: Optional[List[Player]] = None,
         home_key_players: Optional[List[Player]] = None,
-        away_key_players: Optional[List[Player]] = None
+        away_key_players: Optional[List[Player]] = None,
+        global_matches: Optional[List[Dict[str, Any]]] = None
     ) -> Dict[str, float]:
         """Calcula todos los factores para un partido."""
         home_factor = home_away.calculate_home_away_factor(
@@ -302,7 +307,8 @@ class PredictionEngine:
 
         rest_factor = rest.calculate_rest_days_factor(
             match,
-            self.historical_matches
+            self.historical_matches,
+            global_matches
         )
 
         importance_factor = importance.calculate_importance_factor(

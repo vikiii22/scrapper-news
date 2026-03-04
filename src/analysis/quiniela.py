@@ -12,8 +12,9 @@ class QuinielaAnalyzer:
     Analiza los partidos de la quiniela y genera las apuestas.
     """
 
-    def __init__(self, predictor: PredictionEngine):
+    def __init__(self, predictor: PredictionEngine, global_matches: Optional[List[Dict[str, Any]]] = None):
         self.predictor = predictor
+        self.global_matches = global_matches
 
     def generate_quiniela_bets(
         self,
@@ -52,7 +53,10 @@ class QuinielaAnalyzer:
                 )
                 
                 # Generar predicción para el partido
-                prediction = self.predictor.predict(match_obj)
+                prediction = self.predictor.predict(
+                    match_obj,
+                    global_matches=self.global_matches
+                )
                 
                 # Crear la apuesta
                 bet = QuinielaBet(

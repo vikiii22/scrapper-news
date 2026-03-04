@@ -10,6 +10,7 @@ sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 
 from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from utils.data_loader import load_json_data, save_json_data
+from utils.mongo_loader import load_mongo_data
 from utils.normalizers import remove_accents
 from analysis.predictor import PredictionEngine
 from models.match import Match, Team
@@ -102,6 +103,9 @@ def main():
 
     # Inicializar el motor de predicción
     predictor = PredictionEngine(historical_matches=historical_matches, standings=standings)
+    
+    # Cargar global_matches para usarlos
+    global_matches = load_mongo_data("global_recent_matches")
 
     # Procesar Quiniela
     quiniela = load_json_data(RAW_DATA_DIR / "quiniela_matches.json") or []
@@ -148,7 +152,8 @@ def main():
         prediction = predictor.predict(
             match,
             home_players=home_missing,
-            away_players=away_missing
+            away_players=away_missing,
+            global_matches=global_matches
         )
         predictions.append(prediction)
         
@@ -261,7 +266,8 @@ def main():
                 home_players=home_missing, 
                 away_players=away_missing,
                 home_lineup=home_squad,
-                away_lineup=away_squad
+                away_lineup=away_squad,
+                global_matches=global_matches
             )
             
             # Guardamos el índice de la quiniela para ordenar después si es necesario
