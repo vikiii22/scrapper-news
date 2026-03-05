@@ -37,6 +37,7 @@ FACTOR_WEIGHTS = {
     "rest_days": 0.4,
     "importance": 0.5,
     "odds": 0.25,     # Peso de las cuotas de mercado en el ajuste final
+    "losilla": 0.15,  # Peso de los %Probables de Losilla como prior bayesiano
 }
 
 # Límites

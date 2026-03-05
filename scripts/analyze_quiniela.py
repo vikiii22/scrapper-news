@@ -17,6 +17,7 @@ from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
 from analysis.predictor import PredictionEngine
 from analysis.quiniela import QuinielaAnalyzer
 from models.match import Match, Team
+from scrapers.losilla_scraper import LosillaScraper
 from datetime import datetime
 
 def main():
@@ -58,9 +59,29 @@ def main():
     # Cargar partidos globales de MongoDB
     global_matches = load_mongo_data("global_recent_matches")
 
+    # Obtener porcentajes de Losilla para la quiniela
+    losilla_data = {}
+    try:
+        losilla_scraper = LosillaScraper()
+        # Intentar determinar jornada y temporada de los datos de quiniela
+        # Si no está disponible, usar valores actuales
+        jornada = quiniela_matches[0].get('jornada', 46) if quiniela_matches else 46
+        temporada = quiniela_matches[0].get('temporada', 2026) if quiniela_matches else 2026
+        
+        print(f"Obteniendo porcentajes de Losilla para jornada {jornada}, temporada {temporada}...")
+        losilla_data = losilla_scraper.get_all_percentages(jornada=jornada, temporada=temporada)
+        print(f"Porcentajes de Losilla obtenidos para {len(losilla_data)} partidos")
+    except Exception as e:
+        print(f"Advertencia: No se pudieron obtener porcentajes de Losilla: {e}")
+        print("Continuando sin datos de Losilla...")
+
     # Inicializar el motor de predicción y el analizador de quiniela
     predictor = PredictionEngine(historical_matches=historical_matches, standings=standings)
-    analyzer = QuinielaAnalyzer(predictor=predictor, global_matches=global_matches)
+    analyzer = QuinielaAnalyzer(
+        predictor=predictor, 
+        global_matches=global_matches,
+        losilla_data=losilla_data
+    )
 
     # Cargar próximos partidos
     la_liga_next = load_mongo_data("la_liga_next_matches")
@@ -77,7 +98,7 @@ def main():
     output_data = []
     for bet in quiniela_ticket.bets:
         p = bet.prediction
-        output_data.append({
+        match_data = {
             "match_info": {
                 "home_team": p.match.home_team.name,
                 "away_team": p.match.away_team.name,
@@ -90,7 +111,13 @@ def main():
                 "draw": p.prob_draw,
                 "away": p.prob_away,
             }
-        })
+        }
+        
+        # Incluir datos de Losilla si están disponibles en los factores
+        if p.factors and "losilla_data" in p.factors:
+            match_data["losilla_data"] = p.factors["losilla_data"]
+        
+        output_data.append(match_data)
 
     # Exportar en archivo estático para GitHub Pages ANTES de save_mongo_data
     # (pymongo muta los dicts añadiendo _id:ObjectId al hacer insert_many)

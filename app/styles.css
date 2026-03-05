@@ -248,6 +248,63 @@ body {
     text-decoration: none;
 }
 
+/* Losilla Section */
+.losilla-section {
+    padding: 15px 20px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-top: 3px solid #e9ecef;
+}
+
+.losilla-header {
+    font-weight: bold;
+    font-size: 0.95em;
+    color: white;
+    text-align: center;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.losilla-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+}
+
+.losilla-type {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.losilla-type-title {
+    font-size: 0.75em;
+    font-weight: bold;
+    color: #495057;
+    text-align: center;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.losilla-values {
+    display: flex;
+    justify-content: space-around;
+    gap: 8px;
+}
+
+.losilla-val {
+    font-size: 0.85em;
+    font-weight: 600;
+    color: #212529;
+    background: #e9ecef;
+    padding: 4px 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .header h1 {
@@ -278,5 +335,18 @@ body {
     .probabilities {
         flex-wrap: wrap;
         gap: 15px;
+    }
+    
+    .losilla-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .losilla-values {
+        gap: 5px;
+    }
+    
+    .losilla-val {
+        font-size: 0.75em;
+        padding: 3px 6px;
     }
 }

@@ -162,6 +162,7 @@ class PredictionEngine:
         away_key_players: Optional[List[Player]] = None,
         match_statistics: Optional[Dict] = None,       # xG y SOG de SofaScore
         market_odds: Optional[Dict] = None,            # {"1": 1.45, "X": 4.20, "2": 6.50}
+        losilla_percentages: Optional[Dict] = None,    # {"jugados": {...}, "lae": {...}, "probables": {...}}
         global_matches: Optional[List[Dict[str, Any]]] = None, # Partidos globales de MongoDB
     ) -> Prediction:
         """Genera predicción para un partido."""
@@ -240,6 +241,25 @@ class PredictionEngine:
                     mkt_p = market_probs.get(sign, 33.3)
                     probs[sign] = (1 - odds_weight) * model_p + odds_weight * mkt_p
 
+        # 7. Integración de porcentajes de Losilla (prior bayesiano)
+        # Los %Probables de Losilla reflejan probabilidad estadística basada en datos reales de liga
+        # Los %Jugados muestran la sabiduría de la multitud de quinielistas
+        # Mezclamos: prob_final = (1-w)*prob_modelo + w*prob_losilla
+        losilla_weight = FACTOR_WEIGHTS.get('losilla', 0.0)
+        if losilla_percentages and losilla_weight > 0:
+            # Priorizar %Probables (datos estadísticos), con fallback a %Jugados (sabiduría multitud)
+            losilla_probs = None
+            if 'probables' in losilla_percentages and losilla_percentages['probables']:
+                losilla_probs = self._normalize_losilla_percentages(losilla_percentages['probables'])
+            elif 'jugados' in losilla_percentages and losilla_percentages['jugados']:
+                losilla_probs = self._normalize_losilla_percentages(losilla_percentages['jugados'])
+            
+            if losilla_probs:
+                for sign in ["1", "X", "2"]:
+                    model_p = probs.get(sign, 33.3)
+                    losilla_p = losilla_probs.get(sign, 33.3)
+                    probs[sign] = (1 - losilla_weight) * model_p + losilla_weight * losilla_p
+
         # Renormalizar
         total = sum(probs.values())
         if total > 0:
@@ -255,6 +275,15 @@ class PredictionEngine:
         factors["neutral_ground"] = neutral_ground
         factors["xg_used"] = match_statistics is not None
         factors["odds_used"] = market_odds is not None
+        factors["losilla_used"] = losilla_percentages is not None
+        
+        # Si se usó Losilla, incluir detalles en factores para transparencia
+        if losilla_percentages:
+            factors["losilla_data"] = {
+                "jugados": losilla_percentages.get("jugados", {}),
+                "probables": losilla_percentages.get("probables", {}),
+                "lae": losilla_percentages.get("lae", {})
+            }
         
         return Prediction(
             match=match,
@@ -403,6 +432,33 @@ class PredictionEngine:
                 "2": (raw["2"] / total) * 100,
             }
         except (TypeError, ValueError, ZeroDivisionError):
+            return {}
+
+    def _normalize_losilla_percentages(self, losilla_data: Dict[str, float]) -> Dict[str, float]:
+        """Convierte porcentajes de Losilla a probabilidades normalizadas.
+        
+        Losilla devuelve datos en formato {"1": 36.1, "X": 26.3, "2": 37.6}
+        Ya están normalizados (suman ~100), pero revalidamos por si acaso.
+        """
+        try:
+            # Extraer los valores de 1, X, 2
+            probs = {
+                "1": float(losilla_data.get("1", 0)),
+                "X": float(losilla_data.get("X", 0)),
+                "2": float(losilla_data.get("2", 0))
+            }
+            
+            total = sum(probs.values())
+            if total <= 0:
+                return {}
+            
+            # Normalizar para asegurar que suman exactamente 100
+            return {
+                "1": (probs["1"] / total) * 100,
+                "X": (probs["X"] / total) * 100,
+                "2": (probs["2"] / total) * 100,
+            }
+        except (TypeError, ValueError, KeyError):
             return {}
 
     def _normalize_probabilities(self, probs: Dict[str, float]) -> Dict[str, float]:

@@ -12,9 +12,15 @@ class QuinielaAnalyzer:
     Analiza los partidos de la quiniela y genera las apuestas.
     """
 
-    def __init__(self, predictor: PredictionEngine, global_matches: Optional[List[Dict[str, Any]]] = None):
+    def __init__(
+        self, 
+        predictor: PredictionEngine, 
+        global_matches: Optional[List[Dict[str, Any]]] = None,
+        losilla_data: Optional[Dict[int, Dict[str, Dict[str, float]]]] = None
+    ):
         self.predictor = predictor
         self.global_matches = global_matches
+        self.losilla_data = losilla_data or {}
 
     def generate_quiniela_bets(
         self,
@@ -29,6 +35,15 @@ class QuinielaAnalyzer:
             # Normalizar nombres de equipos de la quiniela
             q_home_norm = normalize_team_name(q_match['equipo_local'])
             q_away_norm = normalize_team_name(q_match['equipo_visitante'])
+            
+            # Obtener el número de partido de la quiniela (1-15)
+            # Convertir a int porque losilla_data usa keys enteros
+            match_number = q_match.get('numero', None)
+            if match_number is not None:
+                try:
+                    match_number = int(match_number)
+                except (ValueError, TypeError):
+                    match_number = None
 
             # Encontrar el partido correspondiente en los próximos partidos
             target_match = None
@@ -52,10 +67,16 @@ class QuinielaAnalyzer:
                     league=target_match.get('league', 'Unknown')
                 )
                 
+                # Obtener porcentajes de Losilla para este partido si están disponibles
+                losilla_percentages = None
+                if match_number is not None and match_number in self.losilla_data:
+                    losilla_percentages = self.losilla_data[match_number]
+                
                 # Generar predicción para el partido
                 prediction = self.predictor.predict(
                     match_obj,
-                    global_matches=self.global_matches
+                    global_matches=self.global_matches,
+                    losilla_percentages=losilla_percentages
                 )
                 
                 # Crear la apuesta

@@ -38,6 +38,57 @@ def generate_match_html(match: dict, index: int) -> str:
     confidence_level = get_confidence_level(match['confidence'])
     prediction = match['prediction']
     
+    # Generar sección de datos de Losilla si están disponibles
+    losilla_html = ""
+    if 'losilla_data' in match:
+        losilla = match['losilla_data']
+        
+        # Preparar datos de cada tipo
+        jugados = losilla.get('jugados', {})
+        probables = losilla.get('probables', {})
+        lae = losilla.get('lae', {})
+        
+        # Solo mostrar si hay al menos un tipo de datos disponibles
+        if jugados or probables or lae:
+            losilla_html = '<div class="losilla-section">'
+            losilla_html += '<div class="losilla-header">📊 Datos Recopilados de Jugadores</div>'
+            losilla_html += '<div class="losilla-grid">'
+            
+            if probables:
+                losilla_html += f'''
+                <div class="losilla-type">
+                    <div class="losilla-type-title">📈 %Probables (Estadísticas Liga)</div>
+                    <div class="losilla-values">
+                        <span class="losilla-val">1: {probables.get("1", 0):.1f}%</span>
+                        <span class="losilla-val">X: {probables.get("X", 0):.1f}%</span>
+                        <span class="losilla-val">2: {probables.get("2", 0):.1f}%</span>
+                    </div>
+                </div>'''
+            
+            if jugados:
+                losilla_html += f'''
+                <div class="losilla-type">
+                    <div class="losilla-type-title">👥 %Jugados (Comunidad)</div>
+                    <div class="losilla-values">
+                        <span class="losilla-val">1: {jugados.get("1", 0):.1f}%</span>
+                        <span class="losilla-val">X: {jugados.get("X", 0):.1f}%</span>
+                        <span class="losilla-val">2: {jugados.get("2", 0):.1f}%</span>
+                    </div>
+                </div>'''
+            
+            if lae:
+                losilla_html += f'''
+                <div class="losilla-type">
+                    <div class="losilla-type-title">🎰 %LAE (Oficial)</div>
+                    <div class="losilla-values">
+                        <span class="losilla-val">1: {lae.get("1", 0):.1f}%</span>
+                        <span class="losilla-val">X: {lae.get("X", 0):.1f}%</span>
+                        <span class="losilla-val">2: {lae.get("2", 0):.1f}%</span>
+                    </div>
+                </div>'''
+            
+            losilla_html += '</div></div>'
+    
     return f"""
         <div class="match">
             <div class="match-header">
@@ -85,6 +136,7 @@ def generate_match_html(match: dict, index: int) -> str:
                     </div>
                 </div>
             </div>
+            {losilla_html}
         </div>"""
 
 
@@ -133,11 +185,19 @@ def generate_static_html(output_path: Path):
         <!-- Legend -->
         <div class="legend">
             <div class="legend-item">
-                <div class="legend-label">Probabilidades</div>
+                <div class="legend-label">Predicciones IA</div>
                 <div class="legend-values">
                     <span>%1</span>
                     <span>%X</span>
                     <span>%2</span>
+                </div>
+            </div>
+            <div class="legend-item">
+                <div class="legend-label">Datos Jugadores</div>
+                <div class="legend-values">
+                    <span>📈 Probables</span>
+                    <span>👥 Jugados</span>
+                    <span>🎰 LAE</span>
                 </div>
             </div>
         </div>

@@ -16,6 +16,7 @@ from models.match import Match, Team
 from models.player import Player
 from scrapers.weather_api import WeatherClient
 from scrapers.sofascore import SofascoreScraper
+from scrapers.losilla_scraper import LosillaScraper
 from datetime import datetime
 
 def parse_players(lineups_data: dict, side: str, key: str = 'missingPlayers') -> list[Player]:
@@ -110,6 +111,22 @@ def main():
     # Procesar Quiniela
     quiniela = load_mongo_data("quiniela_matches")
     
+    # Obtener porcentajes de Losilla para la quiniela
+    losilla_data = {}
+    if quiniela:
+        try:
+            losilla_scraper = LosillaScraper()
+            # Intentar determinar jornada y temporada de los datos de quiniela
+            jornada = quiniela[0].get('jornada', 46) if quiniela else 46
+            temporada = quiniela[0].get('temporada', 2026) if quiniela else 2026
+            
+            print(f"Obteniendo porcentajes de Losilla para jornada {jornada}, temporada {temporada}...")
+            losilla_data = losilla_scraper.get_all_percentages(jornada=jornada, temporada=temporada)
+            print(f"Porcentajes de Losilla obtenidos para {len(losilla_data)} partidos")
+        except Exception as e:
+            print(f"Advertencia: No se pudieron obtener porcentajes de Losilla: {e}")
+            print("Continuando sin datos de Losilla...")
+    
     predictions = []
     
     for q_match in quiniela:
@@ -120,6 +137,14 @@ def main():
         
         home_name = q_match['equipo_local']
         away_name = q_match['equipo_visitante']
+        
+        # Obtener número de partido y convertir a int (losilla_data usa keys enteros)
+        match_number = q_match.get('numero', None)
+        if match_number is not None:
+            try:
+                match_number = int(match_number)
+            except (ValueError, TypeError):
+                match_number = None
         
         # Check logistic issues for this match
         neutral_ground_override = False
@@ -149,11 +174,17 @@ def main():
              elif away_name.lower() in p_context:
                  away_missing.append(Player(id=0, name=p_issue['player'], rating=8.0, is_injured=True))
 
+        # Obtener porcentajes de Losilla para este partido
+        losilla_percentages = None
+        if match_number is not None and match_number in losilla_data:
+            losilla_percentages = losilla_data[match_number]
+
         prediction = predictor.predict(
             match,
             home_players=home_missing,
             away_players=away_missing,
-            global_matches=global_matches
+            global_matches=global_matches,
+            losilla_percentages=losilla_percentages
         )
         predictions.append(prediction)
         
@@ -260,6 +291,14 @@ def main():
             if away_squad:
                 print(f"    Plantilla Visitante Disponible: {len(away_squad)}")
 
+            # Obtener porcentajes de Losilla si este partido está en la quiniela
+            losilla_percentages = None
+            if quiniela_matches and found_match_idx != -1:
+                # Buscar el número de partido en la quiniela para obtener los porcentajes de Losilla
+                quiniela_match_num = found_match_idx + 1  # Los índices son 0-based, números de partido 1-based
+                if quiniela_match_num in losilla_data:
+                    losilla_percentages = losilla_data[quiniela_match_num]
+
             prediction = predictor.predict(
                 match=match_obj,
                 weather_data=weather_data,
@@ -267,7 +306,8 @@ def main():
                 away_players=away_missing,
                 home_lineup=home_squad,
                 away_lineup=away_squad,
-                global_matches=global_matches
+                global_matches=global_matches,
+                losilla_percentages=losilla_percentages
             )
             
             # Guardamos el índice de la quiniela para ordenar después si es necesario
@@ -309,6 +349,10 @@ def main():
         
         if q_num:
             data_obj["quiniela_match_number"] = q_num
+        
+        # Incluir datos de Losilla si están disponibles en los factores
+        if p.factors and "losilla_data" in p.factors:
+            data_obj["losilla_data"] = p.factors["losilla_data"]
             
         output_data.append(data_obj)
 
