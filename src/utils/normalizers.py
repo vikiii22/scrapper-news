@@ -169,6 +169,7 @@ TEAM_NAME_MAPPINGS = {
     "CD TENERIFE":        "Tenerife",
     "ANDORRA":            "FC Andorra",
     "FC ANDORRA":         "FC Andorra",
+    "ANDORRA FC":         "FC Andorra",   # La Quiniela usa el FC al final
     "CEUTA":              "AD Ceuta",
     "AD CEUTA":           "AD Ceuta",
     "LAS PALMAS":         "Las Palmas",

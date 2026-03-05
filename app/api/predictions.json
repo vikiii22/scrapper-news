@@ -141,6 +141,20 @@
     },
     {
         "match_info": {
+            "home_team": "FC Andorra",
+            "away_team": "Sporting Gijón",
+            "date": "2026-03-08T16:15:00"
+        },
+        "prediction": "2",
+        "confidence": 37.1154686221953,
+        "probabilities": {
+            "home": 36.546468622195306,
+            "draw": 26.338062755609393,
+            "away": 37.1154686221953
+        }
+    },
+    {
+        "match_info": {
             "home_team": "Real Racing Club",
             "away_team": "Córdoba",
             "date": "2026-03-08T18:30:00"
