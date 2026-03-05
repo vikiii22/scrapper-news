@@ -92,9 +92,16 @@ def main():
             }
         })
 
+    # Exportar en archivo estático para GitHub Pages ANTES de save_mongo_data
+    # (pymongo muta los dicts añadiendo _id:ObjectId al hacer insert_many)
+    app_api_dir = project_root / "app" / "api"
+    app_api_dir.mkdir(parents=True, exist_ok=True)
+    with open(app_api_dir / "predictions.json", "w", encoding="utf-8") as f:
+        json.dump(output_data, f, ensure_ascii=False, indent=4)
+
     save_mongo_data("quiniela_predictions", output_data)
 
-    print(f"Análisis de la quiniela completado. Resultados guardados en MongoDB (colección quiniela_predictions)")
+    print(f"Análisis de la quiniela completado. Resultados guardados en MongoDB y en {app_api_dir / 'predictions.json'}")
 
 if __name__ == "__main__":
     main()
