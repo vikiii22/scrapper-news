@@ -1,213 +1,213 @@
 [
     {
         "match_info": {
-            "home_team": "Getafe",
-            "away_team": "Real Betis",
-            "date": "2026-03-08T16:15:00"
+            "home_team": "Girona FC",
+            "away_team": "Athletic Club",
+            "date": "2026-03-14T14:00:00"
         },
         "prediction": "2",
-        "confidence": 38.87612332886601,
+        "confidence": 35.76479832886601,
         "probabilities": {
-            "home": 33.79402332886601,
-            "draw": 27.329853342267977,
-            "away": 38.87612332886601
+            "home": 33.350348328866005,
+            "draw": 30.88485334226798,
+            "away": 35.76479832886601
         },
         "losilla_data": {
             "jugados": {
-                "1": 23.64,
-                "X": 33.66,
-                "2": 42.7
+                "1": 28.88,
+                "X": 33.34,
+                "2": 37.78
             },
             "probables": {
-                "1": 33.29,
-                "X": 32.95,
-                "2": 33.76
+                "1": 33.14,
+                "X": 33.02,
+                "2": 33.84
             },
             "lae": {
-                "1": 26.0,
-                "X": 32.0,
-                "2": 42.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Levante UD",
-            "away_team": "Girona FC",
-            "date": "2026-03-07T16:15:00"
-        },
-        "prediction": "2",
-        "confidence": 37.622748328866,
-        "probabilities": {
-            "home": 35.720898328866014,
-            "draw": 26.656353342267984,
-            "away": 37.622748328866
-        },
-        "losilla_data": {
-            "jugados": {
-                "1": 31.24,
-                "X": 30.19,
-                "2": 38.57
-            },
-            "probables": {
-                "1": 33.57,
-                "X": 28.46,
-                "2": 37.97
-            },
-            "lae": {
-                "1": 31.0,
-                "X": 31.0,
-                "2": 38.0
+                "1": 25.0,
+                "X": 34.0,
+                "2": 41.0
             }
         }
     },
     {
         "match_info": {
             "home_team": "Atlético Madrid",
-            "away_team": "Real Sociedad",
-            "date": "2026-03-07T18:30:00"
-        },
-        "prediction": "1",
-        "confidence": 41.05714832886601,
-        "probabilities": {
-            "home": 41.05714832886601,
-            "draw": 25.92885334226798,
-            "away": 33.01399832886601
-        },
-        "losilla_data": {
-            "jugados": {
-                "1": 68.46,
-                "X": 21.86,
-                "2": 9.68
-            },
-            "probables": {
-                "1": 58.52,
-                "X": 23.61,
-                "2": 17.87
-            },
-            "lae": {
-                "1": 68.0,
-                "X": 20.0,
-                "2": 12.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Celta Vigo",
-            "away_team": "Real Madrid",
-            "date": "2026-03-06T21:00:00"
+            "away_team": "Getafe",
+            "date": "2026-03-14T16:15:00"
         },
         "prediction": "2",
-        "confidence": 38.843523328866006,
+        "confidence": 35.46182332886601,
         "probabilities": {
-            "home": 34.48212332886601,
-            "draw": 26.67435334226798,
-            "away": 38.843523328866006
+            "home": 34.599323328866014,
+            "draw": 29.938853342267986,
+            "away": 35.46182332886601
         },
         "losilla_data": {
             "jugados": {
-                "1": 19.6,
-                "X": 21.37,
-                "2": 59.03
+                "1": 32.02,
+                "X": 28.0,
+                "2": 39.98
             },
             "probables": {
-                "1": 29.74,
-                "X": 28.58,
-                "2": 41.68
+                "1": 33.23,
+                "X": 28.47,
+                "2": 38.3
             },
             "lae": {
-                "1": 19.0,
-                "X": 19.0,
-                "2": 62.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Villarreal",
-            "away_team": "Elche",
-            "date": "2026-03-08T14:00:00"
-        },
-        "prediction": "1",
-        "confidence": 44.55064832886601,
-        "probabilities": {
-            "home": 44.55064832886601,
-            "draw": 25.478853342267982,
-            "away": 29.970498328866
-        },
-        "losilla_data": {
-            "jugados": {
-                "1": 88.99,
-                "X": 7.82,
-                "2": 3.19
-            },
-            "probables": {
-                "1": 63.62,
-                "X": 20.61,
-                "2": 15.77
-            },
-            "lae": {
-                "1": 85.0,
-                "X": 9.0,
-                "2": 6.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Sevilla",
-            "away_team": "Rayo Vallecano",
-            "date": "2026-03-08T18:30:00"
-        },
-        "prediction": "2",
-        "confidence": 36.691523328866005,
-        "probabilities": {
-            "home": 36.36862332886601,
-            "draw": 26.939853342267984,
-            "away": 36.691523328866005
-        },
-        "losilla_data": {
-            "jugados": {
-                "1": 50.49,
-                "X": 30.5,
-                "2": 19.01
-            },
-            "probables": {
-                "1": 37.67,
-                "X": 30.35,
-                "2": 31.98
-            },
-            "lae": {
-                "1": 53.0,
+                "1": 31.0,
                 "X": 30.0,
-                "2": 17.0
+                "2": 39.0
             }
         }
     },
     {
         "match_info": {
-            "home_team": "Valencia",
-            "away_team": "Deportivo Alavés",
-            "date": "2026-03-08T21:00:00"
+            "home_team": "Real Oviedo",
+            "away_team": "Valencia",
+            "date": "2026-03-14T18:30:00"
         },
-        "prediction": "1",
-        "confidence": 38.42682332886601,
+        "prediction": "2",
+        "confidence": 36.519298328866,
         "probabilities": {
-            "home": 38.42682332886601,
-            "draw": 26.95485334226798,
-            "away": 34.618323328866005
+            "home": 35.59584832886601,
+            "draw": 27.884853342267984,
+            "away": 36.519298328866
         },
         "losilla_data": {
             "jugados": {
-                "1": 60.54,
-                "X": 27.24,
-                "2": 12.22
+                "1": 72.28,
+                "X": 18.87,
+                "2": 8.85
             },
             "probables": {
-                "1": 45.6,
-                "X": 30.45,
-                "2": 23.95
+                "1": 57.8,
+                "X": 23.9,
+                "2": 18.3
+            },
+            "lae": {
+                "1": 71.0,
+                "X": 19.0,
+                "2": 10.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Real Madrid",
+            "away_team": "Elche",
+            "date": "2026-03-14T21:00:00"
+        },
+        "prediction": "1",
+        "confidence": 38.831848328866016,
+        "probabilities": {
+            "home": 38.831848328866016,
+            "draw": 28.26585334226798,
+            "away": 32.902298328866
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 22.41,
+                "X": 22.5,
+                "2": 55.09
+            },
+            "probables": {
+                "1": 30.47,
+                "X": 28.82,
+                "2": 40.71
+            },
+            "lae": {
+                "1": 21.0,
+                "X": 20.0,
+                "2": 59.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Mallorca",
+            "away_team": "Espanyol",
+            "date": "2026-03-15T14:00:00"
+        },
+        "prediction": "1",
+        "confidence": 38.35904832886602,
+        "probabilities": {
+            "home": 38.35904832886602,
+            "draw": 28.358353342267982,
+            "away": 33.282598328866
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 88.53,
+                "X": 8.05,
+                "2": 3.42
+            },
+            "probables": {
+                "1": 63.8,
+                "X": 20.54,
+                "2": 15.66
+            },
+            "lae": {
+                "1": 87.0,
+                "X": 8.0,
+                "2": 5.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Barcelona",
+            "away_team": "Sevilla",
+            "date": "2026-03-15T16:15:00"
+        },
+        "prediction": "1",
+        "confidence": 39.815523328866014,
+        "probabilities": {
+            "home": 39.815523328866014,
+            "draw": 28.46835334226798,
+            "away": 31.716123328866004
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 45.77,
+                "X": 29.02,
+                "2": 25.21
+            },
+            "probables": {
+                "1": 37.45,
+                "X": 30.51,
+                "2": 32.04
+            },
+            "lae": {
+                "1": 50.0,
+                "X": 30.0,
+                "2": 20.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Real Betis",
+            "away_team": "Celta Vigo",
+            "date": "2026-03-15T18:30:00"
+        },
+        "prediction": "1",
+        "confidence": 35.47669832886601,
+        "probabilities": {
+            "home": 35.47669832886601,
+            "draw": 29.57535334226798,
+            "away": 34.947948328866005
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 58.99,
+                "X": 27.28,
+                "2": 13.73
+            },
+            "probables": {
+                "1": 45.44,
+                "X": 30.58,
+                "2": 23.98
             },
             "lae": {
                 "1": 62.0,
@@ -218,27 +218,27 @@
     },
     {
         "match_info": {
-            "home_team": "Espanyol",
-            "away_team": "Real Oviedo",
-            "date": "2026-03-09T21:00:00"
+            "home_team": "Rayo Vallecano",
+            "away_team": "Levante UD",
+            "date": "2026-03-16T21:00:00"
         },
         "prediction": "1",
-        "confidence": 40.546648328866006,
+        "confidence": 39.58147332886601,
         "probabilities": {
-            "home": 40.546648328866006,
-            "draw": 26.608353342267982,
-            "away": 32.844998328866005
+            "home": 39.58147332886601,
+            "draw": 29.30985334226798,
+            "away": 31.108673328865997
         },
         "losilla_data": {
             "jugados": {
-                "1": 74.53,
-                "X": 15.94,
-                "2": 9.53
+                "1": 72.85,
+                "X": 17.49,
+                "2": 9.66
             },
             "probables": {
                 "1": 49.79,
-                "X": 28.14,
-                "2": 22.07
+                "X": 28.3,
+                "2": 21.91
             },
             "lae": {
                 "1": 76.0,
@@ -249,233 +249,233 @@
     },
     {
         "match_info": {
-            "home_team": "Huesca",
-            "away_team": "Albacete Balompié",
-            "date": "2026-03-07T16:15:00"
+            "home_team": "Real Valladolid",
+            "away_team": "Leganés",
+            "date": "2026-03-14T18:30:00"
         },
         "prediction": "1",
-        "confidence": 36.88202332886601,
+        "confidence": 35.539573328866005,
         "probabilities": {
-            "home": 36.88202332886601,
-            "draw": 27.32085334226798,
-            "away": 35.79712332886601
+            "home": 35.539573328866005,
+            "draw": 31.19485334226798,
+            "away": 33.265573328866004
         },
         "losilla_data": {
             "jugados": {
-                "1": 35.91,
-                "X": 35.3,
-                "2": 28.79
+                "1": 41.6,
+                "X": 33.03,
+                "2": 25.37
             },
             "probables": {
-                "1": 37.84,
-                "X": 32.89,
-                "2": 29.27
+                "1": 38.11,
+                "X": 32.99,
+                "2": 28.9
             },
             "lae": {
-                "1": 30.0,
-                "X": 38.0,
-                "2": 32.0
+                "1": 33.0,
+                "X": 37.0,
+                "2": 30.0
             }
         }
     },
     {
         "match_info": {
-            "home_team": "Málaga",
-            "away_team": "Real Valladolid",
-            "date": "2026-03-07T21:00:00"
+            "home_team": "Real Zaragoza",
+            "away_team": "Almería",
+            "date": "2026-03-14T18:30:00"
         },
-        "prediction": "1",
-        "confidence": 41.74414832886602,
+        "prediction": "2",
+        "confidence": 38.55277332886601,
         "probabilities": {
-            "home": 41.74414832886602,
-            "draw": 26.608353342267982,
-            "away": 31.647498328866003
+            "home": 33.46537332886601,
+            "draw": 27.981853342267982,
+            "away": 38.55277332886601
         },
         "losilla_data": {
             "jugados": {
-                "1": 63.77,
-                "X": 23.06,
-                "2": 13.17
+                "1": 60.72,
+                "X": 24.48,
+                "2": 14.8
             },
             "probables": {
-                "1": 46.95,
-                "X": 28.14,
-                "2": 24.91
+                "1": 46.96,
+                "X": 28.06,
+                "2": 24.98
             },
             "lae": {
-                "1": 67.0,
-                "X": 20.0,
+                "1": 66.0,
+                "X": 21.0,
                 "2": 13.0
             }
         }
     },
     {
         "match_info": {
-            "home_team": "FC Andorra",
-            "away_team": "Sporting Gijón",
-            "date": "2026-03-08T16:15:00"
+            "home_team": "AD Ceuta",
+            "away_team": "Deportivo La Coruña",
+            "date": "2026-03-14T21:00:00"
         },
-        "prediction": "1",
-        "confidence": 36.801998328866006,
+        "prediction": "2",
+        "confidence": 34.891548328866,
         "probabilities": {
-            "home": 36.801998328866006,
-            "draw": 26.651853342267984,
-            "away": 36.546148328866
+            "home": 34.65309832886601,
+            "draw": 30.455353342267983,
+            "away": 34.891548328866
         },
         "losilla_data": {
             "jugados": {
-                "1": 34.03,
-                "X": 30.72,
-                "2": 35.25
+                "1": 40.38,
+                "X": 27.7,
+                "2": 31.92
             },
             "probables": {
-                "1": 38.25,
-                "X": 28.43,
-                "2": 33.32
+                "1": 38.17,
+                "X": 28.57,
+                "2": 33.26
             },
             "lae": {
-                "1": 31.0,
-                "X": 33.0,
-                "2": 36.0
+                "1": 33.0,
+                "X": 32.0,
+                "2": 35.0
             }
         }
     },
     {
         "match_info": {
-            "home_team": "Real Racing Club",
-            "away_team": "Córdoba",
-            "date": "2026-03-08T18:30:00"
+            "home_team": "Eibar",
+            "away_team": "Burgos Club de Fútbol",
+            "date": "2026-03-15T18:30:00"
         },
         "prediction": "1",
-        "confidence": 41.83432332886601,
+        "confidence": 36.68207332886602,
         "probabilities": {
-            "home": 41.83432332886601,
-            "draw": 26.36085334226798,
-            "away": 31.804823328866
+            "home": 36.68207332886602,
+            "draw": 29.413353342267985,
+            "away": 33.90457332886601
         },
         "losilla_data": {
             "jugados": {
-                "1": 76.25,
-                "X": 14.73,
-                "2": 9.02
+                "1": 65.14,
+                "X": 18.73,
+                "2": 16.13
             },
             "probables": {
-                "1": 46.16,
-                "X": 26.49,
-                "2": 27.35
+                "1": 46.01,
+                "X": 26.61,
+                "2": 27.38
             },
             "lae": {
-                "1": 79.0,
+                "1": 77.0,
                 "X": 13.0,
+                "2": 10.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Sporting Gijón",
+            "away_team": "CD Castellón",
+            "date": "2026-03-15T21:00:00"
+        },
+        "prediction": "2",
+        "confidence": 35.623573328866,
+        "probabilities": {
+            "home": 34.206573328866014,
+            "draw": 30.169853342267984,
+            "away": 35.623573328866
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 44.73,
+                "X": 31.13,
+                "2": 24.14
+            },
+            "probables": {
+                "1": 39.65,
+                "X": 30.86,
+                "2": 29.49
+            },
+            "lae": {
+                "1": 40.0,
+                "X": 36.0,
+                "2": 24.0
+            }
+        }
+    },
+    {
+        "match_info": {
+            "home_team": "Albacete Balompié",
+            "away_team": "Las Palmas",
+            "date": "2026-03-16T20:30:00"
+        },
+        "prediction": "2",
+        "confidence": 37.892673328866,
+        "probabilities": {
+            "home": 34.410473328866004,
+            "draw": 27.69685334226798,
+            "away": 37.892673328866
+        },
+        "losilla_data": {
+            "jugados": {
+                "1": 70.6,
+                "X": 20.13,
+                "2": 9.27
+            },
+            "probables": {
+                "1": 51.13,
+                "X": 27.86,
+                "2": 21.01
+            },
+            "lae": {
+                "1": 76.0,
+                "X": 16.0,
                 "2": 8.0
             }
         }
     },
     {
         "match_info": {
-            "home_team": "Leganés",
-            "away_team": "Eibar",
-            "date": "2026-03-08T18:30:00"
+            "home_team": "Real Sociedad",
+            "away_team": "Osasuna",
+            "date": "2026-03-15T21:00:00"
         },
         "prediction": "2",
-        "confidence": 36.661073328866,
+        "confidence": 34.5164686221953,
         "probabilities": {
-            "home": 36.336073328866014,
-            "draw": 27.002853342267986,
-            "away": 36.661073328866
+            "home": 34.275468622195305,
+            "draw": 31.208062755609394,
+            "away": 34.5164686221953
         },
         "losilla_data": {
             "jugados": {
-                "1": 41.36,
-                "X": 33.66,
-                "2": 24.98
+                "local_0": 31.21,
+                "local_1": 53.95,
+                "local_2": 13.01,
+                "local_M": 1.83,
+                "visit_0": 2.18,
+                "visit_1": 17.51,
+                "visit_2": 31.48,
+                "visit_M": 48.83
             },
             "probables": {
-                "1": 39.34,
-                "X": 30.77,
-                "2": 29.89
+                "local_0": 38.04,
+                "local_1": 36.77,
+                "local_2": 17.77,
+                "local_M": 7.42,
+                "visit_0": 15.66,
+                "visit_1": 29.03,
+                "visit_2": 26.92,
+                "visit_M": 28.39
             },
             "lae": {
-                "1": 38.0,
-                "X": 37.0,
-                "2": 25.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Deportivo La Coruña",
-            "away_team": "Granada",
-            "date": "2026-03-08T21:00:00"
-        },
-        "prediction": "1",
-        "confidence": 42.73144832886601,
-        "probabilities": {
-            "home": 42.73144832886601,
-            "draw": 26.548353342267983,
-            "away": 30.720198328866005
-        },
-        "losilla_data": {
-            "jugados": {
-                "1": 77.07,
-                "X": 16.16,
-                "2": 6.77
-            },
-            "probables": {
-                "1": 51.22,
-                "X": 27.74,
-                "2": 21.04
-            },
-            "lae": {
-                "1": 76.0,
-                "X": 15.0,
-                "2": 9.0
-            }
-        }
-    },
-    {
-        "match_info": {
-            "home_team": "Athletic Club",
-            "away_team": "Barcelona",
-            "date": "2026-03-07T21:00:00"
-        },
-        "prediction": "2",
-        "confidence": 39.4154686221953,
-        "probabilities": {
-            "home": 34.24646862219531,
-            "draw": 26.338062755609393,
-            "away": 39.4154686221953
-        },
-        "losilla_data": {
-            "jugados": {
-                "local_0": 27.23,
-                "local_1": 54.23,
-                "local_2": 15.5,
-                "local_M": 3.04,
-                "visit_0": 2.47,
-                "visit_1": 17.5,
-                "visit_2": 33.51,
-                "visit_M": 46.52
-            },
-            "probables": {
-                "local_0": 38.46,
-                "local_1": 36.75,
-                "local_2": 17.56,
-                "local_M": 7.23,
-                "visit_0": 15.22,
-                "visit_1": 28.65,
-                "visit_2": 26.97,
-                "visit_M": 29.16
-            },
-            "lae": {
-                "local_0": 18.0,
-                "local_1": 58.0,
-                "local_2": 20.0,
-                "local_M": 4.0,
-                "visit_0": 4.0,
-                "visit_1": 19.0,
-                "visit_2": 35.0,
-                "visit_M": 42.0
+                "local_0": 21.0,
+                "local_1": 59.0,
+                "local_2": 17.0,
+                "local_M": 3.0,
+                "visit_0": 3.0,
+                "visit_1": 16.0,
+                "visit_2": 34.0,
+                "visit_M": 47.0
             }
         }
     }

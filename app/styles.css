@@ -234,6 +234,83 @@ body {
     color: white;
 }
 
+/* Source Percentages */
+.source-percentages {
+    margin: 0 20px 18px;
+    padding: 16px 18px;
+    background: linear-gradient(180deg, #f8fbff 0%, #eef5ff 100%);
+    border: 1px solid #d8e6fb;
+    border-radius: 12px;
+}
+
+.source-title {
+    margin-bottom: 12px;
+    font-size: 0.95em;
+    font-weight: 700;
+    color: #204a87;
+}
+
+.source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+}
+
+.source-block {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #dbe7f6;
+    border-radius: 10px;
+    padding: 12px;
+}
+
+.source-block-label {
+    margin-bottom: 10px;
+    font-size: 0.78em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    color: #5b6b7f;
+}
+
+.source-block-values {
+    display: grid;
+    gap: 8px;
+}
+
+.source-sign {
+    display: grid;
+    grid-template-columns: 18px 1fr auto;
+    align-items: center;
+    gap: 8px;
+    padding: 7px 9px;
+    border-radius: 8px;
+    background: #f5f8fc;
+    color: #243447;
+    font-weight: 600;
+}
+
+.source-sign > span:first-child {
+    font-weight: 800;
+    color: #4a5a6a;
+}
+
+.source-value {
+    font-variant-numeric: tabular-nums;
+}
+
+.source-trend {
+    font-size: 0.9em;
+    line-height: 1;
+}
+
+.source-trend.up {
+    color: #198754;
+}
+
+.source-trend.down {
+    color: #dc3545;
+}
+
 /* Footer */
 .footer {
     background: #212529;
@@ -335,6 +412,15 @@ body {
     .probabilities {
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .source-percentages {
+        margin: 0 12px 16px;
+        padding: 14px;
+    }
+
+    .source-grid {
+        grid-template-columns: 1fr;
     }
     
     .losilla-grid {

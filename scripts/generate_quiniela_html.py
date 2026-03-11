@@ -12,6 +12,8 @@ if str(project_root) not in sys.path:
     sys.path.append(str(project_root))
 
 from src.config.settings import PROCESSED_DATA_DIR
+from src.config.settings import RAW_DATA_DIR
+from src.scrapers.quiniela_html import QuinielaHtmlParser
 
 
 def format_date(date_str: str) -> tuple[str, str]:
@@ -32,7 +34,97 @@ def get_confidence_level(confidence: float) -> str:
     return 'low'
 
 
-def generate_match_html(match: dict, index: int) -> str:
+def load_prediction_data() -> list[dict]:
+    """Carga predicciones desde Mongo y, si no está disponible, desde JSON procesado."""
+    try:
+        from src.utils.mongo_loader import load_mongo_data
+
+        quiniela_data = load_mongo_data("quiniela_predictions")
+        if quiniela_data:
+            return quiniela_data
+    except Exception:
+        pass
+
+    data_path = PROCESSED_DATA_DIR / "quiniela_predictions.json"
+    if data_path.exists():
+        with open(data_path, 'r', encoding='utf-8') as f:
+            return json.load(f)
+
+    return []
+
+
+def load_quiniela_source_data() -> dict:
+    """Carga los datos originales de la quiniela extraídos del HTML fuente."""
+    source_path = RAW_DATA_DIR / "quiniela_matches.json"
+    matches = []
+    if source_path.exists():
+        with open(source_path, 'r', encoding='utf-8') as f:
+            matches = json.load(f)
+
+    if not matches or not any(match.get('source_percentages') for match in matches):
+        html_path = project_root / 'data' / 'Jornada_quiniela.html'
+        if html_path.exists():
+            matches = QuinielaHtmlParser(html_path).run()
+
+    return {
+        str(match.get('numero', index + 1)): match
+        for index, match in enumerate(matches)
+    }
+
+
+def format_percentage_cell(cell: dict) -> str:
+    """Renderiza una celda de porcentaje con su tendencia visual."""
+    if not cell:
+        return '<span class="source-value">-</span>'
+
+    trend = cell.get('trend', 'flat')
+    value = cell.get('value', '-')
+    arrow = ''
+    if trend == 'up':
+        arrow = '<span class="source-trend up">▲</span>'
+    elif trend == 'down':
+        arrow = '<span class="source-trend down">▼</span>'
+
+    return f'<span class="source-value">{value}</span>{arrow}'
+
+
+def generate_source_percentages_html(source_match: dict) -> str:
+    """Renderiza los porcentajes de la fuente original si están disponibles."""
+    source_percentages = (source_match or {}).get('source_percentages', {})
+    if not source_percentages:
+        return ''
+
+    sections = [
+        ('Jugados', source_percentages.get('jugados')),
+        ('LAE', source_percentages.get('lae')),
+        ('Probables', source_percentages.get('probables')),
+    ]
+
+    section_html = []
+    for label, values in sections:
+        values = values or {}
+        section_html.append(
+            f"""
+            <div class="source-block">
+                <div class="source-block-label">{label}</div>
+                <div class="source-block-values">
+                    <div class="source-sign"><span>1</span>{format_percentage_cell(values.get('1'))}</div>
+                    <div class="source-sign"><span>X</span>{format_percentage_cell(values.get('X'))}</div>
+                    <div class="source-sign"><span>2</span>{format_percentage_cell(values.get('2'))}</div>
+                </div>
+            </div>"""
+        )
+
+    return f"""
+            <div class="source-percentages">
+                <div class="source-title">Datos originales de la web</div>
+                <div class="source-grid">
+                    {''.join(section_html)}
+                </div>
+            </div>"""
+
+
+def generate_match_html(match: dict, index: int, source_match: dict | None = None) -> str:
     """Genera el HTML de un partido individual."""
     day, hour = format_date(match['match_info']['date'])
     confidence_level = get_confidence_level(match['confidence'])
@@ -139,9 +231,6 @@ def generate_match_html(match: dict, index: int) -> str:
             {losilla_html}
         </div>"""
 
-
-from src.utils.mongo_loader import load_mongo_data
-
 def generate_static_html(output_path: Path):
     """
     Genera un HTML estático con las predicciones de la quiniela.
@@ -150,13 +239,13 @@ def generate_static_html(output_path: Path):
         output_path: Ruta donde guardar el HTML
     """
     # Cargar datos
-    quiniela_data = load_mongo_data("quiniela_predictions")
+    quiniela_data = load_prediction_data()
     if not quiniela_data:
-        raise ValueError("No se encontraron predicciones en MongoDB.")
+        raise ValueError("No se encontraron predicciones ni en MongoDB ni en JSON procesado.")
     
     # Generar HTML de los partidos
     matches_html = '\n'.join([
-        generate_match_html(match, idx) 
+        generate_match_html(match, idx)
         for idx, match in enumerate(quiniela_data)
     ])
     
@@ -190,14 +279,6 @@ def generate_static_html(output_path: Path):
                     <span>%1</span>
                     <span>%X</span>
                     <span>%2</span>
-                </div>
-            </div>
-            <div class="legend-item">
-                <div class="legend-label">Datos Jugadores</div>
-                <div class="legend-values">
-                    <span>📈 Probables</span>
-                    <span>👥 Jugados</span>
-                    <span>🎰 LAE</span>
                 </div>
             </div>
         </div>
