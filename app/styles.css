@@ -10,7 +10,24 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+/* Page Wrapper - Layout de 3 columnas */
+.page-wrapper {
+    display: flex;
+    min-height: 100vh;
+    gap: 0;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+/* Contenido Principal */
+.main-content {
+    flex: 1;
     padding: 20px;
+    min-width: 0; /* Previene overflow en flexbox */
 }
 
 .container {
@@ -207,6 +224,76 @@ body {
     color: #495057;
 }
 
+.source-percentages {
+    padding: 0 20px 18px;
+}
+
+.source-title {
+    font-size: 0.8em;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #5f6b76;
+    margin-bottom: 10px;
+}
+
+.source-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 10px;
+}
+
+.source-block {
+    background: #f8f9fa;
+    border: 1px solid #e0e6eb;
+    border-radius: 10px;
+    padding: 10px 12px;
+}
+
+.source-block-label {
+    font-size: 0.75em;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #6c757d;
+    margin-bottom: 8px;
+}
+
+.source-block-values {
+    display: flex;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.source-sign {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.92em;
+    color: #344054;
+}
+
+.source-sign > span:first-child {
+    font-weight: 700;
+    color: #6c757d;
+}
+
+.source-value {
+    font-weight: 700;
+}
+
+.source-trend {
+    font-size: 0.8em;
+    line-height: 1;
+}
+
+.source-trend.up {
+    color: #1f9d55;
+}
+
+.source-trend.down {
+    color: #d64545;
+}
+
 /* Confidence Badge */
 .confidence {
     display: inline-block;
@@ -248,7 +335,95 @@ body {
     text-decoration: none;
 }
 
+/* Sidebars - Publicidad */
+.sidebar {
+    width: 320px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 20px 10px;
+    overflow-y: auto;
+}
+
+.sidebar-left {
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.sidebar-right {
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.ad-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 20px;
+}
+
+.ad-label {
+    text-align: center;
+    font-size: 0.75em;
+    color: rgba(255, 255, 255, 0.6);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: -10px;
+}
+
+.ad-slot {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Placeholder para visualización - Eliminar cuando agregues publicidad real */
+.ad-placeholder {
+    width: 300px;
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    color: #6c757d;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.ad-placeholder.ad-square {
+    height: 250px;
+}
+
+.ad-placeholder p {
+    margin: 5px 0;
+}
+
 /* Responsive */
+@media (max-width: 1400px) {
+    .sidebar {
+        width: 180px;
+    }
+    
+    .ad-placeholder {
+        width: 160px;
+        height: 600px;
+        font-size: 0.75em;
+    }
+    
+    .ad-placeholder.ad-square {
+        height: 600px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sidebar {
+        display: none; /* Oculta los laterales en tablets y móviles */
+    }
+    
+    .main-content {
+        padding: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .header h1 {
         font-size: 1.8em;
@@ -278,5 +453,9 @@ body {
     .probabilities {
         flex-wrap: wrap;
         gap: 15px;
+    }
+
+    .source-grid {
+        grid-template-columns: 1fr;
     }
 }

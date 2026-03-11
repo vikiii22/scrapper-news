@@ -1,6 +1,5 @@
 from pathlib import Path
 from bs4 import BeautifulSoup
-import unicodedata
 from src.scrapers.base import BaseScraper
 from src.utils.normalizers import normalize_team_name
 
@@ -69,6 +68,7 @@ class QuinielaHtmlParser(BaseScraper):
                 
                 horario_elem = partido_div.find('div', class_='c-marcador-horario__time')
                 horario = horario_elem.text.strip() if horario_elem else 'Hora no disponible'
+                percentages = self._extract_percentages(partido_div)
                 
                 partidos.append({
                     'numero': numero,
@@ -76,7 +76,8 @@ class QuinielaHtmlParser(BaseScraper):
                     'equipo_visitante': equipo_visitante,
                     'equipo_local_normalizado': normalize_team_name(equipo_local),
                     'equipo_visitante_normalizado': normalize_team_name(equipo_visitante),
-                    'horario': horario
+                    'horario': horario,
+                    'source_percentages': percentages,
                 })
             except Exception as e:
                 self.logger.error(f"Error processing a match: {e}")
@@ -86,6 +87,52 @@ class QuinielaHtmlParser(BaseScraper):
     
     def parse(self, raw_data):
         return raw_data
+
+    def _extract_percentages(self, partido_div):
+        """Extrae los porcentajes visibles del HTML original de la quiniela."""
+        container = partido_div.find(
+            'div',
+            class_='c-boleto-multiples__base__app_caja_base__porcentajes__container'
+        )
+        if not container:
+            return {}
+
+        blocks = container.find_all('app-boleto-multiples-porcentajes')
+        parsed_blocks = [self._parse_percentage_block(block) for block in blocks]
+        parsed_blocks = [block for block in parsed_blocks if block]
+
+        labels = ['jugados', 'lae', 'probables', 'jugados_repetido']
+        return {
+            label: parsed_blocks[index]
+            for index, label in enumerate(labels)
+            if index < len(parsed_blocks)
+        }
+
+    def _parse_percentage_block(self, block):
+        """Parsea un bloque 1/X/2 con valor y tendencia visual."""
+        row = block.find('div', class_='c-boleto-multiples-porcentajes__row')
+        if not row:
+            return None
+
+        signs = ['1', 'X', '2']
+        values = {}
+        cells = row.find_all('div', class_='c-boleto-multiples-porcentajes__row__normal')
+        for sign, cell in zip(signs, cells):
+            spans = cell.find_all('span')
+            value_text = spans[0].get_text(strip=True) if spans else '-'
+            trend = 'flat'
+            icon = cell.find('span', class_='fa-long-arrow-up')
+            if icon:
+                trend = 'up'
+            elif cell.find('span', class_='fa-long-arrow-down'):
+                trend = 'down'
+
+            values[sign] = {
+                'value': value_text,
+                'trend': trend,
+            }
+
+        return values
 
     def run(self):
         """Executes the scraper complete."""

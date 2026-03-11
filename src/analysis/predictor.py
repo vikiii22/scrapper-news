@@ -16,18 +16,20 @@ from src.config.settings import (
     NEUTRAL_GROUND_TERMS,
     XG_WEIGHT,
 )
+from src.utils.normalizers import normalize_team_name
 
 @dataclass
 class PredictionEngine:
     """Motor de predicciones."""
     
     historical_matches: List[Match]
-    standings: Dict[str, Dict]
+    standings: List[Dict]
     
         
     def _calculate_lambda(
         self,
         team_name: str,
+        opponent_name: str,
         is_home: bool,
         neutral_ground: bool,
         missing_players: Optional[List[Player]] = None,
@@ -40,44 +42,153 @@ class PredictionEngine:
         Esto suaviza las fluctuaciones de goles reales usando el rendimiento
         esperado basado en oportunidades creadas.
         """
-        matches = [
-            m for m in self.historical_matches
-            if (m.home_team.name == team_name or m.away_team.name == team_name)
-            and m.status.value == "finished"
-        ]
-        matches.sort(key=lambda x: x.date, reverse=True)
-        recent = matches[:5]
+        team_overall = self._get_recent_team_metrics(team_name)
+        team_context = self._get_recent_team_metrics(
+            team_name,
+            venue_filter="home" if is_home else "away",
+        )
+        opponent_overall = self._get_recent_team_metrics(opponent_name)
+        opponent_context = self._get_recent_team_metrics(
+            opponent_name,
+            venue_filter="away" if is_home else "home",
+        )
 
-        if not recent:
+        if team_overall["matches_analyzed"] == 0:
             return 1.2  # Valor por defecto razonable
 
-        goals = []
-        for m in recent:
-            if m.home_team.name == team_name:
-                goals.append(m.home_score if m.home_score is not None else 0)
-            else:
-                goals.append(m.away_score if m.away_score is not None else 0)
+        attack_strength = self._blend_metric(
+            team_overall["goals_for"],
+            team_context["goals_for"],
+            team_context["matches_analyzed"],
+        )
+        opponent_defense = self._blend_metric(
+            opponent_overall["goals_against"],
+            opponent_context["goals_against"],
+            opponent_context["matches_analyzed"],
+        )
+        avg_goals = attack_strength * 0.62 + opponent_defense * 0.38
 
-        avg_goals = sum(goals) / len(goals)
+        points_delta = team_overall["points_per_match"] - opponent_overall["points_per_match"]
+        avg_goals *= 1 + self._clamp(points_delta * 0.12, -0.18, 0.18)
 
-        # --- Integración de xG (Componente 1) ---
-        # Si tenemos datos de xG mediados de los últimos partidos, mezclarlos
-        # con la media de goles reales para un lambda más robusto.
         if xg_data:
             xg_key = "home_xg" if is_home else "away_xg"
             avg_xg = xg_data.get(xg_key, 0.0)
             if avg_xg > 0:
                 avg_goals = (1 - XG_WEIGHT) * avg_goals + XG_WEIGHT * avg_xg
 
-        # Ajuste por localía (anulado en campo neutral)
         if is_home and not neutral_ground:
             avg_goals += HOME_ADVANTAGE_GOALS
 
-        # Penalización por lesiones (Rating > 7.5 -> -15%)
         penalty = players.calculate_injury_penalty_multiplier(missing_players or [])
         avg_goals *= penalty
 
-        return max(0.1, avg_goals)  # Evitar lambda 0
+        return self._clamp(avg_goals, 0.15, 3.5)
+
+    def _get_recent_team_metrics(
+        self,
+        team_name: str,
+        venue_filter: Optional[str] = None,
+        limit: int = 6,
+    ) -> Dict[str, float]:
+        """Extrae métricas recientes del equipo, separando local/visitante si se pide."""
+        normalized_team = normalize_team_name(team_name)
+        matches = []
+        for match in self.historical_matches:
+            if match.status.value != "finished":
+                continue
+            home_name = normalize_team_name(match.home_team.name)
+            away_name = normalize_team_name(match.away_team.name)
+            is_home = home_name == normalized_team
+            is_away = away_name == normalized_team
+            if not (is_home or is_away):
+                continue
+            if venue_filter == "home" and not is_home:
+                continue
+            if venue_filter == "away" and not is_away:
+                continue
+            matches.append(match)
+
+        matches.sort(key=lambda current: current.date, reverse=True)
+        recent = matches[:limit]
+        if not recent:
+            return {
+                "goals_for": 1.2,
+                "goals_against": 1.2,
+                "points_per_match": 1.0,
+                "matches_analyzed": 0,
+            }
+
+        weights = [0.30, 0.25, 0.18, 0.12, 0.09, 0.06][: len(recent)]
+        weights_sum = sum(weights) or 1.0
+        weights = [weight / weights_sum for weight in weights]
+
+        goals_for = 0.0
+        goals_against = 0.0
+        points_total = 0.0
+        for index, match in enumerate(recent):
+            weight = weights[index]
+            is_home = normalize_team_name(match.home_team.name) == normalized_team
+            scored = match.home_score if is_home else match.away_score
+            conceded = match.away_score if is_home else match.home_score
+            goals_for += float(scored or 0) * weight
+            goals_against += float(conceded or 0) * weight
+            if (is_home and match.result == "1") or (not is_home and match.result == "2"):
+                points_total += 3 * weight
+            elif match.result == "X":
+                points_total += 1 * weight
+
+        return {
+            "goals_for": goals_for,
+            "goals_against": goals_against,
+            "points_per_match": points_total,
+            "matches_analyzed": len(recent),
+        }
+
+    def _blend_metric(self, overall_value: float, context_value: float, context_matches: int) -> float:
+        """Combina rendimiento global y contextual sin sobreajustar a muestras pequeñas."""
+        if context_matches <= 0:
+            return overall_value
+        context_weight = 0.45 if context_matches >= 3 else 0.25
+        return overall_value * (1 - context_weight) + context_value * context_weight
+
+    def _calculate_draw_adjustment(self, factors: Dict[str, float]) -> float:
+        """Ajusta el empate según equilibrio real y tensión competitiva."""
+        strength_gap = (
+            abs(factors.get("standings", 0.0)) * 0.45 +
+            abs(factors.get("form", 0.0)) * 0.30 +
+            abs(factors.get("players", 0.0)) * 0.10 +
+            abs(factors.get("h2h", 0.0)) * 0.10 +
+            abs(factors.get("home_away", 0.0) - factors.get("away_performance", 0.0)) * 0.05
+        )
+        closeness = max(0.0, 1.0 - min(strength_gap / 4.5, 1.0))
+        tension = min(factors.get("importance_tension", 0.0) / 4.0, 1.0)
+        base_adjustment = (closeness - 0.5) * 8.0
+        pressure_adjustment = tension * (1.2 if closeness >= 0.55 else -0.8)
+        return round(self._clamp(base_adjustment + pressure_adjustment, -6.0, 6.0), 2)
+
+    def _apply_draw_adjustment(self, probs: Dict[str, float], draw_adjustment: float) -> None:
+        """Redistribuye probabilidad entre 1/X/2 en función del equilibrio del duelo."""
+        if abs(draw_adjustment) < 0.01:
+            return
+
+        probs["X"] += draw_adjustment
+        if draw_adjustment > 0:
+            probs["1"] -= draw_adjustment / 2
+            probs["2"] -= draw_adjustment / 2
+        else:
+            boost = abs(draw_adjustment)
+            favorite = "1" if probs["1"] >= probs["2"] else "2"
+            underdog = "2" if favorite == "1" else "1"
+            probs[favorite] += boost * 0.7
+            probs[underdog] += boost * 0.3
+
+        for sign in ["1", "X", "2"]:
+            probs[sign] = max(probs[sign], 1.0)
+
+    def _clamp(self, value: float, minimum: float, maximum: float) -> float:
+        """Limita un valor a un rango."""
+        return max(min(value, maximum), minimum)
         
     def _poisson_probability(self, k: int, lamb: float) -> float:
         """Calcula probabilidad de k goles con media lambda."""
@@ -190,6 +301,7 @@ class PredictionEngine:
         # 3. Calcular Lambdas (Goles esperados) — con xG si disponible
         lambda_home = self._calculate_lambda(
             match.home_team.name,
+            match.away_team.name,
             is_home=True,
             neutral_ground=neutral_ground,
             missing_players=home_players,
@@ -198,6 +310,7 @@ class PredictionEngine:
 
         lambda_away = self._calculate_lambda(
             match.away_team.name,
+            match.home_team.name,
             is_home=False,
             neutral_ground=neutral_ground,
             missing_players=away_players,
@@ -226,6 +339,9 @@ class PredictionEngine:
         probs["1"] += total_adjustment * sensitivity
         probs["2"] -= total_adjustment * sensitivity
 
+        draw_adjustment = self._calculate_draw_adjustment(factors)
+        self._apply_draw_adjustment(probs, draw_adjustment)
+
         # 6. Integración de cuotas de mercado (prior bayesiano)
         # El mercado agrega información de cientos de analistas.
         # Mezclamos: prob_final = (1-w)*prob_modelo + w*prob_mercado
@@ -253,6 +369,7 @@ class PredictionEngine:
         factors["neutral_ground"] = neutral_ground
         factors["xg_used"] = match_statistics is not None
         factors["odds_used"] = market_odds is not None
+        factors["draw_adjustment"] = draw_adjustment
         
         return Prediction(
             match=match,
@@ -291,7 +408,8 @@ class PredictionEngine:
         form_factor = form.calculate_form_factor(
             match.home_team.name,
             match.away_team.name,
-            self.historical_matches
+            self.historical_matches,
+            self.standings,
         )
 
         h2h_factor = h2h.calculate_h2h_factor(
@@ -305,11 +423,12 @@ class PredictionEngine:
             self.historical_matches
         )
 
-        importance_factor = importance.calculate_importance_factor(
+        importance_context = importance.calculate_match_context(
             match.home_team.name,
             match.away_team.name,
             self.standings
         )
+        importance_factor = importance_context["swing"]
 
         standings_factor = standings.calculate_standings_factor(
             match.home_team.name,
@@ -366,6 +485,8 @@ class PredictionEngine:
             "h2h": h2h_factor,
             "rest_days": rest_factor,
             "importance": importance_factor,
+            "importance_tension": importance_context["tension"],
+            "match_balance": importance_context["balance"],
             "standings": standings_factor,
             "weather": weather_factor,
             "players": players_factor,
