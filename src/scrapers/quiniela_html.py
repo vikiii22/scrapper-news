@@ -28,6 +28,21 @@ class QuinielaHtmlParser(BaseScraper):
             html_content = f.read()
         return BeautifulSoup(html_content, 'html.parser')
 
+    def _extract_jornada(self, soup) -> int:
+        """Extrae el número de jornada del encabezado HTML (ej: 'JORNADA 48').
+
+        Busca el primer <h3> que contenga la palabra 'JORNADA' y extrae el entero
+        que le sigue. Devuelve 0 si no se puede determinar.
+        """
+        import re
+        for tag in soup.find_all(['h3', 'h2', 'h1']):
+            text = tag.get_text(strip=True)
+            match = re.search(r'JORNADA\s+(\d+)', text, re.IGNORECASE)
+            if match:
+                return int(match.group(1))
+        self.logger.warning("No se pudo extraer el número de jornada del HTML.")
+        return 0
+
     def fetch(self):
         """
         Extracts match data from the parsed HTML.
@@ -38,7 +53,10 @@ class QuinielaHtmlParser(BaseScraper):
         """
         soup = self._parse_html()
         partidos = []
-        
+
+        # Extraer número de jornada del encabezado HTML (ej: "JORNADA 48")
+        jornada = self._extract_jornada(soup)
+
         partidos_divs = soup.find_all('div', class_='c-caja_base__partido')
         
         for partido_div in partidos_divs:
@@ -46,7 +64,7 @@ class QuinielaHtmlParser(BaseScraper):
                 numero_elem = partido_div.find('span', class_='c-equipos__number')
                 if not numero_elem:
                     continue
-                numero = numero_elem.text.strip()
+                numero = int(numero_elem.text.strip())
                 
                 equipos_elem = partido_div.find('span', class_='c-equipos__teams')
                 if not equipos_elem:
@@ -72,6 +90,7 @@ class QuinielaHtmlParser(BaseScraper):
                 
                 partidos.append({
                     'numero': numero,
+                    'jornada': jornada,  # Campo añadido: número de jornada extraído del header HTML
                     'equipo_local': equipo_local,
                     'equipo_visitante': equipo_visitante,
                     'equipo_local_normalizado': normalize_team_name(equipo_local),

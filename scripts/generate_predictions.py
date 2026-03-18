@@ -116,9 +116,16 @@ def main():
     if quiniela:
         try:
             losilla_scraper = LosillaScraper()
-            # Intentar determinar jornada y temporada de los datos de quiniela
-            jornada = quiniela[0].get('jornada', 46) if quiniela else 46
+            # Leer jornada del campo extraído del HTML (añadido por QuinielaHtmlParser)
+            jornada = int(quiniela[0].get('jornada', 0)) if quiniela else 0
             temporada = quiniela[0].get('temporada', 2026) if quiniela else 2026
+
+            if jornada == 0:
+                raise ValueError(
+                    "No se pudo determinar la jornada desde quiniela_matches. "
+                    "Ejecuta primero 'collect_data.py' para que el parser extraiga "
+                    "el campo 'jornada' del HTML de La Quiniela."
+                )
             
             print(f"Obteniendo porcentajes de Losilla para jornada {jornada}, temporada {temporada}...")
             losilla_data = losilla_scraper.get_all_percentages(jornada=jornada, temporada=temporada)
@@ -204,7 +211,7 @@ def main():
     quiniela_pairs = [] # List of tuples to allow iterating
     if quiniela_matches:
         print(f"Filtrando por partidos de Quiniela ({len(quiniela_matches)} partidos)...")
-        for q in quiniela_matches:
+        for index, q in enumerate(quiniela_matches):
             # Usar los nombres normalizados si existen, o los raw
             h = q.get('equipo_local_normalizado', q.get('equipo_local', '')).strip()
             a = q.get('equipo_visitante_normalizado', q.get('equipo_visitante', '')).strip()
@@ -212,8 +219,12 @@ def main():
             # Normalización extra: minusculas y sin acentos
             h_norm = remove_accents(h).lower()
             a_norm = remove_accents(a).lower()
+
+            # Bug 2 fix: guardar el número real del partido (campo 'numero') para
+            # usarlo luego como clave en losilla_data (no el índice posicional).
+            numero_real = int(q.get('numero', index + 1))
             
-            quiniela_pairs.append({'h_raw': h, 'a_raw': a, 'h_norm': h_norm, 'a_norm': a_norm, 'found': False})
+            quiniela_pairs.append({'h_raw': h, 'a_raw': a, 'h_norm': h_norm, 'a_norm': a_norm, 'found': False, 'numero': numero_real})
     else:
         print("ADVERTENCIA: No se encontró fichero de Quiniela. Se analizarán TODOS los partidos próximos.")
 
@@ -294,8 +305,10 @@ def main():
             # Obtener porcentajes de Losilla si este partido está en la quiniela
             losilla_percentages = None
             if quiniela_matches and found_match_idx != -1:
-                # Buscar el número de partido en la quiniela para obtener los porcentajes de Losilla
-                quiniela_match_num = found_match_idx + 1  # Los índices son 0-based, números de partido 1-based
+                # Bug 2 fix: usar el número real del partido de la Quiniela (campo 'numero'),
+                # no el índice posicional en el array (found_match_idx + 1).
+                # Ejemplo: partido 3 en la Quiniela → clave 3 en losilla_data.
+                quiniela_match_num = quiniela_pairs[found_match_idx].get('numero', found_match_idx + 1)
                 if quiniela_match_num in losilla_data:
                     losilla_percentages = losilla_data[quiniela_match_num]
 

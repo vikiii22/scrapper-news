@@ -89,9 +89,9 @@ class PredictionEngine:
         self,
         team_name: str,
         venue_filter: Optional[str] = None,
-        limit: int = 6,
+        limit: int = 5,
     ) -> Dict[str, float]:
-        """Extrae métricas recientes del equipo, separando local/visitante si se pide."""
+        """Extrae métricas recientes del equipo, usando exactamente los últimos 5 partidos."""
         normalized_team = normalize_team_name(team_name)
         matches = []
         for match in self.historical_matches:
@@ -119,7 +119,9 @@ class PredictionEngine:
                 "matches_analyzed": 0,
             }
 
-        weights = [0.30, 0.25, 0.18, 0.12, 0.09, 0.06][: len(recent)]
+        # Usar pesos desde configuración (FORM_WEIGHTS)
+        from src.config.settings import FORM_WEIGHTS
+        weights = FORM_WEIGHTS[: len(recent)]
         weights_sum = sum(weights) or 1.0
         weights = [weight / weights_sum for weight in weights]
 
@@ -246,7 +248,7 @@ class PredictionEngine:
         # Aplicar corrección de empate base
         # Si la prob calculada es muy diferente de la base, la acercamos
         diff = base_draw_prob - prob_draw
-        correction = diff * 0.5 # Corregimos el 50% de la diferencia
+        correction = diff * 0.8 # Corregimos el 80% de la diferencia para mayor realismo histórico
         
         prob_draw += correction
         prob_home -= correction / 2
@@ -400,6 +402,9 @@ class PredictionEngine:
                 "probables": losilla_percentages.get("probables", {}),
                 "lae": losilla_percentages.get("lae", {})
             }
+        else:
+            # Inicializar vacío si no hay datos para evitar errores de clave
+            factors["losilla_data"] = {}
         
         return Prediction(
             match=match,
@@ -471,33 +476,11 @@ class PredictionEngine:
         weather_res = weather.calculate_weather_impact(match, weather_data)
         weather_factor = weather_res.get("weather_factor", 0.0)
 
+        # NOTA: La penalización por lesiones y fuerza de plantilla 
+        # se ha movido directamente al cálculo de lambda de Poisson
+        # para evitar doble penalización y asegurar impacto real en goles.
         players_factor = 0.0
-        
-        # 1. Calculo de impacto de Bajas (Missing Players)
-        if home_missing or away_missing:
-            # En players.py: calculate_squad_impact
-            # Usamos listas vacías si son None para evitar errores
-            players_res = players.calculate_squad_impact(
-                home_missing or [], 
-                away_missing or [],
-                home_key_players or [],
-                away_key_players or []
-            )
-            players_factor += players_res.get("players_factor", 0.0)
 
-        # 2. Calculo de fuerza relativa de plantilla (Squad Strength)
-        if home_lineup and away_lineup:
-            strength_res = players.calculate_squad_strength(home_lineup, away_lineup)
-            # Sumamos al factor de jugadores existente
-            # Si strength > 0 (Local mejor), aumenta players_factor
-            players_factor += strength_res.get("strength_factor", 0.0)
-
-        # Ponderar y sumar los factores
-        # IMPORTANTE: away_factor suele ser positivo si rinden bien fuera,
-        # pero aquí queremos sumar al local ("1").
-        # Si local es fuerte => home_factor > 0 => suma a "1"
-        # Si visitante es fuerte => away_factor > 0 => RESTA a "1" (suma a "2")
-        
         total_factor = (
             home_factor * FACTOR_WEIGHTS.get('home_advantage', 1.0) -
             away_factor * abs(FACTOR_WEIGHTS.get('away_performance', 1.0)) + 
@@ -506,8 +489,7 @@ class PredictionEngine:
             rest_factor * FACTOR_WEIGHTS.get('rest_days', 1.0) +
             importance_factor * FACTOR_WEIGHTS.get('importance', 1.0) +
             standings_factor * FACTOR_WEIGHTS.get('standings', 1.0) +
-            weather_factor * FACTOR_WEIGHTS.get('weather', 1.0) +
-            players_factor * FACTOR_WEIGHTS.get('players', 1.0)
+            weather_factor * FACTOR_WEIGHTS.get('weather', 1.0)
         )
 
         return {

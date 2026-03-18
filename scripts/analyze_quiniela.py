@@ -12,31 +12,56 @@ if str(project_root) not in sys.path:
 if str(project_root / 'src') not in sys.path:
     sys.path.append(str(project_root / 'src'))
 
-from utils.mongo_loader import load_mongo_data, save_mongo_data
-from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
+try:
+    from utils.mongo_loader import load_mongo_data, save_mongo_data
+    HAS_MONGO = True
+except ImportError:
+    HAS_MONGO = False
+    print("MongoDB no disponible, usando archivos JSON locales.")
+
+from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR, DATA_DIR
 from analysis.predictor import PredictionEngine
 from analysis.quiniela import QuinielaAnalyzer
 from models.match import Match, Team
 from scrapers.losilla_scraper import LosillaScraper
 from datetime import datetime
 
+def load_data(collection_name):
+    """Carga datos de Mongo o de archivo local JSON."""
+    if HAS_MONGO:
+        try:
+            return load_mongo_data(collection_name)
+        except Exception:
+            pass
+            
+    # Fallback a archivos locales en data/raw/ o data/
+    file_name = f"{collection_name}.json"
+    search_paths = [RAW_DATA_DIR / file_name, DATA_DIR / file_name]
+    
+    for path in search_paths:
+        if path.exists():
+            with open(path, 'r', encoding='utf-8') as f:
+                return json.load(f)
+    return []
+
 def main():
     """Función principal para el análisis de la quiniela."""
-    print("Iniciando análisis de la quiniela...")
+    print("Iniciando análisis de la quiniela con datos locales...")
 
-    # Cargar datos necesarios
-    quiniela_matches = load_mongo_data("quiniela_matches")
+    # Cargar datos necesarios usando la función robusta
+    quiniela_matches = load_data("quiniela_matches")
     if not quiniela_matches:
-        print("Error: No se encontraron partidos de la quiniela. Ejecute 'python main.py collect' primero.")
+        print("Error: No se encontraron partidos de la quiniela.")
         return
 
-    la_liga_standings = load_mongo_data("la_liga_standings")
-    segunda_standings = load_mongo_data("segunda_standings")
+    la_liga_standings = load_data("la_liga_standings")
+    segunda_standings = load_data("segunda_standings")
     standings = la_liga_standings + segunda_standings if la_liga_standings and segunda_standings else []
 
-    la_liga_matches = load_mongo_data("la_liga_all_matches")
-    segunda_matches = load_mongo_data("segunda_all_matches")
+    la_liga_matches = load_data("la_liga_all_matches")
+    segunda_matches = load_data("segunda_all_matches")
     historical_matches_raw = la_liga_matches + segunda_matches
+
 
     # Convertir datos raw a objetos Match
     historical_matches = []
