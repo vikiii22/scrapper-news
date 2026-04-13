@@ -21,20 +21,10 @@ def main():
     """Función principal para la recolección de datos."""
     print("Iniciando recolección de datos...")
     
-    # --- News Scraper ---
-    # Recolectar noticias primero para tener contexto logístico
-    print("Recolectando noticias deportivas (Marca, AS)...")
-    try:
-        news_scraper = NewsScraper()
-        news_data = news_scraper.run() # No specific players yet, just logistic check
-        if news_data:
-            print("  Noticias almacenadas.")
-            save_mongo_data("news_data", news_data)
-    except Exception as e:
-        print(f"  Error recolectando noticias: {e}")
-
     # --- Sofascore ---
     sofascore_scraper = SofascoreScraper()
+    all_player_names = set() # To collect all unique player names
+
     for league_name, league_config in LEAGUES.items():
         print(f"Recolectando datos de Sofascore para {league_config.name}...")
         
@@ -49,10 +39,27 @@ def main():
         
         # ENRIQUECIMIENTO DE DATOS HISTÓRICOS (Últimos 20 partidos para análisis de forma/xG)
         print("    Enriqueciendo últimos 20 partidos finalizados con xG y SOG...")
-        # Tomamos los ultimos 20 (asumiendo que están ordenados por fecha)
-        recent_matches = all_matches[-20:] if len(all_matches) > 20 else all_matches
         
-        for match in recent_matches:
+        # We need all matches to extract player names for news scraper later
+        # So we process all_matches and then take recent ones for enrichment if needed.
+        # This assumes all_matches might contain player info for historical matches.
+        
+        # Extract player names from historical matches
+        for match in all_matches:
+            if match.get('lineups'):
+                for side in ['home', 'away']:
+                    if side in match['lineups'] and 'players' in match['lineups'][side]:
+                        for player_item in match['lineups'][side]['players']:
+                            if 'player' in player_item and 'name' in player_item['player']:
+                                all_player_names.add(player_item['player']['name'])
+                    if side in match['lineups'] and 'missingPlayers' in match['lineups'][side]:
+                         for player_item in match['lineups'][side]['missingPlayers']:
+                            if 'player' in player_item and 'name' in player_item['player']:
+                                all_player_names.add(player_item['player']['name'])
+
+        recent_matches_for_enrichment = all_matches[-20:] if len(all_matches) > 20 else all_matches
+        
+        for match in recent_matches_for_enrichment:
             try:
                 match_id = match.get('id')
                 print(f"      Procesando ID {match_id}...", end="\r")
@@ -61,9 +68,10 @@ def main():
                 stats = sofascore_scraper.get_match_statistics(match_id)
                 match['statistics'] = stats
                 
-                # Ratings de jugadores (Lineups pasados)
-                lineups = sofascore_scraper.get_match_lineups(match_id)
-                match['lineups'] = lineups
+                # Ratings de jugadores (Lineups pasados) - Already collected for all matches above if available
+                # If not collected yet, we would collect here. But for now, we assume it's in all_matches
+                # lineups = sofascore_scraper.get_match_lineups(match_id)
+                # match['lineups'] = lineups
                 
                 time.sleep(1) # Respetar rate limits
             except Exception as e:
@@ -84,13 +92,38 @@ def main():
                 match_id = match.get('id')
                 lineups = sofascore_scraper.get_match_lineups(match_id)
                 match['lineups'] = lineups
+                
+                # Also collect player names from next matches
+                if lineups:
+                    for side in ['home', 'away']:
+                        if side in lineups and 'players' in lineups[side]:
+                            for player_item in lineups[side]['players']:
+                                if 'player' in player_item and 'name' in player_item['player']:
+                                    all_player_names.add(player_item['player']['name'])
+                        if side in lineups and 'missingPlayers' in lineups[side]:
+                            for player_item in lineups[side]['missingPlayers']:
+                                if 'player' in player_item and 'name' in player_item['player']:
+                                    all_player_names.add(player_item['player']['name'])
+                
                 time.sleep(0.5)
              except Exception as e:
                  pass
         if next_matches:
             print(f"  {len(next_matches)} próximos partidos obtenidos.")
             save_mongo_data(f"{league_name}_next_matches", next_matches)
-
+    
+    # --- News Scraper (now with player names) ---
+    print("\nRecolectando noticias deportivas (Marca, AS) con detección de jugadores...")
+    try:
+        news_scraper = NewsScraper()
+        player_names_list = list(all_player_names)
+        print(f"  Pasando {len(player_names_list)} nombres de jugadores al scraper de noticias.")
+        news_data = news_scraper.run(player_names=player_names_list)
+        if news_data:
+            print("  Noticias almacenadas.")
+            save_mongo_data("news_data", news_data)
+    except Exception as e:
+        print(f"  Error recolectando noticias: {e}")
 
     # --- Quiniela HTML ---
     quiniela_html_path = Path(__file__).resolve().parent.parent / 'data' / 'Jornada_quiniela.html'
@@ -158,3 +191,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+

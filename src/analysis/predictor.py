@@ -15,6 +15,7 @@ from src.config.settings import (
     INJURY_PENALTY_AMOUNT,
     NEUTRAL_GROUND_TERMS,
     XG_WEIGHT,
+    FORM_WEIGHTS, # Import FORM_WEIGHTS
 )
 from src.utils.normalizers import normalize_team_name
 
@@ -89,7 +90,7 @@ class PredictionEngine:
         self,
         team_name: str,
         venue_filter: Optional[str] = None,
-        limit: int = 6,
+        limit: int = len(FORM_WEIGHTS), # Use length of FORM_WEIGHTS as default limit
     ) -> Dict[str, float]:
         """Extrae métricas recientes del equipo, separando local/visitante si se pide."""
         normalized_team = normalize_team_name(team_name)
@@ -119,7 +120,7 @@ class PredictionEngine:
                 "matches_analyzed": 0,
             }
 
-        weights = [0.30, 0.25, 0.18, 0.12, 0.09, 0.06][: len(recent)]
+        weights = FORM_WEIGHTS[: len(recent)] # Use FORM_WEIGHTS
         weights_sum = sum(weights) or 1.0
         weights = [weight / weights_sum for weight in weights]
 

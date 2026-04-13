@@ -8,7 +8,7 @@ import json
 # Añadir el directorio src al path
 sys.path.append(str(Path(__file__).resolve().parent.parent / 'src'))
 
-from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR
+from config.settings import PROCESSED_DATA_DIR, RAW_DATA_DIR, NEUTRAL_GROUND_TERMS
 from utils.mongo_loader import load_mongo_data, save_mongo_data
 from utils.normalizers import remove_accents
 from analysis.predictor import PredictionEngine
@@ -62,6 +62,11 @@ def parse_players(lineups_data: dict, side: str, key: str = 'missingPlayers') ->
             
     return players_list
 
+def _get_top_n_players_by_rating(players: List[Player], n: int = 3) -> List[Player]:
+    """Extrae los N jugadores con mayor rating de una lista."""
+    return sorted([p for p in players if p.rating is not None and p.rating > 0], 
+                  key=lambda p: p.rating, reverse=True)[:n]
+
 def main():
     """Función principal para la generación de predicciones."""
     print("Iniciando generación de predicciones...")
@@ -107,12 +112,10 @@ def main():
     
     # Cargar global_matches para usarlos
     global_matches = load_mongo_data("global_recent_matches")
-
-    # Procesar Quiniela
-    quiniela = load_mongo_data("quiniela_matches")
     
     # Obtener porcentajes de Losilla para la quiniela
     losilla_data = {}
+    quiniela = load_mongo_data("quiniela_matches")
     if quiniela:
         try:
             losilla_scraper = LosillaScraper()
@@ -126,71 +129,6 @@ def main():
         except Exception as e:
             print(f"Advertencia: No se pudieron obtener porcentajes de Losilla: {e}")
             print("Continuando sin datos de Losilla...")
-    
-    predictions = []
-    
-    for q_match in quiniela:
-        print(f"Prediciendo: {q_match['equipo_local']} vs {q_match['equipo_visitante']}")
-        
-        # Buscar ID de equipos (map names to Sofascore IDs from historical data if possible)
-        # Simplified: We assume we find them or match object creation is robust enough
-        
-        home_name = q_match['equipo_local']
-        away_name = q_match['equipo_visitante']
-        
-        # Obtener número de partido y convertir a int (losilla_data usa keys enteros)
-        match_number = q_match.get('numero', None)
-        if match_number is not None:
-            try:
-                match_number = int(match_number)
-            except (ValueError, TypeError):
-                match_number = None
-        
-        # Check logistic issues for this match
-        neutral_ground_override = False
-        for issue in logistic_issues:
-             # Basic keyword matching for team names in issue source or context
-             # This is a simplification. Real NLP entity extraction > simple string match
-             # But for now we just flag if the term appears with team names
-             pass 
-
-        # Crear match object dummy para predicción
-        match = Match(
-            id=0, # Unknown ID
-            home_team=Team(id=0, name=home_name),
-            away_team=Team(id=0, name=away_name),
-            date=datetime.now(), # Approximate
-            league="La Liga" # Default
-        )
-        
-        # Check missing players from news
-        home_missing = []
-        away_missing = []
-        
-        for p_issue in player_issues:
-             p_context = p_issue.get('context', '').lower()
-             if home_name.lower() in p_context:
-                 home_missing.append(Player(id=0, name=p_issue['player'], rating=8.0, is_injured=True))
-             elif away_name.lower() in p_context:
-                 away_missing.append(Player(id=0, name=p_issue['player'], rating=8.0, is_injured=True))
-
-        # Obtener porcentajes de Losilla para este partido
-        losilla_percentages = None
-        if match_number is not None and match_number in losilla_data:
-            losilla_percentages = losilla_data[match_number]
-
-        prediction = predictor.predict(
-            match,
-            home_players=home_missing,
-            away_players=away_missing,
-            global_matches=global_matches,
-            losilla_percentages=losilla_percentages
-        )
-        predictions.append(prediction)
-        
-    # Guardar resultados
-    # ... (existing code for saving)
-
 
     # Cargar próximos partidos
     la_liga_next = load_mongo_data("la_liga_next_matches")
@@ -217,7 +155,7 @@ def main():
     else:
         print("ADVERTENCIA: No se encontró fichero de Quiniela. Se analizarán TODOS los partidos próximos.")
 
-    predictions = []
+    predictions = [] # Reset predictions list for the definitive pass
     
     for m in upcoming_matches_raw:
         # Filtrado por Quiniela
@@ -265,6 +203,30 @@ def main():
                 venue=None, # Venue scraping pendiente
             )
 
+            # --- Detección de Anomalías Logísticas (Neutral Ground) ---
+            # Si news_data["logistic_issues"] contiene términos de campo neutral
+            # y es relevante para el partido actual, se actualiza match_obj.venue
+            home_team_lower = match_obj.home_team.name.lower()
+            away_team_lower = match_obj.away_team.name.lower()
+
+            for issue_entry in logistic_issues:
+                issue_text = issue_entry.get('issue', '').lower()
+                issue_source = issue_entry.get('source', '').lower()
+
+                # Check for neutral ground terms within the issue itself
+                is_neutral_term = any(term in issue_text for term in NEUTRAL_GROUND_TERMS)
+
+                # Check for team names in the issue context or source to ensure relevance
+                is_relevant = (home_team_lower in issue_text or away_team_lower in issue_text or
+                               home_team_lower in issue_source or away_team_lower in issue_source)
+                
+                # If a neutral ground term is found and it's relevant to this match,
+                # set the venue to signal predictor.py
+                if is_neutral_term and is_relevant:
+                    match_obj.venue = issue_text # Or "neutral ground"
+                    print(f"    ¡Anomalía logística detectada! Partido en {match_obj.venue} (Posible campo neutral)")
+                    break # Only need to find one relevant issue
+
             # Obtener datos clima (Simulado/Mockeado si no hay API Key)
             # Para demo, asumimos que juegan en la 'ciudad' del equipo local
             city = match_obj.home_team.name 
@@ -281,6 +243,10 @@ def main():
             home_squad = parse_players(lineups_data, 'home', 'players')
             away_squad = parse_players(lineups_data, 'away', 'players')
             
+            # Identificar jugadores clave del equipo (Top N por rating)
+            home_key_players = _get_top_n_players_by_rating(home_squad, n=3)
+            away_key_players = _get_top_n_players_by_rating(away_squad, n=3)
+            
             if home_missing:
                 print(f"    Bajas Local: {len(home_missing)}")
             if away_missing:
@@ -290,6 +256,10 @@ def main():
                 print(f"    Plantilla Local Disponible: {len(home_squad)}")
             if away_squad:
                 print(f"    Plantilla Visitante Disponible: {len(away_squad)}")
+            if home_key_players:
+                print(f"    Jugadores Clave Local: {[p.name for p in home_key_players]}")
+            if away_key_players:
+                print(f"    Jugadores Clave Visitante: {[p.name for p in away_key_players]}")
 
             # Obtener porcentajes de Losilla si este partido está en la quiniela
             losilla_percentages = None
@@ -306,6 +276,8 @@ def main():
                 away_players=away_missing,
                 home_lineup=home_squad,
                 away_lineup=away_squad,
+                home_key_players=home_key_players, # Pasar jugadores clave
+                away_key_players=away_key_players, # Pasar jugadores clave
                 global_matches=global_matches,
                 losilla_percentages=losilla_percentages
             )
