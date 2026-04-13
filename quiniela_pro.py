@@ -41,6 +41,7 @@ CONFIG = {
 
 # Diccionario de mapeo de nombres de equipos
 TEAM_NAME_MAPPING = {
+    # La Liga
     'AT.MADRID': 'Ath Madrid',
     'ATH.MADRID': 'Ath Madrid',
     'ATLETICO': 'Ath Madrid',
@@ -48,6 +49,7 @@ TEAM_NAME_MAPPING = {
     'ATHLETIC': 'Ath Bilbao',
     'ATH.BILBAO': 'Ath Bilbao',
     'ATH BILBAO': 'Ath Bilbao',
+    'ATH.CLUB': 'Ath Bilbao',
     'BARCELONA': 'Barcelona',
     'BARÇA': 'Barcelona',
     'R.MADRID': 'Real Madrid',
@@ -82,6 +84,24 @@ TEAM_NAME_MAPPING = {
     'LEGANES': 'Leganes',
     'LEGANÉS': 'Leganes',
     'LAS PALMAS': 'Las Palmas',
+    # Segunda División
+    'R.ZARAGOZA': 'Zaragoza',
+    'REAL ZARAGOZA': 'Zaragoza',
+    'R.OVIEDO': 'Oviedo',
+    'REAL OVIEDO': 'Oviedo',
+    'DEPORTIVO': 'Deportivo',
+    'HUESCA': 'Huesca',
+    'CÓRDOBA': 'Cordoba',
+    'CORDOBA': 'Cordoba',
+    'MIRANDÉS': 'Mirandes',
+    'MIRANDES': 'Mirandes',
+    'CASTELLÓN': 'Castellon',
+    'CASTELLON': 'Castellon',
+    'RACING S.': 'Racing',
+    'RACING': 'Racing',
+    'MÁLAGA': 'Malaga',
+    'MALAGA': 'Malaga',
+    'LEVANTE': 'Levante',
 }
 
 
@@ -171,6 +191,7 @@ class LosillaParser:
     def __init__(self, url: str, team_mapping: Dict[str, str]):
         self.url = url
         self.team_mapping = team_mapping
+        self.valid_teams = set()  # Se llenará con equipos que tienen datos históricos
     
     def normalize_team_name(self, raw_name: str) -> str:
         """
@@ -184,6 +205,32 @@ class LosillaParser:
         """
         clean_name = raw_name.strip().upper()
         return self.team_mapping.get(clean_name, raw_name.strip())
+    
+    def set_valid_teams(self, teams: set):
+        """
+        Establece la lista de equipos válidos (que tienen datos históricos)
+        
+        Args:
+            teams: Set de nombres de equipos de La Liga
+        """
+        self.valid_teams = teams
+        print(f"✓ {len(teams)} equipos válidos de La Liga configurados")
+    
+    def is_valid_match(self, home_team: str, away_team: str) -> bool:
+        """
+        Verifica si un partido tiene equipos válidos de La Liga
+        
+        Args:
+            home_team: Equipo local
+            away_team: Equipo visitante
+            
+        Returns:
+            True si ambos equipos tienen datos históricos
+        """
+        if not self.valid_teams:
+            return True  # Si no hay lista de validación, aceptar todos
+        
+        return home_team in self.valid_teams and away_team in self.valid_teams
     
     def parse_matches(self) -> List[Match]:
         """
@@ -203,48 +250,58 @@ class LosillaParser:
             soup = BeautifulSoup(response.content, 'html.parser')
             matches = []
             
-            # Estrategia 1: Buscar tabla de partidos
-            table = soup.find('table', class_=lambda x: x and 'partidos' in x.lower() if x else False)
+            # Buscar todo el texto de la página
+            page_text = soup.get_text()
             
-            if not table:
-                # Estrategia 2: Buscar por estructura común de Losilla
-                table = soup.find('table')
+            # Buscar patrón: número seguido de equipos separados por guión
+            # Ejemplo: "1 LIVERPOOL - PSG" o "15 B.MUNICHR.MADRID"
+            import re
             
-            if not table:
-                # Estrategia 3: Buscar divs con partidos
-                match_divs = soup.find_all('div', class_=lambda x: x and 'partido' in x.lower() if x else False)
-                
-                for div in match_divs[:15]:
-                    text = div.get_text(separator=' ', strip=True)
-                    # Buscar patrón: "Equipo1 - Equipo2" o "Equipo1 vs Equipo2"
-                    parts = text.split('-') if '-' in text else text.split('vs')
-                    
-                    if len(parts) == 2:
-                        home = self.normalize_team_name(parts[0])
-                        away = self.normalize_team_name(parts[1])
-                        matches.append(Match(home_team=home, away_team=away))
-            else:
-                # Parsear tabla
-                rows = table.find_all('tr')[1:]  # Saltar encabezado
-                
-                for row in rows[:15]:
-                    cols = row.find_all('td')
-                    if len(cols) >= 2:
-                        home = self.normalize_team_name(cols[0].get_text(strip=True))
-                        away = self.normalize_team_name(cols[-1].get_text(strip=True))
-                        matches.append(Match(home_team=home, away_team=away))
+            # Patrón para capturar: [1-15] EQUIPO1 - EQUIPO2
+            pattern = r'^\s*(\d{1,2})\s+([A-ZÀ-ÿ\.\s\']+?)\s*-\s*([A-ZÀ-ÿ\.\s\']+?)(?:\n|1X2)'
             
-            if len(matches) == 0:
-                print("⚠ No se encontraron partidos. Usando partidos de ejemplo.")
-                # Fallback: partidos de ejemplo
+            # Buscar en el HTML todas las coincidencias
+            for line in page_text.split('\n'):
+                match = re.match(pattern, line.strip())
+                if match:
+                    num = int(match.group(1))
+                    if 1 <= num <= 15:
+                        home_team = match.group(2).strip()
+                        away_team = match.group(3).strip()
+                        
+                        # Limpiar nombres (quitar fechas, horas, etc.)
+                        home_team = re.sub(r'\s+(MAR|MIE|JUE|VIE|SAB|DOM|LUN)\s+.*$', '', home_team).strip()
+                        away_team = re.sub(r'\s+(MAR|MIE|JUE|VIE|SAB|DOM|LUN)\s+.*$', '', away_team).strip()
+                        
+                        # Normalizar nombres
+                        home_normalized = self.normalize_team_name(home_team)
+                        away_normalized = self.normalize_team_name(away_team)
+                        
+                        # Validar que sean equipos de La Liga (con datos históricos)
+                        if not self.is_valid_match(home_normalized, away_normalized):
+                            continue  # Saltar partidos de competiciones europeas
+                        
+                        # Evitar duplicados
+                        if not any(m.home_team == home_normalized and m.away_team == away_normalized 
+                                  for m in matches):
+                            matches.append(Match(home_team=home_normalized, away_team=away_normalized))
+            
+            # Si no se encontraron suficientes partidos de La Liga
+            if len(matches) < 15:
+                print(f"⚠ Solo se encontraron {len(matches)} partidos de La Liga en la web.")
+                print(f"⚠ La jornada actual parece contener competiciones europeas.")
+                print(f"⚠ Usando partidos de La Liga española como ejemplo.")
                 matches = self._get_fallback_matches()
             
-            print(f"✓ {len(matches)} partidos extraídos correctamente")
+            # Limitar a 15 partidos
+            matches = matches[:15]
+            
+            print(f"✓ {len(matches)} partidos de La Liga preparados para predicción")
             return matches
             
         except Exception as e:
             print(f"⚠ Error en scraping: {e}")
-            print("⚠ Usando partidos de ejemplo como fallback")
+            print("⚠ Usando partidos de La Liga española como fallback")
             return self._get_fallback_matches()
     
     def _get_fallback_matches(self) -> List[Match]:
@@ -597,6 +654,10 @@ class QuinielaPro:
             print("\n📊 PASO 2: Procesamiento de datos históricos")
             historical_data = self.model.load_historical_data(csv_paths)
             self.model.calculate_team_strengths(historical_data)
+            
+            # 2.5. Configurar equipos válidos en el parser
+            valid_teams = set(self.model.team_stats.keys())
+            self.parser.set_valid_teams(valid_teams)
             
             # 3. Aplicar ajustes por competición europea (si se proporcionan)
             if european_adjustments:
