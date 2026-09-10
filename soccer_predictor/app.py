@@ -18,10 +18,14 @@ import streamlit as st
 try:
     from .orchestrator import predict
     from . import data_fetcher as df
+    from . import quiniela as qui
+    from . import database as db
 except ImportError:
     sys.path.insert(0, ".")  # añadimos el directorio actual
     from orchestrator import predict
     import data_fetcher as df
+    import quiniela as qui
+    import database as db
 
 
 # ---------------------------------------------------------------------------
@@ -38,6 +42,98 @@ st.markdown(
     "Predice el resultado 1X2, Over/Under 2.5 y Ambos Marcan "
     "usando un modelo estadístico sin coste."
 )
+
+seccion = st.sidebar.radio("Sección", ["🔮 Partido", "🎫 Quiniela"])
+
+if seccion == "🎫 Quiniela":
+    st.header("🎫 Quiniela (boleto LAE)")
+    st.markdown(
+        "Pega el HTML del boleto (jornada con % LAE), se extraen los "
+        "partidos, se calculan los pronósticos con datos en vivo y se "
+        "guardan en `data/db/quiniela.json`."
+    )
+
+    html_in = st.text_area("HTML del boleto", height=180,
+                           placeholder="Pega aquí el HTML copiado de la página de LAE...")
+    col_q1, col_q2, col_q3 = st.columns(3)
+    comp_q = col_q1.selectbox("Competición por defecto", df.get_competitions())
+    live_q = col_q2.checkbox("Datos en vivo", value=True)
+    refresh_q = col_q3.checkbox("Forzar recarga", value=False)
+
+    if st.button("1️⃣ Leer boleto") and html_in.strip():
+        parsed = qui.parse_quiniela_html(html_in)
+        st.session_state["quiniela_parsed"] = parsed
+        if not parsed["matches"]:
+            st.error("No se reconoció ningún partido en ese HTML.")
+        else:
+            st.success(f"Jornada {parsed['jornada']} · {len(parsed['matches'])} partidos detectados.")
+
+    parsed = st.session_state.get("quiniela_parsed")
+    if parsed and parsed["matches"]:
+        st.subheader(f"Boleto · Jornada {parsed['jornada']}")
+        st.dataframe(
+            [{
+                "Nº": m["n"],
+                "Partido": f"{m['home']} - {m['away']}",
+                "Día": f"{m['day']} {m['hour']}".strip(),
+                "LAE 1/X/2": ("—" if not m["lae"] else
+                    f"{m['lae']['1']:.0f}/{m['lae']['X']:.0f}/{m['lae']['2']:.0f}"),
+                "Pleno": "sí" if m["is_pleno"] else "",
+                "Fem.": "sí" if m["is_women"] else "",
+            } for m in parsed["matches"]],
+            use_container_width=True,
+        )
+
+        if st.button("2️⃣ Calcular pronósticos y guardar en BBDD"):
+            bar = st.progress(0, text="Analizando partidos...")
+            analysis = qui.analyze_quiniela(
+                parsed, competition_default=comp_q, live=live_q, refresh=refresh_q,
+                progress_cb=lambda i, t: bar.progress(i / t, text=f"Partido {i}/{t}"),
+            )
+            entry = db.save_quiniela(parsed["jornada"], analysis)
+            st.session_state["quiniela_analysis"] = entry
+            bar.empty()
+
+        analysis = st.session_state.get("quiniela_analysis")
+        if analysis:
+            st.subheader(f"Pronósticos · Jornada {analysis['jornada']}")
+            rows = []
+            for m in analysis["matches"]:
+                if "error" in m:
+                    rows.append({"Nº": m["n"],
+                                 "Partido": f"{m['home']} - {m['away']}",
+                                 "Resultado": f"⚠️ {m['error']}"})
+                    continue
+                val = m.get("valor") or {}
+                rows.append({
+                    "Nº": m["n"],
+                    "Partido": f"{m['home']} - {m['away']}",
+                    "Modelo 1/X/2": (f"{m['modelo']['1']:.0f}/{m['modelo']['X']:.0f}/{m['modelo']['2']:.0f}"),
+                    "Pick": m["pick"] + (f" (pleno {m['pleno_sugerido']['home']}-{m['pleno_sugerido']['away']})"
+                                         if m.get("pleno_sugerido") else ""),
+                    "Valor vs LAE": (f"{val.get('1', 0):+.0f}/{val.get('X', 0):+.0f}/{val.get('2', 0):+.0f}"
+                                     if val else "—"),
+                    "Apuesta valor": m.get("value_pick") or "—",
+                })
+            st.dataframe(rows, use_container_width=True)
+            st.success(f"Guardado en BBDD de quiniela (jornada {analysis['jornada']}).")
+
+    st.divider()
+    st.subheader("🗄️ Jornadas guardadas")
+    saved = db.list_quinielas()
+    if saved:
+        sel = st.selectbox("Ver jornada", saved)
+        q = db.get_quiniela(sel)
+        if q:
+            st.write(f"Analizada: {q['analyzed_at'][:16].replace('T', ' ')} · "
+                     f"{len(q['matches'])} partidos")
+            for m in q["matches"]:
+                extra = "" if "error" in m else f" → modelo {m['pick']} · valor {m.get('value_pick') or '—'}"
+                st.write(f"**{m['n']}.** {m['home']} - {m['away']}{extra}")
+    else:
+        st.caption("Aún no hay jornadas guardadas.")
+
+    st.stop()
 
 
 # ---------------------------------------------------------------------------

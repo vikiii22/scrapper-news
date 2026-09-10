@@ -25,6 +25,7 @@ DB_DIR = BASE_DIR / "data" / "db"
 TEAMS_FILE = DB_DIR / "teams.json"
 H2H_FILE = DB_DIR / "h2h.json"
 PREDICTIONS_FILE = DB_DIR / "predictions.json"
+QUINIELA_FILE = DB_DIR / "quiniela.json"
 
 
 def _now_iso() -> str:
@@ -33,10 +34,11 @@ def _now_iso() -> str:
 
 def _ensure_db() -> None:
     DB_DIR.mkdir(parents=True, exist_ok=True)
-    for f in (TEAMS_FILE, H2H_FILE, PREDICTIONS_FILE):
+    for f in (TEAMS_FILE, H2H_FILE, QUINIELA_FILE):
         if not f.exists():
-            default = [] if f.name == "predictions.json" else {}
-            f.write_text(json.dumps(default, ensure_ascii=False, indent=2), encoding="utf-8")
+            f.write_text(json.dumps({}, ensure_ascii=False, indent=2), encoding="utf-8")
+    if not PREDICTIONS_FILE.exists():
+        PREDICTIONS_FILE.write_text(json.dumps([], ensure_ascii=False, indent=2), encoding="utf-8")
 
 
 def _read_json(path: Path, default):
@@ -168,5 +170,28 @@ def stats() -> Dict[str, Any]:
         "teams": len(_read_json(TEAMS_FILE, {})),
         "h2h_pairs": len(_read_json(H2H_FILE, {})),
         "predictions": len(_read_json(PREDICTIONS_FILE, [])),
+        "quinielas": len(_read_json(QUINIELA_FILE, {})),
         "db_dir": str(DB_DIR),
     }
+
+
+# ---------------------------------------------------------------------------
+# Quinielas (boletos LAE analizados)
+# ---------------------------------------------------------------------------
+
+def save_quiniela(jornada, analysis: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """Guarda el análisis de una jornada. Devuelve la entrada guardada."""
+    all_q = _read_json(QUINIELA_FILE, {})
+    key = str(jornada or "sin-numero")
+    entry = {"jornada": jornada, "analyzed_at": _now_iso(), "matches": analysis}
+    all_q[key] = entry
+    _write_json(QUINIELA_FILE, all_q)
+    return entry
+
+
+def list_quinielas() -> List[Any]:
+    return sorted(_read_json(QUINIELA_FILE, {}).keys())
+
+
+def get_quiniela(jornada) -> Optional[Dict[str, Any]]:
+    return _read_json(QUINIELA_FILE, {}).get(str(jornada))

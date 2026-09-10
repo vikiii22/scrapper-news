@@ -12,6 +12,7 @@ Es la fuente primaria para equipos de ligas top. Para equipos modestos
 from __future__ import annotations
 
 from datetime import datetime
+from functools import lru_cache
 from typing import Any, Dict, List, Optional, Tuple
 
 import requests
@@ -52,6 +53,7 @@ def _get(url: str, params: Dict[str, Any] | None = None, timeout: int = 12):
         return None
 
 
+@lru_cache(maxsize=32)
 def _league_teams(league: str) -> List[Dict[str, Any]]:
     data = _get(f"https://site.api.espn.com/apis/site/v2/sports/soccer/{league}/teams",
                 {"limit": 100})
