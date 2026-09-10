@@ -1,0 +1,245 @@
+[
+  {
+    "at": "2026-09-10T07:10:44.741581+00:00",
+    "teams": {
+      "home": "Real Madrid",
+      "away": "Barcelona"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-15",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5238805292942915,
+      "draw": 0.263257793608333,
+      "away": 0.2128616770973755
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 1.487,
+      "away": 0.842
+    },
+    "data_sources": {
+      "home": "static",
+      "away": "static",
+      "home_recent": "WWWDW",
+      "away_recent": "WWWWD"
+    }
+  },
+  {
+    "at": "2026-09-10T07:10:55.892115+00:00",
+    "teams": {
+      "home": "Wrexham",
+      "away": "Notts County"
+    },
+    "competition": "League Two",
+    "date": "2026-09-20",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.384771199136512,
+      "draw": 0.2556152900790674,
+      "away": 0.3596135107844208
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.4,
+      "away": 1.345
+    },
+    "data_sources": {
+      "home": "thesportsdb-live",
+      "away": "thesportsdb-live",
+      "home_recent": "D",
+      "away_recent": "W"
+    }
+  },
+  {
+    "at": "2026-09-10T07:15:10.823049+00:00",
+    "teams": {
+      "home": "Como",
+      "away": "Leipzig"
+    },
+    "competition": "Champions League",
+    "date": "2026-09-10",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5039211488088984,
+      "draw": 0.21804257572071123,
+      "away": 0.2780362754703906
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.977,
+      "away": 1.427
+    },
+    "data_sources": {
+      "home": "thesportsdb-live",
+      "away": "static-fallback",
+      "home_recent": "D",
+      "away_recent": ""
+    }
+  },
+  {
+    "at": "2026-09-10T07:16:46.245663+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5562610931052152,
+      "draw": 0.18289260792985979,
+      "away": 0.2608462989649249
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.638,
+      "away": 1.814
+    },
+    "data_sources": {
+      "home": "thesportsdb-live",
+      "away": "thesportsdb-live",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  },
+  {
+    "at": "2026-09-10T07:17:08.666644+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4491522637097493,
+      "draw": 0.20819031537482321,
+      "away": 0.3426574209154274
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.088,
+      "away": 1.814
+    },
+    "data_sources": {
+      "home": "thesportsdb-live+cache",
+      "away": "thesportsdb-live+cache",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  },
+  {
+    "at": "2026-09-10T07:17:11.410656+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.35260335972537754,
+      "draw": 0.19407259582137867,
+      "away": 0.45332404445324387
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.088,
+      "away": 2.364
+    },
+    "data_sources": {
+      "home": "thesportsdb-live+cache",
+      "away": "thesportsdb-live+cache",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  },
+  {
+    "at": "2026-09-10T07:17:14.473460+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4491522637097493,
+      "draw": 0.20819031537482321,
+      "away": 0.3426574209154274
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.088,
+      "away": 1.814
+    },
+    "data_sources": {
+      "home": "thesportsdb-live+cache",
+      "away": "thesportsdb-live+cache",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  },
+  {
+    "at": "2026-09-10T07:17:16.200149+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5562610931052152,
+      "draw": 0.18289260792985979,
+      "away": 0.2608462989649249
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.638,
+      "away": 1.814
+    },
+    "data_sources": {
+      "home": "thesportsdb-live+cache",
+      "away": "thesportsdb-live+cache",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  },
+  {
+    "at": "2026-09-10T07:17:25.631216+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5562610931052152,
+      "draw": 0.18289260792985979,
+      "away": 0.2608462989649249
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.638,
+      "away": 1.814
+    },
+    "data_sources": {
+      "home": "thesportsdb-live",
+      "away": "thesportsdb-live",
+      "home_recent": "L",
+      "away_recent": "L"
+    }
+  }
+]

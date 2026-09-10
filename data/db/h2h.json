@@ -1,0 +1,67 @@
+{
+  "barcelona||real madrid": {
+    "teams": [
+      "Real Madrid",
+      "Barcelona"
+    ],
+    "matches": [
+      [
+        "Real Madrid",
+        "Barcelona",
+        3,
+        2,
+        "La Liga"
+      ],
+      [
+        "Real Madrid",
+        "Barcelona",
+        0,
+        1,
+        "Copa del Rey"
+      ],
+      [
+        "Real Madrid",
+        "Barcelona",
+        2,
+        1,
+        "Supercopa"
+      ]
+    ],
+    "source": "static",
+    "fetched_at": "2026-09-10T07:10:44.738168+00:00"
+  },
+  "notts county||wrexham": {
+    "teams": [
+      "Wrexham",
+      "Notts County"
+    ],
+    "matches": [
+      [
+        "Wrexham",
+        "Notts County",
+        1,
+        0,
+        "English League 2"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:10:55.889988+00:00"
+  },
+  "sevilla||valencia": {
+    "teams": [
+      "Sevilla",
+      "Valencia"
+    ],
+    "matches": [
+      [
+        "Sevilla",
+        "Valencia",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:16:46.243569+00:00"
+  }
+}

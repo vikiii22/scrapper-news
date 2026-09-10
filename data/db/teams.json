@@ -1,0 +1,212 @@
+{
+  "wrexham": {
+    "name": "Wrexham",
+    "goals_for": 25.0,
+    "goals_against": 25.0,
+    "recent": "D",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "English League Championship",
+    "fixtures": [
+      {
+        "date": "2026-09-08",
+        "home": "Wrexham",
+        "away": "Burnley",
+        "score": "1-1",
+        "competition": "English League Championship"
+      }
+    ],
+    "avg_goals_for": 1.0,
+    "avg_goals_against": 1.0,
+    "sources_tried": [
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:10:54.534306+00:00",
+    "updated_at": "2026-09-10T07:10:54.535058+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:10:54.534306+00:00",
+        "recent": "D"
+      }
+    ]
+  },
+  "notts county": {
+    "name": "Notts County",
+    "goals_for": 50.0,
+    "goals_against": 25.0,
+    "recent": "W",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "English League 1",
+    "fixtures": [
+      {
+        "date": "2026-08-29",
+        "home": "Notts County",
+        "away": "Burton Albion",
+        "score": "2-1",
+        "competition": "English League 1"
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 1.0,
+    "sources_tried": [
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:10:55.527993+00:00",
+    "updated_at": "2026-09-10T07:10:55.528501+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:10:55.527993+00:00",
+        "recent": "W"
+      }
+    ]
+  },
+  "como": {
+    "name": "Como",
+    "goals_for": 50.0,
+    "goals_against": 50.0,
+    "recent": "D",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Italian Serie A",
+    "fixtures": [
+      {
+        "date": "2026-07-24",
+        "home": "Como",
+        "away": "Paris FC",
+        "score": "2-2",
+        "competition": "Club Friendlies"
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 2.0,
+    "sources_tried": [
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:15:07.491848+00:00",
+    "updated_at": "2026-09-10T07:15:07.492649+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:15:07.491848+00:00",
+        "recent": "D"
+      }
+    ]
+  },
+  "sevilla": {
+    "name": "Sevilla",
+    "goals_for": 25.0,
+    "goals_against": 75.0,
+    "recent": "L",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Spanish La Liga",
+    "fixtures": [
+      {
+        "date": "2026-08-29",
+        "home": "Sevilla",
+        "away": "Atlético Madrid",
+        "score": "1-3",
+        "competition": "Spanish La Liga"
+      }
+    ],
+    "avg_goals_for": 1.0,
+    "avg_goals_against": 3.0,
+    "news": {
+      "injuries_news": [
+        {
+          "title": "Sevilla FC - Sanciones y lesiones | Transfermarkt",
+          "url": "https://www.transfermarkt.es/fc-sevilla/sperrenundverletzungen/verein/368",
+          "snippet": "Sanciones y lesiones Esta tabla muestra a todos los jugadores que estánlesionados, enfermos ysancionados, y aquellos que están en riesgo de enfrentar una sanción."
+        },
+        {
+          "title": "Lesionados - LaLiga 2026/27 - Alineaciones probables - FútbolFantasy",
+          "url": "https://www.futbolfantasy.com/laliga/lesionados",
+          "snippet": "Juega al Fantasy de LaLiga contra miles de usuarios. Consulta onces probables, noticias,lesionados, estadísticas y otros juegos Comunio, Futmondo, Biwenger y Sorare."
+        },
+        {
+          "title": "Lesiones de los jugadores de Sevilla y sancionados para el próximo partido",
+          "url": "https://www.fichajeslive.com/equipo/sevilla-fc/lesiones-sancionados",
+          "snippet": "Las últimas informaciones sobrelesionadosysancionadosdeSevilla"
+        },
+        {
+          "title": "Últimos cambios del Sevilla en LaLiga 2026/27 - FutbolFantasy",
+          "url": "https://www.futbolfantasy.com/laliga/equipos/sevilla/ultimos-cambios",
+          "snippet": "En esta sección registramos los últimos eventos que hacen referencia a loslesionados,sancionados, alineaciones probables, alineaciones confirmadas yconvocatoriasque han ido aconteciendo en LaLiga"
+        }
+      ],
+      "form_news": [
+        {
+          "title": "Resultados de Sevilla - últimos resultados e forma",
+          "url": "https://matchcalendar.football/pt/team/sevilla/results/",
+          "snippet": "Todos osresultadosdeSevillanesta época, comresultadospor época e ligações a cada relato do jogo."
+        },
+        {
+          "title": "Sevilla Resultados - Futebol, Espanha - Flashscore.pt",
+          "url": "https://www.flashscore.pt/equipa/sevilla/h8oAv4Ts/resultados/",
+          "snippet": "AJUDA: Tu estás na página de . Flashscore.pt ofereceresultadosfinais e parciais doSevilla, classificações, jogos agendados e detalhes do jogo. Além dosresultadosdoSevillapodes seguir no Flashscore.pt mais de 5000 competições de mais de 30 desportos em todo mundo. O serviço deresultadosdoSevillaé em tempo real, actualizado ao vivo."
+        },
+        {
+          "title": "Últimos jogos Sevilla - resultados, placar",
+          "url": "https://www.placardefutebol.com.br/time/sevilla/ultimos-jogos",
+          "snippet": "Resultadodo últimojogoSevilla, placar dosúltimosjogos,resultadodo jogo de ontemSevilla. Quanto foi o jogoSevilla?"
+        },
+        {
+          "title": "Sevilla — Resultados, Classificação e Próximos Jogos | Resultado Fácil",
+          "url": "https://www.resultadofacil.com.br/esportes/futebol/times/sevilla",
+          "snippet": "Vejaresultadosao vivo, classificação e agenda doSevilla. Dados atualizados."
+        }
+      ]
+    },
+    "sources_tried": [
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:17:23.756093+00:00",
+    "updated_at": "2026-09-10T07:17:23.756874+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:16:44.453198+00:00",
+        "recent": "L"
+      }
+    ]
+  },
+  "valencia": {
+    "name": "Valencia",
+    "goals_for": 0.0,
+    "goals_against": 125.0,
+    "recent": "L",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Spanish La Liga",
+    "fixtures": [
+      {
+        "date": "2026-09-06",
+        "home": "Valencia",
+        "away": "Barcelona",
+        "score": "0-5",
+        "competition": "Spanish La Liga"
+      }
+    ],
+    "avg_goals_for": 0.0,
+    "avg_goals_against": 5.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:17:25.626855+00:00",
+    "updated_at": "2026-09-10T07:17:25.627903+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:16:45.575836+00:00",
+        "recent": "L"
+      }
+    ]
+  }
+}
