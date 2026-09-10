@@ -218,5 +218,859 @@
         "recent": "DLLL"
       }
     ]
+  },
+  "burgos": {
+    "name": "Burgos",
+    "goals_for": 31.2,
+    "goals_against": 31.2,
+    "recent": "WLDD",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-16",
+        "home": "Burgos",
+        "away": "Córdoba",
+        "score": "3-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Sporting Gijón",
+        "away": "Burgos",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-31",
+        "home": "Burgos",
+        "away": "Real Sociedad II",
+        "score": "2-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Real Oviedo",
+        "away": "Burgos",
+        "score": "0-0",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.25,
+    "avg_goals_against": 1.25,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:31:34.910198+00:00",
+    "updated_at": "2026-09-10T07:31:34.911521+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:24:59.581648+00:00",
+        "recent": "D"
+      },
+      {
+        "at": "2026-09-10T07:30:57.258891+00:00",
+        "recent": "WLDD"
+      }
+    ]
+  },
+  "ceuta": {
+    "name": "Ceuta",
+    "goals_for": 6.2,
+    "goals_against": 75.0,
+    "recent": "LLLL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-15",
+        "home": "FC Andorra",
+        "away": "Ceuta",
+        "score": "5-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-22",
+        "home": "Ceuta",
+        "away": "Las Palmas",
+        "score": "0-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-30",
+        "home": "Mallorca",
+        "away": "Ceuta",
+        "score": "3-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-05",
+        "home": "Ceuta",
+        "away": "RC Celta Fortuna",
+        "score": "0-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 0.25,
+    "avg_goals_against": 3.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:31:32.830533+00:00",
+    "updated_at": "2026-09-10T07:31:32.831663+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:25:08.532004+00:00",
+        "recent": "L"
+      },
+      {
+        "at": "2026-09-10T07:30:55.161691+00:00",
+        "recent": "LLLL"
+      }
+    ]
+  },
+  "racing santander": {
+    "name": "Racing Santander",
+    "goals_for": 43.8,
+    "goals_against": 50.0,
+    "recent": "DLWL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.1",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-16",
+        "home": "Racing Santander",
+        "away": "Villarreal",
+        "score": "2-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Getafe",
+        "away": "Racing Santander",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-28",
+        "home": "Racing Santander",
+        "away": "Elche",
+        "score": "3-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-05",
+        "home": "Rayo Vallecano",
+        "away": "Racing Santander",
+        "score": "3-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.75,
+    "avg_goals_against": 2.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:25:47.228017+00:00",
+    "updated_at": "2026-09-10T07:25:47.229020+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:25:47.228017+00:00",
+        "recent": "DLWL"
+      }
+    ]
+  },
+  "alavés": {
+    "name": "Alavés",
+    "goals_for": 62.5,
+    "goals_against": 18.8,
+    "recent": "WDWW",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.1",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-15",
+        "home": "Alavés",
+        "away": "Getafe",
+        "score": "3-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-20",
+        "home": "Rayo Vallecano",
+        "away": "Alavés",
+        "score": "1-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-28",
+        "home": "Alavés",
+        "away": "Villarreal",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Alavés",
+        "away": "Osasuna",
+        "score": "5-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 2.5,
+    "avg_goals_against": 0.75,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:25:48.947079+00:00",
+    "updated_at": "2026-09-10T07:25:48.947652+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:25:48.947079+00:00",
+        "recent": "WDWW"
+      }
+    ]
+  },
+  "arsenal": {
+    "name": "Arsenal",
+    "goals_for": 50.0,
+    "goals_against": 8.3,
+    "recent": "WWW",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "eng.1",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-21",
+        "home": "Arsenal",
+        "away": "Coventry City",
+        "score": "3-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-31",
+        "home": "Aston Villa",
+        "away": "Arsenal",
+        "score": "0-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Arsenal",
+        "away": "Chelsea",
+        "score": "2-1",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 0.33,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:26:03.038335+00:00",
+    "updated_at": "2026-09-10T07:26:03.038896+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:26:03.038335+00:00",
+        "recent": "WWW"
+      }
+    ]
+  },
+  "chelsea": {
+    "name": "Chelsea",
+    "goals_for": 66.7,
+    "goals_against": 58.3,
+    "recent": "WWL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "eng.1",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-24",
+        "home": "Fulham",
+        "away": "Chelsea",
+        "score": "2-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-30",
+        "home": "Chelsea",
+        "away": "Brighton & Hove Albion",
+        "score": "4-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Arsenal",
+        "away": "Chelsea",
+        "score": "2-1",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 2.67,
+    "avg_goals_against": 2.33,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:26:04.147793+00:00",
+    "updated_at": "2026-09-10T07:26:04.148721+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:26:04.147793+00:00",
+        "recent": "WWL"
+      }
+    ]
+  },
+  "sporting atlético": {
+    "name": "Sporting Atlético",
+    "goals_for": 50.0,
+    "goals_against": 50.0,
+    "recent": "D",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Spanish Tercera Federación Group 2",
+    "fixtures": [
+      {
+        "date": "2026-08-18",
+        "home": "Sporting Atlético",
+        "away": "Llanera",
+        "score": "2-2",
+        "competition": "Club Friendlies"
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 2.0,
+    "sources_tried": [
+      "espn",
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T07:27:51.114362+00:00",
+    "updated_at": "2026-09-10T07:27:51.114959+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:27:51.114362+00:00",
+        "recent": "D"
+      }
+    ]
+  },
+  "granada": {
+    "name": "Granada",
+    "goals_for": 31.2,
+    "goals_against": 25.0,
+    "recent": "DWWL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-15",
+        "home": "Real Oviedo",
+        "away": "Granada",
+        "score": "0-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-24",
+        "home": "Granada",
+        "away": "Mallorca",
+        "score": "2-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-30",
+        "home": "Córdoba",
+        "away": "Granada",
+        "score": "1-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Eibar",
+        "away": "Granada",
+        "score": "3-0",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.25,
+    "avg_goals_against": 1.0,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:07.072705+00:00",
+    "updated_at": "2026-09-10T07:28:07.074070+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:27:52.030486+00:00",
+        "recent": "DWWL"
+      }
+    ]
+  },
+  "sporting gijón": {
+    "name": "Sporting Gijón",
+    "goals_for": 12.5,
+    "goals_against": 12.5,
+    "recent": "DWWL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-17",
+        "home": "Sporting Gijón",
+        "away": "CD Sabadell",
+        "score": "0-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Sporting Gijón",
+        "away": "Burgos",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-28",
+        "home": "Tenerife",
+        "away": "Sporting Gijón",
+        "score": "0-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-05",
+        "home": "Sporting Gijón",
+        "away": "Girona",
+        "score": "0-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 0.5,
+    "avg_goals_against": 0.5,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:05.948207+00:00",
+    "updated_at": "2026-09-10T07:28:05.948806+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:28:05.948207+00:00",
+        "recent": "DWWL"
+      }
+    ]
+  },
+  "almería": {
+    "name": "Almería",
+    "goals_for": 37.5,
+    "goals_against": 25.0,
+    "recent": "WLLW",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-17",
+        "home": "Almería",
+        "away": "Eldense",
+        "score": "3-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Tenerife",
+        "away": "Almería",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-29",
+        "home": "CD Sabadell",
+        "away": "Almería",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Almería",
+        "away": "Cádiz",
+        "score": "3-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.5,
+    "avg_goals_against": 1.0,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:08.776793+00:00",
+    "updated_at": "2026-09-10T07:28:08.777802+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:28:08.776793+00:00",
+        "recent": "WLLW"
+      }
+    ]
+  },
+  "cádiz": {
+    "name": "Cádiz",
+    "goals_for": 31.2,
+    "goals_against": 37.5,
+    "recent": "DDDL",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-15",
+        "home": "Cádiz",
+        "away": "RC Celta Fortuna",
+        "score": "0-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-22",
+        "home": "Eldense",
+        "away": "Cádiz",
+        "score": "2-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-30",
+        "home": "Cádiz",
+        "away": "Real Valladolid",
+        "score": "1-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Almería",
+        "away": "Cádiz",
+        "score": "3-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.25,
+    "avg_goals_against": 1.5,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:10.109340+00:00",
+    "updated_at": "2026-09-10T07:28:10.110708+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:28:10.109340+00:00",
+        "recent": "DDDL"
+      }
+    ]
+  },
+  "tenerife": {
+    "name": "Tenerife",
+    "goals_for": 31.2,
+    "goals_against": 18.8,
+    "recent": "WWLD",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-16",
+        "home": "Eibar",
+        "away": "Tenerife",
+        "score": "1-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Tenerife",
+        "away": "Almería",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-28",
+        "home": "Tenerife",
+        "away": "Sporting Gijón",
+        "score": "0-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-05",
+        "home": "Real Sociedad II",
+        "away": "Tenerife",
+        "score": "1-1",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.25,
+    "avg_goals_against": 0.75,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:12.051918+00:00",
+    "updated_at": "2026-09-10T07:28:12.052459+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:28:12.051918+00:00",
+        "recent": "WWLD"
+      }
+    ]
+  },
+  "eibar": {
+    "name": "Eibar",
+    "goals_for": 37.5,
+    "goals_against": 18.8,
+    "recent": "LWWW",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "esp.2",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-16",
+        "home": "Eibar",
+        "away": "Tenerife",
+        "score": "1-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-23",
+        "home": "Eibar",
+        "away": "Real Valladolid",
+        "score": "1-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-30",
+        "home": "FC Andorra",
+        "away": "Eibar",
+        "score": "0-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-06",
+        "home": "Eibar",
+        "away": "Granada",
+        "score": "3-0",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.5,
+    "avg_goals_against": 0.75,
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T07:28:12.961186+00:00",
+    "updated_at": "2026-09-10T07:28:12.962857+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T07:28:12.961186+00:00",
+        "recent": "LWWW"
+      }
+    ]
+  },
+  "sporting cp": {
+    "name": "Sporting CP",
+    "goals_for": 75.0,
+    "goals_against": 25.0,
+    "recent": "W",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Portuguese Primeira Liga",
+    "fixtures": [
+      {
+        "date": "2026-09-09",
+        "home": "Sporting CP",
+        "away": "Galatasaray",
+        "score": "3-1",
+        "competition": "UEFA Champions League"
+      }
+    ],
+    "avg_goals_for": 3.0,
+    "avg_goals_against": 1.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn",
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T09:15:54.396656+00:00",
+    "updated_at": "2026-09-10T09:15:54.397719+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T09:15:04.157490+00:00",
+        "recent": "W"
+      }
+    ]
+  },
+  "galatasaray": {
+    "name": "Galatasaray",
+    "goals_for": 25.0,
+    "goals_against": 75.0,
+    "recent": "L",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "uefa.champions",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-09-09",
+        "home": "Sporting CP",
+        "away": "Galatasaray",
+        "score": "3-1",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 1.0,
+    "avg_goals_against": 3.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn",
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T09:16:02.018808+00:00",
+    "updated_at": "2026-09-10T09:16:02.019987+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T09:15:12.847671+00:00",
+        "recent": "L"
+      }
+    ]
+  },
+  "liverpool": {
+    "name": "Liverpool",
+    "goals_for": 50.0,
+    "goals_against": 33.3,
+    "recent": "DDW",
+    "position": 10,
+    "source": "espn-live",
+    "has_data": true,
+    "league": "eng.1",
+    "season": 2026,
+    "fixtures": [
+      {
+        "date": "2026-08-23",
+        "home": "Newcastle United",
+        "away": "Liverpool",
+        "score": "2-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-08-29",
+        "home": "Liverpool",
+        "away": "Nottingham Forest",
+        "score": "2-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-04",
+        "home": "Ipswich Town",
+        "away": "Liverpool",
+        "score": "0-2",
+        "competition": ""
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 1.33,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn"
+    ],
+    "fetched_at": "2026-09-10T09:17:37.671976+00:00",
+    "updated_at": "2026-09-10T09:17:37.672609+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T09:17:37.671976+00:00",
+        "recent": "DDW"
+      }
+    ]
+  },
+  "atlético madrid": {
+    "name": "Atlético Madrid",
+    "goals_for": 50.0,
+    "goals_against": 50.0,
+    "recent": "D",
+    "position": 10,
+    "source": "thesportsdb-live",
+    "has_data": true,
+    "league": "Spanish La Liga",
+    "fixtures": [
+      {
+        "date": "2026-08-23",
+        "home": "Atlético Madrid",
+        "away": "Villarreal",
+        "score": "2-2",
+        "competition": "Spanish La Liga"
+      }
+    ],
+    "avg_goals_for": 2.0,
+    "avg_goals_against": 2.0,
+    "news": {
+      "injuries_news": [],
+      "form_news": []
+    },
+    "sources_tried": [
+      "espn",
+      "thesportsdb"
+    ],
+    "fetched_at": "2026-09-10T09:17:46.240485+00:00",
+    "updated_at": "2026-09-10T09:17:46.242239+00:00",
+    "history": [
+      {
+        "at": "2026-09-10T09:17:46.240485+00:00",
+        "recent": "D"
+      }
+    ]
   }
 }

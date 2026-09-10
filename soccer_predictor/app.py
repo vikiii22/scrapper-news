@@ -90,6 +90,12 @@ with st.form("prediction_form"):
     with_news = col_news.checkbox("Con noticias", value=False,
         help="Añade noticias de lesiones/forma (más lento).")
 
+    col_b1, col_b2 = st.columns(2)
+    bajas_home = col_b1.number_input("Bajas importantes local", min_value=0, max_value=11, value=0,
+        help="Titulares lesionados/sancionados del local. Resta ~0.08 goles esperados por baja.")
+    bajas_away = col_b2.number_input("Bajas importantes visitante", min_value=0, max_value=11, value=0,
+        help="Titulares lesionados/sancionados del visitante.")
+
     submit = st.form_submit_button("🔮 Predecir partido")
 
 
@@ -104,7 +110,8 @@ if submit:
     else:
         with st.spinner("Calculando predicción..."):
             result = predict(team_home, team_away, competition, str(date), venue,
-                            live=live, with_news=with_news, refresh=refresh)
+                            live=live, with_news=with_news, refresh=refresh,
+                            absences_home=int(bajas_home), absences_away=int(bajas_away))
 
         st.subheader(f"{team_home} vs {team_away}")
         st.caption(f"{competition} · {date}")
@@ -150,6 +157,18 @@ if submit:
             st.caption(f"Datos: local {ds.get('home')} [{ds.get('home_recent')}] · "
                        f"visitante {ds.get('away')} [{ds.get('away_recent')}] · "
                        f"guardado en data/db/*.json")
+        pc = result.get("player_context", {}) or {}
+        with st.expander("⚽ Racha de goleadores (OpenLigaDB)"):
+            for side, label in (("home", team_home), ("away", team_away)):
+                ctx = pc.get(side) or {}
+                sc = ctx.get("scorers") or []
+                if sc:
+                    st.write(f"**{label}**: " + ", ".join(
+                        f"{s['name']} ({s['goals']}g en últimos {ctx.get('matches_analyzed', '?')})" for s in sc))
+                else:
+                    st.write(f"**{label}**: sin cobertura de goleadores.")
+            pa = result.get("player_adjustments", {}) or {}
+            st.caption(f"Ajuste aplicado: local {pa.get('home', 0):+.2f} / visitante {pa.get('away', 0):+.2f} goles esperados.")
 
         st.info("ℹ️ Modelo estadístico de Poisson. No es una garantía de resultado.")
 

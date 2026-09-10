@@ -801,6 +801,7 @@ def get_competitions():
     """Devuelve una lista de competiciones de ejemplo."""
     return [
         "La Liga",
+        "Segunda División",
         "Premier League",
         "Serie A",
         "Bundesliga",

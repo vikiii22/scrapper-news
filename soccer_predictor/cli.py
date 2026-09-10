@@ -67,6 +67,16 @@ def print_prediction(result):
     if ds:
         print(f"(Datos: local={ds.get('home')} [{ds.get('home_recent')}] vs "
               f"visitante={ds.get('away')} [{ds.get('away_recent')}])")
+    pc = result.get("player_context", {}) or {}
+    for side, label in (("home", "Local"), ("away", "Visitante")):
+        ctx = pc.get(side) or {}
+        sc = ctx.get("scorers") or []
+        if sc:
+            print(f"(Racha {label.lower()}: " +
+                  ", ".join(f"{s['name']} {s['goals']}g" for s in sc) + ")")
+    pa = result.get("player_adjustments", {}) or {}
+    if pa and (pa.get("home") or pa.get("away")):
+        print(f"(Ajuste jugadores: local {pa.get('home', 0):+.2f} / visitante {pa.get('away', 0):+.2f})")
     print("\n" + sep)
 
 
@@ -107,6 +117,9 @@ def main():
     parser.add_argument("--news", action="store_true", help="Incluir noticias recientes (lesiones/forma)")
     parser.add_argument("--fetch-only", action="store_true", help="Solo descargar y guardar en BBDD, sin predecir")
     parser.add_argument("--db-stats", action="store_true", help="Mostrar estado de la BBDD JSON y salir")
+    parser.add_argument("--bajas-home", type=int, default=0, help="Bajas importantes del local (lesión/sanción)")
+    parser.add_argument("--bajas-away", type=int, default=0, help="Bajas importantes del visitante")
+    parser.add_argument("--no-player-form", action="store_true", help="No buscar goleadores en racha")
 
     args = parser.parse_args()
 
@@ -132,6 +145,8 @@ def main():
         result = predict(
             args.home, args.away, args.competition, args.date, args.venue,
             live=not args.no_live, with_news=args.news, refresh=args.refresh,
+            player_form=not args.no_player_form,
+            absences_home=args.bajas_home, absences_away=args.bajas_away,
         )
         print_prediction(result)
     else:

@@ -23,6 +23,7 @@ HEADERS = {"User-Agent": "Mozilla/5.0"}
 # cubren el 95% de los casos; el resto solo se consulta si no hay match.
 LEAGUES = [
     "esp.1",   # LaLiga
+    "esp.2",   # Segunda División (LaLiga 2)
     "eng.1",   # Premier League
     "ita.1",   # Serie A
     "ger.1",   # Bundesliga
@@ -62,9 +63,16 @@ def _league_teams(league: str) -> List[Dict[str, Any]]:
         return []
 
 
+def _norm(s: str) -> str:
+    """Minúsculas sin acentos ni espacios extra (Gijón == gijon)."""
+    import unicodedata
+    s = unicodedata.normalize("NFKD", s or "").encode("ascii", "ignore").decode()
+    return " ".join(s.lower().split())
+
+
 def search_team(team_name: str) -> Optional[Tuple[str, str, str]]:
     """Devuelve (league, team_id, display_name) o None."""
-    q = team_name.strip().lower()
+    q = _norm(team_name)
     fallback: Optional[Tuple[str, str, str]] = None
     for league in LEAGUES:
         for entry in _league_teams(league):
@@ -72,14 +80,11 @@ def search_team(team_name: str) -> Optional[Tuple[str, str, str]]:
             name = tm.get("displayName", "")
             short = (tm.get("shortDisplayName", "") or "")
             abbr = (tm.get("abbreviation", "") or "")
-            nl = name.lower()
-            if nl == q or short.lower() == q or abbr.lower() == q:
+            nl, sl, al = _norm(name), _norm(short), _norm(abbr)
+            if nl == q or sl == q or al == q:
                 return league, str(tm.get("id")), name
             if fallback is None and (q in nl or nl in q):
                 fallback = (league, str(tm.get("id")), name)
-        if fallback and league in ("fra.1", "eng.2"):
-            # si ya hay candidato en las ligas grandes, no seguimos rastreando
-            pass
     return fallback
 
 
@@ -158,7 +163,7 @@ def fetch_team(team_name: str, limit: int = 8) -> Optional[Dict[str, Any]]:
             gf2 = ga2 = 0
             for f in sub:
                 hs, as_ = (int(x) for x in f["score"].split("-"))
-                is_home = display.lower() in f["home"].lower()
+                is_home = _norm(display) in _norm(f["home"]) or _norm(f["home"]) in _norm(display)
                 my, opp = (hs, as_) if is_home else (as_, hs)
                 letters.append("W" if my > opp else ("D" if my == opp else "L"))
                 gf2 += my

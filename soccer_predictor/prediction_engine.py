@@ -169,6 +169,43 @@ def get_form_indicators(recent_form):
 # ---------------------------------------------------------------------------
 
 
+def _player_adjustment(player_context, absences):
+    """
+    Ajuste fino del lambda por contexto de jugadores.
+      - Goleador en racha: +0.12 si el top scorer lleva >=3 goles en los
+        últimos analizados, +0.06 si lleva 2. (tope +0.12)
+      - Bajas importantes (lesionados/sancionados, dato manual): -0.08
+        por baja, tope -0.24.
+    Devuelve (ajuste, texto_explicativo).
+    """
+    adj = 0.0
+    notes = []
+    try:
+        absences = int(absences or 0)
+    except (TypeError, ValueError):
+        absences = 0
+    if absences > 0:
+        hit = -min(0.08 * absences, 0.24)
+        adj += hit
+        notes.append(f"{absences} baja(s) importante(s): {hit:+.2f} goles esperados")
+    top_goals = 0
+    top_name = ""
+    try:
+        scorers = (player_context or {}).get("scorers", [])
+        if scorers:
+            top_goals = int(scorers[0].get("goals", 0))
+            top_name = scorers[0].get("name", "")
+    except (TypeError, ValueError, KeyError):
+        top_goals = 0
+    if top_goals >= 3:
+        adj += 0.12
+        notes.append(f"{top_name} en racha ({top_goals} goles recientes): +0.12")
+    elif top_goals == 2:
+        adj += 0.06
+        notes.append(f"{top_name} en forma ({top_goals} goles recientes): +0.06")
+    return round(adj, 3), notes
+
+
 def explain_reasoning(
     team_home,
     team_away,
@@ -179,6 +216,8 @@ def explain_reasoning(
     btts,
     probs,
     h2h_info=None,
+    player_notes_home=None,
+    player_notes_away=None,
 ):
     """
     Genera una explicación en lenguaje natural (español) del porqué
@@ -260,6 +299,18 @@ def explain_reasoning(
     else:
         lines.append(f"- Ambos marcan: {probs['btts_yes']:.1%} → se apuesta **NO**.")
 
+    # --- Jugadores (racha de goleadores + bajas) ---
+    if player_notes_home or player_notes_away:
+        lines.append("**5. Jugadores (racha y bajas):**")
+        if player_notes_home:
+            lines.append(f"- {team_home}: " + "; ".join(player_notes_home) + ".")
+        else:
+            lines.append(f"- {team_home}: sin datos de racha ni bajas declaradas.")
+        if player_notes_away:
+            lines.append(f"- {team_away}: " + "; ".join(player_notes_away) + ".")
+        else:
+            lines.append(f"- {team_away}: sin datos de racha ni bajas declaradas.")
+
     return "\n".join(lines)
 
 
@@ -282,7 +333,9 @@ def predict_match(team_home, team_away):
     )
 
 
-def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venue="home"):
+def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venue="home",
+                      player_context_home=None, player_context_away=None,
+                      absences_home=0, absences_away=0):
     """
     Función principal que toma los datos de los dos equipos y calcula
     la predicción completa.
@@ -292,6 +345,8 @@ def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venu
       data_home, data_away: diccionarios con 'goals_for', 'goals_against', 'recent'
       h2h: lista de enfrentamientos (opcional)
       venue: "home", "neutral", "away" - influye en la ventaja de localía
+      player_context_home/away: dict de hot_scorers() (opcional)
+      absences_home/away: nº de bajas importantes manuales (lesión/sanción)
 
     Devuelve un diccionario con 'probabilities', 'prediction' y 'explanation'.
     """
@@ -309,6 +364,12 @@ def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venu
     else:  # neutral
         lam_home = expected_goals(data_home, data_away, False, h2h)
         lam_away = expected_goals(data_away, data_home, False, h2h)
+
+    # Ajuste por jugadores (racha de goleadores + bajas), con topes
+    adj_home, notes_home = _player_adjustment(player_context_home, absences_home)
+    adj_away, notes_away = _player_adjustment(player_context_away, absences_away)
+    lam_home = round(max(0.3, min(3.5, lam_home + adj_home)), 3)
+    lam_away = round(max(0.3, min(3.5, lam_away + adj_away)), 3)
 
     probs = match_probabilities(lam_home, lam_away)
 
@@ -352,6 +413,8 @@ def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venu
         btts,
         probs,
         h2h_info=h2h,
+        player_notes_home=notes_home,
+        player_notes_away=notes_away,
     )
 
     return {
@@ -368,6 +431,7 @@ def predict_from_data(team_home, team_away, data_home, data_away, h2h=None, venu
         "expected_goals": {"home": lam_home, "away": lam_away},
         "explanation": explanation,
         "prob_matrix": probs["prob_matrix"],
+        "player_adjustments": {"home": adj_home, "away": adj_away},
     }
 
 

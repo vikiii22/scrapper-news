@@ -63,5 +63,73 @@
     ],
     "source": "thesportsdb-live",
     "fetched_at": "2026-09-10T07:16:46.243569+00:00"
+  },
+  "burgos||ceuta": {
+    "teams": [
+      "Burgos",
+      "Ceuta"
+    ],
+    "matches": [
+      [
+        "Burgos",
+        "Ceuta",
+        0,
+        0,
+        "Spanish La Liga 2"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:25:09.276816+00:00"
+  },
+  "arsenal||chelsea": {
+    "teams": [
+      "Arsenal",
+      "Chelsea"
+    ],
+    "matches": [
+      [
+        "Arsenal",
+        "Chelsea",
+        2,
+        1,
+        "English Premier League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:26:05.784390+00:00"
+  },
+  "almeria||cadiz": {
+    "teams": [
+      "Almeria",
+      "Cadiz"
+    ],
+    "matches": [
+      [
+        "Almería",
+        "Cádiz",
+        3,
+        2,
+        "Spanish La Liga 2"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:28:10.830993+00:00"
+  },
+  "eibar||tenerife": {
+    "teams": [
+      "Tenerife",
+      "Eibar"
+    ],
+    "matches": [
+      [
+        "Tenerife",
+        "Eibar",
+        0,
+        0,
+        "Spanish La Liga 2"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-10T07:28:13.357793+00:00"
   }
 }
