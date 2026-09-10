@@ -2,9 +2,10 @@
 Orquestador de búsqueda en vivo: prueba cada fuente en orden y fusiona.
 
 Orden (todas gratuitas, sin key):
-  1. TheSportsDB (API libre, mejor para CUALQUIER equipo)
-  2. FBref (scraping HTML, buenos promedios de goles)
-  3. Noticias web (contexto: lesiones / forma)
+  1. ESPN (API pública, datos al día en ligas top: LaLiga, Premier, etc.)
+  2. TheSportsDB (API libre, mejor para equipos modestos / cualquier equipo)
+  3. FBref (scraping HTML, buenos promedios de goles)
+  4. Noticias web (contexto: lesiones / forma)
 
 Selenium es OPCIONAL y solo se usa si se pide explícitamente.
 
@@ -17,7 +18,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 from typing import Any, Dict, List, Optional
 
-from . import thesportsdb, fbref, web_search
+from . import thesportsdb, web_search, espn
 
 
 def fetch_team_live(team_name: str, with_news: bool = True) -> Optional[Dict[str, Any]]:
@@ -25,33 +26,24 @@ def fetch_team_live(team_name: str, with_news: bool = True) -> Optional[Dict[str
     record: Optional[Dict[str, Any]] = None
     sources_tried: List[str] = []
 
-    # 1. TheSportsDB
-    sources_tried.append("thesportsdb")
-    ts = thesportsdb.fetch_team(team_name)
-    if ts and ts.get("recent"):
-        record = ts
+    # 1. ESPN (la más al día para ligas top)
+    sources_tried.append("espn")
+    try:
+        record = espn.fetch_team(team_name)
+    except Exception:
+        record = None
 
-    # 2. FBref como refuerzo (si el primero falló o para enriquecer)
-    if record is None:
-        sources_tried.append("fbref")
-        fb = fbref.fetch_team(team_name)
-        if fb:
-            record = fb
-    else:
-        # si ya tenemos datos, intentamos completar fixtures con FBref sin romper
+    # 2. TheSportsDB (cubre equipos modestos de cualquier país)
+    if not record or len(record.get("recent", "")) < 2:
+        sources_tried.append("thesportsdb")
         try:
-            fb = fbref.fetch_team(team_name)
-            if fb and len(fb.get("fixtures", [])) >= len(record.get("fixtures", [])):
-                # promediamos goles de ambas fuentes para estabilizar
-                record["avg_goals_for"] = round(
-                    (record.get("avg_goals_for", 0) + fb.get("avg_goals_for", 0)) / 2, 2
-                )
-                record["avg_goals_against"] = round(
-                    (record.get("avg_goals_against", 0) + fb.get("avg_goals_against", 0)) / 2, 2
-                )
-                record["source"] = "thesportsdb+fbref-live"
+            ts = thesportsdb.fetch_team(team_name)
         except Exception:
-            pass
+            ts = None
+        if ts and ts.get("recent"):
+            # nos quedamos con la fuente que tenga MÁS partidos reales
+            if not record or len(ts.get("recent", "")) > len(record.get("recent", "")):
+                record = ts
 
     if not record:
         return None

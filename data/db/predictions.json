@@ -241,5 +241,59 @@
       "home_recent": "L",
       "away_recent": "L"
     }
+  },
+  {
+    "at": "2026-09-10T07:21:04.074770+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-10",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.8270997683544445,
+      "draw": 0.1297827254981758,
+      "away": 0.04311750614737962
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 2.449,
+      "away": 0.395
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWLD",
+      "away_recent": "DLLL"
+    }
+  },
+  {
+    "at": "2026-09-10T07:22:19.530796+00:00",
+    "teams": {
+      "home": "Sevilla",
+      "away": "Valencia"
+    },
+    "competition": "La Liga",
+    "date": "2026-09-11",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.8270997683544445,
+      "draw": 0.1297827254981758,
+      "away": 0.04311750614737962
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 2.449,
+      "away": 0.395
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWLD",
+      "away_recent": "DLLL"
+    }
   }
 ]
