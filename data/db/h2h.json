@@ -352,5 +352,192 @@
     ],
     "source": "thesportsdb-live",
     "fetched_at": "2026-09-10T09:28:54.074360+00:00"
+  },
+  "espanyol||rayo vallecano": {
+    "teams": [
+      "Rayo Vallecano",
+      "Espanyol"
+    ],
+    "matches": [
+      [
+        "Rayo Vallecano",
+        "Espanyol",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:15.872648+00:00"
+  },
+  "alaves||valencia": {
+    "teams": [
+      "Alaves",
+      "Valencia"
+    ],
+    "matches": [
+      [
+        "Alaves",
+        "Valencia",
+        1,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:17.914599+00:00"
+  },
+  "elche||real madrid": {
+    "teams": [
+      "Elche",
+      "Real Madrid"
+    ],
+    "matches": [
+      [
+        "Elche",
+        "Real Madrid",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:22.406885+00:00"
+  },
+  "atletico madrid||osasuna": {
+    "teams": [
+      "Atletico Madrid",
+      "Osasuna"
+    ],
+    "matches": [
+      [
+        "Atlético Madrid",
+        "Osasuna",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:23.927011+00:00"
+  },
+  "deportivo||sevilla": {
+    "teams": [
+      "Deportivo",
+      "Sevilla"
+    ],
+    "matches": [
+      [
+        "Sevilla",
+        "Deportivo de A Coruña",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:25.507550+00:00"
+  },
+  "athletic bilbao||levante": {
+    "teams": [
+      "Levante",
+      "Athletic Bilbao"
+    ],
+    "matches": [
+      [
+        "Levante",
+        "Athletic Bilbao",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:36.543802+00:00"
+  },
+  "getafe||real betis": {
+    "teams": [
+      "Real Betis",
+      "Getafe"
+    ],
+    "matches": [
+      [
+        "Real Betis",
+        "Getafe",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:38.171022+00:00"
+  },
+  "benfica||milan": {
+    "teams": [
+      "Milan",
+      "Benfica"
+    ],
+    "matches": [
+      [
+        "Milan",
+        "Benfica",
+        1,
+        0,
+        "European Cup"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:42.231760+00:00"
+  },
+  "celtic||ferencvaros": {
+    "teams": [
+      "Celtic",
+      "Ferencvaros"
+    ],
+    "matches": [
+      [
+        "Celtic",
+        "Ferencváros",
+        0,
+        0,
+        "UEFA Europa League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:46.843517+00:00"
+  },
+  "bournemouth||real sociedad": {
+    "teams": [
+      "Real Sociedad",
+      "Bournemouth"
+    ],
+    "matches": [
+      [
+        "Real Sociedad",
+        "Bournemouth",
+        0,
+        0,
+        "UEFA Europa League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:50.067147+00:00"
+  },
+  "málaga||villarreal": {
+    "teams": [
+      "Málaga",
+      "Villarreal"
+    ],
+    "matches": [
+      [
+        "Málaga",
+        "Villarreal",
+        0,
+        0,
+        "Spanish La Liga"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-09-15T06:59:51.329020+00:00"
   }
 }
