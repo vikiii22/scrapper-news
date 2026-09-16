@@ -1,0 +1,3142 @@
+{
+  "6": {
+    "jornada": 6,
+    "analyzed_at": "2026-09-16T10:15:00.939416+00:00",
+    "matches": [
+      {
+        "n": 1,
+        "home": "Athletic Bilbao",
+        "away": "Elche",
+        "home_raw": "ATH.CLUB",
+        "away_raw": "ELCHE",
+        "day": "SAB",
+        "hour": "18:30",
+        "columns": [
+          [
+            85.0,
+            10.0,
+            5.0
+          ],
+          [
+            82.0,
+            11.0,
+            7.0
+          ],
+          [
+            67.0,
+            20.0,
+            13.0
+          ],
+          [
+            85.0,
+            10.0,
+            5.0
+          ]
+        ],
+        "lae": {
+          "1": 82.0,
+          "X": 11.0,
+          "2": 7.0
+        },
+        "probables": {
+          "1": 67.0,
+          "X": 20.0,
+          "2": 13.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 62.6,
+          "X": 19.0,
+          "2": 18.4
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.329,
+          "away": 1.197
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LLWWD",
+          "away_recent": "DLLLDL"
+        },
+        "valor": {
+          "1": -19.4,
+          "X": 8.0,
+          "2": 11.4
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 2,
+        "home": "Levante",
+        "away": "Barcelona",
+        "home_raw": "LEVANTE",
+        "away_raw": "BARCELONA",
+        "day": "DOM",
+        "hour": "16:15",
+        "columns": [
+          [
+            2.0,
+            4.0,
+            94.0
+          ],
+          [
+            9.0,
+            9.0,
+            82.0
+          ],
+          [
+            7.0,
+            12.0,
+            81.0
+          ],
+          [
+            2.0,
+            4.0,
+            94.0
+          ]
+        ],
+        "lae": {
+          "1": 9.0,
+          "X": 9.0,
+          "2": 82.0
+        },
+        "probables": {
+          "1": 7.0,
+          "X": 12.0,
+          "2": 81.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 16.8,
+          "X": 15.9,
+          "2": 67.3
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.459,
+          "away": 2.917
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LDWDL",
+          "away_recent": "WWWWW"
+        },
+        "valor": {
+          "1": 7.8,
+          "X": 6.9,
+          "2": -14.7
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 3,
+        "home": "Osasuna",
+        "away": "Espanyol",
+        "home_raw": "OSASUNA",
+        "away_raw": "ESPANYOL",
+        "day": "SAB",
+        "hour": "16:15",
+        "columns": [
+          [
+            45.0,
+            34.0,
+            21.0
+          ],
+          [
+            49.0,
+            33.0,
+            18.0
+          ],
+          [
+            46.0,
+            28.0,
+            26.0
+          ],
+          [
+            45.0,
+            34.0,
+            21.0
+          ]
+        ],
+        "lae": {
+          "1": 49.0,
+          "X": 33.0,
+          "2": 18.0
+        },
+        "probables": {
+          "1": 46.0,
+          "X": 28.0,
+          "2": 26.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 37.5,
+          "X": 23.7,
+          "2": 38.9
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.555,
+          "away": 1.587
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DWWLL",
+          "away_recent": "WLLDWL"
+        },
+        "valor": {
+          "1": -11.5,
+          "X": -9.3,
+          "2": 20.9
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 4,
+        "home": "Racing Santander",
+        "away": "Alaves",
+        "home_raw": "RACING S.",
+        "away_raw": "ALAVÉS",
+        "day": "SAB",
+        "hour": "14:00",
+        "columns": [
+          [
+            35.0,
+            33.0,
+            32.0
+          ],
+          [
+            37.0,
+            31.0,
+            32.0
+          ],
+          [
+            39.0,
+            27.0,
+            34.0
+          ],
+          [
+            35.0,
+            33.0,
+            32.0
+          ]
+        ],
+        "lae": {
+          "1": 37.0,
+          "X": 31.0,
+          "2": 32.0
+        },
+        "probables": {
+          "1": 39.0,
+          "X": 27.0,
+          "2": 34.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 40.3,
+          "X": 21.9,
+          "2": 37.8
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.829,
+          "away": 1.767
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DLWLW",
+          "away_recent": "WDWWLL"
+        },
+        "valor": {
+          "1": 3.3,
+          "X": -9.1,
+          "2": 5.8
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 5,
+        "home": "Real Madrid",
+        "away": "Rayo Vallecano",
+        "home_raw": "R.MADRID",
+        "away_raw": "RAYO",
+        "day": "SAB",
+        "hour": "21:00",
+        "columns": [
+          [
+            96.0,
+            3.0,
+            1.0
+          ],
+          [
+            86.0,
+            9.0,
+            5.0
+          ],
+          [
+            84.0,
+            11.0,
+            5.0
+          ],
+          [
+            96.0,
+            3.0,
+            1.0
+          ]
+        ],
+        "lae": {
+          "1": 86.0,
+          "X": 9.0,
+          "2": 5.0
+        },
+        "probables": {
+          "1": 84.0,
+          "X": 11.0,
+          "2": 5.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 74.8,
+          "X": 13.3,
+          "2": 11.9
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 3.254,
+          "away": 1.316
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWWLWW",
+          "away_recent": "LDLWLW"
+        },
+        "valor": {
+          "1": -11.2,
+          "X": 4.3,
+          "2": 6.9
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 6,
+        "home": "Sevilla",
+        "away": "Valencia",
+        "home_raw": "SEVILLA",
+        "away_raw": "VALENCIA",
+        "day": "VIE",
+        "hour": "21:00",
+        "columns": [
+          [
+            59.0,
+            24.0,
+            17.0
+          ],
+          [
+            63.0,
+            23.0,
+            14.0
+          ],
+          [
+            45.0,
+            29.0,
+            26.0
+          ],
+          [
+            59.0,
+            24.0,
+            17.0
+          ]
+        ],
+        "lae": {
+          "1": 63.0,
+          "X": 23.0,
+          "2": 14.0
+        },
+        "probables": {
+          "1": 45.0,
+          "X": 29.0,
+          "2": 26.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 74.3,
+          "X": 18.1,
+          "2": 7.6
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.039,
+          "away": 0.483
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWLDW",
+          "away_recent": "DLLLLW"
+        },
+        "valor": {
+          "1": 11.3,
+          "X": -4.9,
+          "2": -6.4
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 7,
+        "home": "Villarreal",
+        "away": "Real Betis",
+        "home_raw": "VILLARREAL",
+        "away_raw": "BETIS",
+        "day": "LUN",
+        "hour": "21:00",
+        "columns": [
+          [
+            43.0,
+            33.0,
+            24.0
+          ],
+          [
+            40.0,
+            31.0,
+            29.0
+          ],
+          [
+            50.0,
+            25.0,
+            25.0
+          ],
+          [
+            43.0,
+            33.0,
+            24.0
+          ]
+        ],
+        "lae": {
+          "1": 40.0,
+          "X": 31.0,
+          "2": 29.0
+        },
+        "probables": {
+          "1": 50.0,
+          "X": 25.0,
+          "2": 25.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 36.9,
+          "X": 22.9,
+          "2": 40.2
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.625,
+          "away": 1.703
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DDLLL",
+          "away_recent": "WWLWW"
+        },
+        "valor": {
+          "1": -3.1,
+          "X": -8.1,
+          "2": 11.2
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 8,
+        "home": "Cadiz",
+        "away": "Las Palmas",
+        "home_raw": "CÁDIZ",
+        "away_raw": "LAS PALMAS",
+        "day": "SAB",
+        "hour": "16:15",
+        "columns": [
+          [
+            30.0,
+            32.0,
+            38.0
+          ],
+          [
+            30.0,
+            34.0,
+            36.0
+          ],
+          [
+            37.0,
+            28.0,
+            35.0
+          ],
+          [
+            30.0,
+            32.0,
+            38.0
+          ]
+        ],
+        "lae": {
+          "1": 30.0,
+          "X": 34.0,
+          "2": 36.0
+        },
+        "probables": {
+          "1": 37.0,
+          "X": 28.0,
+          "2": 35.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 34.6,
+          "X": 25.4,
+          "2": 40.0
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.326,
+          "away": 1.444
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DDDLL",
+          "away_recent": "WWLDW"
+        },
+        "valor": {
+          "1": 4.6,
+          "X": -8.6,
+          "2": 4.0
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 9,
+        "home": "Tenerife",
+        "away": "Leganes",
+        "home_raw": "TENERIFE",
+        "away_raw": "LEGANÉS",
+        "day": "DOM",
+        "hour": "21:00",
+        "columns": [
+          [
+            38.0,
+            31.0,
+            31.0
+          ],
+          [
+            38.0,
+            31.0,
+            31.0
+          ],
+          [
+            41.0,
+            31.0,
+            28.0
+          ],
+          [
+            38.0,
+            31.0,
+            31.0
+          ]
+        ],
+        "lae": {
+          "1": 38.0,
+          "X": 31.0,
+          "2": 31.0
+        },
+        "probables": {
+          "1": 41.0,
+          "X": 31.0,
+          "2": 28.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 56.4,
+          "X": 29.4,
+          "2": 14.2
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.286,
+          "away": 0.492
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWLDW",
+          "away_recent": "DWWDL"
+        },
+        "valor": {
+          "1": 18.4,
+          "X": -1.6,
+          "2": -16.8
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 10,
+        "home": "Real Valladolid",
+        "away": "Real Oviedo",
+        "home_raw": "VALLADOLID",
+        "away_raw": "R.OVIEDO",
+        "day": "DOM",
+        "hour": "16:15",
+        "columns": [
+          [
+            41.0,
+            32.0,
+            27.0
+          ],
+          [
+            44.0,
+            34.0,
+            22.0
+          ],
+          [
+            38.0,
+            31.0,
+            31.0
+          ],
+          [
+            41.0,
+            32.0,
+            27.0
+          ]
+        ],
+        "lae": {
+          "1": 44.0,
+          "X": 34.0,
+          "2": 22.0
+        },
+        "probables": {
+          "1": 38.0,
+          "X": 31.0,
+          "2": 31.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 21.0,
+          "X": 35.0,
+          "2": 44.0
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 0.573,
+          "away": 0.973
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LLDWL",
+          "away_recent": "DLWDW"
+        },
+        "valor": {
+          "1": -23.0,
+          "X": 1.0,
+          "2": 22.0
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 11,
+        "home": "Alaves",
+        "away": "Granada",
+        "home_raw": "ALAVÉS (F)",
+        "away_raw": "GRANADA (F)",
+        "day": "DOM",
+        "hour": "12:00",
+        "columns": [
+          [
+            58.0,
+            24.0,
+            18.0
+          ],
+          [
+            61.0,
+            23.0,
+            16.0
+          ],
+          [
+            51.0,
+            28.0,
+            21.0
+          ],
+          [
+            58.0,
+            24.0,
+            18.0
+          ]
+        ],
+        "lae": {
+          "1": 61.0,
+          "X": 23.0,
+          "2": 16.0
+        },
+        "probables": {
+          "1": 51.0,
+          "X": 28.0,
+          "2": 21.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 73.2,
+          "X": 19.4,
+          "2": 7.4
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.905,
+          "away": 0.428
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WLW",
+          "away_recent": "LWL"
+        },
+        "valor": {
+          "1": 12.2,
+          "X": -3.6,
+          "2": -8.6
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 12,
+        "home": "Logroño",
+        "away": "Valencia",
+        "home_raw": "LOGROÑO (F)",
+        "away_raw": "VALENCIA (F)",
+        "day": "DOM",
+        "hour": "17:00",
+        "columns": [
+          [
+            58.0,
+            22.0,
+            20.0
+          ],
+          [
+            54.0,
+            23.0,
+            23.0
+          ],
+          [
+            48.0,
+            23.0,
+            29.0
+          ],
+          [
+            58.0,
+            22.0,
+            20.0
+          ]
+        ],
+        "lae": {
+          "1": 54.0,
+          "X": 23.0,
+          "2": 23.0
+        },
+        "probables": {
+          "1": 48.0,
+          "X": 23.0,
+          "2": 29.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 79.6,
+          "X": 13.5,
+          "2": 6.9
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.628,
+          "away": 0.648
+        },
+        "data_sources": {
+          "home": "thesportsdb-live",
+          "away": "espn-live",
+          "home_recent": "W",
+          "away_recent": "LLL"
+        },
+        "valor": {
+          "1": 25.6,
+          "X": -9.5,
+          "2": -16.1
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 13,
+        "home": "Eibar",
+        "away": "Badalona W",
+        "home_raw": "EIBAR (F)",
+        "away_raw": "BADALONA W.(F)",
+        "day": "DOM",
+        "hour": "19:30",
+        "columns": [
+          [
+            54.0,
+            27.0,
+            19.0
+          ],
+          [
+            62.0,
+            22.0,
+            16.0
+          ],
+          [
+            40.0,
+            29.0,
+            31.0
+          ],
+          [
+            54.0,
+            27.0,
+            19.0
+          ]
+        ],
+        "lae": {
+          "1": 62.0,
+          "X": 22.0,
+          "2": 16.0
+        },
+        "probables": {
+          "1": 40.0,
+          "X": 29.0,
+          "2": 31.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 56.9,
+          "X": 21.4,
+          "2": 21.7
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.016,
+          "away": 1.172
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "thesportsdb-live",
+          "home_recent": "WDL",
+          "away_recent": "L"
+        },
+        "valor": {
+          "1": -5.1,
+          "X": -0.6,
+          "2": 5.7
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 14,
+        "home": "Madrid Cff",
+        "away": "Sevilla",
+        "home_raw": "MADRID CFF (F)",
+        "away_raw": "SEVILLA (F)",
+        "day": "SAB",
+        "hour": "16:30",
+        "columns": [
+          [
+            64.0,
+            21.0,
+            15.0
+          ],
+          [
+            76.0,
+            14.0,
+            10.0
+          ],
+          [
+            40.0,
+            27.0,
+            33.0
+          ],
+          [
+            64.0,
+            21.0,
+            15.0
+          ]
+        ],
+        "lae": {
+          "1": 76.0,
+          "X": 14.0,
+          "2": 10.0
+        },
+        "probables": {
+          "1": 40.0,
+          "X": 27.0,
+          "2": 33.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 84.1,
+          "X": 12.5,
+          "2": 3.5
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.431,
+          "away": 0.324
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWW",
+          "away_recent": "WLL"
+        },
+        "valor": {
+          "1": 8.1,
+          "X": -1.5,
+          "2": -6.5
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 15,
+        "home": "Real Sociedad",
+        "away": "Atletico Madrid",
+        "home_raw": "R.SOCIEDAD",
+        "away_raw": "AT.MADRID",
+        "day": "DOM",
+        "hour": "21:00",
+        "columns": [],
+        "lae": null,
+        "probables": null,
+        "is_pleno": true,
+        "pleno": [
+          [
+            11.0,
+            51.0,
+            34.0,
+            4.0
+          ],
+          [
+            10.0,
+            41.0,
+            38.0,
+            11.0
+          ],
+          [
+            10.0,
+            53.0,
+            33.0,
+            4.0
+          ],
+          [
+            7.0,
+            38.0,
+            40.0,
+            15.0
+          ],
+          [
+            29.0,
+            36.0,
+            22.0,
+            13.0
+          ],
+          [
+            24.0,
+            34.0,
+            25.0,
+            17.0
+          ],
+          [
+            11.0,
+            51.0,
+            34.0,
+            4.0
+          ],
+          [
+            10.0,
+            41.0,
+            38.0,
+            11.0
+          ]
+        ],
+        "is_women": false,
+        "modelo": {
+          "1": 29.0,
+          "X": 21.6,
+          "2": 49.4
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.5,
+          "away": 2.004
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LLWDWL",
+          "away_recent": "WDWLW"
+        },
+        "pleno_sugerido": {
+          "home": "1",
+          "away": "M"
+        }
+      }
+    ]
+  },
+  "7": {
+    "jornada": 7,
+    "analyzed_at": "2026-09-16T10:15:26.729082+00:00",
+    "matches": [
+      {
+        "n": 1,
+        "home": "Rayo Vallecano",
+        "away": "Espanyol",
+        "home_raw": "RAYO",
+        "away_raw": "ESPANYOL",
+        "day": "MAR",
+        "hour": "19:00",
+        "columns": [
+          [
+            41.0,
+            30.0,
+            29.0
+          ],
+          [
+            47.0,
+            29.0,
+            24.0
+          ],
+          [
+            41.0,
+            28.0,
+            31.0
+          ],
+          [
+            41.0,
+            30.0,
+            29.0
+          ]
+        ],
+        "lae": {
+          "1": 47.0,
+          "X": 29.0,
+          "2": 24.0
+        },
+        "probables": {
+          "1": 41.0,
+          "X": 28.0,
+          "2": 31.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 37.2,
+          "X": 21.1,
+          "2": 41.8
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.876,
+          "away": 1.993
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LDLWLW",
+          "away_recent": "WLLDWL"
+        },
+        "valor": {
+          "1": -9.8,
+          "X": -7.9,
+          "2": 17.8
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 2,
+        "home": "Alaves",
+        "away": "Valencia",
+        "home_raw": "ALAVÉS",
+        "away_raw": "VALENCIA",
+        "day": "MAR",
+        "hour": "20:00",
+        "columns": [
+          [
+            57.0,
+            25.0,
+            18.0
+          ],
+          [
+            54.0,
+            23.0,
+            23.0
+          ],
+          [
+            55.0,
+            27.0,
+            18.0
+          ],
+          [
+            57.0,
+            25.0,
+            18.0
+          ]
+        ],
+        "lae": {
+          "1": 54.0,
+          "X": 23.0,
+          "2": 23.0
+        },
+        "probables": {
+          "1": 55.0,
+          "X": 27.0,
+          "2": 18.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 81.6,
+          "X": 14.4,
+          "2": 4.1
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.245,
+          "away": 0.325
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDWWLL",
+          "away_recent": "DLLLLW"
+        },
+        "valor": {
+          "1": 27.6,
+          "X": -8.6,
+          "2": -18.9
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 3,
+        "home": "Elche",
+        "away": "Real Madrid",
+        "home_raw": "ELCHE",
+        "away_raw": "R.MADRID",
+        "day": "MAR",
+        "hour": "21:30",
+        "columns": [
+          [
+            2.0,
+            5.0,
+            93.0
+          ],
+          [
+            11.0,
+            10.0,
+            79.0
+          ],
+          [
+            8.0,
+            13.0,
+            79.0
+          ],
+          [
+            2.0,
+            5.0,
+            93.0
+          ]
+        ],
+        "lae": {
+          "1": 11.0,
+          "X": 10.0,
+          "2": 79.0
+        },
+        "probables": {
+          "1": 8.0,
+          "X": 13.0,
+          "2": 79.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 18.2,
+          "X": 16.3,
+          "2": 65.5
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.532,
+          "away": 2.896
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DLLLDL",
+          "away_recent": "WWWLWW"
+        },
+        "valor": {
+          "1": 7.2,
+          "X": 6.3,
+          "2": -13.5
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 4,
+        "home": "Atletico Madrid",
+        "away": "Osasuna",
+        "home_raw": "AT.MADRID",
+        "away_raw": "OSASUNA",
+        "day": "MIE",
+        "hour": "19:00",
+        "columns": [
+          [
+            90.0,
+            7.0,
+            3.0
+          ],
+          [
+            81.0,
+            11.0,
+            8.0
+          ],
+          [
+            68.0,
+            20.0,
+            12.0
+          ],
+          [
+            90.0,
+            7.0,
+            3.0
+          ]
+        ],
+        "lae": {
+          "1": 81.0,
+          "X": 11.0,
+          "2": 8.0
+        },
+        "probables": {
+          "1": 68.0,
+          "X": 20.0,
+          "2": 12.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 64.2,
+          "X": 18.8,
+          "2": 17.0
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.322,
+          "away": 1.12
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDWLW",
+          "away_recent": "DWWLL"
+        },
+        "valor": {
+          "1": -16.8,
+          "X": 7.8,
+          "2": 9.0
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 5,
+        "home": "Deportivo",
+        "away": "Sevilla",
+        "home_raw": "DEPORTIVO",
+        "away_raw": "SEVILLA",
+        "day": "MIE",
+        "hour": "19:00",
+        "columns": [
+          [
+            44.0,
+            33.0,
+            23.0
+          ],
+          [
+            50.0,
+            29.0,
+            21.0
+          ],
+          [
+            39.0,
+            30.0,
+            31.0
+          ],
+          [
+            44.0,
+            33.0,
+            23.0
+          ]
+        ],
+        "lae": {
+          "1": 50.0,
+          "X": 29.0,
+          "2": 21.0
+        },
+        "probables": {
+          "1": 39.0,
+          "X": 30.0,
+          "2": 31.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 52.7,
+          "X": 21.7,
+          "2": 25.5
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.987,
+          "away": 1.329
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DDWWD",
+          "away_recent": "WWLDW"
+        },
+        "valor": {
+          "1": 2.7,
+          "X": -7.3,
+          "2": 4.5
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 6,
+        "home": "Barcelona",
+        "away": "Racing Santander",
+        "home_raw": "BARCELONA",
+        "away_raw": "RACING S.",
+        "day": "MIE",
+        "hour": "21:30",
+        "columns": [
+          [
+            96.0,
+            2.0,
+            2.0
+          ],
+          [
+            85.0,
+            8.0,
+            7.0
+          ],
+          [
+            89.0,
+            7.0,
+            4.0
+          ],
+          [
+            96.0,
+            2.0,
+            2.0
+          ]
+        ],
+        "lae": {
+          "1": 85.0,
+          "X": 8.0,
+          "2": 7.0
+        },
+        "probables": {
+          "1": 89.0,
+          "X": 7.0,
+          "2": 4.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 77.8,
+          "X": 12.2,
+          "2": 10.0
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 3.367,
+          "away": 1.23
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWWWW",
+          "away_recent": "DLWLW"
+        },
+        "valor": {
+          "1": -7.2,
+          "X": 4.2,
+          "2": 3.0
+        },
+        "value_pick": "X"
+      },
+      {
+        "n": 7,
+        "home": "Levante",
+        "away": "Athletic Bilbao",
+        "home_raw": "LEVANTE",
+        "away_raw": "ATH.CLUB",
+        "day": "MIE",
+        "hour": "21:30",
+        "columns": [
+          [
+            28.0,
+            30.0,
+            42.0
+          ],
+          [
+            27.0,
+            30.0,
+            43.0
+          ],
+          [
+            28.0,
+            27.0,
+            45.0
+          ],
+          [
+            28.0,
+            30.0,
+            42.0
+          ]
+        ],
+        "lae": {
+          "1": 27.0,
+          "X": 30.0,
+          "2": 43.0
+        },
+        "probables": {
+          "1": 28.0,
+          "X": 27.0,
+          "2": 45.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 42.5,
+          "X": 23.2,
+          "2": 34.3
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.709,
+          "away": 1.517
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LDWDL",
+          "away_recent": "LLWWD"
+        },
+        "valor": {
+          "1": 15.5,
+          "X": -6.8,
+          "2": -8.7
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 8,
+        "home": "Real Betis",
+        "away": "Getafe",
+        "home_raw": "BETIS",
+        "away_raw": "GETAFE",
+        "day": "JUE",
+        "hour": "19:00",
+        "columns": [
+          [
+            78.0,
+            16.0,
+            6.0
+          ],
+          [
+            72.0,
+            18.0,
+            10.0
+          ],
+          [
+            56.0,
+            26.0,
+            18.0
+          ],
+          [
+            78.0,
+            16.0,
+            6.0
+          ]
+        ],
+        "lae": {
+          "1": 72.0,
+          "X": 18.0,
+          "2": 10.0
+        },
+        "probables": {
+          "1": 56.0,
+          "X": 26.0,
+          "2": 18.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 62.0,
+          "X": 22.9,
+          "2": 15.1
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.757,
+          "away": 0.729
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWLWW",
+          "away_recent": "LWLDD"
+        },
+        "valor": {
+          "1": -10.0,
+          "X": 4.9,
+          "2": 5.1
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 9,
+        "home": "Omonia N",
+        "away": "Celta Vigo",
+        "home_raw": "OMONIA N.",
+        "away_raw": "CELTA",
+        "day": "MIE",
+        "hour": "18:45",
+        "columns": [
+          [
+            11.0,
+            22.0,
+            67.0
+          ],
+          [
+            18.0,
+            22.0,
+            60.0
+          ],
+          [
+            23.0,
+            28.0,
+            49.0
+          ],
+          [
+            11.0,
+            22.0,
+            67.0
+          ]
+        ],
+        "lae": {
+          "1": 18.0,
+          "X": 22.0,
+          "2": 60.0
+        },
+        "probables": {
+          "1": 23.0,
+          "X": 28.0,
+          "2": 49.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 57.0,
+          "X": 26.2,
+          "2": 16.8
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.497,
+          "away": 0.677
+        },
+        "data_sources": {
+          "home": "thesportsdb-live",
+          "away": "espn-live",
+          "home_recent": "D",
+          "away_recent": "DLLDDD"
+        },
+        "valor": {
+          "1": 39.0,
+          "X": 4.2,
+          "2": -43.2
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 10,
+        "home": "Milan",
+        "away": "Benfica",
+        "home_raw": "MILAN",
+        "away_raw": "BENFICA",
+        "day": "MIE",
+        "hour": "21:00",
+        "columns": [
+          [
+            57.0,
+            24.0,
+            19.0
+          ],
+          [
+            59.0,
+            24.0,
+            17.0
+          ],
+          [
+            46.0,
+            26.0,
+            28.0
+          ],
+          [
+            57.0,
+            24.0,
+            19.0
+          ]
+        ],
+        "lae": {
+          "1": 59.0,
+          "X": 24.0,
+          "2": 17.0
+        },
+        "probables": {
+          "1": 46.0,
+          "X": 26.0,
+          "2": 28.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 34.5,
+          "X": 22.8,
+          "2": 42.7
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.566,
+          "away": 1.764
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWDD",
+          "away_recent": "DWWWWW"
+        },
+        "valor": {
+          "1": -24.5,
+          "X": -1.2,
+          "2": 25.7
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 11,
+        "home": "Anderlecht",
+        "away": "Ol Lyon",
+        "home_raw": "ANDERLECHT",
+        "away_raw": "OL. LYON",
+        "day": "MIE",
+        "hour": "21:00",
+        "columns": [
+          [
+            19.0,
+            26.0,
+            55.0
+          ],
+          [
+            27.0,
+            27.0,
+            46.0
+          ],
+          [
+            28.0,
+            25.0,
+            47.0
+          ],
+          [
+            19.0,
+            26.0,
+            55.0
+          ]
+        ],
+        "lae": {
+          "1": 27.0,
+          "X": 27.0,
+          "2": 46.0
+        },
+        "probables": {
+          "1": 28.0,
+          "X": 25.0,
+          "2": 47.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 31.8,
+          "X": 26.9,
+          "2": 41.3
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.147,
+          "away": 1.346
+        },
+        "data_sources": {
+          "home": "thesportsdb-live",
+          "away": "espn-live",
+          "home_recent": "D",
+          "away_recent": "WDWD"
+        },
+        "valor": {
+          "1": 4.8,
+          "X": -0.1,
+          "2": -4.7
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 12,
+        "home": "Celtic",
+        "away": "Ferencvaros",
+        "home_raw": "CELTIC",
+        "away_raw": "FERENCVAROS",
+        "day": "JUE",
+        "hour": "21:00",
+        "columns": [
+          [
+            76.0,
+            15.0,
+            9.0
+          ],
+          [
+            68.0,
+            19.0,
+            13.0
+          ],
+          [
+            56.0,
+            23.0,
+            21.0
+          ],
+          [
+            76.0,
+            15.0,
+            9.0
+          ]
+        ],
+        "lae": {
+          "1": 68.0,
+          "X": 19.0,
+          "2": 13.0
+        },
+        "probables": {
+          "1": 56.0,
+          "X": 23.0,
+          "2": 21.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 73.3,
+          "X": 16.5,
+          "2": 10.2
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.388,
+          "away": 0.771
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWWWWW",
+          "away_recent": "WWDWDLLWWL"
+        },
+        "valor": {
+          "1": 5.3,
+          "X": -2.5,
+          "2": -2.8
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 13,
+        "home": "Plzen",
+        "away": "R Union Sg",
+        "home_raw": "PLZEN",
+        "away_raw": "R. UNION SG",
+        "day": "JUE",
+        "hour": "21:00",
+        "columns": [
+          [
+            39.0,
+            28.0,
+            33.0
+          ],
+          [
+            43.0,
+            29.0,
+            28.0
+          ],
+          [
+            36.0,
+            27.0,
+            37.0
+          ],
+          [
+            39.0,
+            28.0,
+            33.0
+          ]
+        ],
+        "lae": {
+          "1": 43.0,
+          "X": 29.0,
+          "2": 28.0
+        },
+        "probables": {
+          "1": 36.0,
+          "X": 27.0,
+          "2": 37.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 64.9,
+          "X": 21.5,
+          "2": 13.6
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.875,
+          "away": 0.717
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "thesportsdb-live",
+          "home_recent": "DWWDDDDWDD",
+          "away_recent": "L"
+        },
+        "valor": {
+          "1": 21.9,
+          "X": -7.5,
+          "2": -14.4
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 14,
+        "home": "Real Sociedad",
+        "away": "Bournemouth",
+        "home_raw": "R.SOCIEDAD",
+        "away_raw": "BOURNEMOUTH",
+        "day": "JUE",
+        "hour": "21:00",
+        "columns": [
+          [
+            55.0,
+            23.0,
+            22.0
+          ],
+          [
+            63.0,
+            20.0,
+            17.0
+          ],
+          [
+            35.0,
+            27.0,
+            38.0
+          ],
+          [
+            55.0,
+            23.0,
+            22.0
+          ]
+        ],
+        "lae": {
+          "1": 63.0,
+          "X": 20.0,
+          "2": 17.0
+        },
+        "probables": {
+          "1": 35.0,
+          "X": 27.0,
+          "2": 38.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 42.0,
+          "X": 22.9,
+          "2": 35.1
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.74,
+          "away": 1.576
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LLWDWL",
+          "away_recent": "LDDD"
+        },
+        "valor": {
+          "1": -21.0,
+          "X": 2.9,
+          "2": 18.1
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 15,
+        "home": "Málaga",
+        "away": "Villarreal",
+        "home_raw": "MÁLAGA",
+        "away_raw": "VILLARREAL",
+        "day": "JUE",
+        "hour": "21:30",
+        "columns": [],
+        "lae": null,
+        "probables": null,
+        "is_pleno": true,
+        "pleno": [
+          [
+            18.0,
+            66.0,
+            15.0,
+            1.0
+          ],
+          [
+            6.0,
+            27.0,
+            48.0,
+            19.0
+          ],
+          [
+            16.0,
+            60.0,
+            19.0,
+            5.0
+          ],
+          [
+            7.0,
+            27.0,
+            45.0,
+            21.0
+          ],
+          [
+            33.0,
+            37.0,
+            20.0,
+            10.0
+          ],
+          [
+            19.0,
+            32.0,
+            26.0,
+            23.0
+          ],
+          [
+            18.0,
+            66.0,
+            15.0,
+            1.0
+          ],
+          [
+            6.0,
+            27.0,
+            48.0,
+            19.0
+          ]
+        ],
+        "is_women": false,
+        "modelo": {
+          "1": 32.9,
+          "X": 26.3,
+          "2": 40.8
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.215,
+          "away": 1.385
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LDLDD",
+          "away_recent": "DDLLL"
+        },
+        "pleno_sugerido": {
+          "home": "1",
+          "away": "1"
+        }
+      }
+    ],
+    "actuals": {
+      "1": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "2": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "3": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      }
+    },
+    "score": {
+      "rows": [
+        {
+          "n": 1,
+          "home": "Rayo Vallecano",
+          "away": "Espanyol",
+          "pick": "2",
+          "value_pick": "2",
+          "actual": "1",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": false
+        },
+        {
+          "n": 2,
+          "home": "Alaves",
+          "away": "Valencia",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": false
+        },
+        {
+          "n": 3,
+          "home": "Elche",
+          "away": "Real Madrid",
+          "pick": "2",
+          "value_pick": "1",
+          "actual": "2",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": false
+        },
+        {
+          "n": 4,
+          "home": "Atletico Madrid",
+          "away": "Osasuna",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 5,
+          "home": "Deportivo",
+          "away": "Sevilla",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 6,
+          "home": "Barcelona",
+          "away": "Racing Santander",
+          "pick": "1",
+          "value_pick": "X",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 7,
+          "home": "Levante",
+          "away": "Athletic Bilbao",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 8,
+          "home": "Real Betis",
+          "away": "Getafe",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 9,
+          "home": "Omonia N",
+          "away": "Celta Vigo",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 10,
+          "home": "Milan",
+          "away": "Benfica",
+          "pick": "2",
+          "value_pick": "2",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 11,
+          "home": "Anderlecht",
+          "away": "Ol Lyon",
+          "pick": "2",
+          "value_pick": "1",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 12,
+          "home": "Celtic",
+          "away": "Ferencvaros",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 13,
+          "home": "Plzen",
+          "away": "R Union Sg",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 14,
+          "home": "Real Sociedad",
+          "away": "Bournemouth",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": null,
+          "score": null
+        },
+        {
+          "n": 15,
+          "home": "Málaga",
+          "away": "Villarreal",
+          "pick": "2",
+          "value_pick": null,
+          "actual": null,
+          "score": null
+        }
+      ],
+      "pick": {
+        "ok": 1,
+        "n": 3
+      },
+      "value": {
+        "ok": 0,
+        "n": 3
+      },
+      "pleno": {
+        "ok": 0
+      }
+    },
+    "scored_at": "2026-09-16T10:15:26.732405+00:00"
+  },
+  "8": {
+    "jornada": 8,
+    "analyzed_at": "2026-09-16T10:17:13.293772+00:00",
+    "matches": [
+      {
+        "n": 1,
+        "home": "Osasuna",
+        "away": "Rayo Vallecano",
+        "home_raw": "OSASUNA",
+        "away_raw": "RAYO",
+        "day": "SAB",
+        "hour": "14:00",
+        "columns": [
+          [
+            50.0,
+            46.0,
+            4.0
+          ],
+          [
+            42.0,
+            29.0,
+            29.0
+          ],
+          [
+            50.0,
+            46.0,
+            4.0
+          ]
+        ],
+        "lae": {
+          "1": 42.0,
+          "X": 29.0,
+          "2": 29.0
+        },
+        "probables": {
+          "1": 50.0,
+          "X": 46.0,
+          "2": 4.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 47.5,
+          "X": 21.0,
+          "2": 31.5
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.08,
+          "away": 1.675
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DWWLL",
+          "away_recent": "LDLWLW"
+        },
+        "valor": {
+          "1": 5.5,
+          "X": -8.0,
+          "2": 2.5
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 2,
+        "home": "Athletic Bilbao",
+        "away": "Alaves",
+        "home_raw": "ATH.CLUB",
+        "away_raw": "ALAVÉS",
+        "day": "SAB",
+        "hour": "16:15",
+        "columns": [
+          [
+            97.0,
+            2.0,
+            1.0
+          ],
+          [
+            57.0,
+            25.0,
+            18.0
+          ],
+          [
+            97.0,
+            2.0,
+            1.0
+          ]
+        ],
+        "lae": {
+          "1": 57.0,
+          "X": 25.0,
+          "2": 18.0
+        },
+        "probables": {
+          "1": 97.0,
+          "X": 2.0,
+          "2": 1.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 40.1,
+          "X": 25.4,
+          "2": 34.4
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.442,
+          "away": 1.317
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LLWWD",
+          "away_recent": "WDWWLL"
+        },
+        "valor": {
+          "1": -16.9,
+          "X": 0.4,
+          "2": 16.4
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 3,
+        "home": "Sevilla",
+        "away": "Barcelona",
+        "home_raw": "SEVILLA",
+        "away_raw": "BARCELONA",
+        "day": "SAB",
+        "hour": "21:00",
+        "columns": [
+          [
+            0.0,
+            43.0,
+            57.0
+          ],
+          [
+            8.0,
+            15.0,
+            77.0
+          ],
+          [
+            0.0,
+            43.0,
+            57.0
+          ]
+        ],
+        "lae": {
+          "1": 8.0,
+          "X": 15.0,
+          "2": 77.0
+        },
+        "probables": {
+          "1": 0.0,
+          "X": 43.0,
+          "2": 57.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 23.7,
+          "X": 19.3,
+          "2": 57.0
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.512,
+          "away": 2.387
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WWLDW",
+          "away_recent": "WWWWW"
+        },
+        "valor": {
+          "1": 15.7,
+          "X": 4.3,
+          "2": -20.0
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 4,
+        "home": "Getafe",
+        "away": "Málaga",
+        "home_raw": "GETAFE",
+        "away_raw": "MÁLAGA",
+        "day": "DOM",
+        "hour": "14:00",
+        "columns": [
+          [
+            52.0,
+            45.0,
+            3.0
+          ],
+          [
+            44.0,
+            31.0,
+            25.0
+          ],
+          [
+            52.0,
+            45.0,
+            3.0
+          ]
+        ],
+        "lae": {
+          "1": 44.0,
+          "X": 31.0,
+          "2": 25.0
+        },
+        "probables": {
+          "1": 52.0,
+          "X": 45.0,
+          "2": 3.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 55.5,
+          "X": 28.9,
+          "2": 15.6
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.317,
+          "away": 0.553
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LWLDD",
+          "away_recent": "LDLDD"
+        },
+        "valor": {
+          "1": 11.5,
+          "X": -2.1,
+          "2": -9.4
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 5,
+        "home": "Deportivo",
+        "away": "Real Betis",
+        "home_raw": "DEPORTIVO",
+        "away_raw": "BETIS",
+        "day": "DOM",
+        "hour": "18:30",
+        "columns": [
+          [
+            32.0,
+            32.0,
+            36.0
+          ],
+          [
+            33.0,
+            29.0,
+            38.0
+          ],
+          [
+            32.0,
+            32.0,
+            36.0
+          ]
+        ],
+        "lae": {
+          "1": 33.0,
+          "X": 29.0,
+          "2": 38.0
+        },
+        "probables": {
+          "1": 32.0,
+          "X": 32.0,
+          "2": 36.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 53.2,
+          "X": 21.7,
+          "2": 25.0
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.987,
+          "away": 1.307
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DDWWD",
+          "away_recent": "WWLWW"
+        },
+        "valor": {
+          "1": 20.2,
+          "X": -7.3,
+          "2": -13.0
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 6,
+        "home": "Villarreal",
+        "away": "Levante",
+        "home_raw": "VILLARREAL",
+        "away_raw": "LEVANTE",
+        "day": "DOM",
+        "hour": "18:30",
+        "columns": [
+          [
+            96.0,
+            3.0,
+            1.0
+          ],
+          [
+            60.0,
+            22.0,
+            18.0
+          ],
+          [
+            96.0,
+            3.0,
+            1.0
+          ]
+        ],
+        "lae": {
+          "1": 60.0,
+          "X": 22.0,
+          "2": 18.0
+        },
+        "probables": {
+          "1": 96.0,
+          "X": 3.0,
+          "2": 1.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 48.9,
+          "X": 21.4,
+          "2": 29.7
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.031,
+          "away": 1.555
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DDLLL",
+          "away_recent": "LDWDL"
+        },
+        "valor": {
+          "1": -11.1,
+          "X": -0.6,
+          "2": 11.7
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 7,
+        "home": "Valencia",
+        "away": "Real Sociedad",
+        "home_raw": "VALENCIA",
+        "away_raw": "R.SOCIEDAD",
+        "day": "DOM",
+        "hour": "21:00",
+        "columns": [
+          [
+            34.0,
+            33.0,
+            33.0
+          ],
+          [
+            34.0,
+            28.0,
+            38.0
+          ],
+          [
+            34.0,
+            33.0,
+            33.0
+          ]
+        ],
+        "lae": {
+          "1": 34.0,
+          "X": 28.0,
+          "2": 38.0
+        },
+        "probables": {
+          "1": 34.0,
+          "X": 33.0,
+          "2": 33.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 32.0,
+          "X": 27.9,
+          "2": 40.1
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.089,
+          "away": 1.256
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DLLLLW",
+          "away_recent": "LLWDWL"
+        },
+        "valor": {
+          "1": -2.0,
+          "X": -0.1,
+          "2": 2.1
+        },
+        "value_pick": null
+      },
+      {
+        "n": 8,
+        "home": "FC Andorra",
+        "away": "Sporting Gijon",
+        "home_raw": "ANDORRA FC",
+        "away_raw": "SPORTING",
+        "day": "SAB",
+        "hour": "16:15",
+        "columns": [
+          [
+            36.0,
+            31.0,
+            33.0
+          ],
+          [
+            46.0,
+            27.0,
+            27.0
+          ],
+          [
+            36.0,
+            31.0,
+            33.0
+          ]
+        ],
+        "lae": {
+          "1": 46.0,
+          "X": 27.0,
+          "2": 27.0
+        },
+        "probables": {
+          "1": 36.0,
+          "X": 31.0,
+          "2": 33.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 48.4,
+          "X": 28.8,
+          "2": 22.8
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.293,
+          "away": 0.789
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WLLLL",
+          "away_recent": "DWWLL"
+        },
+        "valor": {
+          "1": 2.4,
+          "X": 1.8,
+          "2": -4.2
+        },
+        "value_pick": null
+      },
+      {
+        "n": 9,
+        "home": "Castellón",
+        "away": "Tenerife",
+        "home_raw": "CASTELLÓN",
+        "away_raw": "TENERIFE",
+        "day": "SAB",
+        "hour": "18:30",
+        "columns": [
+          [
+            39.0,
+            31.0,
+            30.0
+          ],
+          [
+            61.0,
+            22.0,
+            17.0
+          ],
+          [
+            39.0,
+            31.0,
+            30.0
+          ]
+        ],
+        "lae": {
+          "1": 61.0,
+          "X": 22.0,
+          "2": 17.0
+        },
+        "probables": {
+          "1": 39.0,
+          "X": 31.0,
+          "2": 30.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 52.3,
+          "X": 28.9,
+          "2": 18.8
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.31,
+          "away": 0.66
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDWWW",
+          "away_recent": "WWLDW"
+        },
+        "valor": {
+          "1": -8.7,
+          "X": 6.9,
+          "2": 1.8
+        },
+        "value_pick": "X"
+      },
+      {
+        "n": 10,
+        "home": "Leganes",
+        "away": "Granada",
+        "home_raw": "LEGANÉS",
+        "away_raw": "GRANADA",
+        "day": "DOM",
+        "hour": "21:00",
+        "columns": [
+          [
+            36.0,
+            34.0,
+            30.0
+          ],
+          [
+            46.0,
+            30.0,
+            24.0
+          ],
+          [
+            36.0,
+            34.0,
+            30.0
+          ]
+        ],
+        "lae": {
+          "1": 46.0,
+          "X": 30.0,
+          "2": 24.0
+        },
+        "probables": {
+          "1": 36.0,
+          "X": 34.0,
+          "2": 30.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": false,
+        "modelo": {
+          "1": 44.3,
+          "X": 31.3,
+          "2": 24.4
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.125,
+          "away": 0.753
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "DWWDL",
+          "away_recent": "DWWLD"
+        },
+        "valor": {
+          "1": -1.7,
+          "X": 1.3,
+          "2": 0.4
+        },
+        "value_pick": null
+      },
+      {
+        "n": 11,
+        "home": "Atletico Madrid",
+        "away": "Logroño",
+        "home_raw": "AT.MADRID (F)",
+        "away_raw": "LOGROÑO (F)",
+        "day": "SAB",
+        "hour": "18:00",
+        "columns": [
+          [
+            96.0,
+            3.0,
+            1.0
+          ],
+          [
+            66.0,
+            20.0,
+            14.0
+          ],
+          [
+            96.0,
+            3.0,
+            1.0
+          ]
+        ],
+        "lae": {
+          "1": 66.0,
+          "X": 20.0,
+          "2": 14.0
+        },
+        "probables": {
+          "1": 96.0,
+          "X": 3.0,
+          "2": 1.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 31.6,
+          "X": 20.5,
+          "2": 47.9
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.756,
+          "away": 2.178
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "thesportsdb-live",
+          "home_recent": "LWL",
+          "away_recent": "W"
+        },
+        "valor": {
+          "1": -34.4,
+          "X": 0.5,
+          "2": 33.9
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 12,
+        "home": "Eibar",
+        "away": "Athletic Bilbao",
+        "home_raw": "EIBAR (F)",
+        "away_raw": "ATH.CLUB (F)",
+        "day": "DOM",
+        "hour": "18:00",
+        "columns": [
+          [
+            31.0,
+            33.0,
+            36.0
+          ],
+          [
+            27.0,
+            30.0,
+            43.0
+          ],
+          [
+            31.0,
+            33.0,
+            36.0
+          ]
+        ],
+        "lae": {
+          "1": 27.0,
+          "X": 30.0,
+          "2": 43.0
+        },
+        "probables": {
+          "1": 31.0,
+          "X": 33.0,
+          "2": 36.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 26.7,
+          "X": 25.8,
+          "2": 47.5
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.058,
+          "away": 1.504
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDL",
+          "away_recent": "WWD"
+        },
+        "valor": {
+          "1": -0.3,
+          "X": -4.2,
+          "2": 4.5
+        },
+        "value_pick": "2"
+      },
+      {
+        "n": 13,
+        "home": "Real Madrid",
+        "away": "Valencia",
+        "home_raw": "R.MADRID (F)",
+        "away_raw": "VALENCIA (F)",
+        "day": "SAB",
+        "hour": "20:30",
+        "columns": [
+          [
+            98.0,
+            2.0,
+            0.0
+          ],
+          [
+            78.0,
+            16.0,
+            6.0
+          ],
+          [
+            98.0,
+            2.0,
+            0.0
+          ]
+        ],
+        "lae": {
+          "1": 78.0,
+          "X": 16.0,
+          "2": 6.0
+        },
+        "probables": {
+          "1": 98.0,
+          "X": 2.0,
+          "2": 0.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 81.7,
+          "X": 13.1,
+          "2": 5.2
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 2.531,
+          "away": 0.491
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDW",
+          "away_recent": "LLL"
+        },
+        "valor": {
+          "1": 3.7,
+          "X": -2.9,
+          "2": -0.8
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 14,
+        "home": "Tenerife",
+        "away": "Sevilla",
+        "home_raw": "TENERIFE (F)",
+        "away_raw": "SEVILLA (F)",
+        "day": "DOM",
+        "hour": "12:00",
+        "columns": [
+          [
+            33.0,
+            34.0,
+            33.0
+          ],
+          [
+            42.0,
+            27.0,
+            31.0
+          ],
+          [
+            33.0,
+            34.0,
+            33.0
+          ]
+        ],
+        "lae": {
+          "1": 42.0,
+          "X": 27.0,
+          "2": 31.0
+        },
+        "probables": {
+          "1": 33.0,
+          "X": 34.0,
+          "2": 33.0
+        },
+        "is_pleno": false,
+        "pleno": null,
+        "is_women": true,
+        "modelo": {
+          "1": 49.9,
+          "X": 31.5,
+          "2": 18.6
+        },
+        "pick": "1",
+        "expected_goals": {
+          "home": 1.161,
+          "away": 0.586
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "LDD",
+          "away_recent": "WLL"
+        },
+        "valor": {
+          "1": 7.9,
+          "X": 4.5,
+          "2": -12.4
+        },
+        "value_pick": "1"
+      },
+      {
+        "n": 15,
+        "home": "Atletico Madrid",
+        "away": "Real Madrid",
+        "home_raw": "AT.MADRID",
+        "away_raw": "R.MADRID",
+        "day": "DOM",
+        "hour": "16:15",
+        "columns": [],
+        "lae": null,
+        "probables": null,
+        "is_pleno": true,
+        "pleno": [
+          [
+            1.0,
+            49.0,
+            49.0,
+            1.0
+          ],
+          [
+            0.0,
+            48.0,
+            49.0,
+            3.0
+          ],
+          [
+            35.0,
+            37.0,
+            19.0,
+            9.0
+          ],
+          [
+            18.0,
+            31.0,
+            26.0,
+            25.0
+          ],
+          [
+            1.0,
+            49.0,
+            49.0,
+            1.0
+          ],
+          [
+            0.0,
+            48.0,
+            49.0,
+            3.0
+          ]
+        ],
+        "is_women": false,
+        "modelo": {
+          "1": 39.1,
+          "X": 21.1,
+          "2": 39.8
+        },
+        "pick": "2",
+        "expected_goals": {
+          "home": 1.929,
+          "away": 1.946
+        },
+        "data_sources": {
+          "home": "espn-live",
+          "away": "espn-live",
+          "home_recent": "WDWLW",
+          "away_recent": "WWWLWW"
+        },
+        "pleno_sugerido": {
+          "home": "M",
+          "away": "M"
+        }
+      }
+    ]
+  }
+}
