@@ -51,6 +51,10 @@ pip install -r requirements.txt
 cd soccer_predictor
 streamlit run app.py
 ```
+### Opción B si no funciona A
+```bash
+python -m streamlit run soccer_predictor/app.py
+```
 
 Se abrirá el navegador. Elige los equipos, la competición y pulsa
 **"🔮 Predecir partido"**. ¡Listo!

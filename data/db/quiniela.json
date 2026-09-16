@@ -1011,7 +1011,297 @@
           "away": "M"
         }
       }
-    ]
+    ],
+    "actuals": {
+      "1": {
+        "sign": "X",
+        "home_goals": 1,
+        "away_goals": 1,
+        "score": "1-1",
+        "source": "espn:esp.1"
+      },
+      "2": {
+        "sign": "2",
+        "home_goals": 2,
+        "away_goals": 4,
+        "score": "2-4",
+        "source": "espn:esp.1"
+      },
+      "3": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 2,
+        "score": "0-2",
+        "source": "espn:esp.1"
+      },
+      "4": {
+        "sign": "1",
+        "home_goals": 2,
+        "away_goals": 1,
+        "score": "2-1",
+        "source": "espn:esp.1"
+      },
+      "5": {
+        "sign": "1",
+        "home_goals": 4,
+        "away_goals": 1,
+        "score": "4-1",
+        "source": "espn:esp.1"
+      },
+      "6": {
+        "sign": "1",
+        "home_goals": 1,
+        "away_goals": 0,
+        "score": "1-0",
+        "source": "espn:esp.1"
+      },
+      "7": {
+        "sign": "2",
+        "home_goals": 1,
+        "away_goals": 2,
+        "score": "1-2",
+        "source": "espn:esp.1"
+      },
+      "8": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 1,
+        "score": "0-1",
+        "source": "espn:esp.2"
+      },
+      "9": {
+        "sign": "1",
+        "home_goals": 2,
+        "away_goals": 0,
+        "score": "2-0",
+        "source": "espn:esp.2"
+      },
+      "10": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 3,
+        "score": "0-3",
+        "source": "espn:esp.2"
+      },
+      "11": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "12": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "13": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "14": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "15": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 3,
+        "score": "0-3",
+        "source": "espn:esp.1"
+      }
+    },
+    "score": {
+      "rows": [
+        {
+          "n": 1,
+          "home": "Athletic Bilbao",
+          "away": "Elche",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": "X",
+          "score": "1-1",
+          "pick_ok": false,
+          "value_ok": false
+        },
+        {
+          "n": 2,
+          "home": "Levante",
+          "away": "Barcelona",
+          "pick": "2",
+          "value_pick": "1",
+          "actual": "2",
+          "score": "2-4",
+          "pick_ok": true,
+          "value_ok": false
+        },
+        {
+          "n": 3,
+          "home": "Osasuna",
+          "away": "Espanyol",
+          "pick": "2",
+          "value_pick": "2",
+          "actual": "2",
+          "score": "0-2",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 4,
+          "home": "Racing Santander",
+          "away": "Alaves",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": "1",
+          "score": "2-1",
+          "pick_ok": true,
+          "value_ok": false
+        },
+        {
+          "n": 5,
+          "home": "Real Madrid",
+          "away": "Rayo Vallecano",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": "1",
+          "score": "4-1",
+          "pick_ok": true,
+          "value_ok": false
+        },
+        {
+          "n": 6,
+          "home": "Sevilla",
+          "away": "Valencia",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "1",
+          "score": "1-0",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 7,
+          "home": "Villarreal",
+          "away": "Real Betis",
+          "pick": "2",
+          "value_pick": "2",
+          "actual": "2",
+          "score": "1-2",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 8,
+          "home": "Cadiz",
+          "away": "Las Palmas",
+          "pick": "2",
+          "value_pick": "1",
+          "actual": "2",
+          "score": "0-1",
+          "pick_ok": true,
+          "value_ok": false
+        },
+        {
+          "n": 9,
+          "home": "Tenerife",
+          "away": "Leganes",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "1",
+          "score": "2-0",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 10,
+          "home": "Real Valladolid",
+          "away": "Real Oviedo",
+          "pick": "2",
+          "value_pick": "2",
+          "actual": "2",
+          "score": "0-3",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 11,
+          "home": "Alaves",
+          "away": "Granada",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 12,
+          "home": "Logroño",
+          "away": "Valencia",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 13,
+          "home": "Eibar",
+          "away": "Badalona W",
+          "pick": "1",
+          "value_pick": "2",
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": true
+        },
+        {
+          "n": 14,
+          "home": "Madrid Cff",
+          "away": "Sevilla",
+          "pick": "1",
+          "value_pick": "1",
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true
+        },
+        {
+          "n": 15,
+          "home": "Real Sociedad",
+          "away": "Atletico Madrid",
+          "pick": "2",
+          "value_pick": null,
+          "actual": "2",
+          "score": "0-3",
+          "pick_ok": true,
+          "pleno_ok": false,
+          "pleno_real": "0-M",
+          "pleno_sug": "1-M"
+        }
+      ],
+      "pick": {
+        "ok": 13,
+        "n": 15
+      },
+      "value": {
+        "ok": 9,
+        "n": 14
+      },
+      "pleno": {
+        "ok": 0
+      }
+    },
+    "scored_at": "2026-09-16T11:36:41.044698+00:00"
   },
   "7": {
     "jornada": 7,
@@ -2209,7 +2499,7 @@
   },
   "8": {
     "jornada": 8,
-    "analyzed_at": "2026-09-16T10:17:13.293772+00:00",
+    "analyzed_at": "2026-09-16T11:42:41.567296+00:00",
     "matches": [
       {
         "n": 1,
@@ -2221,9 +2511,9 @@
         "hour": "14:00",
         "columns": [
           [
-            50.0,
-            46.0,
-            4.0
+            49.0,
+            45.0,
+            6.0
           ],
           [
             42.0,
@@ -2231,9 +2521,9 @@
             29.0
           ],
           [
-            50.0,
-            46.0,
-            4.0
+            49.0,
+            45.0,
+            6.0
           ]
         ],
         "lae": {
@@ -2242,9 +2532,9 @@
           "2": 29.0
         },
         "probables": {
-          "1": 50.0,
-          "X": 46.0,
-          "2": 4.0
+          "1": 49.0,
+          "X": 45.0,
+          "2": 6.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -2282,8 +2572,8 @@
         "hour": "16:15",
         "columns": [
           [
-            97.0,
-            2.0,
+            96.0,
+            3.0,
             1.0
           ],
           [
@@ -2292,8 +2582,8 @@
             18.0
           ],
           [
-            97.0,
-            2.0,
+            96.0,
+            3.0,
             1.0
           ]
         ],
@@ -2303,8 +2593,8 @@
           "2": 18.0
         },
         "probables": {
-          "1": 97.0,
-          "X": 2.0,
+          "1": 96.0,
+          "X": 3.0,
           "2": 1.0
         },
         "is_pleno": false,
@@ -2344,8 +2634,8 @@
         "columns": [
           [
             0.0,
-            43.0,
-            57.0
+            42.0,
+            58.0
           ],
           [
             8.0,
@@ -2354,8 +2644,8 @@
           ],
           [
             0.0,
-            43.0,
-            57.0
+            42.0,
+            58.0
           ]
         ],
         "lae": {
@@ -2365,8 +2655,8 @@
         },
         "probables": {
           "1": 0.0,
-          "X": 43.0,
-          "2": 57.0
+          "X": 42.0,
+          "2": 58.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -2526,8 +2816,8 @@
         "hour": "18:30",
         "columns": [
           [
-            96.0,
-            3.0,
+            95.0,
+            4.0,
             1.0
           ],
           [
@@ -2536,8 +2826,8 @@
             18.0
           ],
           [
-            96.0,
-            3.0,
+            95.0,
+            4.0,
             1.0
           ]
         ],
@@ -2547,8 +2837,8 @@
           "2": 18.0
         },
         "probables": {
-          "1": 96.0,
-          "X": 3.0,
+          "1": 95.0,
+          "X": 4.0,
           "2": 1.0
         },
         "is_pleno": false,
@@ -2648,9 +2938,9 @@
         "hour": "16:15",
         "columns": [
           [
-            36.0,
+            37.0,
             31.0,
-            33.0
+            32.0
           ],
           [
             46.0,
@@ -2658,9 +2948,9 @@
             27.0
           ],
           [
-            36.0,
+            37.0,
             31.0,
-            33.0
+            32.0
           ]
         ],
         "lae": {
@@ -2669,9 +2959,9 @@
           "2": 27.0
         },
         "probables": {
-          "1": 36.0,
+          "1": 37.0,
           "X": 31.0,
-          "2": 33.0
+          "2": 32.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -2709,30 +2999,30 @@
         "hour": "18:30",
         "columns": [
           [
-            39.0,
+            40.0,
             31.0,
-            30.0
+            29.0
           ],
           [
-            61.0,
-            22.0,
+            60.0,
+            23.0,
             17.0
           ],
           [
-            39.0,
+            40.0,
             31.0,
-            30.0
+            29.0
           ]
         ],
         "lae": {
-          "1": 61.0,
-          "X": 22.0,
+          "1": 60.0,
+          "X": 23.0,
           "2": 17.0
         },
         "probables": {
-          "1": 39.0,
+          "1": 40.0,
           "X": 31.0,
-          "2": 30.0
+          "2": 29.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -2754,8 +3044,8 @@
           "away_recent": "WWLDW"
         },
         "valor": {
-          "1": -8.7,
-          "X": 6.9,
+          "1": -7.7,
+          "X": 5.9,
           "2": 1.8
         },
         "value_pick": "X"
@@ -2770,9 +3060,9 @@
         "hour": "21:00",
         "columns": [
           [
-            36.0,
+            37.0,
             34.0,
-            30.0
+            29.0
           ],
           [
             46.0,
@@ -2780,9 +3070,9 @@
             24.0
           ],
           [
-            36.0,
+            37.0,
             34.0,
-            30.0
+            29.0
           ]
         ],
         "lae": {
@@ -2791,9 +3081,9 @@
           "2": 24.0
         },
         "probables": {
-          "1": 36.0,
+          "1": 37.0,
           "X": 34.0,
-          "2": 30.0
+          "2": 29.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -2892,9 +3182,9 @@
         "hour": "18:00",
         "columns": [
           [
-            31.0,
-            33.0,
-            36.0
+            30.0,
+            32.0,
+            38.0
           ],
           [
             27.0,
@@ -2902,9 +3192,9 @@
             43.0
           ],
           [
-            31.0,
-            33.0,
-            36.0
+            30.0,
+            32.0,
+            38.0
           ]
         ],
         "lae": {
@@ -2913,9 +3203,9 @@
           "2": 43.0
         },
         "probables": {
-          "1": 31.0,
-          "X": 33.0,
-          "2": 36.0
+          "1": 30.0,
+          "X": 32.0,
+          "2": 38.0
         },
         "is_pleno": false,
         "pleno": null,
@@ -3081,8 +3371,8 @@
           [
             1.0,
             49.0,
-            49.0,
-            1.0
+            48.0,
+            2.0
           ],
           [
             0.0,
@@ -3105,8 +3395,8 @@
           [
             1.0,
             49.0,
-            49.0,
-            1.0
+            48.0,
+            2.0
           ],
           [
             0.0,
