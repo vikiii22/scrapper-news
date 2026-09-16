@@ -130,6 +130,87 @@ if seccion == "🎫 Quiniela":
             for m in q["matches"]:
                 extra = "" if "error" in m else f" → modelo {m['pick']} · valor {m.get('value_pick') or '—'}"
                 st.write(f"**{m['n']}.** {m['home']} - {m['away']}{extra}")
+
+            # --- Resultados reales y acierto ---
+            st.subheader(f"✅ Resultados reales · Jornada {sel}")
+            actuals = {int(k): v for k, v in (q.get("actuals") or {}).items()}
+
+            if st.button("⬇️ Descargar resultados (ESPN)"):
+                bar = st.progress(0, text="Buscando resultados...")
+                found = qui.fetch_actuals(
+                    q["matches"],
+                    progress_cb=lambda i, t: bar.progress(i / t, text=f"Partido {i}/{t}"))
+                bar.empty()
+                actuals.update(found)
+                st.session_state["quiniela_actuals"] = actuals
+                st.success(f"Encontrados {len(found)} de {len(q['matches'])} "
+                           f"(el resto mételo a mano).")
+
+            actuals = st.session_state.get("quiniela_actuals", actuals)
+            st.caption("Corrige o completa a mano: elige el signo real de cada partido.")
+            edited = {}
+            for m in q["matches"]:
+                if "error" in m:
+                    continue
+                cur = (actuals.get(m["n"]) or {}).get("sign", "—")
+                opts = ["—", "1", "X", "2"]
+                pick = st.selectbox(
+                    f"{m['n']}. {m['home']} - {m['away']}"
+                    + (f" (auto: {(actuals.get(m['n']) or {}).get('score', '')} "
+                       f"{(actuals.get(m['n']) or {}).get('sign', '')})" if m["n"] in actuals else ""),
+                    opts, index=opts.index(cur) if cur in opts else 0,
+                    key=f"real_{sel}_{m['n']}")
+                if pick != "—":
+                    prev = actuals.get(m["n"], {})
+                    edited[m["n"]] = {"sign": pick,
+                                      "home_goals": prev.get("home_goals", 0),
+                                      "away_goals": prev.get("away_goals", 0),
+                                      "score": prev.get("score", ""),
+                                      "source": prev.get("source", "manual")}
+            pleno_m = next((x for x in q["matches"] if x.get("is_pleno")), None)
+            if pleno_m and pleno_m["n"] in edited:
+                st.caption("Para el pleno valen los goles: si el auto no los trajo, "
+                           "cuenta como fallo de pleno pero el 1X2 sí puntúa.")
+                cgh, cga = st.columns(2)
+                gh = cgh.number_input("Goles local (pleno)", 0, 9,
+                                      value=int((actuals.get(pleno_m["n"]) or {}).get("home_goals", 0) or 0),
+                                      key=f"pg_h_{sel}")
+                ga = cga.number_input("Goles visitante (pleno)", 0, 9,
+                                      value=int((actuals.get(pleno_m["n"]) or {}).get("away_goals", 0) or 0),
+                                      key=f"pg_a_{sel}")
+                edited[pleno_m["n"]].update(home_goals=int(gh), away_goals=int(ga),
+                                            score=f"{int(gh)}-{int(ga)}")
+
+            if st.button("💾 Guardar resultados y calcular acierto"):
+                score = qui.score_analysis(q["matches"], edited)
+                db.save_quiniela_results(sel, edited, score)
+                st.session_state["quiniela_actuals"] = edited
+                st.success("Resultados guardados.")
+
+            q = db.get_quiniela(sel)  # recargar por si se guardó
+            if q.get("score"):
+                s = q["score"]
+                c1, c2, c3 = st.columns(3)
+                p, v = s["pick"], s["value"]
+                c1.metric("Acierto 1X2", f"{p['ok']}/{p['n']}",
+                          f"{p['ok']/p['n']:.0%}" if p["n"] else None)
+                c2.metric("Apuestas valor", f"{v['ok']}/{v['n']}",
+                          f"{v['ok']/v['n']:.0%}" if v["n"] else None)
+                c3.metric("Pleno", "✅" if s["pleno"]["ok"] else "❌")
+                st.dataframe(
+                    [{
+                        "Nº": r["n"],
+                        "Partido": f"{r['home']} - {r['away']}",
+                        "Pick": r.get("pick", "—"),
+                        "Real": f"{r.get('actual', '—')} {r.get('score', '') or ''}".strip(),
+                        "1X2": ("✅" if r.get("pick_ok") else "❌") if "pick_ok" in r else "—",
+                        "Valor": (r.get("value_pick") or "—") +
+                                 (" ✅" if r.get("value_ok") else (" ❌" if "value_ok" in r else "")),
+                        "Pleno": (f"{r.get('pleno_sug', '')} vs {r.get('pleno_real', '')} "
+                                  f"({'✅' if r.get('pleno_ok') else '❌'})") if "pleno_ok" in r else "—",
+                    } for r in s["rows"]],
+                    use_container_width=True,
+                )
     else:
         st.caption("Aún no hay jornadas guardadas.")
 
@@ -192,6 +273,9 @@ with st.form("prediction_form"):
     bajas_away = col_b2.number_input("Bajas importantes visitante", min_value=0, max_value=11, value=0,
         help="Titulares lesionados/sancionados del visitante.")
 
+    women = st.checkbox("Partido femenino (Liga F)",
+        help="Usa solo datos femeninos; nunca mezcla con masculinos.")
+
     submit = st.form_submit_button("🔮 Predecir partido")
 
 
@@ -207,7 +291,8 @@ if submit:
         with st.spinner("Calculando predicción..."):
             result = predict(team_home, team_away, competition, str(date), venue,
                             live=live, with_news=with_news, refresh=refresh,
-                            absences_home=int(bajas_home), absences_away=int(bajas_away))
+                            absences_home=int(bajas_home), absences_away=int(bajas_away),
+                            women=women)
 
         st.subheader(f"{team_home} vs {team_away}")
         st.caption(f"{competition} · {date}")

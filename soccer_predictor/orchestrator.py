@@ -31,6 +31,7 @@ def predict(
     player_form=True,
     absences_home=0,
     absences_away=0,
+    women=False,
 ):
     """
     Función principal de predicción.
@@ -46,6 +47,7 @@ def predict(
       refresh    (bool): si True, ignora la caché JSON y re-descarga
       player_form(bool): si True, busca goleadores en racha (OpenLigaDB)
       absences_home/away (int): bajas importantes manuales (lesión/sanción)
+      women      (bool): si True, usa solo datos femeninos (Liga F)
 
     Todo lo descargado se guarda en data/db/*.json y el pronóstico
     se añade al log de predicciones.
@@ -55,8 +57,8 @@ def predict(
     team_away = df.parse_team_input(team_away)
 
     # 2. Obtenemos datos de ambos equipos (live + caché JSON)
-    data_home = df.get_team_data(team_home, live=live, with_news=with_news, refresh=refresh)
-    data_away = df.get_team_data(team_away, live=live, with_news=with_news, refresh=refresh)
+    data_home = df.get_team_data(team_home, live=live, with_news=with_news, refresh=refresh, women=women)
+    data_away = df.get_team_data(team_away, live=live, with_news=with_news, refresh=refresh, women=women)
 
     # 3. Obtenemos historial H2H (caché + live + estático)
     h2h = df.get_h2h(team_home, team_away, live=live)

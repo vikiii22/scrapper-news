@@ -21,15 +21,18 @@ from typing import Any, Dict, List, Optional
 from . import thesportsdb, web_search, espn
 
 
-def fetch_team_live(team_name: str, with_news: bool = True) -> Optional[Dict[str, Any]]:
-    """Busca datos en tiempo real de CUALQUIER equipo. None si no hay nada."""
+def fetch_team_live(team_name: str, with_news: bool = True,
+                    women: bool = False) -> Optional[Dict[str, Any]]:
+    """Busca datos en tiempo real de CUALQUIER equipo. None si no hay nada.
+    women=True: solo ligas femeninas (Liga F), nunca datos masculinos."""
     record: Optional[Dict[str, Any]] = None
     sources_tried: List[str] = []
+    prefer = "Liga F" if women else ""
 
     # 1. ESPN (la más al día para ligas top)
-    sources_tried.append("espn")
+    sources_tried.append("espn" + ("-w" if women else ""))
     try:
-        record = espn.fetch_team(team_name)
+        record = espn.fetch_team(team_name, women=women)
     except Exception:
         record = None
 
@@ -37,7 +40,7 @@ def fetch_team_live(team_name: str, with_news: bool = True) -> Optional[Dict[str
     if not record or len(record.get("recent", "")) < 2:
         sources_tried.append("thesportsdb")
         try:
-            ts = thesportsdb.fetch_team(team_name)
+            ts = thesportsdb.fetch_team(team_name, prefer_league=prefer)
         except Exception:
             ts = None
         if ts and ts.get("recent"):

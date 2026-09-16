@@ -29,24 +29,40 @@ def _get(path: str, params: Dict[str, Any], timeout: int = 12):
         return None
 
 
-def search_team(team_name: str) -> Optional[Dict[str, Any]]:
+def search_team(team_name: str, prefer_league: str = "") -> Optional[Dict[str, Any]]:
     data = _get("searchteams.php", {"t": team_name})
     if not data:
         return None
     teams = data.get("teams") or []
     if not teams:
         return None
-    # mejor match: nombre más parecido
+    # mejor match: nombre más parecido, con bonus si la liga contiene prefer_league
+    # (ej. 'Liga F' para femenino: evita la selección nacional del mismo nombre)
     q = team_name.strip().lower()
+    pref = (prefer_league or "").lower()
     def score(t):
         name = (t.get("strTeam") or "").lower()
-        if name == q:
-            return 0
-        if q in name or name in q:
-            return 1
-        return 2
+        league = (t.get("strLeague") or "").lower()
+        s = 0 if name == q else (1 if (q in name or name in q) else 2)
+        if pref and pref in league:
+            s -= 0.5
+        return s
     teams.sort(key=score)
+    if pref:
+        # con preferencia (femenino): si hay candidatas de esa liga con
+        # nombre razonable, descartamos el resto (evita cruces hombre/mujer)
+        liked = [t for t in teams
+                 if pref in (t.get("strLeague") or "").lower() and score(t) <= 1]
+        if liked:
+            teams = liked
     t = teams[0]
+    # si hay empate de nombre con distinta liga y no se pidió preferencia,
+    # evitamos selecciones nacionales cuando se busca un club
+    if not pref and "national" in (t.get("strLeague") or "").lower():
+        clubs = [x for x in teams if "national" not in (x.get("strLeague") or "").lower()
+                 and score(x) <= 1]
+        if clubs:
+            t = clubs[0]
     return {
         "id": t.get("idTeam"),
         "name": t.get("strTeam"),
@@ -83,10 +99,10 @@ def _to_recent(events: List[Dict[str, Any]], team_name: str) -> str:
     return "".join(form)
 
 
-def fetch_team(team_name: str) -> Optional[Dict[str, Any]]:
+def fetch_team(team_name: str, prefer_league: str = "") -> Optional[Dict[str, Any]]:
     """Devuelve dict live o None. Nunca lanza excepción."""
     try:
-        found = search_team(team_name)
+        found = search_team(team_name, prefer_league=prefer_league)
         if not found:
             return None
         events = last_events(str(found["id"]))

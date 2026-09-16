@@ -195,3 +195,18 @@ def list_quinielas() -> List[Any]:
 
 def get_quiniela(jornada) -> Optional[Dict[str, Any]]:
     return _read_json(QUINIELA_FILE, {}).get(str(jornada))
+
+
+def save_quiniela_results(jornada, actuals: Dict[Any, Dict[str, Any]],
+                          score: Dict[str, Any]) -> Optional[Dict[str, Any]]:
+    """Guarda los resultados reales y el acierto de una jornada."""
+    all_q = _read_json(QUINIELA_FILE, {})
+    entry = all_q.get(str(jornada))
+    if not entry:
+        return None
+    entry["actuals"] = {str(k): v for k, v in actuals.items()}
+    entry["score"] = score
+    entry["scored_at"] = _now_iso()
+    all_q[str(jornada)] = entry
+    _write_json(QUINIELA_FILE, all_q)
+    return entry

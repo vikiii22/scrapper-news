@@ -61,6 +61,10 @@ TEAM_ALIASES = {
     "ZARAGOZA": "Real Zaragoza",
     "SPORTING": "Sporting Gijon",
     "GIJON": "Sporting Gijon",
+    "ANDORRA FC": "FC Andorra",
+    "DEPORTIVO": "Deportivo",  # displayName ESPN (Depor La Coruña, Primera 26/27)
+    "DEP. LA CORUÑA": "Deportivo",
+    "MALAGA": "Málaga",
 }
 
 
@@ -187,12 +191,124 @@ def pleno_suggestion(lam_home: float, lam_away: float) -> Dict[str, str]:
     return {"home": pick(lam_home), "away": pick(lam_away)}
 
 
+def _same_team(a: str, b: str) -> bool:
+    """Igualdad tolerante: contiene, o coincide la primera palabra
+    ('Athletic Bilbao' == 'Athletic Club'). La doble condición
+    (local Y visitante) evita falsos positivos."""
+    na, nb = _norm(a), _norm(b)
+    if not na or not nb:
+        return False
+    if na in nb or nb in na:
+        return True
+    return na.split()[0] == nb.split()[0]
+
+
+def _find_fixture(home: str, away: str) -> Optional[Dict[str, Any]]:
+    """Busca el partido ya jugado entre ambos en ESPN (cualquier liga)."""
+    try:
+        from .scrapers import espn
+    except ImportError:
+        from scrapers import espn
+    try:
+        found = espn.search_team(home)
+        if not found:
+            found = espn.search_team(away)
+        if not found:
+            return None
+        league, tid, _ = found
+        for season in espn._seasons_to_try():
+            data = espn._get(
+                f"https://site.api.espn.com/apis/site/v2/sports/soccer/{league}"
+                f"/teams/{tid}/schedule", {"season": season})
+            if not data:
+                continue
+            for ev in data.get("events") or []:
+                comp = (ev.get("competitions") or [{}])[0]
+                state = ((comp.get("status") or {}).get("type") or {})
+                if not state.get("completed"):
+                    continue
+                cs = comp.get("competitors") or []
+                if len(cs) < 2:
+                    continue
+                h = next((c for c in cs if c.get("homeAway") == "home"), cs[0])
+                a = next((c for c in cs if c.get("homeAway") == "away"), cs[1])
+                hn = _norm(h.get("team", {}).get("displayName", ""))
+                an = _norm(a.get("team", {}).get("displayName", ""))
+                if _same_team(home, hn) and _same_team(away, an):
+                    try:
+                        hs = int(float(h["score"]["value"]))
+                        as_ = int(float(a["score"]["value"]))
+                    except (KeyError, TypeError, ValueError):
+                        continue
+                    return {"sign": "1" if hs > as_ else ("X" if hs == as_ else "2"),
+                            "home_goals": hs, "away_goals": as_,
+                            "score": f"{hs}-{as_}",
+                            "date": (ev.get("date") or "")[:10],
+                            "source": f"espn:{league}"}
+        return None
+    except Exception:
+        return None
+
+
+def fetch_actuals(matches: List[Dict[str, Any]], progress_cb=None) -> Dict[int, Dict[str, Any]]:
+    """Descarga el resultado real de cada partido. {n: {...}} (solo hallados)."""
+    out: Dict[int, Dict[str, Any]] = {}
+    for i, m in enumerate(matches):
+        hit = _find_fixture(m["home"], m["away"])
+        if hit:
+            out[m["n"]] = hit
+        if progress_cb:
+            progress_cb(i + 1, len(matches))
+    return out
+
+
+def score_analysis(analysis: List[Dict[str, Any]],
+                   actuals: Dict[int, Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Calcula el acierto: pick 1X2, apuestas valor y pleno.
+    actuals: {n: {'sign': '1'/'X'/'2', 'home_goals': int, 'away_goals': int}}.
+    Las claves de actuals pueden venir como int o str (JSON).
+    """
+    actuals = {int(k): v for k, v in (actuals or {}).items()}
+    rows: List[Dict[str, Any]] = []
+    pick_ok = pick_n = val_ok = val_n = pleno_ok = 0
+    for m in analysis:
+        if "error" in m:
+            continue
+        a = actuals.get(m["n"])
+        row = {"n": m["n"], "home": m["home"], "away": m["away"],
+               "pick": m.get("pick"), "value_pick": m.get("value_pick"),
+               "actual": (a or {}).get("sign"), "score": (a or {}).get("score")}
+        if a and m.get("pick"):
+            pick_n += 1
+            row["pick_ok"] = m["pick"] == a["sign"]
+            pick_ok += row["pick_ok"]
+        if a and m.get("value_pick"):
+            val_n += 1
+            row["value_ok"] = m["value_pick"] == a["sign"]
+            val_ok += row["value_ok"]
+        if a and m.get("pleno_sugerido"):
+            sug = m["pleno_sugerido"]
+            gh = "M" if a["home_goals"] >= 3 else str(a["home_goals"])
+            ga = "M" if a["away_goals"] >= 3 else str(a["away_goals"])
+            row["pleno_ok"] = sug["home"] == gh and sug["away"] == ga
+            row["pleno_real"] = f"{gh}-{ga}"
+            row["pleno_sug"] = f"{sug['home']}-{sug['away']}"
+            pleno_ok += row["pleno_ok"]
+        rows.append(row)
+    return {"rows": rows,
+            "pick": {"ok": pick_ok, "n": pick_n},
+            "value": {"ok": val_ok, "n": val_n},
+            "pleno": {"ok": pleno_ok}}
+
+
 def analyze_quiniela(parsed: Dict[str, Any], competition_default: str = "La Liga",
                      live: bool = True, refresh: bool = False,
                      progress_cb=None) -> List[Dict[str, Any]]:
     """
     Calcula el pronóstico de cada partido con nuestro modelo y el valor
     frente a los % LAE. Devuelve lista de dicts listos para guardar/mostrar.
+    Los partidos femeninos usan automáticamente datos de Liga F.
     progress_cb(i, total) se llama tras cada partido (para la UI).
     """
     try:
@@ -206,7 +322,8 @@ def analyze_quiniela(parsed: Dict[str, Any], competition_default: str = "La Liga
         entry: Dict[str, Any] = dict(m)
         comp = "Liga F" if m.get("is_women") else competition_default
         try:
-            r = predict(m["home"], m["away"], comp, live=live, refresh=refresh)
+            r = predict(m["home"], m["away"], comp, live=live, refresh=refresh,
+                        women=bool(m.get("is_women")))
         except Exception as e:
             entry["error"] = str(e)
             out.append(entry)
@@ -233,3 +350,39 @@ def analyze_quiniela(parsed: Dict[str, Any], competition_default: str = "La Liga
         if progress_cb:
             progress_cb(i + 1, len(matches))
     return out
+
+
+def reanalyze_jornada(jornada, competition_default: str = "La Liga",
+                      live: bool = True, refresh: bool = True,
+                      progress_cb=None) -> Optional[Dict[str, Any]]:
+    """
+    Recalcula una jornada guardada (tras mejoras del modelo o fixes de
+    nombres). Conserva los resultados reales y recalcula el acierto.
+    Devuelve la entrada actualizada o None si no existe.
+    """
+    try:
+        from . import database as _db
+    except ImportError:
+        import database as _db
+    entry = _db.get_quiniela(jornada)
+    if not entry:
+        return None
+    # Re-resolvemos los nombres desde el raw del boleto (los guardados
+    # pueden venir de un parser con bugs ya corregidos: ATH.CLUB, etc.)
+    fixed = []
+    for m in entry.get("matches", []):
+        m = dict(m)
+        if m.get("home_raw"):
+            m["home"] = resolve_team(m["home_raw"])
+        if m.get("away_raw"):
+            m["away"] = resolve_team(m["away_raw"])
+        fixed.append(m)
+    parsed = {"jornada": entry.get("jornada"), "matches": fixed}
+    analysis = analyze_quiniela(parsed, competition_default=competition_default,
+                                live=live, refresh=refresh, progress_cb=progress_cb)
+    new_entry = _db.save_quiniela(entry.get("jornada"), analysis)
+    actuals = entry.get("actuals")
+    if actuals:
+        score = score_analysis(analysis, actuals)
+        new_entry = _db.save_quiniela_results(entry.get("jornada"), actuals, score)
+    return new_entry

@@ -120,6 +120,9 @@ def main():
     parser.add_argument("--bajas-home", type=int, default=0, help="Bajas importantes del local (lesión/sanción)")
     parser.add_argument("--bajas-away", type=int, default=0, help="Bajas importantes del visitante")
     parser.add_argument("--no-player-form", action="store_true", help="No buscar goleadores en racha")
+    parser.add_argument("--women", action="store_true", help="Partido femenino (solo datos de Liga F)")
+    parser.add_argument("--reanalizar-quiniela", metavar="JORNADA",
+                        help="Recalcula una jornada guardada con el modelo actual")
 
     args = parser.parse_args()
 
@@ -133,6 +136,31 @@ def main():
         print(f"  Equipos guardados: {s['teams']}")
         print(f"  Parejas H2H:       {s['h2h_pairs']}")
         print(f"  Pronósticos log:   {s['predictions']}")
+        print(f"  Quinielas:         {s.get('quinielas', 0)}")
+        return
+
+    if args.reanalizar_quiniela:
+        try:
+            from . import quiniela as qui
+        except ImportError:
+            import quiniela as qui
+        entry = qui.reanalyze_jornada(args.reanalizar_quiniela, refresh=args.refresh or True)
+        if not entry:
+            print(f"No existe la jornada {args.reanalizar_quiniela} en la BBDD.")
+            return
+        for m in entry["matches"]:
+            if "error" in m:
+                print(f"{m['n']}. {m['home']}-{m['away']}: ERROR {m['error'][:60]}")
+                continue
+            ds = m.get("data_sources") or {}
+            print(f"{m['n']}. {m['home']}-{m['away']}: pick {m['pick']} "
+                  f"modelo {m['modelo']['1']:.0f}/{m['modelo']['X']:.0f}/{m['modelo']['2']:.0f} "
+                  f"valor {m.get('value_pick') or '-'} "
+                  f"({ds.get('home')}/{ds.get('away')})")
+        if entry.get("score"):
+            sc = entry["score"]
+            print(f"Acierto: 1X2 {sc['pick']['ok']}/{sc['pick']['n']}, "
+                  f"valor {sc['value']['ok']}/{sc['value']['n']}")
         return
 
     if args.home and args.away:
@@ -147,6 +175,7 @@ def main():
             live=not args.no_live, with_news=args.news, refresh=args.refresh,
             player_form=not args.no_player_form,
             absences_home=args.bajas_home, absences_away=args.bajas_away,
+            women=args.women,
         )
         print_prediction(result)
     else:

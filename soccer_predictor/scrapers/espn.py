@@ -43,6 +43,9 @@ LEAGUES = [
     "uefa.europa",
 ]
 
+# Liga F femenina (se busca aquí primero cuando women=True)
+W_LEAGUES = ["esp.w.1"]
+
 
 def _get(url: str, params: Dict[str, Any] | None = None, timeout: int = 12):
     try:
@@ -65,6 +68,14 @@ def _league_teams(league: str) -> List[Dict[str, Any]]:
         return []
 
 
+# Alias de nombres (displayName ESPN distinto al habitual)
+QUERY_ALIASES = {
+    "athletic bilbao": "athletic club",
+    "athletic club": "athletic club",
+    "deportivo": "deportivo",  # displayName ESPN (Depor La Coruña, Primera 26/27)
+}
+
+
 def _norm(s: str) -> str:
     """Minúsculas sin acentos ni espacios extra (Gijón == gijon)."""
     import unicodedata
@@ -72,11 +83,16 @@ def _norm(s: str) -> str:
     return " ".join(s.lower().split())
 
 
-def search_team(team_name: str) -> Optional[Tuple[str, str, str]]:
-    """Devuelve (league, team_id, display_name) o None."""
-    q = _norm(team_name)
+def search_team(team_name: str, women: bool = False) -> Optional[Tuple[str, str, str]]:
+    """Devuelve (league, team_id, display_name) o None.
+    women=True: solo busca en ligas femeninas (evita cruzar datos masculinos).
+    El fallback exige que el candidato tenga al menos tantas palabras como
+    la búsqueda (evita que 'Deportivo' Alavés trague a 'Deportivo La Coruña').
+    """
+    q = QUERY_ALIASES.get(_norm(team_name), _norm(team_name))
+    leagues = W_LEAGUES if women else LEAGUES
     fallback: Optional[Tuple[str, str, str]] = None
-    for league in LEAGUES:
+    for league in leagues:
         for entry in _league_teams(league):
             tm = entry.get("team", {})
             name = tm.get("displayName", "")
@@ -85,7 +101,7 @@ def search_team(team_name: str) -> Optional[Tuple[str, str, str]]:
             nl, sl, al = _norm(name), _norm(short), _norm(abbr)
             if nl == q or sl == q or al == q:
                 return league, str(tm.get("id")), name
-            if fallback is None and (q in nl or nl in q):
+            if fallback is None and (q in nl or nl in q) and len(nl.split()) >= len(q.split()):
                 fallback = (league, str(tm.get("id")), name)
     return fallback
 
@@ -136,10 +152,10 @@ def _parse_schedule(events: List[Dict[str, Any]], team_id: str) -> Tuple[str, in
     return "".join(form), gf, ga, len(form), fixtures
 
 
-def fetch_team(team_name: str, limit: int = 8) -> Optional[Dict[str, Any]]:
+def fetch_team(team_name: str, limit: int = 10, women: bool = False) -> Optional[Dict[str, Any]]:
     """Devuelve dict live o None. Nunca lanza excepción."""
     try:
-        found = search_team(team_name)
+        found = search_team(team_name, women=women)
         if not found:
             return None
         league, team_id, display = found

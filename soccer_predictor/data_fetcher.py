@@ -627,7 +627,7 @@ def get_team_form_from_sofascore(team_name):
 CACHE_TTL_HOURS = float(os.getenv("CACHE_TTL_HOURS", "6"))
 
 
-def fetch_and_store(team_name, with_news=True):
+def fetch_and_store(team_name, with_news=True, women=False):
     """Fuerza búsqueda en vivo y la guarda en la BBDD JSON. Devuelve el record o None."""
     try:
         from .scrapers import live_search as _live
@@ -635,13 +635,13 @@ def fetch_and_store(team_name, with_news=True):
     except ImportError:
         from scrapers import live_search as _live
         import database as _db
-    rec = _live.fetch_team_live(team_name, with_news=with_news)
+    rec = _live.fetch_team_live(team_name, with_news=with_news, women=women)
     if rec:
         return _db.save_team(rec)
     return None
 
 
-def get_team_data(team_name, live=True, with_news=False, refresh=False):
+def get_team_data(team_name, live=True, with_news=False, refresh=False, women=False):
     """
     Obtiene los datos de un equipo, intentando en orden:
     1. Caché JSON (si no está caducada y refresh=False)
@@ -652,13 +652,21 @@ def get_team_data(team_name, live=True, with_news=False, refresh=False):
 
     Devuelve un diccionario con las estadísticas del equipo.
     """
-    # 1. Caché local
+    # 1. Caché local (la clave distingue femenino/masculino)
     try:
         from . import database as _db
     except ImportError:
         import database as _db
+    cache_key = f"{team_name} (F)" if women else team_name
     if not refresh:
-        cached = _db.get_team(team_name, max_age_hours=CACHE_TTL_HOURS)
+        cached = _db.get_team(cache_key, max_age_hours=CACHE_TTL_HOURS)
+        if women and cached:
+            # la caché difusa podría devolver el equipo masculino: verificar
+            nm = (cached.get("name") or "")
+            lg = (cached.get("league") or "").lower()
+            ok_w = nm.endswith("(F)") or "w.1" in lg or "liga f" in lg or "women" in lg or "femenin" in lg
+            if not ok_w:
+                cached = None
         if cached:
             cached["source"] = cached.get("source", "") + "+cache" if cached.get("source") else "cache"
             return cached
@@ -670,8 +678,10 @@ def get_team_data(team_name, live=True, with_news=False, refresh=False):
                 from .scrapers import live_search as _live
             except ImportError:
                 from scrapers import live_search as _live
-            rec = _live.fetch_team_live(team_name, with_news=with_news)
+            rec = _live.fetch_team_live(team_name, with_news=with_news, women=women)
             if rec and rec.get("recent"):
+                if women:
+                    rec["name"] = rec.get("name", team_name) + " (F)"
                 return _db.save_team(rec)
         except Exception:
             pass
