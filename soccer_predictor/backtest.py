@@ -73,10 +73,15 @@ def baseline_probs(gf_h: float, ga_h: float, rec_h: str,
                    gf_a: float, ga_a: float, rec_a: str,
                    home_edge: float = 0.35, away_pen: float = -0.20,
                    scale: float = 1.05,
-                   h2h_tilt_h: float = 0.0, h2h_tilt_a: float = 0.0) -> Tuple[float, float, float]:
+                   h2h_tilt_h: float = 0.0, h2h_tilt_a: float = 0.0,
+                   shrink_k: float = 0.0, n_h: int = 6, n_a: int = 6,
+                   lg_avg: float = 1.35, floor: float = 0.3) -> Tuple[float, float, float]:
     import math as _m
-    attack_h, defense_a = gf_h, ga_a
-    attack_a, defense_h = gf_a, ga_h
+    # shrinkage: las tasas de pocos partidos se regresan a la media de la liga
+    attack_h = (n_h * gf_h + shrink_k * lg_avg) / (n_h + shrink_k) if shrink_k else gf_h
+    defense_a = (n_h * ga_a + shrink_k * lg_avg) / (n_h + shrink_k) if shrink_k else ga_a
+    attack_a = (n_a * gf_a + shrink_k * lg_avg) / (n_a + shrink_k) if shrink_k else gf_a
+    defense_h = (n_a * ga_h + shrink_k * lg_avg) / (n_a + shrink_k) if shrink_k else ga_h
     lam_h = _m.sqrt(max(attack_h, 0.01) * max(defense_a, 0.01)) * scale + home_edge + h2h_tilt_h
     lam_a = _m.sqrt(max(attack_a, 0.01) * max(defense_h, 0.01)) * scale + away_pen + h2h_tilt_a
     for f, d, sgn in ((rec_h, "h", 1), (rec_a, "a", 1)):
@@ -85,8 +90,8 @@ def baseline_probs(gf_h: float, ga_h: float, rec_h: str,
             lam_h += bonus
         else:
             lam_a += bonus
-    lam_h = round(max(0.3, min(3.5, lam_h)), 3)
-    lam_a = round(max(0.3, min(3.5, lam_a)), 3)
+    lam_h = round(max(floor, min(3.5, lam_h)), 3)
+    lam_a = round(max(floor, min(3.5, lam_a)), 3)
     p = pe.match_probabilities(lam_h, lam_a)
     return p["home"], p["draw"], p["away"]
 
@@ -183,7 +188,8 @@ def v2_probs(hist_h: List[Tuple[int, int, bool]],
 
 def run(matches: List[Dict], rho=-0.12, decay=0.12, shrink=4.0,
         form_n=6, venue_split=False, verbose=False,
-        home_edge=0.35, away_pen=-0.20, scale=1.05, h2h_w=0.0) -> Dict[str, Any]:
+        home_edge=0.35, away_pen=-0.20, scale=1.05, h2h_w=0.0,
+        shrink_k=0.0, floor=0.3) -> Dict[str, Any]:
     hist: Dict[str, List[Tuple[int, int, bool]]] = defaultdict(list)
     past: List[Dict] = []  # partidos ya jugados (para H2H sin mirar al futuro)
     res = {"n": 0, "base_acc": 0, "v2_acc": 0,
@@ -228,7 +234,8 @@ def run(matches: List[Dict], rho=-0.12, decay=0.12, shrink=4.0,
         try:
             bp = baseline_probs(avg(hh_w, 0), avg(hh_w, 1), rec_h,
                                 avg(aa_w, 0), avg(aa_w, 1), rec_a,
-                                home_edge, away_pen, scale, tilt_h, tilt_a)
+                                home_edge, away_pen, scale, tilt_h, tilt_a,
+                                shrink_k, len(hh_w), len(aa_w), 1.35, floor)
         except Exception:
             _push(hist, m)
             past.append(m)
@@ -294,6 +301,8 @@ def main():
     ap.add_argument("--away-pen", type=float, default=-0.20)
     ap.add_argument("--scale", type=float, default=1.05)
     ap.add_argument("--h2h-w", type=float, default=0.0)
+    ap.add_argument("--shrink-k", type=float, default=0.0)
+    ap.add_argument("--floor", type=float, default=0.3)
     args = ap.parse_args()
 
     for season in args.seasons:
@@ -324,7 +333,8 @@ def main():
             r = run(matches, rho=args.rho, decay=args.decay, shrink=args.shrink,
                     form_n=args.form_n, venue_split=args.venue_split,
                     home_edge=args.home_edge, away_pen=args.away_pen,
-                    scale=args.scale, h2h_w=args.h2h_w)
+                    scale=args.scale, h2h_w=args.h2h_w, shrink_k=args.shrink_k,
+                    floor=args.floor)
             print(f"  BASE: acc={r['base']['acc']:.3f} brier={r['base']['brier']:.4f} rps={r['base']['rps']:.4f}")
             print(f"  V2:   acc={r['v2']['acc']:.3f} brier={r['v2']['brier']:.4f} rps={r['v2']['rps']:.4f} (n={r['n']})")
 

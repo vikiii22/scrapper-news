@@ -77,6 +77,13 @@ def print_prediction(result):
     pa = result.get("player_adjustments", {}) or {}
     if pa and (pa.get("home") or pa.get("away")):
         print(f"(Ajuste jugadores: local {pa.get('home', 0):+.2f} / visitante {pa.get('away', 0):+.2f})")
+    pos = result.get("positions", {}) or {}
+    ph, pa_ = pos.get("home") or {}, pos.get("away") or {}
+    if ph or pa_:
+        tx_h = "%sº %spts" % (ph["pos"], ph["pts"]) if ph else "?"
+        tx_a = "%sº %spts" % (pa_["pos"], pa_["pts"]) if pa_ else "?"
+        print("(Clasificación: %s %s vs %s %s)"
+              % (result["teams"]["home"], tx_h, result["teams"]["away"], tx_a))
     print("\n" + sep)
 
 

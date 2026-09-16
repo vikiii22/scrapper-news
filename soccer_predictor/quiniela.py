@@ -337,6 +337,7 @@ def analyze_quiniela(parsed: Dict[str, Any], competition_default: str = "La Liga
         entry["pick"] = r["prediction_1x2"]
         entry["expected_goals"] = r["expected_goals"]
         entry["data_sources"] = r.get("data_sources")
+        entry["positions"] = r.get("positions")
         if m.get("lae"):
             entry["valor"] = {s: round(entry["modelo"][s] - m["lae"][s], 1)
                               for s in ("1", "X", "2")}

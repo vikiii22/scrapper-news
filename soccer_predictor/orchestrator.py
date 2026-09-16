@@ -103,6 +103,19 @@ def predict(
     result["player_context"] = {"home": ctx_home, "away": ctx_away}
     result["absences"] = {"home": absences_home, "away": absences_away}
 
+    # Posición en liga (contexto, no mueve el modelo: ya va en forma/goles)
+    try:
+        try:
+            from .scrapers import standings as _st
+        except ImportError:
+            from scrapers import standings as _st
+        result["positions"] = {
+            "home": _st.position_of(data_home.get("name", team_home), data_home.get("league")),
+            "away": _st.position_of(data_away.get("name", team_away), data_away.get("league")),
+        }
+    except Exception:
+        result["positions"] = {"home": None, "away": None}
+
     # 6. Opcionalmente enriquecemos la explicación con un LLM gratuito.
     #    Si no está configurado o falla, se mantiene la explicación estadística.
     base_explanation = result["explanation"]

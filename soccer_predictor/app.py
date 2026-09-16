@@ -105,9 +105,13 @@ if seccion == "🎫 Quiniela":
                                  "Resultado": f"⚠️ {m['error']}"})
                     continue
                 val = m.get("valor") or {}
+                pp = m.get("positions") or {}
+                ph, pa = pp.get("home") or {}, pp.get("away") or {}
                 rows.append({
                     "Nº": m["n"],
                     "Partido": f"{m['home']} - {m['away']}",
+                    "Pos.": (f"{ph.get('pos', '—')}º vs {pa.get('pos', '—')}º"
+                             if (ph or pa) else "—"),
                     "Modelo 1/X/2": (f"{m['modelo']['1']:.0f}/{m['modelo']['X']:.0f}/{m['modelo']['2']:.0f}"),
                     "Pick": m["pick"] + (f" (pleno {m['pleno_sugerido']['home']}-{m['pleno_sugerido']['away']})"
                                          if m.get("pleno_sugerido") else ""),
@@ -338,6 +342,12 @@ if submit:
             st.caption(f"Datos: local {ds.get('home')} [{ds.get('home_recent')}] · "
                        f"visitante {ds.get('away')} [{ds.get('away_recent')}] · "
                        f"guardado en data/db/*.json")
+        pos = result.get("positions", {}) or {}
+        ph, pa = pos.get("home") or {}, pos.get("away") or {}
+        if ph or pa:
+            tx_h = "%sº (%s pts en %sj)" % (ph["pos"], ph["pts"], ph["played"]) if ph else "—"
+            tx_a = "%sº (%s pts en %sj)" % (pa["pos"], pa["pts"], pa["played"]) if pa else "—"
+            st.caption("Clasificación: %s %s · %s %s" % (team_home, tx_h, team_away, tx_a))
         pc = result.get("player_context", {}) or {}
         with st.expander("⚽ Racha de goleadores (OpenLigaDB)"):
             for side, label in (("home", team_home), ("away", team_away)):

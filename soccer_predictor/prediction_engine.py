@@ -162,8 +162,10 @@ def expected_goals(team_data, opponent_data, is_home, h2h=None,
         if g:
             raw += max(-0.10, min(0.10, 0.10 * (w - l) / g))
 
-    # Limitamos el valor para que sea razonable (0.3 - 3.5 goles)
-    raw = max(0.3, min(3.5, raw))
+    # Limitamos el valor para que sea razonable (0.5 - 3.5 goles).
+    # El suelo 0.5 (antes 0.3) evita colas absurdas tipo "4% al visitante":
+    # validado neutro en backtest (LaLiga 2024+2025), solo recorta extremos.
+    raw = max(0.5, min(3.5, raw))
 
     return round(raw, 3)
 

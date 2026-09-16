@@ -2499,7 +2499,7 @@
   },
   "8": {
     "jornada": 8,
-    "analyzed_at": "2026-09-16T11:42:41.567296+00:00",
+    "analyzed_at": "2026-09-16T13:05:02.694960+00:00",
     "matches": [
       {
         "n": 1,
@@ -2554,6 +2554,34 @@
           "away": "espn-live",
           "home_recent": "DWWLL",
           "away_recent": "LDLWLW"
+        },
+        "positions": {
+          "home": {
+            "team_id": "97",
+            "team": "Osasuna",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 5,
+            "ga": 8,
+            "pts": 7,
+            "pos": 11,
+            "gd": -3
+          },
+          "away": {
+            "team_id": "101",
+            "team": "Rayo Vallecano",
+            "played": 6,
+            "won": 2,
+            "drawn": 1,
+            "lost": 3,
+            "gf": 10,
+            "ga": 15,
+            "pts": 7,
+            "pos": 12,
+            "gd": -5
+          }
         },
         "valor": {
           "1": 5.5,
@@ -2616,6 +2644,34 @@
           "home_recent": "LLWWD",
           "away_recent": "WDWWLL"
         },
+        "positions": {
+          "home": {
+            "team_id": "93",
+            "team": "Athletic Club",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 7,
+            "ga": 6,
+            "pts": 7,
+            "pos": 9,
+            "gd": 1
+          },
+          "away": {
+            "team_id": "96",
+            "team": "Alavés",
+            "played": 6,
+            "won": 3,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 11,
+            "ga": 6,
+            "pts": 10,
+            "pos": 4,
+            "gd": 5
+          }
+        },
         "valor": {
           "1": -16.9,
           "X": 0.4,
@@ -2676,6 +2732,34 @@
           "away": "espn-live",
           "home_recent": "WWLDW",
           "away_recent": "WWWWW"
+        },
+        "positions": {
+          "home": {
+            "team_id": "243",
+            "team": "Sevilla",
+            "played": 5,
+            "won": 3,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 8,
+            "ga": 6,
+            "pts": 10,
+            "pos": 6,
+            "gd": 2
+          },
+          "away": {
+            "team_id": "83",
+            "team": "Barcelona",
+            "played": 5,
+            "won": 5,
+            "drawn": 0,
+            "lost": 0,
+            "gf": 21,
+            "ga": 4,
+            "pts": 15,
+            "pos": 1,
+            "gd": 17
+          }
         },
         "valor": {
           "1": 15.7,
@@ -2738,6 +2822,34 @@
           "home_recent": "LWLDD",
           "away_recent": "LDLDD"
         },
+        "positions": {
+          "home": {
+            "team_id": "2922",
+            "team": "Getafe",
+            "played": 5,
+            "won": 1,
+            "drawn": 2,
+            "lost": 2,
+            "gf": 3,
+            "ga": 6,
+            "pts": 5,
+            "pos": 15,
+            "gd": -3
+          },
+          "away": {
+            "team_id": "99",
+            "team": "Málaga",
+            "played": 5,
+            "won": 0,
+            "drawn": 3,
+            "lost": 2,
+            "gf": 2,
+            "ga": 8,
+            "pts": 3,
+            "pos": 18,
+            "gd": -6
+          }
+        },
         "valor": {
           "1": 11.5,
           "X": -2.1,
@@ -2798,6 +2910,34 @@
           "away": "espn-live",
           "home_recent": "DDWWD",
           "away_recent": "WWLWW"
+        },
+        "positions": {
+          "home": {
+            "team_id": "90",
+            "team": "Deportivo",
+            "played": 5,
+            "won": 2,
+            "drawn": 3,
+            "lost": 0,
+            "gf": 9,
+            "ga": 6,
+            "pts": 9,
+            "pos": 7,
+            "gd": 3
+          },
+          "away": {
+            "team_id": "244",
+            "team": "Real Betis",
+            "played": 5,
+            "won": 4,
+            "drawn": 0,
+            "lost": 1,
+            "gf": 7,
+            "ga": 6,
+            "pts": 12,
+            "pos": 3,
+            "gd": 1
+          }
         },
         "valor": {
           "1": 20.2,
@@ -2860,6 +3000,34 @@
           "home_recent": "DDLLL",
           "away_recent": "LDWDL"
         },
+        "positions": {
+          "home": {
+            "team_id": "102",
+            "team": "Villarreal",
+            "played": 5,
+            "won": 0,
+            "drawn": 2,
+            "lost": 3,
+            "gf": 7,
+            "ga": 10,
+            "pts": 2,
+            "pos": 19,
+            "gd": -3
+          },
+          "away": {
+            "team_id": "1538",
+            "team": "Levante",
+            "played": 5,
+            "won": 1,
+            "drawn": 2,
+            "lost": 2,
+            "gf": 7,
+            "ga": 9,
+            "pts": 5,
+            "pos": 14,
+            "gd": -2
+          }
+        },
         "valor": {
           "1": -11.1,
           "X": -0.6,
@@ -2920,6 +3088,34 @@
           "away": "espn-live",
           "home_recent": "DLLLLW",
           "away_recent": "LLWDWL"
+        },
+        "positions": {
+          "home": {
+            "team_id": "94",
+            "team": "Valencia",
+            "played": 6,
+            "won": 1,
+            "drawn": 1,
+            "lost": 4,
+            "gf": 2,
+            "ga": 10,
+            "pts": 4,
+            "pos": 17,
+            "gd": -8
+          },
+          "away": {
+            "team_id": "89",
+            "team": "Real Sociedad",
+            "played": 6,
+            "won": 2,
+            "drawn": 1,
+            "lost": 3,
+            "gf": 6,
+            "ga": 11,
+            "pts": 7,
+            "pos": 13,
+            "gd": -5
+          }
         },
         "valor": {
           "1": -2.0,
@@ -2982,6 +3178,34 @@
           "home_recent": "WLLLL",
           "away_recent": "DWWLL"
         },
+        "positions": {
+          "home": {
+            "team_id": "20179",
+            "team": "FC Andorra",
+            "played": 5,
+            "won": 1,
+            "drawn": 0,
+            "lost": 4,
+            "gf": 8,
+            "ga": 10,
+            "pts": 3,
+            "pos": 18,
+            "gd": -2
+          },
+          "away": {
+            "team_id": "3788",
+            "team": "Sporting Gijón",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 2,
+            "ga": 3,
+            "pts": 7,
+            "pos": 15,
+            "gd": -1
+          }
+        },
         "valor": {
           "1": 2.4,
           "X": 1.8,
@@ -3042,6 +3266,34 @@
           "away": "espn-live",
           "home_recent": "WDWWW",
           "away_recent": "WWLDW"
+        },
+        "positions": {
+          "home": {
+            "team_id": "4438",
+            "team": "Castellón",
+            "played": 5,
+            "won": 4,
+            "drawn": 1,
+            "lost": 0,
+            "gf": 7,
+            "ga": 2,
+            "pts": 13,
+            "pos": 1,
+            "gd": 5
+          },
+          "away": {
+            "team_id": "245",
+            "team": "Tenerife",
+            "played": 5,
+            "won": 3,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 7,
+            "ga": 3,
+            "pts": 10,
+            "pos": 4,
+            "gd": 4
+          }
         },
         "valor": {
           "1": -7.7,
@@ -3104,6 +3356,34 @@
           "home_recent": "DWWDL",
           "away_recent": "DWWLD"
         },
+        "positions": {
+          "home": {
+            "team_id": "17534",
+            "team": "Leganés",
+            "played": 5,
+            "won": 2,
+            "drawn": 2,
+            "lost": 1,
+            "gf": 3,
+            "ga": 3,
+            "pts": 8,
+            "pos": 12,
+            "gd": 0
+          },
+          "away": {
+            "team_id": "3747",
+            "team": "Granada",
+            "played": 5,
+            "won": 2,
+            "drawn": 2,
+            "lost": 1,
+            "gf": 6,
+            "ga": 5,
+            "pts": 8,
+            "pos": 10,
+            "gd": 1
+          }
+        },
         "valor": {
           "1": -1.7,
           "X": 1.3,
@@ -3164,6 +3444,22 @@
           "away": "thesportsdb-live",
           "home_recent": "LWL",
           "away_recent": "W"
+        },
+        "positions": {
+          "home": {
+            "team_id": "20093",
+            "team": "Atlético Madrid",
+            "played": 3,
+            "won": 1,
+            "drawn": 0,
+            "lost": 2,
+            "gf": 5,
+            "ga": 7,
+            "pts": 3,
+            "pos": 9,
+            "gd": -2
+          },
+          "away": null
         },
         "valor": {
           "1": -34.4,
@@ -3226,6 +3522,34 @@
           "home_recent": "WDL",
           "away_recent": "WWD"
         },
+        "positions": {
+          "home": {
+            "team_id": "21376",
+            "team": "Eibar",
+            "played": 3,
+            "won": 1,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 2,
+            "ga": 4,
+            "pts": 4,
+            "pos": 8,
+            "gd": -2
+          },
+          "away": {
+            "team_id": "21372",
+            "team": "Athletic Club",
+            "played": 3,
+            "won": 2,
+            "drawn": 1,
+            "lost": 0,
+            "gf": 6,
+            "ga": 3,
+            "pts": 7,
+            "pos": 3,
+            "gd": 3
+          }
+        },
         "valor": {
           "1": -0.3,
           "X": -4.2,
@@ -3272,14 +3596,14 @@
         "pleno": null,
         "is_women": true,
         "modelo": {
-          "1": 81.7,
-          "X": 13.1,
-          "2": 5.2
+          "1": 81.5,
+          "X": 13.2,
+          "2": 5.4
         },
         "pick": "1",
         "expected_goals": {
           "home": 2.531,
-          "away": 0.491
+          "away": 0.5
         },
         "data_sources": {
           "home": "espn-live",
@@ -3287,10 +3611,38 @@
           "home_recent": "WDW",
           "away_recent": "LLL"
         },
+        "positions": {
+          "home": {
+            "team_id": "21128",
+            "team": "Real Madrid",
+            "played": 3,
+            "won": 2,
+            "drawn": 1,
+            "lost": 0,
+            "gf": 5,
+            "ga": 2,
+            "pts": 7,
+            "pos": 4,
+            "gd": 3
+          },
+          "away": {
+            "team_id": "21374",
+            "team": "Valencia",
+            "played": 3,
+            "won": 0,
+            "drawn": 0,
+            "lost": 3,
+            "gf": 2,
+            "ga": 7,
+            "pts": 0,
+            "pos": 16,
+            "gd": -5
+          }
+        },
         "valor": {
-          "1": 3.7,
-          "X": -2.9,
-          "2": -0.8
+          "1": 3.5,
+          "X": -2.8,
+          "2": -0.6
         },
         "value_pick": "1"
       },
@@ -3347,6 +3699,34 @@
           "away": "espn-live",
           "home_recent": "LDD",
           "away_recent": "WLL"
+        },
+        "positions": {
+          "home": {
+            "team_id": "131393",
+            "team": "CD Tenerife",
+            "played": 3,
+            "won": 0,
+            "drawn": 2,
+            "lost": 1,
+            "gf": 1,
+            "ga": 6,
+            "pts": 2,
+            "pos": 12,
+            "gd": -5
+          },
+          "away": {
+            "team_id": "21424",
+            "team": "Sevilla",
+            "played": 3,
+            "won": 1,
+            "drawn": 0,
+            "lost": 2,
+            "gf": 1,
+            "ga": 5,
+            "pts": 3,
+            "pos": 11,
+            "gd": -4
+          }
         },
         "valor": {
           "1": 7.9,
@@ -3421,6 +3801,34 @@
           "away": "espn-live",
           "home_recent": "WDWLW",
           "away_recent": "WWWLWW"
+        },
+        "positions": {
+          "home": {
+            "team_id": "1068",
+            "team": "Atlético Madrid",
+            "played": 5,
+            "won": 3,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 10,
+            "ga": 6,
+            "pts": 10,
+            "pos": 5,
+            "gd": 4
+          },
+          "away": {
+            "team_id": "86",
+            "team": "Real Madrid",
+            "played": 6,
+            "won": 5,
+            "drawn": 0,
+            "lost": 1,
+            "gf": 17,
+            "ga": 6,
+            "pts": 15,
+            "pos": 2,
+            "gd": 11
+          }
         },
         "pleno_sugerido": {
           "home": "M",

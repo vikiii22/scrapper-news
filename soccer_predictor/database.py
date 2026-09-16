@@ -159,6 +159,7 @@ def log_prediction(result: Dict[str, Any]) -> None:
         "player_context": result.get("player_context"),
         "absences": result.get("absences"),
         "player_adjustments": result.get("player_adjustments"),
+        "positions": result.get("positions"),
     }
     preds.append(entry)
     preds = preds[-500:]  # tope para no crecer sin límite
