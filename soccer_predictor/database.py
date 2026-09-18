@@ -160,6 +160,8 @@ def log_prediction(result: Dict[str, Any]) -> None:
         "absences": result.get("absences"),
         "player_adjustments": result.get("player_adjustments"),
         "positions": result.get("positions"),
+        "normalization": result.get("normalization"),
+        "low_confidence": result.get("low_confidence", False),
     }
     preds.append(entry)
     preds = preds[-500:]  # tope para no crecer sin límite
@@ -181,11 +183,54 @@ def stats() -> Dict[str, Any]:
 # ---------------------------------------------------------------------------
 
 def save_quiniela(jornada, analysis: List[Dict[str, Any]]) -> Dict[str, Any]:
-    """Guarda el análisis de una jornada. Devuelve la entrada guardada."""
+    """Guarda el análisis de una jornada COMO NUEVA VERSIÓN.
+
+    Nunca borra: conserva versiones anteriores, resultados reales,
+    picks jugados y acierto calculado. Devuelve la entrada actualizada.
+    """
+    try:
+        from .prediction_engine import ENGINE_VERSION
+    except ImportError:
+        try:
+            from prediction_engine import ENGINE_VERSION
+        except ImportError:
+            ENGINE_VERSION = "?"
     all_q = _read_json(QUINIELA_FILE, {})
     key = str(jornada or "sin-numero")
-    entry = {"jornada": jornada, "analyzed_at": _now_iso(), "matches": analysis}
+    prev = all_q.get(key, {})
+    versions = prev.get("versions", [])
+    versions.append({"analyzed_at": _now_iso(), "engine": ENGINE_VERSION,
+                     "n_matches": len(analysis)})
+    entry = {"jornada": jornada, "analyzed_at": _now_iso(), "matches": analysis,
+             "versions": versions[-10:],
+             "actuals": prev.get("actuals", {}),
+             "played": prev.get("played", {})}
+    # Si ya había resultados reales, recalculamos el acierto con el análisis nuevo
+    if entry["actuals"]:
+        try:
+            try:
+                from .quiniela import score_analysis
+            except ImportError:
+                from quiniela import score_analysis
+            entry["score"] = score_analysis(analysis, entry["actuals"],
+                                            entry.get("played"))
+            entry["scored_at"] = _now_iso()
+        except Exception:
+            if prev.get("score"):
+                entry["score"] = prev.get("score")
     all_q[key] = entry
+    _write_json(QUINIELA_FILE, all_q)
+    return entry
+
+
+def save_played(jornada, played: Dict[Any, str]) -> Optional[Dict[str, Any]]:
+    """Guarda los signos realmente jugados en el boleto ({n: '1'/'X'/'2'})."""
+    all_q = _read_json(QUINIELA_FILE, {})
+    entry = all_q.get(str(jornada))
+    if not entry:
+        return None
+    entry["played"] = {str(k): v for k, v in played.items() if v in ("1", "X", "2")}
+    all_q[str(jornada)] = entry
     _write_json(QUINIELA_FILE, all_q)
     return entry
 

@@ -14,6 +14,10 @@ Puede opcionalmente usar un modelo de lenguaje gratuito para enriquecer
 la explicación, pero es completamente funcional sin él.
 """
 
+# Versión del motor: se registra en cada análisis para comparar versiones.
+# Cambiar cuando se toque la fórmula (constantes, H2H, normalización...).
+ENGINE_VERSION = "v3-floor0.5-he0.30-ap0.15-h2h"
+
 import math
 from collections import Counter
 

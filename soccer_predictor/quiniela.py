@@ -263,15 +263,19 @@ def fetch_actuals(matches: List[Dict[str, Any]], progress_cb=None) -> Dict[int, 
 
 
 def score_analysis(analysis: List[Dict[str, Any]],
-                   actuals: Dict[int, Dict[str, Any]]) -> Dict[str, Any]:
+                   actuals: Dict[int, Dict[str, Any]],
+                   played: Optional[Dict[Any, str]] = None) -> Dict[str, Any]:
     """
-    Calcula el acierto: pick 1X2, apuestas valor y pleno.
+    Calcula el acierto: pick 1X2, apuestas valor, pleno y boleto jugado.
     actuals: {n: {'sign': '1'/'X'/'2', 'home_goals': int, 'away_goals': int}}.
-    Las claves de actuals pueden venir como int o str (JSON).
+    played: {n: signo} realmente marcado en el boleto (si difiere del modelo).
+    Las claves pueden venir como int o str (JSON).
     """
     actuals = {int(k): v for k, v in (actuals or {}).items()}
+    played = {int(k): v for k, v in (played or {}).items() if v in ("1", "X", "2")}
     rows: List[Dict[str, Any]] = []
     pick_ok = pick_n = val_ok = val_n = pleno_ok = 0
+    played_ok = played_n = 0
     for m in analysis:
         if "error" in m:
             continue
@@ -295,10 +299,16 @@ def score_analysis(analysis: List[Dict[str, Any]],
             row["pleno_real"] = f"{gh}-{ga}"
             row["pleno_sug"] = f"{sug['home']}-{sug['away']}"
             pleno_ok += row["pleno_ok"]
+        if a and m["n"] in played:
+            row["played"] = played[m["n"]]
+            row["played_ok"] = played[m["n"]] == a["sign"]
+            played_n += 1
+            played_ok += row["played_ok"]
         rows.append(row)
     return {"rows": rows,
             "pick": {"ok": pick_ok, "n": pick_n},
             "value": {"ok": val_ok, "n": val_n},
+            "played": {"ok": played_ok, "n": played_n},
             "pleno": {"ok": pleno_ok}}
 
 
@@ -338,6 +348,8 @@ def analyze_quiniela(parsed: Dict[str, Any], competition_default: str = "La Liga
         entry["expected_goals"] = r["expected_goals"]
         entry["data_sources"] = r.get("data_sources")
         entry["positions"] = r.get("positions")
+        entry["normalization"] = r.get("normalization")
+        entry["low_confidence"] = r.get("low_confidence", False)
         if m.get("lae"):
             entry["valor"] = {s: round(entry["modelo"][s] - m["lae"][s], 1)
                               for s in ("1", "X", "2")}

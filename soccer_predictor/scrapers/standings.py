@@ -141,3 +141,17 @@ def position_of(team_name: str, league: Optional[str] = None) -> Optional[Dict[s
         return None
     except Exception:
         return None
+
+
+def league_average(league: str) -> Optional[float]:
+    """Media de goles por equipo y partido en esa liga (para normalizar
+    cruces interligas). None si no hay tabla. Nunca lanza excepción."""
+    try:
+        table = get_table(league)
+        if not table:
+            return None
+        gf = sum(r["gf"] for r in table)
+        pj = sum(r["played"] for r in table)
+        return round(gf / pj, 3) if pj else None
+    except Exception:
+        return None

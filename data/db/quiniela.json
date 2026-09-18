@@ -1305,7 +1305,7 @@
   },
   "7": {
     "jornada": 7,
-    "analyzed_at": "2026-09-16T10:15:26.729082+00:00",
+    "analyzed_at": "2026-09-17T08:34:56.095562+00:00",
     "matches": [
       {
         "n": 1,
@@ -1371,7 +1371,37 @@
           "X": -7.9,
           "2": 17.8
         },
-        "value_pick": "2"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "101",
+            "team": "Rayo Vallecano",
+            "played": 6,
+            "won": 2,
+            "drawn": 1,
+            "lost": 3,
+            "gf": 10,
+            "ga": 15,
+            "pts": 7,
+            "pos": 12,
+            "gd": -5
+          },
+          "away": {
+            "team_id": "88",
+            "team": "Espanyol",
+            "played": 6,
+            "won": 2,
+            "drawn": 1,
+            "lost": 3,
+            "gf": 9,
+            "ga": 7,
+            "pts": 7,
+            "pos": 8,
+            "gd": 2
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 2,
@@ -1417,14 +1447,14 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 81.6,
-          "X": 14.4,
-          "2": 4.1
+          "1": 77.3,
+          "X": 15.9,
+          "2": 6.7
         },
         "pick": "1",
         "expected_goals": {
           "home": 2.245,
-          "away": 0.325
+          "away": 0.5
         },
         "data_sources": {
           "home": "espn-live",
@@ -1433,11 +1463,41 @@
           "away_recent": "DLLLLW"
         },
         "valor": {
-          "1": 27.6,
-          "X": -8.6,
-          "2": -18.9
+          "1": 23.3,
+          "X": -7.1,
+          "2": -16.3
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": {
+            "team_id": "96",
+            "team": "Alavés",
+            "played": 6,
+            "won": 3,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 11,
+            "ga": 6,
+            "pts": 10,
+            "pos": 4,
+            "gd": 5
+          },
+          "away": {
+            "team_id": "94",
+            "team": "Valencia",
+            "played": 6,
+            "won": 1,
+            "drawn": 1,
+            "lost": 4,
+            "gf": 2,
+            "ga": 10,
+            "pts": 4,
+            "pos": 17,
+            "gd": -8
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 3,
@@ -1503,7 +1563,37 @@
           "X": 6.3,
           "2": -13.5
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": {
+            "team_id": "3751",
+            "team": "Elche",
+            "played": 6,
+            "won": 0,
+            "drawn": 2,
+            "lost": 4,
+            "gf": 8,
+            "ga": 16,
+            "pts": 2,
+            "pos": 20,
+            "gd": -8
+          },
+          "away": {
+            "team_id": "86",
+            "team": "Real Madrid",
+            "played": 6,
+            "won": 5,
+            "drawn": 0,
+            "lost": 1,
+            "gf": 17,
+            "ga": 6,
+            "pts": 15,
+            "pos": 2,
+            "gd": 11
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 4,
@@ -1549,27 +1639,57 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 64.2,
-          "X": 18.8,
-          "2": 17.0
+          "1": 75.2,
+          "X": 14.7,
+          "2": 10.1
         },
         "pick": "1",
         "expected_goals": {
-          "home": 2.322,
-          "away": 1.12
+          "home": 2.718,
+          "away": 0.918
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "WDWLW",
-          "away_recent": "DWWLL"
+          "home_recent": "WDWLWW",
+          "away_recent": "DWWLLL"
         },
         "valor": {
-          "1": -16.8,
-          "X": 7.8,
-          "2": 9.0
+          "1": -5.8,
+          "X": 3.7,
+          "2": 2.1
         },
-        "value_pick": "2"
+        "value_pick": "X",
+        "positions": {
+          "home": {
+            "team_id": "1068",
+            "team": "Atlético Madrid",
+            "played": 5,
+            "won": 3,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 10,
+            "ga": 6,
+            "pts": 10,
+            "pos": 5,
+            "gd": 4
+          },
+          "away": {
+            "team_id": "97",
+            "team": "Osasuna",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 5,
+            "ga": 8,
+            "pts": 7,
+            "pos": 11,
+            "gd": -3
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 5,
@@ -1615,27 +1735,57 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 52.7,
-          "X": 21.7,
-          "2": 25.5
+          "1": 47.9,
+          "X": 23.7,
+          "2": 28.4
         },
         "pick": "1",
         "expected_goals": {
-          "home": 1.987,
-          "away": 1.329
+          "home": 1.716,
+          "away": 1.27
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "DDWWD",
-          "away_recent": "WWLDW"
+          "home_recent": "DDWWDL",
+          "away_recent": "WWLDWW"
         },
         "valor": {
-          "1": 2.7,
-          "X": -7.3,
-          "2": 4.5
+          "1": -2.1,
+          "X": -5.3,
+          "2": 7.4
         },
-        "value_pick": "2"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "90",
+            "team": "Deportivo",
+            "played": 5,
+            "won": 2,
+            "drawn": 3,
+            "lost": 0,
+            "gf": 9,
+            "ga": 6,
+            "pts": 9,
+            "pos": 7,
+            "gd": 3
+          },
+          "away": {
+            "team_id": "243",
+            "team": "Sevilla",
+            "played": 5,
+            "won": 3,
+            "drawn": 1,
+            "lost": 1,
+            "gf": 8,
+            "ga": 6,
+            "pts": 10,
+            "pos": 6,
+            "gd": 2
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 6,
@@ -1681,27 +1831,57 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 77.8,
+          "1": 76.7,
           "X": 12.2,
-          "2": 10.0
+          "2": 11.0
         },
         "pick": "1",
         "expected_goals": {
-          "home": 3.367,
-          "away": 1.23
+          "home": 3.5,
+          "away": 1.381
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "WWWWW",
-          "away_recent": "DLWLW"
+          "home_recent": "WWWWWW",
+          "away_recent": "DLWLWL"
         },
         "valor": {
-          "1": -7.2,
+          "1": -8.3,
           "X": 4.2,
-          "2": 3.0
+          "2": 4.0
         },
-        "value_pick": "X"
+        "value_pick": "X",
+        "positions": {
+          "home": {
+            "team_id": "83",
+            "team": "Barcelona",
+            "played": 5,
+            "won": 5,
+            "drawn": 0,
+            "lost": 0,
+            "gf": 21,
+            "ga": 4,
+            "pts": 15,
+            "pos": 1,
+            "gd": 17
+          },
+          "away": {
+            "team_id": "87",
+            "team": "Racing Santander",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 9,
+            "ga": 9,
+            "pts": 7,
+            "pos": 10,
+            "gd": 0
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 7,
@@ -1767,7 +1947,37 @@
           "X": -6.8,
           "2": -8.7
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": {
+            "team_id": "1538",
+            "team": "Levante",
+            "played": 5,
+            "won": 1,
+            "drawn": 2,
+            "lost": 2,
+            "gf": 7,
+            "ga": 9,
+            "pts": 5,
+            "pos": 14,
+            "gd": -2
+          },
+          "away": {
+            "team_id": "93",
+            "team": "Athletic Club",
+            "played": 5,
+            "won": 2,
+            "drawn": 1,
+            "lost": 2,
+            "gf": 7,
+            "ga": 6,
+            "pts": 7,
+            "pos": 9,
+            "gd": 1
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 8,
@@ -1833,7 +2043,37 @@
           "X": 4.9,
           "2": 5.1
         },
-        "value_pick": "2"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "244",
+            "team": "Real Betis",
+            "played": 5,
+            "won": 4,
+            "drawn": 0,
+            "lost": 1,
+            "gf": 7,
+            "ga": 6,
+            "pts": 12,
+            "pos": 3,
+            "gd": 1
+          },
+          "away": {
+            "team_id": "2922",
+            "team": "Getafe",
+            "played": 5,
+            "won": 1,
+            "drawn": 2,
+            "lost": 2,
+            "gf": 3,
+            "ga": 6,
+            "pts": 5,
+            "pos": 15,
+            "gd": -3
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 9,
@@ -1879,27 +2119,62 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 57.0,
-          "X": 26.2,
-          "2": 16.8
+          "1": 59.3,
+          "X": 25.5,
+          "2": 15.2
         },
         "pick": "1",
         "expected_goals": {
-          "home": 1.497,
-          "away": 0.677
+          "home": 1.542,
+          "away": 0.636
         },
         "data_sources": {
-          "home": "thesportsdb-live",
+          "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "D",
+          "home_recent": "W",
           "away_recent": "DLLDDD"
         },
         "valor": {
-          "1": 39.0,
-          "X": 4.2,
-          "2": -43.2
+          "1": 41.3,
+          "X": 3.5,
+          "2": -44.8
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": {
+            "team_id": "617",
+            "team": "Omonia Nicosia",
+            "played": 1,
+            "won": 1,
+            "drawn": 0,
+            "lost": 0,
+            "gf": 1,
+            "ga": 0,
+            "pts": 3,
+            "pos": 7,
+            "gd": 1
+          },
+          "away": {
+            "team_id": "85",
+            "team": "Celta Vigo",
+            "played": 6,
+            "won": 0,
+            "drawn": 4,
+            "lost": 2,
+            "gf": 3,
+            "ga": 6,
+            "pts": 4,
+            "pos": 16,
+            "gd": -3
+          }
+        },
+        "normalization": {
+          "home_league": "uefa.europa",
+          "home_avg": 0.944,
+          "away_league": "esp.1",
+          "away_avg": 1.491
+        },
+        "low_confidence": true
       },
       {
         "n": 10,
@@ -1945,14 +2220,14 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 34.5,
-          "X": 22.8,
-          "2": 42.7
+          "1": 35.1,
+          "X": 23.7,
+          "2": 41.1
         },
         "pick": "2",
         "expected_goals": {
-          "home": 1.566,
-          "away": 1.764
+          "home": 1.486,
+          "away": 1.625
         },
         "data_sources": {
           "home": "espn-live",
@@ -1961,11 +2236,46 @@
           "away_recent": "DWWWWW"
         },
         "valor": {
-          "1": -24.5,
-          "X": -1.2,
-          "2": 25.7
+          "1": -23.9,
+          "X": -0.3,
+          "2": 24.1
         },
-        "value_pick": "2"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "103",
+            "team": "AC Milan",
+            "played": 4,
+            "won": 2,
+            "drawn": 2,
+            "lost": 0,
+            "gf": 7,
+            "ga": 4,
+            "pts": 8,
+            "pos": 6,
+            "gd": 3
+          },
+          "away": {
+            "team_id": "1929",
+            "team": "Benfica",
+            "played": 6,
+            "won": 5,
+            "drawn": 1,
+            "lost": 0,
+            "gf": 21,
+            "ga": 4,
+            "pts": 16,
+            "pos": 2,
+            "gd": 17
+          }
+        },
+        "normalization": {
+          "home_league": "ita.1",
+          "home_avg": 1.512,
+          "away_league": "por.1",
+          "away_avg": 1.396
+        },
+        "low_confidence": true
       },
       {
         "n": 11,
@@ -2011,27 +2321,62 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 31.8,
-          "X": 26.9,
-          "2": 41.3
+          "1": 20.5,
+          "X": 21.3,
+          "2": 58.2
         },
         "pick": "2",
         "expected_goals": {
-          "home": 1.147,
-          "away": 1.346
+          "home": 1.11,
+          "away": 2.012
         },
         "data_sources": {
-          "home": "thesportsdb-live",
+          "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "D",
+          "home_recent": "L",
           "away_recent": "WDWD"
         },
         "valor": {
-          "1": 4.8,
-          "X": -0.1,
-          "2": -4.7
+          "1": -6.5,
+          "X": -5.7,
+          "2": 12.2
         },
-        "value_pick": "1"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "441",
+            "team": "Anderlecht",
+            "played": 1,
+            "won": 0,
+            "drawn": 0,
+            "lost": 1,
+            "gf": 1,
+            "ga": 2,
+            "pts": 0,
+            "pos": 12,
+            "gd": -1
+          },
+          "away": {
+            "team_id": "167",
+            "team": "Lyon",
+            "played": 4,
+            "won": 2,
+            "drawn": 2,
+            "lost": 0,
+            "gf": 6,
+            "ga": 2,
+            "pts": 8,
+            "pos": 4,
+            "gd": 4
+          }
+        },
+        "normalization": {
+          "home_league": "uefa.europa",
+          "home_avg": 0.944,
+          "away_league": "fra.1",
+          "away_avg": 1.375
+        },
+        "low_confidence": true
       },
       {
         "n": 12,
@@ -2077,14 +2422,14 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 73.3,
-          "X": 16.5,
-          "2": 10.2
+          "1": 75.6,
+          "X": 14.3,
+          "2": 10.1
         },
         "pick": "1",
         "expected_goals": {
-          "home": 2.388,
-          "away": 0.771
+          "home": 2.8,
+          "away": 0.956
         },
         "data_sources": {
           "home": "espn-live",
@@ -2093,11 +2438,34 @@
           "away_recent": "WWDWDLLWWL"
         },
         "valor": {
-          "1": 5.3,
-          "X": -2.5,
-          "2": -2.8
+          "1": 7.6,
+          "X": -4.7,
+          "2": -2.9
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": {
+            "team_id": "256",
+            "team": "Celtic",
+            "played": 6,
+            "won": 6,
+            "drawn": 0,
+            "lost": 0,
+            "gf": 14,
+            "ga": 3,
+            "pts": 18,
+            "pos": 1,
+            "gd": 11
+          },
+          "away": null
+        },
+        "normalization": {
+          "home_league": "sco.1",
+          "home_avg": 1.306,
+          "away_league": "uefa.europa",
+          "away_avg": 0.944
+        },
+        "low_confidence": true
       },
       {
         "n": 13,
@@ -2163,7 +2531,13 @@
           "X": -7.5,
           "2": -14.4
         },
-        "value_pick": "1"
+        "value_pick": "1",
+        "positions": {
+          "home": null,
+          "away": null
+        },
+        "normalization": null,
+        "low_confidence": false
       },
       {
         "n": 14,
@@ -2209,14 +2583,14 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 42.0,
-          "X": 22.9,
-          "2": 35.1
+          "1": 42.2,
+          "X": 23.8,
+          "2": 34.0
         },
         "pick": "1",
         "expected_goals": {
-          "home": 1.74,
-          "away": 1.576
+          "home": 1.637,
+          "away": 1.447
         },
         "data_sources": {
           "home": "espn-live",
@@ -2225,11 +2599,46 @@
           "away_recent": "LDDD"
         },
         "valor": {
-          "1": -21.0,
-          "X": 2.9,
-          "2": 18.1
+          "1": -20.8,
+          "X": 3.8,
+          "2": 17.0
         },
-        "value_pick": "2"
+        "value_pick": "2",
+        "positions": {
+          "home": {
+            "team_id": "89",
+            "team": "Real Sociedad",
+            "played": 6,
+            "won": 2,
+            "drawn": 1,
+            "lost": 3,
+            "gf": 6,
+            "ga": 11,
+            "pts": 7,
+            "pos": 13,
+            "gd": -5
+          },
+          "away": {
+            "team_id": "349",
+            "team": "AFC Bournemouth",
+            "played": 4,
+            "won": 0,
+            "drawn": 3,
+            "lost": 1,
+            "gf": 6,
+            "ga": 7,
+            "pts": 3,
+            "pos": 15,
+            "gd": -1
+          }
+        },
+        "normalization": {
+          "home_league": "esp.1",
+          "home_avg": 1.491,
+          "away_league": "eng.1",
+          "away_avg": 1.425
+        },
+        "low_confidence": true
       },
       {
         "n": 15,
@@ -2313,7 +2722,44 @@
         "pleno_sugerido": {
           "home": "1",
           "away": "1"
-        }
+        },
+        "positions": {
+          "home": {
+            "team_id": "99",
+            "team": "Málaga",
+            "played": 5,
+            "won": 0,
+            "drawn": 3,
+            "lost": 2,
+            "gf": 2,
+            "ga": 8,
+            "pts": 3,
+            "pos": 18,
+            "gd": -6
+          },
+          "away": {
+            "team_id": "102",
+            "team": "Villarreal",
+            "played": 5,
+            "won": 0,
+            "drawn": 2,
+            "lost": 3,
+            "gf": 7,
+            "ga": 10,
+            "pts": 2,
+            "pos": 19,
+            "gd": -3
+          }
+        },
+        "normalization": null,
+        "low_confidence": false
+      }
+    ],
+    "versions": [
+      {
+        "analyzed_at": "2026-09-17T08:34:56.095551+00:00",
+        "engine": "v3-floor0.5-he0.30-ap0.15-h2h",
+        "n_matches": 15
       }
     ],
     "actuals": {
@@ -2337,7 +2783,101 @@
         "away_goals": 0,
         "score": "",
         "source": "manual"
+      },
+      "4": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "5": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "6": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "8": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "9": {
+        "sign": "1",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "10": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "11": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "12": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "13": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "14": {
+        "sign": "2",
+        "home_goals": 0,
+        "away_goals": 0,
+        "score": "",
+        "source": "manual"
+      },
+      "15": {
+        "sign": "2",
+        "home_goals": 1,
+        "away_goals": 3,
+        "score": "1-3",
+        "source": "manual"
       }
+    },
+    "played": {
+      "1": "2",
+      "2": "1",
+      "3": "2",
+      "4": "1",
+      "5": "1",
+      "6": "1",
+      "7": "1",
+      "8": "1",
+      "9": "2",
+      "10": "2",
+      "11": "2",
+      "12": "1",
+      "13": "1",
+      "14": "1",
+      "15": "2"
     },
     "score": {
       "rows": [
@@ -2350,7 +2890,9 @@
           "actual": "1",
           "score": "",
           "pick_ok": false,
-          "value_ok": false
+          "value_ok": false,
+          "played": "2",
+          "played_ok": false
         },
         {
           "n": 2,
@@ -2361,7 +2903,9 @@
           "actual": "2",
           "score": "",
           "pick_ok": false,
-          "value_ok": false
+          "value_ok": false,
+          "played": "1",
+          "played_ok": false
         },
         {
           "n": 3,
@@ -2372,16 +2916,22 @@
           "actual": "2",
           "score": "",
           "pick_ok": true,
-          "value_ok": false
+          "value_ok": false,
+          "played": "2",
+          "played_ok": true
         },
         {
           "n": 4,
           "home": "Atletico Madrid",
           "away": "Osasuna",
           "pick": "1",
-          "value_pick": "2",
-          "actual": null,
-          "score": null
+          "value_pick": "X",
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": false,
+          "played": "1",
+          "played_ok": true
         },
         {
           "n": 5,
@@ -2389,8 +2939,12 @@
           "away": "Sevilla",
           "pick": "1",
           "value_pick": "2",
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": true,
+          "played": "1",
+          "played_ok": false
         },
         {
           "n": 6,
@@ -2398,8 +2952,12 @@
           "away": "Racing Santander",
           "pick": "1",
           "value_pick": "X",
-          "actual": null,
-          "score": null
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": false,
+          "played": "1",
+          "played_ok": true
         },
         {
           "n": 7,
@@ -2416,8 +2974,12 @@
           "away": "Getafe",
           "pick": "1",
           "value_pick": "2",
-          "actual": null,
-          "score": null
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": false,
+          "played": "1",
+          "played_ok": true
         },
         {
           "n": 9,
@@ -2425,8 +2987,12 @@
           "away": "Celta Vigo",
           "pick": "1",
           "value_pick": "1",
-          "actual": null,
-          "score": null
+          "actual": "1",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true,
+          "played": "2",
+          "played_ok": false
         },
         {
           "n": 10,
@@ -2434,17 +3000,25 @@
           "away": "Benfica",
           "pick": "2",
           "value_pick": "2",
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true,
+          "played": "2",
+          "played_ok": true
         },
         {
           "n": 11,
           "home": "Anderlecht",
           "away": "Ol Lyon",
           "pick": "2",
-          "value_pick": "1",
-          "actual": null,
-          "score": null
+          "value_pick": "2",
+          "actual": "2",
+          "score": "",
+          "pick_ok": true,
+          "value_ok": true,
+          "played": "2",
+          "played_ok": true
         },
         {
           "n": 12,
@@ -2452,8 +3026,12 @@
           "away": "Ferencvaros",
           "pick": "1",
           "value_pick": "1",
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": false,
+          "played": "1",
+          "played_ok": false
         },
         {
           "n": 13,
@@ -2461,8 +3039,12 @@
           "away": "R Union Sg",
           "pick": "1",
           "value_pick": "1",
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": false,
+          "played": "1",
+          "played_ok": false
         },
         {
           "n": 14,
@@ -2470,8 +3052,12 @@
           "away": "Bournemouth",
           "pick": "1",
           "value_pick": "2",
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "",
+          "pick_ok": false,
+          "value_ok": true,
+          "played": "1",
+          "played_ok": false
         },
         {
           "n": 15,
@@ -2479,27 +3065,37 @@
           "away": "Villarreal",
           "pick": "2",
           "value_pick": null,
-          "actual": null,
-          "score": null
+          "actual": "2",
+          "score": "1-3",
+          "pick_ok": true,
+          "pleno_ok": false,
+          "pleno_real": "1-M",
+          "pleno_sug": "1-1",
+          "played": "2",
+          "played_ok": true
         }
       ],
       "pick": {
-        "ok": 1,
-        "n": 3
+        "ok": 8,
+        "n": 14
       },
       "value": {
-        "ok": 0,
-        "n": 3
+        "ok": 5,
+        "n": 13
+      },
+      "played": {
+        "ok": 7,
+        "n": 14
       },
       "pleno": {
         "ok": 0
       }
     },
-    "scored_at": "2026-09-16T10:15:26.732405+00:00"
+    "scored_at": "2026-09-18T07:31:51.199272+00:00"
   },
   "8": {
     "jornada": 8,
-    "analyzed_at": "2026-09-16T13:05:02.694960+00:00",
+    "analyzed_at": "2026-09-18T07:32:56.465229+00:00",
     "matches": [
       {
         "n": 1,
@@ -2540,34 +3136,34 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 47.5,
-          "X": 21.0,
-          "2": 31.5
+          "1": 40.3,
+          "X": 21.3,
+          "2": 38.5
         },
         "pick": "1",
         "expected_goals": {
-          "home": 2.08,
-          "away": 1.675
+          "home": 1.924,
+          "away": 1.878
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "DWWLL",
+          "home_recent": "DWWLLL",
           "away_recent": "LDLWLW"
         },
         "positions": {
           "home": {
             "team_id": "97",
             "team": "Osasuna",
-            "played": 5,
+            "played": 6,
             "won": 2,
             "drawn": 1,
-            "lost": 2,
+            "lost": 3,
             "gf": 5,
-            "ga": 8,
+            "ga": 12,
             "pts": 7,
-            "pos": 11,
-            "gd": -3
+            "pos": 13,
+            "gd": -7
           },
           "away": {
             "team_id": "101",
@@ -2579,16 +3175,18 @@
             "gf": 10,
             "ga": 15,
             "pts": 7,
-            "pos": 12,
+            "pos": 11,
             "gd": -5
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
-          "1": 5.5,
-          "X": -8.0,
-          "2": 2.5
+          "1": -1.7,
+          "X": -7.7,
+          "2": 9.5
         },
-        "value_pick": "1"
+        "value_pick": "2"
       },
       {
         "n": 2,
@@ -2668,10 +3266,12 @@
             "gf": 11,
             "ga": 6,
             "pts": 10,
-            "pos": 4,
+            "pos": 6,
             "gd": 5
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -16.9,
           "X": 0.4,
@@ -2718,53 +3318,55 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 23.7,
-          "X": 19.3,
-          "2": 57.0
+          "1": 27.0,
+          "X": 19.9,
+          "2": 53.1
         },
         "pick": "2",
         "expected_goals": {
-          "home": 1.512,
-          "away": 2.387
+          "home": 1.616,
+          "away": 2.299
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "WWLDW",
-          "away_recent": "WWWWW"
+          "home_recent": "WWLDWW",
+          "away_recent": "WWWWWW"
         },
         "positions": {
           "home": {
             "team_id": "243",
             "team": "Sevilla",
-            "played": 5,
-            "won": 3,
+            "played": 6,
+            "won": 4,
             "drawn": 1,
             "lost": 1,
-            "gf": 8,
+            "gf": 9,
             "ga": 6,
-            "pts": 10,
-            "pos": 6,
-            "gd": 2
+            "pts": 13,
+            "pos": 5,
+            "gd": 3
           },
           "away": {
             "team_id": "83",
             "team": "Barcelona",
-            "played": 5,
-            "won": 5,
+            "played": 6,
+            "won": 6,
             "drawn": 0,
             "lost": 0,
-            "gf": 21,
-            "ga": 4,
-            "pts": 15,
+            "gf": 28,
+            "ga": 6,
+            "pts": 18,
             "pos": 1,
-            "gd": 17
+            "gd": 22
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
-          "1": 15.7,
-          "X": 4.3,
-          "2": -20.0
+          "1": 19.0,
+          "X": 4.9,
+          "2": -23.9
         },
         "value_pick": "1"
       },
@@ -2807,53 +3409,55 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 55.5,
-          "X": 28.9,
-          "2": 15.6
+          "1": 52.7,
+          "X": 29.3,
+          "2": 18.0
         },
         "pick": "1",
         "expected_goals": {
-          "home": 1.317,
-          "away": 0.553
+          "home": 1.285,
+          "away": 0.622
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "LWLDD",
-          "away_recent": "LDLDD"
+          "home_recent": "LWLDDL",
+          "away_recent": "LDLDDL"
         },
         "positions": {
           "home": {
             "team_id": "2922",
             "team": "Getafe",
-            "played": 5,
+            "played": 6,
             "won": 1,
             "drawn": 2,
-            "lost": 2,
+            "lost": 3,
             "gf": 3,
-            "ga": 6,
+            "ga": 7,
             "pts": 5,
-            "pos": 15,
-            "gd": -3
+            "pos": 16,
+            "gd": -4
           },
           "away": {
             "team_id": "99",
             "team": "Málaga",
-            "played": 5,
+            "played": 6,
             "won": 0,
             "drawn": 3,
-            "lost": 2,
-            "gf": 2,
-            "ga": 8,
+            "lost": 3,
+            "gf": 3,
+            "ga": 11,
             "pts": 3,
-            "pos": 18,
-            "gd": -6
+            "pos": 19,
+            "gd": -8
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
-          "1": 11.5,
-          "X": -2.1,
-          "2": -9.4
+          "1": 8.7,
+          "X": -1.7,
+          "2": -7.0
         },
         "value_pick": "1"
       },
@@ -2896,53 +3500,55 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 53.2,
-          "X": 21.7,
-          "2": 25.0
+          "1": 48.1,
+          "X": 23.7,
+          "2": 28.2
         },
         "pick": "1",
         "expected_goals": {
-          "home": 1.987,
-          "away": 1.307
+          "home": 1.716,
+          "away": 1.26
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "DDWWD",
-          "away_recent": "WWLWW"
+          "home_recent": "DDWWDL",
+          "away_recent": "WWLWWW"
         },
         "positions": {
           "home": {
             "team_id": "90",
             "team": "Deportivo",
-            "played": 5,
+            "played": 6,
             "won": 2,
             "drawn": 3,
-            "lost": 0,
+            "lost": 1,
             "gf": 9,
-            "ga": 6,
+            "ga": 7,
             "pts": 9,
             "pos": 7,
-            "gd": 3
+            "gd": 2
           },
           "away": {
             "team_id": "244",
             "team": "Real Betis",
-            "played": 5,
-            "won": 4,
+            "played": 6,
+            "won": 5,
             "drawn": 0,
             "lost": 1,
-            "gf": 7,
+            "gf": 8,
             "ga": 6,
-            "pts": 12,
+            "pts": 15,
             "pos": 3,
-            "gd": 1
+            "gd": 2
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
-          "1": 20.2,
-          "X": -7.3,
-          "2": -13.0
+          "1": 15.1,
+          "X": -5.3,
+          "2": -9.8
         },
         "value_pick": "1"
       },
@@ -2985,34 +3591,34 @@
         "pleno": null,
         "is_women": false,
         "modelo": {
-          "1": 48.9,
-          "X": 21.4,
-          "2": 29.7
+          "1": 53.9,
+          "X": 20.4,
+          "2": 25.6
         },
         "pick": "1",
         "expected_goals": {
-          "home": 2.031,
-          "away": 1.555
+          "home": 2.199,
+          "away": 1.48
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "DDLLL",
+          "home_recent": "DDLLLW",
           "away_recent": "LDWDL"
         },
         "positions": {
           "home": {
             "team_id": "102",
             "team": "Villarreal",
-            "played": 5,
-            "won": 0,
+            "played": 6,
+            "won": 1,
             "drawn": 2,
             "lost": 3,
-            "gf": 7,
-            "ga": 10,
-            "pts": 2,
-            "pos": 19,
-            "gd": -3
+            "gf": 10,
+            "ga": 11,
+            "pts": 5,
+            "pos": 14,
+            "gd": -1
           },
           "away": {
             "team_id": "1538",
@@ -3024,14 +3630,16 @@
             "gf": 7,
             "ga": 9,
             "pts": 5,
-            "pos": 14,
+            "pos": 15,
             "gd": -2
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
-          "1": -11.1,
-          "X": -0.6,
-          "2": 11.7
+          "1": -6.1,
+          "X": -1.6,
+          "2": 7.6
         },
         "value_pick": "2"
       },
@@ -3100,7 +3708,7 @@
             "gf": 2,
             "ga": 10,
             "pts": 4,
-            "pos": 17,
+            "pos": 18,
             "gd": -8
           },
           "away": {
@@ -3113,10 +3721,12 @@
             "gf": 6,
             "ga": 11,
             "pts": 7,
-            "pos": 13,
+            "pos": 12,
             "gd": -5
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -2.0,
           "X": -0.1,
@@ -3206,6 +3816,8 @@
             "gd": -1
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": 2.4,
           "X": 1.8,
@@ -3295,6 +3907,8 @@
             "gd": 4
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -7.7,
           "X": 5.9,
@@ -3384,6 +3998,8 @@
             "gd": 1
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -1.7,
           "X": 1.3,
@@ -3461,6 +4077,8 @@
           },
           "away": null
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -34.4,
           "X": 0.5,
@@ -3550,6 +4168,8 @@
             "gd": 3
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": -0.3,
           "X": -4.2,
@@ -3639,6 +4259,8 @@
             "gd": -5
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": 3.5,
           "X": -2.8,
@@ -3728,6 +4350,8 @@
             "gd": -4
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "valor": {
           "1": 7.9,
           "X": 4.5,
@@ -3787,34 +4411,34 @@
         ],
         "is_women": false,
         "modelo": {
-          "1": 39.1,
-          "X": 21.1,
-          "2": 39.8
+          "1": 44.9,
+          "X": 21.0,
+          "2": 34.1
         },
-        "pick": "2",
+        "pick": "1",
         "expected_goals": {
-          "home": 1.929,
-          "away": 1.946
+          "home": 2.053,
+          "away": 1.777
         },
         "data_sources": {
           "home": "espn-live",
           "away": "espn-live",
-          "home_recent": "WDWLW",
+          "home_recent": "WDWLWW",
           "away_recent": "WWWLWW"
         },
         "positions": {
           "home": {
             "team_id": "1068",
             "team": "Atlético Madrid",
-            "played": 5,
-            "won": 3,
+            "played": 6,
+            "won": 4,
             "drawn": 1,
             "lost": 1,
-            "gf": 10,
+            "gf": 14,
             "ga": 6,
-            "pts": 10,
-            "pos": 5,
-            "gd": 4
+            "pts": 13,
+            "pos": 4,
+            "gd": 8
           },
           "away": {
             "team_id": "86",
@@ -3830,11 +4454,27 @@
             "gd": 11
           }
         },
+        "normalization": null,
+        "low_confidence": false,
         "pleno_sugerido": {
           "home": "M",
-          "away": "M"
+          "away": "1"
         }
       }
-    ]
+    ],
+    "versions": [
+      {
+        "analyzed_at": "2026-09-17T08:38:19.528223+00:00",
+        "engine": "v3-floor0.5-he0.30-ap0.15-h2h",
+        "n_matches": 15
+      },
+      {
+        "analyzed_at": "2026-09-18T07:32:56.465207+00:00",
+        "engine": "v3-floor0.5-he0.30-ap0.15-h2h",
+        "n_matches": 15
+      }
+    ],
+    "actuals": {},
+    "played": {}
   }
 }

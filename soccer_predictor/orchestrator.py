@@ -76,6 +76,31 @@ def predict(
         except Exception:
             ctx_home = ctx_away = None
 
+    # 3b. Normalización interligas (Champions/Europa/Conference...): si cada
+    # equipo viene de una liga distinta, sus goles se reescalan a una media
+    # neutra (1.35) según lo goleadora que sea su liga. Misma liga: intacto.
+    # (Solo en memoria: no reescribe la BBDD.)
+    norm_info = None
+    _lh, _la = data_home.get("league"), data_away.get("league")
+    if _lh and _la and _lh != _la:
+        try:
+            try:
+                from .scrapers import standings as _stn
+            except ImportError:
+                from scrapers import standings as _stn
+            _ah = _stn.league_average(_lh)
+            _aa = _stn.league_average(_la)
+            if _ah and _aa:
+                for _dd, _avg in ((data_home, _ah), (data_away, _aa)):
+                    _f = 1.35 / _avg if _avg else 1.0
+                    _f = max(0.7, min(1.4, _f))  # tope: no más de ±40%
+                    _dd["goals_for"] = round(_dd["goals_for"] * _f, 2)
+                    _dd["goals_against"] = round(_dd["goals_against"] * _f, 2)
+                norm_info = {"home_league": _lh, "home_avg": _ah,
+                             "away_league": _la, "away_avg": _aa}
+        except Exception:
+            norm_info = None
+
     # 4. Calculamos la predicción
     result = pe.predict_from_data(
         team_home,
@@ -102,6 +127,10 @@ def predict(
     }
     result["player_context"] = {"home": ctx_home, "away": ctx_away}
     result["absences"] = {"home": absences_home, "away": absences_away}
+    result["normalization"] = norm_info
+    # Cruce interligas = más incertidumbre (goleadas a rivales flojos no
+    # son comparables). Se muestra en la UI, no se oculta.
+    result["low_confidence"] = bool(norm_info)
 
     # Posición en liga (contexto, no mueve el modelo: ya va en forma/goles)
     try:

@@ -114,7 +114,7 @@ if seccion == "🎫 Quiniela":
                              if (ph or pa) else "—"),
                     "Modelo 1/X/2": (f"{m['modelo']['1']:.0f}/{m['modelo']['X']:.0f}/{m['modelo']['2']:.0f}"),
                     "Pick": m["pick"] + (f" (pleno {m['pleno_sugerido']['home']}-{m['pleno_sugerido']['away']})"
-                                         if m.get("pleno_sugerido") else ""),
+                                         if m.get("pleno_sugerido") else "") + (" ⚠️" if m.get("low_confidence") else ""),
                     "Valor vs LAE": (f"{val.get('1', 0):+.0f}/{val.get('X', 0):+.0f}/{val.get('2', 0):+.0f}"
                                      if val else "—"),
                     "Apuesta valor": m.get("value_pick") or "—",
@@ -191,21 +191,54 @@ if seccion == "🎫 Quiniela":
                 st.session_state["quiniela_actuals"] = edited
                 st.success("Resultados guardados.")
 
+            # --- Boleto realmente jugado (puede diferir del modelo) ---
+            st.subheader("🎫 Lo que marcaste en tu boleto")
+            st.caption("Si jugaste otro signo distinto al del modelo, márcalo: "
+                       "así medimos al modelo Y a tus decisiones por separado.")
+            q = db.get_quiniela(sel)
+            played_prev = {int(k): v for k, v in (q.get("played") or {}).items()}
+            played_new = {}
+            for m in q["matches"]:
+                if "error" in m:
+                    continue
+                cur = played_prev.get(m["n"], m.get("pick", "1"))
+                played_new[m["n"]] = st.selectbox(
+                    f"{m['n']}. {m['home']} - {m['away']} (modelo: {m.get('pick', '?')})",
+                    ["1", "X", "2"],
+                    index=["1", "X", "2"].index(cur) if cur in ("1", "X", "2") else 0,
+                    key=f"played_{sel}_{m['n']}")
+            if st.button("💾 Guardar boleto jugado"):
+                db.save_played(sel, played_new)
+                q2 = db.get_quiniela(sel)
+                sc = qui.score_analysis(q2["matches"], q2.get("actuals", {}), played_new)
+                db.save_quiniela_results(sel, q2.get("actuals", {}), sc)
+                st.success("Boleto guardado y acierto recalculado.")
+
             q = db.get_quiniela(sel)  # recargar por si se guardó
             if q.get("score"):
                 s = q["score"]
-                c1, c2, c3 = st.columns(3)
+                c1, c2, c3, c4 = st.columns(4)
                 p, v = s["pick"], s["value"]
                 c1.metric("Acierto 1X2", f"{p['ok']}/{p['n']}",
                           f"{p['ok']/p['n']:.0%}" if p["n"] else None)
                 c2.metric("Apuestas valor", f"{v['ok']}/{v['n']}",
                           f"{v['ok']/v['n']:.0%}" if v["n"] else None)
-                c3.metric("Pleno", "✅" if s["pleno"]["ok"] else "❌")
+                pl = s.get("played", {})
+                c3.metric("Tu boleto", f"{pl.get('ok', 0)}/{pl.get('n', 0)}",
+                          f"{pl['ok']/pl['n']:.0%}" if pl.get("n") else None)
+                c4.metric("Pleno", "✅" if s["pleno"]["ok"] else "❌")
+                vers = q.get("versions", [])
+                if vers:
+                    st.caption("Versiones de análisis: " + " · ".join(
+                        f"v{i+1} ({w.get('engine', '?')}, {w.get('analyzed_at', '')[:16].replace('T', ' ')})"
+                        for i, w in enumerate(vers)))
                 st.dataframe(
                     [{
                         "Nº": r["n"],
                         "Partido": f"{r['home']} - {r['away']}",
                         "Pick": r.get("pick", "—"),
+                        "Jugada": (r.get("played", "—") +
+                                   (" ✅" if r.get("played_ok") else (" ❌" if "played_ok" in r else ""))),
                         "Real": f"{r.get('actual', '—')} {r.get('score', '') or ''}".strip(),
                         "1X2": ("✅" if r.get("pick_ok") else "❌") if "pick_ok" in r else "—",
                         "Valor": (r.get("value_pick") or "—") +
@@ -362,6 +395,11 @@ if submit:
             st.caption(f"Ajuste aplicado: local {pa.get('home', 0):+.2f} / visitante {pa.get('away', 0):+.2f} goles esperados.")
 
         st.info("ℹ️ Modelo estadístico de Poisson. No es una garantía de resultado.")
+        if result.get("low_confidence"):
+            ni = result.get("normalization") or {}
+            st.warning("⚠️ Cruce interligas (%s vs %s): las goleadas a rivales flojos "
+                       "no son comparables. Confianza menor."
+                       % (ni.get("home_league", "?"), ni.get("away_league", "?")))
 
 with st.expander("🗄️ Estado de la BBDD local (JSON)"):
     try:
