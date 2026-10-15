@@ -203,16 +203,17 @@ def _same_team(a: str, b: str) -> bool:
     return na.split()[0] == nb.split()[0]
 
 
-def _find_fixture(home: str, away: str) -> Optional[Dict[str, Any]]:
-    """Busca el partido ya jugado entre ambos en ESPN (cualquier liga)."""
+def _find_fixture(home: str, away: str, women: bool = False) -> Optional[Dict[str, Any]]:
+    """Busca el partido ya jugado entre ambos en ESPN (cualquier liga).
+    women=True: solo Liga F (un femenino nunca debe emparejar con masculino)."""
     try:
         from .scrapers import espn
     except ImportError:
         from scrapers import espn
     try:
-        found = espn.search_team(home)
+        found = espn.search_team(home, women=women)
         if not found:
-            found = espn.search_team(away)
+            found = espn.search_team(away, women=women)
         if not found:
             return None
         league, tid, _ = found
@@ -251,10 +252,11 @@ def _find_fixture(home: str, away: str) -> Optional[Dict[str, Any]]:
 
 
 def fetch_actuals(matches: List[Dict[str, Any]], progress_cb=None) -> Dict[int, Dict[str, Any]]:
-    """Descarga el resultado real de cada partido. {n: {...}} (solo hallados)."""
+    """Descarga el resultado real de cada partido. {n: {...}} (solo hallados).
+    Respeta femenino/masculino de cada partido."""
     out: Dict[int, Dict[str, Any]] = {}
     for i, m in enumerate(matches):
-        hit = _find_fixture(m["home"], m["away"])
+        hit = _find_fixture(m["home"], m["away"], women=bool(m.get("is_women")))
         if hit:
             out[m["n"]] = hit
         if progress_cb:

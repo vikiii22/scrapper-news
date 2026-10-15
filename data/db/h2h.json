@@ -828,5 +828,73 @@
     ],
     "source": "thesportsdb-live",
     "fetched_at": "2026-09-16T10:13:56.020521+00:00"
+  },
+  "napoli||villarreal": {
+    "teams": [
+      "Villarreal",
+      "Napoli"
+    ],
+    "matches": [
+      [
+        "Villarreal",
+        "Napoli",
+        0,
+        0,
+        "UEFA Champions League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-10-13T14:02:29.640115+00:00"
+  },
+  "barcelona||galatasaray": {
+    "teams": [
+      "Galatasaray",
+      "Barcelona"
+    ],
+    "matches": [
+      [
+        "Galatasaray",
+        "Barcelona",
+        0,
+        0,
+        "UEFA Champions League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-10-13T14:03:26.981823+00:00"
+  },
+  "como||feyenoord": {
+    "teams": [
+      "Feyenoord",
+      "Como"
+    ],
+    "matches": [
+      [
+        "Feyenoord",
+        "Como",
+        0,
+        0,
+        "UEFA Champions League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-10-13T14:03:56.400795+00:00"
+  },
+  "celta vigo||juventus": {
+    "teams": [
+      "Celta Vigo",
+      "Juventus"
+    ],
+    "matches": [
+      [
+        "Celta Vigo",
+        "Juventus",
+        0,
+        0,
+        "UEFA Europa League"
+      ]
+    ],
+    "source": "thesportsdb-live",
+    "fetched_at": "2026-10-13T14:04:33.927721+00:00"
   }
 }
