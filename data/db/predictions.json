@@ -26603,5 +26603,1368 @@
       "away_avg": 1.545
     },
     "low_confidence": true
+  },
+  {
+    "at": "2026-10-15T20:03:15.309250+00:00",
+    "teams": {
+      "home": "Espanyol",
+      "away": "Atletico Madrid"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.3445965375399113,
+      "draw": 0.2219016559449626,
+      "away": 0.43350180651512593
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.637,
+      "away": 1.854
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WLLDWLLD",
+      "away_recent": "WDWLWWWW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "R. Fernández",
+            "goals": 3
+          },
+          {
+            "name": "M. Ferndandez Sanchez",
+            "goals": 1
+          },
+          {
+            "name": "B. Zaragoza",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "A. Grimaldo",
+            "goals": 3
+          },
+          {
+            "name": "J. David",
+            "goals": 3
+          },
+          {
+            "name": "G. Simeone",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.12,
+      "away": 0.12
+    },
+    "positions": {
+      "home": {
+        "team_id": "88",
+        "team": "Espanyol",
+        "played": 8,
+        "won": 2,
+        "drawn": 2,
+        "lost": 4,
+        "gf": 11,
+        "ga": 11,
+        "pts": 8,
+        "pos": 12,
+        "gd": 0
+      },
+      "away": {
+        "team_id": "1068",
+        "team": "Atlético Madrid",
+        "played": 8,
+        "won": 6,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 18,
+        "ga": 8,
+        "pts": 19,
+        "pos": 2,
+        "gd": 10
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:26.602676+00:00",
+    "teams": {
+      "home": "Villarreal",
+      "away": "Elche"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.5389300819082571,
+      "draw": 0.20221147898667008,
+      "away": 0.2588584391050731
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.235,
+      "away": 1.517
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "DDLLLWWL",
+      "away_recent": "DLLLDLWD"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "F. Nino",
+            "goals": 4
+          },
+          {
+            "name": "T. Lemar",
+            "goals": 1
+          },
+          {
+            "name": "F. Buonanotte",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.12
+    },
+    "positions": {
+      "home": {
+        "team_id": "102",
+        "team": "Villarreal",
+        "played": 8,
+        "won": 2,
+        "drawn": 2,
+        "lost": 4,
+        "gf": 13,
+        "ga": 13,
+        "pts": 8,
+        "pos": 11,
+        "gd": 0
+      },
+      "away": {
+        "team_id": "3751",
+        "team": "Elche",
+        "played": 8,
+        "won": 1,
+        "drawn": 3,
+        "lost": 4,
+        "gf": 11,
+        "ga": 17,
+        "pts": 6,
+        "pos": 18,
+        "gd": -6
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:29.859908+00:00",
+    "teams": {
+      "home": "Real Betis",
+      "away": "Barcelona"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.28228572273596414,
+      "draw": 0.19798173074846817,
+      "away": 0.5197325465155678
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.698,
+      "away": 2.324
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWLWWWDW",
+      "away_recent": "WWWWWWWW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "C. Hernandez",
+            "goals": 2
+          },
+          {
+            "name": "A. Ezzalzouli",
+            "goals": 2
+          },
+          {
+            "name": "Isco",
+            "goals": 2
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "Raphinha",
+            "goals": 6
+          },
+          {
+            "name": "Gabriel Jesus",
+            "goals": 2
+          },
+          {
+            "name": "J. Cancelo",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.06,
+      "away": 0.12
+    },
+    "positions": {
+      "home": {
+        "team_id": "244",
+        "team": "Real Betis",
+        "played": 8,
+        "won": 6,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 14,
+        "ga": 9,
+        "pts": 19,
+        "pos": 3,
+        "gd": 5
+      },
+      "away": {
+        "team_id": "83",
+        "team": "Barcelona",
+        "played": 8,
+        "won": 8,
+        "drawn": 0,
+        "lost": 0,
+        "gf": 34,
+        "ga": 7,
+        "pts": 24,
+        "pos": 1,
+        "gd": 27
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:33.442023+00:00",
+    "teams": {
+      "home": "Valencia",
+      "away": "Athletic Bilbao"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.3163156659167665,
+      "draw": 0.2628465301277019,
+      "away": 0.42083780395553133
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.181,
+      "away": 1.404
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "DLLLLWLD",
+      "away_recent": "LLWWDD"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "Rioja",
+            "goals": 1
+          },
+          {
+            "name": "A. Mayol",
+            "goals": 1
+          },
+          {
+            "name": "D. Raba",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "A. Berenguer",
+            "goals": 1
+          },
+          {
+            "name": "Roberto Navarro",
+            "goals": 1
+          },
+          {
+            "name": "N. Williams",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "94",
+        "team": "Valencia",
+        "played": 8,
+        "won": 1,
+        "drawn": 2,
+        "lost": 5,
+        "gf": 6,
+        "ga": 15,
+        "pts": 5,
+        "pos": 19,
+        "gd": -9
+      },
+      "away": {
+        "team_id": "93",
+        "team": "Athletic Club",
+        "played": 6,
+        "won": 2,
+        "drawn": 2,
+        "lost": 2,
+        "gf": 7,
+        "ga": 6,
+        "pts": 8,
+        "pos": 10,
+        "gd": 1
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:37.445384+00:00",
+    "teams": {
+      "home": "Celta Vigo",
+      "away": "Alaves"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4707060401921599,
+      "draw": 0.2704474092412154,
+      "away": 0.25884655056662476
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 1.403,
+      "away": 0.965
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "DLLDDDWD",
+      "away_recent": "WDWWLLDL"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "P. Duran",
+            "goals": 2
+          },
+          {
+            "name": "C. Starfelt",
+            "goals": 1
+          },
+          {
+            "name": "F. Jutgla",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.06,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "85",
+        "team": "Celta Vigo",
+        "played": 8,
+        "won": 1,
+        "drawn": 5,
+        "lost": 2,
+        "gf": 8,
+        "ga": 6,
+        "pts": 8,
+        "pos": 9,
+        "gd": 2
+      },
+      "away": {
+        "team_id": "96",
+        "team": "Alavés",
+        "played": 8,
+        "won": 3,
+        "drawn": 2,
+        "lost": 3,
+        "gf": 12,
+        "ga": 8,
+        "pts": 11,
+        "pos": 7,
+        "gd": 4
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:41.769583+00:00",
+    "teams": {
+      "home": "Málaga",
+      "away": "Real Sociedad"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.3155607625194882,
+      "draw": 0.24807238455052036,
+      "away": 0.4363668529299915
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.287,
+      "away": 1.556
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "LDLDDLLD",
+      "away_recent": "LLWDWLWW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "L. Sucic",
+            "goals": 2
+          },
+          {
+            "name": "J. Ochieng",
+            "goals": 1
+          },
+          {
+            "name": "Y. Herrera",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.06
+    },
+    "positions": {
+      "home": {
+        "team_id": "99",
+        "team": "Málaga",
+        "played": 8,
+        "won": 0,
+        "drawn": 4,
+        "lost": 4,
+        "gf": 4,
+        "ga": 13,
+        "pts": 4,
+        "pos": 20,
+        "gd": -9
+      },
+      "away": {
+        "team_id": "89",
+        "team": "Real Sociedad",
+        "played": 8,
+        "won": 4,
+        "drawn": 1,
+        "lost": 3,
+        "gf": 12,
+        "ga": 15,
+        "pts": 13,
+        "pos": 6,
+        "gd": -3
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:03:44.923562+00:00",
+    "teams": {
+      "home": "Real Madrid",
+      "away": "Sevilla"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.6439441546878466,
+      "draw": 0.18234451142506214,
+      "away": 0.17371133388709128
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.432,
+      "away": 1.203
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWWLWWLW",
+      "away_recent": "WWLDWWLD"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "Kylian Mbappé",
+            "goals": 3
+          },
+          {
+            "name": "A. Carreras",
+            "goals": 1
+          },
+          {
+            "name": "J. Bellingham",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "L. Stassin",
+            "goals": 1
+          },
+          {
+            "name": "J. Iglesias",
+            "goals": 1
+          },
+          {
+            "name": "M. Sierra",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.12,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "86",
+        "team": "Real Madrid",
+        "played": 8,
+        "won": 6,
+        "drawn": 0,
+        "lost": 2,
+        "gf": 19,
+        "ga": 8,
+        "pts": 18,
+        "pos": 4,
+        "gd": 11
+      },
+      "away": {
+        "team_id": "243",
+        "team": "Sevilla",
+        "played": 8,
+        "won": 4,
+        "drawn": 2,
+        "lost": 2,
+        "gf": 13,
+        "ga": 12,
+        "pts": 14,
+        "pos": 5,
+        "gd": 1
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:04:19.267491+00:00",
+    "teams": {
+      "home": "Eibar",
+      "away": "Mallorca"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4257495180032618,
+      "draw": 0.27085728538634535,
+      "away": 0.30339319661039293
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 1.35,
+      "away": 1.095
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "LWWWWWWWL",
+      "away_recent": "WLWDWWLDW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "3752",
+        "team": "Eibar",
+        "played": 9,
+        "won": 7,
+        "drawn": 0,
+        "lost": 2,
+        "gf": 19,
+        "ga": 10,
+        "pts": 21,
+        "pos": 2,
+        "gd": 9
+      },
+      "away": {
+        "team_id": "84",
+        "team": "Mallorca",
+        "played": 9,
+        "won": 5,
+        "drawn": 2,
+        "lost": 2,
+        "gf": 11,
+        "ga": 4,
+        "pts": 17,
+        "pos": 4,
+        "gd": 7
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:04:22.456462+00:00",
+    "teams": {
+      "home": "Las Palmas",
+      "away": "Castellón"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.25542607014422597,
+      "draw": 0.24069961098889706,
+      "away": 0.503874318866877
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.134,
+      "away": 1.691
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWLDWLLDL",
+      "away_recent": "WDWWWWWDL"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "98",
+        "team": "Las Palmas",
+        "played": 9,
+        "won": 3,
+        "drawn": 2,
+        "lost": 4,
+        "gf": 13,
+        "ga": 16,
+        "pts": 11,
+        "pos": 15,
+        "gd": -3
+      },
+      "away": {
+        "team_id": "4438",
+        "team": "Castellón",
+        "played": 9,
+        "won": 6,
+        "drawn": 2,
+        "lost": 1,
+        "gf": 15,
+        "ga": 4,
+        "pts": 20,
+        "pos": 3,
+        "gd": 11
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:04:41.937612+00:00",
+    "teams": {
+      "home": "Burgos",
+      "away": "Sabadell"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4454275918588569,
+      "draw": 0.2709667476625194,
+      "away": 0.28360566047862373
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 1.374,
+      "away": 1.038
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WLDDWWWLL",
+      "away_recent": "DDWWLWDDW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "12597",
+        "team": "Burgos",
+        "played": 9,
+        "won": 4,
+        "drawn": 2,
+        "lost": 3,
+        "gf": 12,
+        "ga": 10,
+        "pts": 14,
+        "pos": 8,
+        "gd": 2
+      },
+      "away": {
+        "team_id": "11487",
+        "team": "CD Sabadell",
+        "played": 9,
+        "won": 4,
+        "drawn": 4,
+        "lost": 1,
+        "gf": 10,
+        "ga": 7,
+        "pts": 16,
+        "pos": 5,
+        "gd": 3
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:05:04.816576+00:00",
+    "teams": {
+      "home": "Athletic Bilbao",
+      "away": "Valencia"
+    },
+    "competition": "Liga F",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.7347286514792982,
+      "draw": 0.1633746318106209,
+      "away": 0.10189671671008081
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 2.413,
+      "away": 0.78
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WWDLWD",
+      "away_recent": "LLLLLL"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "A. Berenguer",
+            "goals": 1
+          },
+          {
+            "name": "Roberto Navarro",
+            "goals": 1
+          },
+          {
+            "name": "N. Williams",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "21372",
+        "team": "Athletic Club",
+        "played": 6,
+        "won": 3,
+        "drawn": 2,
+        "lost": 1,
+        "gf": 11,
+        "ga": 8,
+        "pts": 11,
+        "pos": 4,
+        "gd": 3
+      },
+      "away": {
+        "team_id": "21374",
+        "team": "Valencia",
+        "played": 6,
+        "won": 0,
+        "drawn": 0,
+        "lost": 6,
+        "gf": 4,
+        "ga": 13,
+        "pts": 0,
+        "pos": 16,
+        "gd": -9
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:05:08.565165+00:00",
+    "teams": {
+      "home": "Real Madrid",
+      "away": "Espanyol"
+    },
+    "competition": "Liga F",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4435219361606651,
+      "draw": 0.2133091167958077,
+      "away": 0.3431689470435272
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.996,
+      "away": 1.743
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WDWWWL",
+      "away_recent": "LLDWDW"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "Kylian Mbappé",
+            "goals": 3
+          },
+          {
+            "name": "A. Carreras",
+            "goals": 1
+          },
+          {
+            "name": "J. Bellingham",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.12,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "21128",
+        "team": "Real Madrid",
+        "played": 6,
+        "won": 4,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 13,
+        "ga": 13,
+        "pts": 13,
+        "pos": 3,
+        "gd": 0
+      },
+      "away": {
+        "team_id": "21154",
+        "team": "Espanyol",
+        "played": 6,
+        "won": 2,
+        "drawn": 2,
+        "lost": 2,
+        "gf": 9,
+        "ga": 6,
+        "pts": 8,
+        "pos": 7,
+        "gd": 3
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:05:12.085995+00:00",
+    "teams": {
+      "home": "Eibar",
+      "away": "Deportivo"
+    },
+    "competition": "Liga F",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.4967868642511665,
+      "draw": 0.3108075558086035,
+      "away": 0.19240557994023003
+    },
+    "over_under": "Under 2.5",
+    "both_teams_score": "No (no marcan ambos)",
+    "expected_goals": {
+      "home": 1.178,
+      "away": 0.613
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "WDLWWD",
+      "away_recent": "LDLWDL"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "21376",
+        "team": "Eibar",
+        "played": 6,
+        "won": 3,
+        "drawn": 2,
+        "lost": 1,
+        "gf": 4,
+        "ga": 4,
+        "pts": 11,
+        "pos": 5,
+        "gd": 0
+      },
+      "away": {
+        "team_id": "21145",
+        "team": "Deportivo",
+        "played": 6,
+        "won": 1,
+        "drawn": 2,
+        "lost": 3,
+        "gf": 5,
+        "ga": 6,
+        "pts": 5,
+        "pos": 14,
+        "gd": -1
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:05:17.002719+00:00",
+    "teams": {
+      "home": "Atletico Madrid",
+      "away": "Madrid CFF"
+    },
+    "competition": "Liga F",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "1",
+    "prob_1x2": {
+      "home": 0.44961705888368203,
+      "draw": 0.20864193209952703,
+      "away": 0.34174100901679094
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 2.081,
+      "away": 1.804
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "LWLWLW",
+      "away_recent": "WWWLWD"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "A. Grimaldo",
+            "goals": 3
+          },
+          {
+            "name": "J. David",
+            "goals": 3
+          },
+          {
+            "name": "G. Simeone",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [],
+        "league": null,
+        "matches_analyzed": 0
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.12,
+      "away": 0.0
+    },
+    "positions": {
+      "home": {
+        "team_id": "20093",
+        "team": "Atlético Madrid",
+        "played": 6,
+        "won": 3,
+        "drawn": 0,
+        "lost": 3,
+        "gf": 10,
+        "ga": 11,
+        "pts": 9,
+        "pos": 6,
+        "gd": -1
+      },
+      "away": {
+        "team_id": "21425",
+        "team": "Madrid CFF",
+        "played": 6,
+        "won": 4,
+        "drawn": 1,
+        "lost": 1,
+        "gf": 11,
+        "ga": 9,
+        "pts": 13,
+        "pos": 2,
+        "gd": 2
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
+  },
+  {
+    "at": "2026-10-15T20:05:20.770275+00:00",
+    "teams": {
+      "home": "Getafe",
+      "away": "Rayo Vallecano"
+    },
+    "competition": "La Liga",
+    "date": "Fecha no especificada",
+    "prediction_1x2": "2",
+    "prob_1x2": {
+      "home": 0.36897336144545123,
+      "draw": 0.2507863366387079,
+      "away": 0.38024030191584085
+    },
+    "over_under": "Over 2.5",
+    "both_teams_score": "Sí (ambos marcan)",
+    "expected_goals": {
+      "home": 1.407,
+      "away": 1.432
+    },
+    "data_sources": {
+      "home": "espn-live",
+      "away": "espn-live",
+      "home_recent": "LWLDDLWL",
+      "away_recent": "LDLWLWD"
+    },
+    "player_context": {
+      "home": {
+        "scorers": [
+          {
+            "name": "M. Satriano",
+            "goals": 1
+          },
+          {
+            "name": "R. Terrats",
+            "goals": 1
+          },
+          {
+            "name": "I. Azon",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      },
+      "away": {
+        "scorers": [
+          {
+            "name": "S. Camello",
+            "goals": 6
+          },
+          {
+            "name": "A. Ratiu",
+            "goals": 1
+          },
+          {
+            "name": "A. Garcia",
+            "goals": 1
+          }
+        ],
+        "league": "la1",
+        "matches_analyzed": 5
+      }
+    },
+    "absences": {
+      "home": 0,
+      "away": 0
+    },
+    "player_adjustments": {
+      "home": 0.0,
+      "away": 0.12
+    },
+    "positions": {
+      "home": {
+        "team_id": "2922",
+        "team": "Getafe",
+        "played": 8,
+        "won": 2,
+        "drawn": 2,
+        "lost": 4,
+        "gf": 4,
+        "ga": 10,
+        "pts": 8,
+        "pos": 14,
+        "gd": -6
+      },
+      "away": {
+        "team_id": "101",
+        "team": "Rayo Vallecano",
+        "played": 7,
+        "won": 2,
+        "drawn": 2,
+        "lost": 3,
+        "gf": 11,
+        "ga": 16,
+        "pts": 8,
+        "pos": 13,
+        "gd": -5
+      }
+    },
+    "normalization": null,
+    "low_confidence": false
   }
 ]
