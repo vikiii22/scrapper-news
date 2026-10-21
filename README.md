@@ -124,6 +124,10 @@ Funciona con cualquier endpoint compatible (OpenRouter, Groq, Ollama local,
 etc.). Si no se configura o falla la conexión, se usa automáticamente la
 explicación estadística por defecto. **Nunca rompe la app.**
 
+> 💡 **¿Sin internet?** En [`deploy/ia/`](deploy/ia/README.md) hay un stack
+> listo para levantar un modelo local con Ollama (en Docker o híbrido), y las
+> variables `.env` para conectarlo a este proyecto.
+
 ---
 
 ## 📁 Estructura del proyecto

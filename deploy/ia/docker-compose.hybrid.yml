@@ -1,0 +1,25 @@
+# Modo hibrido: Ollama nativo en el host (usa la GPU Intel Arc) y solo el
+# interfaz web en Docker. Solo tiene sentido si aceptas instalar Ollama fuera
+# de Docker para ganar velocidad.
+#
+#   winget install Ollama.Ollama
+#   ollama pull qwen3:4b
+#   docker compose -f deploy/ia/docker-compose.hybrid.yml up -d
+services:
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ia-open-webui
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:3000:8080"
+    environment:
+      OLLAMA_BASE_URL: http://host.docker.internal:11434
+      WEBUI_AUTH: "False"
+    volumes:
+      - open-webui-data:/app/backend/data
+    extra_hosts:
+      # Necesario en Linux; inofensivo en Docker Desktop (Windows/Mac).
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  open-webui-data:

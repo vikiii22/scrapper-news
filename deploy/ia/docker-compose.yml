@@ -1,0 +1,55 @@
+# Ollama en Docker + Open WebUI opcional. Nada que instalar en Windows.
+#
+#   docker compose -f deploy/ia/docker-compose.yml up -d
+#   docker compose -f deploy/ia/docker-compose.yml exec ollama ollama pull qwen3:4b
+#   streamlit run deploy/ia/chat.py
+#
+# Si ademas quieres la interfaz completa tipo ChatGPT (consume mas RAM):
+#   docker compose -f deploy/ia/docker-compose.yml --profile ui up -d
+#
+# Aviso: dentro de Docker no hay acceso a la GPU Intel Arc -> infiere en CPU.
+name: ia-local
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ia-ollama
+    restart: unless-stopped
+    ports:
+      # Solo accesible desde este equipo. Cambia a "11434:11434" para la LAN.
+      - "127.0.0.1:11434:11434"
+    volumes:
+      - ollama-models:/root/.ollama
+    environment:
+      OLLAMA_KEEP_ALIVE: ${OLLAMA_KEEP_ALIVE:-30m}
+      # Ajustes conservadores para 16 GB de RAM compartidos con WSL2.
+      OLLAMA_MAX_LOADED_MODELS: "1"
+      OLLAMA_NUM_PARALLEL: "1"
+    healthcheck:
+      test: ["CMD", "ollama", "list"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 20s
+
+  open-webui:
+    profiles: ["ui"]
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: ia-open-webui
+    restart: unless-stopped
+    depends_on:
+      ollama:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:3000:8080"
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      WEBUI_AUTH: "False"
+    volumes:
+      - open-webui-data:/app/backend/data
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
+volumes:
+  ollama-models:
+  open-webui-data:

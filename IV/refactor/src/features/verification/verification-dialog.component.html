@@ -1,0 +1,57 @@
+<tl-modal-dialog type="buttonless" class="tl-code-dialog__modal">
+  <div class="tl-code-dialog__wrapper">
+    <div class="tl-code-dialog__content">
+      <h2 class="dark-default tl-code-dialog__title">
+        <tl-translatable-text [text]="title" />
+      </h2>
+
+      <p class="tl-code-dialog__description" *ngIf="showDescriptionText">
+        <tl-translatable-text [text]="descriptionText" />
+      </p>
+
+      <p class="tl-code-dialog__description--timer" *ngIf="errorTimer">
+        <tl-translatable-text [text]="errorTimer" />
+      </p>
+
+      <div class="tl-code-dialog__error-area" *ngIf="wrongCode.value">
+        <tl-translatable-text [text]="{ key: wrongCode.value }" />
+      </div>
+
+      <form class="form-group tl-code-dialog__form" *ngIf="showForm">
+        <input
+          id="code-input"
+          type="tel"
+          class="form-control tl-code-dialog__input"
+          [class.tl-code-dialog__input--error]="inputError || (form.invalid && form.touched && submitted)"
+          [formControl]="form"
+          (keydown)="validateInput($event)"
+          (paste)="pasteNumbers($event)"
+        />
+      </form>
+
+      <div class="tl-code-dialog__buttons">
+        <button
+          type="button"
+          class="btn tl-code-dialog__button tl-code-dialog__button--accept"
+          [disabled]="disableButton"
+          (click)="buttonCallBack()"
+        >
+          <tl-translatable-text [text]="sendButtonText" />
+        </button>
+
+        <button
+          type="button"
+          class="btn tl-code-dialog__button tl-code-dialog__button--resend"
+          *ngIf="hasActiveCode"
+          (click)="goInsertCode()"
+        >
+          <tl-translatable-text [text]="{ key: 'userProfile.verifyPhone.hasCode' }" />
+        </button>
+
+        <span class="tl-code-dialog__link" *ngIf="displayContactLink()" (click)="goToContact()">
+          <tl-translatable-text [text]="{ key: 'userProfile.verifyPhone.contact' }" />
+        </span>
+      </div>
+    </div>
+  </div>
+</tl-modal-dialog>

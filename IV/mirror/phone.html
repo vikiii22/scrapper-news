@@ -1,0 +1,951 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cambiar teléfono · Tulotero local</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f6f5fb;
+      --card: #ffffff;
+      --text: #211b2e;
+      --muted: #6b6478;
+      --line: #dcd7e8;
+      --accent: #4b2e83;
+      --accent-2: #20b873;
+      --danger: #c92a2a;
+      --warn: #9a6700;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #14111b;
+        --card: #1d1827;
+        --text: #f0edf7;
+        --muted: #aaa2b8;
+        --line: #3a3348;
+        --accent: #a98bf0;
+        --accent-2: #48d597;
+        --danger: #ff8787;
+        --warn: #ffd43b;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    main { max-width: 860px; margin: 0 auto; padding: 36px 20px 64px; }
+    h1 { margin: 0 0 6px; font-size: 28px; }
+    h2 { margin: 0 0 10px; font-size: 18px; }
+    p { margin: 8px 0; }
+    .lead { color: var(--muted); margin-bottom: 22px; }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 18px;
+      margin: 14px 0;
+    }
+    .card[hidden] { display: none; }
+    .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: end; }
+    .row > label { flex: 1 1 160px; }
+    label { display: block; margin-bottom: 10px; }
+    label span { display: block; margin-bottom: 5px; font-size: 13px; color: var(--muted); }
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+    }
+    input:focus, textarea:focus { outline: 2px solid var(--accent); outline-offset: 1px; }
+    button, .button {
+      display: inline-block;
+      padding: 10px 15px;
+      border: 0;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-weight: 600;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    button.secondary, .button.secondary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--line);
+    }
+    button.danger { background: var(--danger); }
+    button:disabled { opacity: .5; cursor: default; }
+    .actions { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 12px; }
+    .status { min-height: 22px; margin-top: 10px; font-weight: 600; }
+    .status.ok { color: var(--accent-2); }
+    .status.err { color: var(--danger); }
+    .status.warn { color: var(--warn); }
+    .muted { color: var(--muted); }
+    .small { font-size: 13px; }
+    .note {
+      border-left: 4px solid var(--warn);
+      background: color-mix(in srgb, var(--warn) 12%, transparent);
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin: 12px 0;
+    }
+    .profile-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 12px; }
+    .profile-grid div { border: 1px solid var(--line); border-radius: 8px; padding: 10px 12px; }
+    .profile-grid b { display: block; font-size: 12px; color: var(--muted); font-weight: 500; }
+    .phone-preview { font-size: 22px; font-weight: 700; letter-spacing: .03em; }
+    pre {
+      max-height: 420px;
+      overflow: auto;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: color-mix(in srgb, var(--text) 6%, transparent);
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+    details summary { cursor: pointer; font-weight: 600; }
+    footer { margin-top: 26px; color: var(--muted); font-size: 12px; }
+    code { font: 12px/1.4 ui-monospace, SFMono-Regular, Consolas, monospace; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Cambiar teléfono</h1>
+  <p class="lead">
+    Herramienta local del mirror. Reutiliza el body real de <code>PUT /users/me</code>
+    y después hace la verificación por SMS.
+  </p>
+
+  <div class="note">
+    <strong>Solo tu cuenta.</strong> Esta página usa el token de tu sesión local.
+    No escribas tokens, cookies ni el body del perfil en chats, issues o el repositorio.
+  </div>
+
+  <section class="card">
+    <h2>1. Sesión</h2>
+    <div id="session-status" class="status">Comprobando sesión…</div>
+    <div id="session-diagnostics" class="small muted"></div>
+    <p class="small muted">
+      La app y esta página deben abrirse con el mismo host. <code>localhost</code>
+      y <code>127.0.0.1</code> son orígenes distintos y no comparten
+      <code>localStorage</code> ni la sesión. Si la app guarda el token en
+      <code>sessionStorage</code>, abre esta página en la <strong>misma pestaña</strong>:
+      <code>sessionStorage</code> no se comparte entre pestañas.
+    </p>
+    <div class="actions">
+      <button id="reload-session" class="secondary" type="button">Releer sesión</button>
+    </div>
+    <div id="profile-box" hidden>
+      <div class="profile-grid">
+        <div><b>Cuenta</b><span id="current-name">—</span></div>
+        <div><b>Email</b><span id="current-email">—</span></div>
+        <div><b>Teléfono actual</b><span id="current-phone">—</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>2. Plantilla del perfil</h2>
+    <p>
+      Para no reconstruir el perfil a mano, el mirror guarda en memoria el body
+      exacto del último <code>PUT /users/me</code> correcto.
+    </p>
+    <p class="small">
+      Si todavía no hay plantilla: abre tu perfil en la app y pulsa <strong>Guardar</strong>
+      una vez, aunque no cambies nada. Después vuelve con el botón Atrás y pulsa
+      <strong>Recargar plantilla</strong>.
+    </p>
+    <div id="template-status" class="status">Leyendo plantilla…</div>
+    <div class="actions">
+      <button id="reload-template" class="secondary" type="button">Recargar plantilla</button>
+      <a class="button secondary" href="/usuario/perfil">Abrir mi perfil</a>
+      <button id="clear-template" class="danger" type="button" hidden>Borrar plantilla</button>
+    </div>
+  </section>
+
+  <section id="phone-box" class="card" hidden>
+    <h2>3. Nuevo número</h2>
+    <div class="row">
+      <label style="flex: 0 1 120px">
+        <span>Prefijo</span>
+        <input id="prefix" inputmode="numeric" autocomplete="off" value="34">
+      </label>
+      <label>
+        <span>Número sin prefijo</span>
+        <input id="number" inputmode="tel" autocomplete="off" placeholder="600111222">
+      </label>
+    </div>
+    <p class="small muted">
+      El número completo se enviará como prefijo + número, sin el signo <code>+</code>.
+    </p>
+    <div class="actions">
+      <button id="preview-button" class="secondary" type="button">Previsualizar PUT</button>
+      <button id="send-button" type="button" disabled>Enviar cambio</button>
+    </div>
+    <div id="status" class="status" role="status"></div>
+    <div id="identity-help-put" class="note" hidden>
+      <strong>Verificación de identidad requerida.</strong>
+      El backend ha bloqueado esta operación. Completa la verificación en el
+      flujo oficial y vuelve a intentarlo:
+      <a href="/usuario/identidad">abrir verificación de identidad</a>.
+    </div>
+  </section>
+
+  <section id="preview-box" class="card" hidden>
+    <h2>Preview</h2>
+    <p class="small muted">Se enviará a <code>PUT /backend-proxy-es/tuloteroweb/rest/users/me</code>.</p>
+    <p>Teléfono nuevo: <span id="full-phone" class="phone-preview">—</span></p>
+    <details>
+      <summary>Ver body completo</summary>
+      <p class="small muted">Contiene datos de tu perfil. No lo compartas.</p>
+      <pre id="preview">—</pre>
+    </details>
+  </section>
+
+  <section id="sms-box" class="card" hidden>
+    <h2>4. Verificación SMS</h2>
+    <p>
+      Cambio enviado para <strong id="sms-phone">—</strong>. Introduce el código
+      recibido para confirmar el número.
+    </p>
+    <div class="row">
+      <label>
+        <span>Código SMS</span>
+        <input id="sms-code" inputmode="numeric" autocomplete="one-time-code" maxlength="12">
+      </label>
+    </div>
+    <div class="actions">
+      <button id="send-sms" class="secondary" type="button">Enviar / reenviar código</button>
+      <button id="verify-sms" type="button">Verificar código</button>
+    </div>
+    <div id="sms-status" class="status" role="status"></div>
+    <div id="identity-help-sms" class="note" hidden>
+      <strong>Verificación de identidad requerida.</strong>
+      El backend no enviará el SMS hasta que completes la verificación en el
+      flujo oficial:
+      <a href="/usuario/identidad">abrir verificación de identidad</a>.
+    </div>
+  </section>
+
+  <footer>
+    Los datos de la plantilla se guardan solo en memoria del proceso del mirror y
+    desaparecen al reiniciarlo o al pulsar <strong>Borrar plantilla</strong>.
+    Esta página no es parte de la app original.
+    <br>
+    <a href="/__mirror/trace" target="_blank" rel="noreferrer">Ver traza saneada</a>
+    de las peticiones proxy (sin tokens, cookies, teléfonos completos ni códigos SMS).
+  </footer>
+</main>
+
+<script>
+(() => {
+  "use strict";
+
+  const API = "/backend-proxy-es/tuloteroweb/rest";
+  const TEMPLATE_URL = "/__mirror/profile-template";
+  const TOKEN_KEY = "0x01";
+
+  const $ = (id) => document.getElementById(id);
+  const els = {
+    sessionStatus: $("session-status"),
+    sessionDiagnostics: $("session-diagnostics"),
+    reloadSession: $("reload-session"),
+    profileBox: $("profile-box"),
+    currentName: $("current-name"),
+    currentEmail: $("current-email"),
+    currentPhone: $("current-phone"),
+    templateStatus: $("template-status"),
+    reloadTemplate: $("reload-template"),
+    clearTemplate: $("clear-template"),
+    phoneBox: $("phone-box"),
+    prefix: $("prefix"),
+    number: $("number"),
+    previewButton: $("preview-button"),
+    sendButton: $("send-button"),
+    status: $("status"),
+    identityHelpPut: $("identity-help-put"),
+    identityHelpSms: $("identity-help-sms"),
+    previewBox: $("preview-box"),
+    fullPhone: $("full-phone"),
+    preview: $("preview"),
+    smsBox: $("sms-box"),
+    smsPhone: $("sms-phone"),
+    smsCode: $("sms-code"),
+    sendSms: $("send-sms"),
+    verifySms: $("verify-sms"),
+    smsStatus: $("sms-status"),
+  };
+
+  const state = {
+    token: "",
+    auth: null,
+    refreshing: null,
+    profile: null,
+    template: null,
+    fullPhone: "",
+    putBody: null,
+  };
+
+  function tokenExpiry(value) {
+    try {
+      const payload = String(value || "").split(".")[1];
+      if (!payload) return 0;
+      const base64 = payload.replace(/-/g, "+").replace(/_/g, "/");
+      const padded = base64.padEnd(Math.ceil(base64.length / 4) * 4, "=");
+      const data = JSON.parse(atob(padded));
+      return typeof data.exp === "number" ? data.exp * 1000 : 0;
+    } catch {
+      return 0;
+    }
+  }
+
+  function readAuth() {
+    const candidates = [];
+    for (const [name, storage] of [["local", localStorage], ["session", sessionStorage]]) {
+      const token = storage.getItem(TOKEN_KEY);
+      if (!token) continue;
+      candidates.push({
+        storageName: name,
+        storage,
+        token,
+        refreshToken: storage.getItem("0x45") || "",
+        refreshUrl: storage.getItem("0x46") || "",
+        refreshExp: storage.getItem("0x47") || "",
+      });
+    }
+    candidates.sort((a, b) => tokenExpiry(b.token) - tokenExpiry(a.token));
+    return candidates;
+  }
+
+  function diagnosticsText() {
+    const tokens = [];
+    for (const [name, storage] of [["local", localStorage], ["session", sessionStorage]]) {
+      try {
+        const token = storage.getItem(TOKEN_KEY);
+        if (!token) continue;
+        const exp = tokenExpiry(token);
+        tokens.push(name + (exp ? " (exp " + new Date(exp).toLocaleString("es-ES") + ")" : ""));
+      } catch {
+        // Storage can be unavailable in hardened/private browser modes.
+      }
+    }
+    const deviceId = storedValue("0x05");
+    const rawFingerprint = storedValue("0x13");
+    const fingerprint = rawFingerprint.split("::")[0];
+    return (
+      "Origen: " + location.origin +
+      " · Token: " + (tokens.join(" / ") || "ninguno") +
+      (state.auth ? " · Usando: " + state.auth.storageName : "") +
+      " · 0x05: " + (deviceId ? "sí" : "no") +
+      " · 0x13: " + (rawFingerprint ? "sí (" + rawFingerprint.length + " caracteres)" : "no") +
+      " · deviceId: " + (fingerprint ? "sí" : "no")
+    );
+  }
+
+  function localizeRefreshUrl(value) {
+    const url = String(value || "").trim();
+    if (!url) return "";
+    if (url.startsWith("/tuloteroweb/rest")) return "/backend-proxy-es" + url;
+    const mappings = [
+      ["https://web-backend.es.tulotero.net", "/backend-proxy-es"],
+      ["https://public.auth.es.tulotero.net", "/public-auth-proxy-es"],
+      ["https://auth.es.tulotero.net", "/auth-proxy-es"],
+    ];
+    for (const [origin, prefix] of mappings) {
+      if (url.startsWith(origin)) return prefix + url.slice(origin.length);
+    }
+    return url;
+  }
+
+  async function refreshSession() {
+    if (state.refreshing) return state.refreshing;
+
+    state.refreshing = (async () => {
+      const auth = state.auth;
+      if (!auth || !auth.refreshToken || !auth.refreshUrl) return false;
+
+      const refreshExp = Number(auth.refreshExp);
+      if (Number.isFinite(refreshExp) && refreshExp > 0 && refreshExp <= Date.now()) return false;
+
+      const url = localizeRefreshUrl(auth.refreshUrl);
+      if (!url) return false;
+
+      let response;
+      try {
+        response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+            Accept: "application/json",
+            Client: "web",
+            AvoidRedirect: "true",
+            "x-user-agent": "tulotero",
+          },
+          body: new URLSearchParams({
+            refreshToken: auth.refreshToken,
+            clientTimestamp: String(Date.now()),
+          }).toString(),
+          cache: "no-store",
+        });
+      } catch {
+        return false;
+      }
+
+      if (!response.ok) return false;
+
+      let data;
+      try {
+        data = await response.json();
+      } catch {
+        return false;
+      }
+
+      const accessToken =
+        (typeof data.token === "string" && data.token) ||
+        (typeof data.accessToken === "string" && data.accessToken) ||
+        (data.accessToken && typeof data.accessToken.token === "string" && data.accessToken.token) ||
+        "";
+      if (!accessToken) return false;
+
+      const refreshToken = data.refreshToken || auth.refreshToken;
+      const refreshExpiration =
+        data.refreshTokenExpirationDate != null ? data.refreshTokenExpirationDate : auth.refreshExp;
+
+      auth.storage.setItem(TOKEN_KEY, accessToken);
+      auth.storage.setItem("0x45", refreshToken);
+      if (refreshExpiration != null) auth.storage.setItem("0x47", String(refreshExpiration));
+
+      auth.token = accessToken;
+      auth.refreshToken = refreshToken;
+      state.token = accessToken;
+      return true;
+    })().finally(() => {
+      state.refreshing = null;
+    });
+
+    return state.refreshing;
+  }
+
+  function setStatus(el, message, kind = "") {
+    el.textContent = message;
+    el.className = "status" + (kind ? " " + kind : "");
+  }
+
+  function digits(value) {
+    return String(value == null ? "" : value).replace(/\D/g, "");
+  }
+
+  function maskEmail(value) {
+    const text = String(value || "");
+    const at = text.indexOf("@");
+    if (at < 1) return text || "—";
+    const name = text.slice(0, at);
+    const domain = text.slice(at + 1);
+    const visible = name.length <= 2 ? name.slice(0, 1) : name.slice(0, 2);
+    return visible + "***@" + domain;
+  }
+
+  function errorText(error) {
+    if (!error) return "Error desconocido.";
+    if (error.status === 401 || error.status === 403) {
+      return "No hay una sesión válida o no se ha podido renovar. Vuelve a iniciar sesión en la app.";
+    }
+    if (error.status === 426) {
+      return "El backend exige verificación de identidad. Complétala en el flujo oficial y vuelve a intentarlo.";
+    }
+    const data = error.data;
+    if (data && typeof data === "object") {
+      const detail =
+        data.message ||
+        (data.error && typeof data.error === "object" ? data.error.message : data.error) ||
+        data.status ||
+        data.code;
+      if (detail != null && typeof detail !== "object") {
+        return `HTTP ${error.status}: ${String(detail).slice(0, 500)}`;
+      }
+      return `HTTP ${error.status} (respuesta sin mensaje legible).`;
+    }
+    if (typeof data === "string" && data.trim()) {
+      return `HTTP ${error.status}: ${data.trim().slice(0, 500)}`;
+    }
+    return error.message || "Error de red.";
+  }
+
+  function identityRequired(error) {
+    return Boolean(error && error.status === 426);
+  }
+
+  function setIdentityHelp(visible) {
+    els.identityHelpPut.hidden = !visible;
+    els.identityHelpSms.hidden = !visible;
+  }
+
+  function storedValue(key) {
+    for (const storage of [localStorage, sessionStorage]) {
+      try {
+        const value = storage.getItem(key);
+        if (value) return value;
+      } catch {
+        // Storage can be unavailable in hardened/private browser modes.
+      }
+    }
+    return "";
+  }
+
+  function browserInfo() {
+    const ua = navigator.userAgent || "";
+    let browser = "Browser";
+    let version = "";
+    let os = "OS";
+    let osVersion = "";
+    let match;
+
+    if ((match = ua.match(/Edg\/([\d.]+)/))) {
+      browser = "Edge";
+      version = match[1];
+    } else if ((match = ua.match(/OPR\/([\d.]+)/))) {
+      browser = "Opera";
+      version = match[1];
+    } else if ((match = ua.match(/Firefox\/([\d.]+)/))) {
+      browser = "Firefox";
+      version = match[1];
+    } else if ((match = ua.match(/Chrome\/([\d.]+)/))) {
+      browser = "Chrome";
+      version = match[1];
+    } else if ((match = ua.match(/Version\/([\d.]+).*Safari/))) {
+      browser = "Safari";
+      version = match[1];
+    }
+
+    if ((match = ua.match(/Windows NT ([\d.]+)/))) {
+      os = "Windows";
+      osVersion = match[1];
+    } else if ((match = ua.match(/Android ([\d.]+)/))) {
+      os = "Android";
+      osVersion = match[1];
+    } else if ((match = ua.match(/iPhone OS ([\d_]+)/))) {
+      os = "iOS";
+      osVersion = match[1].replace(/_/g, ".");
+    } else if ((match = ua.match(/Mac OS X ([\d_]+)/))) {
+      os = "macOS";
+      osVersion = match[1].replace(/_/g, ".");
+    }
+
+    return { browser, version, os, osVersion };
+  }
+
+  function deviceHeaders() {
+    // The original app adds these headers to every /rest/users/ request.
+    // Reuse the identifiers it already generated (0x05/0x13); do not invent
+    // replacements, because those values are also used by anti-fraud checks.
+    const info = browserInfo();
+    const fingerprint = storedValue("0x13").split("::")[0];
+    const installationDeviceId = storedValue("0x05");
+    const headers = {
+      deviceType: "WEB",
+      deviceDesc: `${info.browser}(${info.version})`,
+      osVersion: `${info.os}(${info.osVersion})`,
+      versionCode: "1389",
+      mode: window.matchMedia("(max-width: 991px)").matches ? "mobile" : "desktop",
+    };
+    if (installationDeviceId) headers.androidRegistrationId = installationDeviceId;
+    if (fingerprint) headers.deviceId = fingerprint;
+    return headers;
+  }
+
+  function authHeaders(extra) {
+    const headers = new Headers(extra || {});
+    if (state.token) headers.set("Authorization", "Bearer " + state.token);
+    headers.set("Accept", "application/json, text/plain, */*");
+    // Match the headers the original app attaches to backend requests.
+    headers.set("Client", "web");
+    headers.set("AvoidRedirect", "true");
+    headers.set("x-user-agent", "tulotero");
+    for (const [name, value] of Object.entries(deviceHeaders())) {
+      headers.set(name, value);
+    }
+    return headers;
+  }
+
+  async function readResponse(response) {
+    const text = await response.text();
+    let data = null;
+    if (text) {
+      try {
+        data = JSON.parse(text);
+      } catch {
+        data = text;
+      }
+    }
+    return { data, text };
+  }
+
+  async function request(path, options = {}, allowRefresh = true) {
+    const response = await fetch(API + path, {
+      ...options,
+      headers: authHeaders(options.headers),
+      cache: "no-store",
+    });
+
+    if (response.status === 401 && allowRefresh && state.auth) {
+      let refreshed = false;
+      try {
+        refreshed = await refreshSession();
+      } catch {
+        refreshed = false;
+      }
+      if (refreshed) return request(path, options, false);
+    }
+
+    const { data } = await readResponse(response);
+    if (!response.ok) {
+      const error = new Error(`HTTP ${response.status}`);
+      error.status = response.status;
+      error.data = data;
+      throw error;
+    }
+    return data;
+  }
+
+  function guessPrefix(phone) {
+    const value = digits(phone);
+    const known = [
+      "1", "7", "20", "27", "30", "31", "32", "33", "34", "36", "39", "40",
+      "41", "43", "44", "45", "46", "47", "48", "49", "51", "52", "53", "54",
+      "55", "56", "57", "58", "60", "61", "62", "63", "64", "65", "66", "81",
+      "82", "84", "86", "90", "91", "92", "93", "94", "95", "98",
+    ].sort((a, b) => b.length - a.length);
+    for (const prefix of known) {
+      if (value.startsWith(prefix) && value.length > prefix.length + 5) return prefix;
+    }
+    return "34";
+  }
+
+  function showProfile(profile) {
+    state.profile = profile;
+    els.currentName.textContent = [profile.nombre, profile.apellidos].filter(Boolean).join(" ") || "—";
+    els.currentEmail.textContent = maskEmail(profile.codigo || profile.email);
+    els.currentPhone.textContent = profile.telefono || "—";
+    els.profileBox.hidden = false;
+    if (!els.prefix.value) els.prefix.value = guessPrefix(profile.telefono);
+  }
+
+  async function loadProfile() {
+    const profile = await request("/users/me");
+    showProfile(profile);
+    return profile;
+  }
+
+  function showTemplateMissing(reason) {
+    state.template = null;
+    state.putBody = null;
+    els.templateStatus.textContent = reason || "No hay plantilla capturada.";
+    els.templateStatus.className = "status warn";
+    els.clearTemplate.hidden = true;
+    els.phoneBox.hidden = true;
+    els.previewBox.hidden = true;
+    els.sendButton.disabled = true;
+    els.previewButton.disabled = true;
+  }
+
+  function showTemplate(template) {
+    if (!template || !template.body || typeof template.body !== "object") {
+      showTemplateMissing("La plantilla recibida no es válida.");
+      return;
+    }
+
+    const templateId = template.body.id;
+    const profileId = state.profile && state.profile.id;
+    if (templateId != null && profileId != null && String(templateId) !== String(profileId)) {
+      showTemplateMissing("La plantilla pertenece a otra cuenta. Vuelve a guardar tu perfil en la app.");
+      return;
+    }
+
+    state.template = template;
+    state.putBody = null;
+    els.templateStatus.textContent =
+      "Plantilla capturada: " + new Date(template.capturedAt).toLocaleString("es-ES") + ".";
+    els.templateStatus.className = "status ok";
+    els.clearTemplate.hidden = false;
+    els.phoneBox.hidden = false;
+    els.previewButton.disabled = false;
+    els.sendButton.disabled = true;
+    els.previewBox.hidden = true;
+    els.preview.textContent = "—";
+    if (!els.prefix.value && state.profile) {
+      els.prefix.value = guessPrefix(state.profile.telefono);
+    }
+  }
+
+  async function loadTemplate() {
+    setStatus(els.templateStatus, "Leyendo plantilla…", "");
+    let response;
+    try {
+      response = await fetch(TEMPLATE_URL, { cache: "no-store" });
+    } catch (error) {
+      showTemplateMissing("No se pudo consultar la plantilla: " + error.message);
+      return;
+    }
+    if (response.status === 404) {
+      showTemplateMissing(
+        "No hay plantilla capturada. Abre /usuario/perfil en la app y pulsa Guardar una vez (aunque no cambies nada)."
+      );
+      return;
+    }
+    if (!response.ok) {
+      showTemplateMissing("No se pudo leer la plantilla (HTTP " + response.status + ").");
+      return;
+    }
+    let template;
+    try {
+      template = await response.json();
+    } catch {
+      showTemplateMissing("La plantilla no es JSON válido.");
+      return;
+    }
+    showTemplate(template);
+  }
+
+  function buildPutBody() {
+    if (!state.template || !state.template.body) {
+      throw new Error("No hay plantilla capturada.");
+    }
+    let prefix = digits(els.prefix.value);
+    const number = digits(els.number.value);
+    if (prefix.startsWith("00")) prefix = prefix.slice(2);
+    if (!prefix) throw new Error("Indica el prefijo del país.");
+    if (number.length < 6) throw new Error("El número parece demasiado corto.");
+    const full = prefix + number;
+    const body = JSON.parse(JSON.stringify(state.template.body));
+    body.telefono = full;
+    body.shouldValidateMandatoryFields = false;
+    // The template comes from a profile save, where the password form is empty
+    // and therefore ends up as newPassword:"" in the payload. The app's
+    // updatePhone() clones the loaded user instead, whose password is normally
+    // undefined, so JSON.stringify omits newPassword. Match that flow: changing
+    // the phone must not send a password field.
+    delete body.newPassword;
+    state.fullPhone = full;
+    state.putBody = body;
+    return { body, full };
+  }
+
+  function previewPut() {
+    try {
+      const { body, full } = buildPutBody();
+      els.preview.textContent = JSON.stringify(body, null, 2);
+      els.fullPhone.textContent = full;
+      els.previewBox.hidden = false;
+      els.sendButton.disabled = false;
+      setStatus(els.status, "Revisa el preview antes de enviar el cambio.", "");
+    } catch (error) {
+      els.sendButton.disabled = true;
+      setStatus(els.status, error.message, "err");
+    }
+  }
+
+  async function sendPut() {
+    let body;
+    let full;
+    try {
+      ({ body, full } = buildPutBody());
+    } catch (error) {
+      setStatus(els.status, error.message, "err");
+      return;
+    }
+
+    if (!window.confirm("¿Enviar el cambio de teléfono a " + full + "?")) return;
+
+    els.sendButton.disabled = true;
+    setIdentityHelp(false);
+    setStatus(els.status, "Enviando PUT /users/me…", "");
+    try {
+      await request("/users/me", {
+        method: "PUT",
+        headers: {
+          "Content-Type": (state.template && state.template.contentType) || "text/plain",
+        },
+        body: JSON.stringify(body),
+      });
+      state.fullPhone = full;
+      setStatus(els.status, "Teléfono actualizado. Ahora hay que verificarlo por SMS.", "ok");
+      els.smsBox.hidden = false;
+      els.smsPhone.textContent = full;
+      setStatus(els.smsStatus, "Pulsa «Enviar código» para recibir el SMS.", "");
+      await loadProfile().catch(() => {});
+      await loadTemplate().catch(() => {});
+      if (full.startsWith("34")) {
+        await sendSms();
+      }
+    } catch (error) {
+      if (identityRequired(error)) {
+        setIdentityHelp(true);
+        setStatus(els.status, "El backend exige verificación de identidad. No se ha cambiado el teléfono.", "err");
+      } else {
+        setStatus(els.status, errorText(error), "err");
+      }
+      els.sendButton.disabled = false;
+    }
+  }
+
+  async function sendSms() {
+    if (!state.fullPhone) {
+      setStatus(els.smsStatus, "Primero envía el cambio de teléfono.", "err");
+      return;
+    }
+    setIdentityHelp(false);
+    setStatus(els.smsStatus, "Enviando código SMS…", "");
+    try {
+      await request("/users/inicioVerificarNumero", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ numero: state.fullPhone }).toString(),
+      });
+      setStatus(els.smsStatus, "Código enviado. Revisa el SMS.", "ok");
+      els.smsCode.focus();
+    } catch (error) {
+      if (identityRequired(error)) {
+        setIdentityHelp(true);
+        setStatus(els.smsStatus, "El backend exige verificación de identidad. El SMS no se ha enviado.", "err");
+      } else {
+        setStatus(els.smsStatus, errorText(error), "err");
+      }
+    }
+  }
+
+  async function verifySms() {
+    if (!state.fullPhone) {
+      setStatus(els.smsStatus, "No hay un teléfono pendiente de verificar.", "err");
+      return;
+    }
+    const code = digits(els.smsCode.value);
+    if (!code) {
+      setStatus(els.smsStatus, "Introduce el código SMS.", "err");
+      return;
+    }
+    setIdentityHelp(false);
+    setStatus(els.smsStatus, "Verificando código…", "");
+    try {
+      await request("/users/verifyPhoneNumber?disableGlobalMessages=false", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams({ numero: state.fullPhone, token: code }).toString(),
+      });
+      setStatus(els.smsStatus, "Teléfono verificado correctamente.", "ok");
+      els.smsCode.value = "";
+      await loadProfile().catch(() => {});
+    } catch (error) {
+      if (identityRequired(error)) {
+        setIdentityHelp(true);
+        setStatus(els.smsStatus, "El backend exige verificación de identidad. No se ha podido verificar el código.", "err");
+      } else {
+        setStatus(els.smsStatus, errorText(error), "err");
+      }
+    }
+  }
+
+  async function clearTemplate() {
+    try {
+      const response = await fetch(TEMPLATE_URL, { method: "DELETE" });
+      if (!response.ok && response.status !== 204) {
+        throw new Error("HTTP " + response.status);
+      }
+      showTemplateMissing("Plantilla borrada. Vuelve a guardar tu perfil para capturar otra.");
+    } catch (error) {
+      setStatus(els.templateStatus, "No se pudo borrar la plantilla: " + error.message, "err");
+    }
+  }
+
+  function showSessionError(message) {
+    setStatus(
+      els.sessionStatus,
+      message ||
+        "No hay token de sesión en localStorage/sessionStorage. Inicia sesión en la app. " +
+        "Si tu sesión está en sessionStorage, abre esta página en la misma pestaña.",
+      "err"
+    );
+    els.profileBox.hidden = true;
+    els.phoneBox.hidden = true;
+    els.previewBox.hidden = true;
+    els.smsBox.hidden = true;
+    setIdentityHelp(false);
+    setStatus(els.templateStatus, "Sin sesión. Inicia sesión en la app para cargar la plantilla.", "err");
+    els.sessionDiagnostics.textContent = diagnosticsText();
+    els.clearTemplate.hidden = true;
+  }
+
+  async function init() {
+    const candidates = readAuth();
+    if (candidates.length === 0) {
+      showSessionError();
+      return;
+    }
+
+    setStatus(els.sessionStatus, "Sesión detectada. Probando token…", "");
+    let profile = null;
+    let lastError = null;
+    // The app and the page must share an origin. If both localStorage and
+    // sessionStorage contain a token, try each one instead of trusting only the
+    // one with the latest JWT expiry.
+    for (const candidate of candidates) {
+      state.auth = candidate;
+      state.token = candidate.token;
+      els.sessionDiagnostics.textContent = diagnosticsText();
+      try {
+        profile = await request("/users/me");
+        break;
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    if (!profile) {
+      showSessionError(errorText(lastError));
+      return;
+    }
+
+    showProfile(profile);
+    const device = deviceHeaders();
+    const missing = [];
+    if (!device.androidRegistrationId) missing.push("0x05 (deviceId)");
+    if (!device.deviceId) missing.push("0x13 (fingerprint)");
+    if (missing.length) {
+      setStatus(
+        els.sessionStatus,
+        "Sesión válida. Aviso: faltan " + missing.join(" y ") +
+          ". Abre la app en este mismo origen una vez para que genere esos identificadores.",
+        "warn"
+      );
+    } else {
+      setStatus(els.sessionStatus, "Sesión válida. Cabeceras de dispositivo presentes.", "ok");
+    }
+    els.sessionDiagnostics.textContent = diagnosticsText();
+
+    await loadTemplate();
+  }
+
+  els.reloadSession.addEventListener("click", () => init());
+  els.reloadTemplate.addEventListener("click", () => loadTemplate());
+  els.clearTemplate.addEventListener("click", () => clearTemplate());
+  els.previewButton.addEventListener("click", () => previewPut());
+  els.sendButton.addEventListener("click", () => sendPut());
+  els.sendSms.addEventListener("click", () => sendSms());
+  els.verifySms.addEventListener("click", () => verifySms());
+  els.smsCode.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") verifySms();
+  });
+
+  document.addEventListener("DOMContentLoaded", init);
+})();
+</script>
+</body>
+</html>

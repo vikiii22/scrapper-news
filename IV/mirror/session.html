@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Importar sesión · Tulotero local</title>
+  <style>
+    :root { color-scheme: light dark; }
+    body {
+      max-width: 860px; margin: 40px auto; padding: 0 20px;
+      font: 15px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+    h1 { font-size: 24px; margin-bottom: 8px; }
+    p { margin: 10px 0; }
+    textarea {
+      box-sizing: border-box; width: 100%; min-height: 220px; padding: 12px;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+      border: 1px solid #999; border-radius: 6px; resize: vertical;
+    }
+    button {
+      margin-top: 12px; padding: 10px 16px; border: 0; border-radius: 6px;
+      background: #4b2e83; color: #fff; font: inherit; font-weight: 600; cursor: pointer;
+    }
+    button:disabled { opacity: .55; cursor: default; }
+    code, pre {
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, monospace;
+    }
+    pre {
+      overflow: auto; padding: 12px; border-radius: 6px;
+      background: rgba(127, 127, 127, .12);
+    }
+    #status { min-height: 22px; margin-top: 10px; font-weight: 600; }
+    .ok { color: #087f5b; }
+    .err { color: #c92a2a; }
+    .note { padding: 12px; border-left: 4px solid #e0a800; background: rgba(224, 168, 0, .12); }
+  </style>
+</head>
+<body>
+  <h1>Importar sesión real en el mirror local</h1>
+  <p>
+    Esta página escribe los datos <strong>solo en el localStorage, sessionStorage
+    y cookies de <code>127.0.0.1</code></strong>. No los envía al servidor ni los
+    guarda en disco.
+  </p>
+
+  <div class="note">
+    <strong>Importante:</strong> usa únicamente tu propia cuenta. Los tokens son
+    credenciales: no los pegues en chats, issues, capturas ni en el repositorio.
+  </div>
+
+  <h2>1. Exportar desde Tulotero</h2>
+  <p>Con la sesión iniciada en <code>https://web.tulotero.es</code>, abre DevTools →
+  Console y ejecuta:</p>
+  <pre id="export-snippet">copy(JSON.stringify({ localStorage: { ...localStorage }, sessionStorage: { ...sessionStorage } }))</pre>
+  <p>
+    Eso copia al portapapeles todos los datos de sesión, incluidos el access token,
+    el refresh token y el identificador de instalación, tanto si elegiste
+    «No cerrar sesión» (localStorage) como si no (sessionStorage). Si necesitas
+    también las cookies no HttpOnly, usa:
+  </p>
+  <pre id="export-cookies-snippet">copy(JSON.stringify({ localStorage: { ...localStorage }, sessionStorage: { ...sessionStorage }, cookies: Object.fromEntries(document.cookie.split('; ').filter(Boolean).map(c => { const i = c.indexOf('='); return [c.slice(0, i), c.slice(i + 1)]; })) }))</pre>
+
+  <h2>2. Importar en local</h2>
+  <p>Pega el JSON y pulsa importar. Después se recargará la portada local.</p>
+  <textarea id="payload" spellcheck="false" autocomplete="off"
+    placeholder='{"localStorage":{"0x01":"...","0x45":"..."}}'></textarea>
+  <div>
+    <button id="import">Importar y recargar</button>
+    <button id="clear" type="button">Borrar sesión local</button>
+  </div>
+  <div id="status" role="status"></div>
+
+  <h2>Qué se importa</h2>
+  <ul>
+    <li><strong>localStorage / sessionStorage:</strong> se copian todas las claves
+      de ambos. La app usa <code>0x01</code> (access token), <code>0x44</code>
+      (estrategia), <code>0x45</code> (refresh token), <code>0x46</code> (URL de
+      refresh) y <code>0x47</code> (caducidad), además de la
+      instalación/dispositivo. Según hayas marcado «No cerrar sesión», los tokens
+      pueden estar en uno u otro.</li>
+    <li><strong>cookies:</strong> solo si las incluyes. Se escriben con
+      <code>path=/</code>; las cookies <em>HttpOnly</em> no se pueden copiar desde
+      JavaScript y, en general, no son necesarias para este front.</li>
+  </ul>
+
+  <script>
+    const payload = document.getElementById("payload");
+    const status = document.getElementById("status");
+    const importButton = document.getElementById("import");
+    const clearButton = document.getElementById("clear");
+
+    function setStatus(message, className) {
+      status.textContent = message;
+      status.className = className || "";
+    }
+
+    function storageValue(value) {
+      return typeof value === "string" ? value : JSON.stringify(value);
+    }
+
+    importButton.addEventListener("click", () => {
+      let parsed;
+      try {
+        parsed = JSON.parse(payload.value);
+      } catch {
+        setStatus("El JSON no es válido.", "err");
+        return;
+      }
+      if (!parsed || typeof parsed !== "object" || Array.isArray(parsed)) {
+        setStatus("El JSON debe ser un objeto.", "err");
+        return;
+      }
+
+      const hasStorageWrapper = parsed.localStorage && typeof parsed.localStorage === "object";
+      const local = hasStorageWrapper ? parsed.localStorage : parsed;
+      const session = parsed.sessionStorage && typeof parsed.sessionStorage === "object"
+        ? parsed.sessionStorage
+        : {};
+      const cookies = parsed.cookies && typeof parsed.cookies === "object"
+        ? parsed.cookies
+        : {};
+
+      let localCount = 0;
+      for (const [key, value] of Object.entries(local)) {
+        localStorage.setItem(key, storageValue(value));
+        localCount++;
+      }
+
+      let sessionCount = 0;
+      for (const [key, value] of Object.entries(session)) {
+        sessionStorage.setItem(key, storageValue(value));
+        sessionCount++;
+      }
+
+      let cookieCount = 0;
+      for (const [name, value] of Object.entries(cookies)) {
+        const cookieValue = value && typeof value === "object" && "value" in value
+          ? value.value
+          : value;
+        if (cookieValue == null) continue;
+        document.cookie = name + "=" + encodeURIComponent(String(cookieValue)) + "; path=/";
+        cookieCount++;
+      }
+
+      const parts = [];
+      if (localCount) parts.push(`${localCount} claves de localStorage`);
+      if (sessionCount) parts.push(`${sessionCount} claves de sessionStorage`);
+      if (cookieCount) parts.push(`${cookieCount} cookies`);
+      setStatus(
+        `Importadas ${parts.length ? parts.join(", ") : "0 claves"}. Recargando…`,
+        "ok"
+      );
+      setTimeout(() => location.assign("/"), 500);
+    });
+
+    clearButton.addEventListener("click", () => {
+      localStorage.clear();
+      sessionStorage.clear();
+      setStatus("Sesión local borrada (localStorage y sessionStorage). Recargando…", "ok");
+      setTimeout(() => location.assign("/"), 500);
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,10 @@
+{
+  "name": "tulotero-local-mirror",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Local reverse-proxy mirror for the published Tulotero web frontend",
+  "scripts": {
+    "start": "node server.mjs"
+  }
+}
