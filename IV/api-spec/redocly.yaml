@@ -1,0 +1,9 @@
+# Reglas de lint para el contrato reconstruido.
+# Algunas rutas reales del backend terminan en "/" y conviven con rutas
+# paramétricas; se documentan tal cual para que el mock y Postman las
+# reproduzcan fielmente.
+rules:
+  no-path-trailing-slash: off
+  no-ambiguous-paths: off
+  no-unused-components: off
+  info-license: off
