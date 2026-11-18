@@ -30,8 +30,31 @@ def _norm(value: str) -> str:
     return " ".join(text.lower().split())
 
 
+# Football-Data usa nombres cortos; el resto del proyecto, los largos.
+FD_ALIASES = {
+    "athletic bilbao": "ath bilbao",
+    "atletico madrid": "ath madrid",
+    "real betis": "betis",
+    "real sociedad": "sociedad",
+    "celta vigo": "celta",
+    "deportivo": "la coruna",
+    "racing santander": "santander",
+    "rayo vallecano": "vallecano",
+    "espanyol": "espanol",
+    "sporting gijon": "sp gijon",
+    "real oviedo": "oviedo",
+    "real valladolid": "valladolid",
+    "real zaragoza": "zaragoza",
+}
+
+
+def _alias(name: str) -> str:
+    normalized = _norm(name)
+    return FD_ALIASES.get(normalized, normalized)
+
+
 def _same(a: str, b: str, threshold: float = 0.72) -> bool:
-    na, nb = _norm(a), _norm(b)
+    na, nb = _alias(a), _alias(b)
     if not na or not nb:
         return False
     if na == nb:
@@ -139,20 +162,22 @@ def team_form(rows: List[Dict[str, Any]], team: str, n: int = 5) -> Dict[str, An
             "gf": int(gf),
             "ga": int(ga),
             "result": result,
-            "xg": float(xg) if isinstance(xg, (int, float)) else 0.0,
-            "xga": float(xga) if isinstance(xga, (int, float)) else 0.0,
+            "xg": float(xg) if isinstance(xg, (int, float)) else None,
+            "xga": float(xga) if isinstance(xga, (int, float)) else None,
         })
 
     played.sort(key=lambda item: _row_date({"Date": item["date"]}))
     matches = played[-n:]
     points = sum(3 if m["result"] == "W" else (1 if m["result"] == "D" else 0)
                  for m in matches)
+    xg_values = [m["xg"] for m in matches if m["xg"] is not None]
+    xga_values = [m["xga"] for m in matches if m["xga"] is not None]
     return {
         "recent": "".join(m["result"] for m in matches),
         "gf": sum(m["gf"] for m in matches),
         "ga": sum(m["ga"] for m in matches),
-        "xg": round(sum(m["xg"] for m in matches), 2),
-        "xga": round(sum(m["xga"] for m in matches), 2),
+        "xg": round(sum(xg_values), 2) if xg_values else None,
+        "xga": round(sum(xga_values), 2) if xga_values else None,
         "ppg": round(points / len(matches), 2) if matches else 0.0,
         "matches": matches,
     }

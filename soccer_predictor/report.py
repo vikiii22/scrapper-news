@@ -8,6 +8,15 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 
+def _team(match: Dict[str, Any], side: str) -> str:
+    name = match.get(side, "?")
+    return f"{name} (F)" if match.get("is_women") else name
+
+
+def _match_name(match: Dict[str, Any]) -> str:
+    return f"{_team(match, 'home')} - {_team(match, 'away')}"
+
+
 def _pct(value: Optional[Dict[str, Any]], keys=("1", "X", "2")) -> str:
     if not value:
         return "n/d"
@@ -101,7 +110,7 @@ def _botoes(entry: Dict[str, Any]) -> str:
         signs = boleto.get("signs") or {}
         for n in sorted((int(k) for k in signs), key=int):
             match = next((m for m in entry.get("matches", []) if int(m.get("n", 0)) == n), {})
-            name = f"{match.get('home', '?')} - {match.get('away', '?')}"
+            name = _match_name(match)
             lines.append(f"| {n} | {name} | {' '.join(_signs_for(signs, n))} |")
         lines.append("")
         lines.append("```")
@@ -146,7 +155,7 @@ def render_markdown(entry: Dict[str, Any]) -> str:
 
     lines.append("## Partidos")
     lines.append("")
-    lines.append("| # | Local | Visitante | Hora | %Jug | %LAE | %Prob | Modelo 1X2 | Valor | Forma | xG | Elo | Bajas | Pick |")
+    lines.append("| # | Local | Visitante | Hora | %Jug | %LAE | %Prob | Modelo 1X2 | Valor | Forma | xG5 | Elo | Bajas | Pick |")
     lines.append("|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for match in matches:
         percentages = match.get("percentages") or {}
@@ -154,8 +163,8 @@ def render_markdown(entry: Dict[str, Any]) -> str:
             "| {n} | {home} | {away} | {hour} | {jug} | {lae} | {prob} | {model} | {value} | "
             "{form} | {xg} | {elo} | {abs} | {pick} |".format(
                 n=match.get("n", ""),
-                home=match.get("home", "?"),
-                away=match.get("away", "?"),
+                home=_team(match, "home"),
+                away=_team(match, "away"),
                 hour=match.get("hour") or "n/d",
                 jug=_pct(percentages.get("jugados")),
                 lae=_pct(percentages.get("lae")),
@@ -182,7 +191,7 @@ def render_markdown(entry: Dict[str, Any]) -> str:
         away_out = (injuries.get("away") or {}).get("count", "n/d")
         note = "baja confianza" if match.get("low_confidence") else "confianza normal"
         lines.append(
-            f"- **{match.get('n')}. {match.get('home')} - {match.get('away')}**: "
+            f"- **{match.get('n')}. {_match_name(match)}**: "
             f"pick {match.get('pick', 'n/d')}, valor {_value_label(match)}, "
             f"bajas {home_out}/{away_out}, {note}."
         )
@@ -195,7 +204,7 @@ def render_markdown(entry: Dict[str, Any]) -> str:
         pleno = pleno_match.get("pleno") or {}
         home = pleno.get("home") or {}
         away = pleno.get("away") or {}
-        lines.append(f"**{pleno_match.get('home')} - {pleno_match.get('away')}**")
+        lines.append(f"**{_match_name(pleno_match)}**")
         lines.append("")
         lines.append("| Equipo | 0 | 1 | 2 | M |")
         lines.append("|---|---|---|---|---|")

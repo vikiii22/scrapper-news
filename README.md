@@ -81,6 +81,53 @@ print(result["explanation"])      # razonamiento en texto
 
 ---
 
+### Opción D: análisis completo de la jornada (una sola ejecución)
+
+```bash
+python -m soccer_predictor.jornada
+```
+
+Detecta la jornada vigente en la web de Eduardo Losilla, descarga sus
+porcentajes (Jugados, LAE, Probables y Técnicos), enriquece los 15 partidos con
+datos reales y genera un informe listo para jugar.
+
+```bash
+# Jornada concreta
+python -m soccer_predictor.jornada --jornada 23
+
+# Si el cierre ya pasó, forzar el análisis (no genera boleto jugable)
+python -m soccer_predictor.jornada --jornada 23 --force
+
+# Respaldo sin red para la jornada: HTML del boleto guardado
+python -m soccer_predictor.jornada --html boleto.html
+
+# Guardar también en la BBDD existente y omitir la forma de jugadores
+python -m soccer_predictor.jornada --save --fast
+```
+
+Salida en `output/jornada_<n>_<fecha>.md` y `.json`:
+
+- Tabla por partido con %Jugados / %LAE / %Probables, modelo 1X2, valor
+  modelo−referencia, forma, xG de los últimos 5, Elo, bajas y titular de prensa.
+- Pleno al 15 con las probabilidades 0/1/2/M de cada equipo.
+- **Boleto rentable** y **boleto conservador**: 3 dobles + 3 triples, 24
+  apuestas, 18 €, con las 24 columnas y la garantía explicada.
+- Estado de cada fuente; lo que no responde se marca `n/d`, nunca se inventa.
+
+La reducción de 24 columnas se genera y se verifica por código: cubre las 216
+combinaciones de los 6 partidos múltiples con distancia ≤ 1, así que garantiza
+13 aciertos si los 8 fijos entran, y 14 cuando la combinación real está entre
+las 24 (24/216 = 11,1 %).
+
+**Fuentes:** Eduardo Losilla (jornada y porcentajes), ESPN (forma, liga y
+resultados), Football-Data (xG y cuotas de LaLiga/Segunda), Transfermarkt
+(bajas y sanciones), Google News (titulares), Understat y ClubElo (best-effort)
+y Polymarket/Kalshi (contexto de mercados, nunca por partido).
+
+Tests: `python -m unittest discover -s tests -v`.
+
+---
+
 ## 🔌 Fuentes de datos gratuitas (opcional)
 
 El predictor funciona **sin configurar nada** gracias a los datos estáticos

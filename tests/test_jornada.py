@@ -37,6 +37,16 @@ class TestJornada(unittest.TestCase):
         self.assertAlmostEqual(m["valor"]["2"], -8.0, places=1)
         self.assertIsNone(m["lae"])
 
+    def test_missing_injury_data_is_none(self):
+        entry = self._entry()
+        entry["matches"][0]["is_women"] = True
+        contexts = {1: {"injuries": {"home": {"ok": False, "count": 0},
+                                     "away": {"ok": False, "count": 0}}}}
+        out = jornada.analyze_matches(entry, predict_fn=fake_predict,
+                                      contexts=contexts)
+        self.assertIsNone(out["matches"][0]["absences"]["home"])
+        self.assertIsNone(out["matches"][0]["absences"]["away"])
+
     def test_competition_detection(self):
         self.assertEqual(jornada.competition_for({"is_women": True}, {}), "Liga F")
         self.assertEqual(jornada.competition_for({}, {"league": "esp.2"}), "Segunda División")

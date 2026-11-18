@@ -56,8 +56,8 @@ def _form_from_predict(match: Dict[str, Any], result: Dict[str, Any]) -> None:
     home = sources.get("home_recent")
     away = sources.get("away_recent")
     if home or away:
-        context["form"] = {"home": {"recent": home or ""},
-                           "away": {"recent": away or ""}}
+        context["form"] = {"home": {"recent": (home or "")[-5:]},
+                           "away": {"recent": (away or "")[-5:]}}
 
 
 def analyze_matches(entry: Dict[str, Any], predict_fn=predict,
@@ -68,10 +68,10 @@ def analyze_matches(entry: Dict[str, Any], predict_fn=predict,
         n = int(match.get("n", 0))
         context = contexts.get(n) or {}
         competition = competition_for(match, context)
-        absences = {
-            "home": (context.get("injuries", {}).get("home", {}) or {}).get("count", 0) or 0,
-            "away": (context.get("injuries", {}).get("away", {}) or {}).get("count", 0) or 0,
-        }
+        absences = {}
+        for side in ("home", "away"):
+            info = (context.get("injuries") or {}).get(side) or {}
+            absences[side] = info.get("count") if info.get("ok") else None
         match["context"] = context
         match["competition"] = competition
         match["absences"] = absences
@@ -84,8 +84,8 @@ def analyze_matches(entry: Dict[str, Any], predict_fn=predict,
                 live=True,
                 with_news=False,
                 player_form=not fast,
-                absences_home=absences["home"],
-                absences_away=absences["away"],
+                absences_home=absences["home"] or 0,
+                absences_away=absences["away"] or 0,
                 women=bool(match.get("is_women")),
                 log=False,
                 explain=False,
@@ -217,6 +217,11 @@ def build_contexts(matches: List[Dict[str, Any]],
             except Exception:
                 continue
     return contexts
+
+
+def _display_name(match: Dict[str, Any]) -> str:
+    suffix = " (F)" if match.get("is_women") else ""
+    return f"{match.get('home', '?')}-{match.get('away', '?')}{suffix}"
 
 
 def _is_closed(close: str, now: Optional[datetime] = None) -> bool:
@@ -353,7 +358,7 @@ def main(argv: Optional[List[str]] = None) -> int:
         for n in range(1, 15):
             signs = boleto["signs"].get(n) or boleto["signs"].get(str(n)) or []
             name = next(
-                (f"{m['home']}-{m['away']}" for m in result["matches"]
+                (_display_name(m) for m in result["matches"]
                  if int(m.get("n", 0)) == n),
                 "",
             )

@@ -17,6 +17,16 @@ class TestSources(unittest.TestCase):
         self.assertTrue(set(f["recent"]) <= set("WDL"))
         self.assertGreaterEqual(f["xg"], 0)
 
+    def test_team_form_resolves_short_names_and_missing_xg(self):
+        rows = football_data.parse_csv(
+            (FIX / "sp1_2627.csv").read_text(encoding="utf-8-sig")
+        )
+        self.assertEqual(len(football_data.team_form(rows, "Deportivo")["matches"]), 5)
+        self.assertEqual(len(football_data.team_form(rows, "Real Betis")["matches"]), 5)
+        synthetic = [{"Date": "01/01/2026", "HomeTeam": "A", "AwayTeam": "B",
+                      "FTHG": 1, "FTAG": 0}]
+        self.assertIsNone(football_data.team_form(synthetic, "A")["xg"])
+
     def test_closing_odds_normalized(self):
         rows = football_data.parse_csv(
             (FIX / "sp1_2627.csv").read_text(encoding="utf-8-sig")

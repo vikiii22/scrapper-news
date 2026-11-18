@@ -9,3 +9,8 @@
 __pycache__/
 *.pyo
 *.pyd
+
+# Salidas del análisis de jornada
+output/*
+!output/.gitkeep
+data/cache/
