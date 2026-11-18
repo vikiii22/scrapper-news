@@ -655,29 +655,15 @@
   },
   "alavés": {
     "name": "Alavés",
-    "goals_for": 35.0,
-    "goals_against": 27.5,
-    "recent": "WDWWLLDLLD",
+    "goals_for": 27.5,
+    "goals_against": 40.0,
+    "recent": "WWLLDLLDLD",
     "position": 10,
     "source": "espn-live",
     "has_data": true,
     "league": "esp.1",
     "season": 2026,
     "fixtures": [
-      {
-        "date": "2026-08-15",
-        "home": "Alavés",
-        "away": "Getafe",
-        "score": "3-0",
-        "competition": ""
-      },
-      {
-        "date": "2026-08-20",
-        "home": "Rayo Vallecano",
-        "away": "Alavés",
-        "score": "1-1",
-        "competition": ""
-      },
       {
         "date": "2026-08-28",
         "home": "Alavés",
@@ -733,15 +719,29 @@
         "away": "Málaga",
         "score": "1-1",
         "competition": ""
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Barcelona",
+        "away": "Alavés",
+        "score": "6-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-06",
+        "home": "Sevilla",
+        "away": "Alavés",
+        "score": "0-0",
+        "competition": ""
       }
     ],
-    "avg_goals_for": 1.4,
-    "avg_goals_against": 1.1,
+    "avg_goals_for": 1.1,
+    "avg_goals_against": 1.6,
     "sources_tried": [
       "espn"
     ],
-    "fetched_at": "2026-10-29T14:21:04.557268+00:00",
-    "updated_at": "2026-10-29T14:21:04.557295+00:00",
+    "fetched_at": "2026-11-18T09:40:47.205788+00:00",
+    "updated_at": "2026-11-18T09:40:47.205806+00:00",
     "history": [
       {
         "at": "2026-09-10T07:25:48.947079+00:00",
@@ -762,6 +762,10 @@
       {
         "at": "2026-10-29T14:21:04.557268+00:00",
         "recent": "WDWWLLDLLD"
+      },
+      {
+        "at": "2026-11-18T09:29:25.417038+00:00",
+        "recent": "WWLLDLLDLD"
       }
     ]
   },
@@ -1023,9 +1027,9 @@
   },
   "sporting gijón": {
     "name": "Sporting Gijón",
-    "goals_for": 10.0,
-    "goals_against": 15.0,
-    "recent": "DWWLL",
+    "goals_for": 35.0,
+    "goals_against": 37.5,
+    "recent": "LWLWWWLWLD",
     "position": 10,
     "source": "espn-live",
     "has_data": true,
@@ -1033,48 +1037,83 @@
     "season": 2026,
     "fixtures": [
       {
-        "date": "2026-08-17",
-        "home": "Sporting Gijón",
-        "away": "CD Sabadell",
-        "score": "0-0",
-        "competition": ""
-      },
-      {
-        "date": "2026-08-23",
-        "home": "Sporting Gijón",
-        "away": "Burgos",
-        "score": "1-0",
-        "competition": ""
-      },
-      {
-        "date": "2026-08-28",
-        "home": "Tenerife",
-        "away": "Sporting Gijón",
-        "score": "0-1",
-        "competition": ""
-      },
-      {
-        "date": "2026-09-05",
-        "home": "Sporting Gijón",
-        "away": "Girona",
-        "score": "0-2",
-        "competition": ""
-      },
-      {
         "date": "2026-09-13",
         "home": "Sporting Gijón",
         "away": "Eldense",
         "score": "0-1",
         "competition": ""
+      },
+      {
+        "date": "2026-09-19",
+        "home": "FC Andorra",
+        "away": "Sporting Gijón",
+        "score": "1-3",
+        "competition": ""
+      },
+      {
+        "date": "2026-09-27",
+        "home": "Real Oviedo",
+        "away": "Sporting Gijón",
+        "score": "2-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-04",
+        "home": "Sporting Gijón",
+        "away": "RC Celta Fortuna",
+        "score": "3-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-11",
+        "home": "Cádiz",
+        "away": "Sporting Gijón",
+        "score": "0-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-17",
+        "home": "Sporting Gijón",
+        "away": "Albacete",
+        "score": "2-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-25",
+        "home": "Castellón",
+        "away": "Sporting Gijón",
+        "score": "4-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-01",
+        "home": "Ceuta",
+        "away": "Sporting Gijón",
+        "score": "0-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-08",
+        "home": "Sporting Gijón",
+        "away": "Real Valladolid",
+        "score": "1-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-14",
+        "home": "Real Sociedad II",
+        "away": "Sporting Gijón",
+        "score": "2-2",
+        "competition": ""
       }
     ],
-    "avg_goals_for": 0.4,
-    "avg_goals_against": 0.6,
+    "avg_goals_for": 1.4,
+    "avg_goals_against": 1.5,
     "sources_tried": [
       "espn"
     ],
-    "fetched_at": "2026-09-18T08:56:09.730884+00:00",
-    "updated_at": "2026-09-18T08:56:09.732640+00:00",
+    "fetched_at": "2026-11-18T09:40:53.121044+00:00",
+    "updated_at": "2026-11-18T09:40:53.121061+00:00",
     "history": [
       {
         "at": "2026-09-10T07:28:05.948207+00:00",
@@ -1083,6 +1122,10 @@
       {
         "at": "2026-09-16T10:02:17.691486+00:00",
         "recent": "DWWLL"
+      },
+      {
+        "at": "2026-11-18T09:29:59.877017+00:00",
+        "recent": "LWLWWWLWLD"
       }
     ]
   },
@@ -1612,29 +1655,15 @@
   },
   "atlético madrid": {
     "name": "Atlético Madrid",
-    "goals_for": 50.0,
+    "goals_for": 47.5,
     "goals_against": 20.0,
-    "recent": "WDWLWWWWWW",
+    "recent": "WLWWWWWWWL",
     "position": 10,
     "source": "espn-live",
     "has_data": true,
     "league": "esp.1",
     "season": 2026,
     "fixtures": [
-      {
-        "date": "2026-08-19",
-        "home": "Atlético Madrid",
-        "away": "Málaga",
-        "score": "2-0",
-        "competition": ""
-      },
-      {
-        "date": "2026-08-23",
-        "home": "Atlético Madrid",
-        "away": "Villarreal",
-        "score": "2-2",
-        "competition": ""
-      },
       {
         "date": "2026-08-29",
         "home": "Sevilla",
@@ -1690,15 +1719,29 @@
         "away": "Deportivo",
         "score": "1-0",
         "competition": ""
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Levante",
+        "away": "Atlético Madrid",
+        "score": "0-2",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-08",
+        "home": "Atlético Madrid",
+        "away": "Barcelona",
+        "score": "1-2",
+        "competition": ""
       }
     ],
-    "avg_goals_for": 2.0,
+    "avg_goals_for": 1.9,
     "avg_goals_against": 0.8,
     "sources_tried": [
       "espn"
     ],
-    "fetched_at": "2026-10-29T14:20:42.377282+00:00",
-    "updated_at": "2026-10-29T14:20:42.377303+00:00",
+    "fetched_at": "2026-11-18T09:40:51.393598+00:00",
+    "updated_at": "2026-11-18T09:40:51.393612+00:00",
     "history": [
       {
         "at": "2026-09-10T09:17:46.240485+00:00",
@@ -1727,6 +1770,10 @@
       {
         "at": "2026-10-29T14:20:42.377282+00:00",
         "recent": "WDWLWWWWWW"
+      },
+      {
+        "at": "2026-11-18T09:29:47.349205+00:00",
+        "recent": "WLWWWWWWWL"
       }
     ]
   },
@@ -4859,22 +4906,15 @@
   },
   "atlético madrid (f)": {
     "name": "Atlético Madrid (F)",
-    "goals_for": 41.7,
-    "goals_against": 45.8,
-    "recent": "LWLWLW",
+    "goals_for": 55.0,
+    "goals_against": 25.0,
+    "recent": "WLWLWWWDWW",
     "position": 10,
     "source": "espn-live",
     "has_data": true,
     "league": "esp.w.1",
     "season": 2026,
     "fixtures": [
-      {
-        "date": "2026-08-30",
-        "home": "Real Madrid",
-        "away": "Atlético Madrid",
-        "score": "3-2",
-        "competition": ""
-      },
       {
         "date": "2026-09-06",
         "home": "Atlético Madrid",
@@ -4909,15 +4949,50 @@
         "away": "Atlético Madrid",
         "score": "1-2",
         "competition": ""
+      },
+      {
+        "date": "2026-10-18",
+        "home": "Atlético Madrid",
+        "away": "Madrid CFF",
+        "score": "4-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-23",
+        "home": "Atlético Madrid",
+        "away": "Valencia",
+        "score": "4-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-10-31",
+        "home": "Granada",
+        "away": "Atlético Madrid",
+        "score": "1-1",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-09",
+        "home": "Atlético Madrid",
+        "away": "FC Badalona",
+        "score": "3-0",
+        "competition": ""
+      },
+      {
+        "date": "2026-11-15",
+        "home": "Sevilla",
+        "away": "Atlético Madrid",
+        "score": "1-2",
+        "competition": ""
       }
     ],
-    "avg_goals_for": 1.67,
-    "avg_goals_against": 1.83,
+    "avg_goals_for": 2.2,
+    "avg_goals_against": 1.0,
     "sources_tried": [
       "espn-w"
     ],
-    "fetched_at": "2026-10-15T20:05:13.317337+00:00",
-    "updated_at": "2026-10-15T20:05:13.317366+00:00",
+    "fetched_at": "2026-11-18T09:40:55.089051+00:00",
+    "updated_at": "2026-11-18T09:40:55.089074+00:00",
     "history": [
       {
         "at": "2026-09-16T10:13:49.559971+00:00",
@@ -4926,6 +5001,10 @@
       {
         "at": "2026-10-15T20:05:13.317337+00:00",
         "recent": "LWLWLW"
+      },
+      {
+        "at": "2026-11-18T09:30:03.403725+00:00",
+        "recent": "WLWLWWWDWW"
       }
     ]
   },
