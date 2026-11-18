@@ -273,11 +273,8 @@ def run(jornada: Optional[int] = None, html: Optional[str] = None,
         return {"error": "jornada_incompleta", "jornada": entry.get("jornada")}
 
     if (entry.get("played") or _is_closed(entry.get("close", ""))) and not force:
-        print(
-            f"La jornada {entry.get('jornada')} ya ha cerrado ({entry.get('close')}). "
-            "Usa --force para analizarla igual."
-        )
-        return {"error": "jornada_no_jugable", "jornada": entry.get("jornada")}
+        return {"error": "jornada_no_jugable", "jornada": entry.get("jornada"),
+                "close": entry.get("close")}
 
     contexts = build_contexts(entry["matches"], cache=cache)
     entry = analyze_matches(entry, predict_fn=predict_fn or predict,
@@ -331,7 +328,13 @@ def main(argv: Optional[List[str]] = None) -> int:
         no_cache=args.no_cache,
     )
     if result.get("error"):
-        print(f"Error: {result['error']}")
+        if result["error"] == "jornada_no_jugable":
+            print(
+                f"La jornada {result.get('jornada')} ya ha cerrado "
+                f"({result.get('close', '')}). Usa --force para analizarla igual."
+            )
+        else:
+            print(f"Error: {result['error']}")
         return 2
 
     print(f"Jornada {result['jornada']} — {result.get('close', '')}")
