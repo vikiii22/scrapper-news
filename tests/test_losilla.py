@@ -54,6 +54,22 @@ class TestLosilla(unittest.TestCase):
         self.assertIsNone(j["matches"][0]["lae"])
         self.assertTrue(j["matches"][10]["is_women"])
 
+    def test_pleno_match_has_no_1x2_percentages(self):
+        def fake_get(url, params=None, timeout=20):
+            return self.csv if "analisisSigno" in url else self.html
+
+        original = losilla._get_text
+        losilla._get_text = fake_get
+        try:
+            j = losilla.fetch_jornada(jornada=23)
+        finally:
+            losilla._get_text = original
+        pleno = j["matches"][14]
+        self.assertIsNone(pleno["probables"])
+        self.assertIsNone(pleno["lae"])
+        self.assertIsNotNone(pleno["pleno"])
+        self.assertEqual(pleno["pleno"]["home"]["M"], 13.0)
+
     def test_cache_roundtrip(self):
         import tempfile
 

@@ -1,0 +1,2518 @@
+{
+  "jornada": 23,
+  "season": 2027,
+  "close": "SÁBADO 21/11",
+  "fetched_at": "2026-11-18T09:24:02.620264+00:00",
+  "matches": [
+    {
+      "n": 1,
+      "home": "Alaves",
+      "away": "Deportivo",
+      "home_raw": "ALAVÉS",
+      "away_raw": "DEPORTIVO",
+      "day": "SAB",
+      "hour": "14:00",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 46.0,
+          "X": 38.0,
+          "2": 16.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 43.0,
+          "X": 29.0,
+          "2": 28.0
+        },
+        "tecnicos": {
+          "1": 44.0,
+          "X": 30.0,
+          "2": 26.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 43.0,
+        "X": 29.0,
+        "2": 28.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 43.0,
+        "X": 29.0,
+        "2": 28.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WWDLW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "DLWDL",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 2,
+      "home": "Rayo Vallecano",
+      "away": "Valencia",
+      "home_raw": "RAYO",
+      "away_raw": "VALENCIA",
+      "day": "SAB",
+      "hour": "16:15",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 42.0,
+          "X": 29.0,
+          "2": 29.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 49.0,
+          "X": 27.0,
+          "2": 24.0
+        },
+        "tecnicos": {
+          "1": 49.0,
+          "X": 27.0,
+          "2": 24.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 49.0,
+        "X": 27.0,
+        "2": 24.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 49.0,
+        "X": 27.0,
+        "2": 24.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "LDLWW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "DWWLD",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 3,
+      "home": "Real Madrid",
+      "away": "Celta Vigo",
+      "home_raw": "R.MADRID",
+      "away_raw": "CELTA",
+      "day": "SAB",
+      "hour": "21:00",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 93.0,
+          "X": 5.0,
+          "2": 2.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 79.0,
+          "X": 14.0,
+          "2": 7.0
+        },
+        "tecnicos": {
+          "1": 78.0,
+          "X": 16.0,
+          "2": 6.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 79.0,
+        "X": 14.0,
+        "2": 7.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 79.0,
+        "X": 14.0,
+        "2": 7.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WWDWW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "LWWDL",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 4,
+      "home": "Barcelona",
+      "away": "Villarreal",
+      "home_raw": "BARCELONA",
+      "away_raw": "VILLARREAL",
+      "day": "DOM",
+      "hour": "14:00",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 85.0,
+          "X": 9.0,
+          "2": 6.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 79.0,
+          "X": 13.0,
+          "2": 8.0
+        },
+        "tecnicos": {
+          "1": 76.0,
+          "X": 16.0,
+          "2": 8.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 79.0,
+        "X": 13.0,
+        "2": 8.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 79.0,
+        "X": 13.0,
+        "2": 8.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "DLWDL",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WDWLD",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 5,
+      "home": "Racing Santander",
+      "away": "Real Sociedad",
+      "home_raw": "RACING S.",
+      "away_raw": "R.SOCIEDAD",
+      "day": "DOM",
+      "hour": "16:15",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 16.0,
+          "X": 24.0,
+          "2": 60.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 30.0,
+          "X": 24.0,
+          "2": 46.0
+        },
+        "tecnicos": {
+          "1": 30.0,
+          "X": 24.0,
+          "2": 46.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 30.0,
+        "X": 24.0,
+        "2": 46.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 30.0,
+        "X": 24.0,
+        "2": 46.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "2",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "DWWLD",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WLLDW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 6,
+      "home": "Osasuna",
+      "away": "Málaga",
+      "home_raw": "OSASUNA",
+      "away_raw": "MÁLAGA",
+      "day": "DOM",
+      "hour": "18:30",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 63.0,
+          "X": 21.0,
+          "2": 16.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 54.0,
+          "X": 26.0,
+          "2": 20.0
+        },
+        "tecnicos": {
+          "1": 54.0,
+          "X": 26.0,
+          "2": 20.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 54.0,
+        "X": 26.0,
+        "2": 20.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 54.0,
+        "X": 26.0,
+        "2": 20.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "LWWDL",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "DWLWD",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 7,
+      "home": "Getafe",
+      "away": "Atletico Madrid",
+      "home_raw": "GETAFE",
+      "away_raw": "AT.MADRID",
+      "day": "DOM",
+      "hour": "21:00",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 7.0,
+          "X": 18.0,
+          "2": 75.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 17.0,
+          "X": 25.0,
+          "2": 58.0
+        },
+        "tecnicos": {
+          "1": 17.0,
+          "X": 25.0,
+          "2": 58.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 17.0,
+        "X": 25.0,
+        "2": 58.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 17.0,
+        "X": 25.0,
+        "2": 58.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "2",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WDWLD",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "LDLWD",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 8,
+      "home": "Tenerife",
+      "away": "Mallorca",
+      "home_raw": "TENERIFE",
+      "away_raw": "MALLORCA",
+      "day": "SAB",
+      "hour": "21:00",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 23.0,
+          "X": 34.0,
+          "2": 43.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 30.0,
+          "X": 29.0,
+          "2": 41.0
+        },
+        "tecnicos": {
+          "1": 30.0,
+          "X": 28.0,
+          "2": 42.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 30.0,
+        "X": 29.0,
+        "2": 41.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 30.0,
+        "X": 29.0,
+        "2": 41.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "2",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": true,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WLLDW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WWWDL",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": false
+      }
+    },
+    {
+      "n": 9,
+      "home": "Sporting Gijon",
+      "away": "Las Palmas",
+      "home_raw": "SPORTING",
+      "away_raw": "LAS PALMAS",
+      "day": "DOM",
+      "hour": "16:15",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 56.0,
+          "X": 29.0,
+          "2": 15.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 48.0,
+          "X": 27.0,
+          "2": 25.0
+        },
+        "tecnicos": {
+          "1": 49.0,
+          "X": 26.0,
+          "2": 25.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 48.0,
+        "X": 27.0,
+        "2": 25.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 48.0,
+        "X": 27.0,
+        "2": 25.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "DWLWD",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "DWLDW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 10,
+      "home": "Girona",
+      "away": "Eibar",
+      "home_raw": "GIRONA",
+      "away_raw": "EIBAR",
+      "day": "DOM",
+      "hour": "18:30",
+      "is_women": false,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 60.0,
+          "X": 24.0,
+          "2": 16.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 52.0,
+          "X": 25.0,
+          "2": 23.0
+        },
+        "tecnicos": {
+          "1": 53.0,
+          "X": 25.0,
+          "2": 22.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 52.0,
+        "X": 25.0,
+        "2": 23.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 52.0,
+        "X": 25.0,
+        "2": 23.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "LDLWD",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WLWDW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 11,
+      "home": "Eibar",
+      "away": "Atletico Madrid",
+      "home_raw": "EIBAR (F)",
+      "away_raw": "AT.MADRID (F)",
+      "day": "SAB",
+      "hour": "17:00",
+      "is_women": true,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 4.0,
+          "X": 14.0,
+          "2": 82.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 14.0,
+          "X": 22.0,
+          "2": 64.0
+        },
+        "tecnicos": {
+          "1": 14.0,
+          "X": 22.0,
+          "2": 64.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 14.0,
+        "X": 22.0,
+        "2": 64.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 14.0,
+        "X": 22.0,
+        "2": 64.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "2",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "Liga F",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WWWDL",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "LDWDL",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 12,
+      "home": "Granada",
+      "away": "Real Madrid",
+      "home_raw": "GRANADA (F)",
+      "away_raw": "R.MADRID (F)",
+      "day": "DOM",
+      "hour": "12:00",
+      "is_women": true,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 2.0,
+          "X": 6.0,
+          "2": 92.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 9.0,
+          "X": 16.0,
+          "2": 75.0
+        },
+        "tecnicos": {
+          "1": 12.0,
+          "X": 18.0,
+          "2": 70.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 9.0,
+        "X": 16.0,
+        "2": 75.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 9.0,
+        "X": 16.0,
+        "2": 75.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "2",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "Liga F",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "DWLDW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WWDLW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 13,
+      "home": "Real Sociedad",
+      "away": "Sevilla",
+      "home_raw": "R.SOCIEDAD (F)",
+      "away_raw": "SEVILLA (F)",
+      "day": "DOM",
+      "hour": "12:00",
+      "is_women": true,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 67.0,
+          "X": 22.0,
+          "2": 11.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 59.0,
+          "X": 23.0,
+          "2": 18.0
+        },
+        "tecnicos": {
+          "1": 53.0,
+          "X": 25.0,
+          "2": 22.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 59.0,
+        "X": 23.0,
+        "2": 18.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 59.0,
+        "X": 23.0,
+        "2": 18.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "Liga F",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WLWDW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "LDLWW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 14,
+      "home": "Tenerife",
+      "away": "Madrid Cff",
+      "home_raw": "TENERIFE (F)",
+      "away_raw": "MADRID CFF (F)",
+      "day": "DOM",
+      "hour": "17:00",
+      "is_women": true,
+      "is_pleno": false,
+      "percentages": {
+        "jugados": {
+          "1": 62.0,
+          "X": 19.0,
+          "2": 19.0
+        },
+        "lae": null,
+        "probables": {
+          "1": 50.0,
+          "X": 26.0,
+          "2": 24.0
+        },
+        "tecnicos": {
+          "1": 41.0,
+          "X": 30.0,
+          "2": 29.0
+        }
+      },
+      "lae": null,
+      "probables": {
+        "1": 50.0,
+        "X": 26.0,
+        "2": 24.0
+      },
+      "pleno": null,
+      "modelo": {
+        "1": 50.0,
+        "X": 26.0,
+        "2": 24.0
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "Liga F",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "LDWDL",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "WWDWW",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    },
+    {
+      "n": 15,
+      "home": "Sevilla",
+      "away": "Real Betis",
+      "home_raw": "SEVILLA",
+      "away_raw": "BETIS",
+      "day": "SAB",
+      "hour": "18:30",
+      "is_women": false,
+      "is_pleno": true,
+      "percentages": {
+        "jugados": null,
+        "lae": null,
+        "probables": null,
+        "tecnicos": null
+      },
+      "lae": null,
+      "probables": null,
+      "pleno": {
+        "home": {
+          "0": 29.0,
+          "1": 36.0,
+          "2": 22.0,
+          "M": 13.0
+        },
+        "away": {
+          "0": 23.0,
+          "1": 34.0,
+          "2": 25.0,
+          "M": 18.0
+        }
+      },
+      "modelo": {
+        "1": 33.3,
+        "X": 33.3,
+        "2": 33.3
+      },
+      "valor": {
+        "1": 0.0,
+        "X": 0.0,
+        "2": 0.0
+      },
+      "pick": "1",
+      "value_pick": null,
+      "expected_goals": {
+        "home": 1.5,
+        "away": 1.1
+      },
+      "competition": "La Liga",
+      "low_confidence": false,
+      "absences": {
+        "home": 2,
+        "away": 0
+      },
+      "context": {
+        "form": {
+          "home": {
+            "recent": "WWDLW",
+            "xg": 1.4,
+            "xga": 1.1
+          },
+          "away": {
+            "recent": "DLWDL",
+            "xg": 1.1,
+            "xga": 1.3
+          }
+        },
+        "injuries": {
+          "home": {
+            "count": 2,
+            "players": [
+              {
+                "name": "Jugador A",
+                "issue": "Lesión muscular"
+              }
+            ]
+          },
+          "away": {
+            "count": 0,
+            "players": []
+          }
+        },
+        "elo": {
+          "home": null,
+          "away": null
+        },
+        "news": {
+          "home": [
+            {
+              "title": "Titular de prueba"
+            }
+          ],
+          "away": []
+        }
+      },
+      "sources": {
+        "espn": true,
+        "football_data": true
+      }
+    }
+  ],
+  "sources": {
+    "losilla": {
+      "ok": true,
+      "note": "CSV + HTML"
+    },
+    "espn": {
+      "ok": true,
+      "note": ""
+    },
+    "football_data": {
+      "ok": true,
+      "note": "SP1/SP2"
+    },
+    "transfermarkt": {
+      "ok": false,
+      "note": "sin red (n/d)"
+    },
+    "understat": {
+      "ok": false,
+      "note": "bloqueado"
+    },
+    "clubelo": {
+      "ok": false,
+      "note": "502"
+    },
+    "markets": {
+      "ok": false,
+      "note": "sin mercado de liga"
+    },
+    "news": {
+      "ok": true,
+      "note": "Google News"
+    }
+  },
+  "boleto_rentable": {
+    "name": "Boleto rentable",
+    "profile": "rentable",
+    "bets": 24,
+    "cost_eur": 18.0,
+    "signs": {
+      "1": [
+        "1",
+        "X",
+        "2"
+      ],
+      "2": [
+        "1",
+        "X"
+      ],
+      "3": [
+        "1"
+      ],
+      "4": [
+        "1"
+      ],
+      "5": [
+        "1",
+        "2"
+      ],
+      "6": [
+        "1"
+      ],
+      "7": [
+        "2"
+      ],
+      "8": [
+        "1",
+        "X",
+        "2"
+      ],
+      "9": [
+        "1",
+        "X",
+        "2"
+      ],
+      "10": [
+        "1"
+      ],
+      "11": [
+        "2"
+      ],
+      "12": [
+        "2"
+      ],
+      "13": [
+        "1"
+      ],
+      "14": [
+        "1",
+        "X"
+      ]
+    },
+    "multiples": {
+      "triples": [
+        1,
+        8,
+        9
+      ],
+      "dobles": [
+        2,
+        5,
+        14
+      ]
+    },
+    "columns": [
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "2",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "X",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "2",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "X",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "2",
+        "X",
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ]
+    ],
+    "pleno": {
+      "home": "1",
+      "away": "1"
+    },
+    "guarantee": {
+      "text": "13 si los 8 fijos entran; 14 cuando la combinación real está entre las 24",
+      "p14": 11.1,
+      "bets": 24,
+      "fixed": 8
+    }
+  },
+  "boleto_conservador": {
+    "name": "Boleto conservador",
+    "profile": "seguro",
+    "bets": 24,
+    "cost_eur": 18.0,
+    "signs": {
+      "1": [
+        "1",
+        "X"
+      ],
+      "2": [
+        "1",
+        "X"
+      ],
+      "3": [
+        "1"
+      ],
+      "4": [
+        "1"
+      ],
+      "5": [
+        "2"
+      ],
+      "6": [
+        "1",
+        "X",
+        "2"
+      ],
+      "7": [
+        "2"
+      ],
+      "8": [
+        "1",
+        "2"
+      ],
+      "9": [
+        "1",
+        "X",
+        "2"
+      ],
+      "10": [
+        "1"
+      ],
+      "11": [
+        "2"
+      ],
+      "12": [
+        "2"
+      ],
+      "13": [
+        "1"
+      ],
+      "14": [
+        "1",
+        "X",
+        "2"
+      ]
+    },
+    "multiples": {
+      "triples": [
+        6,
+        9,
+        14
+      ],
+      "dobles": [
+        1,
+        2,
+        8
+      ]
+    },
+    "columns": [
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "2",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "1",
+        "X",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "1",
+        "2",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "1",
+        "1"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "X",
+        "2",
+        "1",
+        "X",
+        "1",
+        "2",
+        "2",
+        "1",
+        "X"
+      ],
+      [
+        "X",
+        "1",
+        "1",
+        "1",
+        "2",
+        "2",
+        "2",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2"
+      ]
+    ],
+    "pleno": {
+      "home": "1",
+      "away": "1"
+    },
+    "guarantee": {
+      "text": "13 si los 8 fijos entran; 14 cuando la combinación real está entre las 24",
+      "p14": 11.1,
+      "bets": 24,
+      "fixed": 8
+    }
+  }
+}

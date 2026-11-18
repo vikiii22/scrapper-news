@@ -265,10 +265,10 @@ def fetch_jornada(jornada: Optional[int] = None, html: Optional[str] = None,
             return dict(value) if value else None
 
         percentages = {
-            "jugados": section_pct(quinielista),
-            "lae": section_pct(lae_rows),
-            "probables": section_pct(real),
-            "tecnicos": section_pct(tecnicos),
+            "jugados": None if is_pleno else section_pct(quinielista),
+            "lae": None if is_pleno else section_pct(lae_rows),
+            "probables": None if is_pleno else section_pct(real),
+            "tecnicos": None if is_pleno else section_pct(tecnicos),
         }
         pleno = None
         if is_pleno:
