@@ -136,7 +136,8 @@ def _row_date(row: Dict[str, Any]) -> datetime:
     return datetime.min
 
 
-def team_form(rows: List[Dict[str, Any]], team: str, n: int = 5) -> Dict[str, Any]:
+def team_form(rows: List[Dict[str, Any]], team: str, n: int = 5,
+              venue: Optional[str] = None) -> Dict[str, Any]:
     played: List[Dict[str, Any]] = []
     for row in rows:
         home = row.get("HomeTeam") or ""
@@ -146,6 +147,10 @@ def team_form(rows: List[Dict[str, Any]], team: str, n: int = 5) -> Dict[str, An
         elif _same(team, away):
             is_home = False
         else:
+            continue
+        if venue == "home" and not is_home:
+            continue
+        if venue == "away" and is_home:
             continue
 
         gf = row.get("FTHG") if is_home else row.get("FTAG")

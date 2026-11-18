@@ -165,10 +165,13 @@ def _context_for(match: Dict[str, Any], fd_rows: Dict[str, List[Dict[str, Any]]]
     if code and fd_rows.get(code):
         rows = fd_rows[code]
         try:
-            context["form"] = {
-                "home": football_data.team_form(rows, home),
-                "away": football_data.team_form(rows, away),
-            }
+            home_form = football_data.team_form(rows, home, venue="home")
+            away_form = football_data.team_form(rows, away, venue="away")
+            if not home_form["matches"]:
+                home_form = football_data.team_form(rows, home)
+            if not away_form["matches"]:
+                away_form = football_data.team_form(rows, away)
+            context["form"] = {"home": home_form, "away": away_form}
         except Exception:
             context["form"] = {}
         try:

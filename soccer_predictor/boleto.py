@@ -89,6 +89,45 @@ def _double_signs(probs: Dict[str, float]) -> List[str]:
     return ["1", "2"]
 
 
+def _top_pct(table: Dict[str, float]) -> float:
+    return max(table.values()) if table else 0.0
+
+
+def _swap_fragile_fixed(signs: Dict[int, List[str]],
+                        model: Dict[int, Dict[str, float]],
+                        market: Dict[int, Dict[str, float]]) -> Dict[int, List[str]]:
+    """No fijar un favorito local que el mercado no respalda.
+
+    Si un fijo tiene mercado < 50 % y el modelo lo infla más de 8 puntos, se
+    convierte en doble (con el patrón del mercado) y se fija el doble más
+    fiable del mercado (≥ 55 % y brecha ≤ 10). Así no se rompe el 3+3.
+    """
+    fixed = [n for n, value in signs.items() if len(value) == 1]
+    doubles = [n for n, value in signs.items() if len(value) == 2]
+    fragile = [
+        n for n in fixed
+        if _top_pct(market.get(n, {})) < 50
+        and _top_pct(model.get(n, {})) - _top_pct(market.get(n, {})) > 8
+    ]
+    reliable = [
+        n for n in doubles
+        if _top_pct(market.get(n, {})) >= 55
+        and abs(_top_pct(model.get(n, {})) - _top_pct(market.get(n, {}))) <= 10
+    ]
+    if not fragile or not reliable:
+        return signs
+
+    fragile_match = max(
+        fragile, key=lambda n: _top_pct(model[n]) - _top_pct(market[n])
+    )
+    reliable_match = max(reliable, key=lambda n: _top_pct(market[n]))
+    signs[fragile_match] = _double_signs(market[fragile_match])
+    signs[reliable_match] = [
+        max(SIGNS, key=lambda sign: market[reliable_match].get(sign, 0.0))
+    ]
+    return signs
+
+
 def select_signs(matches: List[Dict[str, Any]],
                  profile: str = "rentable") -> Dict[int, List[str]]:
     """3 triples, 3 dobles y 8 fijos. Determinista para la misma entrada."""
@@ -142,7 +181,11 @@ def select_signs(matches: List[Dict[str, Any]],
         else:
             table = probs[n] if profile == "rentable" else refs[n]
             signs[n] = [max(SIGNS, key=lambda sign: table.get(sign, 0.0))]
-    return signs
+    model_pct = {
+        n: {sign: probs[n].get(sign, 0.0) * 100 for sign in SIGNS}
+        for n in probs
+    }
+    return _swap_fragile_fixed(signs, model_pct, refs)
 
 
 def pleno_variants(lam_home: float, lam_away: float) -> Dict[str, Dict[str, str]]:

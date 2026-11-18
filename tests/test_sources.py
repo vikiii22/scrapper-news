@@ -82,6 +82,17 @@ class TestSources(unittest.TestCase):
             injuries._get_text = original
 
 
+    def test_team_form_home_and_away_splits(self):
+        rows = football_data.parse_csv(
+            (FIX / "sp1_2627.csv").read_text(encoding="utf-8-sig")
+        )
+        home = football_data.team_form(rows, "Rayo Vallecano", venue="home")
+        away = football_data.team_form(rows, "Valencia", venue="away")
+        self.assertTrue(home["matches"])
+        self.assertTrue(all(m["home"] for m in home["matches"]))
+        self.assertTrue(away["matches"])
+        self.assertFalse(any(m["home"] for m in away["matches"]))
+
     def test_failures_are_not_cached(self):
         import tempfile
 

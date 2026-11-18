@@ -1,7 +1,11 @@
 import itertools
+import json
+import pathlib
 import unittest
 
 from soccer_predictor import boleto
+
+FIX = pathlib.Path(__file__).parent / "fixtures"
 
 
 def _entry(n=1, p1=50, px=25, p2=25, prob=None, modelo=None):
@@ -81,6 +85,35 @@ class TestCovering(unittest.TestCase):
             self.assertTrue(any(
                 sum(a != c for a, c in zip(point, row)) <= 1 for row in tuples
             ))
+
+    def test_swap_fragile_fixed_with_reliable_double(self):
+        signs = {1: ["1"], 2: ["1"], 7: ["1", "2"]}
+        model = {1: {"1": 80, "X": 12, "2": 8},
+                 2: {"1": 60, "X": 23, "2": 17},
+                 7: {"1": 50, "X": 25, "2": 25}}
+        market = {1: {"1": 80, "X": 12, "2": 8},
+                  2: {"1": 49, "X": 27, "2": 24},
+                  7: {"1": 25, "X": 20, "2": 55}}
+        out = boleto._swap_fragile_fixed(signs, model, market)
+        self.assertEqual(out[2], ["1", "X"])
+        self.assertEqual(out[7], ["2"])
+
+    def test_j23_fragile_rayo_is_doubled_and_atleti_fixed(self):
+        matches = json.loads((FIX / "j23_matches.json").read_text(encoding="utf-8"))
+        rentable = boleto.select_signs(matches, "rentable")
+        self.assertEqual(rentable[2], ["1", "X"])
+        self.assertEqual(rentable[7], ["2"])
+        self.assertEqual(rentable[1], ["1", "2"])
+        self.assertEqual(rentable[5], ["1", "2"])
+        self.assertEqual(len(rentable[8]), 3)
+        self.assertEqual(len(rentable[11]), 3)
+        self.assertEqual(len(rentable[12]), 3)
+
+        seguro = boleto.select_signs(matches, "seguro")
+        self.assertEqual(seguro[2], ["1", "X"])
+        self.assertEqual(seguro[7], ["2"])
+        self.assertEqual(seguro[1], ["1", "X"])
+        self.assertEqual(seguro[8], ["1", "2"])
 
     def test_pleno_variants(self):
         p = boleto.pleno_variants(1.8, 1.1)

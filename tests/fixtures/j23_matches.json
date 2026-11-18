@@ -1,0 +1,556 @@
+[
+ {
+  "n": 1,
+  "home": "Alaves",
+  "away": "Deportivo",
+  "modelo": {
+   "1": 43.7,
+   "X": 25.6,
+   "2": 30.7
+  },
+  "valor": {
+   "1": 0.7,
+   "X": -3.4,
+   "2": 2.7
+  },
+  "percentages": {
+   "jugados": {
+    "1": 43.0,
+    "X": 37.0,
+    "2": 20.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 43.0,
+    "X": 29.0,
+    "2": 28.0
+   },
+   "tecnicos": {
+    "1": 44.0,
+    "X": 30.0,
+    "2": 26.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.488,
+   "away": 1.204
+  },
+  "is_women": false
+ },
+ {
+  "n": 2,
+  "home": "Rayo Vallecano",
+  "away": "Valencia",
+  "modelo": {
+   "1": 59.7,
+   "X": 22.6,
+   "2": 17.7
+  },
+  "valor": {
+   "1": 10.7,
+   "X": -4.4,
+   "2": -6.3
+  },
+  "percentages": {
+   "jugados": {
+    "1": 41.0,
+    "X": 30.0,
+    "2": 29.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 49.0,
+    "X": 27.0,
+    "2": 24.0
+   },
+   "tecnicos": {
+    "1": 49.0,
+    "X": 27.0,
+    "2": 24.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.826,
+   "away": 0.881
+  },
+  "is_women": false
+ },
+ {
+  "n": 3,
+  "home": "Real Madrid",
+  "away": "Celta Vigo",
+  "modelo": {
+   "1": 66.6,
+   "X": 21.3,
+   "2": 12.1
+  },
+  "valor": {
+   "1": -12.4,
+   "X": 7.3,
+   "2": 5.1
+  },
+  "percentages": {
+   "jugados": {
+    "1": 94.0,
+    "X": 4.0,
+    "2": 2.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 79.0,
+    "X": 14.0,
+    "2": 7.0
+   },
+   "tecnicos": {
+    "1": 78.0,
+    "X": 16.0,
+    "2": 6.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.861,
+   "away": 0.641
+  },
+  "is_women": false
+ },
+ {
+  "n": 4,
+  "home": "Barcelona",
+  "away": "Villarreal",
+  "modelo": {
+   "1": 64.3,
+   "X": 18.7,
+   "2": 17.0
+  },
+  "valor": {
+   "1": -14.7,
+   "X": 5.7,
+   "2": 9.0
+  },
+  "percentages": {
+   "jugados": {
+    "1": 84.0,
+    "X": 9.0,
+    "2": 7.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 79.0,
+    "X": 13.0,
+    "2": 8.0
+   },
+   "tecnicos": {
+    "1": 76.0,
+    "X": 16.0,
+    "2": 8.0
+   }
+  },
+  "expected_goals": {
+   "home": 2.338,
+   "away": 1.129
+  },
+  "is_women": false
+ },
+ {
+  "n": 5,
+  "home": "Racing Santander",
+  "away": "Real Sociedad",
+  "modelo": {
+   "1": 35.6,
+   "X": 20.0,
+   "2": 44.3
+  },
+  "valor": {
+   "1": 5.6,
+   "X": -4.0,
+   "2": -1.7
+  },
+  "percentages": {
+   "jugados": {
+    "1": 17.0,
+    "X": 26.0,
+    "2": 57.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 30.0,
+    "X": 24.0,
+    "2": 46.0
+   },
+   "tecnicos": {
+    "1": 30.0,
+    "X": 24.0,
+    "2": 46.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.989,
+   "away": 2.22
+  },
+  "is_women": false
+ },
+ {
+  "n": 6,
+  "home": "Osasuna",
+  "away": "Málaga",
+  "modelo": {
+   "1": 55.1,
+   "X": 23.8,
+   "2": 21.1
+  },
+  "valor": {
+   "1": 2.1,
+   "X": -2.2,
+   "2": 0.1
+  },
+  "percentages": {
+   "jugados": {
+    "1": 65.0,
+    "X": 21.0,
+    "2": 14.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 53.0,
+    "X": 26.0,
+    "2": 21.0
+   },
+   "tecnicos": {
+    "1": 54.0,
+    "X": 26.0,
+    "2": 20.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.721,
+   "away": 0.967
+  },
+  "is_women": false
+ },
+ {
+  "n": 7,
+  "home": "Getafe",
+  "away": "Atletico Madrid",
+  "modelo": {
+   "1": 22.8,
+   "X": 24.6,
+   "2": 52.6
+  },
+  "valor": {
+   "1": 5.8,
+   "X": -0.4,
+   "2": -5.4
+  },
+  "percentages": {
+   "jugados": {
+    "1": 6.0,
+    "X": 16.0,
+    "2": 78.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 17.0,
+    "X": 25.0,
+    "2": 58.0
+   },
+   "tecnicos": {
+    "1": 17.0,
+    "X": 25.0,
+    "2": 58.0
+   }
+  },
+  "expected_goals": {
+   "home": 0.988,
+   "away": 1.639
+  },
+  "is_women": false
+ },
+ {
+  "n": 8,
+  "home": "Tenerife",
+  "away": "Mallorca",
+  "modelo": {
+   "1": 39.2,
+   "X": 27.2,
+   "2": 33.6
+  },
+  "valor": {
+   "1": 9.2,
+   "X": -1.8,
+   "2": -7.4
+  },
+  "percentages": {
+   "jugados": {
+    "1": 25.0,
+    "X": 35.0,
+    "2": 40.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 30.0,
+    "X": 29.0,
+    "2": 41.0
+   },
+   "tecnicos": {
+    "1": 30.0,
+    "X": 28.0,
+    "2": 42.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.291,
+   "away": 1.174
+  },
+  "is_women": false
+ },
+ {
+  "n": 9,
+  "home": "Sporting Gijon",
+  "away": "Las Palmas",
+  "modelo": {
+   "1": 52.5,
+   "X": 22.5,
+   "2": 25.0
+  },
+  "valor": {
+   "1": 4.5,
+   "X": -4.5,
+   "2": 0.0
+  },
+  "percentages": {
+   "jugados": {
+    "1": 52.0,
+    "X": 31.0,
+    "2": 17.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 48.0,
+    "X": 27.0,
+    "2": 25.0
+   },
+   "tecnicos": {
+    "1": 49.0,
+    "X": 26.0,
+    "2": 25.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.877,
+   "away": 1.23
+  },
+  "is_women": false
+ },
+ {
+  "n": 10,
+  "home": "Girona",
+  "away": "Eibar",
+  "modelo": {
+   "1": 54.3,
+   "X": 24.6,
+   "2": 21.1
+  },
+  "valor": {
+   "1": 2.3,
+   "X": -0.4,
+   "2": -1.9
+  },
+  "percentages": {
+   "jugados": {
+    "1": 60.0,
+    "X": 26.0,
+    "2": 14.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 52.0,
+    "X": 25.0,
+    "2": 23.0
+   },
+   "tecnicos": {
+    "1": 53.0,
+    "X": 25.0,
+    "2": 22.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.641,
+   "away": 0.923
+  },
+  "is_women": false
+ },
+ {
+  "n": 11,
+  "home": "Eibar",
+  "away": "Atletico Madrid",
+  "modelo": {
+   "1": 27.7,
+   "X": 22.7,
+   "2": 49.6
+  },
+  "valor": {
+   "1": 13.7,
+   "X": 0.7,
+   "2": -14.4
+  },
+  "percentages": {
+   "jugados": {
+    "1": 4.0,
+    "X": 12.0,
+    "2": 84.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 14.0,
+    "X": 22.0,
+    "2": 64.0
+   },
+   "tecnicos": {
+    "1": 14.0,
+    "X": 22.0,
+    "2": 64.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.332,
+   "away": 1.847
+  },
+  "is_women": true
+ },
+ {
+  "n": 12,
+  "home": "Granada",
+  "away": "Real Madrid",
+  "modelo": {
+   "1": 34.1,
+   "X": 22.5,
+   "2": 43.5
+  },
+  "valor": {
+   "1": 25.1,
+   "X": 6.5,
+   "2": -31.5
+  },
+  "percentages": {
+   "jugados": {
+    "1": 2.0,
+    "X": 5.0,
+    "2": 93.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 9.0,
+    "X": 16.0,
+    "2": 75.0
+   },
+   "tecnicos": {
+    "1": 12.0,
+    "X": 18.0,
+    "2": 70.0
+   }
+  },
+  "expected_goals": {
+   "home": 1.589,
+   "away": 1.816
+  },
+  "is_women": true
+ },
+ {
+  "n": 13,
+  "home": "Real Sociedad",
+  "away": "Sevilla",
+  "modelo": {
+   "1": 55.1,
+   "X": 21.4,
+   "2": 23.5
+  },
+  "valor": {
+   "1": -3.9,
+   "X": -1.6,
+   "2": 5.5
+  },
+  "percentages": {
+   "jugados": {
+    "1": 65.0,
+    "X": 24.0,
+    "2": 11.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 59.0,
+    "X": 23.0,
+    "2": 18.0
+   },
+   "tecnicos": {
+    "1": 53.0,
+    "X": 25.0,
+    "2": 22.0
+   }
+  },
+  "expected_goals": {
+   "home": 2.027,
+   "away": 1.262
+  },
+  "is_women": true
+ },
+ {
+  "n": 14,
+  "home": "Tenerife",
+  "away": "Madrid Cff",
+  "modelo": {
+   "1": 58.8,
+   "X": 19.1,
+   "2": 22.0
+  },
+  "valor": {
+   "1": 8.8,
+   "X": -6.9,
+   "2": -2.0
+  },
+  "percentages": {
+   "jugados": {
+    "1": 60.0,
+    "X": 22.0,
+    "2": 18.0
+   },
+   "lae": null,
+   "probables": {
+    "1": 50.0,
+    "X": 26.0,
+    "2": 24.0
+   },
+   "tecnicos": {
+    "1": 41.0,
+    "X": 30.0,
+    "2": 29.0
+   }
+  },
+  "expected_goals": {
+   "home": 2.388,
+   "away": 1.425
+  },
+  "is_women": true
+ },
+ {
+  "n": 15,
+  "home": "Sevilla",
+  "away": "Real Betis",
+  "modelo": {
+   "1": 32.3,
+   "X": 23.1,
+   "2": 44.6
+  },
+  "valor": null,
+  "percentages": {
+   "jugados": null,
+   "lae": null,
+   "probables": null,
+   "tecnicos": null
+  },
+  "expected_goals": {
+   "home": 1.463,
+   "away": 1.751
+  },
+  "is_women": false
+ }
+]

@@ -108,7 +108,11 @@ python -m soccer_predictor.jornada --save --fast
 Salida en `output/jornada_<n>_<fecha>.md` y `.json`:
 
 - Tabla por partido con %Jugados / %LAE / %Probables, modelo 1X2, valor
-  modelo−referencia, forma, xG de los últimos 5, Elo, bajas y titular de prensa.
+  modelo−referencia, forma local/visitante, xG de los últimos 5, Elo, bajas y
+  titular de prensa.
+- Si el modelo infla un favorito local que el mercado no respalda, el boleto lo
+  cubre con doble y fija el múltiple más fiable del mercado (sin romper el
+  3 dobles + 3 triples).
 - Pleno al 15 con las probabilidades 0/1/2/M de cada equipo.
 - **Boleto rentable** y **boleto conservador**: 3 dobles + 3 triples, 24
   apuestas, 18 €, con las 24 columnas y la garantía explicada.

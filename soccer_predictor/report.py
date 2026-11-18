@@ -173,7 +173,7 @@ def render_markdown(entry: Dict[str, Any]) -> str:
 
     lines.append("## Partidos")
     lines.append("")
-    lines.append("| # | Local | Visitante | Hora | %Jug | %LAE | %Prob | Modelo 1X2 | Valor | Forma | xG5 | Elo | Bajas | Pick |")
+    lines.append("| # | Local | Visitante | Hora | %Jug | %LAE | %Prob | Modelo 1X2 | Valor | Forma C/F | xG5 C/F | Elo | Bajas | Pick |")
     lines.append("|---:|---|---|---|---|---|---|---|---|---|---|---|---|---|")
     for match in matches:
         percentages = match.get("percentages") or {}
@@ -204,6 +204,12 @@ def render_markdown(entry: Dict[str, Any]) -> str:
     lines.append("")
 
     lines.append("## Lectura")
+    lines.append("")
+    lines.append(
+        "El `Pick` es el signo más probable del modelo. El boleto puede cubrirlo "
+        "con doble o triple cuando el mercado no lo respalda (por ejemplo, un "
+        "favorito local con mercado < 50 % y modelo > 8 puntos por encima)."
+    )
     lines.append("")
     for match in matches:
         if match.get("n") == 15:
