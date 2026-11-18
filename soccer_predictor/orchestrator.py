@@ -32,6 +32,8 @@ def predict(
     absences_home=0,
     absences_away=0,
     women=False,
+    log=True,
+    explain=True,
 ):
     """
     Función principal de predicción.
@@ -48,6 +50,8 @@ def predict(
       player_form(bool): si True, busca goleadores en racha (OpenLigaDB)
       absences_home/away (int): bajas importantes manuales (lesión/sanción)
       women      (bool): si True, usa solo datos femeninos (Liga F)
+      log        (bool): si False, no escribe el pronóstico en la BBDD
+      explain    (bool): si False, no llama al LLM (explicación estadística)
 
     Todo lo descargado se guarda en data/db/*.json y el pronóstico
     se añade al log de predicciones.
@@ -148,18 +152,22 @@ def predict(
     # 6. Opcionalmente enriquecemos la explicación con un LLM gratuito.
     #    Si no está configurado o falla, se mantiene la explicación estadística.
     base_explanation = result["explanation"]
-    enriched, source = llm.enrich_explanation(result, base_explanation)
+    if explain:
+        enriched, source = llm.enrich_explanation(result, base_explanation)
+    else:
+        enriched, source = base_explanation, "estadistico"
     result["explanation"] = enriched
     result["explanation_source"] = source
 
     # 7. Guardamos el pronóstico en la BBDD JSON (log para el histórico)
-    try:
+    if log:
         try:
-            from . import database as _db
-        except ImportError:
-            import database as _db
-        _db.log_prediction(result)
-    except Exception:
-        pass
+            try:
+                from . import database as _db
+            except ImportError:
+                import database as _db
+            _db.log_prediction(result)
+        except Exception:
+            pass
 
     return result

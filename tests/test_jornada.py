@@ -1,0 +1,76 @@
+import pathlib
+import tempfile
+import unittest
+
+from soccer_predictor import jornada
+
+
+def fake_predict(home, away, comp="", **kw):
+    return {"prob_1x2": {"home": 0.5, "draw": 0.3, "away": 0.2},
+            "prediction_1x2": "1", "expected_goals": {"home": 1.6, "away": 1.0},
+            "positions": {"home": 5, "away": 10}, "low_confidence": False,
+            "data_sources": {"home": "fake", "away": "fake",
+                             "home_recent": "WWDLW", "away_recent": "LDLWW"}}
+
+
+class TestJornada(unittest.TestCase):
+    def _entry(self):
+        base = {"home": "Alaves", "away": "Deportivo", "is_women": False,
+                "is_pleno": False,
+                "percentages": {"jugados": {"1": 47, "X": 36, "2": 17},
+                                "lae": None,
+                                "probables": {"1": 43, "X": 29, "2": 28},
+                                "tecnicos": {"1": 44, "X": 30, "2": 26}},
+                "lae": None, "probables": {"1": 43, "X": 29, "2": 28},
+                "pleno": None}
+        ms = [dict(base, n=i) for i in range(1, 15)]
+        ms.append(dict(base, n=15, is_pleno=True,
+                       pleno={"home": {"0": 29, "1": 36, "2": 22, "M": 13},
+                              "away": {"0": 23, "1": 34, "2": 25, "M": 18}}))
+        return {"jornada": 23, "season": 2027, "close": "SAB 21/11",
+                "sources": {}, "matches": ms}
+
+    def test_uses_probables_when_lae_missing(self):
+        e = jornada.analyze_matches(self._entry(), predict_fn=fake_predict)
+        m = e["matches"][0]
+        self.assertEqual(m["modelo"], {"1": 50.0, "X": 30.0, "2": 20.0})
+        self.assertAlmostEqual(m["valor"]["2"], -8.0, places=1)
+        self.assertIsNone(m["lae"])
+
+    def test_competition_detection(self):
+        self.assertEqual(jornada.competition_for({"is_women": True}, {}), "Liga F")
+        self.assertEqual(jornada.competition_for({}, {"league": "esp.2"}), "Segunda División")
+        self.assertEqual(jornada.competition_for({}, {"league": "esp.1"}), "La Liga")
+
+    def test_run_writes_report_and_boletos(self):
+        e = self._entry()
+        original = jornada.fetch_jornada
+        original_contexts = jornada.build_contexts
+        jornada.fetch_jornada = lambda **k: e
+        jornada.build_contexts = lambda *a, **k: {}
+        try:
+            with tempfile.TemporaryDirectory() as d:
+                out = jornada.run(jornada=23, predict_fn=fake_predict,
+                                  output_dir=pathlib.Path(d))
+        finally:
+            jornada.fetch_jornada = original
+            jornada.build_contexts = original_contexts
+        self.assertEqual(out["jornada"], 23)
+        self.assertIn("boleto_rentable", out)
+        self.assertIn("boleto_conservador", out)
+        self.assertEqual(len(out["boleto_rentable"]["columns"]), 24)
+
+    def test_main_aborts_when_not_playable(self):
+        e = self._entry()
+        e["played"] = True
+        original = jornada.fetch_jornada
+        jornada.fetch_jornada = lambda **k: e
+        try:
+            code = jornada.main(["--jornada", "23"])
+        finally:
+            jornada.fetch_jornada = original
+        self.assertNotEqual(code, 0)
+
+
+if __name__ == "__main__":
+    unittest.main()
