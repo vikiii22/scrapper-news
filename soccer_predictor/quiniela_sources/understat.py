@@ -23,7 +23,7 @@ def league_xg(league: str = "La_liga", cache: Optional[Cache] = None,
     key = f"understat_{league}"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     result: Dict[str, Any]
@@ -51,6 +51,6 @@ def league_xg(league: str = "La_liga", cache: Optional[Cache] = None,
     except Exception as exc:
         result = {"ok": False, "teams": {}, "error": str(exc)}
 
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result

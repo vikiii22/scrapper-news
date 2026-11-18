@@ -207,7 +207,8 @@ def build_boleto(matches: List[Dict[str, Any]],
         "columns": columns,
         "pleno": pleno,
         "guarantee": {
-            "text": "13 si los 8 fijos entran; 14 cuando la combinación real está entre las 24",
+            "text": ("13 si los 8 fijos entran y los dobles contienen el signo real; "
+                     "14 si además la combinación exacta está entre las 24"),
             "p14": round(BETS / (2 ** 3 * 3 ** 3) * 100, 1),
             "bets": BETS,
             "fixed": 8,

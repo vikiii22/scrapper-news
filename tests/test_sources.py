@@ -82,5 +82,52 @@ class TestSources(unittest.TestCase):
             injuries._get_text = original
 
 
+    def test_failures_are_not_cached(self):
+        import tempfile
+
+        from soccer_predictor.quiniela_sources.cache import Cache
+
+        with tempfile.TemporaryDirectory() as d:
+            cache = Cache(pathlib.Path(d))
+            original = football_data._get_text
+            football_data._get_text = lambda *a, **k: (_ for _ in ()).throw(
+                RuntimeError("sin red"))
+            try:
+                first = football_data.load_league("SP1", cache=cache)
+            finally:
+                pass
+            self.assertFalse(first["ok"])
+            football_data._get_text = lambda *a, **k: (
+                FIX / "sp1_2627.csv").read_text(encoding="utf-8-sig")
+            try:
+                second = football_data.load_league("SP1", cache=cache)
+            finally:
+                football_data._get_text = original
+            self.assertTrue(second["ok"])
+
+    def test_get_team_data_persist_false_does_not_save(self):
+        from soccer_predictor import data_fetcher, database
+        from soccer_predictor.scrapers import live_search
+
+        original = (database.get_team, database.save_team,
+                    live_search.fetch_team_live)
+        database.get_team = lambda *a, **k: None
+
+        def forbidden(*a, **k):
+            raise AssertionError("persistió sin permiso")
+
+        database.save_team = forbidden
+        live_search.fetch_team_live = lambda *a, **k: {
+            "name": "X", "recent": "WW", "goals_for": 2,
+            "goals_against": 1, "source": "test",
+        }
+        try:
+            record = data_fetcher.get_team_data("X", live=True, persist=False)
+        finally:
+            (database.get_team, database.save_team,
+             live_search.fetch_team_live) = original
+        self.assertEqual(record["name"], "X")
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -102,7 +102,7 @@ def fetch_injuries(team: str, women: bool = False,
     key = f"injuries_{team}"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     result: Dict[str, Any]
@@ -121,6 +121,6 @@ def fetch_injuries(team: str, women: bool = False,
         result = {"ok": False, "players": [], "count": 0,
                   "error": str(exc), "source_url": None}
 
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result

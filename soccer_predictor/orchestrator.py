@@ -34,6 +34,7 @@ def predict(
     women=False,
     log=True,
     explain=True,
+    persist=True,
 ):
     """
     Función principal de predicción.
@@ -52,6 +53,7 @@ def predict(
       women      (bool): si True, usa solo datos femeninos (Liga F)
       log        (bool): si False, no escribe el pronóstico en la BBDD
       explain    (bool): si False, no llama al LLM (explicación estadística)
+      persist    (bool): si False, no guarda equipos ni H2H en la BBDD
 
     Todo lo descargado se guarda en data/db/*.json y el pronóstico
     se añade al log de predicciones.
@@ -61,11 +63,11 @@ def predict(
     team_away = df.parse_team_input(team_away)
 
     # 2. Obtenemos datos de ambos equipos (live + caché JSON)
-    data_home = df.get_team_data(team_home, live=live, with_news=with_news, refresh=refresh, women=women)
-    data_away = df.get_team_data(team_away, live=live, with_news=with_news, refresh=refresh, women=women)
+    data_home = df.get_team_data(team_home, live=live, with_news=with_news, refresh=refresh, women=women, persist=persist)
+    data_away = df.get_team_data(team_away, live=live, with_news=with_news, refresh=refresh, women=women, persist=persist)
 
     # 3. Obtenemos historial H2H (caché + live + estático)
-    h2h = df.get_h2h(team_home, team_away, live=live)
+    h2h = df.get_h2h(team_home, team_away, live=live, persist=persist)
 
     # 3b. Racha de goleadores (mejor esfuerzo; None si no hay cobertura)
     ctx_home = ctx_away = None

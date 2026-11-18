@@ -70,6 +70,45 @@ class TestLosilla(unittest.TestCase):
         self.assertIsNotNone(pleno["pleno"])
         self.assertEqual(pleno["pleno"]["home"]["M"], 13.0)
 
+    def test_close_keeps_the_hour(self):
+        b = losilla.parse_boleto(self.html)
+        self.assertIn("21/11", b["close"])
+        self.assertIn("12:30", b["close"])
+
+    def test_fetch_works_offline_with_saved_html(self):
+        def boom(*args, **kwargs):
+            raise RuntimeError("sin red")
+
+        original = losilla._get_text
+        losilla._get_text = boom
+        try:
+            j = losilla.fetch_jornada(jornada=23, html=self.html)
+        finally:
+            losilla._get_text = original
+        self.assertEqual(len(j["matches"]), 15)
+        self.assertIsNone(j["matches"][0]["probables"])
+        self.assertEqual(j["matches"][0]["home"], "Alaves")
+
+    def test_old_cache_without_close_hour_is_refreshed(self):
+        import tempfile
+
+        from soccer_predictor.quiniela_sources.cache import Cache
+
+        def fake_get(url, params=None, timeout=20):
+            return self.csv if "analisisSigno" in url else self.html
+
+        with tempfile.TemporaryDirectory() as d:
+            cache = Cache(pathlib.Path(d))
+            cache.set(f"losilla_23_{losilla._season_number()}",
+                      {"jornada": 23, "close": "SÁBADO 21/11", "matches": []})
+            original = losilla._get_text
+            losilla._get_text = fake_get
+            try:
+                j = losilla.fetch_jornada(jornada=23, cache=cache)
+            finally:
+                losilla._get_text = original
+        self.assertIn(":", j["close"])
+
     def test_cache_roundtrip(self):
         import tempfile
 

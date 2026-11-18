@@ -63,6 +63,25 @@ class TestCovering(unittest.TestCase):
             for n, sign in zip(numbers, column):
                 self.assertIn(sign, b["signs"][n])
 
+    def test_expanded_columns_keep_the_covering_guarantee(self):
+        b = boleto.build_boleto(_matches(), "rentable")
+        numbers = sorted(b["signs"])
+        multiple = [n for n in numbers if len(b["signs"][n]) > 1]
+        position = {n: index for index, n in enumerate(multiple)}
+        tuples = []
+        for column in b["columns"]:
+            tuples.append(tuple(
+                b["signs"][n].index(sign)
+                for n, sign in zip(numbers, column) if n in position
+            ))
+        sizes = [len(b["signs"][n]) for n in multiple]
+        universe = list(itertools.product(*[range(size) for size in sizes]))
+        self.assertEqual(len(set(tuples)), 24)
+        for point in universe:
+            self.assertTrue(any(
+                sum(a != c for a, c in zip(point, row)) <= 1 for row in tuples
+            ))
+
     def test_pleno_variants(self):
         p = boleto.pleno_variants(1.8, 1.1)
         self.assertIn(p["seguro"]["home"], "012M")

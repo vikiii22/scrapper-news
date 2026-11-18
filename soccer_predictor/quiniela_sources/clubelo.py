@@ -20,7 +20,7 @@ def elo(team: str, cache: Optional[Cache] = None,
     key = f"clubelo_{team}"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     result: Dict[str, Any]
@@ -37,6 +37,6 @@ def elo(team: str, cache: Optional[Cache] = None,
     except Exception as exc:
         result = {"ok": False, "elo": None, "error": str(exc)}
 
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result

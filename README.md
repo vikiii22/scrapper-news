@@ -95,10 +95,10 @@ datos reales y genera un informe listo para jugar.
 # Jornada concreta
 python -m soccer_predictor.jornada --jornada 23
 
-# Si el cierre ya pasó, forzar el análisis (no genera boleto jugable)
+# Si el cierre ya pasó, forzar el análisis (el informe se marca como NO jugable)
 python -m soccer_predictor.jornada --jornada 23 --force
 
-# Respaldo sin red para la jornada: HTML del boleto guardado
+# Respaldo sin red: HTML del boleto guardado (los porcentajes saldrán n/d)
 python -m soccer_predictor.jornada --html boleto.html
 
 # Guardar también en la BBDD existente y omitir la forma de jugadores
@@ -116,13 +116,18 @@ Salida en `output/jornada_<n>_<fecha>.md` y `.json`:
 
 La reducción de 24 columnas se genera y se verifica por código: cubre las 216
 combinaciones de los 6 partidos múltiples con distancia ≤ 1, así que garantiza
-13 aciertos si los 8 fijos entran, y 14 cuando la combinación real está entre
-las 24 (24/216 = 11,1 %).
+13 aciertos si los 8 fijos entran y los dobles contienen el signo real, y 14
+cuando además la combinación real está entre las 24 (24/216 = 11,1 %).
 
 **Fuentes:** Eduardo Losilla (jornada y porcentajes), ESPN (forma, liga y
 resultados), Football-Data (xG y cuotas de LaLiga/Segunda), Transfermarkt
 (bajas y sanciones), Google News (titulares), Understat y ClubElo (best-effort)
 y Polymarket/Kalshi (contexto de mercados, nunca por partido).
+
+Por defecto la ejecución solo escribe en `output/` (la BBDD de equipos no se
+modifica). Con `--save` se guarda además la jornada, los equipos y el H2H en la
+BBDD existente. Las fuentes que fallan no se cachean, para que un corte
+temporal no deje el informe en `n/d` durante horas.
 
 Tests: `python -m unittest discover -s tests -v`.
 

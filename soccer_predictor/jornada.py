@@ -62,7 +62,7 @@ def _form_from_predict(match: Dict[str, Any], result: Dict[str, Any]) -> None:
 
 def analyze_matches(entry: Dict[str, Any], predict_fn=predict,
                     contexts: Optional[Dict[int, Dict[str, Any]]] = None,
-                    fast: bool = False) -> Dict[str, Any]:
+                    fast: bool = False, persist: bool = False) -> Dict[str, Any]:
     contexts = contexts or {}
     for match in entry.get("matches", []):
         n = int(match.get("n", 0))
@@ -89,6 +89,7 @@ def analyze_matches(entry: Dict[str, Any], predict_fn=predict,
                 women=bool(match.get("is_women")),
                 log=False,
                 explain=False,
+                persist=persist,
             )
         except Exception as exc:
             result = None
@@ -184,17 +185,22 @@ def _context_for(match: Dict[str, Any], fd_rows: Dict[str, List[Dict[str, Any]]]
         context["injuries"] = {}
 
     try:
-        context["news"] = news.headlines(f"{home} {away}", cache=cache)
+        query = f"{home} {away}" + (" femenino" if women else "")
+        context["news"] = news.headlines(query, cache=cache)
     except Exception:
         context["news"] = {}
 
-    try:
-        context["elo"] = {
-            "home": clubelo.elo(home, cache=cache).get("elo"),
-            "away": clubelo.elo(away, cache=cache).get("elo"),
-        }
-    except Exception:
+    if women:
+        # ClubElo no distingue equipos femeninos: no mezclar Elo masculino.
         context["elo"] = {"home": None, "away": None}
+    else:
+        try:
+            context["elo"] = {
+                "home": clubelo.elo(home, cache=cache).get("elo"),
+                "away": clubelo.elo(away, cache=cache).get("elo"),
+            }
+        except Exception:
+            context["elo"] = {"home": None, "away": None}
 
     return int(match.get("n", 0)), context
 
@@ -224,19 +230,21 @@ def _display_name(match: Dict[str, Any]) -> str:
     return f"{match.get('home', '?')}-{match.get('away', '?')}{suffix}"
 
 
-def _is_closed(close: str, now: Optional[datetime] = None) -> bool:
+def _is_closed(close: str, now: Optional[datetime] = None) -> Optional[bool]:
+    """True/False si el cierre es interpretable; None si no se puede saber."""
     now = now or datetime.now()
     match = re.search(r"(\d{1,2})/(\d{1,2})", close or "")
-    if not match:
-        return False
+    hour = re.search(r"(\d{1,2}):(\d{2})", close or "")
+    if not match or not hour:
+        return None
     day, month = int(match.group(1)), int(match.group(2))
     year = now.year
     if month < now.month - 6:
         year += 1
     try:
-        deadline = datetime(year, month, day, 12, 0)
+        deadline = datetime(year, month, day, int(hour.group(1)), int(hour.group(2)))
     except ValueError:
-        return False
+        return None
     return now >= deadline
 
 
@@ -277,13 +285,19 @@ def run(jornada: Optional[int] = None, html: Optional[str] = None,
     if len(entry.get("matches") or []) != 15:
         return {"error": "jornada_incompleta", "jornada": entry.get("jornada")}
 
-    if (entry.get("played") or _is_closed(entry.get("close", ""))) and not force:
+    closed = _is_closed(entry.get("close", ""))
+    if closed is None and not force:
+        return {"error": "cierre_desconocido", "jornada": entry.get("jornada"),
+                "close": entry.get("close")}
+    if (entry.get("played") or closed) and not force:
         return {"error": "jornada_no_jugable", "jornada": entry.get("jornada"),
                 "close": entry.get("close")}
+    if force and (closed is None or closed or entry.get("played")):
+        entry["forced"] = True
 
     contexts = build_contexts(entry["matches"], cache=cache)
     entry = analyze_matches(entry, predict_fn=predict_fn or predict,
-                            contexts=contexts, fast=fast)
+                            contexts=contexts, fast=fast, persist=save)
     entry["boleto_rentable"] = build_boleto(entry["matches"], "rentable")
     entry["boleto_conservador"] = build_boleto(entry["matches"], "seguro")
 
@@ -320,23 +334,33 @@ def main(argv: Optional[List[str]] = None) -> int:
     args = parser.parse_args(argv)
 
     html = None
-    if args.html:
-        html = Path(args.html).read_text(encoding="utf-8")
+    try:
+        if args.html:
+            html = Path(args.html).read_text(encoding="utf-8-sig")
+        result = run(
+            jornada=args.jornada,
+            html=html,
+            force=args.force,
+            save=args.save,
+            output_dir=Path(args.output),
+            fast=args.fast,
+            no_cache=args.no_cache,
+        )
+    except Exception as exc:
+        print(f"Error: {exc}")
+        return 1
 
-    result = run(
-        jornada=args.jornada,
-        html=html,
-        force=args.force,
-        save=args.save,
-        output_dir=Path(args.output),
-        fast=args.fast,
-        no_cache=args.no_cache,
-    )
     if result.get("error"):
         if result["error"] == "jornada_no_jugable":
             print(
                 f"La jornada {result.get('jornada')} ya ha cerrado "
-                f"({result.get('close', '')}). Usa --force para analizarla igual."
+                f"({result.get('close', '')}). Usa --force para analizarla igual "
+                "o --jornada N para la siguiente."
+            )
+        elif result["error"] == "cierre_desconocido":
+            print(
+                "No se pudo determinar la hora de cierre del boleto. "
+                "Usa --jornada N o --force para analizarla igualmente."
             )
         else:
             print(f"Error: {result['error']}")

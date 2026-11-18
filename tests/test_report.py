@@ -16,6 +16,17 @@ class TestReport(unittest.TestCase):
                   "Pleno al 15", "Garantía", "n/d", "Valor"]:
             self.assertIn(s, md)
 
+    def test_markdown_shows_headline_and_n_d_absences(self):
+        e = json.loads((FIX / "entry_min.json").read_text(encoding="utf-8"))
+        e["matches"][0]["absences"] = None
+        e["matches"][0]["context"]["injuries"] = {
+            "home": {"ok": False, "count": 0},
+            "away": {"ok": True, "count": 2},
+        }
+        md = report.render_markdown(e)
+        self.assertIn("Titular de prueba", md)
+        self.assertIn("bajas n/d/2", md)
+
     def test_write_report_creates_both_files(self):
         e = json.loads((FIX / "entry_min.json").read_text(encoding="utf-8"))
         with tempfile.TemporaryDirectory() as d:

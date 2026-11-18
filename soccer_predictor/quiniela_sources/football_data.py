@@ -108,7 +108,7 @@ def load_league(code: str, cache: Optional[Cache] = None,
     key = f"football_data_{code}_{_season_code()}"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     try:
@@ -120,7 +120,7 @@ def load_league(code: str, cache: Optional[Cache] = None,
         result = {"ok": False, "rows": [], "error": str(exc),
                   "source_url": url}
 
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result
 

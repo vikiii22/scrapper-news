@@ -203,7 +203,9 @@ def _close_from_html(html: str) -> str:
     )
     if not match:
         return ""
-    return f"{match.group(1).upper()} {match.group(2)}"
+    hour = re.search(r"(\d{1,2}:\d{2})", (html or "")[match.start():match.start() + 400])
+    base = f"{match.group(1).upper()} {match.group(2)}"
+    return f"{base} {hour.group(1)}" if hour else base
 
 
 def parse_boleto(html: str) -> Dict[str, Any]:
@@ -222,7 +224,7 @@ def fetch_jornada(jornada: Optional[int] = None, html: Optional[str] = None,
 
     if jornada is not None and cache is not None:
         cached = cache.get(f"losilla_{jornada}_{season}")
-        if cached:
+        if cached and re.search(r"\d{1,2}:\d{2}", cached.get("close", "")):
             return cached
 
     page = html if html is not None else _get_text(BASE_URL, timeout=timeout)
@@ -232,12 +234,18 @@ def fetch_jornada(jornada: Optional[int] = None, html: Optional[str] = None,
     if not jornada:
         raise ValueError("No se pudo leer la jornada")
 
-    csv_text = _get_text(
-        CSV_URL,
-        params={"num_jornada": jornada, "num_temporada": season, "csv": "true"},
-        timeout=timeout,
-    )
-    sections = parse_csv(csv_text)
+    try:
+        csv_text = _get_text(
+            CSV_URL,
+            params={"num_jornada": jornada, "num_temporada": season, "csv": "true"},
+            timeout=timeout,
+        )
+        sections = parse_csv(csv_text)
+    except Exception:
+        if html is None:
+            raise
+        # Modo respaldo: solo HTML guardado, porcentajes a n/d.
+        sections = {name: [] for name in SECTIONS}
     real = {row["n"]: row for row in sections.get("real", [])}
     quinielista = {row["n"]: row for row in sections.get("quinielista", [])}
     lae_rows = {row["n"]: row for row in sections.get("lae", [])}

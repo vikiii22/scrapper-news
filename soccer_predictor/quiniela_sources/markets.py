@@ -72,12 +72,12 @@ def outright_context(cache: Optional[Cache] = None) -> Dict[str, Any]:
     key = "markets_outrights"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     markets = _polymarket(cache) + _kalshi(cache)
     result = {"ok": bool(markets), "markets": markets,
               "error": None if markets else "sin mercados de liga"}
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result

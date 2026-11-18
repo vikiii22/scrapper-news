@@ -47,7 +47,7 @@ def headlines(query: str, limit: int = 3, cache: Optional[Cache] = None,
     key = f"news_{query}_{limit}"
     if cache is not None:
         cached = cache.get(key)
-        if cached:
+        if cached and cached.get("ok"):
             return cached
 
     url = f"{BASE_URL}?q={quote(query)}&hl=es&gl=ES&ceid=ES:es"
@@ -58,6 +58,6 @@ def headlines(query: str, limit: int = 3, cache: Optional[Cache] = None,
     except Exception as exc:
         result = {"ok": False, "items": [], "error": str(exc)}
 
-    if cache is not None:
+    if cache is not None and result.get("ok"):
         cache.set(key, result)
     return result

@@ -641,7 +641,7 @@ def fetch_and_store(team_name, with_news=True, women=False):
     return None
 
 
-def get_team_data(team_name, live=True, with_news=False, refresh=False, women=False):
+def get_team_data(team_name, live=True, with_news=False, refresh=False, women=False, persist=True):
     """
     Obtiene los datos de un equipo, intentando en orden:
     1. Caché JSON (si no está caducada y refresh=False)
@@ -682,7 +682,7 @@ def get_team_data(team_name, live=True, with_news=False, refresh=False, women=Fa
             if rec and rec.get("recent"):
                 if women:
                     rec["name"] = rec.get("name", team_name) + " (F)"
-                return _db.save_team(rec)
+                return _db.save_team(rec) if persist else rec
         except Exception:
             pass
 
@@ -721,7 +721,7 @@ def get_team_data(team_name, live=True, with_news=False, refresh=False, women=Fa
     return get_static_team_data(team_name)
 
 
-def get_h2h(team_a, team_b, limit=6, live=True):
+def get_h2h(team_a, team_b, limit=6, live=True, persist=True):
     """
     Obtiene la historia de enfrentamientos entre dos equipos.
     Orden: caché JSON -> live (TheSportsDB) -> API-Football -> estático.
@@ -744,7 +744,8 @@ def get_h2h(team_a, team_b, limit=6, live=True):
                 from scrapers import live_search as _live
             found = _live.fetch_h2h_live(team_a, team_b, limit=limit)
             if found:
-                _db.save_h2h(team_a, team_b, found, source="thesportsdb-live")
+                if persist:
+                    _db.save_h2h(team_a, team_b, found, source="thesportsdb-live")
                 return found
         except Exception:
             pass
@@ -783,7 +784,7 @@ def get_h2h(team_a, team_b, limit=6, live=True):
     # H2H live guardado también en caché aunque venga de API
     # Fallback a datos estáticos
     static = get_static_h2h(team_a, team_b, limit)
-    if static:
+    if static and persist:
         try:
             _db.save_h2h(team_a, team_b, static, source="static")
         except Exception:

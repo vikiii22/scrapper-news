@@ -76,15 +76,27 @@ def _elo_label(match: Dict[str, Any]) -> str:
     return f"{home if home is not None else 'n/d'} / {away if away is not None else 'n/d'}"
 
 
+def _headline(match: Dict[str, Any]) -> str:
+    news = (match.get("context") or {}).get("news") or {}
+    items = news.get("items") if isinstance(news, dict) else None
+    if not items and isinstance(news, dict):
+        items = news.get("home") or []
+    if items and isinstance(items[0], dict):
+        return str(items[0].get("title") or "")
+    return ""
+
+
+def _absence_value(match: Dict[str, Any], side: str) -> Optional[int]:
+    absences = match.get("absences")
+    if isinstance(absences, dict) and absences.get(side) is not None:
+        return absences.get(side)
+    info = ((match.get("context") or {}).get("injuries") or {}).get(side) or {}
+    return info.get("count") if info.get("ok") else None
+
+
 def _absences_label(match: Dict[str, Any]) -> str:
-    absences = match.get("absences") or {}
-    if not absences:
-        context = match.get("context") or {}
-        injuries = context.get("injuries") or {}
-        home = (injuries.get("home") or {}).get("count")
-        away = (injuries.get("away") or {}).get("count")
-    else:
-        home, away = absences.get("home"), absences.get("away")
+    home = _absence_value(match, "home")
+    away = _absence_value(match, "away")
     return f"{home if home is not None else 'n/d'} / {away if away is not None else 'n/d'}"
 
 
@@ -134,6 +146,12 @@ def render_markdown(entry: Dict[str, Any]) -> str:
     lines: List[str] = []
     lines.append(f"# JORNADA {entry.get('jornada', '?')} — {entry.get('close', 'cierre n/d')}")
     lines.append("")
+    if entry.get("forced") or entry.get("played"):
+        lines.append(
+            "> ⚠️ **JORNADA CERRADA — ANÁLISIS FORZADO**. "
+            "Los boletos NO son jugables; el informe es solo para revisión."
+        )
+        lines.append("")
     lines.append(f"Generado: {entry.get('fetched_at') or datetime.now().isoformat(timespec='seconds')}")
     lines.append("")
 
@@ -179,21 +197,29 @@ def render_markdown(entry: Dict[str, Any]) -> str:
             )
         )
     lines.append("")
+    lines.append(
+        "Si `%LAE` aún no está publicado, el `Valor` se calcula contra "
+        "`%Probables` y se indica como `n/d` en la columna LAE."
+    )
+    lines.append("")
 
     lines.append("## Lectura")
     lines.append("")
     for match in matches:
         if match.get("n") == 15:
             continue
-        context = match.get("context") or {}
-        injuries = context.get("injuries") or {}
-        home_out = (injuries.get("home") or {}).get("count", "n/d")
-        away_out = (injuries.get("away") or {}).get("count", "n/d")
+        home_out = _absence_value(match, "home")
+        away_out = _absence_value(match, "away")
         note = "baja confianza" if match.get("low_confidence") else "confianza normal"
+        headline = _headline(match)
+        news_text = f", titular: «{headline}»" if headline else ""
         lines.append(
             f"- **{match.get('n')}. {_match_name(match)}**: "
             f"pick {match.get('pick', 'n/d')}, valor {_value_label(match)}, "
-            f"bajas {home_out}/{away_out}, {note}."
+            f"bajas {'n/d' if home_out is None else home_out}/"
+            f"{'n/d' if away_out is None else away_out}, {note}{news_text}. "
+            f"Forma {_form_label(match)}; xG5 {_xg_label(match)}; "
+            f"{match.get('competition', 'n/d')}."
         )
     lines.append("")
 
@@ -232,12 +258,15 @@ def render_markdown(entry: Dict[str, Any]) -> str:
 
     lines.append("## Riesgos")
     lines.append("")
-    risks = [
-        m for m in matches
-        if m.get("low_confidence")
-        or any(value is None for value in (m.get("percentages") or {}).values())
-        or not (m.get("context") or {}).get("form")
-    ]
+    risks = []
+    for match in matches:
+        if match.get("n") == 15:
+            continue
+        percentages = match.get("percentages") or {}
+        missing = any(not percentages.get(key) for key in ("jugados", "probables"))
+        if (match.get("low_confidence") or missing
+                or not (match.get("context") or {}).get("form")):
+            risks.append(match)
     if risks:
         for match in risks:
             lines.append(
@@ -263,7 +292,7 @@ def write_report(entry: Dict[str, Any], output_dir: Path = Path("output")) -> tu
 
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
-    day = datetime.now().date().isoformat()
+    day = (entry.get("fetched_at") or datetime.now().isoformat())[:10]
     base = f"jornada_{entry.get('jornada', 'x')}_{day}"
     markdown_path = output_dir / f"{base}.md"
     json_path = output_dir / f"{base}.json"
